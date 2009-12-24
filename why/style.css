@@ -1,0 +1,70 @@
+body {
+  font: normal 14px arial, sans-serif;
+  line-height: 140%;
+  margin: 0;
+  padding: 0;
+  background-color: #dfdad7;
+}
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 1px 1em;;
+  background-color: #fff;
+}
+
+.domain {
+  font-style: italic;
+  font-size: 10pt;
+}
+
+h1 {
+  color: #390;
+}
+
+h2 {
+  color: #F39;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #F39;
+}
+
+hr {
+  height: 3px;
+  border: none;
+  border-top: solid 1px #EEE;
+  border-bottom: solid 1px #F39;
+}
+
+pre {
+  font: normal 10pt Monaco, Liberation Mono, monospace;
+  background: #CE6;
+  color: #500;
+  font-weight: bold;
+}
+
+pre.soccer {
+  background: #eee;
+  color: #000;
+  font-weight: normal;
+}
+
+.footnote, .footnote a {
+  color: #F39;
+}
+
+.tweet {
+  padding: 5px;
+  color: #222;
+}
+
+.tweet a {
+  color: #a60;
+}
+
+.tweet a:hover {
+  text-decoration: none;
+}
+

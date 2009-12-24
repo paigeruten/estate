@@ -1,0 +1,24 @@
+From poignant-stiffs at greggman.com  Mon Aug  7 11:40:40 2006
+From: poignant-stiffs at greggman.com (poignant-stiffs at greggman.com)
+Date: Tue, 8 Aug 2006 00:40:40 +0900
+Subject: Code Typo in Chapter 5 - 7. Them What Live the Dream
+Message-ID: <000001c6ba37$d7d891e0$040ba8c0@littlebiggy>
+
+Hello,
+
+I'm a total noob with Ruby so I coulld easily be missing something but on
+section 7 of chapter 5 there is the defintion of a WishScanner. Then in the
+next example you have a
+
+include MindScanner
+
+I think that's maybe supposed to be
+
+include WishScanner
+
+And the sentences below maybe should be talking about a WishScanner being
+mixed into the MindReader?
+
+-gregg tavares
+
+

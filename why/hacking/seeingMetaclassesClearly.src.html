@@ -1,0 +1,375 @@
+<h1>Seeing Metaclasses Clearly</h1>
+
+<p>If you're new to metaprogramming in Ruby and you'd like to start using it, perhaps these four methods could give you a bit more vision.</p>
+
+<pre>
+ class Object
+   # The hidden singleton lurks behind everyone
+   def metaclass; class &lt;&lt; self; self; end; end
+   def meta_eval &amp;blk; metaclass.instance_eval &amp;blk; end
+
+   # Adds methods to a metaclass
+   def meta_def name, &#38;blk
+     meta_eval { define_method name, &#38;blk }
+   end
+
+   # Defines an instance method within a class
+   def class_def name, &#38;blk
+     class_eval { define_method name, &#38;blk }
+   end
+ end
+</pre>
+
+<p>I've been keeping these methods in a file called <code>metaid.rb</code> and it's a start toward building a little library that can simplify use of metaclasses. Let's talk about metaclasses and I advise you to keep <code>metaid.rb</code> at your side. Take time to run some code from this article and you'll understand much better.</p>
+
+<h2>About Classes</h2>
+
+<p>Well, what is a <code>Class</code>?  Let's create a simple object and see.</p>
+
+<pre>
+ &gt;&gt; class MailTruck
+ &gt;&gt;   attr_accessor :driver, :route
+ &gt;&gt;   def initialize( driver, route )
+ &gt;&gt;     @driver, @route = driver, route
+ &gt;&gt;   end
+ &gt;&gt; end
+
+ &gt;&gt; m = MailTruck.new( "Harold", ['12 Corrigan Way', '23 Antler Ave'] )
+ =&gt; #&lt;MailTruck:0x81cfb94 @route=["12 Corrigan Way", "23 Antler Ave"],
+                         @driver="Harold"&gt;
+ &gt;&gt; m.class
+ =&gt; MailTruck
+</pre>
+
+<p>An Object is storage for variables.  Instance variables.  A <code>MailTruck</code> object, once initialized, will have a <code>@driver</code> and a <code>@route</code> variable.  It can hold any other variables as well.</p>
+
+<pre>
+ &gt;&gt; m.instance_variable_set( "@speed", 45 )
+ =&gt; 45
+ &gt;&gt; m.driver
+ =&gt; "Harold" 
+</pre>
+
+<p>Okay, so the <code>@driver</code> instance variable has an accessor.  When Ruby sees <code>attr_accessor :driver</code> in the <code>MailTruck</code> class definition, you get reader and writer methods.  The methods <code>driver</code> and <code>driver=</code>.</p>
+
+<p>These methods are stored in the class.  So the instance variable is in the object and the accessor methods are in the class.  They're in two completely different spots.</p>
+
+<p>It's an important lesson: <strong>objects do not store methods, only classes can</strong>.</p>
+
+<h2>Classes Are Objects</h2>
+
+<p>Okay, but classes are objects, right?  I mean if <em>everything is an object</em> in Ruby, then classes and objects should both be objects.  Which makes them the same?</p>
+
+<p>Sure, classes are objects.  You can run all the same methods on classes that you can run on object.  Look, they each have their own ID in the symbol table.</p>
+
+<pre>
+ &gt;&gt; m.object_id 
+ =&gt; 68058570
+ &gt;&gt; MailTruck.object_id
+ =&gt; 68069450
+</pre>
+
+<p>But I've already told you: classes store methods.  They're different.  Now I know you're probably a bit confused wondering, "If a class is an object, but objects are built on classes, isn't there a big confusing infinite cycle here that you're not explaining?"</p>
+
+<p>No, there's not.  I hate to break it to you, but a <em>class isn't really an object</em>.  From Ruby's source code:</p>
+
+<pre>
+ struct RObject {
+   struct RBasic basic;
+   struct st_table *iv_tbl;
+ };
+
+ struct RClass {
+   struct RBasic basic;
+   struct st_table *iv_tbl;
+   struct st_table *m_tbl;
+   VALUE super;
+ };
+</pre>
+
+<p>Look! A class has an <code>m_tbl</code> (a symbol table for storing methods) and a <code>superclass</code> (pointer to a superclass).</p>
+
+<p>But let me reassure you.  <em>To a Ruby programmer, a class is an object.</em>  Because it meets the two big criteria: you can store instance variables in a class and it is descended from the <code>Object</code> class.  That's it.</p>
+
+<pre>
+ &gt;&gt; o = Object.new
+ =&gt; #&lt;Object:0x815c45c&gt;
+ &gt;&gt; o.class
+ =&gt; Object
+
+ &gt;&gt; Class.superclass.superclass
+ =&gt; Object
+
+ &gt;&gt; Object.class
+ =&gt; Class
+ &gt;&gt; Object.superclass
+ =&gt; nil
+</pre>
+
+<p>The <code>Object</code> class sits at the very head of the table and comes down to participate only when it has methods that can't be found anywhere else.</p>
+
+<h2>What On Earth Are Metaclasses?</h2>
+
+<p>The term <em>metaclass</em> is supposed mean "a class which defines classes."  This definition doesn't really work with Ruby, though,  since "a class which defines a class" is simply: a <code>Class</code>.</p>
+
+<p>Look at how you can add a method in the <code>Class</code> class and then use it in class definitions.</p>
+
+<pre>
+ &gt;&gt; class Class
+ &gt;&gt;   def attr_abort( *args )
+ &gt;&gt;     abort "Please no more attributes today." 
+ &gt;&gt;   end
+ &gt;&gt; end
+ &gt;&gt;
+ &gt;&gt; class MyNewClass
+ &gt;&gt;   attr_abort :id, :diagram, :telegram
+ &gt;&gt; end
+</pre>
+
+<p>Which prints <code>Please no more attributes today.</code>  The <code>attr_abort</code> method can be used in definitions.</p>
+
+<p>You're constantly defining and redefining classes in Ruby.  It's not meta, it's just part of the code.  Classes hold methods.  How can you complicate that?</p>
+
+<p>Since the earlier definition doesn't really work, I like to think of the Ruby metaclass as "a class which an object uses to redefine itself."</p>
+
+<h2>Do Objects Need Metaclasses?</h2>
+
+<p>Objects can't hold methods.  Most objects don't need to hold methods.</p>
+
+<p>But sometimes you may want an object to have some methods.  Sometimes that's your answer to a problem.  You can't do that.  But Matz has given us metaclasses which are good enough.</p>
+
+<p>In the <span class="caps">YAML</span> library, you can customize the properties shown when an object is output.</p>
+
+<pre>
+ &gt;&gt; require 'yaml'
+ &gt;&gt; class &lt;&lt; m
+ &gt;&gt;   def to_yaml_properties
+ &gt;&gt;     ['@driver', '@route']
+ &gt;&gt;   end
+ &gt;&gt; end
+
+ &gt;&gt; YAML::dump m
+ --- !ruby/object:MailTruck
+ driver: Harold
+ route:
+   - 12 Corrigan Way
+   - 23 Antler Ave
+</pre>
+
+<p>This is handy if you want to dump one specific object with a certain style of <span class="caps">YAML</span> without effecting every object from that class.  In the above example, only the object in the <code>m</code> variable will be output with its properties in order.  All other <code>MailTruck</code> objects will be output in whatever way the <span class="caps">YAML</span> library chooses.  Sometimes we may want to display a certain string one way without needing to modify the <code>String</code> class (which affects every string in your code).</p>
+
+<p>So the object in the <code>m</code> variable has its own special <code>to_yaml_properties</code> method.  It's stored in a metaclass.  The metaclass stores methods for the object and sits right in the inheritance chain.</p>
+
+<p>We could also add the <code>to_yaml_properties</code> method with this convenient syntax:</p>
+
+<pre>
+ def m.to_yaml_properties
+   ['@driver', '@route']
+ end
+</pre>
+
+<p>If you have the <code>metaid.rb</code> methods from the top of this article loaded, try this:</p>
+
+<pre>
+ &gt;&gt; m.metaclass
+ =&gt; #&lt;Class:#&lt;MailTruck:0x81cfb94&gt;&gt;
+ &gt;&gt; m.metaclass.class
+ =&gt; Class
+ &gt;&gt; m.metaclass.superclass
+ =&gt; #&lt;Class:MailTruck&gt;
+ &gt;&gt; m.metaclass.instance_methods
+ =&gt; [..., "to_yaml_properties", ...]
+ &gt;&gt; m.singleton_methods
+ =&gt; ["to_yaml_properties"]
+</pre>
+
+<p>When you use the <code>class &lt;&lt; m</code> syntax, you're opening up a metaclass.  Ruby calls these <em>virtual classes</em>.  Notice the result of <code>m.metaclass</code>.  A class attached to an object: <code>#&lt;Class:#&lt;MailTruck:0x81cfb94&gt;&gt;</code>.</p>
+
+<p>When an object finds methods in an attached metaclass, these methods are referred to as the object's <em>singleton methods</em> rather than the <em>object's metaclass' instance methods</em> (if you get my drift.)  And since there can only be a single metaclass attached to an object, it's called a _single_ton.</p>
+
+<p>It's much easier to see metaclasses when you're using the <code>metaclass</code> method. Normally, you would need to use <code>( class &lt;&lt; self; self; end )</code> wherever you wanted to root out a metaclass.  But this makes it much simpler.</p>
+
+<h2>Do Metaclasses Need Metaclasses?</h2>
+
+<pre>
+ &gt;&gt; m.metaclass.metaclass
+ =&gt; #&lt;Class:#&lt;Class:#&lt;MailTruck:0x81cfb94&gt;&gt;&gt;
+ &gt;&gt; m.metaclass.metaclass.metaclass
+ =&gt; #&lt;Class:#&lt;Class:#&lt;Class:#&lt;MailTruck:0x81cfb94&gt;&gt;&gt;&gt;
+</pre>
+
+<p>Check out those frivolous metaclasses we're creating.  So what can we do with a metaclass of a metaclass?</p>
+
+<p>Well, the same thing we do with a normal metaclass.  A normal metaclass holds methods for an object.  So a metaclass of a metaclass holds methods for that metaclass--which is just an object, of course!</p>
+
+<p>The problem with a metaclass of a metaclass is that there's not much practical use for them.  You can only use the methods if you're deep inside the chain and we don't really want to spend much time down there.</p>
+
+<pre>
+ &gt;&gt; m.meta_eval do
+ &gt;&gt;   self.meta_eval do
+ &gt;&gt;     self.meta_eval do
+ &gt;&gt;       def ribbit; "*ribbit*"; end
+ &gt;&gt;     end
+ &gt;&gt;   end
+ &gt;&gt; end
+
+ &gt;&gt; m.metaclass.metaclass.metaclass.singleton_methods
+ =&gt; ["class_def", "metaclass", "constants", "meta_def", 
+     "attr_test", "nesting", "ribbit"]
+</pre>
+
+<p>Metaclasses are only really useful one level deep.  You want to have give methods to an object.  Or, as you will see, you might want a specific class to have a metaclass. Beyond that, you're just storing methods in these obscure metaclasses that no one can really get at.  Which you might need to do sometime. Who knows.</p>
+
+<p>The important thing to know at this point is: <strong>metaclasses don't go <em>up</em>, they go <em>out</em>.</strong>  Yes, when you create a metaclass for an object, it happens to intercept method calls before the object's inheritance chain.  But that doesn't mean inheritance is affected by further metaclasses.  When you create a metaclass of a metaclass, it has <em>no</em> affect on the object referred to by the original metaclass.</p>
+
+<h2>Metaclasses Have One More Funky Trick For Classes and It's The Crucial Trick In The Metaprogrammer's Handbook</h2>
+
+<p>One more point and I believe this one is the juiciest.  If you read the rest of this essay and quit before this section, you've come away without the most important lesson.  You may know some nice things about objects and metaclasses, but it all pales.</p>
+
+<p>I'm going to reiterate two previous statements about classes and build on them.</p>
+
+<ol>
+<li>Class are objects.  This means they can hold <em>instance variables</em>.</li>
+<li>Metaclasses hold <em>instance methods</em>.  When attached to an object, these methods become <em>singleton methods</em>.  These methods intercept calls before they trickle up the chain of inheritance.</li>
+</ol>
+
+<p>Have you ever used instance variables in a class before?  I don't mean in a class method.  I mean in the class itself.</p>
+
+<pre>
+ class MailTruck
+   @trucks = []
+   def MailTruck.add( truck )
+     @trucks &lt;&lt; truck
+   end
+ end
+</pre>
+
+<p>Why not just use a class variable?</p>
+
+<pre>
+ class MailTruck
+   @@trucks = []
+   def MailTruck.add( truck )
+     @@trucks &lt;&lt; truck
+   end
+ end
+</pre>
+
+<p>They work exactly the same, right?  I mean it doesn't matter, does it?</p>
+
+<p>Here are two reasons you've probably been using class variables rather than class instance variables:</p>
+
+<ol>
+<li>Class variables are clearly class variables.  They have two at-symbols. Less confusion.</li>
+<li>Class variables can be referenced in instance methods, if needed.</li>
+</ol>
+
+<p>See, this works properly:</p>
+
+<pre>
+ class MailTruck
+   @@trucks = []
+   def MailTruck.add( truck )
+     @@trucks &lt;&lt; truck
+   end
+   def say_hi
+     puts "Hi, I'm one of #{@@trucks.length} trucks!" 
+   end
+ end
+</pre>
+
+<p>But this does not:</p>
+
+<pre>
+ class MailTruck
+   @trucks = []
+   def MailTruck.add( truck )
+     @trucks &lt;&lt; truck
+   end
+   def say_hi
+     puts "Hi, I'm one of #{@trucks.length} trucks!" 
+   end
+ end
+</pre>
+
+<p>So what are instance variables good for?  What a waste of space!  I'm never using them again!  (Yes, please stick to class variables in situations like the above.)</p>
+
+<p>Let me also point out that metaclasses are again showing up above, since <strong>every class method is stored in a metaclass</strong>.  That's simply just how it works.</p>
+
+<p>Which is why you can also use <code>self</code>:</p>
+
+<pre>
+ class MailTruck
+   def self.add( truck )
+     @@trucks &lt;&lt; truck
+   end
+ end
+</pre>
+
+<p>Or the singleton syntax:</p>
+
+<pre>
+ class MailTruck
+   class &lt;&lt; self
+     def add( truck )
+       @@trucks &lt;&lt; truck
+     end
+   end
+ end
+</pre>
+
+<p>Class instance variables and metaclass instance methods are really pretty pointless in a plain old class.  But when inheritance enters the mix, the party comes alive.  Writhing bodies and drunken madness, believe me.</p>
+
+<pre>
+ class MailTruck
+   def self.company( name )
+     meta_def :company do; name; end
+   end
+ end
+</pre>
+
+<p>The above method is remarkably simple, but excavates a beachhead worth of possibilities. A new <code>company</code> class method is added to MailTruck that can be used in a class definition.</p>
+
+<pre>
+ class HappyTruck &lt; MailTruck
+   company "Happy's -- We Bring the Mail, and That's It!" 
+ end
+</pre>
+
+<p>Okay, so the <code>company</code> class method gets executed with the Happy's company name and slogan. What does <code>meta_def</code> do with it??</p>
+
+<p>Well, the meat of meta arrives here.  The <code>meta_def</code> adds a new method called <code>company</code> to the <code>HappyTruck</code> metaclass.  The beauty of this is that the method is <strong>not added to the <code>MailTruck</code> metaclass, but to the derived class <code>HappyTruck</code></strong>.</p>
+
+<p>This may seem simple, but it's very powerful.  You can write simple class methods which will add class methods to a derived class.  This is the secret to Rails and Ruby/X11 and so many other examples of metaprogramming in Ruby.</p>
+
+<h2>Dwemthy's Array</h2>
+
+<p>I discovered most of this while building <a href="http://poignantguide.net/dwemthy/">Dwemthy's Array</a> for my cartoon Ruby book.  I was able to simplify the <code>Creature</code> code (which gives a readability to the <span class="caps">RPG</span>) down to this fragment:</p>
+
+<pre>
+ class Creature
+   def self.traits( *arr )
+     return @traits if arr.empty?
+     attr_accessor *arr
+     arr.each do |trait|
+       meta_def trait do |val|
+         @traits ||= {}
+         @traits[trait] = val
+       end
+     end
+     class_def :initialize do
+       self.class.traits.each do |k,v|
+         instance_variable_set( "@#{k}", v )
+       end
+     end
+   end
+ end
+</pre>
+
+<p>The <code>meta_def</code> and <code>class_def</code> help make the metaprogramming a bit more clear.  Pay close attention to the use of instance variables in the <code>meta_def</code>.  If you want to understand just why class variables won't work in this situation, then try changing the instance variables to class variables above.</p>
+
+<p>Then, start creating monsters as described on the Dwemthy's Array page and you'll watch them step all over each other.</p>
+
+<hr />
+<p>by <em>why the lucky stiff</em></p>
+<p>april 17, 2005</p>

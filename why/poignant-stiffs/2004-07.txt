@@ -1,0 +1,839 @@
+From why at poignantguide.net  Mon Jul 26 19:19:32 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Jul 26 19:19:46 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+Message-ID: <41059184.2030300@poignantguide.net>
+
+Hello.  Thankyou for your waiting.  Testing, testing encrypted giraffe 
+lungs.  (I'm having the elf feed him a few more bananas such that the 
+words will slip-squizz out faster.)
+
+  I am glad
+  My arms
+  Aren't too
+  Long to
+  Write a
+  Book.
+
+  Still,
+  I wish
+  They were
+  Even a bit
+  Closer.
+
+The first expansion pak to the (Poignant) Guide is called The Tiger's 
+Vest.  In chapter four, I am now asking the reader to branch away from 
+the book for a moment to install Ruby.  And it's at:
+
+   http://poignantguide.net/ruby/expansion-pak-1.html
+
+These expansion paks are diversions, things which may change frequently 
+and tell side stories and contain role-playing games.  Okay, back to 
+chapter five.  Have some potion.
+
+_why
+From swillison at ljworld.com  Mon Jul 26 19:57:13 2004
+From: swillison at ljworld.com (Simon Willison)
+Date: Mon Jul 26 19:57:18 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <41059184.2030300@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>
+Message-ID: <839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+
+
+On Jul 26, 2004, at 6:19 PM, why the lucky stiff wrote:
+> The first expansion pak to the (Poignant) Guide is called The Tiger's 
+> Vest.  In chapter four, I am now asking the reader to branch away from 
+> the book for a moment to install Ruby.  And it's at:
+>
+>   http://poignantguide.net/ruby/expansion-pak-1.html
+
+I ran in to all manner of problems following the tutorial on OS X 10.3 
+(with the developer tools installed, not that it seems to make much 
+difference). At first I wasn't sure why tab completion etc wasn't 
+working in irb - then I figured it was certainly a readline problem. 
+The 'ri' command line tool was no-where to be found. Then I remembered 
+that it mentioend an upgraded version of ruby, so I grabbed the package 
+from the page it linked to.
+
+Unfortunately, the package installed 1.8 in /usr/local/bin - so now I 
+have two versions of ruby installed:
+
+164:~ simon$ /usr/bin/ruby -v
+ruby 1.6.8 (2002-12-24) [powerpc-darwin7.0]
+164:~ simon$ /usr/local/bin/ruby -v
+ruby 1.8.1 (2004-03-15) [powerpc-darwin]
+
+'ri' now works, but runs against the 1.8 libraries (as far as I can 
+tell) while irb still uses 1.6. And readline support still doesn't work 
+in either version! Very frustrating - I'd love a pointer to a way of 
+fixing all of this.
+
+I was also initially confused by the introduction of 'ri' - I tried 
+typing ((Ri)) at the irb prompt and got nothing. It took me several 
+more paragraphs of reading before I realised it was a command line 
+tool. More clarification there would be nice :)
+
+Other than the above, I thoroughly enjoyed it - though I was a little 
+upset to see the Tiger lose his beloved Echelon 3500 again ;(
+
+Cheers,
+
+Simon Willison
+http://simon.incutio.com/
+
+From ckhoge at mac.com  Mon Jul 26 20:21:41 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Mon Jul 26 20:22:06 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+Message-ID: <EF2E5AB7-DF62-11D8-949A-000A95BC6C1A@mac.com>
+
+Hi Simon,
+
+Have you ever used Darwin Ports? Highly recommended. The setup time is 
+well worth the convenience it offers for installing new tools.
+
+Get rid of the OS X version of Ruby and irb by renaming them:
+
+sudo mv /usr/bin/ruby /usr/bin/ruby16
+sudo mv /usr/bin/irb /usr/bin/irb16
+
+Now restart your environment (i.e. close your terminal window and open 
+a new one), and hack away with Ruby 1.8.
+
+For irb completion, use this (in irb):
+ >> require 'irb/completion'
+
+That works with my version (darwin ports 1.8) of Ruby.
+
+Hope that all helps,
+
+-Chris
+
+On Jul 26, 2004, at 4:57 PM, Simon Willison wrote:
+
+>
+> On Jul 26, 2004, at 6:19 PM, why the lucky stiff wrote:
+>> The first expansion pak to the (Poignant) Guide is called The Tiger's 
+>> Vest.  In chapter four, I am now asking the reader to branch away 
+>> from the book for a moment to install Ruby.  And it's at:
+>>
+>>   http://poignantguide.net/ruby/expansion-pak-1.html
+>
+> I ran in to all manner of problems following the tutorial on OS X 10.3 
+> (with the developer tools installed, not that it seems to make much 
+> difference). At first I wasn't sure why tab completion etc wasn't 
+> working in irb - then I figured it was certainly a readline problem. 
+> The 'ri' command line tool was no-where to be found. Then I remembered 
+> that it mentioend an upgraded version of ruby, so I grabbed the 
+> package from the page it linked to.
+>
+> Unfortunately, the package installed 1.8 in /usr/local/bin - so now I 
+> have two versions of ruby installed:
+>
+> 164:~ simon$ /usr/bin/ruby -v
+> ruby 1.6.8 (2002-12-24) [powerpc-darwin7.0]
+> 164:~ simon$ /usr/local/bin/ruby -v
+> ruby 1.8.1 (2004-03-15) [powerpc-darwin]
+>
+> 'ri' now works, but runs against the 1.8 libraries (as far as I can 
+> tell) while irb still uses 1.6. And readline support still doesn't 
+> work in either version! Very frustrating - I'd love a pointer to a way 
+> of fixing all of this.
+>
+> I was also initially confused by the introduction of 'ri' - I tried 
+> typing ((Ri)) at the irb prompt and got nothing. It took me several 
+> more paragraphs of reading before I realised it was a command line 
+> tool. More clarification there would be nice :)
+>
+> Other than the above, I thoroughly enjoyed it - though I was a little 
+> upset to see the Tiger lose his beloved Echelon 3500 again ;(
+>
+> Cheers,
+>
+> Simon Willison
+> http://simon.incutio.com/
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From jgb3 at email.byu.edu  Mon Jul 26 22:03:07 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Mon Jul 26 22:03:21 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <41059184.2030300@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>
+Message-ID: <4105B7DB.3000309@email.byu.edu>
+
+You crack me up, _why. Thanks for the great reading. First thing 
+tomorrow, I'm sending a link to the expansion pak (and the rest of the 
+poignant guide) to my entire office. They all know I'm a little fanatic 
+about Ruby, but I'm hoping perhaps your book will entice a few more of 
+them into the Right Way. :)
+
+Thanks again!
+
+- Jamis
+
+why the lucky stiff wrote:
+> Hello.  Thankyou for your waiting.  Testing, testing encrypted giraffe 
+> lungs.  (I'm having the elf feed him a few more bananas such that the 
+> words will slip-squizz out faster.)
+> 
+>  I am glad
+>  My arms
+>  Aren't too
+>  Long to
+>  Write a
+>  Book.
+> 
+>  Still,
+>  I wish
+>  They were
+>  Even a bit
+>  Closer.
+> 
+> The first expansion pak to the (Poignant) Guide is called The Tiger's 
+> Vest.  In chapter four, I am now asking the reader to branch away from 
+> the book for a moment to install Ruby.  And it's at:
+> 
+>   http://poignantguide.net/ruby/expansion-pak-1.html
+> 
+> These expansion paks are diversions, things which may change frequently 
+> and tell side stories and contain role-playing games.  Okay, back to 
+> chapter five.  Have some potion.
+> 
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+> .
+> 
+
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+"I use octal until I get to 8, and then I switch to decimal."
+From why at poignantguide.net  Tue Jul 27 00:36:25 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Jul 27 00:26:19 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+Message-ID: <20040727043625.GA43666@topi.cc>
+
+Simon Willison (swillison@ljworld.com) wrote:
+> 
+> Unfortunately, the package installed 1.8 in /usr/local/bin - so now I 
+> have two versions of ruby installed:
+> 
+> 164:~ simon$ /usr/bin/ruby -v
+> ruby 1.6.8 (2002-12-24) [powerpc-darwin7.0]
+> 164:~ simon$ /usr/local/bin/ruby -v
+> ruby 1.8.1 (2004-03-15) [powerpc-darwin]
+> 
+
+Ah, yeah, I need to make sure this works right.  Do any other OS X users
+have recommendations?  I'm not sure about the Darwin Ports suggestion
+offered by Chris.  I'd like to find a binary package that works
+precisely and harmlessly on the common Mac versions.
+
+We'll turn this aright for you, Simon.
+
+> 
+> I was also initially confused by the introduction of 'ri' - I tried 
+> typing ((Ri)) at the irb prompt and got nothing. It took me several 
+> more paragraphs of reading before I realised it was a command line 
+> tool. More clarification there would be nice :)
+> 
+
+Thankyou, I've edited the Ri section with this in mind.
+
+I've clarified a bit and hazed-down the curls.  I think it's better now.
+Please, continued comments, continued needling of the text.  I want to
+scare out the knots in the teaching.
+
+>
+> Other than the above, I thoroughly enjoyed it - though I was a little 
+> upset to see the Tiger lose his beloved Echelon 3500 again ;(
+> 
+
+Pitiful.  I don't know why he doesn't invest in some blast-off shoes of
+his own.  I won't criticize him further, lest I make some off-putting
+blanket statement about our vest-wearing populations.
+
+_why
+From ckhoge at mac.com  Tue Jul 27 01:09:12 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Tue Jul 27 01:09:32 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <20040727043625.GA43666@topi.cc>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+	<20040727043625.GA43666@topi.cc>
+Message-ID: <192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+
+A 1.8 pre-packaged distribution can be found here:
+http://homepage.mac.com/discord/Ruby/
+
+A readline bundle (required for the above distribution) is here:
+http://cherryville.org/8896/ruby_readline_for_mac.html
+
+I have not used either of these, so your mileage may vary.
+
+-Chris
+
+On Jul 26, 2004, at 9:36 PM, why the lucky stiff wrote:
+
+> Simon Willison (swillison@ljworld.com) wrote:
+>>
+>> Unfortunately, the package installed 1.8 in /usr/local/bin - so now I
+>> have two versions of ruby installed:
+>>
+>> 164:~ simon$ /usr/bin/ruby -v
+>> ruby 1.6.8 (2002-12-24) [powerpc-darwin7.0]
+>> 164:~ simon$ /usr/local/bin/ruby -v
+>> ruby 1.8.1 (2004-03-15) [powerpc-darwin]
+>>
+>
+> Ah, yeah, I need to make sure this works right.  Do any other OS X 
+> users
+> have recommendations?  I'm not sure about the Darwin Ports suggestion
+> offered by Chris.  I'd like to find a binary package that works
+> precisely and harmlessly on the common Mac versions.
+>
+> We'll turn this aright for you, Simon.
+>
+>>
+>> I was also initially confused by the introduction of 'ri' - I tried
+>> typing ((Ri)) at the irb prompt and got nothing. It took me several
+>> more paragraphs of reading before I realised it was a command line
+>> tool. More clarification there would be nice :)
+>>
+>
+> Thankyou, I've edited the Ri section with this in mind.
+>
+> I've clarified a bit and hazed-down the curls.  I think it's better 
+> now.
+> Please, continued comments, continued needling of the text.  I want to
+> scare out the knots in the teaching.
+>
+>>
+>> Other than the above, I thoroughly enjoyed it - though I was a little
+>> upset to see the Tiger lose his beloved Echelon 3500 again ;(
+>>
+>
+> Pitiful.  I don't know why he doesn't invest in some blast-off shoes of
+> his own.  I won't criticize him further, lest I make some off-putting
+> blanket statement about our vest-wearing populations.
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From ryan.platte at gmail.com  Tue Jul 27 10:08:52 2004
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Tue Jul 27 10:40:02 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+	<20040727043625.GA43666@topi.cc>
+	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+Message-ID: <2f1a1dcb040727070833a41c79@mail.gmail.com>
+
+On Mon, 26 Jul 2004 22:09:12 -0700, Chris Hoge <ckhoge@mac.com> wrote:
+
+Chris, is your last name really Hoge? I've never had the courage to
+post as Ryan Foo, but I guess it'd be easier to muster if that really
+was my name.
+
+-- 
+Ryan Platte
+From olleolleolle at home.se  Tue Jul 27 11:08:41 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Tue Jul 27 11:08:44 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>
+	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+Message-ID: <41066FF9.4020100@home.se>
+
+Hi why & bunch!
+
+This is what my irb told me, when I was so happy and had downloaded
+the newest ruby from the net. It seems I lack some extras that weren't 
+included in that big, round package that Windows installed, like a cat 
+lapping milk.
+
+irb(main):001:0> ri
+NameError: undefined local variable or method `ri' for main:Object
+         from (irb):1
+irb(main):002:0> require 'irb/completion'
+LoadError: No such file to load -- readline
+         from c:/code/ruby/lib/ruby/1.8/irb/completion.rb:10:in `require'
+         from c:/code/ruby/lib/ruby/1.8/irb/completion.rb:10
+         from (irb):2:in `require'
+         from (irb):2:in `irb_binding'
+         from c:/code/ruby/lib/ruby/1.8/irb/workspace.rb:52:in
+`irb_binding'
+         from c:/code/ruby/lib/ruby/1.8/irb/workspace.rb:52
+Maybe IRB bug!!
+irb(main):003:0>
+
+What is a po'boy s'posed to do?
+
+From why at poignantguide.net  Tue Jul 27 15:12:10 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Jul 27 15:12:32 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <41066FF9.4020100@home.se>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+	<41066FF9.4020100@home.se>
+Message-ID: <4106A90A.5070101@poignantguide.net>
+
+Olle Jonsson wrote:
+
+> This is what my irb told me, when I was so happy and had downloaded
+> the newest ruby from the net. It seems I lack some extras that weren't 
+> included in that big, round package that Windows installed, like a cat 
+> lapping milk.
+
+Okay, I think I've got an answer to this.  Download:
+
+  http://whytheluckystiff.net/ruby/dist/readline.so-for-1.8.zip
+
+Two files inside.  Place readline.dll in $RUBY/bin.  The readline.so 
+goes in $RUBY/lib/ruby/1.8/i386-mswin32.  Then, to get Irb working with 
+Readline:
+
+  irb --readline -r irb/completion
+
+Try it and get back to me.  I'm sure Curt would put this in the Windows 
+Installer.
+
+...
+
+Another alternative: http://www.rubygarden.org/ruby?FXIrb.  Completion 
+could be hacked in by handling Fox::KEY_Tab in onKeyPress.
+
+Anyone at all -- Do the OS X binaries come with Fox libraries?
+
+_why
+From ryan.platte at gmail.com  Tue Jul 27 15:42:13 2004
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Tue Jul 27 16:04:16 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <4106A90A.5070101@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+	<41066FF9.4020100@home.se> <4106A90A.5070101@poignantguide.net>
+Message-ID: <2f1a1dcb040727124242ef8504@mail.gmail.com>
+
+On Tue, 27 Jul 2004 13:12:10 -0600, why the lucky stiff
+<why@poignantguide.net> wrote:
+> Anyone at all -- Do the OS X binaries come with Fox libraries?
+
+No. Largely-untrod territory. I think there may be Fox packages in the
+Fink distribution, but many OS X folks like to stay out of X11
+entirely.
+
+-- 
+Ryan Platte
+From olleolleolle at home.se  Wed Jul 28 05:39:10 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Wed Jul 28 05:39:08 2004
+Subject: No tabbing. Yes tabbing
+In-Reply-To: <4106A90A.5070101@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>
+	<4106A90A.5070101@poignantguide.net>
+Message-ID: <4107743E.8050709@home.se>
+
+why the lucky stiff:
+>  http://whytheluckystiff.net/ruby/dist/readline.so-for-1.8.zip
+> 
+> Two files inside.  Place readline.dll in $RUBY/bin.  The readline.so 
+> goes in $RUBY/lib/ruby/1.8/i386-mswin32.  Then, to get Irb working with 
+> Readline:
+> 
+>  irb --readline -r irb/completion
+> 
+> Try it and get back to me.  I'm sure Curt would put this in the Windows 
+> Installer.
+OK, I am herewith back. Tried it. Updated my "irb.bat" in the Start 
+Menu, since I want the thing to work from there. (No point having a 
+menu system if it ain't used.) After some trial'n error with the BAT 
+file it bloody well worked!
+
+Thanks. Tabbing the Ruby lang rocks so much. I am now going to try and 
+get some web action from the Ruby thing, since that is what I aim at 
+doing with it. Apart from the Call of Cthulhu Character Editor that is 
+the Grail of all programming languages for me.
+
+-Olle,
+    like an elf at a sale in the vest dept.
+
+From olleolleolle at home.se  Wed Jul 28 06:14:25 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Wed Jul 28 06:14:24 2004
+Subject: No tabbing. Yes tabbing
+In-Reply-To: <4107743E.8050709@home.se>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>	<4106A90A.5070101@poignantguide.net>
+	<4107743E.8050709@home.se>
+Message-ID: <41077C81.2060107@home.se>
+
+> -Olle,
+>    like an elf at a sale in the vest dept.
+
+Yes, I was that elf for a little while, and I tabbed around, like a 
+tab-mad pogostick.
+
+Then I wanted to complete the steps of the Expansion kit. In essence, 
+I needed to ri some commands. To wit:
+
+irb(main):002:0> ri Enumerable#zip
+NoMethodError: undefined method `ri' for main:Object
+         from (irb):2
+irb(main):003:0> ro
+NameError: undefined local variable or method `ro' for main:Object
+         from (irb):3
+irb(main):004:0> ri
+NameError: undefined local variable or method `ri' for main:Object
+         from (irb):4
+irb(main):005:0>
+
+As you can tell, I even resorted to mistyping ri.
+
+Is there any more magic to set this right?
+
+-Olle
+
+From olleolleolle at home.se  Wed Jul 28 06:39:44 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Wed Jul 28 06:39:41 2004
+Subject: No ri for me
+In-Reply-To: <41077C81.2060107@home.se>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>	<4106A90A.5070101@poignantguide.net>	<4107743E.8050709@home.se>
+	<41077C81.2060107@home.se>
+Message-ID: <41078270.5050504@home.se>
+
+Hi list,
+
+OK, my troubles are yours. Here I go:
+
+1. found an (Pragmatic Programmers) install version of ri. Also on 
+RubyCentral.
+http://www.rubycentral.com/downloads/ri.html
+
+2. Read some README. Put the files where they wanted to be, after the 
+install.rb script failed, it gave some type error.
+
+3. Ran my irb and "ri rescue":
+irb(main):001:0> ri rescue
+SyntaxError: compile error
+(irb):1: syntax error
+         from (irb):1
+irb(main):002:0>
+
+It seems to me the files I added to Ruby are old in some way. Has the 
+language deprecated a lot of parts of itself since 2002? End of my 
+speculation.
+
+(So you know: I uninstalled the Ruby-folder with the uninstaller 
+before I installed the package from the Poignant Guide. I am using the 
+new files. I am pretty sure.)
+
+
+
+From rob at tarasis.net  Wed Jul 28 06:39:31 2004
+From: rob at tarasis.net (Robert McGovern)
+Date: Wed Jul 28 06:39:47 2004
+Subject: No tabbing. Yes tabbing
+In-Reply-To: <41077C81.2060107@home.se>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+	<20040727043625.GA43666@topi.cc>
+	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+	<41066FF9.4020100@home.se> <4106A90A.5070101@poignantguide.net>
+	<4107743E.8050709@home.se> <41077C81.2060107@home.se>
+Message-ID: <20040728103931.GB2112@al>
+
+> irb(main):002:0> ri Enumerable#zip
+> NoMethodError: undefined method `ri' for main:Object
+>         from (irb):2
+>
+> As you can tell, I even resorted to mistyping ri.
+> 
+> Is there any more magic to set this right?
+
+Olle,
+
+You don't run ri from inside irb. You should run it from your appropriate command line. For instance 
+on my Cygwin session (where $ is my prompt)
+
+robertm@al ~
+$ ri Enumerable#zip
+
+--------------------------------------------------------- Enumerable#zip
+     enum.zip(arg, ...)                   => array
+     enum.zip(arg, ...) {|arr| block }    => nil
+------------------------------------------------------------------------
+     Converts any arguments to arrays, then merges elements of _enum_
+     with corresponding elements from each argument. This generates a
+     sequence of +enum#size+ _n_-element arrays, where _n_ is one more
+     that the count of arguments. If the size of any argument is less
+     than +enum#size+, +nil+ values are supplied. If a block given, it
+     is invoked for each output array, otherwise an array of arrays is
+     returned.
+
+        a = [ 4, 5, 6 ]
+        b = [ 7, 8, 9 ]
+
+        (1..3).zip(a, b)      #=> [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+        "cat\ndog".zip([1])   #=> [["cat\n", 1], ["dog", nil]]
+        (1..3).zip            #=> [[1], [2], [3]]
+
+$
+From olleolleolle at home.se  Wed Jul 28 06:51:57 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Wed Jul 28 06:51:55 2004
+Subject: Ri works. Wow, thanks
+In-Reply-To: <41078270.5050504@home.se>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>	<4106A90A.5070101@poignantguide.net>	<4107743E.8050709@home.se>	<41077C81.2060107@home.se>
+	<41078270.5050504@home.se>
+Message-ID: <4107854D.4090206@home.se>
+
+Oh, hello Robert (and the rest of you)!
+
+Thanks. So much. I did some discovering, and found you right. But 
+without your email to remove my preconceptions, I would've wasted more 
+time. Thanks so much, this is very well.
+
+Proof:
+
+C:\Documents and Settings\olle>ri eval
+------------------------------------------------------------ Kernel#eval
+      eval(string [, binding [, filename [,lineno]]])  => obj
+------------------------------------------------------------------------
+      Evaluates the Ruby expression(s) in _string_. If _binding_ is
+      given, the evaluation is performed in its context. The binding may
+      be a +Binding+ object or a +Proc+ object. If the optional
+      _filename_ and _lineno_ parameters are present, they will be used
+      when reporting syntax errors.
+
+         def getBinding(str)
+           return binding
+         end
+         str = "hello"
+         eval "str + ' Fred'"                      #=> "hello Fred"
+         eval "str + ' Fred'", getBinding("bye")   #=> "bye Fred"
+
+
+C:\Documents and Settings\olle>
+
+From rob at tarasis.net  Wed Jul 28 07:04:29 2004
+From: rob at tarasis.net (Robert McGovern)
+Date: Wed Jul 28 07:04:30 2004
+Subject: Ri works. Wow, thanks
+In-Reply-To: <4107854D.4090206@home.se>
+References: <41059184.2030300@poignantguide.net>
+	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>
+	<20040727043625.GA43666@topi.cc>
+	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>
+	<41066FF9.4020100@home.se> <4106A90A.5070101@poignantguide.net>
+	<4107743E.8050709@home.se> <41077C81.2060107@home.se>
+	<41078270.5050504@home.se> <4107854D.4090206@home.se>
+Message-ID: <20040728110429.GC2112@al>
+
+On Wed, Jul 28, 2004 at 12:51:57PM +0200, Olle Jonsson wrote:
+> Oh, hello Robert (and the rest of you)!
+> 
+> Thanks. So much. I did some discovering, and found you right. But 
+> without your email to remove my preconceptions, I would've wasted more 
+> time. Thanks so much, this is very well.
+> 
+> Proof:
+
+Excellent stuff, hopefully this will mean the elves have more time to play
+
+:)
+From why at poignantguide.net  Thu Jul 29 16:47:37 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Jul 29 16:48:00 2004
+Subject: Ri in Irb
+In-Reply-To: <20040728103931.GB2112@al>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>
+	<4106A90A.5070101@poignantguide.net>	<4107743E.8050709@home.se>
+	<41077C81.2060107@home.se> <20040728103931.GB2112@al>
+Message-ID: <41096269.6060509@poignantguide.net>
+
+Robert McGovern wrote:
+
+>You don't run ri from inside irb. You should run it from your appropriate command line.
+>
+Can I recommend votes? For RCR #197: Ri should be accessible through 
+Irb. [1]
+
+_why
+
+[1] http://rcrchive.net/rcr/RCR/RCR197
+From why at poignantguide.net  Thu Jul 29 16:55:22 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Jul 29 16:55:34 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <4106A90A.5070101@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>
+	<4106A90A.5070101@poignantguide.net>
+Message-ID: <4109643A.8030607@poignantguide.net>
+
+why the lucky stiff wrote:
+
+> Olle Jonsson wrote:
+>
+>> This is what my irb told me, when I was so happy and had downloaded
+>> the newest ruby from the net. It seems I lack some extras that 
+>> weren't included in that big, round package that Windows installed, 
+>> like a cat lapping milk.
+>
+> Okay, I think I've got an answer to this.  Download:
+>
+>  http://whytheluckystiff.net/ruby/dist/readline.so-for-1.8.zip
+>
+This whole saga is reduce to a tiny dent in the expansion pak now.  And 
+sounds like Curt Hibbs is improving the win install to make it easy.  
+The OS X situation still needs improving I think.
+
+Simon, how is your Irb?  Any better?
+
+_why
+From swillison at ljworld.com  Thu Jul 29 20:49:37 2004
+From: swillison at ljworld.com (Simon Willison)
+Date: Thu Jul 29 20:49:41 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <4109643A.8030607@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>
+	<4106A90A.5070101@poignantguide.net>
+	<4109643A.8030607@poignantguide.net>
+Message-ID: <550BABCA-E1C2-11D8-A626-000A95984810@ljworld.com>
+
+On Jul 29, 2004, at 3:55 PM, why the lucky stiff wrote:
+> why the lucky stiff wrote:
+> This whole saga is reduce to a tiny dent in the expansion pak now.  
+> And sounds like Curt Hibbs is improving the win install to make it 
+> easy.  The OS X situation still needs improving I think.
+>
+> Simon, how is your Irb?  Any better?
+
+Sadly not - I haven't found a way of getting readline working with Ruby 
+1.8.1 yet :( I'll try to have another play over the weekend.
+
+Cheers,
+
+Simon
+
+From olleolleolle at home.se  Fri Jul 30 03:42:25 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Fri Jul 30 03:42:31 2004
+Subject: Ri in Irb
+In-Reply-To: <41096269.6060509@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>	<4106A90A.5070101@poignantguide.net>	<4107743E.8050709@home.se>	<41077C81.2060107@home.se>
+	<20040728103931.GB2112@al> <41096269.6060509@poignantguide.net>
+Message-ID: <4109FBE1.9030506@home.se>
+
+why the lucky stiff:
+> Robert McGovern wrote:
+> 
+>> You don't run ri from inside irb. You should run it from your 
+>> appropriate command line.
+>>
+> Can I recommend votes? For RCR #197: Ri should be accessible through 
+> Irb. [1]
+> 
+> _why
+What he said: Yeah, go and vote.
+
+Seven strong advocates, already. Let's ad-vo-cate that thing.
+
+I now understand how strong a platform that Poignant Guide can be for 
+your cause, why (or should I say Muad'Dib?).
+
+I just want that feature, is all.
+> 
+> [1] http://rcrchive.net/rcr/RCR/RCR197
+
+-Olle
+
+From cow-2001 at bezeqint.net  Fri Jul 30 09:56:46 2004
+From: cow-2001 at bezeqint.net (Yuval)
+Date: Fri Jul 30 10:00:24 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <4109643A.8030607@poignantguide.net>
+References: <41059184.2030300@poignantguide.net>	<839D875A-DF5F-11D8-97C7-000A95984810@ljworld.com>	<20040727043625.GA43666@topi.cc>	<192E1CA8-DF8B-11D8-960A-000A95BC6C1A@mac.com>	<41066FF9.4020100@home.se>	<4106A90A.5070101@poignantguide.net>
+	<4109643A.8030607@poignantguide.net>
+Message-ID: <410A539E.3050400@bezeqint.net>
+
+why the lucky stiff wrote:
+> why the lucky stiff wrote:
+> 
+>> Olle Jonsson wrote:
+>>
+>>> This is what my irb told me, when I was so happy and had downloaded
+>>> the newest ruby from the net. It seems I lack some extras that 
+>>> weren't included in that big, round package that Windows installed, 
+>>> like a cat lapping milk.
+>>
+>>
+>> Okay, I think I've got an answer to this.  Download:
+>>
+>>  http://whytheluckystiff.net/ruby/dist/readline.so-for-1.8.zip
+>>
+> This whole saga is reduce to a tiny dent in the expansion pak now.  And 
+> sounds like Curt Hibbs is improving the win install to make it easy.  
+> The OS X situation still needs improving I think.
+> 
+> Simon, how is your Irb?  Any better?
+> 
+> _why
+
+Hi all,
+Why, I have inserted the commands you have told us in pak-1 to memorize
+to ~/.irbrc: "require 'irb/completion'", I think it's good for people who
+don't want to memorize too many things and it works automaticly without typing
+a too long command, what do you think?
+
+I hope irb's tab completion will become friendlier to users and programmers
+of Ruby in the near future, it is a great feature.
+From aaron at munge.net  Fri Jul 30 10:30:52 2004
+From: aaron at munge.net (Aaron Malone)
+Date: Fri Jul 30 10:30:58 2004
+Subject: No tabbing, why. Why?
+In-Reply-To: <550BABCA-E1C2-11D8-A626-000A95984810@ljworld.com>
+References: <41059184.2030300@poignantguide.net>
+	<4109643A.8030607@poignantguide.net>
+	<550BABCA-E1C2-11D8-A626-000A95984810@ljworld.com>
+Message-ID: <200407300930.52438.aaron@munge.net>
+
+On Thursday 29 July 2004 19:49, Simon Willison wrote:
+> Sadly not - I haven't found a way of getting readline working with
+> Ruby 1.8.1 yet :( I'll try to have another play over the weekend.
+
+The simplest way I've found is to use ruby from darwinports 
+(http://darwinports.opendarwin.org/) or fink (http://fink.sf.net).  
+I've built my own with readline support, but it involved compiling a 
+new readline library, as I recall.
+-- 
+Aaron Malone
+aaron@munge.net

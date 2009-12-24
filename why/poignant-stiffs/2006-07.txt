@@ -1,0 +1,79 @@
+From boss at topfunky.com  Fri Jul 14 14:41:17 2006
+From: boss at topfunky.com (Geoffrey Grosenbach)
+Date: Fri, 14 Jul 2006 11:41:17 -0700
+Subject: Printed Version
+Message-ID: <0A4DA97F-281B-4800-B5CA-EB016F96323C@topfunky.com>
+
+I'm teaching a Ruby workshop to high school students and it might be  
+nice to have a printed copy of the Poignant Guide. I'm thinking of  
+doing a layout and using a service like http://lulu.com to print it.  
+I think I could do it for $15-20 per copy.
+
+Is the gentleman who put together the Poignant PDF still on this  
+list? Did you use PageMaker/Indesign/Quark to do the layout, or  
+something else? Could I get a copy of the original files so I can  
+reformat them for book printing? Otherwise I'll just start from scratch.
+
+
+Thanks,
+Geoffrey Grosenbach
+boss at topfunky.com
+
+......................................
+Ruby on Rails Blog | http://nubyonrails.com
+
+
+
+
+
+From jperrie at us.ibm.com  Mon Jul 17 11:26:52 2006
+From: jperrie at us.ibm.com (Joseph Perrie)
+Date: Mon, 17 Jul 2006 10:26:52 -0500
+Subject: Chapter 6 Error
+Message-ID: <OFBB8E28B1.617B6649-ON862571AE.0054B0F2-862571AE.0054D64B@us.ibm.com>
+
+
+I noticed that a code example in chapter-6.html seems to flag an error in
+1.8.4.
+
+m = "bats!"
+ eval %{
+   def #{ m }
+     puts "{" * 100
+   end
+}
+
+bats.rb:2: unterminated string meets end of file
+
+The "{" has to be "\{" or Ruby 1.8.4 flags the %{} block as an unterminated
+string.
+
+Regards,
+
+Tony
+
+
+From wolfmanusa at yahoo.com  Fri Jul 28 09:37:59 2006
+From: wolfmanusa at yahoo.com (wolfman)
+Date: Fri, 28 Jul 2006 06:37:59 -0700 (PDT)
+Subject: Goofy Code
+Message-ID: <20060728133759.71301.qmail@web60711.mail.yahoo.com>
+
+I find this book very entertaining and quite useful.
+   
+  My only critique is the use of 'Goofy' code. When learning a new language, it's best if the material contains useful working code to experiment with. This way you know what your learning actually works and can be used to create your own code.
+   
+  It would be nice to have the code for endertromb and have the wordlist require work.
+  I simple took the code_words Hash and stuck it at the top of the program that uses it.
+   
+  Having fun with Ruby.
+   
+  Thanks
+
+ 		
+---------------------------------
+How low will we go? Check out Yahoo! Messenger?s low  PC-to-Phone call rates.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060728/eb366b59/attachment.html 
+

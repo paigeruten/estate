@@ -1,0 +1,234 @@
+From glasse at cs.rpi.edu  Wed Apr 11 03:18:58 2007
+From: glasse at cs.rpi.edu (Ethan Glasser-Camp)
+Date: Wed, 11 Apr 2007 03:18:58 -0400
+Subject: Preeventualist servers down
+Message-ID: <461C8BE2.1090409@cs.rpi.edu>
+
+Hi,
+
+I was rereading the Poignant Guide again for like the 80th time today
+and discovered that the preeventualist.org site is down. I know this
+isn't something you can directly affect but it does kind of ruin your
+examples in chapter 6. Maybe you can let the Preeventualist Youth
+Group know or recommend them a good hosting service?
+
+Ethan
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 252 bytes
+Desc: OpenPGP digital signature
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070411/8bd949cd/attachment.bin 
+
+From why at poignantguide.net  Wed Apr 25 16:38:33 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed, 25 Apr 2007 15:38:33 -0500
+Subject: + Hackety Hack +
+Message-ID: <20070425203833.GE28530@beekeeper.hobix.com>
+
+Friends of the (Poignant) Guide,
+
+Any of you remember that /SECRET PROJECT/ from the beginning of March?
+I needed some folks using Windows to shell out some precious time to
+see if I could help them learn Ruby.
+
+The secret project is: Hackety Hack.  It's a Windows program for
+learning Ruby with lots of fun examples: downloading mp3s, writing
+blogs, chatware, and so on.
+
+AND, WELL, >>MOTHER CAREY'S CHICKENS<< IT WORKED!!
+
+I ended up with 50 participants, about half stuck with it and we saw
+some amazing progress.  I've asked the participants to blog about
+their experiences, here are the first few:
+
+ * http://www.greaterbostonrubyandrails.com/HacketyHackBlog.html
+ * http://ostracons.com/entry/272/programmed
+ * http://willscott.name/2007/04/23/HacketyHack
+
+Thankyou to the fine, fine people who applied themselves to make
+this happen.  It was one of those beautiful, unforgettable times
+that really changed my life!!  Truly adventure-sized!!
+
+_why
+
+From why at poignantguide.net  Wed Apr 25 17:10:56 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed, 25 Apr 2007 16:10:56 -0500
+Subject: + Hackety Hack +
+In-Reply-To: <20070425203833.GE28530@beekeeper.hobix.com>
+References: <20070425203833.GE28530@beekeeper.hobix.com>
+Message-ID: <20070425211056.GF28530@beekeeper.hobix.com>
+
+On Wed, Apr 25, 2007 at 03:38:33PM -0500, why the lucky stiff wrote:
+> The secret project is: Hackety Hack.  It's a Windows program for
+> learning Ruby with lots of fun examples: downloading mp3s, writing
+> blogs, chatware, and so on.
+
+I should also mention that Brian DeLacey, who has been an
+instrumental force in building Hackety Hack (and whose three young
+kids have been learning Ruby as we speak,) will be showcasing
+H-ety H in Boston:
+
+  This next meeting will be on Tuesday, May 8th from 7 to 9pm at 1
+  Broadway St, Kendall Square, Cambridge.
+
+  We plan to spend about 45 minutes on an introductory demonstration
+  and discussion of _why's latest creation, Hackety Hack. The tour
+  will be led by a tag-team of beta testers (including Eric Mill,
+  Kevin Driscoll and Brian DeLacey) who have been using this since
+  early March.
+
+Oh, wow, Eric Mill and Kevin D. as well.  These guys _get_ HH!!  If
+you see them at the meeting, jog their hands fiercely and say THANKS
+to them!!
+
+_why
+
+From hotdog003 at gmail.com  Wed Apr 25 19:01:40 2007
+From: hotdog003 at gmail.com (Michael Wilber)
+Date: Wed, 25 Apr 2007 17:01:40 -0600
+Subject: + Hackety Hack +
+In-Reply-To: <20070425203833.GE28530@beekeeper.hobix.com>
+References: <20070425203833.GE28530@beekeeper.hobix.com>
+Message-ID: <462FDDD4.7030808@gmail.com>
+
+Ok, now that is Seriously Awesome ! *drools*
+I'm guessing that the link is http://hacketyhack.net/ ?
+> Friends of the (Poignant) Guide,
+>
+> Any of you remember that /SECRET PROJECT/ from the beginning of March?
+> I needed some folks using Windows to shell out some precious time to
+> see if I could help them learn Ruby.
+>
+> The secret project is: Hackety Hack.  It's a Windows program for
+> learning Ruby with lots of fun examples: downloading mp3s, writing
+> blogs, chatware, and so on.
+-- 
+-Hotdog003
+
+
+From cdcarter at gmail.com  Wed Apr 25 19:10:23 2007
+From: cdcarter at gmail.com (Chris Carter)
+Date: Wed, 25 Apr 2007 18:10:23 -0500
+Subject: + Hackety Hack +
+In-Reply-To: <20070425203833.GE28530@beekeeper.hobix.com>
+References: <20070425203833.GE28530@beekeeper.hobix.com>
+Message-ID: <86987bdf0704251610k4009f83frb63a462a990a97d3@mail.gmail.com>
+
+On 4/25/07, why the lucky stiff <why at poignantguide.net> wrote:
+> Friends of the (Poignant) Guide,
+>
+> Any of you remember that /SECRET PROJECT/ from the beginning of March?
+> I needed some folks using Windows to shell out some precious time to
+> see if I could help them learn Ruby.
+>
+> The secret project is: Hackety Hack.  It's a Windows program for
+> learning Ruby with lots of fun examples: downloading mp3s, writing
+> blogs, chatware, and so on.
+>
+> AND, WELL, >>MOTHER CAREY'S CHICKENS<< IT WORKED!!
+>
+> I ended up with 50 participants, about half stuck with it and we saw
+> some amazing progress.  I've asked the participants to blog about
+> their experiences, here are the first few:
+>
+>  * http://www.greaterbostonrubyandrails.com/HacketyHackBlog.html
+>  * http://ostracons.com/entry/272/programmed
+>  * http://willscott.name/2007/04/23/HacketyHack
+>
+> Thankyou to the fine, fine people who applied themselves to make
+> this happen.  It was one of those beautiful, unforgettable times
+> that really changed my life!!  Truly adventure-sized!!
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+hi _why!
+
+Will the source for Hackety Hack be opened.  I would love to see how
+it is implemented, and do crazy shit with it.  Like support for JRuby,
+or Lisp.  I dunno, but it would be cool!
+
+-- 
+Chris Carter
+concentrationstudios.com
+brynmawrcs.com
+
+From jaime at railes.net  Thu Apr 26 06:43:27 2007
+From: jaime at railes.net (Jaime Iniesta)
+Date: Thu, 26 Apr 2007 12:43:27 +0200
+Subject: + Hackety Hack +
+In-Reply-To: <20070425203833.GE28530@beekeeper.hobix.com>
+References: <20070425203833.GE28530@beekeeper.hobix.com>
+Message-ID: <1177584207.9073.14.camel@zimpa>
+
+Hi!
+
+El mi?, 25-04-2007 a las 15:38 -0500, why the lucky stiff escribi?:
+> The secret project is: Hackety Hack.  It's a Windows program for
+
+Sounds nice. I tried to install it using Wine on Ubuntu (Feisty Fawn)
+GNU/Linux, and it installs but then doesn't work properly. It says
+"uninitialized constant Camping". Nope, I haven't installed camping on
+my computer, should I? Do you think it will work on Ubuntu?
+
+Thanks,
+
+-- 
+Jaime Iniesta <jaime at railes.net>
+
+
+From deps81 at gmail.com  Thu Apr 26 06:55:47 2007
+From: deps81 at gmail.com (deps)
+Date: Thu, 26 Apr 2007 12:55:47 +0200
+Subject: + Hackety Hack +
+In-Reply-To: <20070425203833.GE28530@beekeeper.hobix.com>
+References: <20070425203833.GE28530@beekeeper.hobix.com>
+Message-ID: <6e48c9ee0704260355t1460bd04o2b2c04501cffbf76@mail.gmail.com>
+
+Is the registration turned off? HH told me to signup but all I got was a
+white page that told me that there was no user called signup.
+
+On 4/25/07, why the lucky stiff <why at poignantguide.net> wrote:
+>
+> Friends of the (Poignant) Guide,
+>
+> Any of you remember that /SECRET PROJECT/ from the beginning of March?
+> I needed some folks using Windows to shell out some precious time to
+> see if I could help them learn Ruby.
+>
+> The secret project is: Hackety Hack.  It's a Windows program for
+> learning Ruby with lots of fun examples: downloading mp3s, writing
+> blogs, chatware, and so on.
+>
+> AND, WELL, >>MOTHER CAREY'S CHICKENS<< IT WORKED!!
+>
+> I ended up with 50 participants, about half stuck with it and we saw
+> some amazing progress.  I've asked the participants to blog about
+> their experiences, here are the first few:
+>
+> * http://www.greaterbostonrubyandrails.com/HacketyHackBlog.html
+> * http://ostracons.com/entry/272/programmed
+> * http://willscott.name/2007/04/23/HacketyHack
+>
+> Thankyou to the fine, fine people who applied themselves to make
+> this happen.  It was one of those beautiful, unforgettable times
+> that really changed my life!!  Truly adventure-sized!!
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070426/93a98610/attachment.html 
+

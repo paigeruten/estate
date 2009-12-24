@@ -1,0 +1,11 @@
+/* I couldn't get a hold of the real styles.css from the original site.  All I
+ * can do really is center the title image.  That's the only obvious thing.
+ *
+ * To be clear, this isn't _why, this is jeremy, providing my own stylesheet for
+ * _why's site.
+ */
+
+#title {
+  text-align: center;
+}
+

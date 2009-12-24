@@ -1,0 +1,332 @@
+From wschenk at gmail.com  Wed Mar  9 16:56:16 2005
+From: wschenk at gmail.com (Will Schenk)
+Date: Wed Mar  9 16:51:57 2005
+Subject: The Cyberiad
+Message-ID: <b244e1b2050309135618001c1@mail.gmail.com>
+
+This is totally off-topic I know.
+
+I was reading the Cyberiad the other day and was struck by the humming
+echos between the Poignant's more fantastical passages and Lem's fine,
+fine work.  "The Third Sally, or the Dragons of Probability" in
+particular, but perhaps "The First Sally (A), (etc)" in which our
+cybernetic constructors attempt to make a poetry writing machine by
+first similuatating all of creation in order to have sufficient depth
+of experience.
+
+Any connection _why?  You wouldn't happen to be a native polish speaker...?
+
+http://www.amazon.com/gp/reader/0156027593/ref=sib_rdr_toc/103-3458102-6683846?%5Fencoding=UTF8&p=S00A#reader-page
+
+-w
+
+--
+Will Schenk
+http://www.sublimeguile.com
+From why at poignantguide.net  Fri Mar 11 16:34:38 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Fri Mar 11 16:30:14 2005
+Subject: The Cyberiad
+In-Reply-To: <b244e1b2050309135618001c1@mail.gmail.com>
+References: <b244e1b2050309135618001c1@mail.gmail.com>
+Message-ID: <42320EEE.5090409@poignantguide.net>
+
+Will Schenk wrote:
+
+>This is totally off-topic I know.
+>
+>I was reading the Cyberiad the other day and was struck by the humming
+>echos between the Poignant's more fantastical passages and Lem's fine,
+>fine work.  "The Third Sally, or the Dragons of Probability" in
+>particular, but perhaps "The First Sally (A), (etc)" in which our
+>cybernetic constructors attempt to make a poetry writing machine by
+>first similuatating all of creation in order to have sufficient depth
+>of experience.
+>
+>Any connection _why?  You wouldn't happen to be a native polish speaker...?
+>  
+>
+Sorry for the late reply.  Just getting through my e-mail now.
+
+I don't speak any Polish.  But, whenever I can, I try to write with a 
+Polish accent.  In fact, my name in full -- which reads: why the lucky 
+stiff -- is Polish for "an eight-nine year old man wearing too small of 
+a backpack stuffed with clocks."
+
+You know what?  I love that book.  I've got proof even:
+<http://www.whytheluckystiff.net/ruby/rubyconf.2002/panel.2.2-yaml/rSlide-14.html>
+
+Of the Lem books I've read, that one is by far my favorite.  The sixth 
+sally (or How Trurl and Klapaucius Created a Demon of the Second Kind to 
+Defeat the Pirate Pugg) is among one of my favorite stories ever.  Right 
+next to probably The Laughing Man (by J.D. Salinger) and TV People (by 
+Haruki Murakami).  I think I like The Cyberiad because it's more of a 
+short story collection.  I often prefer short story collections to books.
+
+So, yeah, I consider myself heavily influenced by slavic literature.  
+Gogol and Kafka and Kharms (and anything Oberiu) hold the lion's share 
+in my mind's governing committee.  If have more Polish authors, please.
+
+_why
+From Bil.Kleb at NASA.Gov  Sat Mar 12 05:42:25 2005
+From: Bil.Kleb at NASA.Gov (Bil Kleb)
+Date: Sat Mar 12 05:38:28 2005
+Subject: y worship?
+Message-ID: <4232C791.1060309@NASA.Gov>
+
+http://www.43things.com/things/view/67235
+
+Regards,
+--
+Bil Kleb
+http://fun3d.larc.nasa.gov
+From why at poignantguide.net  Wed Mar 23 11:22:18 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Mar 23 11:18:27 2005
+Subject: [ANN] Dwemthy's Array -- the Ruby mini_adventure
+Message-ID: <424197BA.9050001@poignantguide.net>
+
+Since you were a very young rabbit in little cotton pants, Dwemthy's 
+Array has breathed on your neck and you're tired of it.  You draw your 
+glistening Hero's Sword from its sheath and cut a low-circling falcon in 
+half as a confidence building exercise.  Your eyes flick about in a cool 
+and freaky way.
+
+You're ready...  It's time to stare this construct in the face.
+
+$$$ DWEMTHY_S ARRAY ^!^ A RUBY MINI_DUNGEON ^!^ CODE TO KILL BY $$$
+
+Here, try this: http://poignantguide.net/dwemthy/
+
+The sixth chapter of Why's (Poignant) Guide to Ruby is on its way.  This 
+chapter covers metaclasses and method_missing with the help of Dwemthy's 
+demonic list.  The code for the little RPG is now available.  A full 
+explanation is forthcoming in chapter six.
+
+Please send your hacks to the poignant-stiffs list.  Subscription 
+information is at http://poignant.rubyforge.org/.
+
+_why
+From why at poignantguide.net  Wed Mar 23 19:50:59 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Mar 23 19:47:35 2005
+Subject: [ANN] Dwemthy's Array -- the Ruby mini_adventure
+In-Reply-To: <493ae8fc05032316103da67625@mail.gmail.com>
+References: <424197BA.9050001@poignantguide.net>	
+	<493ae8fc050323135763be0cf8@mail.gmail.com>
+	<493ae8fc05032316103da67625@mail.gmail.com>
+Message-ID: <42420EF3.2090804@poignantguide.net>
+
+Karen Pouelle wrote:
+> 
+> I found the missing code:
+>
+
+See, that code is possessed.  Earlier, before I put up the site, I was 
+testing things and I happened to look at the page through a 
+blood-encrusted spyglass and _that very code_ vanished when I did so.
+
+It really affected me, really spooked me out, so I locked up all my dogs 
+and cockatiels out in the shed, barring the door twice.  Then, later, 
+when I got back from jazz dance, I opened the shed and the place was 
+covered in roach blood -- my pets were all huddled together, keeping 
+each other warm -- and there in the center of the room... was a DETACHED 
+TERMINAL WINDOW (vt100).
+
+It had one of Dwemthy's IRC sessions in it and the screen was full of 
+trout slaps.  I screamed at full volume.
+
+> Apparently, the cut/paste ended too soon, cued by the end
+> end which ended the class.  I'm not sure why people do that,
+> but personal confusion results, as I thought the end
+> end was the end.  The class DwemthysArray's end was end
+> end.
+> 
+> Why do people SOMETIMES separate classes from definitions
+> with an extra line?  That seems like a larger mystery than
+> how this array thing works.  Maybe there will be a chapter or
+> aside on such a silly thing as where and why whitespace
+> is placed.
+
+It's the equivalent of taking a shallow breath in the ocean.  Oh, and I 
+have asthma.  I hope I've made that painfully clear.
+
+Thankyou for venturing into the hazards of Dwemthy's Array, Karen.  If 
+you like the game, a link on del.icio.us would do well...  Or e-mail it 
+to a friend...
+
+Or some have promised ewe cheese and Vietnamese donuts just this week.
+
+_why
+
+From ntalbott at gmail.com  Wed Mar 23 21:13:21 2005
+From: ntalbott at gmail.com (Nathaniel Talbott)
+Date: Wed Mar 23 21:08:29 2005
+Subject: Where's the magick???
+Message-ID: <f38b43ef050323181323a4f93c@mail.gmail.com>
+
+So I have my little rabbit, and he's got all this charisma (he's
+thinking of running for prez, but first he's got this labor union of
+monsters to stomp on). Occasionally I noticed he was getting [magick
+powers up!] and I wondered if that would get him more votes in the
+future. Looking at the code, though, it's just one of those misleading
+exit poll thingies, run by no other than Dwemthy himself, sent to
+raise my little guy's hopes (he's going to run on the "but I'm a cute
+bunny... who wouldn't trust me?!?" platform) and then dashes them to
+the ground.
+
+And, you see, he can't take this, since his brother's about to get
+eaten... so don't forget to http://savetoby.com/ !
+
+Vote for the little guy! And give him some p_up already!
+
+-- 
+Nathaniel
+
+<:((><
+From why at poignantguide.net  Thu Mar 24 02:47:13 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Mar 24 02:43:47 2005
+Subject: Where's the magick???
+In-Reply-To: <f38b43ef050323181323a4f93c@mail.gmail.com>
+References: <f38b43ef050323181323a4f93c@mail.gmail.com>
+Message-ID: <42427081.90100@poignantguide.net>
+
+Nathaniel Talbott wrote:
+
+>Occasionally I noticed he was getting [magick
+>powers up!] and I wondered if that would get him more votes in the
+>future. Looking at the code, though, it's just one of those misleading
+>exit poll thingies, run by no other than Dwemthy himself, sent to
+>raise my little guy's hopes...
+>
+Dwemthy is not responsible for this.  He is in supreme outrage.  He is 
+swinging his mace and shield around in cavalier fashion.  His lions 
+aren't happy as well.  He's playing heavy metal way too loud.  His 
+neighbors are banging on the wall.  Seriously, his speakers are shot.  
+It's like metal dogs are screaming at welding equipment.
+
+>Vote for the little guy! And give him some p_up already!
+>  
+>
+I like you.  Come, let's be brothers.
+
+Watch it take me upwards of 48 hours to work up an increment operation.  
+Looks like I've got to go back and get my tools out.  Gheesh, beaver 
+tales already.
+
+_why
+From why at poignantguide.net  Fri Mar 25 13:23:29 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Fri Mar 25 13:18:36 2005
+Subject: Dwemthy Hacks: 3 from Daiv Brt
+Message-ID: <42445721.6030208@poignantguide.net>
+
+A laser and non-resurrective lettuce.  But the second hack, the 
+automatic game winner is loverly!
+
+_why
+-------------- next part --------------
+An embedded message was scrubbed...
+From: "Dave Burt" <dave@burt.id.au>
+Subject: Re: [ANN] Dwemthy's Array -- the Ruby mini_adventure
+Date: Fri, 25 Mar 2005 17:54:48 +0900
+Size: 7812
+Url: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050325/e661fa8d/ANNDwemthysArray--theRubymini_adventure.eml
+From olleolleolle at home.se  Mon Mar 28 16:47:55 2005
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Mon Mar 28 16:42:59 2005
+Subject: Dwemthy Hacks: 3 from Daiv Brt
+In-Reply-To: <42445721.6030208@poignantguide.net>
+Message-ID: <200503282147.j2SLlrZm016296@smtp020.tiscali.dk>
+
+> -----Original Message-----
+> Subject: Dwemthy Hacks: 3 from Daiv Brt
+> 
+> A laser and non-resurrective lettuce.  But the second hack, 
+> the automatic game winner is loverly!
+> 
+> _why
+> 
+
+http://www.whirlitzer.org/cgi-bin/YaBB/YaBB.cgi?board=ruby;action=display;nu
+m=1020144994
+
+Am quoting that forum post here, fer yer all:
+---snip---
+RUBY I
+Humans (examples: Ruby, TJ Teru, And/Or, Techno-witches)
+Rodants (Rodant Kapoor)
+Androids (Angel Lips)
+Mole People (Moliere, Moleena)
+Aurorians (Monet, Moonbeam)
+Tookahs (Tookah)
+Robots (Sam the bardroid)
+Slimies
+Mutants (Toots)
+ 
+ 
+New additions can be found in:
+RUBY II
+Bulldada (Bulldada) 
+---snip---
+
+Thought it was a Why TPS generator or sth!
+
+Love,
+  Olle Jonsson
+
+
+From mental at rydia.net  Wed Mar 30 16:36:33 2005
+From: mental at rydia.net (mental@rydia.net)
+Date: Wed Mar 30 16:31:34 2005
+Subject: eval-less, send-less Creature.traits bleeds lemony goodness
+Message-ID: <1112218593.424b1be1d8151@www.rydia.net>
+
+Here's a version of Creature.traits from Dwemthy's Array that uses
+define_method (without requiring send):
+
+  def Creature.traits(*arr)
+    return @traits if arr.empty?
+    attr_accessor *arr
+    arr.each do |a|
+      (class << self ; self ; end).instance_eval {
+        define_method(a) {|val|
+          @traits ||= {}
+          @traits[a] = val
+        }
+      }
+    end
+    class_eval {
+      define_method(:initialize) {
+        self.class.traits.each do |k,v|
+          instance_variable_set("@#{k}", v)
+        end
+      }
+    }
+  end
+
+I much prefer this to using eval -- the key was the discovery that
+instance_eval/class_eval capture local variables.
+
+Look good, or can someone improve on this?
+
+-mental
+From mental at rydia.net  Wed Mar 30 16:41:45 2005
+From: mental at rydia.net (mental@rydia.net)
+Date: Wed Mar 30 16:36:45 2005
+Subject: addendum
+In-Reply-To: <1112218593.424b1be1d8151@www.rydia.net>
+References: <1112218593.424b1be1d8151@www.rydia.net>
+Message-ID: <1112218905.424b1d19e5f5f@www.rydia.net>
+
+Quoting myself:
+
+> I much prefer this to using eval -- the key was the discovery
+> that instance_eval/class_eval capture local variables.
+
+Well, of course I meant string evals.  Block evals don't count.
+
+Yes, that's it. >_>  <_<
+
+-mental

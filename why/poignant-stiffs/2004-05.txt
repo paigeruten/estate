@@ -1,0 +1,481 @@
+From rasputnik at hellooperator.net  Wed May 12 11:38:58 2004
+From: rasputnik at hellooperator.net (Dick Davies)
+Date: Wed May 12 12:10:21 2004
+Subject: recommended?
+In-Reply-To: <406B0771.80808@poignantguide.net>
+References: <406B0771.80808@poignantguide.net>
+Message-ID: <20040512153858.GA8958@lb.tenfour>
+
+* why the lucky stiff <why@poignantguide.net> [0302 19:02]:
+> cheerio.  just been getting back from vacation.  was very nice, thankyou.
+> 
+> getting back, here's the question primary on my mind:
+> 
+>  'can you foresee any reason you wouldn't recommend the Guide as the #1 
+> starting point for a Ruby newcomer?'
+
+I found this thread down the back of the sofa, so I'll brush some of the
+fluff off it while I've got five minutes.
+ 
+> i can understand not recommending it as it is incomplete.  but so far, 
+> does the book meet your criteria for instructing a newcomer?  
+
+How low is the entry level you are aiming for? Thinking of other tutorials
+I've read:
+
+Pickaxe
+  I learnt Ruby on a screen session over a fortnight of sleepless
+  nights with vi in one window, elinks surfing the online pickaxe
+  in the other and rocking my firstborn to sleep in a pushchair
+  with a free hand.
+  But I've recommended it to Perl types and they don't dig it because
+  it assumes you grok OOP already.
+
+Hals 'Ruby Way'
+  Filled the gaps from the pickaxe for me, a great cookbook. But not a 
+  start from scratch kind of thing.
+
+A Little Ruby, A Lot Of Objects
+  Never got finished, but an excellent style and the best explanation
+  of metaclasses I've read anywhere.
+
+
+WPGTR stands out because of its narrative nature, so I'm not sure I feel
+right saying 'x should be covered in chapter y' because that might
+jar with the flow....
+
+But do you have a clear idea of who you're teaching? Is a Ruby newcomer
+the same as a programming newcomer, for example?
+
+I got thinking about this by a post on -talk a minute ago, where a nuby 
+didn't understand the pickaxe because he was a newcomer to OOP and
+anything other than BASIC. 
+I couldn't very well say, 'learn Java in between calls on an ISP helpdesk,
+then UNIX. then Perl, then use Perl for sysadminning for a year or two,
+get roped into a Java development project because no one else understands RMI,
+toy with J2EE and gasp in horror at its bloat, learn to hate Java, and *then*
+read the Pickaxe......'
+
+-- 
+One of the lessons of history is that nothing is often a good thing to
+do and always a clever thing to say.
+		-- Will Durant
+Rasputin :: Jack of All Trades - Master of Nuns
+From why at poignantguide.net  Wed May 12 20:45:03 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed May 12 21:17:09 2004
+Subject: recommended?
+In-Reply-To: <20040512153858.GA8958@lb.tenfour>
+References: <406B0771.80808@poignantguide.net>
+	<20040512153858.GA8958@lb.tenfour>
+Message-ID: <40A2C50F.3000001@poignantguide.net>
+
+Dick Davies wrote:
+
+>WPGTR stands out because of its narrative nature, so I'm not sure I feel
+>right saying 'x should be covered in chapter y' because that might
+>jar with the flow....
+>  
+>
+Yeah, see I feel like the narrative flow is much more important than 
+trying to teaching concepts in order.  Yeah, sure, there's steps you 
+gotta take, but I think as long as each concept works in its 
+chronological context, then the thing works as a whole.  It doesn't make 
+the book a very good reference, but we've already got references.  I'm 
+not interested in rewriting the Pickaxe.
+
+>But do you have a clear idea of who you're teaching? Is a Ruby newcomer
+>the same as a programming newcomer, for example?
+>  
+>
+I'm speaking to the simplest of programming newcomers.  Within reason.  
+It's not worth explaining floppy drives and processor architecture and 
+memory management.  I'm not going to touch GC.  I'm not interested in 
+covering everything.   I'm not interested in validating Ruby on a 
+corporate level.  That's all besides the point.
+
+Users these days are sensing the dialogue with their computer.  They 
+type in URLs, these cryptic combinations of letters and dots and colons 
+and slashes.  And it takes them places.  I just want to be the next step 
+for them.  So that they can personally witness a language worth speaking 
+and visualize how it could expand their relationships with their machines.
+
+And, to be honest, I just want the thing to be poignant.  I want it to 
+evoke the poignant feelings I have when I see Ruby work.
+
+Like this.  Today I needed to recursively convert a bunch of files to 
+file mode 0644.  I probly could have done it with `find' and `chmod' 
+piped.  But I'm more comfortable with Ruby, so I did:
+
+  File.chmod( 0644, *Dir["**/*.txt"] )
+
+And it worked.  I yelped.  I absolutely love that it works that way.  
+I'm four years into using Ruby and I still get giddy.  (Yeah, not a good 
+example for beginners.)
+
+Anyway, to answer your question, I think both Ruby newcomers and 
+programming newcomers can benefit from a book that acts as a visually 
+engaging foray into a beautiful language.  But I really want to bring in 
+the innocents, because these other types are always in and out.
+
+Seriously, thanks for your comments, Dick.
+
+_why
+From why at poignantguide.net  Wed May 19 15:57:12 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed May 19 16:34:03 2004
+Subject: recommended?
+In-Reply-To: <20040513115227.GC358@lb.tenfour>
+References: <406B0771.80808@poignantguide.net>
+	<20040512153858.GA8958@lb.tenfour>
+	<40A2C50F.3000001@poignantguide.net>
+	<20040513115227.GC358@lb.tenfour>
+Message-ID: <40ABBC18.8070606@poignantguide.net>
+
+Dick Davies wrote:
+
+>ps : where's chapter 5 ?<duck>
+>
+Yeah, I just want to assure everyone that I've been working on the next 
+chapter.  I'm just getting more detailed in the art, the code examples 
+are thicker, the text becomes more involved.  So, yeah, it's quite 
+difficult, but I'm really happy with what's happening.
+
+I'm including the opening images from the next two chapters.  Chapter 
+Five "Them What Make the Rules and Them What Live the Dream" follows Dr. 
+Cham's travels in his interstellar bell jar.  Chapter Six "Downtown" 
+rejoins the foxes in the animal city of Wixl, where they continue 
+searching for their stolen pickup truck.
+
+Of course, there's more Scarf Eaters and craft diversions in these 
+chapters as well.  Perhaps I'll post some of the unedited material here 
+on the list for everyone to taste.
+
+_why
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: dr.cham-1.gif
+Type: image/gif
+Size: 51420 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040519/4dcc6fa9/dr.cham-1-0001.gif
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: foxes.city-1.jpg
+Type: image/jpeg
+Size: 117132 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040519/4dcc6fa9/foxes.city-1-0001.jpg
+From olleolleolle at home.se  Thu May 20 01:56:06 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Thu May 20 02:29:39 2004
+Subject: recommended?
+In-Reply-To: <40ABBC18.8070606@poignantguide.net>
+References: <406B0771.80808@poignantguide.net>	<20040512153858.GA8958@lb.tenfour>	<40A2C50F.3000001@poignantguide.net>	<20040513115227.GC358@lb.tenfour>
+	<40ABBC18.8070606@poignantguide.net>
+Message-ID: <40AC4876.5090500@home.se>
+
+This shows exactly why why is the Moebius of technical manuals. And I 
+*like* it.
+
+I am imagining a rather narrow role-playing game session with Ruby 
+nerds playing animals from Wixl on weird quests. Did I say that was a 
+rather narrow concept?
+-Olle
+> I'm including the opening images from the next two chapters.  Chapter 
+> Five "Them What Make the Rules and Them What Live the Dream" follows Dr. 
+> Cham's travels in his interstellar bell jar.  Chapter Six "Downtown" 
+> rejoins the foxes in the animal city of Wixl, where they continue 
+> searching for their stolen pickup truck.
+> 
+> Of course, there's more Scarf Eaters and craft diversions in these 
+> chapters as well.  Perhaps I'll post some of the unedited material here 
+> on the list for everyone to taste.
+> 
+> _why
+
+From why at poignantguide.net  Thu May 20 03:03:13 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu May 20 03:36:49 2004
+Subject: recommended?
+In-Reply-To: <40AC4876.5090500@home.se>
+References: <406B0771.80808@poignantguide.net>	<20040512153858.GA8958@lb.tenfour>	<40A2C50F.3000001@poignantguide.net>	<20040513115227.GC358@lb.tenfour>	<40ABBC18.8070606@poignantguide.net>
+	<40AC4876.5090500@home.se>
+Message-ID: <40AC5831.9080200@poignantguide.net>
+
+Olle Jonsson wrote:
+> I am imagining a rather narrow role-playing game session with Ruby nerds 
+> playing animals from Wixl on weird quests. Did I say that was a rather 
+> narrow concept?
+> -Olle
+
+Once chapter 6 is out, let's flesh out some rules and I have a perfect 
+place for it in chapter 9.  Then, rather than having errata or new 
+"versions" of the book: expansion packs.
+
+Wanna try your hand at a character sheet?  Seriously!
+
+_why (on the phone with the pewter figurine peoples...)
+
+From ryanplatte at pobox.com  Tue May 25 11:03:42 2004
+From: ryanplatte at pobox.com (Ryan Platte)
+Date: Tue May 25 11:38:57 2004
+Subject: You asked, at the beginning of chapter 4
+Message-ID: <B60D20D6-AE5C-11D8-89F1-000A95EB0812@pobox.com>
+
+I feel real, mostly.
+
+-- 
+Ryan Platte
+ryanplatte@pobox.com
+
+From andrewj at bcm.tmc.edu  Tue May 25 13:24:53 2004
+From: andrewj at bcm.tmc.edu (Andrew R Jackson)
+Date: Tue May 25 14:00:09 2004
+Subject: You asked, at the beginning of chapter 4
+In-Reply-To: <B60D20D6-AE5C-11D8-89F1-000A95EB0812@pobox.com>
+Message-ID: <000001c4427d$31980c90$3299f980@Sodaash>
+
+
+> I feel real, mostly.
+
+For sure on that.
+
+Speaking of chapter 4, I've had to explain the following confusion to
+some protoConverts (which are every new staff member and grad student ;)
+
+Given Chapter 4 and
+	plasticCup = nil
+It follows that
+	plasticCup.empty?
+Which actually, doesn't.
+
+Then I have to explain that empty doesn't mean empty. No, no, empty does
+mean empty in Ruby, just not in chapter 4. But I get to explain how
+"nothing" doesn't respond well to adjectives and using them to describe
+"nothing" leads to duct tape.
+
+"Is nothing green?"
+	No, there's nothing to be green.
+"The what colour is nothing?"
+	Um, there's nothing to have a colour.
+"Is nothing 4?"
+	No.
+"How full is nothing?"
+	Um, there's nothing to be full.
+"Well, is it like 1/60th full?"
+	No.
+"Well, maybe it's 0/60th full. You know, empty?"
+	No, there's nothing to be empty.
+	Just ask Ruby: nil.empty?
+"Can I fill nothing with something?"
+	No.
+"Is nothing nothing?"
+	Yes, just ask Ruby: nil.nil?
+"Is plasticCup nothing?"
+	Yes, just ask Ruby: plasticCup.nil?
+"Is plasticCup empty?"
+	Haven't you been paying attention?
+	Where's the duct tape, I have a headache
+
+Of course, when I get a counter like:
+	class Nil ; def empty? ; true ; end ; end
+	plasticCup = Nil.new()
+	plasticCup.empty?
+
+I get to say
+	"welcome to Ruby. have fun redefining reality."
+
+
+Anyway, just ignore such silliness.
+
+Kickass book, why! The best book concerning a programming language I've
+read. Ever. Pretty much the worst reference for a programming language
+I've got (this is, as I'm sure you realize, also a compliment ;)
+
+Andrew
+
+
+From ryanplatte at pobox.com  Tue May 25 13:36:34 2004
+From: ryanplatte at pobox.com (Ryan Platte)
+Date: Tue May 25 14:11:52 2004
+Subject: You asked, at the beginning of chapter 4
+In-Reply-To: <000001c4427d$31980c90$3299f980@Sodaash>
+References: <000001c4427d$31980c90$3299f980@Sodaash>
+Message-ID: <116B2E26-AE72-11D8-89F1-000A95EB0812@pobox.com>
+
+On 2004 May 25, at 12:24, Andrew R Jackson wrote:
+
+> Of course, when I get a counter like:
+> 	class Nil ; def empty? ; true ; end ; end
+> 	plasticCup = Nil.new()
+> 	plasticCup.empty?
+>
+> I get to say
+> 	"welcome to Ruby. have fun redefining reality."
+
+By the by, NilClass is there to redefine the real nil, not that there's 
+anything there to redefine, or ... wait. Anyway, whether or not it's 
+possible, here's the code:
+
+irb(main):001:0> a.empty?
+NameError: undefined local variable or method `a' for main:Object
+         from (irb):1
+irb(main):002:0> a = nil
+=> nil
+irb(main):003:0> a.empty?
+NoMethodError: undefined method `empty?' for nil:NilClass
+         from (irb):3
+irb(main):004:0> class NilClass
+irb(main):005:1> def empty?; true; end
+irb(main):006:1> end
+=> nil
+irb(main):007:0> a.empty?
+=> true
+
+-- 
+Ryan Platte
+ryanplatte@pobox.com
+
+From andrewj at bcm.tmc.edu  Tue May 25 13:43:31 2004
+From: andrewj at bcm.tmc.edu (Andrew R Jackson)
+Date: Tue May 25 14:18:56 2004
+Subject: You asked, at the beginning of chapter 4
+In-Reply-To: <116B2E26-AE72-11D8-89F1-000A95EB0812@pobox.com>
+Message-ID: <000101c4427f$ce14dc90$3299f980@Sodaash>
+
+
+Thanks Ryan, that's even better!
+While the default reality doesn't let plasticCup.empty? if plasticCup =
+nil first, it's nice to be able to tweak reality to suit your examples
+;) I think I might discourage this though...dealing with the regular
+reality is problematic enough. Well, for me.
+
+Andrew
+
+
+> -----Original Message-----
+> From: poignant-stiffs-bounces@rubyforge.org 
+> [mailto:poignant-stiffs-bounces@rubyforge.org] On Behalf Of 
+> Ryan Platte
+> Sent: Tuesday, May 25, 2004 11:37 AM
+> To: poignant-stiffs@rubyforge.org
+> Subject: Re: You asked, at the beginning of chapter 4
+> 
+> 
+> On 2004 May 25, at 12:24, Andrew R Jackson wrote:
+> 
+> > Of course, when I get a counter like:
+> > 	class Nil ; def empty? ; true ; end ; end
+> > 	plasticCup = Nil.new()
+> > 	plasticCup.empty?
+> >
+> > I get to say
+> > 	"welcome to Ruby. have fun redefining reality."
+> 
+> By the by, NilClass is there to redefine the real nil, not 
+> that there's 
+> anything there to redefine, or ... wait. Anyway, whether or not it's 
+> possible, here's the code:
+> 
+> irb(main):001:0> a.empty?
+> NameError: undefined local variable or method `a' for main:Object
+>          from (irb):1
+> irb(main):002:0> a = nil
+> => nil
+> irb(main):003:0> a.empty?
+> NoMethodError: undefined method `empty?' for nil:NilClass
+>          from (irb):3
+> irb(main):004:0> class NilClass
+> irb(main):005:1> def empty?; true; end
+> irb(main):006:1> end
+> => nil
+> irb(main):007:0> a.empty?
+> => true
+> 
+> -- 
+> Ryan Platte
+> ryanplatte@pobox.com
+> 
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org 
+> http://rubyforge.org/mailman/listinfo/poignant> -stiffs
+> 
+
+From why at poignantguide.net  Tue May 25 16:15:36 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue May 25 16:16:01 2004
+Subject: You asked, at the beginning of chapter 4
+In-Reply-To: <000001c4427d$31980c90$3299f980@Sodaash>
+References: <000001c4427d$31980c90$3299f980@Sodaash>
+Message-ID: <40B3A968.4030704@poignantguide.net>
+
+Andrew R Jackson wrote:
+
+> Given Chapter 4 and
+>
+>	plasticCup = nil
+>It follows that
+>	plasticCup.empty?
+>Which actually, doesn't.
+>  
+>
+I kind of wish the method was named 'blank?' rather than 'empty?'.  In 
+the case of Arrays and Strings, you're dealing with a blank set rather 
+than an emptiness.
+
+Nomenclature is tough, though.  And it's remarkable how well Matz has 
+captured the subtleties of English in Ruby.  So, I'll find a better word 
+than empty for the Nil section.  Maybe I'll go with 'vacant.'  It's 
+synonymous, common and without this kind of name conflict.
+
+Thankya for the pleasant note.  I assure you that any reference 
+qualities only degrade as pages proceed.  Hope I don't accidentally 
+switch topics.  Devious parts of me want it to end as a book of fabric 
+swatches.
+
+_why
+From gsinclair at soyabean.com.au  Tue May 25 18:58:21 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Tue May 25 19:00:46 2004
+Subject: You asked, at the beginning of chapter 4
+In-Reply-To: <40B3A968.4030704@poignantguide.net>
+References: <000001c4427d$31980c90$3299f980@Sodaash>
+	<40B3A968.4030704@poignantguide.net>
+Message-ID: <41939836723.20040526085821@soyabean.com.au>
+
+On Wednesday, May 26, 2004, 6:15:36 AM, why wrote:
+
+> Andrew R Jackson wrote:
+
+>> Given Chapter 4 and
+>>
+>>	plasticCup = nil
+>>It follows that
+>>	plasticCup.empty?
+>>Which actually, doesn't.
+>>  
+>>
+> I kind of wish the method was named 'blank?' rather than 'empty?'.  In
+> the case of Arrays and Strings, you're dealing with a blank set rather
+> than an emptiness.
+
+No, the naming is spot on.  Every ADT I ever learned about had an
+'empty' predicate.
+
+> Nomenclature is tough, though.  And it's remarkable how well Matz has
+> captured the subtleties of English in Ruby.  So, I'll find a better word
+> than empty for the Nil section.  Maybe I'll go with 'vacant.'  It's 
+> synonymous, common and without this kind of name conflict.
+
+I like the #nil? method, as in
+
+  if plastic_cup.nil?
+    ...
+
+I realise it's starting to deal on the computer's terms, not in
+everyday reality, but that's inevitable after a while.
+
+Gavin
+

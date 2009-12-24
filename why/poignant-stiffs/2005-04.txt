@@ -1,0 +1,549 @@
+From snlists at gmail.com  Mon Apr  4 16:12:26 2005
+From: snlists at gmail.com (Shalev NessAiver)
+Date: Mon Apr  4 16:07:08 2005
+Subject: Error in Poignant Guide?
+Message-ID: <f2d26b8b050404131239b0f0ee@mail.gmail.com>
+
+Hello,
+
+I seem to have found an error in the Poignant Guide.
+In chapter 4, under the heading "Making the Swap", why places
+a hash of code words in a file called wordlist.rb and then "require"s
+them.  He then try to access that hash through the call:
+
+code_words.each....
+
+However, that does not seem to work.  I keep getting errors
+that the local variable code_words is not defined (NameError).
+I have asked this question in irc and they agreed that doing this should
+not work.
+
+What is interesting is that iterating through all the objects in ObjectSpace
+reveals that that hash IS there somewhere, it just seems to be in it's
+own private
+scope.
+
+One way that DID work was to put the hash in a module and then require
+the module.
+(I personally placed it into a constant and then required/dup-ed the
+constant in the main
+program.  I'm sure there is a better way for that.)
+
+If I am wrong, please point out where (as if you would do anything else).
+
+-Shalev
+From why at poignantguide.net  Tue Apr  5 12:21:28 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Apr  5 12:16:09 2005
+Subject: PDFs
+Message-ID: <4252BB08.5020902@poignantguide.net>
+
+Jim Fisher has generously donated a first stab at a PDF.  
+<http://rubyforge.org/frs/?group_id=183>
+
+The one: why.s.poignant.guide-0.5-contrib.pdf
+
+_why
+From why at poignantguide.net  Wed Apr  6 10:54:44 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Apr  6 10:50:23 2005
+Subject: PDFs
+In-Reply-To: <4252BB08.5020902@poignantguide.net>
+References: <4252BB08.5020902@poignantguide.net>
+Message-ID: <4253F834.7030103@poignantguide.net>
+
+why the lucky stiff wrote:
+
+> Jim Fisher has generously donated a first stab at a PDF.  
+
+And now he's made further improvements: 
+<http://rubyforge.org/frs/download.php/3845/why.s.poignant.guide.to.ruby-0.5.1-contrib.pdf>
+
+_why
+From why at poignantguide.net  Sat Apr  9 23:44:30 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sat Apr  9 23:39:29 2005
+Subject: Why's (ergreifende) =?iso-8859-1?q?Einf=FChrung_in_Ruby?=
+Message-ID: <4258A11E.5020108@poignantguide.net>
+
+Kornelius Kalnbach from Berlin, Germany, has started a German 
+translation of the Guide!  He has asked for help proofreading and 
+comparing the texts, to ensure the poignancy and heart-wrending tone of 
+the original is fully intact.
+
+http://ruby.cycnus.de/ergreifende_einfuehrung
+
+If you would like to join discussion, consider crash-landing in the 
+poignant-translators list:
+http://rubyforge.org/mailman/listinfo/poignant-translators
+
+I am offering original artwork to translators who are able to complete a 
+translation of the book when it is finished.  I hope to host the various 
+projects at poignantguide.net and spread the chunky bacon to migrant 
+nomads who need the comfort only Ruby can bring during those cold nights 
+preying upon wild monkeys with javelins.
+
+Last of all: I love you.  You are my wild monkeys.  And my javelin will 
+be staying in its case.
+
+_why
+From why at poignantguide.net  Sun Apr 10 00:18:49 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sun Apr 10 00:13:47 2005
+Subject: chalky bacon
+Message-ID: <4258A929.10309@poignantguide.net>
+
+http://novalis.org/images/photo/silly/rms-chunky-bacon.jpg
+http://novalis.org/images/photo/silly/lessig-chunky-bacon.jpg
+
+I just got an e-mail a few days ago from Novalis (his pictos above) 
+which further confirms the reports of Chunky Bacon scribblings on the 
+chalkboard at the FSF meeting from recent weeks.  I try to shield the 
+foxes from this sort of information, since they have already begun 
+chanting the phrase "Pulpy Beef" around the house and I'm afraid such 
+news would increase the frequency.  Plus, I honestly think they would 
+sneak into Stallman's bed and sleep at his toes.
+
+I have counseled with the elf and his pet ham, though, and they both 
+recommended that I had better keep a low profile, that nothing could be 
+worse for PR than graffiti, hand signals, replacement street signs or 
+ice sculptures pronouncing the letters of our nonexistent meat preferences.
+
+"Bohemian" is what the elf called it.  Then he looked at his watch, had 
+to scram and left a trail of elf sprinkles.  That magical little numskull.
+
+_why
+From why at poignantguide.net  Thu Apr 14 00:01:56 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Apr 13 23:57:48 2005
+Subject: Error in chapter 5.
+In-Reply-To: <1113435603-18171.00019.00001-smmsdV2.1.3@saluki-mailhub.siu.edu>
+References: <1113435603-18171.00019.00001-smmsdV2.1.3@saluki-mailhub.siu.edu>
+Message-ID: <425DEB34.3080505@poignantguide.net>
+
+erlercw@siu.edu wrote:
+
+>In the poignant guide (chapter 5), it says that you can extend an
+>object with a class (not a module).  The example doesn't work in 1.8.
+>
+Whoa, thankyou. That's a huge problem.
+
+I've rewritten that section to introduce modules and talk about #extend 
+in that context. I'm not going to touch multiple inheritance. I'm really 
+sorry and I'm glad you wrote.
+
+_why
+
+... here's the new section, if you're interested ...
+
+Between |Class| and |Object|, do you see |Module|? If |Object| is the 
+king, the one who has sired every other part of Ruby, then |Module| is 
+the poor waifish nun, shielding and protecting all her little Ruby 
+townspeople children. (To complete the analogy: |Class| is the 
+schoolmaster and |Kernel| is the colonel.)
+
+The whole point of |Module|?s existence is to give food and shelter to 
+code. Methods can stay dry under |Module|?s shawl. |Module| can hold 
+classes and constants and variables of any kind.
+
+?But what does a Module /do/?? you ask. ?How is it gainfully employed???
+
+?That?s all it does!!? I retort, stretching out my open palms in the 
+greatest expression of futility known to man. ?Now hear me?for I will 
+never speak it again?that Module Mother Superior has given these 
+wretched objects a place to stay!!?
+
+ # See, here is the module -- where else could our code possibly stay?
+ module WatchfulSaintAgnes
+
+   # A CONSTANT is laying here by the doorway.  Fine.
+   TOOTHLESS_MAN_WITH_FORK = ['man', 'fork', 'exposed gums']
+
+   # A Class is eating, living well in the kitchen.
+   class FatWaxyChild; end
+
+   # A Method is hiding back in the banana closet, God knows why.
+   def timid_foxfaced_girl; {'please' => 'i want an acorn please'}; end
+
+ end
+
+Now you have to go through Saint Agnes to find them.
+
+ >> WatchfulSaintAgnes::TOOTHLESS_MAN_WITH_FORK
+ => ["man", "fork", "exposed gums"]
+ >> WatchfulSaintAgnes::FatWaxyChild.new
+ => #<WatchfulSaintAgnes::FatWaxyChild:0xb7d2ad78>
+ >> WatchfulSaintAgnes::timid_foxfaced_girl
+ => {"please" => "i want an acorn please"}
+
+Always remember that a |Module| is only an inn. A roof over their heads. 
+It is not a self-aware |Class| and, therefore, cannot be brought to life 
+with |new|.
+
+ >> WatchfulSaintAgnes.new
+ NoMethodError: undefined method `new' for WatchfulSaintAgnes:Module
+         from (irb):2
+
+St. Agnes has given up her whole life in order that she may care for 
+these desperate bits of code. Please. Don?t take that away from her.
+
+If you wanted to steal from St. Agnes, though, I can help you. You can 
+bring in a larger abbey to swallow up the ministry of 
+|WatchfulSaintAgnes| and then what is she left with?
+
+For this you can use |extend|, which will pull all the methods from a 
+module into a class or an object.
+
+  >> class TheTimeWarnerAolCitibankCaringAndLovingFacility; end
+  >> TheTimeWarnerAolCitibankCaringAndLovingFacility.extend WatchfulSaintAgnes
+  >> TheTimeWarnerAolCitibankCaringAndLovingFacility::timid_foxfaced_girl
+  => {"please" => "i want an acorn please"}
+
+You gotta admit. The old abbey can get bought out a zillion times and 
+that little fox-faced girl will /still/ be back in the banana closet 
+wanting an acorn! Too bad we can?t feed her. She?s a method with no 
+arguments.
+
+
+From ntalbott at gmail.com  Thu Apr 14 09:08:41 2005
+From: ntalbott at gmail.com (Nathaniel Talbott)
+Date: Thu Apr 14 09:03:06 2005
+Subject: Error in chapter 5.
+In-Reply-To: <425DEB34.3080505@poignantguide.net>
+References: <1113435603-18171.00019.00001-smmsdV2.1.3@saluki-mailhub.siu.edu>
+	<425DEB34.3080505@poignantguide.net>
+Message-ID: <f38b43ef05041406081eb292ce@mail.gmail.com>
+
+On 4/14/05, why the lucky stiff <why@poignantguide.net> wrote:
+
+>  # See, here is the module -- where else could our code possibly stay?
+>  module WatchfulSaintAgnes
+> 
+>    # A CONSTANT is laying here by the doorway.  Fine.
+>    TOOTHLESS_MAN_WITH_FORK = ['man', 'fork', 'exposed gums']
+> 
+>    # A Class is eating, living well in the kitchen.
+>    class FatWaxyChild; end
+> 
+>    # A Method is hiding back in the banana closet, God knows why.
+>    def timid_foxfaced_girl; {'please' => 'i want an acorn please'}; end
+> 
+>  end
+> 
+> Now you have to go through Saint Agnes to find them.
+> 
+>  >> WatchfulSaintAgnes::TOOTHLESS_MAN_WITH_FORK
+>  => ["man", "fork", "exposed gums"]
+>  >> WatchfulSaintAgnes::FatWaxyChild.new
+>  => #<WatchfulSaintAgnes::FatWaxyChild:0xb7d2ad78>
+>  >> WatchfulSaintAgnes::timid_foxfaced_girl
+>  => {"please" => "i want an acorn please"}
+
+Hmmm...
+
+>> WatchfulSaintAgnes::timid_foxfaced_girl
+=> NoMethodError: undefined method `timid_foxfaced_girl' for
+WatchfulSaintAgnes:Module
+        from (irb):4
+
+
+-- 
+Nathaniel
+
+<:((><
+
+From danny at amelang.net  Thu Apr 14 13:44:18 2005
+From: danny at amelang.net (Daniel Amelang)
+Date: Thu Apr 14 16:09:19 2005
+Subject: Error in chapter 5.
+In-Reply-To: <f38b43ef05041406081eb292ce@mail.gmail.com>
+References: <1113435603-18171.00019.00001-smmsdV2.1.3@saluki-mailhub.siu.edu>
+	<425DEB34.3080505@poignantguide.net>
+	<f38b43ef05041406081eb292ce@mail.gmail.com>
+Message-ID: <425EABF2.5030701@amelang.net>
+
+def timid_foxfaced_girl; {'please' => 'i want an acorn please'}; end
+
+should be
+
+def self.timid_foxfaced_girl; {'please' => 'i want an acorn please'}; end
+
+I think. Assuming _why wants to use it the way he does in his example.
+
+Dan
+
+From why at poignantguide.net  Mon Apr 18 02:36:11 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Apr 18 02:30:52 2005
+Subject: Seeing Metaclasses Clearly
+Message-ID: <4263555B.2050609@poignantguide.net>
+
+I've written a bit too much on metaclasses in chapter six and I've 
+decided to trim it out and finish my thoughts on metaclasses in the form 
+of an essay which might be of interest to you: 
+<http://whytheluckystiff.net/articles/seeingMetaclassesClearly.html>
+
+It's boring and really thick in comparison to the stuff in the Guide, so 
+you may want to steer clear and wait for the synopsis given in chapter six.
+
+*sharkmints*
+
+_why
+
+From danny at amelang.net  Mon Apr 18 03:16:40 2005
+From: danny at amelang.net (Daniel Amelang)
+Date: Mon Apr 18 03:11:00 2005
+Subject: Seeing Metaclasses Clearly
+In-Reply-To: <4263555B.2050609@poignantguide.net>
+References: <4263555B.2050609@poignantguide.net>
+Message-ID: <42635ED8.2010802@amelang.net>
+
+Minor edit, mr. _why:
+
+'An since there can only be a single metaclass attached to an object, 
+it?s called a _single_ton.'
+
+'An' should be 'And'.
+
+> It's boring and really thick in comparison to the stuff in the Guide, 
+> so you may want to steer clear and wait for the synopsis given in 
+> chapter six.
+
+I, personally, found it delightful. You may be underestimating the 
+power/utility of your 'boring' writing. Sticks to your ribs. Yum.
+
+Ever thought of an RCR for the metaclass method? I know someone else 
+(Dr. Black?) has something in there (the rcrchive) to solve the same 
+ugliness of 'class << self; self end'
+
+BTW, in your various one-line methods (where you place all of the method 
+on a single line) and other places, you use a superflous semicolon 
+(class << self; self; end), which is really not a big deal, but I 
+thought you might like to know.
+
+For example, this:
+
+def metaclass; class << self; self; end end
+
+Can lose two semicolons to be this:
+
+def metaclass; class << self; self end end
+
+Yah, big deal. I know.
+
+Maybe it's like a style thing. A way to mark the code as *your own*. 
+Hey, that's pretty cool then.
+
+Ok, I just ran into this:
+
+meta_def :company do; name; end
+
+I think you're doing this on purpose. Gotcha. Move along.
+
+Dan
+From ryan.platte at gmail.com  Mon Apr 18 09:19:11 2005
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Mon Apr 18 09:13:28 2005
+Subject: Seeing Metaclasses Clearly
+In-Reply-To: <42635ED8.2010802@amelang.net>
+References: <4263555B.2050609@poignantguide.net> <42635ED8.2010802@amelang.net>
+Message-ID: <2f1a1dcb050418061958155390@mail.gmail.com>
+
+On 4/18/05, Daniel Amelang <danny@amelang.net> wrote:
+> Minor edit, mr. _why:
+> 
+> 'An since there can only be a single metaclass attached to an object,
+> it's called a _single_ton.'
+> 
+> 'An' should be 'And'.
+
+Another:
+
+"When you create a metaclass of a metaclass, it has no affect on the
+object referred to by the original metaclass."
+
+That should be "effect".
+
+-- 
+Ryan Platte
+
+From murphy at cycnus.de  Mon Apr 18 11:06:52 2005
+From: murphy at cycnus.de (murphy)
+Date: Mon Apr 18 11:01:28 2005
+Subject: Seeing Metaclasses Clearly
+In-Reply-To: <4263555B.2050609@poignantguide.net>
+References: <4263555B.2050609@poignantguide.net>
+Message-ID: <4263CD0C.1070003@cYcnus.de>
+
+A really informative article, thanks!
+
+Metaclasses can be a disturbing thing to Nubys, and you better don't tell them 
+about too early. But I think this text is perfect for people that already got a 
+feeling for Ruby classes. I like the style, although it's not (poignant). I just 
+miss a little cartoon :)
+
+Especially Dwemthy's Creature class without eval pleases me, because I'm a 
+strict Antievalist ;) You should use this version for the Dwemthy story, too.
+
+About the library name: Why do you call the lib "metaid"?
+Would just "meta" also suffice?
+"require 'meta_programming'" could also be cool to read.
+
+Maybe there's a small error:
+1. Class variables are clearly class variables. They have two *ampersands*. Less 
+confusion.
+As far as I know, "@" is *at sign*, not *ampersand*.
+
+[murphy]
+
+From why at poignantguide.net  Mon Apr 18 11:29:36 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Apr 18 11:23:54 2005
+Subject: Seeing Metaclasses Clearly
+In-Reply-To: <4263CD0C.1070003@cYcnus.de>
+References: <4263555B.2050609@poignantguide.net> <4263CD0C.1070003@cYcnus.de>
+Message-ID: <4263D260.5090802@poignantguide.net>
+
+First, thanks for the help proofreading.  I woke up and had like twelve 
+e-mails about writing "ampersand" and that was vary amberassing.
+
+murphy wrote:
+
+> About the library name: Why do you call the lib "metaid"?
+> Would just "meta" also suffice?
+> "require 'meta_programming'" could also be cool to read.
+
+Meta-aid or some permutation of that was what I was shooting for.  I 
+just called it that without thinking.  You're definitely right, though.  
+It's sort of a confusing name.
+
+I may also take out the extra semicolon noted by Daniel.  There's no 
+reason for it.
+
+_why
+From mental at rydia.net  Mon Apr 25 13:38:15 2005
+From: mental at rydia.net (mental@rydia.net)
+Date: Mon Apr 25 13:32:21 2005
+Subject: definition of 'initialize' in Creature
+Message-ID: <1114450695.426d2b0704a09@www.rydia.net>
+
+I've been puzzling over why initialize needs to be defined inside a
+class_eval from within Creature.traits.
+
+So far as I can tell, it works fine to simply do:
+
+class Creature
+  # Advanced metaprogramming code for nice, clean traits
+  def Creature.traits( *arr )
+    return @traits if arr.empty?
+    attr_accessor *arr
+    arr.each do |a|
+      class_eval %{
+        class << self
+          def #{a}( val )
+            @traits ||= {}
+            @traits[#{a.inspect}] = val
+          end
+        end
+      }
+    end
+  end
+  def initialize
+    self.class.traits.each do |k,v|
+      instance_variable_set( "@" + k.id2name, v )
+    end
+  end
+
+  ... etc ...
+
+end
+
+So why the extra class_eval in the original?  It confuses me.
+
+-mental
+From moskvax at gmail.com  Tue Apr 26 10:02:18 2005
+From: moskvax at gmail.com (Stephen Caraher)
+Date: Tue Apr 26 09:56:20 2005
+Subject: Errors in Chapter 4
+Message-ID: <4af5dba405042607025a67776c@mail.gmail.com>
+
+Hello,
+
+In addition to the error Shalev pointed out in Chapter 4 regarding the
+"require 'wordlist'" thing, there's another error in the first
+example, right underneath "Making the Swap". The line:
+
+File::open( "idea-" + idea_name + ".txt" ) do |f|
+
+should be
+
+File::open( "idea-" + idea_name + ".txt", 'w' ) do |f|
+
+as it is in the later examples. This confused me quite a bit at first
+as there is no ri documentation for File::open, at least not on my
+machine, but it's all working now :)
+
+On a totally different note, reading this book is the first time I've
+had any experience with Ruby, and I find both the book and the
+language absolutely incredible. It is one of the greatest things I've
+ever read, not just as a book teaching one how to use Ruby but as a
+literary creation in its own right. I think there needs to be a link
+to this book from somewhere on ruby-lang.org to make it easier for
+newcomers to Ruby to find it.
+
+Thank you so much for putting in the effort to make this book.
+
+-Stephen Caraher
+
+From why at poignantguide.net  Wed Apr 27 02:51:41 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Apr 27 02:45:44 2005
+Subject: definition of 'initialize' in Creature
+In-Reply-To: <1114450695.426d2b0704a09@www.rydia.net>
+References: <1114450695.426d2b0704a09@www.rydia.net>
+Message-ID: <426F367D.6070501@poignantguide.net>
+
+mental@rydia.net wrote:
+> I've been puzzling over why initialize needs to be defined inside a
+> class_eval from within Creature.traits.
+
+Everyone thank mental for doing his thing.  He's scrutinizing and
+sweating out this stuff and it's really helpful.  He and I have had a
+pony party lately:
+<http://redhanded.hobix.com/cult/surplusProjectNamesNeedRealBones.html>
+
+I decided to throw everything in evals, since I am teaching about evals
+in chapter six.  Just like any other book examples, these examples are
+contrived to go with the flow of the stream of gradual learning.
+
+Or so I say in my monologues.
+
+_why
+
+
+From why at poignantguide.net  Wed Apr 27 03:01:58 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Apr 27 02:56:00 2005
+Subject: Errors in Chapter 4
+In-Reply-To: <4af5dba405042607025a67776c@mail.gmail.com>
+References: <4af5dba405042607025a67776c@mail.gmail.com>
+Message-ID: <426F38E6.6010605@poignantguide.net>
+
+Stephen Caraher wrote:
+> 
+> File::open( "idea-" + idea_name + ".txt", 'w' ) do |f|
+>
+
+Yes, this is wrong.  It's fixed in my original, I'll add this to the 
+public's copy tomorrow.
+
+> On a totally different note, reading this book is the first time I've
+> had any experience with Ruby, and I find both the book and the
+> language absolutely incredible.
+
+Thankyou.  I spend a lot of time thinking about how it fits together. 
+You're such a good reader to see how it goes together.  Thankyou for 
+reading and thankyou for the note.
+
+_why
+

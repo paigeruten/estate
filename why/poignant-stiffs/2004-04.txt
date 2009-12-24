@@ -1,0 +1,207 @@
+From jgb3 at email.byu.edu  Sun Apr  4 09:05:31 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Sun Apr  4 11:27:31 2004
+Subject: recommended?
+In-Reply-To: <406B0771.80808@poignantguide.net>
+References: <406B0771.80808@poignantguide.net>
+Message-ID: <4070243B.60908@email.byu.edu>
+
+why the lucky stiff wrote:
+> cheerio.  just been getting back from vacation.  was very nice, thankyou.
+> 
+> getting back, here's the question primary on my mind:
+> 
+>  'can you foresee any reason you wouldn't recommend the Guide as the #1 
+> starting point for a Ruby newcomer?'
+> 
+> i can understand not recommending it as it is incomplete.  but so far, 
+> does the book meet your criteria for instructing a newcomer?  are the 
+> topics being covered in an intuitive manner?  do you like the order they 
+> are being presented?  do you feel it is the premier launchpad for a 
+> learner?
+> 
+> _why
+
+Not to sound too sycophantic, but I think it's great. I've already 
+recommended it (incomplete as it is) to several Ruby newbies. Plus, it's 
+required reading for our local Ruby Users Group.
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+ruby -h | ruby -e 
+'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << 
+r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+From jgb3 at email.byu.edu  Sun Apr  4 09:09:26 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Sun Apr  4 11:31:29 2004
+Subject: Licenses
+Message-ID: <40702526.60308@email.byu.edu>
+
+I know the Guide itself is licensed under a Creative Commons license. Is 
+the ruby script that generates the lot under the same license, or 
+something else?
+
+I ask, because I'd like to use portions of it to build some 
+documentation I'm writing (the new manual for the Copland IoC 
+container). If it were just for my own internal use it wouldn't really 
+matter, but I'd like to put the script in Copland's CVS as well as 
+distribute it with the Copland source bundle.
+
+Thanks,
+
+Jamis
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+ruby -h | ruby -e 
+'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << 
+r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+From why at poignantguide.net  Sun Apr  4 11:11:34 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sun Apr  4 12:32:05 2004
+Subject: Licenses
+In-Reply-To: <40702526.60308@email.byu.edu>
+References: <40702526.60308@email.byu.edu>
+Message-ID: <407033B6.8010306@poignantguide.net>
+
+Jamis Buck wrote:
+
+> I know the Guide itself is licensed under a Creative Commons license. Is 
+> the ruby script that generates the lot under the same license, or 
+> something else?
+
+Yes, absolutely, it's all under the by-sa/1.0 license for now.  This 
+includes the images, the text, the code.  Anything checked into CVS.
+
+I'm really digging the YAML+Textile mix for writing and at some point 
+I'd like to flesh out the format and give it a proper lib of its own. 
+
+
+RedCloth will probably work in tandem with this new lib to provide a 
+clean export to PDF, RTF.  That way we can still get the smart quotes 
+and inline styles.
+
+_why
+
+
+From jgb3 at email.byu.edu  Sun Apr  4 10:14:57 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Sun Apr  4 12:36:47 2004
+Subject: Licenses
+In-Reply-To: <407033B6.8010306@poignantguide.net>
+References: <40702526.60308@email.byu.edu> <407033B6.8010306@poignantguide.net>
+Message-ID: <40703481.60002@email.byu.edu>
+
+why the lucky stiff wrote:
+> Jamis Buck wrote:
+> 
+>> I know the Guide itself is licensed under a Creative Commons license. 
+>> Is the ruby script that generates the lot under the same license, or 
+>> something else?
+> 
+> 
+> Yes, absolutely, it's all under the by-sa/1.0 license for now.  This 
+> includes the images, the text, the code.  Anything checked into CVS.
+> 
+> I'm really digging the YAML+Textile mix for writing and at some point 
+> I'd like to flesh out the format and give it a proper lib of its own.
+> 
+
+Sounds yummy! As I've been delving through the 100+ lines of code (very 
+slick, btw) I was thinking, "gee, this ought to be generalized so others 
+can take advantage of this." Glad to know that you're already thinking 
+along those lines.
+
+ > RedCloth will probably work in tandem with this new lib to provide a
+ > clean export to PDF, RTF.  That way we can still get the smart quotes
+ > and inline styles.
+
+So, are you envisioning "to_pdf" and "to_rtf" methods on RedCloth, then, 
+or something else?  Just curious how you see RedCloth working to produce 
+PDF's, et. al.
+
+- Jamis
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+ruby -h | ruby -e 
+'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << 
+r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+From why at poignantguide.net  Sun Apr  4 11:44:56 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sun Apr  4 13:05:31 2004
+Subject: Licenses
+In-Reply-To: <40703481.60002@email.byu.edu>
+References: <40702526.60308@email.byu.edu> <407033B6.8010306@poignantguide.net>
+	<40703481.60002@email.byu.edu>
+Message-ID: <40703B88.3050907@poignantguide.net>
+
+Jamis Buck wrote:
+
+> So, are you envisioning "to_pdf" and "to_rtf" methods on RedCloth, then, 
+> or something else?  Just curious how you see RedCloth working to produce 
+> PDF's, et. al.
+
+I think so.  I haven't really wandered through the PDF librarys in RAA 
+recently.  I used ClibPDF in Yod (a similiar documentation format).
+
+So I'll probably use quite a bit of code from Yod (as it's got to_chm, 
+to_man and to_pdf all covered):
+
+http://cvs.sourceforge.net/viewcvs.py/yaml4r/yaml4r/src/yod.rb?rev=1.22&view=auto
+
+The problem will be flowing sidebars and left-aligned images in PDFs. 
+Ideally, I'd like the new document lib to take RedCloth's PDF (or 
+pseudo-PDF) output and finesse it into PDFs, but I can't conceptualize 
+it yet because I can't recall all the details of generating PDFs.
+
+I may even need the document lib to read the stylesheet, because I 
+really want all the font sizes and borders (and possibly colors) to be 
+preserved in the PDF.
+
+Naturally, I'm open to any ideas and appeal to anyone who is a PDF monster.
+
+_why
+
+From jgb3 at email.byu.edu  Sun Apr  4 11:55:16 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Sun Apr  4 13:18:13 2004
+Subject: Licenses
+In-Reply-To: <40703B88.3050907@poignantguide.net>
+References: <40702526.60308@email.byu.edu> <407033B6.8010306@poignantguide.net>
+	<40703481.60002@email.byu.edu> <40703B88.3050907@poignantguide.net>
+Message-ID: <40704C04.5000203@email.byu.edu>
+
+why the lucky stiff wrote:
+> Naturally, I'm open to any ideas and appeal to anyone who is a PDF monster.
+
+Well, I'm no PDF monster. I haven't really touched PDF in a long time. 
+However, at one point I played with a lot of diverse ways of generating 
+PDF's.
+
+Have you considered XML-FO?  It's one of the butt-ugliest file formats 
+I've ever seen (and there is no Ruby solution for generating PDF's from 
+XML-FO files, yet), but it is "style"-based (like HTML) and fairly 
+flexible. There is the FOP processor at xml.apache.org which can be used 
+to take an XML-FO file and build a PDF out of it.
+
+On a completely different note: do you have a good reference for 
+textile? The information at textism.com is pretty useless... :(
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+ruby -h | ruby -e 
+'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << 
+r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'

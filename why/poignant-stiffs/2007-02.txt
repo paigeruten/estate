@@ -1,0 +1,524 @@
+From why at poignantguide.net  Wed Feb 14 02:41:46 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed, 14 Feb 2007 01:41:46 -0600
+Subject: Why's (Poignant) Guide to Ruby,
+	Chapter Seven: When You Wish Upon a Beard
+Message-ID: <20070214074145.GK61198@beekeeper.hobix.com>
+
+Well now, the cat has finished his part.  He mailed me twenty
+pages, doused in inks.
+
+<http://poignantguide.net/ruby/chapter-7.html>
+
+Many mews to Blix for his contribution!
+
+_why
+
+From sl33p3r at free.fr  Wed Feb 14 15:41:19 2007
+From: sl33p3r at free.fr (Frederick Ros)
+Date: Wed, 14 Feb 2007 20:41:19 +0000
+Subject: Why's (Poignant) Guide to Ruby,
+	Chapter Seven: When You Wish Upon a Beard
+In-Reply-To: <20070214074145.GK61198@beekeeper.hobix.com>
+References: <20070214074145.GK61198@beekeeper.hobix.com>
+Message-ID: <20070214204119.GA2681@zoo>
+
+why the lucky stiff wrote :
+| Well now, the cat has finished his part.  He mailed me twenty
+| pages, doused in inks.
+| 
+| <http://poignantguide.net/ruby/chapter-7.html>
+| 
+| Many mews to Blix for his contribution!
+
+Wonderful !!! But that will be hard to translate ;)
+
+-- 
+Frederick Ros aka Sleeper -- sleeper at jabber.fr
+
+dprintk("kick_rx: maybe kicking\n");
+        linux-2.6.6/drivers/net/ns83820.c
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070214/89b1de3e/attachment.bin 
+
+From kprojection at gmail.com  Wed Feb 14 16:10:35 2007
+From: kprojection at gmail.com (Eric Mill)
+Date: Wed, 14 Feb 2007 16:10:35 -0500
+Subject: Why's (Poignant) Guide to Ruby,
+	Chapter Seven: When You Wish Upon a Beard
+In-Reply-To: <20070214204119.GA2681@zoo>
+References: <20070214074145.GK61198@beekeeper.hobix.com>
+	<20070214204119.GA2681@zoo>
+Message-ID: <c658be6b0702141310o354da385q8dc09748566d259e@mail.gmail.com>
+
+Wow, a completely animated chapter -- this is outstanding.  And it's
+some of your best artwork yet.  I can't imagine how long this must
+have taken.  Great work, why.
+
+-- Eric
+
+On 2/14/07, Frederick Ros <sl33p3r at free.fr> wrote:
+> why the lucky stiff wrote :
+> | Well now, the cat has finished his part.  He mailed me twenty
+> | pages, doused in inks.
+> |
+> | <http://poignantguide.net/ruby/chapter-7.html>
+> |
+> | Many mews to Blix for his contribution!
+>
+> Wonderful !!! But that will be hard to translate ;)
+>
+> --
+> Frederick Ros aka Sleeper -- sleeper at jabber.fr
+>
+> dprintk("kick_rx: maybe kicking\n");
+>         linux-2.6.6/drivers/net/ns83820.c
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+>
+
+From why at poignantguide.net  Thu Feb 15 12:02:09 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu, 15 Feb 2007 11:02:09 -0600
+Subject: cat in the clouds poster
+Message-ID: <20070215170209.GL61198@beekeeper.hobix.com>
+
+Mail people:
+
+You have already been so helpful spreading word about the foxes and
+the damned things they say!!  If you like the imagery of the book, 
+maybe I can equip you to decorate the world with some of it --
+<http://poignantguide.net/posters/>
+
+Staple one to a telephone pole or paste onto the wall of a long
+emergency staircase.  A big one for a bulletin board school.  The
+TIF image is very large -- any suggestions for printing on 14x17??
+This can be printed through wallhogs.com, if you'd like x-tall.
+
+If you are ill or not up for it, or if you have a broken foot, or if
+all is not well with your next of kin or place of employ, I didn't
+mean to be insensitive and I am sick to my stomach about it.  In
+fact, my foot is breaking, too.
+
+Any other sorts of other scenes you would like?
+
+_why
+
+From drew at everydaywarehousers.com  Thu Feb 15 13:08:24 2007
+From: drew at everydaywarehousers.com (Drew)
+Date: Thu, 15 Feb 2007 12:08:24 -0600
+Subject: cat in the clouds poster
+In-Reply-To: <20070215170209.GL61198@beekeeper.hobix.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+Message-ID: <1171562904.27575.2.camel@humboldt>
+
+It makes a pretty desktop background:
+http://papyromancer.com/backgrounds/Background_why.png (8.2M)
+
+On Thu, 2007-02-15 at 11:02 -0600, why the lucky stiff wrote:
+> Mail people:
+> 
+> You have already been so helpful spreading word about the foxes and
+> the damned things they say!!  If you like the imagery of the book, 
+> maybe I can equip you to decorate the world with some of it --
+> <http://poignantguide.net/posters/>
+> 
+> Staple one to a telephone pole or paste onto the wall of a long
+> emergency staircase.  A big one for a bulletin board school.  The
+> TIF image is very large -- any suggestions for printing on 14x17??
+> This can be printed through wallhogs.com, if you'd like x-tall.
+> 
+> If you are ill or not up for it, or if you have a broken foot, or if
+> all is not well with your next of kin or place of employ, I didn't
+> mean to be insensitive and I am sick to my stomach about it.  In
+> fact, my foot is breaking, too.
+> 
+> Any other sorts of other scenes you would like?
+> 
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+
+From boss at topfunky.com  Thu Feb 15 14:02:57 2007
+From: boss at topfunky.com (Geoffrey Grosenbach)
+Date: Thu, 15 Feb 2007 11:02:57 -0800
+Subject: cat in the clouds poster
+In-Reply-To: <20070215170209.GL61198@beekeeper.hobix.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+Message-ID: <20070215190256.GA29421@topfunky.com>
+
+On Thu, Feb 15, 2007 at 11:02:09AM -0600, why the lucky stiff wrote:
+> Any other sorts of other scenes you would like?
+
+That's awesome. Could I get a high-res scan of this frame?
+
+http://poignantguide.net/ruby/i/wixl-1.jpg
+
+
+Geoff
+
+From kprojection at gmail.com  Thu Feb 15 14:32:28 2007
+From: kprojection at gmail.com (Eric Mill)
+Date: Thu, 15 Feb 2007 14:32:28 -0500
+Subject: cat in the clouds poster
+In-Reply-To: <20070215190256.GA29421@topfunky.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+	<20070215190256.GA29421@topfunky.com>
+Message-ID: <c658be6b0702151132n4cfc4c57u34db3690a48e3e70@mail.gmail.com>
+
+If we're requesting our favorite scenes, mine is still...
+
+http://poignantguide.net/ruby/i/the.elf-5b.jpg
+
+Work, work, work until they're attached.
+
+-- Eric
+
+On 2/15/07, Geoffrey Grosenbach <boss at topfunky.com> wrote:
+> On Thu, Feb 15, 2007 at 11:02:09AM -0600, why the lucky stiff wrote:
+> > Any other sorts of other scenes you would like?
+>
+> That's awesome. Could I get a high-res scan of this frame?
+>
+> http://poignantguide.net/ruby/i/wixl-1.jpg
+>
+>
+> Geoff
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From nicolas.delsaux at gmail.com  Thu Feb 15 14:33:03 2007
+From: nicolas.delsaux at gmail.com (Nicolas Delsaux)
+Date: Thu, 15 Feb 2007 20:33:03 +0100
+Subject: cat in the clouds poster
+In-Reply-To: <1171562904.27575.2.camel@humboldt>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+	<1171562904.27575.2.camel@humboldt>
+Message-ID: <418361960702151133g1a22e80fnaf47bdc2cca9160@mail.gmail.com>
+
+On 2/15/07, Drew <drew at everydaywarehousers.com> wrote:
+> It makes a pretty desktop background:
+> http://papyromancer.com/backgrounds/Background_why.png (8.2M)
+>
+Err ...
+Isn't there a way to have a kind of smaller resolution ?
+Like ... say ... putting this hi-res scan on any flickr account ?
+
+-- 
+Nicolas Delsaux
+N'imprimez ce mail que si vous ne savez pas le lire sur l'?cran : les
+?lectrons se recyclent bien, le papier, beaucoup moins bien.
+
+From Bil.Kleb at nasa.gov  Thu Feb 15 14:39:56 2007
+From: Bil.Kleb at nasa.gov (Bil Kleb)
+Date: Thu, 15 Feb 2007 14:39:56 -0500
+Subject: cat in the clouds poster
+In-Reply-To: <20070215190256.GA29421@topfunky.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+	<20070215190256.GA29421@topfunky.com>
+Message-ID: <45D4B70C.7020504@NASA.gov>
+
+Geoffrey Grosenbach wrote:
+> Could I get a high-res scan of this frame?
+> 
+>  http://poignantguide.net/ruby/i/wixl-1.jpg
+
++1 => '2560x1600'
+
+Later,
+--
+Bil
+
+From why at poignantguide.net  Thu Feb 15 15:11:20 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu, 15 Feb 2007 14:11:20 -0600
+Subject: cat in the clouds poster
+In-Reply-To: <20070215190256.GA29421@topfunky.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+	<20070215190256.GA29421@topfunky.com>
+Message-ID: <20070215201120.GP61198@beekeeper.hobix.com>
+
+On Thu, Feb 15, 2007 at 11:02:57AM -0800, Geoffrey Grosenbach wrote:
+> That's awesome. Could I get a high-res scan of this frame?
+> 
+> http://poignantguide.net/ruby/i/wixl-1.jpg
+
+I will zip up a set of all the original scans.  I have been meaning
+to do this to help the translators and PDF savants anyway.
+
+_why
+
+From hotdog003 at gmail.com  Thu Feb 15 17:56:35 2007
+From: hotdog003 at gmail.com (Michael Wilber)
+Date: Thu, 15 Feb 2007 15:56:35 -0700
+Subject: cat in the clouds poster
+In-Reply-To: <20070215170209.GL61198@beekeeper.hobix.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+Message-ID: <45D4E523.3020904@gmail.com>
+
+WOOT! THAT'S AWESOME!
+
+One question, though. Why are certain letters (mainly spoken by the 
+rabbit) in this chapter just outlines?
+ For example, in the last two rows, you've got "O k R q e t y Y h A G C 
+S ! G ! H Y R W"
+
+I also notice that that sequence of letters is an anagram for "eSq kAthy 
+WHY CRY GROG!!"
+
+Someone's playing games with our heads...
+> Mail people:
+>
+> You have already been so helpful spreading word about the foxes and
+> the damned things they say!!  If you like the imagery of the book, 
+> maybe I can equip you to decorate the world with some of it --
+> <http://poignantguide.net/posters/>
+>
+> Staple one to a telephone pole or paste onto the wall of a long
+> emergency staircase.  A big one for a bulletin board school.  The
+> TIF image is very large -- any suggestions for printing on 14x17??
+> This can be printed through wallhogs.com, if you'd like x-tall.
+>
+> If you are ill or not up for it, or if you have a broken foot, or if
+> all is not well with your next of kin or place of employ, I didn't
+> mean to be insensitive and I am sick to my stomach about it.  In
+> fact, my foot is breaking, too.
+>
+> Any other sorts of other scenes you would like?
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+>   
+
+
+-- 
+-Mike
+
+Nothing is foolproof to a sufficiently talented fool.
+
+I have not failed. I've just found 10,000 ways that won't work.
+- Thomas Alva Edison
+
+I dream of a better tomorrow... where chickens can cross roads and not have their motives questioned.
+
+
+From stephen.swift at gmail.com  Thu Feb 15 21:06:10 2007
+From: stephen.swift at gmail.com (Stephen Swift)
+Date: Thu, 15 Feb 2007 21:06:10 -0500
+Subject: cat in the clouds poster
+In-Reply-To: <45D4E523.3020904@gmail.com>
+References: <20070215170209.GL61198@beekeeper.hobix.com>
+	<45D4E523.3020904@gmail.com>
+Message-ID: <5506ed1b0702151806v44329485sfbd1ff3f8ff2b1f5@mail.gmail.com>
+
+>
+> I also notice that that sequence of letters is an anagram for "eSq kAthy
+> WHY CRY GROG!!"
+>
+
+Don't you mean, "Why cry, Kathy Grog, Esq.?"
+
+Clearly, this is foreshadowing.
+
+- Stephen
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070215/286d1000/attachment.html 
+
+From mental at rydia.net  Fri Feb 16 16:32:32 2007
+From: mental at rydia.net (MenTaLguY)
+Date: Fri, 16 Feb 2007 16:32:32 -0500
+Subject: Why's (Poignant) Guide to Ruby, Chapter Seven: When You Wish
+	Upon a Beard
+In-Reply-To: <20070214074145.GK61198@beekeeper.hobix.com>
+References: <20070214074145.GK61198@beekeeper.hobix.com>
+Message-ID: <1171661552.1365.4.camel@localhost.localdomain>
+
+On Wed, 2007-02-14 at 01:41 -0600, why the lucky stiff wrote:
+> Well now, the cat has finished his part.  He mailed me twenty
+> pages, doused in inks.
+> 
+> <http://poignantguide.net/ruby/chapter-7.html>
+
+I'm a bit late to the party, I know, but great work, _why!  The chapter
+is taffylike in its awesomeness.
+
+-mental
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070216/cffea679/attachment.bin 
+
+From nicolas.delsaux at gmail.com  Sat Feb 17 02:21:33 2007
+From: nicolas.delsaux at gmail.com (Nicolas Delsaux)
+Date: Sat, 17 Feb 2007 08:21:33 +0100
+Subject: Why's (Poignant) Guide to Ruby,
+	Chapter Seven: When You Wish Upon a Beard
+In-Reply-To: <1171661552.1365.4.camel@localhost.localdomain>
+References: <20070214074145.GK61198@beekeeper.hobix.com>
+	<1171661552.1365.4.camel@localhost.localdomain>
+Message-ID: <418361960702162321q7947a359n80a0f5f53cc621dd@mail.gmail.com>
+
+On 2/16/07, MenTaLguY <mental at rydia.net> wrote:
+>
+> I'm a bit late to the party, I know, but great work, _why!  The chapter
+> is taffylike in its awesomeness.
+
+Can I agree with you ?
+Yup, it's a kind of "chef d'oeuvre" in the sense of wonderful,
+enexpected, and totally bearded achievement
+
+-- 
+Nicolas Delsaux
+N'imprimez ce mail que si vous ne savez pas le lire sur l'?cran : les
+?lectrons se recyclent bien, le papier, beaucoup moins bien.
+
+From drew at everydaywarehousers.com  Fri Feb 23 12:52:33 2007
+From: drew at everydaywarehousers.com (Drew)
+Date: Fri, 23 Feb 2007 11:52:33 -0600
+Subject: Why's (Poignant) Guide to Ruby, Chapter Seven: When You Wish
+	Upon a Beard
+In-Reply-To: <20070214074145.GK61198@beekeeper.hobix.com>
+References: <20070214074145.GK61198@beekeeper.hobix.com>
+Message-ID: <1172253153.14371.1.camel@franklin>
+
+I'm new to this list, so maybe this is an impertinent question...
+
+Are these images going to show up in the SVN anytime soon?
+
+On Wed, 2007-02-14 at 01:41 -0600, why the lucky stiff wrote:
+> Well now, the cat has finished his part.  He mailed me twenty
+> pages, doused in inks.
+> 
+> <http://poignantguide.net/ruby/chapter-7.html>
+> 
+> Many mews to Blix for his contribution!
+> 
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+
+From why at poignantguide.net  Wed Feb 28 19:10:40 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed, 28 Feb 2007 18:10:40 -0600
+Subject: heya, helpful people, come quick!!
+Message-ID: <20070301001040.GT61198@beekeeper.hobix.com>
+
+Dear friends and watchers of the (Poignant) Guide, I have finally made
+some headway on a secret project which some of you might enjoy
+helping me with.  Like the Guide, it is disruptive, messy and will
+hopefully help change this world of long, boring books and complicated
+softwares.
+
+Here's what I'm looking for:
+
+ * People who use Windows
+ * Who also are new to programming
+ * (Or, who love programming)
+ * And: that's it.
+ * Oh, except, no leaking secrets out.
+
+In short, if you like Try Ruby[1], you will really like this!!
+Please just reply directly to me with whether you'd like to help
+and maybe a bit about yourself so I know what level of programmer
+you are.  Or if you know a friend who qualifies: YES.  Tell them.
+
+Reclined in a defunct and truly obese satellite dish, 
+
+_why
+
+[1] http://tryruby.hobix.com/
+ 
+
+From thedapp at gmail.com  Wed Feb 28 21:23:29 2007
+From: thedapp at gmail.com (~donnie)
+Date: Wed, 28 Feb 2007 18:23:29 -0800
+Subject: heya, helpful people, come quick!!
+In-Reply-To: <20070301001040.GT61198@beekeeper.hobix.com>
+References: <20070301001040.GT61198@beekeeper.hobix.com>
+Message-ID: <79111b9f0702281823n3cfb8c79t93137c63377388fd@mail.gmail.com>
+
+I'll give this a shot!
+
+I am very interested in helping out. Why, to be honest (assuming many others
+were also) I was drawn into Ruby after reading the poignant guide.  The
+artwork and comedy captivated me like no other instructional book has
+before. Prior to this moment, I have also felt that programming and the CS
+field may not be my passion in life --actually I still feel that way, but
+Ruby and the guide have certainly eased those fears.
+
+I consider myself a young raw programmer with interest in eclectic Art and
+Music. Unfortunately my current line of work is in the conservative,
+Java-loving, defense industry so I feel I've been stifled compared to those
+who use the latest technologies daily. My main goals for helping are: to be
+involved in the Ruby community; inspire others to start using Ruby; and
+become a more talented individual.
+
+* I do use Windows
+* I am fairly new to programming
+* And I love Ruby --not so much Java :-[
+
+Wish me luck,
+~d.
+
+On 2/28/07, why the lucky stiff <why at poignantguide.net> wrote:
+>
+> Dear friends and watchers of the (Poignant) Guide, I have finally made
+> some headway on a secret project which some of you might enjoy
+> helping me with.  Like the Guide, it is disruptive, messy and will
+> hopefully help change this world of long, boring books and complicated
+> softwares.
+>
+> Here's what I'm looking for:
+>
+> * People who use Windows
+> * Who also are new to programming
+> * (Or, who love programming)
+> * And: that's it.
+> * Oh, except, no leaking secrets out.
+>
+> In short, if you like Try Ruby[1], you will really like this!!
+> Please just reply directly to me with whether you'd like to help
+> and maybe a bit about yourself so I know what level of programmer
+> you are.  Or if you know a friend who qualifies: YES.  Tell them.
+>
+> Reclined in a defunct and truly obese satellite dish,
+>
+> _why
+>
+> [1] http://tryruby.hobix.com/
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070228/6a7327c6/attachment.html 
+

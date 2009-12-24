@@ -1,0 +1,239 @@
+From bdarcus at myrealbox.com  Sat Aug  7 15:41:02 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Sat Aug  7 15:41:05 2004
+Subject: recommended?
+In-Reply-To: <406B0771.80808@poignantguide.net>
+References: <406B0771.80808@poignantguide.net>
+Message-ID: <B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+
+
+On Mar 31, 2004, at 1:01 PM, why the lucky stiff wrote:
+
+>  'can you foresee any reason you wouldn't recommend the Guide as the 
+> #1 starting point for a Ruby newcomer?'
+
+I just finally checked this account after months, and found 99% spam, 
+and this.
+
+I'm a newbie to programming and to Ruby, so maybe I'm a good test?  My 
+only coding background is with XSLT, and I work with a lot of text and 
+XML (I'm a scholar).
+
+I find I learn by doing more than anything, with well-explained, 
+complete (no code fragments please), and practical examples.  So useful 
+stuff for me would be something like:
+
+I want to download an article (or group of them) from the New York 
+Times, run Tidy to convert to XHTML, and run a regex-based text cleaner 
+on it to convert "dumb quotes" to <q>semantic quotes</q>.
+
+That deals with working with files, it deals with the web-related 
+stuff, and with regular expression support.
+
+I'd also like to learn how to create a simple command-line interface to 
+do some of this sort of stuff.
+
+Beyond that, I think the writing tends too-often towards being -- sorry 
+to be blunt -- pretentious.  As you write (and I make my living 
+writing, so do this myself), ask yourself whether you are communicating 
+what you need to communicate in the most direct way.
+
+Bruce
+
+From byates at emich.edu  Sun Aug  8 19:07:39 2004
+From: byates at emich.edu (Ben Yates)
+Date: Sun Aug  8 19:07:48 2004
+Subject: poignant-stiffs Digest, Vol 6, Issue 1
+In-Reply-To: <200408081600.i78G06Kd001817@rubyforge.org>
+References: <200408081600.i78G06Kd001817@rubyforge.org>
+Message-ID: <4116B23B.3050505@emich.edu>
+
+
+> Beyond that, I think the writing tends too-often towards being -- 
+> sorry to be blunt -- pretentious.  As you write (and I make my living 
+> writing, so do this myself), ask yourself whether you are 
+> communicating what you need to communicate in the most direct way.
+
+
+One of the charming points of W(P)GtR is that it's not a typical 
+programming manual -- which is to say, it's not direct, it's 
+entertaining.  I can say that for non-programmers (well, for me) the 
+Guide is pretty damn powerful -- it doesn't just tell you how Ruby 
+works, it makes you want to know.  I have very little interest in or 
+aptitude for programming and I had to pull myself away from learning the 
+language because I had too much other stuff to do.
+
+(By the way, I wrote up W(P)GtR in a ridiculously hyperbolic everything2 
+node -- http://www.everything2.com/index.pl?node_id=1669460 )
+From andrewj at bcm.tmc.edu  Mon Aug  9 12:04:28 2004
+From: andrewj at bcm.tmc.edu (Andrew R Jackson)
+Date: Mon Aug  9 12:04:32 2004
+Subject: poignant-stiffs Digest, Vol 6, Issue 1
+In-Reply-To: <4116B23B.3050505@emich.edu>
+Message-ID: <00a601c47e2a$8c9b4a10$3299f980@Sodaash>
+
+
+> > Beyond that, I think the writing tends too-often towards being --
+> > sorry to be blunt -- pretentious.  As you write (and I make 
+> my living 
+> > writing, so do this myself), ask yourself whether you are 
+> > communicating what you need to communicate in the most direct way.
+> 
+> 
+> One of the charming points of W(P)GtR is that it's not a typical 
+> programming manual -- which is to say, it's not direct, it's 
+> entertaining.  I can say that for non-programmers (well, for me) the 
+> Guide is pretty damn powerful -- it doesn't just tell you how Ruby 
+> works, it makes you want to know.  I have very little interest in or 
+> aptitude for programming and I had to pull myself away from 
+> learning the 
+> language because I had too much other stuff to do.
+
+I have to agree with Ben here. I am a programmer (as a living, not so
+much as a hobby) and my language of choice is Ruby. Probably the very
+most bestest thing about W(P)GtR is the writing style!
+
+It is entertaining and funny, and its eclectic nature lends strongly to
+that. There are so many learn-Ruby guides out there for the
+non-programmer and more serious ones for those who need a course (the
+interactive online Programming Ruby book is what I put the students
+through ;).
+
+It is *so* nice to have something that is *not* one of those dry,
+overly-communicative, too-direct sources without any attempt at Art. [
+Yes, I said attempt, I'll decide later if W(P)GtR is Art or
+not...maybe...part of the amusement. ]
+
+It would be fun if:
+(1) it could be a little less to the point, perhaps through additional
+indirection
+(2) there existed a leather-bound version, with a well worn cover
+
+Or not.
+Andrew
+
+
+From bdarcus at myrealbox.com  Mon Aug  9 12:28:35 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Mon Aug  9 12:28:38 2004
+Subject: poignant-stiffs Digest, Vol 6, Issue 1
+In-Reply-To: <00a601c47e2a$8c9b4a10$3299f980@Sodaash>
+References: <00a601c47e2a$8c9b4a10$3299f980@Sodaash>
+Message-ID: <297C89D4-EA21-11D8-A17C-000A95B10832@myrealbox.com>
+
+
+On Aug 9, 2004, at 12:04 PM, Andrew R Jackson wrote:
+
+> It is *so* nice to have something that is *not* one of those dry,
+> overly-communicative, too-direct sources without any attempt at Art. [
+> Yes, I said attempt, I'll decide later if W(P)GtR is Art or
+> not...maybe...part of the amusement. ]
+
+Note: I am not saying ti should be dry.  I don't have time to give 
+examples now, but maybe when the next chapter is out I'll pick out a 
+few to demonstrate what I mean.
+
+Bruce
+
+From ryan.platte at gmail.com  Tue Aug 10 14:20:41 2004
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Tue Aug 10 14:20:45 2004
+Subject: recommended?
+In-Reply-To: <B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+References: <406B0771.80808@poignantguide.net>
+	<B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+Message-ID: <2f1a1dcb04081011205fe4123a@mail.gmail.com>
+
+On Sat, 7 Aug 2004 15:41:02 -0400, Bruce D'Arcus <bdarcus@myrealbox.com> wrote:
+...
+> I'd also like to learn how to create a simple command-line interface to
+> do some of this sort of stuff.
+> 
+> Beyond that, I think the writing tends too-often towards being -- sorry
+> to be blunt -- pretentious.  As you write (and I make my living
+> writing, so do this myself), ask yourself whether you are communicating
+> what you need to communicate in the most direct way.
+
+I doubt you're in the intended audience. More probably in the intended
+audience is someone like my wife, who's brilliant but hasn't explored
+much programming because she can't be bothered with jargon, which I
+think (and she thinks) _why does a fine job of dispatching (as in
+getting rid of it, not as in double-dispatch, of course).
+
+I also think the label "silly" would apply more aptly than
+"pretentious", if only because the text is so cheery. To my mind, the
+world has enough "Learn XQHKELMNOP In 12 Seconds" and not enough "How
+is XQHKELMNOP Like Milking a Cow?"
+
+All that said, I haven't found the time to go back and read the whole
+thing; it probably could stand to be a bit more of a page-turner...
+
+-- 
+Ryan Platte
+From rpardee at comcast.net  Sun Aug 29 11:16:36 2004
+From: rpardee at comcast.net (Roy Pardee (Poulsbo WA))
+Date: Sun Aug 29 11:16:49 2004
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+In-Reply-To: <41059184.2030300@poignantguide.net>
+Message-ID: <000001c48ddb$311a54e0$6401a8c0@blackula>
+
+Hey All,
+
+Apologies if this isn't a proper forum for this--pls feel free to redirect
+me...
+
+I can't get ri to work.  I'm on winxp.  Googling led me to change my path,
+but it seems like the problem is that bin\ri.bat wants me to have a T: drive
+mapping, which I don't, and don't know where that should be mapped in any
+event.
+
+Does this sound familiar to anyone?
+
+Thanks!
+
+-Roy
+
+-----Original Message-----
+From: poignant-stiffs-bounces@rubyforge.org
+[mailto:poignant-stiffs-bounces@rubyforge.org] On Behalf Of why the lucky
+stiff
+Sent: Monday, July 26, 2004 4:20 PM
+To: poignant-watchers@rubyforge.org; poignant-stiffs@rubyforge.org
+Subject: The Tiger's Vest (with a Basic Introduction to Irb)
+
+
+Hello.  Thankyou for your waiting.  Testing, testing encrypted giraffe 
+lungs.  (I'm having the elf feed him a few more bananas such that the 
+words will slip-squizz out faster.)
+
+  I am glad
+  My arms
+  Aren't too
+  Long to
+  Write a
+  Book.
+
+  Still,
+  I wish
+  They were
+  Even a bit
+  Closer.
+
+The first expansion pak to the (Poignant) Guide is called The Tiger's 
+Vest.  In chapter four, I am now asking the reader to branch away from 
+the book for a moment to install Ruby.  And it's at:
+
+   http://poignantguide.net/ruby/expansion-pak-1.html
+
+These expansion paks are diversions, things which may change frequently 
+and tell side stories and contain role-playing games.  Okay, back to 
+chapter five.  Have some potion.
+
+_why
+_______________________________________________
+poignant-stiffs mailing list
+poignant-stiffs@rubyforge.org
+http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+
+

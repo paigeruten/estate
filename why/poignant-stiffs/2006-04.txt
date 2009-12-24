@@ -1,0 +1,74 @@
+From jmikus at gmail.com  Tue Apr  4 19:06:01 2006
+From: jmikus at gmail.com (Michael Jouravlev)
+Date: Tue, 4 Apr 2006 16:06:01 -0700
+Subject: Notes on Chapter 3
+Message-ID: <1db115340604041606ge3aeda1l4907662f1639a271@mail.gmail.com>
+
+Hello!
+
+The book is great and reads like a good novel. I am only on chapter 3,
+ just one note so far: you do not explain how block arguments get into
+a block. Ok, there is a block and there are parameters, but how actual
+data is passed into a block?
+
+Well, apparently, a non-stupid reader should deduce the idea from the
+example you provided: ['toast', 'cheese', 'wine'].each { |food| print
+food.capitalize }. I guess I am stupid. I flied through the above
+example with ease (whoa, looks like a normal language), but stumbled
+upon the similar piece of code later in the chapter:
+
+ require 'net/http'
+ Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http|
+     print( http.get( '/en/LICENSE.txt' ).body )
+ end
+
+I guess, parentheses, arguments and different block syntax distracted
+me ;-) It took several flips from one sample to another to grasp the
+system: method returns a value that is fed to the following block. I
+am only on Chapter 3 so I don't know is it possible to return multiple
+values and if not, how to provide multiple parameters to a block.
+
+Anyway, for the less bright readers you might want to mention how
+exactly arguments are passed to a block.
+
+Thanks again for the great read! I literally cannot stop reading.
+
+Michael.
+
+
+From robin.shannon at gmail.com  Tue Apr  4 20:30:13 2006
+From: robin.shannon at gmail.com (Robin Shannon)
+Date: Wed, 5 Apr 2006 10:30:13 +1000
+Subject: Slightly OT: anyone know of some simple ruby programs to serve as
+	examples to learners.
+In-Reply-To: <a65ae5c90512051027k449f45x2d20861f604d1641@mail.gmail.com>
+References: <623d73380512041836u628f7246j@mail.gmail.com>
+	<a65ae5c90512051027k449f45x2d20861f604d1641@mail.gmail.com>
+Message-ID: <623d73380604041730gd300c1er37fc3218f06250e4@mail.gmail.com>
+
+Perfect. Thanks a lot.
+
+-rjs.
+
+On 06/12/05, Daniel Amelang <daniel.amelang at gmail.com> wrote:
+> I think the weekly ruby programming quiz would be pretty close to what
+> you're looking for. Here they are online, check out the archives on
+> the left column of the page for various elegant solutions:
+>
+> http://www.rubyquiz.com/
+>
+> Let us know if you're looking for something even more simple.
+>
+> Dan
+>
+
+--
+DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+<http://www.gnu.org/philosophy/sylvester-response.html>
+
+Hit me: <http://robin.shannon.id.au> [broken]
+Jab me: <robin.shannon at jabber.org.au>
+Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+Faith is under the left nipple. -- Martin Luther
+
+

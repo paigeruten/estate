@@ -1,0 +1,1062 @@
+<h1>What's Shiny and New in Ruby 1.8.0?</h1>
+
+<p>A massive handshake to <a href="http://www.rubyist.net/~matz/">Yukihiro Matsumoto</a>, who has completed version <a href="http://www.ruby-lang.org/download-1.8.0.rbx">1.8.0</a> of the agile <a href="http://www.ruby-lang.org/">Ruby language</a>. This work has been in progress for several years now, since Matz forked the 1.7 branch in mid-2001.</p>
+
+<p>Many of 1.8.0's new features have been long awaited by the Ruby crowd. I'm just going to run through a few of my favorite new features that I've longed to have in a stable Ruby version. I'm not going to include all of 1.8.0's features, only the ones that have stuck out to me. If I make a terrible omission, please let me know. I'd love to build on this.</p>
+
+<p>(Incidentally, a really nicely formatted <a href="http://dev.faeriemud.org/changes-1.8.0.html">write-up of changes</a> has been done by <a href="http://www.deveiate.org/">Michael Granger</a>.)</p>
+
+<h2>Core Changes</h2>
+
+<p>First, I'll detail a number of changes that affect the core set of classes that Ruby operates upon. Matz has spent a lot of time reviewing and cleaning these classes in detail. For example, Matz' work on cleaning up the Block/Proc classes took him several months to decide upon and implement. I can tell you that he is really thinking through each small change made in Ruby.</p>
+
+<h3>The <code>allocate</code> method</h3>
+
+<p>Scanning through <span class="caps">RAA</span>, you will find many libraries which use a variety of strange techniques for creating objects without calling class constructors. The ability to build a blank class instance is incredibly useful. Perhaps you're loading data from a database and you want to populate classes based on their property set. Perhaps you're writing a serialization library. Perhaps you want to copy only certain parts of an object. Ultimately, you want control over the allocation and initialization of an object.</p>
+
+<p>Historically, <a href="http://raa.ruby-lang.org/list.rhtml?name=soap4r">SOAP4R</a> has used <code>Marshal.load</code> to create a blank object. This technique works well, but involves some sketchy logic to assemble a marshalled string.</p>
+
+<p>Providing that our class name is a String in variable <code>class_name</code> and a Hash of properties and their values is stored in <code>class_props</code>:</p>
+
+<pre>
+ msh = "\004\006o:%c%s\000" % [ class_name.length + 5, class_name ]
+ o = ::Marshal.load( msh )
+ class_props.each_pair { |k,v| o.instance_eval "@#{k} = v" }
+</pre>
+
+<p>Another common way of dealing with this is found in Chris Morris' <a href="http://raa.ruby-lang.org/list.rhtml?name=clxmlserial">clxmlserial</a> library. This approach involves shorting the constructor by temporarily <code>alias</code> ing it.</p>
+
+<p>Here's an <code>allocate</code> technique which leverages <code>alias</code>:</p>
+
+<pre>
+ class Class
+   def allocate
+
+     self.class_eval %{
+       alias :old_initialize_with_args :initialize
+       def initialize; end
+     }
+
+     begin
+       result = self.new
+     ensure
+       self.class_eval %{
+         undef :initialize
+         alias :initialize :old_initialize_with_args
+       }
+     end
+
+     result
+   end
+ end
+</pre>
+
+<p>While both are neat bits of code, they are both obviously circumvention hacks. The <code>allocate</code> method has been added to allow proper bypassing of the constructor.</p>
+
+<pre>
+ o = Object::const_get( class_name ).allocate
+ class_props.each_pair { |k,v| o.instance_eval "@#{k} = v" }
+</pre>
+
+<p>This method also comes with an accompanying <span class="caps">API</span> call for extensions:</p>
+
+<pre>
+ VALUE rb_obj_alloc( VALUE klass )
+</pre>
+
+<h3>Duck typing and <code>to_str</code></h3>
+
+<p>If there is a primary thrust to Ruby 1.8.0 (and the releases building up to it), it is <a href="http://c2.com/cgi/wiki?DuckTyping">duck typing</a>. We differentiate our objects by the methods that they possess. You should see more and more <code>respond_to?</code> in Ruby code rather than <code>kind_of?</code>. This concept is a core mantra of Ruby, right alongside the <i>principle of least surprise</i> (POLS).</p>
+
+<p>Whereas the phrase "duck typing" doesn't appear in 1.6.x era versions of the <a href="http://www.google.com/search?&#38;q=site:rubycentral.com%20duck">PickAxe</a>, you can see it popping up all over ruby-talk: [<a href="http://www.ruby-talk.org/53644">53644</a>], [<a href="http://www.ruby-talk.org/56614">56614</a>], [<a href="http://www.ruby-talk.org/76059">76059</a>]. (You might also check out <a href="http://www.rubygarden.org/ruby?TypesInRuby">Types in Ruby</a>.)</p>
+
+<p>Let's take a bit of code we might have used previously in Ruby:</p>
+
+<pre>
+ # Read entire contents of a file
+ def read_file( file_name )
+
+   # Ok. It's a file name.
+   if file_name.is_a? String
+     File.open( file_name ).read
+
+   # But what if it's an IO object?
+   # Let's read from it!
+   elsif file_name.is_a? IO
+     file_name.read
+
+   end
+ end
+</pre>
+
+<p>The above code is trying to abstract away the reading of data by handling <code>read</code> operations inside the method. Since we're so used to Java and Python techniques, we tend to identify an object based on what classes it descends from. We look at the <code>file_name</code> var and figure that if we check for descent from a <code>String</code> class, then we are covered if someday we decide to extend <code>String</code> class on our own and use that as our <code>file_name</code>.</p>
+
+<p>With <code>to_str</code>, Matz is giving us a simpler way of demonstrating that our classes can be used as strings directly. Nearly all builtin methods use <code>to_str</code> to determine if an object is (or can be used as) a String. Think of it: if you extend the <code>String</code> class, then you have to write alternate methods (<code>sub!</code>, <code>length</code>, <code>append</code>, etc.) tailored to your needs.</p>
+
+<p>Instead, simply write a <code>to_str</code> method and we can treat such an object like a <code>String</code> in our example:</p>
+
+<pre>
+ def read_file( file_name )
+   if file_name.respond_to? :to_str
+     File.open( file_name ).read
+   elsif file_name.respond_to? :read
+     file_name.read
+   end
+ end
+</pre>
+
+<p>So why not use <code>to_s</code>? Because <code>to_s</code> coerces objects into strings. So, <code>to_str</code> is an implicit cast, whereas <code>to_s</code> is an explicit cast.</p>
+
+<p>Think of timestamps. We want to be able to easily convert a timestamp into a String for printing:</p>
+
+<pre>
+ puts "Time.now: " + Time.now.to_s
+ #=&gt; Time.now: Mon Aug 04 13:37:43 MDT 2003
+</pre>
+
+<p>But we don't want to load a File based on a timestamp:</p>
+
+<pre>
+ File.open( Time.now )
+ #=&gt; TypeError: cannot convert Time into String
+     from (irb):3:in `initialize'
+     from (irb):3:in `open'
+     from (irb):3
+</pre>
+
+<p>Generally, we just don't need a timestamp to act as a String. So we use <code>to_s</code> to explicitly convert it.</p>
+
+<p>If you're having a hard time remembering which is which, I would remember that there is a reason that <code>to_s</code> is shorter. First, it implies that the object isn't really much of a string, so we're only using the first letter 's'. Also, <code>to_s</code> is shorter because more objects will have <code>to_s</code> methods, so you'll end up typing it more frequently.</p>
+
+<p>With <code>to_str</code>, we're tagging an object as much closer to being a string, so we give it the first three letters. It's almost half of a string!</p>
+
+<h3>[RCR:41] Class.new and Module.new each take a block</h3>
+
+<p>If a block is passed to <code>Class.new</code> or <code>Module.new</code>, the block is executed within the context of the class or module. This is great for creating anonymous classes and modules without needing to call eval. Entire anonymous classes and modules can now be created with a syntax that isn't far off from the normal <code>class</code> and <code>module</code> declarations.</p>
+
+<pre>
+ m = Module.new do
+       def test_me
+        "called &lt;module&gt;::test_me" 
+       end
+     end
+
+ class NewTest; end
+ NewTest.extend m
+
+ NewTest.test_me
+ #=&gt; "called &lt;module&gt;::test_me" 
+</pre>
+
+<p>As for creating anonymous classes:</p>
+
+<pre>
+ c = Class.new do
+       def test_me
+         "called &lt;klass&gt;::test_me" 
+       end
+     end
+
+ c1 = c.new
+ c1.test_me
+ #=&gt; "called &lt;klass&gt;::test_me" 
+</pre>
+
+<h3>Fully qualified names (Foo::Bar)</h3>
+
+<p>Here's a small but significant change. Ruby 1.8 now allows you to declare classes and other constants using the full path to the constant. Previously, you had to surround such declarations with the module declaration. They also has to be nested for each module declaration.</p>
+
+<p>Here's a declaration for the <code>Foo::Bar</code> class:</p>
+
+<pre>
+ module Foo
+   class Bar; end
+ end
+</pre>
+
+<p>Modules must still be declared in 1.8 as shown above. But we can now add methods to the <code>Foo::Bar</code> class without nesting the method declaration in a module declaration:</p>
+
+<pre>
+ class Foo::Bar
+   def baz; end
+ end
+</pre>
+
+<p>The old syntax is still valid and acceptable:</p>
+
+<pre>
+ module Foo
+   class Bar
+     def baz; end
+   end
+ end
+</pre>
+
+<h3>Proc subtelties</h3>
+
+<p>I will mention a few changes to <code>Proc</code>, simply because it's the such a useful construct and slight changes in behavior help indicate its future.</p>
+
+<p>With respect to <code>return</code> and <code>break</code>, you used to treat a <code>proc</code> (or <code>lambda</code>) the same as a block. Let's examine the following code:</p>
+
+<pre>
+ def proc_test( num )
+   3.times do |i|
+     return i if num == i
+   end
+   return 0
+ end
+ proc_test( 2 )
+ #=&gt; 2
+</pre>
+
+<p>In the above, we have a <code>return</code> inside the iterating block. It makes perfect sense for a block to return from the caller. Blocks have fairly transparent scoping. (By the way, if you haven't noticed, everyone has <a href="http://www.rubygarden.org/pollBooth.php?op=results&#38;pollID=13">their own ideas</a> about how block scoping <i>should</i> work.)</p>
+
+<p>In the case of a <code>proc</code> (or <code>lambda</code>), Ruby is beginning to protect their scope more than with a block. In Ruby 1.8.0, both <code>break</code> and <code>return</code> exit the scope of the <code>proc</code>, but do not exit the scope of the caller.</p>
+
+<pre>
+ def proc_test( num )
+   p = proc do |i|
+         return i if num == i
+       end
+   3.times do |x|
+     p.call( x )
+   end
+   return 0
+ end
+ proc_test( 2 )
+ #=&gt; 0 
+</pre>
+
+<p>In 1.6.8, <code>proc_test( 2 )</code> would return 2. You can see how the <code>proc</code> is becoming less like a block and more like an anonymous method.</p>
+
+<h3>LocalJumpError: return from proc-closure</h3>
+
+<p>I'd also like to mention a fix that was made in 1.6.8, but still bites me from time to time. I'm sure many of you will encounter this, not sure what to make of it.</p>
+
+<p>Suppose we have an event handling system in our <span class="caps">GUI</span> system. A system for handling mouse clicks. We have a method (<code>simulate_click</code>) which we can use to test calling all the click handlers and a method (<code>add_click_handler</code>) for introducing new handlers. We'll also add a click handler which catches the the click if it leaves the upper corner of the screen and prevents the event from bubbling.</p>
+
+<pre>
+ def simulate_click( x, y )
+   @click_handlers ||= []
+   @click_handlers.each do |h|
+     return false unless h.call( x, y )
+   end
+   return true
+ end
+
+ def add_click_handler( &#38;block )
+   @click_handlers ||= []
+   @click_handlers &lt;&lt; block
+ end
+
+ add_click_handler do |x, y|
+   return ( x &gt; 25 &#38;&#38; y &gt; 25 )
+ end 
+</pre>
+
+<p>Looks harmless? Well, this code is just dying to break. Any call to <code>simulate_click</code> will throw a <code>LocalJumpError</code>.</p>
+
+<pre>
+ simulate_click( 60, 70 )
+ #=&gt; LocalJumpError: return from proc-closure
+     from (irb):78:in `call'
+     from (irb):78:in `simulate_click'
+     from (irb):77:in `each'
+     from (irb):77:in `simulate_click'
+     from (irb):81
+</pre>
+
+<p>Our problem is that we're dealing with an orphaned block. Several situations can create an orphaned block, but the most common is to receive a block through a method call, assign it to a variable and use it outside of the original scope. Also, if a block crosses to another thread. It becomes difficult to tell how that <code>return</code> was intended. (Also, avoid using <code>break</code> or <code>retry</code> directly inside of an orphaned block.)</p>
+
+<p>So how do we fix our script? Get rid of <code>return</code>!</p>
+
+<pre>
+ add_click_handler do |x, y|
+   x &gt; 25 &#38;&#38; y &gt; 25
+ end 
+</pre>
+
+<p>Alternatively, pass in a <code>Proc</code> to give the <code>return</code> some context. (Note that just performing a <code>to_proc</code> conversion on an orphaned block won't do the trick.)</p>
+
+<p>The moral of the story is: think about what you're doing when you use <code>return</code>, <code>break</code> or <code>retry</code> in your code. For iterators, don't use the above technique. Rather, use <code>block_given?</code> and <code>yield</code>, which prevent the block from becoming orphaned.</p>
+
+<h2>Builtin Class Changes</h2>
+
+<p>Now, let's cover some new methods found in Ruby's core classes. Pay special attention to the additions in the Array class. Many of those methods will become a crucial part of your development, should you learn them.</p>
+
+<h3>Object#initialize_copy</h3>
+
+<p>Don't get the wrong idea about Ruby's new <code>allocate</code> method (described above). No one's picking on constructors. Constructors have a solid spot in Ruby's future. In fact, a new constructor has been added to every Object.</p>
+
+<p>In Ruby, the <code>initialize</code> method is called when an object is created with <code>new</code>:</p>
+
+<pre>
+ class Person
+   attr_accessor :name, :company, :phone, :created_at
+   def initialize( name, company, phone )
+     @name, @company, @phone, @created_at = 
+      name, company, phone, Time.now
+   end
+ end
+
+ bill = Person.new( 'Bill Bobson', 
+   'The Mews at Windsor Heights', '801-404-1200' )
+ bill.created_at
+ #=&gt; Tue Aug 05 14:09:52 MDT 2003
+</pre>
+
+<p>However, when an Object is copied with <code>clone</code> or <code>dup</code>, then constructor is skipped. This thwarts our timestamp mechanism above, though. What if we want to copy the basic data for the office, but reset the creation date and leave the name blank?</p>
+
+<p>The <code>initialize_copy</code> constructor gets called on a <code>clone</code> or <code>dup</code>. Ruby passes in the object to copy from. We can pick and choose what data we want to keep. Initialize some data on our own.</p>
+
+<p>So, rather than starting with a duplicate and stripping out data, we assemble a blank object with the pieces we're copying.</p>
+
+<pre>
+ class Person
+   def initialize_copy( from )
+      @company, @phone, @created_at = 
+        from.company, from.phone, Time.now
+   end
+ end
+
+ carol = bill.dup
+ carol.name = 'Carol Sonbob'
+ carol.created_at
+ #=&gt; Tue Aug 05 14:10:24 MDT 2003
+</pre>
+
+<h3>Enumerable#inject: Building while iterating</h3>
+
+<p>This method is easily the most anticipated addition to the core classes. Inject allows you to introduce a single value into the scope of an iterating block. Each value returned by the block is introduced on the successive call.</p>
+
+<p>We'll start with a simple example:</p>
+
+<pre>
+ [1, 2, 3].inject( "counting: " ) { |str, item| str + item.to_s }
+ #=&gt; "counting: 123" 
+</pre>
+
+<p>See if you can figure out how the above works without my explanation. Ask yourself: how does the string get passed into the block? How do the numbers get added to the string? And how does the block return the full string?</p>
+
+<p>With <code>inject</code>, we supply the method with a value which will accompany us as we iterate through the block. This injected value is passed into the block as the first parameter. (In the above: <i>str</i>) The second parameter is a value from the object we're iterating through.</p>
+
+<p>The injected value is really only used on the first pass through the iterator. At the end of the first pass, <code>inject</code> keeps the return value of the block and injects it into the block on the second pass. The return of the second pass is injected into the third pass, and so on.</p>
+
+<p>To be clear, let's inspect the block parameters on our <code>inject</code> call:</p>
+
+<pre>
+ [1, 2, 3].inject( "counting: " ) do |str, item| 
+   puts [str, item].inspect
+   str + item.to_s
+ end
+
+ # ["counting: ", 1]
+ # ["counting: 1", 2]
+ # ["counting: 12", 3]
+ #=&gt; "counting: 123" 
+</pre>
+
+<p>You can see the string building. The evolution of the injected value. The <code>inject</code> method is great if you are building a single value from the contents of any Enumerable type. Its uses are numerous and it has been said that <code>inject</code> could replace using most of Enumerable's other methods.</p>
+
+<h3>Enumerable#sort_by: Faster, simpler sorting</h3>
+
+<p>The existing <code>Enumerable#sort</code> method leverages a block to sort value. Two values are handed to the block and the block must compare the two items. This process can be expensive, as in the following example:</p>
+
+<pre>
+ ["here", "are", "test", "strings"].sort { |a,b| a.hash &lt;=&gt; b.hash }
+ #=&gt; ["test", "strings", "here", "are"]
+</pre>
+
+<p>In the above block, a number of unnecessary hashes are generated. This is evidenced if we print out the hashes as they are generated:</p>
+
+<pre>
+ ["here", "are", "test", "strings"].sort do |a,b| 
+   puts ah = a.hash
+   puts bh = b.hash
+   ah &lt;=&gt; bh
+ end
+
+ # 431661103
+ # -914358341
+ # -914358341
+ # -890696794
+ # 431661103
+ # -890696794
+ # 834120758
+ # -890696794
+ # 834120758
+ # 431661103
+ #=&gt; ["test", "strings", "here", "are"]
+</pre>
+
+<p>Ten hashes in all are generated by <code>sort</code> as it works to compare these values against each other. In addition, <code>Enumerable#sort</code> can be difficult to master as the return value must be -1, 0, or 1, each signifying <i>greater than</i>, <i>equal to</i> and <i>less than</i>. I'm sure that a certain two of those are frequently confused by newcomers.</p>
+
+<p>The <code>Enumerable#sort_by</code> performs the now-infamous Schwartzian transform by simply asking you to generate values which can be used for sorting. In the above case, we really just want to use a string's <code>hash</code> for sorting, so let's return the hash to <code>sort_by</code>, which can do the rest of the work for us.</p>
+
+<pre>
+ ["here", "are", "test", "strings"].sort_by { |a| a.hash }
+ #=&gt; ["test", "strings", "here", "are"]
+</pre>
+
+<p>Much more compact. Much more efficient. Nothing fancy to remember.</p>
+
+<h3>Using sort_by with objects</h3>
+
+<p>Harry Ohlsen has contributed a neat bit of code, demonstrating how <code>sort_by</code> can be used to sort objects elegantly. This code is so simple and readable that I had to include it here for your affections.</p>
+
+<p>Assuming the <code>Person</code> class introduced above in the <code>initialize_copy</code> section:</p>
+
+<pre>
+ persons = [
+   Person.new( 'Roger Andies', 'IBM', '456-101-2345' ),
+   Person.new( 'Bill Bobson', 'Carl's Jr.', '608-121-0001' ),
+   Person.new( 'Bill Bobson', 
+     'The Mews at Windsor Heights', '466-404-1200' ),
+   Person.new( 'Harvey Winston', 'ARUP Labs', '707-255-1212' )
+ ]
+</pre>
+
+<p>We can then sort this Array of Objects by providing <code>sort_by</code> with a list of the properties to sort by, in order of precedence:</p>
+
+<pre>
+ persons.sort_by { |p| [p.name, p.company, p.created_at] }
+</pre>
+
+<p>Amazingly simple! The above code will return a list of <code>Person</code> objects, sorted first by name, then by company, then by creation date. So in the case of dueling Bill Bobson's, the Bill Bobson with the alphabetically early company name will prevail.</p>
+
+<h3>Enumerable#any?</h3>
+
+<p>The <code>any?</code> method checks an Enumerable to see if <i>any</i> of its values can meet a comparison. This comparison is contained within a block.</p>
+
+<p>To see if any members of an Array meet a regular expression:</p>
+
+<pre>
+ ["Mr. Janus", "Mr. Telly", "Ms. Walters"].any? { |x| x =~ /^Ms\./ }
+ #=&gt; true
+</pre>
+
+<h3>Enumerable#all?</h3>
+
+<p>The <code>all?</code> method checks an Enumerable to see if <i>all</i> of its values can meet a comparsion. Like <code>any?</code>, the comparison is expressed by a block.</p>
+
+<p>To see if all members of an Array meet a regular expression:</p>
+
+<pre>
+ ["Mr. Janus", "Mr. Telly", "Ms. Walters"].all? { |x| x =~ /^Ms\./ }
+ #=&gt; false
+</pre>
+
+<h3>[RCR:16] Array#partition</h3>
+
+<p>Here's a great method for sorting data. You can almost think of this as an expansion of <code>Array#reject</code> which returns separate Arrays for both the accepted and rejected data.</p>
+
+<p>For example, in my <span class="caps">YAML</span> testing suite, I execute about 150 tests and results are returned to me in the form of an Array of Hashes. Each hash has a <code>success</code> key, which indicates the tests that pass and fail.</p>
+
+<pre>
+ # Load my test results
+ tests = YAML::load( `ruby yts.rb` )
+
+ # Separate tests into successes and fails
+ success, fail = tests.partition { |t| t['success'] }
+</pre>
+
+<p>I now have a list of all successful and failing tests. This is exactly the code that I'll be using to generate <span class="caps">HTML</span> results for my tests.</p>
+
+<h3>Array#transpose</h3>
+
+<p>The new <code>transpose</code> method basically reverses the dimensions of a two-dimensional Array. Given an Array <code>a1</code> and its transposed counterpart Array <code>a2</code>: <code>a1[0][1]</code> becomes <code>a2[1][0]</code>, <code>a1[1][0]</code> becomes <code>a2[0][1]</code> and <code>a1[0][0]</code> is <code>a2[0][0]</code>.</p>
+
+<pre>
+ # A simple two-dimensional array
+ [[1,2,3],[3,4,5]].transpose
+ #=&gt; [[1, 3], [2, 4], [3, 5]]
+
+ # A more complex three-dimensional array
+ [
+  [[1, 2, 3], [:a, :b, :c]], 
+  [[4, 5, 6], [:d, :e, :f]], 
+  [[7, 8, 9], [:g, :h, :i]]
+ ].transpose
+ #=&gt; [[[1, 2, 3], [4, 5, 6], [7, 8, 9]], 
+    [[:a, :b, :c], [:d, :e, :f], [:g, :h, :i]]]
+</pre>
+
+<h3>Array#zip</h3>
+
+<p>Often Arrays are merged horizontally with means such as <code>Array#concat</code>. The <code>concat</code> method appends one Array onto another:</p>
+
+<pre>
+ [1, 2].concat( [3, 4] )
+ #=&gt; [1, 2, 3, 4]
+</pre>
+
+<p>With zip, the Arrays are merged side-by-side. This can be thought of as merging Arrays vertically, to give a new Array with an added dimension.</p>
+
+<pre>
+ [1, 2].zip( [3, 4] )
+ #=&gt; [[1, 3], [2, 4]]
+</pre>
+
+<p>Think of two packages of cookies. Dark and light cookies, each in cylindrical plastic wrappers. The cookies are taken out and stacked next to each other on a counter top. This way, if someone is getting ready for a party, they could easily remove the top two cookies (one light, one dark) and place them on a plate.</p>
+
+<p>The <code>zip</code> method is handy for placing Arrays side-by-side in a stack, so sections of these Arrays can be handled together.</p>
+
+<p>Let's say we've developed a machine, a Ruby-powered robotic maid, which can sort through our milk and cookies and create snack plates for us at night. Here's the program we'll execute to give her the complete list:</p>
+
+<pre>
+ milk = [:milk1, :milk2, :milk3]
+ light = [:light1, :light2, :light3]
+ dark = [:dark1, :dark2, :dark3]
+
+ milk.zip( light, dark )
+ #=&gt; [[:milk1, :light1, :dark1],
+    [:milk2, :light2, :dark2],
+    [:milk3, :light3, :dark3]]
+</pre>
+
+<p>At last snack time is free of the bureaucracy and organizational turmoil that has plagued it for years!</p>
+
+<h3>[RCR:132] Hash#merge, Hash#merge!</h3>
+
+<p>The <code>Hash#merge</code> method allows you to <code>update</code> a Hash, but <code>merge</code> returns a new Hash. This is great for inheriting pairs from several Hashes.</p>
+
+<p>Say we want to set up a few Hashes with some defaults and create a new Hash with the overiding values from an incoming Hash:</p>
+
+<pre>
+ def make_point_hash( point )
+   center = { :x =&gt; 1, :y =&gt; 2 }
+   big = { :r =&gt; 10 }
+   center.merge( big ).merge( point ) 
+ end
+ make_point_hash( { :x =&gt; 20 } )
+ #=&gt; {:y=&gt;2, :r=&gt;10, :x=&gt;20}
+</pre>
+
+<p>Previously, this was done with <code>hsh.dup.update</code>. The <code>Hash#merge!</code> method is a preferable alias for <code>Hash#update</code>, indicating the destructive nature of an <code>update</code>.</p>
+
+<h3>[RCR:140,23] Range#step</h3>
+
+<p>Ranges are an odd object really. An object that represents many object. Stands here in place of a broad set of numbers so they don't all have to be present for roll call.</p>
+
+<p>The <code>Range#step</code> method adds a lot of extra functionality to the Range class. I venture to say that it will become one of the most highly used Range methods in the world!</p>
+
+<p>In Ruby 1.6, we had stepping with Integers:</p>
+
+<pre>
+ 0.step(360, 45) {|angle|
+   puts angle
+ }
+</pre>
+
+<p>Can you tell which of the above parameters is the <code>limit</code> and which is the <code>step</code>. Sure, it's not too hard. You might say <i>let's start at <em>zero</i> and <i>step</i> to <i>three-sixty</i> with a stride of <i>forty-five</i></em>. The readability is slightly hindered by the method call coming between the 0 and the 360.</p>
+
+<p>Try <code>Range#step</code> now:</p>
+
+<pre>
+ (0..360).step(45) {|angle|
+   puts angle
+ }
+</pre>
+
+<p>Which reads <i>from <em>zero</i> to <i>three-sixty</i> let's take <i>steps</i> of <i>forty-five</i></em>. This is certainly a small change, but it certainly helps to give increased purpose to our core classes.</p>
+
+<h3>[RCR:139] MatchData#captures</h3>
+
+<p>Ruby has excellent support for regular expressions, but we're still working on giving Ruby it's own angle on them. Matches from a string are returned as MatchData objects, which can be read as an Array.</p>
+
+<pre>
+ text = "name: Jen" 
+ matches = /^(\w+): (\w+)$/.match( text )
+ # matches[0] = "name: Jen", matches[1] = "name", matches[2] = "Jen" 
+</pre>
+
+<p>Enough regular expressions in your code, you might tire of keeping track of the index for each regular expression group. This <span class="caps">RCR</span> mandated <code>MatchData#captures</code>, which returns an array of the captured groups from a match.</p>
+
+<pre>
+ text = "name: Jen" 
+ matches = /^(\w+): (\w+)$/.match( text )
+ if matches
+   key, value = matches.captures
+   # key = "name", value = "Jen" 
+ end
+</pre>
+
+<h3>String#[regexp,n]: A fun Regexp quickie</h3>
+
+<p>Frankly, Ruby's Regexp support rules. For example, you can pass a Regexp into a String as if it were an Array index. Ruby will check for a match.</p>
+
+<pre>
+ "cat"[/c/]
+ #=&gt; "c" 
+ "cat"[/z/]
+ #=&gt; nil
+</pre>
+
+<p>With Ruby 1.8.0, you can pass in an optional second argument which will return the content of the <i>nth</i> matching group. How nice!</p>
+
+<pre>
+ re_phone = /(\d{3})-(\d{3})-(\d{4})/
+ "986-235-1001"[re_phone, 2]
+ #=&gt; "235" 
+</pre>
+
+<h3>[RCR:69] Inspect with %p in sprintf</h3>
+
+<p>For those who use the <code>sprintf</code> or <code>String#%</code> syntax, you can now print an object inspection with the <code>%p</code> parameter.</p>
+
+<pre>
+ hsh = {'x'=&gt;1, 'y'=&gt;1}      
+ puts "Hash is: %p." % hsh
+ #=&gt; Hash is: {"x"=&gt;1, "y"=&gt;1}.
+</pre>
+
+<h2>Standard Library</h2>
+
+<p>Matz has started to open up the Ruby standard library to include support for <span class="caps">XML</span>, XML-RPC, <span class="caps">SOAP</span>, YAML, OpenSSL, unit testing, distributed computing, and much more. These libraries allow Ruby to provide a great deal functionality out-of-the-box. These libraries are also guaranteed a long life and greater support.</p>
+
+<p>I would like to empasize that the decision to include these libraries in the core distribution is my <i>favorite part of Ruby 1.8.0</i>. We are getting closer to providing a complete toolkit for application development. We still offer a fewer set of libraries than other scripting languages, but these libraries are of incredible quality and utility.</p>
+
+<p>I'm going to go through a few of these libraries, giving some sample code and pointers to where documentation can be had.</p>
+
+<h3>REXML: A pure Ruby <span class="caps">XML</span> library</h3>
+
+<p><a href="http://www.germane-software.com/software/rexml/">REXML</a> is an <span class="caps">XML</span> library of the highest order. It is simple to use, full of features, faithful to Ruby's ideals and quite swift. Many who have been frustrated by the design of other <span class="caps">XML</span> libraries, find complete satisfaction in <span class="caps">REXML</span>. Allow me a short demonstration.</p>
+
+<p>One of <span class="caps">REXML</span>'s greatest features is it's XPath support. Let's suppose we have an <span class="caps">XML</span> document stored in a string, such as:</p>
+
+<pre>
+ xmlstr = &lt;&lt;EOF
+   &lt;mydoc&gt;
+     &lt;someelement attribute="nanoo"&gt;Text, text, text&lt;/someelement&gt;
+   &lt;/mydoc&gt;
+ EOF
+</pre>
+
+<p>Now, let's load the above document into a <code>REXML::Document</code> object:</p>
+
+<pre>
+ require 'rexml/document'
+ xmldoc = REXML::Document.new xmlstr
+</pre>
+
+<p>If we want to access the text in the <code>/mydoc/someelement</code> node, we can simply access the <code>elements</code> property with an XPath string between square brackets:</p>
+
+<pre>
+ xmldoc.elements['/mydoc/someelement'].text
+ #=&gt; "Text, text, text" 
+</pre>
+
+<p>Attributes can be accessed via the <code>REXML::Attributes</code> object:</p>
+
+<pre>
+ xmldoc.elements['/mydoc/someelement'].attributes['attribute']
+ #=&gt; "nanoo" 
+</pre>
+
+<p>You can do a surprising amount with knowledge of just the above techniques. I will leave you with one other before I hand you off to <span class="caps">REXML</span>'s documentation.</p>
+
+<p>The <code>REXML::Elements#each</code> method is useful for cycling through a set of matching <span class="caps">XML</span> nodes. Supposing we wanted to cycle through all <code>someelement</code> nodes:</p>
+
+<pre>
+ xmldoc.elements.each('/mydoc/someelement') do |ele|
+   puts ele.text
+ end
+</pre>
+
+<p><span class="caps">REXML</span> also has APIs for creating <span class="caps">XML</span>, stream parsing, event-based (SAX) parsing, entity processing, and a wealth of encodings.</p>
+
+<p>For more information, I would suggest studying in the following order:</p>
+
+<ol>
+<li><a href="http://www.germane-software.com/software/rexml/docs/tutorial.html">REXML Tutorial</a>: An introduction to <span class="caps">REXML</span> by its author.</li>
+<li>David Mertz' <a href="http://www-106.ibm.com/developerworks/xml/library/x-matters18.html">The <span class="caps">REXML </span>Library</a>: An introduction to <span class="caps">REXML</span> and comparison to other <span class="caps">XML</span> parsing techniques.</li>
+<li><a href="http://www.germane-software.com/software/rexml/faq.html">REXML <span class="caps">FAQ</span></a>: A handful of useful pointers.</li>
+<li><a href="http://www.germane-software.com/software/rexml/doc/">Full <span class="caps">API </span>Documentation</a> (RDoc): Everything else.</li>
+</ol>
+
+<h3>YAML: <span class="caps">YAML </span>Ain't Markup Language</h3>
+
+<p><a href="http://yaml.org/">YAML</a> is a simple, readable language for storing data. Ruby 1.8.0 introduces native support for loading and generating <span class="caps">YAML</span>.</p>
+
+<p>A simple Array of Strings can be represented in <span class="caps">YAML</span>:</p>
+
+<pre>
+ - bicycle
+ - car
+ - scooter
+</pre>
+
+<p>Hashes as well:</p>
+
+<pre>
+ title: Ruby in a Nutshell
+ author: Yukihiro Matsumoto
+ publisher: O'Reilly and Associates
+</pre>
+
+<p>These are simple examples, though. <span class="caps">YAML</span> can handle a wide variety of Ruby objects and maintain its readability. <span class="caps">YAML</span> is a great solution for configuration files, adhoc protocols and serializing data between other scripting languages.</p>
+
+<p>Incidentally, I am personally responsibile for development of this particular library. The C code that powers Ruby's <span class="caps">YAML</span> support is called <a href="http://whytheluckystiff.net/syck/">Syck</a> and extensions which use the same parser are available for Python and <span class="caps">PHP</span>. This shared parser and emitter helps guarantee that data objects are interpreted the same by the extension.</p>
+
+<p>Loading <span class="caps">YAML</span> documents is extremely simple:</p>
+
+<pre>
+ require 'yaml'
+ obj = YAML::load( File.open( 'books.yml' ) )
+</pre>
+
+<p>If <code>books.yml</code> contains a hash, then a Ruby Hash will be returned. If the document contains a list, then a Ruby Array will be returned.</p>
+
+<p>To turn the object back into <span class="caps">YAML</span>:</p>
+
+<pre>
+ require 'yaml'
+ File.open( 'books.yml', 'w' ) do |f|
+   f &lt;&lt; obj.to_yaml
+ end
+</pre>
+
+<p>Try it sometime in IRb. Instead of using <code>Kernel::p</code> to inspect your objects, try <code>Kernel::y</code>:</p>
+
+<pre>
+ require 'yaml'
+ a = { 'time' =&gt; Time.now, 'symbol' =&gt; :Test, 'number' =&gt; 12.0 }
+
+ y a
+ # ---
+ # number: 12.0
+ # symbol: !ruby/sym Test
+ # time: 2003-08-04 21:08:37.430417 -06:00
+</pre>
+
+<p>To learn <span class="caps">YAML</span>, I would suggest study the following documents in order:</p>
+
+<ol>
+<li><a href="http://yaml.kwiki.org/index.cgi?YamlInFiveMinutes">YAML In Five Minutes</a>: A quick beginning tutorial to the basics of <span class="caps">YAML</span>.</li>
+<li><a href="http://yaml4r.sourceforge.net/cookbook/">YAML Cookbook</a>: A side-by-side comparison of <span class="caps">YAML</span> objects and Ruby objects.</li>
+<li><a href="http://yaml4r.sourceforge.net/doc/">YAML for Ruby Manual</a>: A complete tutorial and <span class="caps">API</span> documentation covering <span class="caps">YAML</span> for Ruby.</li>
+</ol>
+
+<h3>WEBrick: Building <span class="caps">HTTP </span>Servers</h3>
+
+<p><a href="http://www.webrick.org/">WEBrick</a> is a socket server toolkit now included with Ruby 1.8.0. The library has been in development for several years and has long been a boon to Ruby developers.</p>
+
+<p>Here's a basic example web server:</p>
+
+<pre>
+ require 'webrick'
+
+ s = WEBrick::HTTPServer.new(
+    :Port     =&gt; 2000,
+    :DocumentRoot =&gt; Dir::pwd + "/htdocs" 
+ )
+
+ trap( "INT" ) { s.shutdown }
+ s.start
+</pre>
+
+<p>As you can see, WEBrick is a snap. In some simple benchmarks, I've found its file-serving to be comparable to Apache 1.3. WEBrick is a threading server, so it can handle a number of concurrent connections.</p>
+
+<p>My favorite part of WEBrick is its pluggable architecture. You basically map (or <i>mount</i>) services to specific namespaces within a given server. Any request issued under that <span class="caps">URI</span> namespace is passed to the plugin.</p>
+
+<p>Take this <span class="caps">SOAP</span> server as an example:</p>
+
+<pre>
+ require 'soaplet'
+ srv = SOAP::WEBrickSOAPlet.new
+ s.mount( "/soap", srv )
+</pre>
+
+<p>Now all requests sent to <code>http://localhost:2000/soap/</code> will be processed by the <a href="http://rwiki.jin.gr.jp/cgi-bin/rw-cgi.rb?cmd=view;name=SOAPlet">SOAPlet</a>.</p>
+
+<p>There isn't much English documentation on either WEBrick or its compatriots, so you might have to dig through source code to accomplish more complicated endeavors.</p>
+
+<h3>Ruby/DL: Cross-platform Dynamic Linking</h3>
+
+<p>Honestly, my favorite part of developing in C is dynamic linking. It's so neat to load a shared object and shake hands with it and say, "Hey, there little guy. Welcome to the program." And the great thing about Ruby/DL is that you can do it all from Ruby.</p>
+
+<p>I'll give you just a few examples and then refer you to <code>ext/dl/doc/dl.txt</code> in the Ruby 1.8.0 distribution, which documents much of what this module can do.</p>
+
+<p>In this example, we're going to interface with the <a href="http://curl.haxx.se/">curl</a> shared library. You'll be amazed how simple it is. One of the ways Ruby/DL could really benefit the Ruby community is by allowing developers to write Ruby extensions without writing them in C. Here we've got <code>libcurl.so</code> and we're going to interface with it directly.</p>
+
+<pre>
+ require 'dl/import'
+
+ module Curl
+   extend DL::Importable
+   dlload "/usr/local/lib/libcurl.so" 
+   extern "char *curl_version()" 
+ end
+
+ puts Curl.curl_version
+</pre>
+
+<p>We'll start with an easy one. Retrieving the version number. Libcurl has a <a href="http://curl.haxx.se/libcurl/c/curl_version.html">curl_version()</a> call, which returns a string. All we have to do is provide Ruby/DL with the function prototype and we're set!</p>
+
+<p>I'm encapsulating the Curl <span class="caps">API</span> in a module called <code>Curl</code>. The <code>extend DL::Importable</code> introduces a number of methods for interfacing with the <span class="caps">DLL</span>. I load the shared object with <code>dlload</code>. Then, provide the prototype (minus the semicolon) to <code>extern</code>. Now the Curl module has a method called <code>curl_version</code> which can be used to retrieve the version!</p>
+
+<p>Things start to get more complicated when dealing with C structures. But Ruby/DL has ways of handling <code>structs</code>, callbacks and even pointers!</p>
+
+<p>Let's try adding a method for the <a href="http://curl.haxx.se/libcurl/c/curl_version_info.html">curl_version_info()</a>, which returns a <code>struct</code>.</p>
+
+<pre>
+ require 'dl/struct'
+
+ module Curl
+   VersionInfoData = struct [
+     "int age",
+     "char *version",
+     "uint version_num",
+     "char *host",
+     "int features",
+     "char *ssl_version",
+     "long ssl_version_num",
+     "char *libz_version",
+     "char **protocols" 
+   ]
+   extern "void *curl_version_info(int)" 
+ end
+
+ ver = Curl::VersionInfoData.new( Curl.curl_version_info( 0 ) )
+ puts "Curl version: " + ver.version
+ puts "Built on " + ver.host.to_s
+ puts "Libz version: " + ver.libz_version.to_s
+</pre>
+
+<p>In many cases, you may not even be modifying the struct that is returned from a DL call. Above we're casting a void pointer to a <code>VersionInfoData</code> struct with the <code>new</code> method. If you don't need to get into the nitty-gritty, then don't bother. Simply have the function prototype returning a void pointer and pass the return of a call into other calls.</p>
+
+<p>I will also show you a simple demonstration in pointer math with Ruby/DL. The above <code>VersionInfoData</code> contains a list of supported protocols in a char pointer-pointer. This is an array of strings, ended with a pointer. We'll use <code>DL::sizeof</code> to retrieve the size of a character pointer and loop until we hit <span class="caps">NULL</span>.</p>
+
+<pre>
+ puts "Supported protocols:" 
+ (0..100).step( DL::sizeof('s') ) do |offset|
+   protocol = ( ver.protocols + offset ).ptr
+   break unless protocol
+   puts ".. #{protocol}" 
+ end
+</pre>
+
+<p>Now that's nifty. Pointer math can be done against the <code>DL::PtrData</code> class!</p>
+
+<p>Now, if you want some great examples, head over to the <a href="http://ttsky.net/ruby/ruby-dl.html">Ruby/DL</a> site. They've got <a href="http://ttsky.net/ruby/ruby-dl-sample/libxslt/">a concise libxslt sample</a>, <a href="http://ttsky.net/ruby/ruby-dl-sample/libgtk/">a <span class="caps">GTK</span>+ sample</a>, and a bunch of <a href="http://ttsky.net/ruby/ruby-dl-sample/win32/">Win32API samples</a>. I dare someone to write a whole extension in this. Seriously, I will send that person a free bathrobe.</p>
+
+<h3>StringIO</h3>
+
+<p>The StringIO class hardly needs an explanation. Long have Ruby developers bundled this class with their packages. By allowing you to read and write to a String like an IO object, the StringIO class keeps you from having to treat Strings and Files like separate creatures. Instead, require the StringIO class and handle everything with <code>each</code>, <code>readlines</code>, <code>seek</code> and all of your other favorite IO methods.</p>
+
+<pre>
+ require 'stringio'
+ s = StringIO.new( &lt;&lt;EOY )
+ .. string to read from here ..
+ EOY
+
+ s2 = StringIO.new
+ s.readlines.each do |line|
+   # Very basic stripping of HTML tags
+   line.gsub!( /&lt;[^&gt;]+&gt;/, '' )
+   s2.write( line )
+ end
+</pre>
+
+<p>StringIO can be especially helpful to those who are writing parsers (which includes the abundance of you who are writing templating engines!). Remember that, like other IO classes, StringIO keeps line number (<code>StringIO#lineno</code>) and character position (<code>StringIO#pos</code>) data, which is essential for error-reporting.</p>
+
+<p>Also, many developers were using a pure Ruby version of StringIO for Ruby 1.6.8. In Ruby 1.8.0, StringIO is a C extension.</p>
+
+<h3>open-uri</h3>
+
+<p>I have been <i>dying</i> for this library to come up in the standard library. Most of you don't know it, but you can quit using <code>Net::HTTP</code> and <code>Net::FTP</code>. The <code>open-uri</code> library is a Ruby equivalent to wget or curl (the library mentioned in the previous section).</p>
+
+<p>Basically, this module allows you to use the basic <code>open</code> method with URLs.</p>
+
+<pre>
+ require 'open-uri'
+ require 'yaml'
+
+ open( "http://www.whytheluckystiff.net/why.yml" ) do |f|
+   feed = YAML::load( f )
+ end
+</pre>
+
+<p>The above script loads my <a href="http://www.whytheluckystiff.net/why.yml">YAML news feed</a> into the <code>feed</code> variable. The block gets passed a StringIO object (as previously discussed), which can be read by the <span class="caps">YAML</span> module. Ain't it lovely to see <i>everything working together</i> so nicely?</p>
+
+<p>Seems too simple? No way. You have plenty of control over the sending of headers:</p>
+
+<pre>
+ open("http://www.ruby-lang.org/en/",
+   "User-Agent" =&gt; "Ruby/#{RUBY_VERSION}",
+   "From" =&gt; "foo@bar.invalid",
+   "Referer" =&gt; "http://www.ruby-lang.org/") {|f|
+   ...
+ }
+</pre>
+
+<p>And there is plenty of metadata mixed in to the response:</p>
+
+<pre>
+ open("http://www.ruby-lang.org/en") {|f|
+   f.each_line {|line| p line}
+   p f.base_uri     # URI::HTTP http://www.ruby-lang.org/en/
+   p f.content_type   # "text/html" 
+   p f.charset     # "iso-8859-1" 
+   p f.content_encoding # []
+   p f.last_modified  # Thu Dec 05 02:45:02 UTC 2002
+ }
+</pre>
+
+<p>I used a variant of this module in <a href="http://rubygarden.org/ruby?QuickGuideToRaaInstall">RAAInstall</a>. It was essential. We could pull down all sorts of URLs from <span class="caps">RAA</span> and just pass them on to <code>open-uri</code> without worry. Saved quite a bit of time.</p>
+
+<h3>PP: The Pretty Printer</h3>
+
+<p>Every object in Ruby has an <code>inspect</code> method, which allows the contents of an object to be readably displayed at any time. A common way to <code>inspect</code> objects is to use the <code>Kernel#p</code> method, which prints an inspection of a Ruby object:</p>
+
+<pre>
+ &gt;&gt; p Hash['mouse', 0.4, 'horse', 12.3]
+ {"horse"=&gt;12.3, "mouse"=&gt;0.4}
+</pre>
+
+<p>Above, the contents of a Hash are displayed. Strings are surrounded by quotes. Numbers, dates, are formatted simply.</p>
+
+<p>Unfortunately, complicated class structures can still be difficult to read at times. Here's a <span class="caps">YAML </span><a href="http://www.intertwingly.net/wiki/pie/EchoExampleYaml">news feed</a> which, when printed with <code>Kernel#p</code>, becomes a mess of Arrays and Hashes, wrapped to fit my terminal:</p>
+
+<pre>
+ =&gt; {"modified"=&gt;Wed Feb 05 12:29:29 UTC 2003, "language"=&gt;"en-us", 
+ "title"=&gt;"My First Weblog", "issued"=&gt;Wed Feb 05 12:29:29 UTC 2003
+ , "author"=&gt;{"name"=&gt;"John Doe", "url"=&gt;"/johndoe/", "email"=&gt;"joh
+ n.doe@example.com"}, "contributors"=&gt;[{"name"=&gt;"Bob Smith", "url"=
+ &gt;"/bobsmith/", "email"=&gt;"bob.smith@example.com"}], "subtitle"=&gt;"Ai
+ n't the Interweb great?", "created"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+ "link"=&gt;"/johndoe/weblog/", "entries"=&gt;[{"modified"=&gt;Wed Feb 05 12
+ :29:29 UTC 2003, "title"=&gt;"My First Entry", "issued"=&gt;Wed Feb 05 1
+ 2:29:29 UTC 2003, "id"=&gt;"e34", "contributors"=&gt;[{"name"=&gt;"John Doe
+ ", "role"=&gt;"author", "url"=&gt;"/johndoe/", "email"=&gt;"john.doe@exampl
+ e.com"}, {"name"=&gt;"Bob Smith", "role"=&gt;"graphical-artist", "url"=&gt;
+ "/bobsmith/", "email"=&gt;"bob.smith@example.com"}], "summary"=&gt;"A ve
+ ry boring entry; just learning how to blog here...", "subtitle"=&gt;" 
+ In which a newbie learns to blog...", "content"=&gt;[{"lang"=&gt;"en-us" 
+ , "data"=&gt;"Hello, __weblog__ world! 2 &lt; 4!\n"}, {"type"=&gt;"text/html" 
+ , "lang"=&gt;"en-us", "data"=&gt;"&lt;p&gt;Hello, &lt;em&gt;weblog&lt;/em&gt; world! 2 &#38;lt
+ ; 4!&lt;/p&gt;\n"}, {"type"=&gt;"image/gif", "lang"=&gt;"en-us", "data"=&gt;"GIF8
+ 9a\f\000\f\000\204\000\000\377\377\367\365\365"}], "created"=&gt;Wed 
+ Feb 05 12:29:29 UTC 2003, "link"=&gt;"/weblog/archive/45.html"}], "ba
+ se"=&gt;"http://example.com"}
+</pre>
+
+<p>The PrettyPrint module (pp) is a severe enhancement to the traditional <code>inspect</code> technique. The goal of the module is to enhance readability by throwing in some conservative whitespace to indicate hierarchy and perform wrapping of longer content.</p>
+
+<p>The same document printed with <code>pp</code>:</p>
+
+<pre>
+ &gt;&gt; require 'pp'
+ =&gt; true
+ &gt;&gt; pp YAML::load( File.open( 'pie.yml' ) )
+ {"modified"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+  "language"=&gt;"en-us",
+  "title"=&gt;"My First Weblog",
+  "issued"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+  "author"=&gt;
+  {"name"=&gt;"John Doe", "url"=&gt;"/johndoe/",
+"email"=&gt;"john.doe@example.com"},
+  "contributors"=&gt;
+  [{"name"=&gt;"Bob Smith",
+   "url"=&gt;"/bobsmith/",
+   "email"=&gt;"bob.smith@example.com"}],
+  "subtitle"=&gt;"Ain't the Interweb great?",
+  "created"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+  "link"=&gt;"/johndoe/weblog/",
+  "entries"=&gt;
+  [{"modified"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+   "title"=&gt;"My First Entry",
+   "issued"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+   "id"=&gt;"e34",
+   "contributors"=&gt;
+    [{"name"=&gt;"John Doe",
+     "role"=&gt;"author",
+     "url"=&gt;"/johndoe/",
+     "email"=&gt;"john.doe@example.com"},
+    {"name"=&gt;"Bob Smith",
+     "role"=&gt;"graphical-artist",
+     "url"=&gt;"/bobsmith/",
+     "email"=&gt;"bob.smith@example.com"}],
+   "summary"=&gt;"A very boring entry; just learning how to blog here...",
+   "subtitle"=&gt;"In which a newbie learns to blog...",
+   "content"=&gt;
+    [{"lang"=&gt;"en-us", "data"=&gt;"Hello, __weblog__ world! 2 &lt; 4!\n"},
+    {"type"=&gt;"text/html",
+     "lang"=&gt;"en-us",
+     "data"=&gt;"&lt;p&gt;Hello, &lt;em&gt;weblog&lt;/em&gt; world! 2 &amp;lt; 4!&lt;/p&gt;\n"},
+    {"type"=&gt;"image/gif",
+     "lang"=&gt;"en-us",
+     "data"=&gt;"GIF89a\f\000\f\000\204\000\000\377\377\367\365\365"}],
+   "created"=&gt;Wed Feb 05 12:29:29 UTC 2003,
+   "link"=&gt;"/weblog/archive/45.html"}],
+  "base"=&gt;"http://example.com"}
+</pre>
+
+<p>In Hashes, <code>pp</code> attempts to keep keys and values on the same line. But if longer content is found, the value is placed on a newline. This sort of layout is possible through a flexible <code>PP</code> class used for string construction.</p>
+
+<p>Whereas Ruby's <code>inspect</code> receives no arguments, your custom <code>pretty_print</code> method will receive an instance of the <code>PP</code> class, which allows you to give cues as to where to group or allow breaks in content. Here's an example from the <code>Array#pretty_print</code> method included with <code>PP</code>:</p>
+
+<pre>
+ class Array
+   def pretty_print(pp)
+     pp.group(1, '[', ']') {
+       self.each {|v|
+         pp.comma_breakable unless pp.first?
+         pp.pp v
+       }
+     }
+   end
+ end
+</pre>
+
+<p>I think this is a great model for building strings. This same approach could be use effectively to build <span class="caps">HTML</span>, XML, or <a href="http://www.textism.com/tools/textile/">Textile</a> from data structures. A very similiar technique is used by Ruby's <span class="caps">YAML</span> emitter.</p>
+
+<p>In fact, I'll also mention that if you've loaded the <span class="caps">YAML</span> module, you can use <code>Kernel#y</code> to print structures in <span class="caps">YAML</span>:</p>
+
+<pre>
+ &gt;&gt; require 'yaml'
+ =&gt; true
+ &gt;&gt; y YAML::load( File.open( 'pie.yml' ) )
+ ---
+ modified: 2003-02-05 12:29:29.000000 Z
+ language: en-us
+ title: My First Weblog
+ issued: 2003-02-05 12:29:29.000000 Z
+ author:
+   name: John Doe
+   url: "/johndoe/" 
+   email: john.doe@example.com
+ # .. etc ..
+</pre>
+
+<h3>Un: (As in -run)</h3>
+
+<p>Ruby works quite well across platforms. I'm always surprised at how well my Ruby code can execute flawlessly across platforms. Ten years ago cross-platform apps were an absolute joke! But now it's another pleasant reality for scripters.</p>
+
+<p>The <code>un</code> library takes avantage of Ruby's cross-platform support to provide the common <span class="caps">UNIX</span> commands for all Ruby users. If you're on Windows, rather than installing Cygwin or MinGW, you can use <span class="caps">UNIX</span> commands through your Ruby 1.8.0 installation.</p>
+
+<p>To execute from the commandline, type: <code>ruby -run -e</code>. Type the command. Followed by <code>--</code>. Finish with the options to the command.</p>
+
+<p>Here are a list of <code>un</code>'s included commands:</p>
+
+<pre>
+ ruby -run -e cp -- [OPTION] SOURCE DEST
+ ruby -run -e ln -- [OPTION] TARGET LINK_NAME
+ ruby -run -e mv -- [OPTION] SOURCE DEST
+ ruby -run -e rm -- [OPTION] FILE
+ ruby -run -e mkdir -- [OPTION] DIRS
+ ruby -run -e rmdir -- [OPTION] DIRS
+ ruby -run -e install -- [OPTION] SOURCE DEST
+ ruby -run -e chmod -- [OPTION] OCTAL-MODE FILE
+ ruby -run -e touch -- [OPTION] FILE
+</pre>
+
+<p>You could provide aliases in your environment for these to emulate the <span class="caps">UNIX</span> commands. Or you could use these to build cross-platform Makefiles or simple .bat/.sh scripts.</p>
+
+<p>The neatest thing about <code>un</code> is how it works, though. Let's dissect the commandline.</p>
+
+<p>The first section (<code>ruby -run</code>) simply starts the Ruby interpreter and <i>requires</i> the <code>un</code> library. Then, the <code>-e cp</code> option indicates that we want to execute the <code>cp</code> method (which is mixed in from the <code>un</code> library.) The double-dash (<code>--</code>) indicates that all further options will be sent to <code>ARGV</code> (and hence to <code>un</code>). So, <code>un</code> simply reads the rest of the line from <code>ARGV</code>. Pretty clever!n</p>
+
+<hr />
+<p>by <em>why the lucky stiff</em></p>
+<p>august 18, 2004</p>

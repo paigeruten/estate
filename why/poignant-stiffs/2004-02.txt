@@ -1,0 +1,1661 @@
+From gsinclair at soyabean.com.au  Thu Feb 19 03:49:16 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Wed Feb 18 11:56:23 2004
+Subject: [Poignant-stiffs] First post!
+Message-ID: <15195112073.20040219034916@soyabean.com.au>
+
+That I know of, anyway.
+
+Going from memory, the "Blocks" section contains a code example
+equivalent to this:
+
+  { "this is a code block" }
+
+Doesn't one require a 'proc' or 'lambda' keyword?  Either that, or I
+misunderstood the intention of the example, which may be a problem in
+itself.
+
+Cheers,
+Gavin
+
+From gsinclair at soyabean.com.au  Thu Feb 19 03:54:50 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Wed Feb 18 12:01:59 2004
+Subject: [Poignant-stiffs] Subject mangling
+Message-ID: <4295445923.20040219035450@soyabean.com.au>
+
+OK, I'll just get this out of my system.  Do we really need list
+traffic to prepend "[Poignant-stiffs]" to the subject?  It's
+unnecessary and wasteful of precious subject-colomn-width.
+
+Cheers,
+Gavin
+
+From why at poignantguide.net  Wed Feb 18 10:30:17 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Feb 18 13:13:56 2004
+Subject: subject prefixes gone.
+Message-ID: <4033A129.30308@poignantguide.net>
+
+Procmail users, anyone else using rule-based filtering: scan for the header:
+
+  List-Id: <poignant-stiffs.rubyforge.org>
+
+_why
+From why at poignantguide.net  Wed Feb 18 11:06:48 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Feb 18 14:54:35 2004
+Subject: subject prefixes gone.
+Message-ID: <4033A9B8.9070203@poignantguide.net>
+
+Procmail users, anyone else using rule-based filtering: scan for the 
+header:
+
+ List-Id: <poignant-stiffs.rubyforge.org>
+
+_why
+From why at poignantguide.net  Wed Feb 18 11:36:08 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Feb 18 15:11:08 2004
+Subject: welcome (and) what is a novice?
+Message-ID: <4033B098.1060102@poignantguide.net>
+
+general welcome to everyone joining.  things are going really well.  i 
+am moving along with chapter 4 nicely, hopefully we can see something 
+next month.  these chapters take quite a bit more time than most writing 
+i'm sure, as the comics and sidebars and general cohesiveness of the 
+chapter sucks up time.
+
+many of the intial comments i've received concern spelling & grammar.  
+and other rules i'm not accustomed to obeying.  so, yes, the spelling is 
+coming along good, too.
+
+i've had a few people write me about the teaching method.  they're all 
+confused about whether this is a book for novices or for the intiatied.  
+i'm not sure how it looks from the readers' perspectives, but i'd like 
+to shoot for somewhere in noviceland.  not necessary absolute 
+beginners.  i don't think there's a great need for ruby among civilians 
+yet.  and if there is, i think a prequel could cover a group like that.
+
+i'm aiming for hobbyists, bloggers, the tech-tickled.  while the 
+pragprogs and matz are busy pushing Ruby2EE and pushing its corp-cred, 
+i'd like to hit the streets and live among the gypsies of 
+CSS/HTML/JavaScript.  and what is their motivation to learn Ruby?  well, 
+if the book is interesting enough to them, then that could be a 
+motivation.  i'd also like to get a community rolling that revolves 
+around desktop/e-mail/blog scripting.  focused on the tinker.
+
+do you feel the book stimulates interest in Ruby properly through the 
+opening chapters?  do you feel its instruction is worthwhile for a 
+newcomer?  did you find yourself skipping around to the comics and 
+sidebars rather than reading the instruction as well?  does the 
+instruction move too quickly?
+
+i want to teach the reader without going too slow.  i don't want to 
+treat the reader like an idiot.  the pace can be swift as long as the 
+information is there, right?
+
+yes, so: what is a novice?  what are the basic capibilities i should 
+expect?  (obviously the ability to read.)
+
+_why
+From nutate at speakeasy.net  Wed Feb 18 16:06:30 2004
+From: nutate at speakeasy.net (Richard Seymour)
+Date: Wed Feb 18 16:12:03 2004
+Subject: alaphabet
+Message-ID: <4033D3D6.6060909@speakeasy.net>
+
+that should be alphabet in the 3rd chapter.
+
+very enjoyable read.  don't give up.  but you really should put a little 
+paypal link on there somewhere.
+
+-Rich
+From why at poignantguide.net  Wed Feb 18 15:07:07 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Feb 18 17:13:59 2004
+Subject: guide now available from cvs
+Message-ID: <4033E20B.8020706@poignantguide.net>
+
+the first three chapters, including the generation script and images, 
+are checked into rubyforge cvs.
+
+  cvs -d:pserver:anonymous@rubyforge.org:/var/cvs/poignant login
+ cvs -z3 -d:pserver:anonymous@rubyforge.org:/var/cvs/poignant co /wpgtr
+
+/the generation script (poignant.rb) requires erb, yaml and redcloth.  
+the yaml module comes with the latest 1.8 versions.  the other two can 
+be found on raa.
+
+once you have the above dependencies, an html copy of the book can be 
+generated with:
+
+  ruby poignant.rb
+
+i won't be updating cvs every time i get a comic done or a paragraph 
+written.  i'll only check something in once i feel it can endure 
+scrutiny.  still, you'll probably be seeing quite a bit of roughage in 
+there as i progress on a chapter.  i'm very interested to see what 
+readers (who choose to follow along) think about watching things come 
+together.
+
+gotta run.  my parking meter is blinking.
+
+_why
+From jgb3 at email.byu.edu  Wed Feb 18 15:24:28 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Wed Feb 18 17:31:52 2004
+Subject: what is a novice?
+In-Reply-To: <4033B098.1060102@poignantguide.net>
+References: <4033B098.1060102@poignantguide.net>
+Message-ID: <4033E61C.2000907@email.byu.edu>
+
+why the lucky stiff wrote:
+
+>
+> do you feel the book stimulates interest in Ruby properly through the 
+> opening chapters?  do you feel its instruction is worthwhile for a 
+> newcomer?  did you find yourself skipping around to the comics and 
+> sidebars rather than reading the instruction as well?  does the 
+> instruction move too quickly?
+
+
+On one hand, you target the completely programming-language-illiterate 
+very well.  Your description of variables, constants, and so forth are 
+very good.  This description, though fun to read, is not going to 
+benefit anyone with prior experience with programming, except that it 
+introduces the idiosyncracies of Ruby with regards to identifiers:
+
+   - '?' and '!' are allowed to terminate method names
+   - Constants are always uppercase
+   - '@' introduces an instance variable
+
+Likewise, the description of the various types of literal values 
+(strings, numbers, and so forth) will be of little use to anyone with a 
+programming background.
+
+On the other hand, your description of blocks and other more advanced 
+features are obviously intended for more experienced readers.  During 
+the first half of that chapter I was thinking, "gee, my wife could read 
+this and understand better what it is I do all day."  During the second 
+half of that chapter I was thinking, "never mind."
+
+Don't get me wrong--it's all very well written (I laughed out loud 
+several times, though I must admit I was never made to sob).  However, 
+if the hobbyist with previous programming experience is your target, you 
+may want to omit the descriptions of what variables, constants, numbers, 
+and strings are (that, or move them to their own chapter and then notify 
+the reader that it may be safely skipped if they have prior programming 
+experience).  Where it becomes useful for those with prior experience is 
+where you depict the differences between how most other languages do it 
+and how Ruby does it.
+
+Seriously, though, you've done an incredible job.  Keep up the great 
+work!  I'm anxiously awaiting the remainder of the book. :)
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/blog/jamis.cgi
+
+ruby -h | ruby -e 'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+
+From ckhoge at mac.com  Thu Feb 19 09:08:50 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Thu Feb 19 12:15:47 2004
+Subject: Chapter 3 approach
+Message-ID: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>
+
+Hi,
+
+If you're looking to appeal to a novice/hobbyist audience, the I would 
+suggest reworking Chapter 3 a bit. It stands as a good point of 
+introduction to Ruby, but will probably be lost on many readers in your 
+target audience until they start reading later chapters and need to 
+flip back to match usage with definition.
+
+So my suggestion is to add a bit to Chapter 3 on how to launch the Ruby 
+interpreter, then give very short working programs that illustrate the 
+definitions as you present them. This will accomplish a few things. You 
+will get the reader in a working Ruby environment. Then you will expose 
+them to syntactically correct code, for which results will be 
+immediately available (even though they may be completely 
+uninteresting). I believe that this will prime readers for producing 
+programs that do have interesting behavior.
+
+I'm excited to see the Chapter 4. Thank you for creating this work for 
+us.
+
+-Chris
+
+From rasputnik at hellooperator.net  Thu Feb 19 17:28:27 2004
+From: rasputnik at hellooperator.net (Dick Davies)
+Date: Thu Feb 19 12:35:20 2004
+Subject: Chapter 3 approach
+In-Reply-To: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>
+References: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>
+Message-ID: <4034F23B.7010403@hellooperator.net>
+
+Chris Hoge wrote:
+
+> Hi,
+> 
+> If you're looking to appeal to a novice/hobbyist audience, the I would 
+> suggest reworking Chapter 3 a bit. It stands as a good point of 
+> introduction to Ruby, but will probably be lost on many readers in your 
+> target audience until they start reading later chapters and need to flip 
+> back to match usage with definition.
+
+Has the target audience been decided yet? The draft I read seemed to
+be assuming the reader had programmed before. Maybe its worth having a
+'I know nothing about programming' page/chapter beforehand.
+
+
+> So my suggestion is to add a bit to Chapter 3 on how to launch the Ruby 
+> interpreter, then give very short working programs that illustrate the 
+> definitions as you present them. This will accomplish a few things. You 
+> will get the reader in a working Ruby environment.
+
+If the reader is a programmer I think its good to have a 'this is what 
+Ruby looks like and here are some aide memoires for any funny syntax'
+chapter before you start wading into 'hello cruel world' examples.
+
+I'd never thought of using Symbols before chapter 3 because the other
+languages I've used (C/Perl/the 'J' word) don't have them. If I was a 
+SmallTalker by birth I'm sure I'd have similar prejudices.
+
+
+
+From why at poignantguide.net  Thu Feb 19 11:53:41 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Feb 19 14:00:53 2004
+Subject: guide press continues
+Message-ID: <40350635.4010404@poignantguide.net>
+
+since opening, there's been a constant stream of traffic that has just 
+refused to die over the last two days.  i would have expected it to 
+taper out by now, but it's still really going strong.
+
+now that the slashdot story is fading away, i'm seeing a variety of 
+other links from niche blogs and smaller news sites.  the combination of 
+these sources is keeping traffic at the same level as the hours after 
+the slashdot story broke.  sites like lambda the ultimate [1], lwn [2] 
+and del.icio.us [3], along with all our lovely ruby sites.  i'm 
+continuing to get plenty of great feedback and i'm stunned by the amount 
+of encouragement.  i sure hope this equates to an influx of ruby-talk 
+users and downloads from ruby-lang.org.
+
+again, thanks for the momentum.  the word is out.
+
+my favorite mention so far has been NaHi's (SOAP4R/core) post: 
+http://rrr.jin.gr.jp/rwiki?cmd=view;name=NaHi%3A%3Amotd%3A%3A2004#a2004-02  
+I need to get him to translate "chunky bacon" into Japanese.  That would 
+make such a cool tee.
+
+gonna go draw some more, then come back and talk about this chapter 3 stuff.
+
+_why
+
+[1] http://lambda.weblogs.com/
+[2] http://lwn.net/Articles/71701/
+[3] http://del.icio.us/
+From nutate at speakeasy.net  Thu Feb 19 14:50:52 2004
+From: nutate at speakeasy.net (Richard Seymour)
+Date: Thu Feb 19 14:56:40 2004
+Subject: welcome (and) what is a novice?
+In-Reply-To: <4033B098.1060102@poignantguide.net>
+References: <4033B098.1060102@poignantguide.net>
+Message-ID: <4035139C.1020605@speakeasy.net>
+
+why the lucky stiff wrote:
+ > i'm aiming for hobbyists, bloggers, the tech-tickled.  while the
+ > pragprogs and matz are busy pushing Ruby2EE and pushing its corp-cred,
+ > i'd like to hit the streets and live among the gypsies of
+ > CSS/HTML/JavaScript.  and what is their motivation to learn Ruby?
+ > well, if the book is interesting enough to them, then that could be a
+ > motivation.  i'd also like to get a community rolling that revolves
+ > around desktop/e-mail/blog scripting.  focused on the tinker.
+
+This is a big group probably comprised of 12 (maybe 10) year olds and 
+up, I think it's a cool audience to target.
+
+ > do you feel the book stimulates interest in Ruby properly through the
+ > opening chapters?
+
+I think it's interesting from a purely literary perspective, it's almost 
+like a useful MFU (by HC), with less swearing.  As an aside, I think 
+it's good for it to stay PG...
+
+ > do you feel its instruction is worthwhile for a
+ > newcomer?  did you find yourself skipping around to the comics and
+ > sidebars rather than reading the instruction as well?  does the
+ > instruction move too quickly?
+
+The instructions are good.  If you could somehow inject irb (or irb 
+--noprompt) into chapter 3, maybe at the end as a surprise.  As in, 'try 
+telling irb to say the above snippets'.
+
+ > yes, so: what is a novice?  what are the basic capibilities i should
+ > expect?  (obviously the ability to read.)
+
+I wish I knew.
+
+(also, on the mailing list side of things, I'm a big fan of automatic 
+'Reply-To: poignant-stiffs@rubyforge.org'
+
+-Rich
+From nutate at speakeasy.net  Thu Feb 19 14:55:01 2004
+From: nutate at speakeasy.net (Richard Seymour)
+Date: Thu Feb 19 15:00:41 2004
+Subject: welcome (and) what is a novice?
+In-Reply-To: <4035139C.1020605@speakeasy.net>
+References: <4033B098.1060102@poignantguide.net>
+	<4035139C.1020605@speakeasy.net>
+Message-ID: <40351495.6070009@speakeasy.net>
+
+sorry about the wrong reply-to in that last message.
+From why at poignantguide.net  Thu Feb 19 14:02:29 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Feb 19 16:09:29 2004
+Subject: reply-to fixed?  let's try.
+In-Reply-To: <4035139C.1020605@speakeasy.net>
+References: <4033B098.1060102@poignantguide.net>
+	<4035139C.1020605@speakeasy.net>
+Message-ID: <40352465.2000001@poignantguide.net>
+
+Richard Seymour wrote:
+
+> (also, on the mailing list side of things, I'm a big fan of automatic 
+> 'Reply-To: poignant-stiffs@rubyforge.org'
+
+should be the case on this message.  better.
+
+_why
+From why at poignantguide.net  Thu Feb 19 14:27:54 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Feb 19 16:34:59 2004
+Subject: Chapter 3 approach
+In-Reply-To: <4034F23B.7010403@hellooperator.net>
+References: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>
+	<4034F23B.7010403@hellooperator.net>
+Message-ID: <40352A5A.6030108@poignantguide.net>
+
+Dick Davies wrote:
+
+> Has the target audience been decided yet? The draft I read seemed to
+> be assuming the reader had programmed before. Maybe its worth having a
+> 'I know nothing about programming' page/chapter beforehand.
+
+there are definitely quite a few parts of the third chapter that need to 
+be unslanted in order to favor a newcomer. things like:
+- "we, the coders, are foreigners, seeking citizenship in the computer?s 
+locale." (sentences which suggest the reader is already a "coder", which 
+some may not feel yet. forgivable?)
+- the symbols section has been cited in most of the feedback as too 
+blunt of a description. (better clarity, imagery.)
+- lack of detailed definitions. (methods are compared to verbs briefly. 
+no explanation is given for why a block is grouped together. neither of 
+the collections are given much background.) the question here is: will 
+these questions nag the reader too much and prevent them from clearly 
+recalling a certain part of speech?
+
+as far as target audience, here's the basic idea from an earlier e-mail:
+
+> i'm aiming for hobbyists, bloggers, the tech-tickled. while the 
+> pragprogs and matz are busy pushing Ruby2EE and pushing its corp-cred, 
+> i'd like to hit the streets and live among the gypsies of 
+> CSS/HTML/JavaScript. and what is their motivation to learn Ruby? well, 
+> if the book is interesting enough to them, then that could be a 
+> motivation. i'd also like to get a community rolling that revolves 
+> around desktop/e-mail/blog scripting. focused on the tinker.
+
+how broad can this novice category go before the text feels like it's 
+spread too thin? anyone on this list brand-new to ruby? i'm _really_ 
+interested in hearing from you!
+
+> I'd never thought of using Symbols before chapter 3 because the other 
+> languages I've used (C/Perl/the 'J' word) don't have them. If I was a 
+> SmallTalker by birth I'm sure I'd have similar prejudices.
+
+i am insistent that symbols be discussed early. i don't like digging for 
+them in other books and i think they can be provided right upfront. are 
+they so difficult to grasp? i think many ruby users have difficulty 
+understanding symbols because they are often described as difficult and 
+specialized, when really they are only slightly different from strings.
+
+in addition, as the code examples become more complex, i want to use 
+strings and symbols side-by-side to demonstrate the difference. so many 
+ruby built-in methods use symbols. (albeit mostly introspective methods.)
+
+concerning irb: i don't really want to use irb in the beginning. if a 
+user can't get irb working or they don't understand how to make the 
+installer work (for whatever reason), then they won't bother reading. 
+they'll figure it's a pre-requisite. i'm thinking either:
+
+(a) i could provide a few companion photodramas to go over irb. the 
+general sentiment being: "hey, you can follow along in this if you want 
+to be extra handy."
+(b) an installer that comes with a copy of the (poignant) guide. fork 
+the windows installer and tailor something dead simple.
+
+_why
+From gsinclair at soyabean.com.au  Fri Feb 20 09:29:42 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Thu Feb 19 18:47:02 2004
+Subject: Chapter 3 approach
+In-Reply-To: <40352A5A.6030108@poignantguide.net>
+References: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>
+	<4034F23B.7010403@hellooperator.net>
+	<40352A5A.6030108@poignantguide.net>
+Message-ID: <1990474565.20040220092942@soyabean.com.au>
+
+On Friday, February 20, 2004, 8:27:54 AM, why wrote:
+
+> Dick Davies wrote:
+
+>> Has the target audience been decided yet? The draft I read seemed to
+>> be assuming the reader had programmed before. Maybe its worth having a
+>> 'I know nothing about programming' page/chapter beforehand.
+
+> there are definitely quite a few parts of the third chapter that need to
+> be unslanted in order to favor a newcomer. things like:
+> - "we, the coders, are foreigners, seeking citizenship in the computer?s
+> locale." (sentences which suggest the reader is already a "coder", which
+> some may not feel yet. forgivable?)
+
+Forgivable.
+
+> - the symbols section has been cited in most of the feedback as too 
+> blunt of a description. (better clarity, imagery.)
+> - lack of detailed definitions. (methods are compared to verbs briefly.
+> no explanation is given for why a block is grouped together. neither of
+> the collections are given much background.) the question here is: will
+> these questions nag the reader too much and prevent them from clearly
+> recalling a certain part of speech?
+
+I think more "useful" examples would help.  I've never had any trouble
+with symbols, despite never seeing them before Ruby, simply because I
+saw them used in a way that made sense.
+
+This goes for all elements of the language.  It's easy to give
+sensible examples for strings and arrays, but less so for symbols and
+hashes.
+
+Maybe at the end of the chapter, have an "advanced" section that
+presents a *small* program that uses all the elements you've
+introduced.  If the reader knows 'irb', they can experiment with that
+program and pick up some useful experience.
+
+
+> concerning irb: i don't really want to use irb in the beginning. if a
+> user can't get irb working or they don't understand how to make the 
+> installer work (for whatever reason), then they won't bother reading.
+> they'll figure it's a pre-requisite. i'm thinking either:
+
+Nobody with a working installation can't get 'irb' working.  It just
+works.  You can make it clear that it's not a prereq too.  Perhaps
+introduce 'irb' in a sidebar.  Give 'em enough rope so they can
+confidently use irb to try out other code in the book without you
+needing to give explicit instructions.
+
+> (a) i could provide a few companion photodramas to go over irb. the 
+> general sentiment being: "hey, you can follow along in this if you want
+> to be extra handy."
+
+Not a bad idea.
+
+> (b) an installer that comes with a copy of the (poignant) guide. fork
+> the windows installer and tailor something dead simple.
+
+A waste of your time, IMO.
+
+Gavin
+
+
+From ckhoge at mac.com  Thu Feb 19 22:33:07 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Fri Feb 20 01:40:08 2004
+Subject: Chapter 3 approach
+Message-ID: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+
+Dick Davies wrote:
+
+ > If the reader is a programmer I think its good to have a 'this is what
+ > Ruby looks like and here are some aide memoires for any funny syntax'
+ > chapter before you start wading into 'hello cruel world' examples.
+
+Very well put.
+
+why wrote:
+ > how broad can this novice category go before the text feels like it's
+ > spread too thin? anyone on this list brand-new to ruby? i'm _really_
+ > interested in hearing from you!
+
+Well, to say that I am completely new to Ruby would be untrue. When the 
+pickaxe book first came out I sat down and read the whole thing over 
+the course of a weekend. I used Ruby a bit at work to write some 
+validation code, then moved on to the dark world of programming 
+numerical methods in C++. That was three years ago, and nearly all of 
+Ruby has leaked out of my primitive monkey brain. Part of the reason 
+that the draft version of your book caught my eye is because I've had a 
+few small projects bouncing around the back of my head for a while, and 
+thought "Ruby would be a great little language to bounce great little 
+ideas around in." So I'm not a newcomer, but have in some ways have 
+regained my Ruby virginity.
+
+why said:
+ > concerning irb: i don't really want to use irb in the beginning. if a
+ > user can't get irb working or they don't understand how to make the
+ > installer work (for whatever reason), then they won't bother reading.
+ > they'll figure it's a pre-requisite. i'm thinking either:
+ >
+ > (a) i could provide a few companion photodramas to go over irb. the
+ > general sentiment being: "hey, you can follow along in this if you 
+want
+ > to be extra handy."
+ > (b) an installer that comes with a copy of the (poignant) guide. fork
+ > the windows installer and tailor something dead simple.
+
+(a) That would probably work. When I sat down to start exercising my 
+ruby muscles, I launched a terminal in OS X and typed "ruby". It didn't 
+have the desired effect. I scratched my head, typed "man ruby" and 
+started to read. No mention of an interactive interpreter (isn't that 
+what the "see also" section is about?). I then fired up my browser, 
+typed "interactive ruby" into the google search box and started reading 
+until I saw someone mention irb. So a sidebar explaining how to fire up 
+irb in Windows and in unix variants would be nice, and perhaps is all 
+that's needed for completeness.
+
+(b) No. Forks are for eating with, not for software releases. I've been 
+reading "The Haskell School of Expression," and dealing with all of the 
+forked and unmaintained software that book depends on is a real pita.
+
+Chris Hoge said:
+ > So my suggestion is to add a bit to Chapter 3 on how to launch the 
+Ruby
+ > interpreter, then give very short working programs that illustrate the
+ > definitions as you present them.
+
+Where I became tripped up was with the description of block arguments. 
+I had irb open while I was reading the chapter, and just trying things 
+out to see what made syntactically valid statements. When I came to 
+block arguments, I hit a wall. I played around with making "{ |x,y| x + 
+y }" do the expected thing, and only came up with parse errors. As a 
+hobbyist (at least for what I want to use ruby for) this confused me. 
+What does it mean to be a block argument? I thought "an example would 
+help." Ah, now I have the pickaxe book in front of me. Looking at page 
+14 I ask "is a simple example that won't confuse the reader possible?" 
+There probably is. I remember being confused the first time I saw the 
+interaction between code blocks and methods. I worked it out before, 
+and I worked it out again (I think).
+
+Gavin Sinclair said:
+ > Maybe at the end of the chapter, have an "advanced" section that
+ > presents a *small* program that uses all the elements you've
+ > introduced.  If the reader knows 'irb', they can experiment with that
+ > program and pick up some useful experience.
+
+I like Gavin's idea. A toy for adventurous minds. Maybe I'm just saying 
+this because I don't have Chapter 4 to read, though.
+
+-Chris
+
+From nutate at speakeasy.net  Fri Feb 20 11:11:19 2004
+From: nutate at speakeasy.net (Richard Seymour)
+Date: Fri Feb 20 11:17:05 2004
+Subject: Chapter 3 approach
+In-Reply-To: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+References: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+Message-ID: <403631A7.2030102@speakeasy.net>
+
+Chris wrote:
+> I thought "an example would help." Ah, 
+> now I have the pickaxe book in front of me. Looking at page 14 I ask "is 
+> a simple example that won't confuse the reader possible?" There probably 
+> is. I remember being confused the first time I saw the interaction 
+> between code blocks and methods. I worked it out before, and I worked it 
+> out again (I think).
+
+[[1,2],[3,4],[-7,-3]].each { |x,y| p x + y }
+or
+[1,2,3,4,-7,-3].each_with_index{ |x, y| p x + y }
+
+still kind of confusing, though... right?  nested arrays, indexes that 
+begin with zero! oh my...
+
+> I like Gavin's idea. A toy for adventurous minds. Maybe I'm just saying 
+> this because I don't have Chapter 4 to read, though.
+
+that's a good phrase 'A toy for adventurous minds.'
+
+-Rich
+From why at poignantguide.net  Fri Feb 20 12:30:11 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Fri Feb 20 14:37:49 2004
+Subject: Chapter 3 approach
+In-Reply-To: <1990474565.20040220092942@soyabean.com.au>
+References: <49EDF138-62FE-11D8-928A-000393AF5510@mac.com>	<4034F23B.7010403@hellooperator.net>	<40352A5A.6030108@poignantguide.net>
+	<1990474565.20040220092942@soyabean.com.au>
+Message-ID: <40366043.1050109@poignantguide.net>
+
+Gavin Sinclair wrote:
+
+>This goes for all elements of the language.  It's easy to give
+>sensible examples for strings and arrays, but less so for symbols and
+>hashes.
+>
+>Maybe at the end of the chapter, have an "advanced" section that
+>presents a *small* program that uses all the elements you've
+>introduced.  If the reader knows 'irb', they can experiment with that
+>program and pick up some useful experience.
+>  
+>
+twelve chapters are planned.  does the third chapter need more lbs. of 
+code?  or can the reader trust that more is ahead?
+
+incidentally, does anyone object to the use of the phrase "parts of 
+speech" in chapter 3?  it's seeming careless to me.  i feel there is a 
+better phrase, not sure what, not sure if it matters much.  i need 
+something that corelates well between ruby and natural language.
+
+_why
+From swillison at ljworld.com  Fri Feb 20 13:55:14 2004
+From: swillison at ljworld.com (Simon Willison)
+Date: Fri Feb 20 15:02:52 2004
+Subject: Comments from Joel Spolsky
+Message-ID: <40366622.7080206@ljworld.com>
+
+I doubt why's missed this, but in case he has:
+
+http://www.joelonsoftware.com/items/2004/02/20.html
+"""
+I loved the style, wittiness, humor and erudition of Why's (Poignant) 
+Guide to Ruby but I can't say I learned much about Ruby. Maybe in the 
+next chapter?
+"""
+
+Personally, I learnt just enough about Ruby to get my thirsting for 
+more. I'm experienced with Python so it was interesting to see some of 
+the differences between the languages illustrated. I would definitely 
+have liked to see a few hands on examples though.
+
+Oh, and the foxes are excellent :)
+
+Cheers,
+
+Simon Willison
+http://simon.incutio.com/
+From why at poignantguide.net  Fri Feb 20 13:08:21 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Fri Feb 20 15:15:40 2004
+Subject: Chapter 3 approach
+In-Reply-To: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+References: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+Message-ID: <40366935.1050809@poignantguide.net>
+
+Chris Hoge wrote:
+
+> Where I became tripped up was with the description of block arguments. 
+> I had irb open while I was reading the chapter, and just trying things 
+> out to see what made syntactically valid statements. When I came to 
+> block arguments, I hit a wall. I played around with making "{ |x,y| x 
+> + y }" do the expected thing, and only came up with parse errors. As a 
+> hobbyist (at least for what I want to use ruby for) this confused me. 
+> What does it mean to be a block argument? I thought "an example would 
+> help." Ah, now I have the pickaxe book in front of me. Looking at page 
+> 14 I ask "is a simple example that won't confuse the reader possible?" 
+> There probably is. I remember being confused the first time I saw the 
+> interaction between code blocks and methods. I worked it out before, 
+> and I worked it out again (I think).
+
+yeah, let's see what we can do about making the block section work right.
+
+i'm sure you've read that, in order for irb to stomach a plain block, 
+the block needs to be passed into the `proc' method:
+
+  proc { |x, y| x + y }
+
+using `proc' would be quite confusing.  i've considered just greying it 
+out in the examples and only briefly explaning it's use.  this seems 
+like the wrong approach, but i'd still like your reaction.  what if the 
+examples had 'proc' before them?  here's the 'do...end' example redone:
+
+
+  proc do
+    print "Much better." 
+    print "Ah.  More space!" 
+    print "My back was killin' me in those crab pincers." 
+  end
+
+
+alternatively, the block could be shown in a fuller context.  this is 
+problematic, though, since blocks with more than one argument can be so 
+much more involved.  you've already seen arrays so this might work okay:
+
+    [[1,2],[3,4],[-7,-3]].collect { |x,y| x + y }
+
+
+again, you would see everything preceding the block in a light-grey 
+font.  you could see a working example without feeling pressed to digest 
+it all. 
+
+then again, i spent the first part of chapter explaining how readable 
+ruby is.  now, i give you a bit of code that is heavy on the symbols in 
+order to keep it brief.  would this be too painful of a betrayal?
+ 
+i'm so glad you're on the list, chris.  any other starters?
+
+_why
+From why at poignantguide.net  Fri Feb 20 13:26:57 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Fri Feb 20 15:34:16 2004
+Subject: Comments from Joel Spolsky
+In-Reply-To: <40366622.7080206@ljworld.com>
+References: <40366622.7080206@ljworld.com>
+Message-ID: <40366D91.4040100@poignantguide.net>
+
+Simon Willison wrote:
+
+> http://www.joelonsoftware.com/items/2004/02/20.html
+> """
+> I loved the style, wittiness, humor and erudition of Why's (Poignant) 
+> Guide to Ruby but I can't say I learned much about Ruby. Maybe in the 
+> next chapter?
+> """
+
+a very correct observation.  i know it's a big deal in technical 
+literature to get you fully immersed in the language and quickly.  a lot 
+of experienced programmers will struggle with the book, because it only 
+gets more chaotic in future chapters.
+
+worst of all, this is my first book and i have no teaching experience.  
+but i read a lot, so maybe that will pay off.
+
+> Personally, I learnt just enough about Ruby to get my thirsting for 
+> more. I'm experienced with Python so it was interesting to see some of 
+> the differences between the languages illustrated. I would definitely 
+> have liked to see a few hands on examples though.
+
+if you are dying to learn right away, i would certainly recommend the 
+pickaxe [1].  it covers lots of things i won't be covering.  hal 
+fulton's "the ruby way" is also great.
+
+but welcome and definitely stick around.  obviously, these next chapters 
+will have an increasing amount of code and i'm curious to see if it 
+continues to work for you.
+
+_why
+
+[1] http://rubycentral.com/book/index.html
+From gsinclair at soyabean.com.au  Sat Feb 21 17:59:40 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Sat Feb 21 02:07:38 2004
+Subject: Chapter 3 approach
+In-Reply-To: <40366935.1050809@poignantguide.net>
+References: <A504C3EE-636E-11D8-9A3D-000393AF5510@mac.com>
+	<40366935.1050809@poignantguide.net>
+Message-ID: <113207472219.20040221175940@soyabean.com.au>
+
+On Saturday, February 21, 2004, 7:08:21 AM, why wrote:
+
+> yeah, let's see what we can do about making the block section work right.
+
+
+It's a difficult subject; definitely.  Since it's impossible to know
+what the reader's background is, and how they're going to respond to
+the notion of a block (who knows - young people may find them very
+intuitive at first glance), it may be best to fall back on the tried
+and true method of teaching by example.
+
+With that in mind, I offer the one and only example of a stand-alone
+proc I've ever coded.  It was very useful for me.
+
+    def generate_download
+      version = File.read("VERSION").strip
+      filename = proc { |ext| "ruby-doc-stdlib-#{version}.#{ext}" }
+      url      = proc { |ext| "http://www.ruby-doc.org/downloads/stdlib/#{filename[ext]}" }
+      data = {
+        :version => version,
+        :tgzfile => filename['tgz'],
+        :tgzurl  => url['tgz'],
+        :zipfile => filename['zip'],
+        :zipurl  => url['zip']
+      }
+      _generate_data("download", data)
+    end
+
+Moral of the story: I was able to turn a variable into a variable
+variable by parametising it; i.e. turning it into a block.
+
+I could have achieved this by writing methods to create the strings I
+needed, but that seems cumbersome, and procs seem perfect.
+
+Quite possibly, this is of no use to the book whatsoever, but like I
+say, it's the only really good example of procs I've ever seen :)
+
+Cheers,
+Gavin
+
+From kapheine at hypa.net  Sat Feb 21 13:40:10 2004
+From: kapheine at hypa.net (Zachary P. Landau)
+Date: Sat Feb 21 13:50:07 2004
+Subject: The book is spreading far
+Message-ID: <20040221184010.GA24943@localhost>
+
+
+_why,
+
+Your book is doing an amazing job of spreading around and raising
+interest.  My brother does not program often, but I sent him that guide,
+and it gave him a renewed interest in programming.  I also told one of
+my previous coworkers about it, and he sent it to my previous boss.  I
+just talked to that boss today, and he told me he sent the book to his
+daughter, who is an English major.  She loved it, despite knowing
+nothing about programming.
+
+I find it amazing that the word about this book has spread so quickly
+and to all different types of people.  I have a good feeling this is
+going to help get ruby out there. 
+
+--
+Zachary P. Landau <kapheine@hypa.net>
+GPG: gpg --recv-key 0x24E5AD99 | http://kapheine.hypa.net/kapheine.asc
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040221/9d48e2c8/attachment.bin
+From rob at tarasis.net  Sun Feb 22 13:31:13 2004
+From: rob at tarasis.net (Robert McGovern)
+Date: Sun Feb 22 08:39:42 2004
+Subject: The book is spreading far
+In-Reply-To: <20040221184010.GA24943@localhost>
+Message-ID: <E113E9555D70@tarasis.net>
+
+||I find it amazing that the word about this book has spread so quickly
+||and to all different types of people.  I have a good feeling this is
+||going to help get ruby out there.
+
+Very much agreed, its virii like. I quite like this entry on it
+
+http://larsen.perlmonk.org/blog/archives/000031.html
+
+its interesting looking in Google and seeing where its popping up and the
+positive vibe it is generating.
+
+http://www.google.com/search?hl=en&lr=&ie=UTF-8&oe=UTF-8&q=Why%27s+Poignant+
+Guide+To+Ruby
+
+I also like this post by PragDave in his blog
+(http://pragprog.com/pragdave/Tech/Ruby/PoignantGuide.rdoc)
+
+"A few months back, why the lucky stiff offered up a great warranty. Now
+he?s at it again, tis time giving us the first glimpse of what looks like a
+pretty unique approach to learning a computer language, in this case Ruby.
+It?s one of those sites that?s hard to stop reading: I hope we can convince
+him to produce a print version for the Pragmatic Bookshelf."
+
+_why if you do get offered the chance, go for it. I'll happily buy a print
+copy!
+
+Rob
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (http://www.grisoft.com).
+Version: 6.0.591 / Virus Database: 374 - Release Date: 17/02/2004
+ 
+
+
+
+From dave at pragprog.com  Sun Feb 22 22:17:17 2004
+From: dave at pragprog.com (Dave Thomas)
+Date: Sun Feb 22 22:39:00 2004
+Subject: The book is spreading far
+In-Reply-To: <E113E9555D70@tarasis.net>
+References: <E113E9555D70@tarasis.net>
+Message-ID: <C8DCABAD-65AE-11D8-9B10-000A95676A62@pragprog.com>
+
+
+On Feb 22, 2004, at 8:31, Robert McGovern wrote:
+> I hope we can convince
+> him to produce a print version for the Pragmatic Bookshelf."
+>
+> _why if you do get offered the chance, go for it. I'll happily buy a 
+> print
+> copy!
+
+Me too... :)
+
+Cheers
+
+Dave
+
+From why at poignantguide.net  Sun Feb 22 20:48:08 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sun Feb 22 22:58:11 2004
+Subject: The book is spreading far
+In-Reply-To: <E113E9555D70@tarasis.net>
+References: <E113E9555D70@tarasis.net>
+Message-ID: <403977F8.4010706@poignantguide.net>
+
+Robert McGovern wrote:
+> ||I find it amazing that the word about this book has spread so quickly
+> ||and to all different types of people.
+> 
+> Very much agreed, its virii like.
+> 
+
+Craze.e.e.  I keeps going.  I don't even know how this can be.  Who knew 
+people could get so turned on by Ruby lit?
+
+Thanks, Zach for mailing all your coworkers and brother.  I have a 
+special section just for them.  (This is why writing the book while you 
+are all still reading/waiting for it is so great.  I can totally refer 
+to my readers in it by name!)  Naw, I won't use your name.  Unless you like.
+
+#15 on Daypop's Top 40 right now.  http://www.daypop.com/top/
+
+Anybody having problems connecting from time to time?  I think one of 
+the DNS servers was down for some time.
+
+_why
+
+From jgb3 at email.byu.edu  Sun Feb 22 20:55:27 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Sun Feb 22 23:03:41 2004
+Subject: The book is spreading far
+In-Reply-To: <C8DCABAD-65AE-11D8-9B10-000A95676A62@pragprog.com>
+References: <E113E9555D70@tarasis.net>
+	<C8DCABAD-65AE-11D8-9B10-000A95676A62@pragprog.com>
+Message-ID: <403979AF.3020901@email.byu.edu>
+
+Dave Thomas wrote:
+
+>
+> On Feb 22, 2004, at 8:31, Robert McGovern wrote:
+>
+>> I hope we can convince
+>> him to produce a print version for the Pragmatic Bookshelf."
+>>
+>> _why if you do get offered the chance, go for it. I'll happily buy a 
+>> print
+>> copy!
+>
+>
+> Me too... :)
+>
+> Cheers
+>
+> Dave
+
+
+I rarely by print versions of technical books -- not because they aren't 
+helpful, but because once I've read through them once, I find it more 
+convenient to go online to find references there.  It's just handier 
+(for me) than having to flip through paper pages.  I typically just 
+check the book out once from the library (I'm at a university, which 
+helps), which gets me up to speed.
+
+That said, this is definately one book I'd pay money to have in 
+dead-tree format.  I really hope this one finds its way to a publisher!
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/blog/jamis.cgi
+
+ruby -h | ruby -e 'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+
+From ckhoge at mac.com  Tue Feb 24 00:32:47 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Tue Feb 24 03:41:01 2004
+Subject: Examples and Chapter 3
+Message-ID: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+
+Hi,
+
+I had the opportunity to visit Chapter 3 again. This comment is 
+directed at the code in Section 3.4: An Example to Help You Grow Up.
+
+require 'net/http'
+Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http|
+       print( http.get( '/index.html' ).body )
+end
+
+This hits exactly on what I wanted for code blocks: a real world 
+example that works ... I think. The |http| is the argument, and the 
+code block does something with it. We get a namespace (opps... 
+something to add to the parts of language?) and a few methods too. It 
+prints a web page ... I think. Why "I think?" Well, I'm not 100% on to 
+the "I am" bit.
+
+Now, more background so you can see into the mind of a reader. OS X is 
+my platform of choice, in part because I'm a research programmer who 
+likes to write tight, pragmatic code; in part because I like to lick my 
+user interface. OS X gives me a system that is easy to maintain but 
+easy to write academic, Unix based C++ code in. Luckily Apple gives 
+Panther users Ruby out of the box. Unluckily that version Ruby is 
+outdated and behaves differently than the rest of the Unix world.
+
+net/http is not packaged with OS X, so I ran off to find it myself. It 
+depended on Postgres, and eruby, and a few other things. Some of the 
+Ruby builds crashed because of the unique way that OS X handles 
+libraries. I'm still slogging through putting everything together with 
+the help of usenet, and am confident that I'll have the example working 
+within 24 hours of reading said example. It's just like being back in 
+my good ol' Gentoo days.
+
+Ok, so I don't want to get too far afield into different issues, and I 
+don't want this to turn into a platform flame war. The assumption is 
+that the target audience is web hobbyists, coming from different 
+platforms, who will probably have the tools at hand that they need or 
+be able to figure out how to install them. Unfortunately, some people 
+aren't going to have the patience to do this.
+
+My suggestion: an appendix that walks the reader through getting their 
+local environment set up. This keeps the book flowing for those who 
+have their stuff together, but throws out a clue for those who don't 
+have their stuff together. Why, when are you going to have the time to 
+write pages and pages of configure make make install? How valuable will 
+that appendix be the day after it is published in print and it has 
+become obsolete?
+
+The answers to those questions: 1) harness the power of the open source 
+community and ask a set of people to provide up-to-date installation 
+instructions. 2) Perform an appendectomy on the print version, and 
+point people to the official web page (or the eventual plethora of 
+mirrors) if they need help figuring out how to move furniture into 
+their digital home.
+
+-Chris (who is almost all growed up now)
+
+From gsinclair at soyabean.com.au  Tue Feb 24 20:54:25 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Tue Feb 24 05:03:22 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+References: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+Message-ID: <44477157566.20040224205425@soyabean.com.au>
+
+On Tuesday, February 24, 2004, 7:32:47 PM, Chris wrote, in part:
+
+> Luckily Apple gives Panther users Ruby out of the box. Unluckily
+> that version Ruby is outdated and behaves differently than the rest
+> of the Unix world.
+
+> net/http is not packaged with OS X, so I ran off to find it myself.
+
+Unbelievable; Panther ships with 1.6, right?  net/http was definitely
+part of 1.6.
+
+> It depended on Postgres, and eruby, and a few other things.
+
+net/http in no uncertain terms should not depend on anything!
+
+Perhaps the Mac inclusion of Ruby is a crook one.  In that case, I
+imagine the reader needs some pushing to get and install the latest
+and greatest.
+
+Cheers,
+Gavin
+
+From why at poignantguide.net  Tue Feb 24 07:48:05 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Feb 24 09:58:33 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+References: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+Message-ID: <403B6425.2010506@poignantguide.net>
+
+Chris Hoge wrote:
+> 
+> net/http is not packaged with OS X, so I ran off to find it myself. It 
+> depended on Postgres, and eruby, and a few other things. Some of the 
+> Ruby builds crashed because of the unique way that OS X handles 
+> libraries. I'm still slogging through putting everything together with 
+> the help of usenet, and am confident that I'll have the example working 
+> within 24 hours of reading said example. It's just like being back in my 
+> good ol' Gentoo days.
+> 
+
+Kxxx.  Yeah, I suppose that example may face too many problems on OS X. 
+  In Ruby 1.6, the `get' method is different than in 1.8.  So, should 
+you get Net::HTTP installed, the example probably wouldn't work.
+
+Maybe I should stick to file IO:
+
+   File.open( 'ZeldaCheats.txt' ) do |textfile|
+       print textfile.read
+   end
+
+I really like the Net::HTTP example because it's more challenging, but 
+the same thing could be done with the above.  How's that sound?
+
+> My suggestion: an appendix that walks the reader through getting their 
+> local environment set up. This keeps the book flowing for those who have 
+> their stuff together, but throws out a clue for those who don't have 
+> their stuff together. Why, when are you going to have the time to write 
+> pages and pages of configure make make install? How valuable will that 
+> appendix be the day after it is published in print and it has become 
+> obsolete?
+
+Blam.  Let's do it then.  I'm fully convinced that this is needed.
+
+I'm thinking the appendix will only be five or six pages long.  The 
+first three pages will give installation instructions for OS X, Windows, 
+Linux and FreeBSD.  The last few pages will give a few general irb tips. 
+  Of the platforms, Linux will be the most difficult due to the variety 
+of distributions.  Anybody see a way around explaining Debian installs, 
+RedHat installs, Gentoo installs, Mandrake?
+
+However, there are other scenarios.  What if someone wants to install 
+under their home dir?  What if they want to install it as a CGI?  (There 
+will be CGI examples in the book.)  For these cases, I think a forum or 
+a wiki on the site might be in order.  I think I'd like to see a forum, 
+because it encourages a dialogue between people who are learning, rather 
+than treating them all like writers.
+
+Any of you can pogo right into this discussion.  Tell me what problems 
+you've seen with installing Ruby on your machines.  Drop some of your 
+own instructions and let's distill out the essential.
+
+_why
+
+From dave at pragprog.com  Tue Feb 24 09:02:53 2004
+From: dave at pragprog.com (Dave Thomas)
+Date: Tue Feb 24 10:11:15 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <403B6425.2010506@poignantguide.net>
+References: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+	<403B6425.2010506@poignantguide.net>
+Message-ID: <85AC75D7-66DA-11D8-9B10-000A95676A62@pragprog.com>
+
+
+On Feb 24, 2004, at 8:48, why the lucky stiff wrote:
+
+> Chris Hoge wrote:
+>> net/http is not packaged with OS X, so I ran off to find it myself. 
+>> It depended on Postgres, and eruby, and a few other things. Some of 
+>> the Ruby builds crashed because of the unique way that OS X handles 
+>> libraries. I'm still slogging through putting everything together 
+>> with the help of usenet, and am confident that I'll have the example 
+>> working within 24 hours of reading said example. It's just like being 
+>> back in my good ol' Gentoo days.
+>
+> Kxxx.  Yeah, I suppose that example may face too many problems on OS 
+> X.  In Ruby 1.6, the `get' method is different than in 1.8.  So, 
+> should you get Net::HTTP installed, the example probably wouldn't 
+> work.
+
+By the time the book is finished, I'd hope that OSX would ship with 1.8.
+
+Cheers
+
+Dave
+
+From alex at crouzen.com  Tue Feb 24 10:54:26 2004
+From: alex at crouzen.com (alex@crouzen.com)
+Date: Tue Feb 24 11:02:36 2004
+Subject: Examples and Chapter 3
+Message-ID: <269620-220042224155426345@M2W088.mail2web.com>
+
+In my opinion, you should keep the Net:HTTP example. It really pulled me in
+to the book. I've read a gazillion tutorials on a range of languages, and
+file-reading is only exciting when you do it the first time. The HTTP
+example is the next generation of the file-reading example if you see what
+I mean.
+
+And anyone should have their Ruby set up to do HTTP stuff I say. If it's
+not connected to the 'net directly, you can still use it to read files
+locally with 'file://' commands.
+
+Regarding the set-up appendix: you've got your biggest potential audience
+covered easily: the set-up on Windows is a breeze. One install .exe, and
+everything is set up. You might want to see if you can lobby for your book
+to be included alongside the Pragmatic one.
+
+Alex.
+
+Original Message:
+-----------------
+From: why the lucky stiff why@poignantguide.net
+Date: Tue, 24 Feb 2004 07:48:05 -0700
+To: poignant-stiffs@rubyforge.org
+Subject: Re: Examples and Chapter 3
+
+
+Chris Hoge wrote:
+> 
+> net/http is not packaged with OS X, so I ran off to find it myself. It 
+> depended on Postgres, and eruby, and a few other things. Some of the 
+> Ruby builds crashed because of the unique way that OS X handles 
+> libraries. I'm still slogging through putting everything together with 
+> the help of usenet, and am confident that I'll have the example working 
+> within 24 hours of reading said example. It's just like being back in my 
+> good ol' Gentoo days.
+> 
+
+Kxxx.  Yeah, I suppose that example may face too many problems on OS X. 
+  In Ruby 1.6, the `get' method is different than in 1.8.  So, should 
+you get Net::HTTP installed, the example probably wouldn't work.
+
+Maybe I should stick to file IO:
+
+   File.open( 'ZeldaCheats.txt' ) do |textfile|
+       print textfile.read
+   end
+
+I really like the Net::HTTP example because it's more challenging, but 
+the same thing could be done with the above.  How's that sound?
+
+> My suggestion: an appendix that walks the reader through getting their 
+> local environment set up. This keeps the book flowing for those who have 
+> their stuff together, but throws out a clue for those who don't have 
+> their stuff together. Why, when are you going to have the time to write 
+> pages and pages of configure make make install? How valuable will that 
+> appendix be the day after it is published in print and it has become 
+> obsolete?
+
+Blam.  Let's do it then.  I'm fully convinced that this is needed.
+
+I'm thinking the appendix will only be five or six pages long.  The 
+first three pages will give installation instructions for OS X, Windows, 
+Linux and FreeBSD.  The last few pages will give a few general irb tips. 
+  Of the platforms, Linux will be the most difficult due to the variety 
+of distributions.  Anybody see a way around explaining Debian installs, 
+RedHat installs, Gentoo installs, Mandrake?
+
+However, there are other scenarios.  What if someone wants to install 
+under their home dir?  What if they want to install it as a CGI?  (There 
+will be CGI examples in the book.)  For these cases, I think a forum or 
+a wiki on the site might be in order.  I think I'd like to see a forum, 
+because it encourages a dialogue between people who are learning, rather 
+than treating them all like writers.
+
+Any of you can pogo right into this discussion.  Tell me what problems 
+you've seen with installing Ruby on your machines.  Drop some of your 
+own instructions and let's distill out the essential.
+
+_why
+
+_______________________________________________
+poignant-stiffs mailing list
+poignant-stiffs@rubyforge.org
+http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+
+--------------------------------------------------------------------
+mail2web - Check your email from the web at
+http://mail2web.com/ .
+
+
+
+From rasputnik at hellooperator.net  Tue Feb 24 16:22:48 2004
+From: rasputnik at hellooperator.net (Dick Davies)
+Date: Tue Feb 24 11:31:06 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <269620-220042224155426345@M2W088.mail2web.com>
+References: <269620-220042224155426345@M2W088.mail2web.com>
+Message-ID: <403B7A58.2070209@hellooperator.net>
+
+alex@crouzen.com wrote:
+> In my opinion, you should keep the Net:HTTP example. It really pulled me in
+> to the book. I've read a gazillion tutorials on a range of languages, and
+> file-reading is only exciting when you do it the first time. The HTTP
+> example is the next generation of the file-reading example if you see what
+> I mean.
+
+Is it just me then? This doesnt work!
+
+(1.6.8)
+
+rasputin@lb:helo$ cat chunkybacon.rb
+   require 'net/http'
+   Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http|
+       print( http.get( '/index.html' ).body )
+   end
+rasputin@lb:helo$ ruby chunkybacon.rb
+/usr/pkg/lib/ruby/1.6/net/protocol.rb:221:in `error!': 404 "Not Found" 
+(Net::ProtoFatalError)
+         from /usr/pkg/lib/ruby/1.6/net/http.rb:1217:in `value'
+         from /usr/pkg/lib/ruby/1.6/net/http.rb:605:in `get'
+         from chunkybacon.rb:3
+         from chunkybacon.rb:2:in `start'
+         from /usr/pkg/lib/ruby/1.6/net/http.rb:472:in `start'
+         from chunkybacon.rb:2
+
+(1.8)
+0rasputin@lb:helo$ /usr/local/bin/ruby chunkybacon.rb
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /index.html was not found on this server.<P>
+</BODY></HTML>
+
+From ckhoge at mac.com  Tue Feb 24 08:42:16 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Tue Feb 24 11:50:37 2004
+Subject: Examples and Chapter 3
+Message-ID: <67F24F42-66E8-11D8-8553-000393AF5510@mac.com>
+
+Hi,
+
+Gavin Sinclair said:
+ > Unbelievable; Panther ships with 1.6, right?  net/http was definitely
+ > part of 1.6.
+
+As far as I can tell, it isn't part of the standard installation. I 
+might be wrong, but out of the box the library isn't found (or doesn't 
+work).
+
+Gavin Sinclair said:
+ > net/http in no uncertain terms should not depend on anything!
+
+I should have been more clear. I was trying to install a Ruby package 
+manager to save myself the trouble of installing every package by hand. 
+The package manager wants a database program. I wanted a tool similar 
+to the ones Perl users can access CPAN with. It would do a much better 
+job of installing and maintaining packages than I could ever do.
+
+So you might chalk it up to me making things more complicated than they 
+need to be in order to simplify my life!
+
+why said:
+ > Maybe I should stick to file IO:
+
+alex at crouzen.com said:
+ > In my opinion, you should keep the Net:HTTP example. It really pulled 
+me in
+ > to the book. I've read a gazillion tutorials on a range of languages, 
+and
+ > file-reading is only exciting when you do it the first time. The HTTP
+ > example is the next generation of the file-reading example if you see 
+what
+ > I mean.
+
+Hm, I'm assuming that the book will depend on net/http, so it's a pay 
+now or pay later proposition. I prefer to pay now unless I can make 
+some interest by paying later.
+
+Dave Thomas said:
+ > By the time the book is finished, I'd hope that OSX would ship with 
+1.8.
+
+Yes, but what version will Ruby be up to by then?
+
+-Chris
+
+From jack at jbertram.net  Tue Feb 24 16:53:24 2004
+From: jack at jbertram.net (Jack Bertram)
+Date: Tue Feb 24 12:01:51 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <403B7A58.2070209@hellooperator.net>
+References: <269620-220042224155426345@M2W088.mail2web.com>
+	<403B7A58.2070209@hellooperator.net>
+Message-ID: <20040224165324.GA16879@pylon.jbertram.net>
+
+* Dick Davies <rasputnik@hellooperator.net> [040224 16:23]:
+> alex@crouzen.com wrote:
+> >In my opinion, you should keep the Net:HTTP example. It really pulled me in
+> >to the book. I've read a gazillion tutorials on a range of languages, and
+> >file-reading is only exciting when you do it the first time. The HTTP
+> >example is the next generation of the file-reading example if you see what
+> >I mean.
+> 
+> Is it just me then? This doesnt work!
+> 
+> (1.6.8)
+> 
+> rasputin@lb:helo$ cat chunkybacon.rb
+>   require 'net/http'
+>   Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http|
+>       print( http.get( '/index.html' ).body )
+>   end
+
+It doesn't work because the page doesn't exist, that's all.
+
+Try www.google.com rather than www.ruby-lang.org
+
+jack
+From jack at jbertram.net  Tue Feb 24 16:56:15 2004
+From: jack at jbertram.net (Jack Bertram)
+Date: Tue Feb 24 12:04:41 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <403B6425.2010506@poignantguide.net>
+References: <0690B71B-66A4-11D8-AF51-000393AF5510@mac.com>
+	<403B6425.2010506@poignantguide.net>
+Message-ID: <20040224165615.GA17037@pylon.jbertram.net>
+
+* why the lucky stiff <why@poignantguide.net> [040224 14:50]:
+> I'm thinking the appendix will only be five or six pages long.  The 
+> first three pages will give installation instructions for OS X, Windows, 
+> Linux and FreeBSD.  The last few pages will give a few general irb tips. 
+>  Of the platforms, Linux will be the most difficult due to the variety 
+> of distributions.  Anybody see a way around explaining Debian installs, 
+> RedHat installs, Gentoo installs, Mandrake?
+
+Bah.  Silly distros.  I've just installed from source in 5 minutes.
+(home-grown LFS)
+
+tar xvzf ruby-1.8.1.tar.gz
+cd ruby-1.8.1
+./configure
+make
+sudo make install
+
+jack
+[another happy and interested reader, new to ruby, discovered through
+Joel on Software]
+From rasputnik at hellooperator.net  Tue Feb 24 17:09:22 2004
+From: rasputnik at hellooperator.net (Dick Davies)
+Date: Tue Feb 24 12:17:40 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <20040224165324.GA16879@pylon.jbertram.net>
+References: <269620-220042224155426345@M2W088.mail2web.com>	<403B7A58.2070209@hellooperator.net>
+	<20040224165324.GA16879@pylon.jbertram.net>
+Message-ID: <403B8542.6010607@hellooperator.net>
+
+Jack Bertram wrote:
+> * Dick Davies <rasputnik@hellooperator.net> [040224 16:23]:
+> 
+>>alex@crouzen.com wrote:
+>>
+>>>In my opinion, you should keep the Net:HTTP example. It really pulled me in
+>>>to the book. I've read a gazillion tutorials on a range of languages, and
+>>>file-reading is only exciting when you do it the first time. The HTTP
+>>>example is the next generation of the file-reading example if you see what
+>>>I mean.
+>>
+>>Is it just me then? This doesnt work!
+
+
+> It doesn't work because the page doesn't exist, that's all.
+
+I know. I'm trying to say the example should provide a different URL...
+
+From why at poignantguide.net  Tue Feb 24 10:28:24 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Feb 24 12:37:24 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <403B8542.6010607@hellooperator.net>
+References: <269620-220042224155426345@M2W088.mail2web.com>	<403B7A58.2070209@hellooperator.net>	<20040224165324.GA16879@pylon.jbertram.net>
+	<403B8542.6010607@hellooperator.net>
+Message-ID: <403B89B8.5030906@poignantguide.net>
+
+Dick Davies wrote:
+
+> I know. I'm trying to say the example should provide a different URL...
+
+oh, yeah, that was supposed to be fixed a couple of days ago.  someone 
+here on the list brought it up.
+i've switched the example to:
+
+  require 'net/http'
+  Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http|
+      print( http.get( '/en/LICENSE.txt' ).body )
+  end
+
+for now.  it was the shortest meaningful link I could find on the Ruby 
+site.  it's not as long as most html, so it won't flood irb as badly.  
+sorry.
+
+_why
+From ckhoge at mac.com  Tue Feb 24 10:19:10 2004
+From: ckhoge at mac.com (Christian Hoge)
+Date: Tue Feb 24 13:27:31 2004
+Subject: Examples and Chapter 3
+Message-ID: <F1505FEE-66F5-11D8-A757-000502771EB0@mac.com>
+
+Silly me, I wasted a bit of effort. I upgraded to Ruby 1.8 on OS X with 
+Fink, which aside from waiting for the build to happen, was relatively 
+pain free.
+
+-Chris
+
+From why at poignantguide.net  Tue Feb 24 12:19:37 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Feb 24 14:28:06 2004
+Subject: Examples and Chapter 3
+In-Reply-To: <F1505FEE-66F5-11D8-A757-000502771EB0@mac.com>
+References: <F1505FEE-66F5-11D8-A757-000502771EB0@mac.com>
+Message-ID: <403BA3C9.70901@poignantguide.net>
+
+Christian Hoge wrote:
+
+> Silly me, I wasted a bit of effort. I upgraded to Ruby 1.8 on OS X 
+> with Fink, which aside from waiting for the build to happen, was 
+> relatively pain free.
+
+good, if we could enforce 1.8 in the installation directions, it'll save 
+a lot of headache.  many of the idioms in later portions of the text 
+depend upon it.
+
+how straightforward is fink?  this installation seems a bit much for the 
+nu -> http://fink.sourceforge.net/download/index.php
+
+_why
+From ckhoge at mac.com  Tue Feb 24 12:52:26 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Tue Feb 24 16:00:51 2004
+Subject: Examples and Chapter 3
+Message-ID: <5A81EFF4-670B-11D8-9A6F-000393AF5510@mac.com>
+
+why the lucky stiff said:
+ > good, if we could enforce 1.8 in the installation directions, it'll 
+save
+ > a lot of headache.  many of the idioms in later portions of the text
+ > depend upon it.
+ >
+ > how straightforward is fink?  this installation seems a bit much for 
+the
+ > nu -> http://fink.sourceforge.net/download/index.php
+
+The steps to install Ruby 1.8 on OS X with fink:
+
+* Download the binary installer from http://fink.sourceforge.net, and 
+follow the directions for the base installation. (the installer script 
+does almost all of the work)
+* In a terminal window enter "fink selfupdate" (to get info on the 
+latest version of fink)
+* "fink update-all" (to finish updating the fink packages)
+* "fink install ruby18" (to install Ruby)
+* "fink install ruby" (to make the symlink /sw/bin/ruby -> 
+/sw/bin/ruby18)
+
+I then moved the default OS X installation by entering
+* "sudo mv /usr/bin/ruby /usr/bin/ruby16"
+
+The web example from Chapter 3 works after that. The nice thing about 
+this method is that all of the idiosyncrasies of installing from source 
+on OS X are handled in a consistent manner. It also allows a simple 
+upgrade path based on a debian apt architecture.
+
+-Chris
+
+From lesliedyane at verizon.net  Tue Feb 24 21:05:30 2004
+From: lesliedyane at verizon.net (Leslie)
+Date: Tue Feb 24 21:13:58 2004
+Subject: About The Poignant Guide and Basic Programming Courses
+In-Reply-To: <403B6425.2010506@poignantguide.net>
+Message-ID: <20040225020536.WAFQ1590.out012.verizon.net@brokedreams>
+
+I just recently found and read what there is of the Guide and I LOVE it!
+I'm currently in school for programming and I've taken C++, Java, C# and am
+currently taking VB.NET.  I have to say that I have a lot of course texts
+and a little experience playing around.  I'm nowhere near stupid but I have
+to say that if all my other books were written like the Guide, I'd be a
+programming genius by now.  I learned more and more quickly from those first
+few chapters than I ever learned in the early chapters of my course texts;
+all because of the presentation and the simple, straight to the point
+wording.  
+
+Soooo ... now I'm just waiting impatiently for the rest of the book :)
+
+Leslie
+
+---
+Outgoing mail is certified Virus Free.
+Checked by AVG anti-virus system (http://www.grisoft.com).
+Version: 6.0.592 / Virus Database: 375 - Release Date: 2/18/2004
+ 
+
+From why at poignantguide.net  Sat Feb 28 21:14:00 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sat Feb 28 21:19:57 2004
+Subject: development office up, an offer to translators, developers
+Message-ID: <18751.67.40.116.230.1078020840.squirrel@mail.soccerriot.com>
+
+good day.  hope everyone's having a nice, relaxing weekend.
+
+i'm frantically pouring myself into chapter four and having quite a good
+time on it.  i wasn't sure how more advanced topics would start to weave
+into the book, but it's all sifting together very pleasurably.  i really
+think you're going to love blix the cat.
+
+i've just now finished a page for the development office.
+
+  http://poignant.rubyforge.org/
+
+this page is orientation for anyone who wants to help.  right now you're
+just looking at links to the mailing lists and cvs instructions.
+
+i'd like to make an offer to those who help out with the book.  i'm not
+sure the specifics yet, but i'd like to pay back those who translate the
+book or who put out faithful alter-editions in PDF, Palm, etc.
+
+i'd like to offer original artwork from the book in turn for your
+assistance.  i don't know if this is worth anything to any of you, but
+it's at least a token of thanks.  i'm also working on a series of
+paintings which features the characters from the book.  next couple days
+i'll put up some pictures of the art on the dev site to give you an idea
+of what i'm offering.
+
+i'm not sure how to quantify the work someone does and i'm not sure i have
+enough to give out forty or fifty works.  these are very large paintings
+(from 28" to 48" wide), so postage will be a bit on the larger ones.  i
+guess i'm wondering: does this seem like reasonable
+compensation-slash-motivation for developers?  what are reasonable
+qualifications for completion of a task?
+
+_why
+From ckhoge at mac.com  Sat Feb 28 18:35:34 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Sat Feb 28 21:45:11 2004
+Subject: development office up, an offer to translators, developers
+In-Reply-To: <18751.67.40.116.230.1078020840.squirrel@mail.soccerriot.com>
+References: <18751.67.40.116.230.1078020840.squirrel@mail.soccerriot.com>
+Message-ID: <F361AA94-6A5F-11D8-8463-000393AF5510@mac.com>
+
+Hi,
+
+I'm happy to help with TeX and pdf. Probably the simplest formats out 
+there (probably famous last words). Shoot, I would help even without 
+the bribe, not that I would turn it down, though.
+
+-Chris
+

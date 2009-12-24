@@ -1,0 +1,88 @@
+From glenn at hometot.com  Thu Mar  1 00:25:24 2007
+From: glenn at hometot.com (Glenn M. Lewis)
+Date: Wed, 28 Feb 2007 21:25:24 -0800
+Subject: heya, helpful people, come quick!!
+In-Reply-To: <20070301001040.GT61198@beekeeper.hobix.com>
+References: <20070301001040.GT61198@beekeeper.hobix.com>
+Message-ID: <45E663C4.5040101@hometot.com>
+
+Hi _why!
+
+    Or shall I say, "Why, Hello!"?
+
+    I would love to try out new and potentially messy stuff.
+Background... I'm a:
+
+*  propeller-head geek programming for about 30 years, in languages such as:
+    APL, Basic, C, Forth, PostScript, RenderMan, C++, Perl, Tcl, AutoIt3,
+    Ruby, Common Lisp, and now D.  (So I really enjoy programming.)
+*   After starting out on unix-like systems, I lately find myself always 
+running WinXP
+     because of the apps that I need to run.
+*   I can keep a secret.
+
+    If there's anything else you would like to know, fire away.
+
+    Thanks!
+-- Glenn Lewis
+
+why the lucky stiff wrote:
+
+>Dear friends and watchers of the (Poignant) Guide, I have finally made
+>some headway on a secret project which some of you might enjoy
+>helping me with.  Like the Guide, it is disruptive, messy and will
+>hopefully help change this world of long, boring books and complicated
+>softwares.
+>
+>Here's what I'm looking for:
+>
+> * People who use Windows
+> * Who also are new to programming
+> * (Or, who love programming)
+> * And: that's it.
+> * Oh, except, no leaking secrets out.
+>
+>In short, if you like Try Ruby[1], you will really like this!!
+>Please just reply directly to me with whether you'd like to help
+>and maybe a bit about yourself so I know what level of programmer
+>you are.  Or if you know a friend who qualifies: YES.  Tell them.
+>
+>Reclined in a defunct and truly obese satellite dish, 
+>
+>_why
+>
+>[1] http://tryruby.hobix.com/
+> 
+>_______________________________________________
+>poignant-stiffs mailing list
+>poignant-stiffs at rubyforge.org
+>http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+>
+>  
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070228/b57e2c6e/attachment-0001.html 
+
+From why at poignantguide.net  Thu Mar  1 10:33:21 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu, 1 Mar 2007 09:33:21 -0600
+Subject: helpful people, they came so quick, and that will do
+In-Reply-To: <20070301001040.GT61198@beekeeper.hobix.com>
+References: <20070301001040.GT61198@beekeeper.hobix.com>
+Message-ID: <20070301153321.GA10649@beekeeper.hobix.com>
+
+Hot, sticky thanks to everyone who phoned in yesterday and accepted
+a small role helping out with the secret project.  These are fine
+people who often receive little-to-no recognition for their speedy
+replysmanship and who live in little huts off in a foggy, foggy,
+foggy forest.  They drive carrot cars and get in all these cute,
+harmless accidents, etc.  You get the picture.
+
+At any rate, I'm writing to say that the slots are full.  I will
+say again if I end up needing more help, but this'll do nicely for
+now.  Cheery-oh!
+
+_why
+

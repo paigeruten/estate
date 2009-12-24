@@ -1,0 +1,110 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>wait till you see the guy on the beach with the mouse mask.</TITLE>
+
+
+
+<script language="JavaScript">
+
+<!-- hide for non-javascriptos
+
+
+imgNow = 1;
+
+
+
+if (document.images) {     // Load all the comics
+
+  mask1 = new Image();
+
+  mask1.src = "maska.gif";
+
+  mask2 = new Image();
+
+  mask2.src = "maskb.gif";
+
+  mask3 = new Image();
+
+  mask3.src = "maskc.gif";
+
+  mask4 = new Image();
+
+  mask4.src = "maskd.gif";
+
+  mask5 = new Image();
+
+  mask5.src = "mask5.gif";
+
+  mask6 = new Image();
+
+  mask6.src = "maske.gif";
+
+  mask7 = new Image();
+
+  mask7.src = "maskf.gif";
+
+  mask8 = new Image();
+
+  mask8.src = "maskg.gif";
+
+  mask9 = new Image();
+
+  mask9.src = "maskh.gif";
+
+  mask10 = new Image();
+
+  mask10.src = "maski.gif";
+
+  mask11 = new Image();
+
+  mask11.src = "maskj.gif";
+
+  mask12 = new Image();
+
+  mask12.src = "maskk.gif";
+
+  proceed = new Image();
+
+  proceed.src = "proceed.gif";
+
+  blank = new Image();
+
+  blank.src = "blank.gif";
+
+
+}
+
+
+function imgNext(imgName) {
+
+    if (document.images) {
+
+        imgNow++;
+        if (imgNow == 13) 
+          imgNow=12;
+        if (imgNow == 12)
+          document["proceed"].src = eval("blank.src");
+        if (imgNow < 12)
+          document["proceed"].src = eval("proceed.src");
+        document[imgName].src = eval(imgName + imgNow + ".src");
+
+    }
+
+}
+
+// stop hiding -->
+</script>
+</HEAD>
+<body BGCOLOR="#2f3f2f" TEXT="#FFFFFF" LINK="#F0F0F0">
+<script language="JavaScript"> <!-- hide the resize
+   resizeTo(550,650);
+// stop it -->
+</script>
+<br>
+<CENTER><IMG NAME="mask" SRC="maska.gif" border="0" width="493" height="394"></CENTER>
+
+<CENTER><IMG SRC="proceed.gif" NAME="proceed" onClick="imgNext('mask')"></CENTER>
+</body>
+</HTML>

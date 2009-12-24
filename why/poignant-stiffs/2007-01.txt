@@ -1,0 +1,132 @@
+From why at poignantguide.net  Tue Jan  9 03:33:03 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue, 9 Jan 2007 02:33:03 -0600
+Subject: the (poignant) guide soundtrack - pts. I to VIII
+Message-ID: <20070109083302.GC91817@beekeeper.hobix.com>
+
+Yes, it's true.  Why's (Poignant) Guide to Ruby, the illustrated
+manual which pays no mind to the prevailing notions of writing computer
+lit, has a collectible set of mp3s.  Each song corresponds to a
+chapter in the book.  You can listen while you read.  Or while you
+eat.  Or even while you flex.
+
+Parts I to VIII are here: <http://poignantguide.net/sdtrk/>
+
+Thank you to Geoffrey Grossenbach, who continued to play my songs on
+the Rails Podcast even when it wasn't the professional thing to do.
+These songs are all licensed under the same terms as the book, so at
+least I saved that guy some serious tuppence.
+
+What is the reason for a soundtrack?
+
+ * Well, music is essential for utmost poignancy, is it not??
+ * Because computer books should NOT.  And so.
+ * My clarinet needs a life too, let's not forget.
+
+If I've wasted your time, then I'm sorry, geez, go find something
+handy to do pronto!
+
+_why
+
+From boss at topfunky.com  Tue Jan  9 11:51:25 2007
+From: boss at topfunky.com (Geoffrey Grosenbach)
+Date: Tue, 9 Jan 2007 08:51:25 -0800
+Subject: the (poignant) guide soundtrack - pts. I to VIII
+In-Reply-To: <20070109083302.GC91817@beekeeper.hobix.com>
+References: <20070109083302.GC91817@beekeeper.hobix.com>
+Message-ID: <20070109165125.GA10275@topfunky.com>
+
+On Tue, Jan 09, 2007 at 02:33:03AM -0600, why the lucky stiff wrote:
+> Yes, it's true.  Why's (Poignant) Guide to Ruby, the illustrated
+> manual which pays no mind to the prevailing notions of writing computer
+> lit, has a collectible set of mp3s.
+
+This can only mean one thing: why must be working on the theatrical version next. Reserve your tickets now!
+
+Geoff
+
+From why at poignantguide.net  Wed Jan 10 12:07:22 2007
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed, 10 Jan 2007 11:07:22 -0600
+Subject: japanese (poignant) guide is all up-to-date
+Message-ID: <20070110170722.GH91817@beekeeper.hobix.com>
+
+http://www.aoky.net/articles/why_poignant_guide_to_ruby/
+
+Yasushi Aoki has translated the ENTIRE poignant guide to Japanese
+all of the sudden.  He is quite a dedicated translator, as he has
+also done many articles from Steve Yegge, Joel Spolsky and Paul
+Graham at his site http://www.aoky.net/.
+
+As a token of my gratitude, Yasushi Aoki will be receiving some
+original art from the book, delivered straight to his house, along
+with some silkscreened prints of Camping advertissements.  What a
+guy!
+
+_why
+
+From mental at rydia.net  Wed Jan 10 15:55:06 2007
+From: mental at rydia.net (MenTaLguY)
+Date: Wed, 10 Jan 2007 15:55:06 -0500
+Subject: the (poignant) guide soundtrack - pts. I to VIII
+In-Reply-To: <20070109083302.GC91817@beekeeper.hobix.com>
+References: <20070109083302.GC91817@beekeeper.hobix.com>
+Message-ID: <1168462507.28925.36.camel@localhost.localdomain>
+
+On Tue, 2007-01-09 at 02:33 -0600, why the lucky stiff wrote:
+
+> Parts I to VIII are here: <http://poignantguide.net/sdtrk/>
+
+I finally had a chance to listen last night -- awesome work!
+
+My current favorite is track II, all kinds of nice stuff happening.  And
+the whole "early floyd" thing going on at the end is like, "Oh.  Whoa.
+Yeah!"
+
+(Incidentally, is there a deliberate Zelda reference in there?)
+
+-mental
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20070110/ed0ac29d/attachment.bin 
+
+From pathall at gmail.com  Thu Jan 11 01:10:01 2007
+From: pathall at gmail.com (Patrick Hall)
+Date: Thu, 11 Jan 2007 01:10:01 -0500
+Subject: japanese (poignant) guide is all up-to-date
+In-Reply-To: <20070110170722.GH91817@beekeeper.hobix.com>
+References: <20070110170722.GH91817@beekeeper.hobix.com>
+Message-ID: <6465924d0701102210s57fbcca8ra0ea1440886aa2a0@mail.gmail.com>
+
+no i meant Yasushi Aoki, the Japanese dude. Look at who he's translating...
+
+what about request, is it runnable?
+
+On 1/10/07, why the lucky stiff <why at poignantguide.net> wrote:
+> http://www.aoky.net/articles/why_poignant_guide_to_ruby/
+>
+> Yasushi Aoki has translated the ENTIRE poignant guide to Japanese
+> all of the sudden.  He is quite a dedicated translator, as he has
+> also done many articles from Steve Yegge, Joel Spolsky and Paul
+> Graham at his site http://www.aoky.net/.
+>
+> As a token of my gratitude, Yasushi Aoki will be receiving some
+> original art from the book, delivered straight to his house, along
+> with some silkscreened prints of Camping advertissements.  What a
+> guy!
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+
+-- 
+Reality is that which, when you stop believing in it, doesn't go away. -pkd
+

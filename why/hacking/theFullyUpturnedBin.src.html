@@ -1,0 +1,174 @@
+<h1>The Fully Upturned Bin</h1>
+
+<h2 class="tagline">Managing memory and efficient disposal of waste in Ruby</h2>
+
+<p>You've been ignoring garbage collection <em>again</em>, haven't you?  I'm sure of it!  And why shouldn't you?  GC just works.  You can't be expected to interfere with the details of allocating memory.  What <em>can</em> you do about it?  As for emancipation of the heap--all you can do is a <code>GC.start</code>, right?  Which happens regularly anyway, right?</p>
+
+<p>We <em>need</em> to have a talk about managing memory in Ruby.  <strong>Right now.</strong>  The Pickaxe is a blooming incredible resource, but it says nearly nothing truly useful about memory management.  Hop to page 369 in the Pickaxe II and you'll find the lone caution related to managing memory in Ruby.</p>
+
+<p>Summary is: Dave had a <span class="caps">CSV</span> parser which was bogging down the processor.  Basically, a huge string was was building, like a giant snowball rumbling down the mountainside and Ruby's GC had to keep stopping the snowball and weighing it and cleaning it every step of the way.</p>
+
+<p>His lesson, from page 370:</p>
+
+<blockquote>
+<p>The answer was simple and surprisingly effective.  Rather than build the result string as it went along, the code was changed to store each <span class="caps">CSV</span> row as an element in an array... we were no longer building an ever-growing string that <strong>forced garbage collection</strong>.</p>
+</blockquote>
+
+<p>Okay, whoa, whoa.  Hold up.  Adding to strings forces garbage collection?  <strong>And adding to an array doesn't!?</strong>  This isn't what Dave's saying, but there's some knowledge of Ruby internals that Dave's veiling here.  And it makes it hard to draw conclusions about what, in fact, he is saying.</p>
+
+<p>See, this is what I mean.  Black magic everywhere.  And the only place you can go to find out what's going on is in Ruby source code.  Or the <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844317210/qid%3D1106059404/249-5960235-9309940">Ruby Hacker's Guide</a> by Minero Aoki, which is encrypted to a large majority.  But notice that Aoki-san has devoted an <a href="http://i.loveruby.net/ja/rhg/gc.html">entire chapter</a> to GC.  Still, I can't seem to find practical guidelines for Ruby developers in any language.</p>
+
+<p>I'm going to limit my instruction to three major mistakes many Rubyists make concerning GC.  I consistently run into the first two.  The third I just barely started thinking about and now I'm just realizing this very prevalent mistake, which I've personally been making for years.</p>
+
+<h2>When Ruby Sweeps</h2>
+
+<p>Let's wrap up a clear conclusion to Dave's problem above.  His string was causing GC to run too much.  This begs two questions: what triggers GC?  And what is "too much"?</p>
+
+<p>Garbage collection is triggered when:</p>
+
+<ol>
+<li>Ruby goes to allocate memory and its internal memory counter shows that not enough is available inside Ruby.  This just means that Ruby will garbage collect first, before grabbing more of your system's total memory for its own use.  (Incidentally, when Ruby is reallocating memory, it won't check this counter.)</li>
+<li>An attempt at allocation fails, Ruby will run GC to try to free up memory before resorting to a memory error.</li>
+<li>All objects have been free'd and the object heap needs to be reset.</li>
+<li>An extension uses <code>rb_gc()</code> or <code>rb_gc_start()</code> directly.  (For example, the <code>IO</code> and <code>Socket</code> classes will start GC if no file or socket handles can be opened.)</li>
+<li>You manually trigger it with <code>GC.start</code> or <code>ObjectSpace.garbage_collect</code>.</li>
+</ol>
+
+<p>Really only the first one is terribly important.  The others will likely happen infrequently.  The fourth and fifth are only important if any scripts or extensions you use are needlessly starting GC, but I don't know of any.  As you'll see in a moment, most extensions commit errors of an opposite nature, are guilty of ignoring GC.</p>
+
+<h2>The Dotted Lines Mapping Ruby's Brain</h2>
+
+<p>I think it's important to deal with some concrete details that may seem tedious for Ruby authors to cover, but I think are important to know at some point.  What I'm saying is: I'm going to quote some of Ruby's source code.  Don't worry if you don't know C, it's just here as a citation to back me up.</p>
+
+<p>From gc.c: <code>#define GC_MALLOC_LIMIT 8000000</code></p>
+
+<p>The Ruby object heap allocates <strong>a minimum of 8 megabytes</strong>.  This is where the internal memory counter starts.  This means that if you stay under eight megabytes worth of allocation, your script may never call GC.  Once you breach this limit, Ruby will begin to watch your allocation needs and resize the limit accordingly.  When it comes down to it, Ruby is just continually fighting to keep you under the 8 meg limit.  If it can get you back under that limit, you're Red October, cruising quietly under the radar again.</p>
+
+<p>If you're allocating lots of small portions that add up to a big breakfast for GC, then you'll see GC run more frequently.  If you allocate a huge amount and wittle down from there, Ruby will probably go easier on you.</p>
+
+<h2>Ruby's Piles of Objects</h2>
+
+<p>From gc.c:</p>
+
+<pre>
+ #define HEAPS_INCREMENT 10
+ static struct heaps_slot {
+    RVALUE *slot;
+    int limit;
+ } *heaps;
+ static int heaps_length = 0;
+ static int heaps_used   = 0;
+
+ #define HEAP_MIN_SLOTS 10000
+ static int heap_slots = HEAP_MIN_SLOTS;
+</pre>
+
+<p>Ruby's object heap is broken up into manageable heaps which store objects as they are created.  By default you get ten heaps, which  have a minimum of ten-thousand objects in each heap.  As Ruby adds heaps, they get bigger by a factor of 1.8.</p>
+
+<p>The important thing to note here, again, are the heap boundaries.  Once Ruby has allocated ten-thousand objects, a new heap is needed.  After the next eighteen-thousand objects, another new heap is needed.</p>
+
+<p>I'm not bringing this up so you'll start counting your objects one-by-one.  Well, maybe a little.  It's tough to know roughly how many objects are being loaded, given the wealthy of libraries we all depend on.  But now you have an idea of where GC strikes on these boundary lines.</p>
+
+<h2>Mistake #1: Trash Everywhere, Temporary Objects Everywhere</h2>
+
+<p>Back to the original question: <strong>why was Dave's string incurring GC costs more than the arrays?</strong></p>
+
+<p>It's not because adding strings forces garbage collection and adding to arrays doesn't.  The concat operator (<code>&lt;&lt;</code>) for both strings and arrays is a reallocation, a widening of the string or array to accomodate the addition, which doesn't force garbage collection.</p>
+
+<p>The problem is the pile of data as a whole.  In his first situation, he had two types of data stockpiling: (1) a temporary string for each row in his <span class="caps">CSV</span> file, with fixed quotations and such things, and (2) the giant string containing everything.  If each string is 1k and there are 5,000 rows...</p>
+
+<blockquote>
+<p>Scenario One: build a big string from little strings
+<table>
+<tr>
+<td> temporary strings: </td>
+<td> 5 megs (5,000k) </td>
+</tr>
+<tr>
+<td> massive string:    </td>
+<td> 5 megs (5,000k) </td>
+</tr>
+<tr>
+<td> <strong>TOTAL:</strong>           </td>
+<td> 10 megs (10,000k) </td>
+</tr>
+</table>
+
+</p>
+</blockquote>
+
+<p>Dave's improved script swapped the massive string for an array.  He kept the temporary strings, but stored them in an array.  The array will only end up costing <code>5000 * sizeof(VALUE)</code> rather than  the full size of each string.  And generally, a <code>VALUE</code> is four bytes.</p>
+
+<blockquote>
+<p>Scenario Two: storing strings in an array
+<table>
+<tr>
+<td> strings: </td>
+<td> 5 megs (5,000k) </td>
+</tr>
+<tr>
+<td> massive array:     </td>
+<td> 20k </td>
+</tr>
+<tr>
+<td> <strong>TOTAL:</strong>           </td>
+<td> 5.02 megs </td>
+</tr>
+</table>
+
+</p>
+</blockquote>
+
+<p>Then, when we need to make a big string, we call <code>join</code>.  Now we're up to ten megs and suddenly all those strings become temporary strings and they can all be released at once.  It's a huge cost at the end, but it's a lot more efficient than a gradual crescendo that eats resources the whole time.</p>
+
+<p>The lessons here are:</p>
+
+<ol>
+<li>Temporary strings and temporary objects will stockpile.  Just because you leave a method doesn't mean they are gone.  You have to wait for one of the five conditions listed earlier to see GC happen.</li>
+<li>Arrays, hashes, objects are memory cheap.  Worry about your strings.  Do you have string corpses everywhere?</li>
+<li>Build your object from all the pieces, avoiding temporary objects as much as possible.  Then, when you're done with it, toss the big object out of scope at once!</li>
+</ol>
+
+<h2>Mistake #2: Needy Scripts, Hanging On Too Tightly</h2>
+
+<p>Ruby's GC is called mark-and-sweep.  The "mark" stage checks objects to see if they are still in use.  If an object is in a variable that can still be used in the current scope, the object (and any object inside that object) is marked for keeping.  If the variable is long gone, off in another method, the object isn't marked.  The "sweep" stage then frees objects which haven't been marked.</p>
+
+<p>If you stuff something in an array and you happen to keep that array around, <strong>it's all marked</strong>.  If you stuff something in a constant or global variable, <strong>it's forever marked</strong>.</p>
+
+<p><strong>Despite what you think, you DO have the power to allocate and free!</strong>  If your whole program is in one long script with no methods helping you out to create scopes, then chances are that <strong>everything you create will stick around until the program ends</strong>.  And if that program runs indefinitely, then someday--some fateful day--you will have a problem.</p>
+
+<p>I also see this most common abuse in situations where someone is looping through a database and hanging on to data.</p>
+
+<pre>
+ totals = {}
+ db.query( "SELECT * FROM stores" ).each_hash do |store|
+   # Transformations on the data, perhaps even selecting
+   # other result sets...
+
+   totals[store['id']] = store
+ end
+</pre>
+
+<p>That <code>totals</code> array is going to grow.  And I just wonder: do you need all the data you're hanging on to?  Maybe you can query again later if you really need certain data?</p>
+
+<p>And, furthermore, are you stepping out of scope when you're done with the <code>totals</code> array?  Or are you weighing down the rest of your program with it?</p>
+
+<h2>Mistake #3: Avoiding <span class="caps">ALLOC</span>_N</h2>
+
+<p>It probably sounds like I'm ripping on the Pickaxe, but I'm only pointing to some inadequacies in our documentation--and it <em>is</em> our documentation, you know?  But here's one area the Pickaxe gets right.</p>
+
+<p>From page 293:</p>
+
+<blockquote>
+<p>To work correctly with the garbage collector, you should use the following memory allocation routines.  These routines do a little bit more work than the standard <code>malloc</code>.  For instance, if <code>ALLOC_N</code> determines that it cannot allocate the desired amount of memory, it will invoke the garbage collector to try to reclaim some space.  It will raise a <code>NoMemError</code> if it can't or if the requested amount of memory is invalid.</p>
+</blockquote>
+
+<p>Sometimes you may be linking to shared libs which have their own memory management.  These will fight with Ruby for allocation, which generally isn't a problem if you are laying low.</p>
+
+<p>If your extension has control over the allocation of memory, using these functions will ensure that the garabage collector gets called at reasonable times.  Since my <span class="caps">YAML</span> parser doesn't use the Ruby routines, Ruby can't help free up space should the parser need to use memory for a large incoming stream.  But this will be changing in the next release.</p>
+
+<p>As a final advisory, I do think there are times when it makes sense to turn off GC.  Generally, though, mentally walking through how GC is going to deal with your data is enough to help you refactor.</p>
+
+<hr />
+<p>by <em>why the lucky stiff</em></p>
+<p>june 22, 2005</p>

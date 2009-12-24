@@ -1,0 +1,83 @@
+From johnny_bravo at punkass.com  Mon Oct 11 17:25:27 2004
+From: johnny_bravo at punkass.com (David Hebblethwaite)
+Date: Tue Oct 12 12:15:12 2004
+Subject: (no subject)
+Message-ID: <ICEIKBAOGELKPGKBPKAKAEPLCBAA.johnny_bravo@punkass.com>
+
+Remember, one thing above all else , that BIG magnets make BIG voltages;
+don't Gauss off more than yer can choke on. Whatta horse! Whoooaaaa, Neddy,
+whots orl vis abaht Beljum--yer gannin er whot? Hoo-ray fer down 't Funnel
+and oop whent hiss shirt!!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20041011/0e5e85db/attachment.htm
+From ged at FaerieMUD.org  Tue Oct 12 13:29:18 2004
+From: ged at FaerieMUD.org (Michael Granger)
+Date: Tue Oct 12 13:30:13 2004
+Subject: Why's Poignant Guide to Ruby,
+	Chapter Five: Them What Make the Rules and Them What Live the Dream
+In-Reply-To: <1951527271690.20040926000946@soyabean.com.au>
+References: <41506F58.2070904@poignantguide.net>
+	<003c01c4a2cb$210cbc00$6401a8c0@blackula>
+	<1951527271690.20040926000946@soyabean.com.au>
+Message-ID: <3F265DF0-1C74-11D9-8987-000A95A77B56@FaerieMUD.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Sep 25, 2004, at 7:09 AM, Gavin Sinclair wrote:
+
+> I consider it very bad style to do
+>
+>   Class::method
+
+I don't, as I learned it from Ruby in a Nutshell, written by Matz 
+himself. I, like _why, prefer to see immediately when a call is being 
+made to a class method as opposed to an instance method, because 
+classes are special objects. The jump into another level of abstraction 
+deserves to be treated differently, like a ticker-tape parade when you 
+come home from war as opposed to just coming home from vacation.
+
+But it's a stylistic preference, and I won't try to put your calls to 
+class methods on a pedestal if you won't throw mine down from theirs.
+
+- --
+Michael Granger <ged@FaerieMUD.org>
+Rubymage, Architect, Believer
+The FaerieMUD Consortium <http://www.FaerieMUD.org/>
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.5 (Darwin)
+
+iD8DBQFBbBRu+zlz4UKpE6QRAkYzAJ4pTn9NlpiCsS6Hi4n7WaSzGxQJAgCgjCbj
+0izyU3nhz838lWazMh1d18o=
+=z+WL
+-----END PGP SIGNATURE-----
+
+From johnny_bravo at punkass.com  Mon Oct 11 17:25:27 2004
+From: johnny_bravo at punkass.com (David Hebblethwaite)
+Date: Tue Oct 12 15:48:35 2004
+Subject: (no subject)
+Message-ID: <ICEIKBAOGELKPGKBPKAKAEPLCBAA.johnny_bravo@punkass.com>
+
+Remember, one thing above all else , that BIG magnets make BIG voltages;
+don't Gauss off more than yer can choke on. Whatta horse! Whoooaaaa, Neddy,
+whots orl vis abaht Beljum--yer gannin er whot? Hoo-ray fer down 't Funnel
+and oop whent hiss shirt!!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20041011/0e5e85db/attachment-0001.htm
+From cheselka at gmail.com  Fri Oct 15 20:00:48 2004
+From: cheselka at gmail.com (Michael Cheselka)
+Date: Fri Oct 15 20:01:16 2004
+Subject: PDF version
+Message-ID: <3c6fb8810410151700399d54c0@mail.gmail.com>
+
+Hello,
+Would someone make a PDF version available?
+I tried using an online HTMLDOC server do the conversion
+but if truncated the images.
+Much Thanks!
+Mike
+-- 
+When in the Potemkin Wired be a Potemkin Lain.

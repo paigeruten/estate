@@ -1,0 +1,998 @@
+From why at poignantguide.net  Tue Mar  7 02:04:40 2006
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue, 07 Mar 2006 00:04:40 -0700
+Subject: 2006 (Poignant) Guide
+Message-ID: <440D3088.106@poignantguide.net>
+
+Hey, everyone.  I'm testing out an updated design and could really use a 
+skim in your browser of choice.  Specifically if IE or Safari is your 
+browser of choice.
+
+Here are the testing URLs:
+
+  http://qa.poignantguide.net/
+  http://de-draft.poignantguide.net/
+  http://fr-draft.poignantguide.net/
+
+
+(A reverent bow without equal.)
+
+_why
+
+From hawkman.gelooft at gmail.com  Tue Mar  7 02:31:07 2006
+From: hawkman.gelooft at gmail.com (Dirk Meijer)
+Date: Tue, 7 Mar 2006 08:31:07 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <b1188aec0603062331x12b8a8f8w@mail.gmail.com>
+
+hi there,
+i'm using IE (because my mom won't allow me to install firefox on her
+computer)
+and it's looks fine, though i liked the old look better ;-)
+greetings, Dirk.
+
+
+2006/3/7, why the lucky stiff <why at poignantguide.net>:
+>
+> Hey, everyone.  I'm testing out an updated design and could really use a
+> skim in your browser of choice.  Specifically if IE or Safari is your
+> browser of choice.
+>
+> Here are the testing URLs:
+>
+> http://qa.poignantguide.net/
+> http://de-draft.poignantguide.net/
+> http://fr-draft.poignantguide.net/
+>
+>
+> (A reverent bow without equal.)
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060307/17f11286/attachment.htm 
+
+From sl33p3r at free.fr  Tue Mar  7 03:31:06 2006
+From: sl33p3r at free.fr (Frederick Ros)
+Date: Tue, 07 Mar 2006 09:31:06 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <1141720266.440d44ca3f3cf@imp7-g19.free.fr>
+
+Quoting why the lucky stiff <why at poignantguide.net>:
+
+> Hey, everyone.  I'm testing out an updated design and could really use a
+> skim in your browser of choice.  Specifically if IE or Safari is your
+> browser of choice.
+>
+> Here are the testing URLs:
+>
+>   http://qa.poignantguide.net/
+>   http://de-draft.poignantguide.net/
+>   http://fr-draft.poignantguide.net/
+>
+>
+> (A reverent bow without equal.)
+
+Unfortunately the left sidebar does not appear on IE at work ( version 6.0 it
+seems).
+
+I *do* really like the new look :)
+
+
+Frederick Ros aka Sleeper -- sleeper at jabber.fr
+
+From zefredz at gmail.com  Tue Mar  7 03:37:16 2006
+From: zefredz at gmail.com (ZeFredz)
+Date: Tue, 07 Mar 2006 09:37:16 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <440D463C.2020505@gmail.com>
+
+Hello,
+
+It works fine on my Safari (Safari 1.3.2 on MacOSX 10.3.9).
+
+Cheers
+
+-- 
+------------ Frederic Minne -----------------
+01111010 01100101 01100110 01110010
+01100101 01100100 01111010
+mail : zefredz at gmail.com
+jabberID : zefredz at frimouvy.org
+----------------------------------------------
+
+From olleolleolle at home.se  Tue Mar  7 04:12:34 2006
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Tue, 07 Mar 2006 10:12:34 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D463C.2020505@gmail.com>
+References: <440D3088.106@poignantguide.net> <440D463C.2020505@gmail.com>
+Message-ID: <440D4E82.9090500@home.se>
+
+ZeFredz:
+> Hello,
+> 
+> It works fine on my Safari (Safari 1.3.2 on MacOSX 10.3.9).
+> 
+> Cheers
+> 
+Hi, and thanks for keeping the Guide alive and well.
+
+These incremental redesigns are swell. Also makes me re-read the text. 
+(Honing the basics is great!)
+
+And the site looks OK in my Operahhhh:
+
+Version		9.00
+Build		8212
+Platform	Win32
+System		Windows XP
+
+...apart from the fact that the "right-side-hugging factory image" and 
+the top teaser about ch. 6 has whitespace after it. An inch or so. So, 
+you get the scrollbar at the bottom.
+
+The Opera works fine with a big window, but smaller sizes quash the 
+text together. (People, get bigger screens, the Guide is worth a read.)
+
+In the "other browser" aka IE6, it is all trouble:
+
+The left-hand side-bar, where TOC is going, is nowhere to be seen. 
+Just not there. But the text-part of the page, is layouted nicely.
+
+regards from copenhagen, denmark,
+    Olle
+
+
+
+-- 
+Olle Jonsson
+Prinsesse Charlottes Gade 40b, 3 t.h.
+2200 K?benhavn N, Denmark
+mobile: +45-2212 3703
+home: +45-3295 2172
+
+From murphy at cYcnus.de  Tue Mar  7 07:55:05 2006
+From: murphy at cYcnus.de (murphy)
+Date: Tue, 07 Mar 2006 13:55:05 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <440D82A9.4060907@cYcnus.de>
+
+> testing out an updated design ...IE
+no, no sidebar in IE 6 here. Microsoft stinks.
+I got no idea what's causing it.
+
+about the new design: why is testing our visual senses again.
+I had to look at it twice, but it starts to please me...no, I like it.
+I can imagine people restarting their browser because they think it's a grafic 
+error - but those who have no humor understanding pop art probably don't like 
+the guide itself. so, it fits.
+
+the caption "why" is not really identifiable.
+
+the black'n'white foxes are definitely my new avatar at rubyforen.de - if _why 
+doesn't demand copyright taxes :)
+
+in ten years, _why surely has his own room in the MoMA.
+[murphy]
+
+From robin.shannon at gmail.com  Tue Mar  7 08:53:06 2006
+From: robin.shannon at gmail.com (Robin Shannon)
+Date: Wed, 8 Mar 2006 00:53:06 +1100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <623d73380603070553j2436bf3bv84151da96039586d@mail.gmail.com>
+
+looks good in Konqueror. Cool design, though the "Why's" in the red
+cloud is not really apparent unless you know that it should be there.
+
+-rjs.
+
+On 07/03/06, why the lucky stiff <why at poignantguide.net> wrote:
+> Hey, everyone.  I'm testing out an updated design and could really use a
+> skim in your browser of choice.  Specifically if IE or Safari is your
+> browser of choice.
+>
+> Here are the testing URLs:
+>
+>   http://qa.poignantguide.net/
+>   http://de-draft.poignantguide.net/
+>   http://fr-draft.poignantguide.net/
+>
+>
+> (A reverent bow without equal.)
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+
+--
+DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+<http://www.gnu.org/philosophy/sylvester-response.html>
+
+Hit me: <http://robin.shannon.id.au> [broken]
+Jab me: <robin.shannon at jabber.org.au>
+Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+Faith is under the left nipple. -- Martin Luther
+
+
+From mental at rydia.net  Tue Mar  7 12:07:43 2006
+From: mental at rydia.net (mental at rydia.net)
+Date: Tue, 07 Mar 2006 12:07:43 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <1141720266.440d44ca3f3cf@imp7-g19.free.fr>
+References: <440D3088.106@poignantguide.net>
+	<1141720266.440d44ca3f3cf@imp7-g19.free.fr>
+Message-ID: <1141751263.440dbddf7a2e0@www.rydia.net>
+
+Quoting Frederick Ros <sl33p3r at free.fr>:
+
+> Unfortunately the left sidebar does not appear on IE at work (
+> version 6.0 it seems).
+
+Same.  Though, more bizzarely, IE does appear to be loading the
+images for it and so forth regardless, and I actually got it to
+appear once by hitting back and forward repeatedly.
+
+It's apparently _there_, it's just not getting included in the
+document flow or rendered most of the time.
+
+Looks like we're unearthing yet another of IE's "We don't care!  We
+don't have to!  We're the phone company!" bugs...
+
+> I *do* really like the new look :)
+
+Seconded.  That earlier blue thing was just ... not it.
+
+This is so *it*.
+
+-mental
+
+From alex.combas at gmail.com  Tue Mar  7 12:11:14 2006
+From: alex.combas at gmail.com (Alex Combas)
+Date: Tue, 7 Mar 2006 09:11:14 -0800
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <623d73380603070553j2436bf3bv84151da96039586d@mail.gmail.com>
+References: <440D3088.106@poignantguide.net>
+	<623d73380603070553j2436bf3bv84151da96039586d@mail.gmail.com>
+Message-ID: <76c1c2f40603070911u7fbb7fci1757709446f381ff@mail.gmail.com>
+
+mozilla-firefox-1.5.0.1winXP
+Looks good, although yes I have a few small format problems as well.
+1. the why is not really readable on the cover page
+2. the line "Want updates? Join poignant-watchers  for a periodicupdate on new chapters. Or poignant-stiffs for dicussion." looks asthough it has been crossedout because it overlaps with the bottom line of the box that is above it.
+3. I still cant find chapter 7 ;)
+best regards,
+--Alex Combashttp://noodlejunkie.blogspot.com/
+
+From mental at rydia.net  Tue Mar  7 12:12:20 2006
+From: mental at rydia.net (mental at rydia.net)
+Date: Tue, 07 Mar 2006 12:12:20 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <1141751540.440dbef4aeaf4@www.rydia.net>
+
+Quoting why the lucky stiff <why at poignantguide.net>:
+
+> Hey, everyone.  I'm testing out an updated design and could
+> really use a skim in your browser of choice.  Specifically if IE
+> or Safari is your browser of choice.
+
+This is awesome.  As mentioned, there are some problems in IE, but
+okay.  It's got the feel.
+
+One thing: better make the foxbox flexible height-wise (I guess
+divide the foxbox background across the two divs to let it
+stretch?).  There's no way the text is going to fit for every
+font/DPI otherwise.
+
+-mental
+
+From zerocross at darkness.at  Tue Mar  7 13:01:37 2006
+From: zerocross at darkness.at (Simon Rumer)
+Date: Tue, 07 Mar 2006 19:01:37 +0100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <440DCA81.6030209@darkness.at>
+
+hi,
+i like the new layout (nice front page) but the sidebar should 
+get a different background.
+
+word simon!
+
+-- 
+Dale Cooper: Harry, I have no idea where this will lead us, 
+but I have a definite feeling it will be a place both 
+wonderful and strange. - Twin Peaks
+
+From Bil.Kleb at NASA.GOV  Tue Mar  7 13:12:05 2006
+From: Bil.Kleb at NASA.GOV (Bil Kleb)
+Date: Tue, 07 Mar 2006 13:12:05 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DCA81.6030209@darkness.at>
+References: <440D3088.106@poignantguide.net> <440DCA81.6030209@darkness.at>
+Message-ID: <440DCCF5.7070007@NASA.gov>
+
+Simon Rumer wrote:
+> i like the new layout (nice front page) but the sidebar should 
+> get a different background.
+
+Agree.
+
+-- 
+Bil
+http://fun3d.larc.nasa.gov
+
+From why at poignantguide.net  Tue Mar  7 14:14:26 2006
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue, 07 Mar 2006 12:14:26 -0700
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <1141751540.440dbef4aeaf4@www.rydia.net>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+Message-ID: <440DDB92.1010406@poignantguide.net>
+
+Well, I got the fox box stretched and limber.  The sidepane should be 
+seen in IE now.
+
+alex & robin: i think the problem with the book's title is the dotted 
+"Y", it's kind of vanishd and i have to reform it into something solid.
+
+simon & bil: do you mean the sidebar on the front page needs a different 
+background color to distinguish it from the rest of the page?  or is it 
+something else over there?
+
+I kinda liked the old design, too, but you know when you can't resist 
+playing with other ideas?  Mostly, I like the new pages and sidebar so 
+much better.  The old blue sidebars really looked ugly to me.
+
+Okay, great, thanks for checking it out.
+
+_why
+
+From Bil.Kleb at nasa.gov  Tue Mar  7 14:24:54 2006
+From: Bil.Kleb at nasa.gov (Bil Kleb)
+Date: Tue, 07 Mar 2006 14:24:54 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DDB92.1010406@poignantguide.net>
+References: <440D3088.106@poignantguide.net>	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net>
+Message-ID: <440DDE06.6070102@NASA.gov>
+
+why the lucky stiff wrote:
+> 
+> simon & bil: do you mean the sidebar on the front page needs a different 
+> background color to distinguish it from the rest of the page?  or is it 
+> something else over there?
+
+Good question.  My trouble is with the right hand sidebar!s: their
+background color is the same color as the page background color.
+
+-- 
+Bil (Skype: bil_kleb)
+http://fun3d.larc.nasa.gov
+
+From mental at rydia.net  Tue Mar  7 14:33:14 2006
+From: mental at rydia.net (mental at rydia.net)
+Date: Tue, 07 Mar 2006 14:33:14 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DDB92.1010406@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net>
+Message-ID: <1141759994.440ddffa67cbf@www.rydia.net>
+
+Quoting why the lucky stiff <why at poignantguide.net>:
+
+> alex & robin: i think the problem with the book's title is the
+> dotted "Y", it's kind of vanishd and i have to reform it into
+> something solid.
+
+Hmm.  The other letters are also pretty indistinct.  I think faint,
+small, line lettering within the outer dots would clear things up a
+lot.
+
+Couple remaining items:
+
+In IE6, the top border of the contents box falls too high, covering
+the bottom edge of the title graphic.  The badge is in precisely
+the right location, however.
+
+The placeholder images for Chapter 7 are broken/missing.
+
+-mental
+
+From why at poignantguide.net  Tue Mar  7 14:36:33 2006
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue, 07 Mar 2006 12:36:33 -0700
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DDE06.6070102@NASA.gov>
+References: <440D3088.106@poignantguide.net>	<1141751540.440dbef4aeaf4@www.rydia.net>	<440DDB92.1010406@poignantguide.net>
+	<440DDE06.6070102@NASA.gov>
+Message-ID: <440DE0C1.3060003@poignantguide.net>
+
+Bil Kleb wrote:
+> Good question.  My trouble is with the right hand sidebar!s: their
+> background color is the same color as the page background color.
+Oh, that's intentional.  Is that making them hard to read on certain 
+screens?
+
+_why
+
+From alex.combas at gmail.com  Tue Mar  7 15:05:39 2006
+From: alex.combas at gmail.com (Alex Combas)
+Date: Tue, 7 Mar 2006 12:05:39 -0800
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DDB92.1010406@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net>
+Message-ID: <76c1c2f40603071205u50a2e2fbw50dab71a95d6a1c8@mail.gmail.com>
+
+On 3/7/06, why the lucky stiff <why at poignantguide.net> wrote:> Well, I got the fox box stretched and limber.  The sidepane should be> seen in IE now.>> alex & robin: i think the problem with the book's title is the dotted> "Y", it's kind of vanishd and i have to reform it into something solid.>
+the front page looks fixed now, except for the "Why's"part that is still a little vague
+you have what looks like a watercolorish wash behind the letters,perhaps if you made that a little more distinct and then cleaned up the lettersitself a little you could have your style and eat it too
+> Okay, great, thanks for checking it out.
+yw
+best,--Alex Combashttp://noodlejunkie.blogspot.com/
+
+From Bil.Kleb at nasa.gov  Tue Mar  7 15:33:41 2006
+From: Bil.Kleb at nasa.gov (Bil Kleb)
+Date: Tue, 07 Mar 2006 15:33:41 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DE0C1.3060003@poignantguide.net>
+References: <440D3088.106@poignantguide.net>	<1141751540.440dbef4aeaf4@www.rydia.net>	<440DDB92.1010406@poignantguide.net>	<440DDE06.6070102@NASA.gov>
+	<440DE0C1.3060003@poignantguide.net>
+Message-ID: <440DEE25.6030504@NASA.gov>
+
+why the lucky stiff wrote:
+> Bil Kleb wrote:
+> 
+>>Good question.  My trouble is with the right hand sidebar!s: their
+>>background color is the same color as the page background color.
+> 
+> Oh, that's intentional.  Is that making them hard to read on certain 
+> screens?
+
+It's just disconcerting, and made me scroll up an down a bit
+to make sure that nothing was amiss.
+
+-- 
+Bil
+http://fun3d.larc.nasa.gov
+
+From bret at pettichord.com  Tue Mar  7 16:56:51 2006
+From: bret at pettichord.com (Bret Pettichord)
+Date: Tue, 7 Mar 2006 15:56:51 -0600
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440DEE25.6030504@NASA.gov>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net> <440DDE06.6070102@NASA.gov>
+	<440DE0C1.3060003@poignantguide.net> <440DEE25.6030504@NASA.gov>
+Message-ID: <ade75c5b0603071356j32c9518dn59756883a243bfc7@mail.gmail.com>
+
+On 3/7/06, Bil Kleb <Bil.Kleb at nasa.gov> wrote:
+>
+> why the lucky stiff wrote:
+> > Bil Kleb wrote:
+> >
+> >>Good question.  My trouble is with the right hand sidebar!s: their
+> >>background color is the same color as the page background color.
+> >
+> > Oh, that's intentional.  Is that making them hard to read on certain
+> > screens?
+>
+> It's just disconcerting, and made me scroll up an down a bit
+> to make sure that nothing was amiss.
+
+
+I also found this disconcerting and wondered whether it was intentional.
+
+Bret
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060307/2a5488bd/attachment.htm 
+
+From ryan at platte.name  Tue Mar  7 17:05:49 2006
+From: ryan at platte.name (Ryan Platte)
+Date: Tue, 7 Mar 2006 16:05:49 -0600
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <ade75c5b0603071356j32c9518dn59756883a243bfc7@mail.gmail.com>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net> <440DDE06.6070102@NASA.gov>
+	<440DE0C1.3060003@poignantguide.net> <440DEE25.6030504@NASA.gov>
+	<ade75c5b0603071356j32c9518dn59756883a243bfc7@mail.gmail.com>
+Message-ID: <2f1a1dcb0603071405w203db1b4w146faac2ad691351@mail.gmail.com>
+
+On 3/7/06, Bret Pettichord <bret at pettichord.com> wrote:
+> On 3/7/06, Bil Kleb <Bil.Kleb at nasa.gov> wrote:
+>
+> > why the lucky stiff wrote:
+> > > Bil Kleb wrote:
+> > >
+> > >>Good question.  My trouble is with the right hand sidebar!s: their
+> > >>background color is the same color as the page background color.
+> > >
+> > > Oh, that's intentional.  Is that making them hard to read on certain
+> > > screens?
+> >
+> > It's just disconcerting, and made me scroll up an down a bit
+> > to make sure that nothing was amiss.
+>
+> I also found this disconcerting and wondered whether it was intentional.
+>
+> Bret
+
+Me too. Seemed analogous to a joke that needed to be pondered instead
+of just being funny on the surface, like when I recently watched the
+movie Airplane by myself and spent most of the time thinking, "I bet
+this is loaded with references that would make me laugh hard if I got
+them".
+
+Kinda like that, but more subtle, as if it were just a layout issue or
+something.
+
+--
+Ryan Platte
+
+
+From stephen.swift at gmail.com  Tue Mar  7 17:15:34 2006
+From: stephen.swift at gmail.com (Stephen Swift)
+Date: Tue, 7 Mar 2006 17:15:34 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <2f1a1dcb0603071405w203db1b4w146faac2ad691351@mail.gmail.com>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net> <440DDE06.6070102@NASA.gov>
+	<440DE0C1.3060003@poignantguide.net> <440DEE25.6030504@NASA.gov>
+	<ade75c5b0603071356j32c9518dn59756883a243bfc7@mail.gmail.com>
+	<2f1a1dcb0603071405w203db1b4w146faac2ad691351@mail.gmail.com>
+Message-ID: <5506ed1b0603071415l12bcbbcey3f986ff3b7e7b4a0@mail.gmail.com>
+
+For what it's worth, I'm pretty fond of the cut-out sidebars. They look and
+feel like sidebars to me, with the added bonus of the implication that
+someone is taking large bites out of your box model.
+
+- Stephen
+
+On 3/7/06, Ryan Platte <ryan at platte.name> wrote:
+>
+> On 3/7/06, Bret Pettichord <bret at pettichord.com> wrote:
+> > On 3/7/06, Bil Kleb <Bil.Kleb at nasa.gov> wrote:
+> >
+> > > why the lucky stiff wrote:
+> > > > Bil Kleb wrote:
+> > > >
+> > > >>Good question.  My trouble is with the right hand sidebar!s: their
+> > > >>background color is the same color as the page background color.
+> > > >
+> > > > Oh, that's intentional.  Is that making them hard to read on certain
+> > > > screens?
+> > >
+> > > It's just disconcerting, and made me scroll up an down a bit
+> > > to make sure that nothing was amiss.
+> >
+> > I also found this disconcerting and wondered whether it was intentional.
+> >
+> > Bret
+>
+> Me too. Seemed analogous to a joke that needed to be pondered instead
+> of just being funny on the surface, like when I recently watched the
+> movie Airplane by myself and spent most of the time thinking, "I bet
+> this is loaded with references that would make me laugh hard if I got
+> them".
+>
+> Kinda like that, but more subtle, as if it were just a layout issue or
+> something.
+>
+> --
+> Ryan Platte
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060307/21f86c9c/attachment-0001.htm 
+
+From mental at rydia.net  Tue Mar  7 17:31:30 2006
+From: mental at rydia.net (mental at rydia.net)
+Date: Tue, 07 Mar 2006 17:31:30 -0500
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <5506ed1b0603071415l12bcbbcey3f986ff3b7e7b4a0@mail.gmail.com>
+References: <440D3088.106@poignantguide.net>
+	<1141751540.440dbef4aeaf4@www.rydia.net>
+	<440DDB92.1010406@poignantguide.net> <440DDE06.6070102@NASA.gov>
+	<440DE0C1.3060003@poignantguide.net> <440DEE25.6030504@NASA.gov>
+	<ade75c5b0603071356j32c9518dn59756883a243bfc7@mail.gmail.com>
+	<2f1a1dcb0603071405w203db1b4w146faac2ad691351@mail.gmail.com>
+	<5506ed1b0603071415l12bcbbcey3f986ff3b7e7b4a0@mail.gmail.com>
+Message-ID: <1141770690.440e09c29edb1@www.rydia.net>
+
+Quoting Stephen Swift <stephen.swift at gmail.com>:
+
+> For what it's worth, I'm pretty fond of the cut-out sidebars.
+> They look and feel like sidebars to me, with the added bonus of
+> the implication that someone is taking large bites out of your
+> box model.
+
+Seconded.
+
+Thinking about it, something that might reinforce the deliberate
+cut-out appearance:  adding padding around the [  sidebar!  ] boxes
+rather than making them flush with the sidebar edges.
+
+Another IE thing by the way -- at least in Chapter 3, the sidebars
+themselves don't successfully flush with the edge of the page --
+there's a white band separating the sidebar from the right margin.
+
+-mental
+
+From robin.shannon at gmail.com  Tue Mar  7 18:52:05 2006
+From: robin.shannon at gmail.com (Robin Shannon)
+Date: Wed, 8 Mar 2006 10:52:05 +1100
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <623d73380603071552t4a0b4a56id43526a909de7dd8@mail.gmail.com>
+
+I'm not sure if its changed or i just missed it before, but in
+konqueror 3.5 at the top of the sidebar there is a pixel high line of
+sidebar then a pixel high line of the normal background and then the
+rest of the side bar. This doesn't affect the "open this book" circle.
+
+-rjs.
+
+On 07/03/06, why the lucky stiff <why at poignantguide.net> wrote:
+> Hey, everyone.  I'm testing out an updated design and could really use a
+> skim in your browser of choice.  Specifically if IE or Safari is your
+> browser of choice.
+>
+> Here are the testing URLs:
+>
+>   http://qa.poignantguide.net/
+>   http://de-draft.poignantguide.net/
+>   http://fr-draft.poignantguide.net/
+>
+>
+> (A reverent bow without equal.)
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+
+--
+DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+<http://www.gnu.org/philosophy/sylvester-response.html>
+
+Hit me: <http://robin.shannon.id.au> [broken]
+Jab me: <robin.shannon at jabber.org.au>
+Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+Faith is under the left nipple. -- Martin Luther
+
+
+From syshou at gmail.com  Fri Mar 17 16:54:45 2006
+From: syshou at gmail.com (Sean Shou)
+Date: Fri, 17 Mar 2006 16:54:45 -0500
+Subject: Newbie lost in "Chaining Delusions Together"
+Message-ID: <44db2f120603171354p6aae6314p3af75ca92ac04808@mail.gmail.com>
+
+Hello all,
+
+I am new to ruby, and programming. I've read about the list, and it seems a
+fellow named Shalev had pointed out an error with the 'require' used to
+bring in wordlists.rb in Chapter 4, "Chaining Delusions".
+
+He even suggest what sounded like some smart suggestions as to how to
+overcome these issues. However, I can't make heads or tails of modules, and
+am a feeling a bit stuck.
+
+Can anyone suggest an alternative that would pull in the hash 'code_words'
+from 'wordlists.rb' ?
+
+
+Much obliged.
+
+Sy
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060317/4984c664/attachment.htm 
+
+From agattegno at yahoo.com  Sun Mar 19 03:36:27 2006
+From: agattegno at yahoo.com (Alberto Bar-Noy)
+Date: Sun, 19 Mar 2006 00:36:27 -0800 (PST)
+Subject: Newbie lost in "Chaining Delusions Together"
+In-Reply-To: <44db2f120603171354p6aae6314p3af75ca92ac04808@mail.gmail.com>
+Message-ID: <20060319083627.63977.qmail@web32101.mail.mud.yahoo.com>
+
+Hello Sean,
+
+I solved the same problem by adding the $ sigil before the code_words -> $code_words thus making it a global variable.
+
+If anyone knows any better ways please share.
+
+Cheers!
+
+Sean Shou <syshou at gmail.com> wrote: Hello all,
+  
+  I am new to ruby, and programming. I've read about the list, and it seems a fellow named Shalev had pointed out an error with the 'require' used to bring in wordlists.rb in Chapter 4, "Chaining Delusions".
+  
+  He even suggest what sounded like some smart suggestions as to how to overcome these issues. However, I can't make heads or tails of modules, and am a feeling a bit stuck.
+  
+  Can anyone suggest an alternative that would pull in the hash 'code_words' from 'wordlists.rb' ?
+  
+  
+  Much obliged.
+  
+  Sy _______________________________________________
+poignant-stiffs mailing list
+poignant-stiffs at rubyforge.org
+http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+		
+---------------------------------
+Relax. Yahoo! Mail virus scanning helps detect nasty viruses!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060319/8965591b/attachment.htm 
+
+From syshou at gmail.com  Tue Mar 21 00:53:07 2006
+From: syshou at gmail.com (Sean Shou)
+Date: Tue, 21 Mar 2006 00:53:07 -0500
+Subject: Newbie lost in "Chaining Delusions Together"
+In-Reply-To: <20060319083627.63977.qmail@web32101.mail.mud.yahoo.com>
+References: <44db2f120603171354p6aae6314p3af75ca92ac04808@mail.gmail.com>
+	<20060319083627.63977.qmail@web32101.mail.mud.yahoo.com>
+Message-ID: <44db2f120603202153u16696cdax58fe03c1562c208f@mail.gmail.com>
+
+Hi Alberto,
+
+Thanks for the hint. I tried this before and this worked well, but even as a
+new programmer, I've gotten some idea that you don't really want global
+variables just to use something from a 'required' file.
+
+Hmm... is there a way to instantiate the code_words array first? i.e.
+code_words.new('cwArray')
+
+then we'd do
+cwArray.each do | real, code |
+etc. .
+
+Can anyone confirm/debunk this? I don't have my laptop with ruby things
+loaded on it here, so I'm stuck speculating until I go home later this week.
+
+
+Regards,
+
+Sy
+
+On 3/19/06, Alberto Bar-Noy <agattegno at yahoo.com> wrote:
+>
+> Hello Sean,
+>
+> I solved the same problem by adding the $ sigil before the code_words ->
+> $code_words thus making it a global variable.
+>
+> If anyone knows any better ways please share.
+>
+> Cheers!
+>
+>
+> *Sean Shou <syshou at gmail.com>* wrote:
+>
+> Hello all,
+>
+> I am new to ruby, and programming. I've read about the list, and it seems
+> a fellow named Shalev had pointed out an error with the 'require' used to
+> bring in wordlists.rb in Chapter 4, "Chaining Delusions".
+>
+> He even suggest what sounded like some smart suggestions as to how to
+> overcome these issues. However, I can't make heads or tails of modules, and
+> am a feeling a bit stuck.
+>
+> Can anyone suggest an alternative that would pull in the hash 'code_words'
+> from 'wordlists.rb' ?
+>
+>
+> Much obliged.
+>
+> Sy _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+> ------------------------------
+> Relax. Yahoo! Mail virus scanning<http://us.rd.yahoo.com/mail_us/taglines/virusall/*http://communications.yahoo.com/features.php?page=221>helps detect nasty viruses!
+>
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060321/a30828c7/attachment.htm 
+
+From sl33p3r at free.fr  Tue Mar 21 16:12:50 2006
+From: sl33p3r at free.fr (Frederick Ros)
+Date: Tue, 21 Mar 2006 22:12:50 +0100
+Subject: Newbie lost in "Chaining Delusions Together"
+In-Reply-To: <44db2f120603202153u16696cdax58fe03c1562c208f@mail.gmail.com>
+References: <44db2f120603171354p6aae6314p3af75ca92ac04808@mail.gmail.com>
+	<20060319083627.63977.qmail@web32101.mail.mud.yahoo.com>
+	<44db2f120603202153u16696cdax58fe03c1562c208f@mail.gmail.com>
+Message-ID: <20060321211250.GC10566@hal.void.org>
+
+Sean Shou wrote :
+| Hi Alberto,
+| 
+| Thanks for the hint. I tried this before and this worked well, but even as a
+| new programmer, I've gotten some idea that you don't really want global
+| variables just to use something from a 'required' file.
+| 
+| Hmm... is there a way to instantiate the code_words array first? i.e.
+| code_words.new('cwArray')
+| 
+| then we'd do
+| cwArray.each do | real, code |
+| etc. .
+| 
+| Can anyone confirm/debunk this? I don't have my laptop with ruby things
+| loaded on it here, so I'm stuck speculating until I go home later this
+| week.
+
+Hummm ... Not sure to understand what you want to do, but I think that
+changing code_words to CODE_WORDS (i.e making it a constant) makes it
+works ;)
+
+-- 
+Frederick Ros aka Sleeper -- sleeper at jabber.fr
+
+Watch out for off-by-one errors.
+            - The Elements of Programming Style (Kernighan & Plaugher)
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060321/d1f70c59/attachment.bin 
+
+From wschenk at gmail.com  Mon Mar 27 16:57:36 2006
+From: wschenk at gmail.com (Will Schenk)
+Date: Mon, 27 Mar 2006 16:57:36 -0500
+Subject: Stanislaw Lem, RIP
+Message-ID: <b244e1b20603271357m15d70939rc23587a9fb749d77@mail.gmail.com>
+
+KRAKOW (Poland): Polish author Stanislaw Lem, one of the world's leading
+science fiction writers, died on Monday in his home city of Krakow at the
+age of 84 after a battle with a heart disease.
+Lem, whose books have sold more than 27 million copies and have been
+translated into more than 40 languages, won widespread acclaim for The
+Cyberiad, stories from a mechanical world ruled by robots, first published
+in English in 1974.
+
+[...]
+
+http://dnaindia.com/report.asp?NewsID=1020403
+
+
+
+--
+Will Schenk
+http://www.sublimeguile.com
+http://menumap.monkeythumb.net
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060327/95b1064f/attachment.htm 
+
+From agattegno at yahoo.com  Thu Mar  2 03:30:22 2006
+From: agattegno at yahoo.com (Alberto Bar-Noy)
+Date: Thu, 02 Mar 2006 08:30:22 -0000
+Subject: Newby question  on Chapter 4 and observation
+Message-ID: <20060302084307.755.qmail@web32115.mail.mud.yahoo.com>
+
+Hello all,
+
+Well as I said in the subject newby to Ruby (it rimes!) but not to programming, so please humour me.
+
+Q1.
+In chapter 4 in the codewords example I moved the codewords hash to a file wordlist.rb as suggested. 
+
+Then I copied the code that changes the code word and writes the file and tried to run it. I got an error that there is no code_words local variable declared (yes the requires command was there). So after a couiple of hours of further reading I attacked the problem and added $ to the code_words declaration and run it and VOILA!!!! it worked. So is this a typo/bug or am I missing something?
+
+Observation
+In the same chapter there is the print "Idea:" followed by gets.
+
+When I run it nothing is printed. I type catapult and then the code executes including the print and the gets. "So what am I missing here? " I thought to myself...
+
+I am using the RDT plugin for Eclipse (since I am writting all day in Java it is easier to cope), so I run the program in command line and behold!!!! it runs as it should. Did anyone have this problem? Any solution or should I make a custom run configuration?
+
+Thank you for your help
+Cheers!
+
+		
+---------------------------------
+Yahoo! Mail
+Bring photos to life! New PhotoMail  makes sharing a breeze. 
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20060302/fbe25c88/attachment.htm 
+
+From heldhelm at gmx.de  Tue Mar  7 02:34:19 2006
+From: heldhelm at gmx.de (Helmar)
+Date: Tue, 07 Mar 2006 07:34:19 -0000
+Subject: 2006 (Poignant) Guide
+In-Reply-To: <440D3088.106@poignantguide.net>
+References: <440D3088.106@poignantguide.net>
+Message-ID: <440D3A7F.1040108@gmx.de>
+
+Looks good in latest Safari. Although there are some missing images in 
+chapters five and seven...
+
+helmar++
+
+why the lucky stiff schrieb am 07.03.2006 8:04 Uhr:
+> Hey, everyone.  I'm testing out an updated design and could really use a 
+> skim in your browser of choice.  Specifically if IE or Safari is your 
+> browser of choice.
+> 
+> Here are the testing URLs:
+> 
+>   http://qa.poignantguide.net/
+>   http://de-draft.poignantguide.net/
+>   http://fr-draft.poignantguide.net/
+> 
+> 
+> (A reverent bow without equal.)
+> 
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+> 
+> 
+
+From tashiro at zianet.com  Wed Mar 29 23:29:40 2006
+From: tashiro at zianet.com (Stephen Tashiro)
+Date: Wed, 29 Mar 2006 21:29:40 -0700
+Subject: When irb and ri are not with Ruby 
+Message-ID: <442B5EB4.4030004@zianet.com>
+
+One thing that might be mentioned in the book is that in the Redhat 
+scheme of things, ruby, ri and irb are in different rpms.  So checking a 
+box to install Ruby does NOT mean that you will have ri and irb.
+
+

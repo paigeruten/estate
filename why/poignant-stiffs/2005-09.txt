@@ -1,0 +1,92 @@
+From objectorientedkick at gmail.com  Sat Sep 10 04:11:14 2005
+From: objectorientedkick at gmail.com (Kang Chang Ki)
+Date: Mon Sep 12 11:37:26 2005
+Subject: I'm translating Poignant Guide to Ruby into Korean.
+Message-ID: <43229522.6020703@gmail.com>
+
+Hi, my name is Kang Chang Ki.
+I'm a member of Ruby Korean Document Project.
+You can check it out at: http://wiki.rubykr.org/show/KoreanDoc
+We are helping people who want to learn Ruby by translating English or
+Japaness writings into Korean.
+
+One of our readers email us to tell us we should translate that famous
+guide into Korean about 1 month ago.
+So we tried to figure out the email address of the writer but we couldn't.
+Please let us know the email address of the writer.
+
+Kang Chang Ki.
+From sl33p3r at free.fr  Mon Sep 12 15:22:30 2005
+From: sl33p3r at free.fr (Frederick Ros)
+Date: Mon Sep 12 14:47:48 2005
+Subject: I'm translating Poignant Guide to Ruby into Korean.
+In-Reply-To: <43229522.6020703@gmail.com>
+References: <43229522.6020703@gmail.com>
+Message-ID: <20050912192230.GA9273@hal.void.org>
+
+Kang Chang Ki wrote :
+| So we tried to figure out the email address of the writer but we couldn't.
+| Please let us know the email address of the writer.
+
+Hi,
+
+One of the many addresses _Why is using is why@whytheluckystiff.net ...
+But, on this page (http://rubyforge.org/mail/?group_id=183) you'll also
+find the poignant-translators mailing list which you definitively should
+be a member of ;)
+
+
+-- 
+Frederick Ros aka Sleeper -- sleeper@jabber.fr
+
+"...and scantily clad females, of course.  Who cares if it's below zero
+outside"
+(By Linus Torvalds)
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050912/fdd99c14/attachment.bin
+From murphy at cYcnus.de  Mon Sep 12 15:02:48 2005
+From: murphy at cYcnus.de (murphy)
+Date: Mon Sep 12 14:56:48 2005
+Subject: I'm translating Poignant Guide to Ruby into Korean.
+In-Reply-To: <43229522.6020703@gmail.com>
+References: <43229522.6020703@gmail.com>
+Message-ID: <4325D0D8.1080507@cYcnus.de>
+
+> We are helping people who want to learn Ruby by translating English or
+> Japaness writings into Korean.
+great to have you!
+
+[murphy]
+From rodrigo.moraes at gmail.com  Mon Sep 12 19:41:02 2005
+From: rodrigo.moraes at gmail.com (Rodrigo Moraes)
+Date: Mon Sep 12 19:33:53 2005
+Subject: I'm translating Poignant Guide to Ruby into Korean.
+In-Reply-To: <4325D0D8.1080507@cYcnus.de>
+References: <43229522.6020703@gmail.com> <4325D0D8.1080507@cYcnus.de>
+Message-ID: <a1f3803805091216412d6676ed@mail.gmail.com>
+
+On 9/12/05, murphy <murphy@cycnus.de> wrote:
+> > We are helping people who want to learn Ruby by translating English or
+> > Japaness writings into Korean.
+> great to have you!
+
+He, me too. :P 
+I plan to start the brazilian portuguese translation, and it was good
+to hear about the translators list (there are only *two* lists on the
+book main page ;-)). Oh, it was good to hear about the korean
+translation too.
+
+Chunky bacons for you all.
+
+moraes
+------------------------------------------------------------
+e-mail / msn: rodrigo [dot] moraes [at] gmail [you.know.what]
+jabber: moraes@jabber.org
+icq: 75 90 80 80
+------------------------------------------------------------
+

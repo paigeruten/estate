@@ -1,0 +1,230 @@
+From robin.shannon at gmail.com  Thu Dec  1 05:17:26 2005
+From: robin.shannon at gmail.com (Robin Shannon)
+Date: Thu, 1 Dec 2005 21:17:26 +1100
+Subject: Try Ruby! (in your browser)
+In-Reply-To: <20051130031814.GG4256@hal.void.org>
+References: <438CB00D.3080206@poignantguide.net>
+	<1133307273.438ce589e9e9c@www.rydia.net>
+	<20051130031814.GG4256@hal.void.org>
+Message-ID: <623d73380512010217x1b75f30o@mail.gmail.com>
+
+Very, very cool. It seems to not be working too well with konqueror
+(3.5 on kubuntu with kde 3.5) unfortunatley (thankfully i can use
+firefox). Anyway very poignant. Why, you really are a legend.
+
+paz y amor,
+-rjs.
+
+On 11/30/05, Frederick Ros <sl33p3r at free.fr> wrote:
+> mental at rydia.net wrote :
+> | I had been wondering deeply about that tryruby SVN repo, but never
+> | imagined this...
+> |
+> | My gosh, _why, this is utterly, deeply beautiful!  It is like a
+> | whole new level!
+>
+> Argh .. too bad, I can't access the svn repo :) 403 Forbidden :(
+>
+> --
+> Frederick Ros aka Sleeper -- sleeper at jabber.fr
+>
+> Make sure input cannot violate the limits of the program.
+>             - The Elements of Programming Style (Kernighan & Plaugher)
+>
+>
+
+
+--
+DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+<http://www.gnu.org/philosophy/sylvester-response.html>
+
+Hit me: <http://robin.shannon.id.au> [broken]
+Jab me: <robin.shannon at jabber.org.au>
+Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+Faith is under the left nipple. -- Martin Luther
+
+
+From robin.shannon at gmail.com  Sun Dec  4 21:36:10 2005
+From: robin.shannon at gmail.com (Robin Shannon)
+Date: Mon, 5 Dec 2005 13:36:10 +1100
+Subject: Slightly OT: anyone know of some simple ruby programs to serve as
+	examples to learners.
+Message-ID: <623d73380512041836u628f7246j@mail.gmail.com>
+
+Does anyone know where i can get some well written but very simple
+ruby programs, so that i can read thru the source and try and figure
+out how they work?
+
+paz y amor,
+-rjs.
+
+--
+DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+<http://www.gnu.org/philosophy/sylvester-response.html>
+
+Hit me: <http://robin.shannon.id.au> [broken]
+Jab me: <robin.shannon at jabber.org.au>
+Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+Faith is under the left nipple. -- Martin Luther
+
+
+From helmar.wieland at gmail.com  Thu Dec 15 13:41:18 2005
+From: helmar.wieland at gmail.com (Helmar Wieland)
+Date: Thu, 15 Dec 2005 19:41:18 +0100
+Subject: error in chapter 5 - gambling with fewer fingers
+In-Reply-To: <c19a5c700512140647w24cb409cr@mail.gmail.com>
+References: <c19a5c700512140647w24cb409cr@mail.gmail.com>
+Message-ID: <c19a5c700512151041jbb1c59am@mail.gmail.com>
+
+Hello.
+
+Perhaps i'm completly and utterly wrong, but i think
+AnimalLottoTicket's constructor can never work.
+
+[excerpt]
+   def initialize( note1, note2, note3 )
+     if [note1, note2, note3].uniq!
+       raise ArgumentError, "the three picks must be different notes"
+     elsif picks.detect { |p| not NOTES.include? p }
+       raise ArgumentError, "the three picks must be notes in the
+chromatic scale."
+     end
+     @picks = picks
+     @purchased = Time.now
+   end
+[/excerpt]
+
+picks will of course be nil, will it not? perhaps something like
+picks = [note1, note2, note3]
+is missing?
+
+Anyway, thanks for the guide. A good read.
+Helmar++
+
+Before i forget it, i was missing some kind of explanation of the
+array method detect's functionality. Other than that, very well
+explained.
+
+I'm now reading the next chapter and your regexp explanation.
+[snip]
+See, deer language. The \d represents a digit. It's a place holder in
+the regexp for any type of number. The regexp will now match T-1000,
+T-2000, all the way up to T-9000.
+[/snip]
+Shouldn't it say, the regexp will now match T-0000, T-1000, all the
+way up to T-9000?
+
+
+From ryan.platte at pobox.com  Thu Dec 15 13:47:40 2005
+From: ryan.platte at pobox.com (Ryan Platte)
+Date: Thu, 15 Dec 2005 12:47:40 -0600
+Subject: error in chapter 5 - gambling with fewer fingers
+In-Reply-To: <c19a5c700512151041jbb1c59am@mail.gmail.com>
+References: <c19a5c700512140647w24cb409cr@mail.gmail.com>
+	<c19a5c700512151041jbb1c59am@mail.gmail.com>
+Message-ID: <2f1a1dcb0512151047x3e0aed3ana912fc4dd973f217@mail.gmail.com>
+
+I'm not on any other lists where so many incoming messages look so
+much like spam -- the subject lines always come out *so* kooky! I
+always spend that puzzled moment trying to figure out which universe
+this message must have come from...
+
+If it weren't for the Ruby code that inevitably appears, I wouldn't
+get much help from the message body either!
+
+(This observation is no commentary on Helmar or any poster -- it's the
+nature of this crazy beast.)
+
+On 12/15/05, Helmar Wieland <helmar.wieland at gmail.com> wrote:
+> Hello.
+>
+> Perhaps i'm completly and utterly wrong, but i think
+> AnimalLottoTicket's constructor can never work.
+>
+> [excerpt]
+>    def initialize( note1, note2, note3 )
+>      if [note1, note2, note3].uniq!
+>        raise ArgumentError, "the three picks must be different notes"
+>      elsif picks.detect { |p| not NOTES.include? p }
+>        raise ArgumentError, "the three picks must be notes in the
+> chromatic scale."
+>      end
+>      @picks = picks
+>      @purchased = Time.now
+>    end
+> [/excerpt]
+>
+> picks will of course be nil, will it not? perhaps something like
+> picks = [note1, note2, note3]
+> is missing?
+>
+> Anyway, thanks for the guide. A good read.
+> Helmar++
+>
+> Before i forget it, i was missing some kind of explanation of the
+> array method detect's functionality. Other than that, very well
+> explained.
+>
+> I'm now reading the next chapter and your regexp explanation.
+> [snip]
+> See, deer language. The \d represents a digit. It's a place holder in
+> the regexp for any type of number. The regexp will now match T-1000,
+> T-2000, all the way up to T-9000.
+> [/snip]
+> Shouldn't it say, the regexp will now match T-0000, T-1000, all the
+> way up to T-9000?
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+
+--
+Ryan Platte
+
+
+From daniel.amelang at gmail.com  Mon Dec  5 13:17:28 2005
+From: daniel.amelang at gmail.com (Daniel Amelang)
+Date: Mon, 05 Dec 2005 18:17:28 -0000
+Subject: Slightly OT: anyone know of some simple ruby programs to serve as
+	examples to learners.
+In-Reply-To: <623d73380512041836u628f7246j@mail.gmail.com>
+References: <623d73380512041836u628f7246j@mail.gmail.com>
+Message-ID: <a65ae5c90512051027k449f45x2d20861f604d1641@mail.gmail.com>
+
+I think the weekly ruby programming quiz would be pretty close to what
+you're looking for. Here they are online, check out the archives on
+the left column of the page for various elegant solutions:
+
+http://www.rubyquiz.com/
+
+Let us know if you're looking for something even more simple.
+
+Dan
+
+On 12/4/05, Robin Shannon <robin.shannon at gmail.com> wrote:
+> Does anyone know where i can get some well written but very simple
+> ruby programs, so that i can read thru the source and try and figure
+> out how they work?
+>
+> paz y amor,
+> -rjs.
+>
+> --
+> DO NOT SEND ME WORD ATTACHMENTS - I *WILL* BITE!
+> <http://www.gnu.org/philosophy/sylvester-response.html>
+>
+> Hit me: <http://robin.shannon.id.au> [broken]
+> Jab me: <robin.shannon at jabber.org.au>
+> Upgrade to kubuntu linux: <http://releases.ubuntu.com/kubuntu/breezy/>
+> Faith is under the left nipple. -- Martin Luther
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+

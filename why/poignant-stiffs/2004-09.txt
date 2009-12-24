@@ -1,0 +1,957 @@
+From why at poignantguide.net  Thu Sep 16 01:22:00 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Sep 16 01:22:26 2004
+Subject: recommended?
+In-Reply-To: <B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+References: <406B0771.80808@poignantguide.net>
+	<B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+Message-ID: <414922F8.2070309@poignantguide.net>
+
+Thanks for this response, Bruce.  I thought I had responded at the time. 
+Mentally I guess.  This one's for the record.
+
+Bruce D'Arcus wrote:
+> 
+> I'm a newbie to programming and to Ruby, so maybe I'm a good test?  My 
+> only coding background is with XSLT, and I work with a lot of text and 
+> XML (I'm a scholar).
+> 
+> I find I learn by doing more than anything, with well-explained, 
+> complete (no code fragments please), and practical examples.
+> 
+
+I hope to increase the number of examples that are as you've described. 
+  Still, the nature of this book demands some esoteric examples that 
+border more on becoming riddles than actual code.
+
+It's more important to me that this book be a novel than a manual.  My 
+priority is to peak people's interest in the language by telling a fine 
+story and creating something wholy new.  So I look at the code examples 
+in the same way I look at dialogue or motifs.
+
+> Beyond that, I think the writing tends too-often towards being -- sorry 
+> to be blunt -- pretentious.  As you write (and I make my living writing, 
+> so do this myself), ask yourself whether you are communicating what you 
+> need to communicate in the most direct way.
+
+You're absolutely right.  I don't feel like I come off as egotistical or 
+anything -- so I probably wouldn't agree with that slant off the word 
+"pretentious."  But I do talk inanely and galavant anywhere I please.
+
+The distractions and the chaos in the text gets worse.  When instruction 
+happens, I try to be focused and natural and succinct.  But the 
+surrounding themes fall all over each other.  I'm trying to write the 
+kind of book I've always wanted to read.
+
+At this point, I'm more concerned about finishing the book than 
+tailoring my style.  I'll figure out how to write over time.  If there's 
+any specific parts of the book that drive you nuts, I'd really enjoy 
+pulling them apart.
+
+_why
+
+From why at poignantguide.net  Thu Sep 16 01:35:03 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Sep 16 01:38:26 2004
+Subject: Chapter Five Leaks
+Message-ID: <41492607.2030200@poignantguide.net>
+
+Hi, a bit of news on the (Poignant) Guide.
+
+Okay, okay, okay, I've taken forever.  But I said I'd take forever, so 
+we're fine, right?
+
+Chapter Five is so close, a page maybe.  I don't know why the drawings 
+took so long but they did.  And this chapter is massive, the largest in 
+the book.  But it's on its way, I swear on a pile of Sailor Moon action 
+figures that it's just about here.
+
+As proof, I'm including a few choice moments from the next chapter to 
+give you hope and show you my appreciation for your long wait.  Many 
+thanks for all the letters which are just like mini-elk horns, somewhat 
+embarassing to put on display around my staircase, but great for 
+prodding me from behind.
+
+_why
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: dr.cham-1.gif
+Type: image/gif
+Size: 51420 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040915/bf67aceb/dr.cham-1-0001.gif
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: the.goat-1.gif
+Type: image/gif
+Size: 29623 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040915/bf67aceb/the.goat-1-0001.gif
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: filmstrip-1.gif
+Type: image/gif
+Size: 88736 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20040915/bf67aceb/filmstrip-1-0001.gif
+From bdarcus at myrealbox.com  Thu Sep 16 07:43:45 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Thu Sep 16 07:43:25 2004
+Subject: recommended?
+In-Reply-To: <414922F8.2070309@poignantguide.net>
+References: <406B0771.80808@poignantguide.net>
+	<B6C4911A-E8A9-11D8-A17C-000A95B10832@myrealbox.com>
+	<414922F8.2070309@poignantguide.net>
+Message-ID: <AACDE81A-07D5-11D9-9364-000A95B10832@myrealbox.com>
+
+On Sep 16, 2004, at 1:22 AM, why the lucky stiff wrote:
+
+> The distractions and the chaos in the text gets worse.  When 
+> instruction happens, I try to be focused and natural and succinct.  
+> But the surrounding themes fall all over each other.  I'm trying to 
+> write the kind of book I've always wanted to read.
+
+I'm just emphasizing that you always keep site of the goal, whatever it 
+is.
+
+I'm not particularly interested in being entertained when reading about 
+programming; I want to be illuminated.  I want to understand how to do 
+it, which is different than just being shown what to do.  So, if your 
+writing helps me understand the principles of programming in a language 
+like Ruby -- that must by definition go beyond "what to do" bluntness 
+-- then great.
+
+> At this point, I'm more concerned about finishing the book than 
+> tailoring my style.  I'll figure out how to write over time.  If 
+> there's any specific parts of the book that drive you nuts, I'd really 
+> enjoy pulling them apart.
+
+OK.
+
+Bruce
+
+From why at poignantguide.net  Tue Sep 21 14:13:44 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Sep 21 14:14:15 2004
+Subject: Why's Poignant Guide to Ruby, Chapter Five: Them What Make the Rules
+ and Them What Live the Dream
+Message-ID: <41506F58.2070904@poignantguide.net>
+
+Beloved friends and key witnesses: Holy highkick! I (at last) present 
+chapter five!
+
+Fifty-two pages of spooky new adventures in Ruby.  This is a big one
+for me: the book is now halfway.  And I guarantee to you that -- should
+you read -- you will be in a new place, wading in the schemings of pygmy
+elephants and deer with powdered wigs.
+
+Travel now and read: http://poignantguide.net/ruby/
+
+What is the (Poignant) Guide?  I am here to tell you that it is a very
+obscure book, a minor ripple in the orchestrations of mankind, a 
+scattered amalgamation of inky blotches and ridiculous code fragments -- 
+at best -- a transcription of animal software from the original 
+woodblock prints.  And I haven't meant to corrupt the text with my 
+snivelling biographies, but it has happened already, what can be
+done?
+
+A printable HTML version is available as well.  You'll find a link to it 
+and instructions for printing in Firefox at the Guide's site.  Be aware, 
+it's large as a squirrel heaven.  Let it load, let it.
+
+Well, cheerio.  Thankyou to Matz for his excellent resource "Ruby in a 
+Nutshell".  It's the employee handbook here at the plant.
+
+_why
+
+
+
+
+
+
+From rob at tarasis.net  Tue Sep 21 15:33:11 2004
+From: rob at tarasis.net (Robert McGovern)
+Date: Tue Sep 21 15:33:27 2004
+Subject: Why's Poignant Guide to Ruby,
+	Chapter Five: Them What Make the Rules and Them What Live the Dream
+In-Reply-To: <41506F58.2070904@poignantguide.net>
+References: <41506F58.2070904@poignantguide.net>
+Message-ID: <1095795191.41508229492bd@tarasis.net>
+
+|| Beloved friends and key witnesses: Holy highkick! I (at last) present
+|| chapter five!
+
+Hey congrats!
+
+|| Fifty-two pages of spooky new adventures in Ruby.  This is a big one
+|| for me: the book is now halfway.  And I guarantee to you that -- should
+|| you read -- you will be in a new place, wading in the schemings of pygmy
+|| elephants and deer with powdered wigs.
+
+My god you weren't kidding, I think I may be gone some time!
+
+Rob
+From bdarcus at myrealbox.com  Wed Sep 22 07:22:09 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Wed Sep 22 07:21:59 2004
+Subject: ch. 5 and code examples
+Message-ID: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+
+Was just looking through the new chapter.  As a general rule, shouldn't 
+all code you offer as example be valid, only relying on standard 
+libraries and such?  E.g.:
+
+require 'endertromb'
+LoadError: No such file to load -- endertromb
+         from (irb):51:in `require'
+         from (irb):51
+
+As a beginner, at that point I throw up my hands and stop reading.
+
+Bruce
+
+From why at poignantguide.net  Wed Sep 22 09:27:15 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 09:27:22 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+Message-ID: <41517DB3.6090701@poignantguide.net>
+
+Bruce D'Arcus wrote:
+
+> Was just looking through the new chapter.  As a general rule, shouldn't 
+> all code you offer as example be valid, only relying on standard 
+> libraries and such?  E.g.:
+
+Obviously, I'm asking you to use some imagination with some of these 
+examples.  Does everything need to be concrete to be helpful?
+
+I can tell this is really frustrating you.  Would it be helpful if I put 
+the more esoteric examples in a different color so they're obvious?  I 
+need some room in here to write some bogus code.  Can I get you to let 
+me get away with it?  This isn't a capital crime or anything.  At some 
+points, I'm just using the code as a plot device rather than a actual 
+script.
+
+However, I can't speak to this technique's effectiveness.  I'm goofing 
+around with a buncha stuff in this book and I can only guess if any of 
+it really works.  If it drives a good amount of you nuts, I'll find 
+something better.  Is anyone else troubled by this?  How much room do I 
+have to goof off with the code?
+
+Thanks, Bruce.  I really want to hear about the painful parts, it'll 
+help me shape things significantly.
+
+_why
+
+From bdarcus at myrealbox.com  Wed Sep 22 09:35:53 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Wed Sep 22 09:35:25 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <41517DB3.6090701@poignantguide.net>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+	<41517DB3.6090701@poignantguide.net>
+Message-ID: <5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+
+
+On Sep 22, 2004, at 9:27 AM, why the lucky stiff wrote:
+
+> Obviously, I'm asking you to use some imagination with some of these 
+> examples.  Does everything need to be concrete to be helpful?
+
+No, but it is helpful to be able to follow along with irb, just to see 
+how the code works.  So, "goofy" examples may be fine; I just want them 
+to work.
+
+This has been my general experience learning anything related to code, 
+whether with TeX, XSLT, etc.: I simply learn better if I have working 
+code examples, even they aren't necessarily practical (though to be 
+honest, it's easier if they are practical in a lot of cases).
+
+In that example, is there any reason you couldn't illustrate the same 
+idea without the bogus "require"?
+
+Bruce
+
+From ian at slipdesign.com  Wed Sep 22 12:08:04 2004
+From: ian at slipdesign.com (ian kennedy)
+Date: Wed Sep 22 12:09:02 2004
+Subject: poignant-stiffs Digest, Vol 7, Issue 3
+In-Reply-To: <200409221600.i8MG05Ke024708@rubyforge.org>
+References: <200409221600.i8MG05Ke024708@rubyforge.org>
+Message-ID: <95B14AD0-0CB1-11D9-BEF7-000A95CC2B1C@slipdesign.com>
+
+i would just like to say that as an absolute beginner with ruby and 
+only limited programming experience (php and javascript, both of which 
+i butcher), that i absolutely love the poignant guide. even at only 
+halfway through it is the most accessible and exciting programming book 
+i have ever read.  the only thing that could make it better for me 
+personally is a printable pdf.
+
+thank you, why.
+
+ian kennedy
+www.fiftymillimeter.com 
+
+From why at poignantguide.net  Wed Sep 22 14:20:40 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 14:21:14 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>
+	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+Message-ID: <4151C278.7030701@poignantguide.net>
+
+Bruce D'Arcus wrote:
+
+> No, but it is helpful to be able to follow along with irb, just to see 
+> how the code works.  So, "goofy" examples may be fine; I just want 
+> them to work.
+
+Yeah, you want practical examples.  Does every example have to be 
+practical?  Can some be hypothetical?
+
+> In that example, is there any reason you couldn't illustrate the same 
+> idea without the bogus "require"?
+
+Well, even without the 'require', the code doesn't function.  The 
+Endertromb constant is imaginary.
+
+_why
+
+From why at poignantguide.net  Wed Sep 22 14:25:33 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 14:27:12 2004
+Subject: poignant-stiffs Digest, Vol 7, Issue 3
+In-Reply-To: <95B14AD0-0CB1-11D9-BEF7-000A95CC2B1C@slipdesign.com>
+References: <200409221600.i8MG05Ke024708@rubyforge.org>
+	<95B14AD0-0CB1-11D9-BEF7-000A95CC2B1C@slipdesign.com>
+Message-ID: <4151C39D.9060801@poignantguide.net>
+
+ian kennedy wrote:
+
+> i would just like to say that as an absolute beginner with ruby and 
+> only limited programming experience (php and javascript, both of which 
+> i butcher), that i absolutely love the poignant guide. even at only 
+> halfway through it is the most accessible and exciting programming 
+> book i have ever read.  the only thing that could make it better for 
+> me personally is a printable pdf.
+>
+> thank you, why.
+
+Cool, thanks for giving the guide a try.  I really appreciate it.  I've 
+been working on a PDF, though I don't have anything that looks 
+reasonably nice yet.  But, hopefully, in the next few months it'll come 
+together.  I'm also rescanning and touching up the art to ensure the 
+print quality is superb.
+
+_why
+From andrewj at bcm.tmc.edu  Wed Sep 22 14:35:24 2004
+From: andrewj at bcm.tmc.edu (Andrew R Jackson)
+Date: Wed Sep 22 14:35:41 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <4151C278.7030701@poignantguide.net>
+Message-ID: <000201c4a0d2$ec47c7c0$3299f980@Sodaash>
+
+
+Hi why...question:
+
+Are you trying to compete with the many practical, boring, but
+interactive (Try It online) examples from the "Programming Ruby: The
+Pragmatic Programmer's Guide" at:
+
+http://www.ruby.ch/ProgrammingRuby/htmlC/
+
+??
+
+Maybe you can make all the examples abstract? Or maybe impractical, at
+least? Refreshing change from the usual engineering-inspired mindset :)
+Just kidding. Some illustrative examples are fine. See Spot. See Spot
+run. I haven't seen a dog named Spot yet, but I got the point :)
+
+Keep up the good work.
+ARJ
+
+> -----Original Message-----
+> From: poignant-stiffs-bounces@rubyforge.org 
+> [mailto:poignant-stiffs-bounces@rubyforge.org] On Behalf Of 
+> why the lucky stiff
+> Sent: Wednesday, September 22, 2004 12:21 PM
+> To: poignant-stiffs@rubyforge.org
+> Subject: Re: ch. 5 and code examples
+> 
+> 
+> Bruce D'Arcus wrote:
+> 
+> > No, but it is helpful to be able to follow along with irb, 
+> just to see
+> > how the code works.  So, "goofy" examples may be fine; I just want 
+> > them to work.
+> 
+> Yeah, you want practical examples.  Does every example have to be 
+> practical?  Can some be hypothetical?
+> 
+> > In that example, is there any reason you couldn't 
+> illustrate the same
+> > idea without the bogus "require"?
+> 
+> Well, even without the 'require', the code doesn't function.  The 
+> Endertromb constant is imaginary.
+> 
+> _why
+> 
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org 
+> http://rubyforge.org/mailman/listinfo/poignant> -stiffs
+> 
+
+From bdarcus at myrealbox.com  Wed Sep 22 14:39:31 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Wed Sep 22 14:39:52 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <4151C278.7030701@poignantguide.net>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>
+	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+	<4151C278.7030701@poignantguide.net>
+Message-ID: <BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+
+
+On Sep 22, 2004, at 2:20 PM, why the lucky stiff wrote:
+
+> Does every example have to be practical?  Can some be hypothetical?
+
+I suppose, so long as it's clear for the "dummies" when you're 
+presenting hypotheticals and when you're presenting working examples.
+
+I could imagine doing that either in the text, or perhaps as you 
+suggest, graphically.
+
+BTW, re: the PDF, I agree that'd be valuable.  If you author this using 
+redcloth, perhaps there's an easy way to spit out LaTeX code that can 
+then be typeset with pdftex?
+
+Bruce
+
+From ckhoge at mac.com  Wed Sep 22 14:45:30 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Wed Sep 22 14:45:51 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+	<41517DB3.6090701@poignantguide.net>
+	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+	<4151C278.7030701@poignantguide.net>
+	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+Message-ID: <943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>
+
+Hi,
+
+Many months ago, before my bosses started beating on me with sticks 
+(note to bosses: I'm not complaining about the sticks...) I was looking 
+at modifying redcloth to produce tex output. I got as far as producing 
+headings and basic text. I stopped being productive around sidebars and 
+pictures. The basics were there, but there was a lot of work left to be 
+done. I think that using LaTeX is the "right" way to make a pdf. Maybe 
+other simpler markup languages to make PDFs exist, but if I remember 
+correctly the biggest roadblock was that redcloth is HTML-centric.
+
+-Chris
+
+On Sep 22, 2004, at 11:39 AM, Bruce D'Arcus wrote:
+
+>
+> On Sep 22, 2004, at 2:20 PM, why the lucky stiff wrote:
+>
+>> Does every example have to be practical?  Can some be hypothetical?
+>
+> I suppose, so long as it's clear for the "dummies" when you're 
+> presenting hypotheticals and when you're presenting working examples.
+>
+> I could imagine doing that either in the text, or perhaps as you 
+> suggest, graphically.
+>
+> BTW, re: the PDF, I agree that'd be valuable.  If you author this 
+> using redcloth, perhaps there's an easy way to spit out LaTeX code 
+> that can then be typeset with pdftex?
+>
+> Bruce
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From ryan.platte at gmail.com  Wed Sep 22 14:55:42 2004
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Wed Sep 22 14:55:48 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+	<41517DB3.6090701@poignantguide.net>
+	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+	<4151C278.7030701@poignantguide.net>
+	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+Message-ID: <2f1a1dcb04092211553c6379f9@mail.gmail.com>
+
+On Wed, 22 Sep 2004 14:39:31 -0400, Bruce D'Arcus <bdarcus@myrealbox.com> wrote:
+> I suppose, so long as it's clear for the "dummies" when you're
+> presenting hypotheticals and when you're presenting working examples.
+> 
+> I could imagine doing that either in the text, or perhaps as you
+> suggest, graphically.
+
+Thought balloons? Code rendered in handwriting? A mascot that appears
+for imaginary code?
+
+-- 
+Ryan Platte
+From bdarcus at myrealbox.com  Wed Sep 22 15:11:47 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Wed Sep 22 15:12:08 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>
+	<41517DB3.6090701@poignantguide.net>
+	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>
+	<4151C278.7030701@poignantguide.net>
+	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+	<943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>
+Message-ID: <3FB79B52-0CCB-11D9-A8E5-000A959F0E52@myrealbox.com>
+
+
+On Sep 22, 2004, at 2:45 PM, Chris Hoge wrote:
+
+> Many months ago, before my bosses started beating on me with sticks 
+> (note to bosses: I'm not complaining about the sticks...) I was 
+> looking at modifying redcloth to produce tex output. I got as far as 
+> producing headings and basic text. I stopped being productive around 
+> sidebars and pictures. The basics were there, but there was a lot of 
+> work left to be done. I think that using LaTeX is the "right" way to 
+> make a pdf. Maybe other simpler markup languages to make PDFs exist, 
+> but if I remember correctly the biggest roadblock was that redcloth is 
+> HTML-centric.
+
+If redcloth output clean semantic xhtml (with class attributes on 
+everything not explicitly support in html, like footnotes), I could 
+probably (if I find the time) write the xslt to get the latex code.
+
+Bruce
+
+
+From why at poignantguide.net  Wed Sep 22 15:25:16 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 15:26:03 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <3FB79B52-0CCB-11D9-A8E5-000A959F0E52@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>	<4151C278.7030701@poignantguide.net>	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>	<943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>
+	<3FB79B52-0CCB-11D9-A8E5-000A959F0E52@myrealbox.com>
+Message-ID: <4151D19C.6020604@poignantguide.net>
+
+Bruce D'Arcus wrote:
+
+> On Sep 22, 2004, at 2:45 PM, Chris Hoge wrote:
+>
+>> Many months ago, before my bosses started beating on me with sticks 
+>> (note to bosses: I'm not complaining about the sticks...) I was 
+>> looking at modifying redcloth to produce tex output. I got as far as 
+>> producing headings and basic text. I stopped being productive around 
+>> sidebars and pictures. The basics were there, but there was a lot of 
+>> work left to be done. I think that using LaTeX is the "right" way to 
+>> make a pdf. Maybe other simpler markup languages to make PDFs exist, 
+>> but if I remember correctly the biggest roadblock was that redcloth 
+>> is HTML-centric.
+>
+>
+> If redcloth output clean semantic xhtml (with class attributes on 
+> everything not explicitly support in html, like footnotes), I could 
+> probably (if I find the time) write the xslt to get the latex code.
+
+I've got RedCloth outputting PDFs.  Getting the sidebars to flow right 
+is the tricky part.  Everything else is sort of not hard.
+
+_why
+From why at poignantguide.net  Wed Sep 22 15:28:18 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 15:28:45 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <2f1a1dcb04092211553c6379f9@mail.gmail.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>	<4151C278.7030701@poignantguide.net>	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>
+	<2f1a1dcb04092211553c6379f9@mail.gmail.com>
+Message-ID: <4151D252.3030204@poignantguide.net>
+
+Ryan Platte wrote:
+
+>On Wed, 22 Sep 2004 14:39:31 -0400, Bruce D'Arcus <bdarcus@myrealbox.com> wrote:
+>  
+>
+>>I suppose, so long as it's clear for the "dummies" when you're
+>>presenting hypotheticals and when you're presenting working examples.
+>>
+>>I could imagine doing that either in the text, or perhaps as you
+>>suggest, graphically.
+>>    
+>>
+>
+>Thought balloons? Code rendered in handwriting? A mascot that appears
+>for imaginary code?
+>
+>  
+>
+Frame all code in a collage of great moments from Remington Steele!!
+
+_why
+From bdarcus at myrealbox.com  Wed Sep 22 15:49:51 2004
+From: bdarcus at myrealbox.com (Bruce D'Arcus)
+Date: Wed Sep 22 15:50:01 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <4151D19C.6020604@poignantguide.net>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>	<4151C278.7030701@poignantguide.net>	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>	<943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>
+	<3FB79B52-0CCB-11D9-A8E5-000A959F0E52@myrealbox.com>
+	<4151D19C.6020604@poignantguide.net>
+Message-ID: <915E2F6F-0CD0-11D9-A8E5-000A959F0E52@myrealbox.com>
+
+
+On Sep 22, 2004, at 3:25 PM, why the lucky stiff wrote:
+
+> I've got RedCloth outputting PDFs.
+
+How?  Or, rather, in what form?  TeX?
+
+Bruce
+
+From why at poignantguide.net  Wed Sep 22 15:55:46 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Sep 22 15:56:06 2004
+Subject: ch. 5 and code examples
+In-Reply-To: <915E2F6F-0CD0-11D9-A8E5-000A959F0E52@myrealbox.com>
+References: <A4AD8B02-0C89-11D9-9C92-000A95B10832@myrealbox.com>	<41517DB3.6090701@poignantguide.net>	<5304072E-0C9C-11D9-9C92-000A95B10832@myrealbox.com>	<4151C278.7030701@poignantguide.net>	<BDC744C8-0CC6-11D9-A8E5-000A959F0E52@myrealbox.com>	<943D4540-0CC7-11D9-B705-000A95BC6C1A@mac.com>	<3FB79B52-0CCB-11D9-A8E5-000A959F0E52@myrealbox.com>	<4151D19C.6020604@poignantguide.net>
+	<915E2F6F-0CD0-11D9-A8E5-000A959F0E52@myrealbox.com>
+Message-ID: <4151D8C2.4030900@poignantguide.net>
+
+Bruce D'Arcus wrote:
+
+>
+> On Sep 22, 2004, at 3:25 PM, why the lucky stiff wrote:
+>
+>> I've got RedCloth outputting PDFs.
+>
+>
+> How?  Or, rather, in what form?  TeX?
+
+ClibPDF.
+
+_why
+From byates at emich.edu  Wed Sep 22 17:55:53 2004
+From: byates at emich.edu (Ben Yates)
+Date: Wed Sep 22 17:56:00 2004
+Subject: imaginary code
+In-Reply-To: <200409221956.i8MJuJKd032330@rubyforge.org>
+References: <200409221956.i8MJuJKd032330@rubyforge.org>
+Message-ID: <4151F4E9.7060104@emich.edu>
+
+Perhaps the imaginary code could be written on a different type of cheese.
+From rob at tarasis.net  Wed Sep 22 19:03:51 2004
+From: rob at tarasis.net (Robert McGovern)
+Date: Wed Sep 22 19:03:54 2004
+Subject: imaginary code
+In-Reply-To: <4151F4E9.7060104@emich.edu>
+References: <200409221956.i8MJuJKd032330@rubyforge.org>
+	<4151F4E9.7060104@emich.edu>
+Message-ID: <1095894231.415204f7166da@tarasis.net>
+
+Quoting Ben Yates <byates@emich.edu>:
+
+|| Perhaps the imaginary code could be written on a different type of cheese.
+
+i hear wendsleydale is popular ;-)
+_______________________________________________
+|| poignant-stiffs mailing list
+|| poignant-stiffs@rubyforge.org
+|| http://rubyforge.org/mailman/listinfo/poignant-stiffs
+||
+
+
+--
+Personal responsibility is battling extinction.
+From olleolleolle at home.se  Thu Sep 23 03:05:46 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Thu Sep 23 03:05:54 2004
+Subject: imaginary code
+In-Reply-To: <1095894231.415204f7166da@tarasis.net>
+References: <200409221956.i8MJuJKd032330@rubyforge.org>	<4151F4E9.7060104@emich.edu>
+	<1095894231.415204f7166da@tarasis.net>
+Message-ID: <415275CA.9060200@home.se>
+
+Robert McGovern:
+> i hear wendsleydale is popular ;-)
+Agreed.
+
+My take: yes to the imaginary code. And much of it. I more or less 
+*read* the Poignant Guide, and after that, apply some of it in irb. 
+So, to me, all the examples could be hypothetical. The ones that work 
+in real life could be mascoted, cheesed, or Remington Steeled.
+
+kind regards, and humble thanks for this small avanlanche of Poignant 
+Stiffness,
+    Olle
+(Can't wait until the Guide gets to the meat of www applied ruby 
+goodness.)
+
+From olleolleolle at home.se  Fri Sep 24 09:33:37 2004
+From: olleolleolle at home.se (Olle Jonsson)
+Date: Fri Sep 24 09:33:56 2004
+Subject: Save Hannah! (Just praise here, go ahead, nothing to see)
+In-Reply-To: <415275CA.9060200@home.se>
+References: <200409221956.i8MJuJKd032330@rubyforge.org>	<4151F4E9.7060104@emich.edu>	<1095894231.415204f7166da@tarasis.net>
+	<415275CA.9060200@home.se>
+Message-ID: <41542231.2050107@home.se>
+
+I was gripped by "Save Hannah"!
+
+> A method is its own island. And what goes on inside is unaffected
+> by the simple variables around it. Dr. Cham couldn?t breach the
+> illness of his niece, no more than an opus_magnum variable can
+> penetrate the steely exterior of a method.
+
+God, that is the FINEST description of scope. Steely exteriors. Ah, I 
+read this like candy, one page a day. No more. Work first, then play, 
+and maybe a page of Ruby goodness.
+
+PHP for bread, Ruby for culture.
+
+Peace of mind, and happy trails to all of you,
+    Olle
+
+From rpardee at comcast.net  Sat Sep 25 02:44:31 2004
+From: rpardee at comcast.net (Roy Pardee (Poulsbo WA))
+Date: Sat Sep 25 02:44:50 2004
+Subject: Why's Poignant Guide to Ruby,
+	Chapter Five: Them What Make the Rules and Them What Live the Dream
+In-Reply-To: <41506F58.2070904@poignantguide.net>
+Message-ID: <003c01c4a2cb$210cbc00$6401a8c0@blackula>
+
+Very cool stuff--thanks tons for this.
+
+FWIW--I don't know if it's b/c there was an unnaturally long period of time
+between reading ch1-4 and ch5, but I was a tad bewildered in a couple of
+spots:
+
+The :: syntax in the first snippet in section 2 (Endertromb::make( wish ))
+is not familiar--you're calling a wish method on the Endertromb class,
+right?  Not sure why it's not just Endertromb.make().  Later on you show the
+same syntax as a method for interrogating classes for their members--maybe
+:: is a reflection thing?  Please ignore if you've actually explained this &
+I was just inattentive.
+
+In the section headed "The mechanisms of name-calling", where you add some
+stuff to the string class you refer to @@syllables as an array--but isn't
+that a hash?  Wait--now I see--it's an array of two hashes.  I didn't catch
+that the first time around.  I took it on faith that the shift method
+translated an index into a value, but would have loved a discussion of
+shift.  Also, reading off paper away from my computer, I *really* could have
+used a "puts catsandtips" w/results shown after the code snippet
+demonstrating Array.collect.  After playing w/it & rereading the description
+it makes perfect sense, but at the time it was kind of a whaaa? moment.
+
+Again, thanks for this wonderful book--I'm eagerly anticipating the next
+chapter!
+
+Peace,
+
+-Roy
+
+-----Original Message-----
+From: poignant-stiffs-bounces@rubyforge.org
+[mailto:poignant-stiffs-bounces@rubyforge.org] On Behalf Of why the lucky
+stiff
+Sent: Tuesday, September 21, 2004 11:14 AM
+To: poignant-stiffs@rubyforge.org; poignant-watchers@rubyforge.org
+Subject: Why's Poignant Guide to Ruby, Chapter Five: Them What Make the
+Rules and Them What Live the Dream
+
+
+Beloved friends and key witnesses: Holy highkick! I (at last) present 
+chapter five!
+
+Fifty-two pages of spooky new adventures in Ruby.  This is a big one for me:
+the book is now halfway.  And I guarantee to you that -- should you read --
+you will be in a new place, wading in the schemings of pygmy elephants and
+deer with powdered wigs.
+
+Travel now and read: http://poignantguide.net/ruby/
+
+What is the (Poignant) Guide?  I am here to tell you that it is a very
+obscure book, a minor ripple in the orchestrations of mankind, a 
+scattered amalgamation of inky blotches and ridiculous code fragments -- 
+at best -- a transcription of animal software from the original 
+woodblock prints.  And I haven't meant to corrupt the text with my 
+snivelling biographies, but it has happened already, what can be done?
+
+A printable HTML version is available as well.  You'll find a link to it 
+and instructions for printing in Firefox at the Guide's site.  Be aware, 
+it's large as a squirrel heaven.  Let it load, let it.
+
+Well, cheerio.  Thankyou to Matz for his excellent resource "Ruby in a 
+Nutshell".  It's the employee handbook here at the plant.
+
+_why
+
+
+
+
+
+
+_______________________________________________
+poignant-stiffs mailing list
+poignant-stiffs@rubyforge.org
+http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+
+
+From gsinclair at soyabean.com.au  Sat Sep 25 10:09:46 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Sat Sep 25 10:11:13 2004
+Subject: Why's Poignant Guide to Ruby,
+	Chapter Five: Them What Make the Rules and Them What Live the Dream
+In-Reply-To: <003c01c4a2cb$210cbc00$6401a8c0@blackula>
+References: <41506F58.2070904@poignantguide.net>
+	<003c01c4a2cb$210cbc00$6401a8c0@blackula>
+Message-ID: <1951527271690.20040926000946@soyabean.com.au>
+
+On Saturday, September 25, 2004, 4:44:31 PM, Roy wrote:
+
+> The :: syntax in the first snippet in section 2 (Endertromb::make( wish ))
+> is not familiar--you're calling a wish method on the Endertromb class,
+> right?  Not sure why it's not just Endertromb.make().  Later on you show the
+> same syntax as a method for interrogating classes for their members--maybe
+> :: is a reflection thing?  Please ignore if you've actually explained this &
+> I was just inattentive.
+
+
+I consider it very bad style to do
+
+  Class::method
+
+when
+
+  Class.method
+
+works and is consistent with
+
+  object.method
+
+(since a class is an object, so doesn't need special syntax).
+
+:: should be reserved for accessing constants.
+
+Just reinforcing your point.
+
+Cheers,
+Gavin
+
+From why at poignantguide.net  Mon Sep 27 17:04:41 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Sep 27 17:05:19 2004
+Subject: Class method syntax
+In-Reply-To: <1951527271690.20040926000946@soyabean.com.au>
+References: <41506F58.2070904@poignantguide.net>	<003c01c4a2cb$210cbc00$6401a8c0@blackula>
+	<1951527271690.20040926000946@soyabean.com.au>
+Message-ID: <41588069.8070806@poignantguide.net>
+
+Gavin Sinclair wrote:
+
+>On Saturday, September 25, 2004, 4:44:31 PM, Roy wrote:
+>
+>  
+>
+>>The :: syntax in the first snippet in section 2 (Endertromb::make( wish ))
+>>is not familiar--you're calling a wish method on the Endertromb class,
+>>right?  Not sure why it's not just Endertromb.make().  Later on you show the
+>>same syntax as a method for interrogating classes for their members--maybe
+>>:: is a reflection thing?  Please ignore if you've actually explained this &
+>>I was just inattentive.
+>>    
+>>
+>
+>
+>I consider it very bad style to do
+>
+>  Class::method
+>
+>when
+>
+>  Class.method
+>
+>works and is consistent with
+>
+>  object.method
+>
+>(since a class is an object, so doesn't need special syntax).
+>  
+>
+Well, this is arbitrary to me.  I like using the double-colon syntax 
+because it's unambiguous.  What is IO.read?  Are you refering to 
+IO::read or IO#read?  Could make it easier to naturally use Ri.  I'd 
+rather teach the syntax which errs on the side of clarity.  But maybe 
+it's easier for people to just learn the period and see `::` and `#` as 
+notations for the docs.
+
+I think I just need to rework these two examples which open Dr. Cham's 
+exploration of the castle.  They seem to be confusing to enough people 
+that it's probably best to try something new.
+
+_why
+From gsinclair at soyabean.com.au  Mon Sep 27 19:33:41 2004
+From: gsinclair at soyabean.com.au (Gavin Sinclair)
+Date: Mon Sep 27 19:35:50 2004
+Subject: Class method syntax
+In-Reply-To: <41588069.8070806@poignantguide.net>
+References: <41506F58.2070904@poignantguide.net>
+	<003c01c4a2cb$210cbc00$6401a8c0@blackula>
+	<1951527271690.20040926000946@soyabean.com.au>
+	<41588069.8070806@poignantguide.net>
+Message-ID: <1561733906665.20040928093341@soyabean.com.au>
+
+On Tuesday, September 28, 2004, 7:04:41 AM, why wrote:
+>>
+>>I consider it very bad style to do
+>>
+>>  Class::method
+>>
+>>when
+>>
+>>  Class.method
+>>
+>>works and is consistent with
+>>
+>>  object.method
+>>
+>>(since a class is an object, so doesn't need special syntax).
+>>  
+>>
+> Well, this is arbitrary to me.  I like using the double-colon syntax
+> because it's unambiguous.  What is IO.read?  Are you refering to 
+> IO::read or IO#read?
+
+I'm referring to IO.read, of course!  That is, sending the message
+'read' to the object IO.  Of the two choices above, that corresponds
+to IO::read.  IO#read actually evaluates to IO. :)
+
+> Could make it easier to naturally use Ri.  I'd rather teach the
+> syntax which errs on the side of clarity.  But maybe it's easier for
+> people to just learn the period and see `::` and `#` as notations
+> for the docs.
+
+The second one most definitely _is_ notation for the docs.  We get
+questions every now and then about it.
+
+You're right that 'ri' is ambiguous, and that '.' can mean '::' or '#'
+(an arbitrary construct) depending on context.  Users should be made
+aware of that.
+
+Gavin
+
+

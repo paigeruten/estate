@@ -1,0 +1,254 @@
+From why at poignantguide.net  Mon Jul 18 01:10:10 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Jul 18 01:05:12 2005
+Subject: (Poignant) Guide Redesign
+Message-ID: <42DB39B2.20305@poignantguide.net>
+
+Team, I'm looking for feedback on the new look of the book:
+
+   <http://qa.poignantguide.net/>
+
+Still working on it, somethingsies may be broke.  The red is vanquished. 
+  Is okay?  CSS bugs?
+
+_why
+
+From manfred.stienstra at dwerg.net  Mon Jul 18 03:21:42 2005
+From: manfred.stienstra at dwerg.net (Manfred Stienstra)
+Date: Mon Jul 18 03:16:21 2005
+Subject: (Poignant) Guide Redesign
+In-Reply-To: <42DB39B2.20305@poignantguide.net>
+References: <42DB39B2.20305@poignantguide.net>
+Message-ID: <1121671302.12841.15.camel@ack.dwerg.net>
+
+On Sun, 2005-07-17 at 23:10 -0600, why the lucky stiff wrote:
+> Still working on it, somethingsies may be broke.  The red is vanquished. 
+>   Is okay?  CSS bugs?
+
+On the first page the text about the lost foxes seems to overlap. It
+looks like this happens with certain font-sizes.
+
+http://ack.dwerg.net/effe/pg_text.png
+
+The w3.org css-validator says there's an error in the stylesheet.
+
+http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%
+2Fqa.poignantguide.net%2Fchapter-1.html&usermedium=all
+
+ Manfred
+
+From Bil.Kleb at nasa.gov  Mon Jul 18 03:42:30 2005
+From: Bil.Kleb at nasa.gov (Bil.Kleb@nasa.gov)
+Date: Mon Jul 18 03:37:07 2005
+Subject: (Poignant) Guide Redesign
+In-Reply-To: <42DB39B2.20305@poignantguide.net>
+References: <42DB39B2.20305@poignantguide.net>
+Message-ID: <isapiwc.831804d4.6f89.42db5d66.14b19.63@webmail.larc.nasa.gov>
+
+A Why wrote:
+> Team, I'm looking for feedback on the new look of the book:
+> 
+>    <http://qa.poignantguide.net/>
+> 
+> Still working on it, somethingsies may be broke.  The red is vanquished. 
+>   Is okay?  CSS bugs?
+
+Warning: coming down off painkillers after wrenching by back...
+
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6) Gecko/20050317 Firefox/1.0.2
+
+The line spacing of the "NEW! Lost foxes ..." causes
+the descenders of each line to be cut off.
+ 
+"More Quotes" => Not found. (http://qa.poignantguide.net/quotes.html)
+
+Title page:
+
+ The description/line to the *1st edition* Pickaxe is dated?
+
+General:
+
+ Toning down the background a bit would be kinder on my eyes.
+
+ Characters per line ~90 > recommended ~60 for single-spaced text,
+  but leading is fairly large, so it remains readable.
+
+ Chapter 6 is so long, it scares me.  (I haven't read it yet. amd
+  mostly for that heretofore mentinoed reason.)
+
+Please, continue to "Them What Live the Dream"!  Oh, and thanks
+for still sharing.
+
+Earlier,
+--
+Bil, http://fun3d.larc.nasa.gov
+From why at poignantguide.net  Mon Jul 18 09:45:57 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Jul 18 09:41:01 2005
+Subject: (Poignant) Guide Redesign
+In-Reply-To: <isapiwc.831804d4.6f89.42db5d66.14b19.63@webmail.larc.nasa.gov>
+References: <42DB39B2.20305@poignantguide.net>
+	<isapiwc.831804d4.6f89.42db5d66.14b19.63@webmail.larc.nasa.gov>
+Message-ID: <42DBB295.5080108@poignantguide.net>
+
+Good.  Bil is here.
+
+Bil.Kleb@nasa.gov wrote:
+
+> Toning down the background a bit would be kinder on my eyes.
+
+It's too bright?  This is on the the front page?  Or do you mean the 
+diagonal lines?
+
+> Chapter 6 is so long, it scares me.  (I haven't read it yet. amd
+>  mostly for that heretofore mentinoed reason.)
+>  
+>
+I was wondering why you haven't read this yet.  Did you read chapter 
+five, cause it's even longer?  Maybe I could break these chapters up 
+into sections for reading on the web.
+
+And maybe my editor needs to show up to work.  I've never even met him.  
+I think he is all tied up trying to stuff his sleeves back into his suit 
+cuffs.
+
+>Please, continue to "Them What Live the Dream"!  Oh, and thanks
+>for still sharing.
+>  
+>
+You talk just like a NASA guy should.  Let's all reach for the stars, 
+everyone.  Thancksh, Bil.
+
+_why
+From Bil.Kleb at nasa.gov  Tue Jul 19 09:04:43 2005
+From: Bil.Kleb at nasa.gov (Bil.Kleb@NASA.gov)
+Date: Tue Jul 19 08:58:44 2005
+Subject: (Poignant) Guide Redesign
+In-Reply-To: <42DBB295.5080108@poignantguide.net>
+References: <42DB39B2.20305@poignantguide.net>	<isapiwc.831804d4.6f89.42db5d66.14b19.63@webmail.larc.nasa.gov>
+	<42DBB295.5080108@poignantguide.net>
+Message-ID: <42DCFA6B.3070409@NASA.gov>
+
+why the lucky stiff wrote:
+> Good.  Bil is here.
+
+Good?
+
+> It's too bright?  This is on the the front page?  Or do you mean the 
+> diagonal lines?
+
+The black on white text hurts me.  Everywhere.  I have to look
+away occasionally to recover or turn the contrast way down on
+the monitor.
+
+>> Chapter 6 is so long, it scares me.  (I haven't read it yet. and
+>>  mostly for that heretofore mentionoed reason.)
+>>  
+> I was wondering why you haven't read this yet.  Did you read chapter 
+> five, cause it's even longer?
+
+Yes caught me: I haven't read chapter 5 either.  It was
+like a stone wall right after chapter 4.  Besides, my sides
+hurt too much from laughing, so I thought I'd give them
+a break before I separated a rib.
+
+> Maybe I could break these chapters up 
+> into sections for reading on the web.
+
+What about breaking up these chapters '.'?
+
+Thanks again for all the words,
+--
+Bil Kleb
+http://fun3d.larc.nasa.gov
+From why at poignantguide.net  Mon Jul 25 21:13:21 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Jul 25 21:08:21 2005
+Subject: The Carefully Executed Soundtrack
+Message-ID: <42E58E31.1040702@poignantguide.net>
+
+With any luck, tomorrow will be the release of the first six songs of 
+the soundtrack to the (Poignant) Guide, pulled off by The Thirsty Cups, 
+a few of whom will be coming to OSCON to perform some of these songs.  
+If you'd like a preview of some preliminary and poorly mixed versions of 
+the songs, try here: <http://poignantguide.net/sdtrk/>
+
+Whilst listening, you might wonder the following:
+* How will these be entwined with the online manual (vis-a-vis scrolling 
+and listening)?
+(This I'm not sure.  A miniature flash ghettoblaster?)
+* Will these come with the book when it is printed?
+(Yes, tucked in a flap, this is a fact by now.)
+
+_why
+
+From mental at rydia.net  Fri Jul 29 18:13:23 2005
+From: mental at rydia.net (MenTaLguY)
+Date: Fri Jul 29 18:44:10 2005
+Subject: The Carefully Executed Soundtrack
+In-Reply-To: <42E58E31.1040702@poignantguide.net>
+References: <42E58E31.1040702@poignantguide.net>
+Message-ID: <1122675203.7865.156.camel@localhost.localdomain>
+
+On Mon, 2005-07-25 at 19:13 -0600, why the lucky stiff wrote:
+
+Good stuff, _why.
+
+> Whilst listening, you might wonder the following:
+> * How will these be entwined with the online manual (vis-a-vis scrolling 
+> and listening)?
+> (This I'm not sure.  A miniature flash ghettoblaster?)
+
+Hmm.  I don't know -- so far you've managed to strike a solid balance
+between Art-with-a-capital-A and usability/readability.
+
+However, I'm not sure people would deal well with music playing while
+they read online.  Most browsers' attention is divided.  This is _not_
+ultra-background music, and music-playing webpages tend to be obnoxious
+to begin with...
+
+What I would probably recommend is adding links to stream and download
+the chapter's song (i.e. a one-song .m3u pointing to the .mp3 and a
+direct link to the .mp3, respectively) to the top and bottom of each
+chapter, and leaving it at that.
+
+This lets them use their music player of choice, and isn't overly
+intrusive.
+
+I expect most people reading casually on the web will want to read the
+chapter without music the first time, and listen to the song afterwords.
+Once they've absorbed the material, on subsequent reads they might well
+choose to listen to the music during their read for the full experience.
+
+Folks with the hardcopy and supplied CD would be likely to do something
+similar, though I think listening to the CD for the first time through
+would be more common.  Picking up a book is a different commitment to
+visiting a web page.
+
+-mental
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050729/5d07e47d/attachment.bin
+From quaro111 at yahoo.com  Mon Jul 25 17:40:26 2005
+From: quaro111 at yahoo.com (Jon Dodo)
+Date: Mon Aug  1 17:23:53 2005
+Subject: Anyone done a PDF conversation?
+Message-ID: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+
+I'd love to print out a paper copy to savor, but there
+aren't any local print shops willing or able to print
+HTML with Firefox.   
+
+By chance, has anyone already done a conversation to
+PDF?
+
+
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 

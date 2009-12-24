@@ -1,0 +1,217 @@
+<h1>A Quick Guide to SQLite and Ruby</h1>
+
+<p>I spent last night playing with <a href="http://www.sqlite.org/">SQLite</a> and am convinced that this is a tool which could prove incredibly useful to coders and a great tool for learners to check out <span class="caps">SQL</span>. The problem is that there isn't enough documentation for Ruby users who want to take advantage of SQLite's features.</p>
+
+<p>So, let's talk about SQLite's handsome features:</p>
+
+<ul>
+<li>SQLite is <em>swift</em>. In my own testing, I have found it to be speedy. Some speed comparisons with MySQL and PostgreSQL are <a href="http://www.sqlite.org/speed.html">here</a>.</li>
+</ul>
+
+<ul>
+<li>SQLite is <em>not a large database server</em>, such as <a href="http://www.mysql.com/">MySQL</a>. You don't connect to the database. Using SQLite, you access a database file. Everything happens <em>in-process</em>.</li>
+</ul>
+
+<ul>
+<li>SQLite is an <em>ACID</em> database. Supports transactions, triggers.</li>
+</ul>
+
+<ul>
+<li>SQLite is <em>public domain</em>. Absolutely no licensing issues.</li>
+</ul>
+
+<ul>
+<li>SQLite is <em>typeless</em>. Any type or length of data may be stored in a column, regardless of the declared type. This allows extreme flexibility and avoidance of type errors.</li>
+</ul>
+
+<ul>
+<li>SQLite allows <em>custom functions and aggregates</em>. This is my favorite feature of SQLite, which we will explore shortly.</li>
+</ul>
+
+<h2>Getting Started with SQLite</h2>
+
+<p>SQLite is available for most platforms (Linux, BSD, Windows) from the <a href="http://www.sqlite.org/download.html">download page</a>. SQLite comes with a command-line tool for managing databases. You can find a decent tutorial for starting with SQLite <a href="http://www.sqlite.org/sqlite.html">here</a>.</p>
+
+<p>In RAA, you'll find <a href="http://raa.ruby-lang.org/search.rhtml?search=sqlite">several Ruby libraries</a> for using SQLite. The <a href="http://ruby-dbi.rubyforge.org/">ruby-dbi</a> module is great if you want your code to work if you switch databases, but you're hampered in using some of SQLite's features. (If you plan on using ruby-dbi, I would be aware of <a href="http://www.sqlite.org/omitted.html">how SQLite compares to SQL-92</a>, so your queries can be portable as well.)</p>
+
+<p>The other two libraries (ruby-sqlite and sqlite-ruby) have custom APIs for accessing SQLite, which will allow us to add custom functions and aggregates, as well as set table metadata. <em>I suggest <a href="http://sqlite-ruby.rubyforge.org/">sqlite-ruby</a>, as it is a bit more feature complete.</em> Either will work fine, but the rest of this tutorial will focus on using sqlite-ruby.</p>
+
+<h2>Creating a Database</h2>
+
+<p>To open a new database (or an existing one), simply instantiate a <code>SQLite::Database</code> object with the name of the database file:</p>
+
+<pre>
+ require 'sqlite'
+ db = SQLite::Database.new( 'sample.db', 0644 )
+</pre>
+
+<p>According to <a href="http://www.sqlite.org/c_interface.html">SQLite docs</a>, the second argument passed to the constructor is "intended to signal whether the database is going to be used for reading and writing or just for reading." But in current implementations, this argument is ignored. All databases are opened for both reading and writing, though it is anticipated that readonly databases could be added in the future.</p>
+
+<p>SQLite stores all of the data for a database inside a single file. This encompasses all indices, tables and schemas for the entire database. The advantage is that this single file can be easily transported wherever you like. The same database file can be included with your software and accessed on Windows, Linux, or any other supported platform.</p>
+
+<p>The disadvantage to a single database file is that this file can grow quite large. Even after you've deleted rows or entire tables, your file may not decrease in size. To free the disk space once again, you'll need to execute the <a href="http://www.sqlite.org/lang.html#vacuum"><code>VACUUM</code></a> statement, which cleans up tables and indices. The <code>VACUUM</code> statement can be run alone to clean the whole database.</p>
+
+<h2>Passing Queries to SQLite</h2>
+
+<p>The <code>execute</code> method can be used to pass queries to your database, once it is open.</p>
+
+<pre>
+ db.execute &lt;&lt;SQL
+
+  CREATE TABLE sites (
+   idx INTEGER PRIMARY KEY,
+   url VARCHAR(255)
+  );
+
+ SQL
+</pre>
+
+<p>You can also test the completeness of your SQL statements with the <code>complete?</code> methods.</p>
+
+<pre>
+ &gt;&gt; db.complete? "SELECT *" 
+ =&gt; false
+ &gt;&gt; db.complete? "SELECT * FROM email;" 
+ =&gt; true
+</pre>
+
+<p>On its own, <code>execute</code> will simply return an Array of Hashes as the resultset. Passing a block into <code>execute</code> will cause the block to be called on each successive loading of a row. In such a case, it becomes a sort of "each_row" for a query, each time receiving a Hash of field-value pairs.</p>
+
+<pre>
+ db.execute( "SELECT * FROM sites;" ) do |site|
+  puts "-&gt; Site #%d %s" % [ site['idx'], site['url'] ]
+ end
+</pre>
+
+<h2>Vital Pragma</h2>
+
+<p>SQLite has a few features enabled by default that you might consider disabling. These are optimizations that have consequences and I present them for your careful thought. I am giving you the basics. Futher optimizations can be had at the <a href="http://web.utk.edu/~jplyon/sqlite/SQLite_optimization_FAQ.html">SQLite Optimization FAQ</a>.</p>
+
+<p>The <code>cache_size</code> setting determines how many database pages can be kept in memory. The default settings is <code>2000</code>, counted in 1KB chunks. Consider increasing this before executing queries on large sets of data. (Especially updates to large tables.) This setting can dramatically speedup such situations. Use <code>PRAGMA cache_size</code> to set.</p>
+
+<p>By calling <code>PRAGMA default_synchronous=OFF;</code>, you can turn off the intensive synchronization of the database. When set, queries will wait for a database to be completely written before executing. On truly mission-critical apps, this may be necessary, but generally you can turn this off.</p>
+
+<p>If you're not worried about how many rows are affected following an <code>UPDATE</code> or <code>INSERT</code>, consider using <code>PRAGMA count_changes=OFF;</code>, which will disable counting of affected rows. A smaller speedup in this case, but still worth noting.</p>
+
+<h2>Custom Functions</h2>
+
+<p>SQLite comes with a variety of <a href="http://www.sqlite.org/lang.html#likeFunc">common functions</a> for forming expressions. For example, you may want to uppercase a field you are reading:</p>
+
+<pre>
+ db.execute( "SELECT UPPER(url) FROM sites;" )
+</pre>
+
+<p>You can add your own Ruby functions to SQLite by using the <code>create_function</code> method. To make our own function for reversing a field's contents:</p>
+
+<pre>
+ db.create_function( 'revers', 1, 
+   proc { |ctx,s| s.to_s.reverse }, nil )
+</pre>
+
+<p>The first parameter we pass in is the name of the function to create. SQLite will ignore casing of this string. The second parameter indicates the number of parameters to send to the function. The third parameter is a Proc object. The fourth parameter should allow you to pass further data into the Proc, but doesn't appear to be implemented at the time of this writing.</p>
+
+<p>The proc object you create should receive an extra initial argument, listed above as <code>ctx</code>. This is a <code>SQLite::Context</code> object, which allows you store data between calls. I've found this object to be quite buggy when used in functions. But, hey, it's there.</p>
+
+<p>To call our new <code>revers</code> function:</p>
+
+<pre>
+ db.execute( "SELECT REVERS(url) FROM sites;" )
+</pre>
+
+<p>One thing to note about the <code>create_function</code> method is that your proc should not return any sort of object which is a collection (Array, Hash, etc.) The object won't make the translation in and out of the database.</p>
+
+<p>Like Ruby, you may also override the current set of functions. For example, the <em>@Y LIKE X@</em> syntax is syntactical sugar for the <code>like(X,Y)= function. If you want to support regular expressions in your =LIKE</code> statement, you could override <em>LIKE</em> to do so:</p>
+
+<pre>
+ like_function = proc do |ctx, x, y|
+  1 if /#{ x }/ =~ y
+ end
+
+ db.create_function( 'like', 2, like_function, nil )
+ db.execute( "SELECT url FROM sites WHERE url LIKE '^http:'" )
+</pre>
+
+<h2>Custom Aggregates</h2>
+
+<p>Aggregates are similiar to functions, but their return is totaled for a set of rows. If you've used much SQL, you've seen these before in the form of <code>count</code>, <code>avg</code>, or <code>sum</code> functions.</p>
+
+<p>To create an aggregate, you provide two procs. One which is called for each row like a function. The other proc is called upon completion of the query and provides a final total.</p>
+
+<pre>
+ sum_up_1 = proc do |ctx, a|
+  ctx.properties["sum"] ||= 0
+  ctx.properties["sum"] += a.length
+ end
+
+ sum_up_2 = proc do |ctx|
+  ctx.properties["sum"]
+ end
+
+ db.create_aggregate( 'letter_count', 1, 
+            sum_up_1, sum_up_2, nil )
+ db.execute( "SELECT LETTER_COUNT(address) FROM email" )
+</pre>
+
+<p>The above code totals the letter count for all of the address fields in a set of rows.</p>
+
+<p>So how does SQLite do this? Remember that since SQLite is executed in-process, you can pass memory addresses to it. A function pointer is passed inside the SQLite extension, which calls your proc. I haven't done any benchmarking, but I imagine the figures are pretty tight for these calls.</p>
+
+<h2>Storing Binary Data</h2>
+
+<p>Storing binary data is a big use case for SQLite. If I was going to write an adventure game in Ruby, I would lodge all my scenes and characters in an SQLite database.</p>
+
+<p>But remember I said that SQLite was <a href="http://www.sqlite.org/datatypes.html">typeless</a>? This means that you can't get away with storing binary data in a BLOB. BLOBs, CHARs, TEXTs are all the same datatypes which only store null-terminated strings. SQLite comes with two API functions, <code>sqlite_encode_binary</code> and <code>sqlite_decode_binary</code>, but these aren't implemented in any Ruby APIs currently.</p>
+
+<p>A quick solution is to use Ruby's <code>base64</code> library. Really, <code>base64</code> is a bit much, since we really only need to escape '\000' (which is what <code>sqlite_encode_binary</code> does). Until we can get those function exposed, though, certainly use <code>base64</code>.</p>
+
+<p>Let's declare our table with a BLOB to indicate that we plan to store binary data and to give our table some degree of portability.</p>
+
+<pre>
+ db.execute &lt;&lt; SQL
+
+  CREATE TABLE scenes (
+   idx INTEGER PRIMARY KEY,
+   background_png BLOB
+  );
+
+ SQL
+</pre>
+
+<p>To store binary data in our table:</p>
+
+<pre>
+ require 'base64'
+ background_png = File.open( 'background.png' ).read
+ db.execute( "INSERT INTO scenes (background_png) VALUES " + 
+       "('#{ encode64( background_png ) }');" )
+</pre>
+
+<p>To read binary data from our table and write it out to files:</p>
+
+<pre>
+ db.execute( "SELECT * FROM scenes" ) do |scene|
+  background_png = decode64( scene['background_png'] )
+  File.open( "back-#{ idx }.png", "w" ) do |back_out|
+   back_out &lt;&lt; background_png
+  end
+ end
+</pre>
+
+<p>Alternatively (if you're mental), you could load the schema for your database and parse out the blobs. Try this query, after creating the <code>scenes</code> table:</p>
+
+<pre>
+ SELECT sql FROM
+  (SELECT * FROM sqlite_master UNION ALL
+   SELECT * FROM sqlite_temp_master)
+ WHERE tbl_name = 'scenes' AND type != 'meta'
+</pre>
+
+<p>You'll receive the <code>CREATE TABLE</code> statement we used to create the table. BLOBs could be parsed out when the database is loaded and handled differently. (To myself: <i>why am I even suggesting this?!</i> Probably to demonstrate metadata access without having to write a new section on it!)</p>
+
+<h2>Conclusion</h2>
+
+<p>Hopefully this is a fitting introduction to SQLite in Ruby. If not, please <a href="javascript:asthma_the_angel();">contact me</a> and spew wisdom.</p>
+
+<hr />
+<p>by <em>why the lucky stiff</em></p>
+<p>july 2, 2003</p>

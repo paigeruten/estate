@@ -1,0 +1,72 @@
+From Bil.Kleb at nasa.gov  Mon Jan 10 23:11:45 2005
+From: Bil.Kleb at nasa.gov (Bil Kleb)
+Date: Mon Jan 10 23:09:41 2005
+Subject: to_tex method for RedCloth
+Message-ID: <41E35201.9040904@NASA.Gov>
+
+I see DHH(?) hacked one into the RedCloth that comes
+with instiki, viz,
+
+  instiki-0.9.2/libraries/redcloth_for_tex.rb
+  instiki-0.9.2/app/controllers/wiki.rb
+
+Has anyone made a go on making this hack a part
+of RedCloth proper and then on to wpgtr.to_tex and beyond?
+
+(Psst: I am really pining for LaTeX output from the
+YAML+RedCloth combo so I can flood our local
+publication nuts with a new NASA Technical Memorandum
+every time we change a word in our software's manual.)
+
+Regards,
+-- 
+Bil Kleb, Hampton, Virginia
+http://fun3d.larc.nasa.gov
+From why at poignantguide.net  Wed Jan 26 15:15:03 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Jan 26 15:14:28 2005
+Subject: Chapter 6 sneak peek!!
+Message-ID: <41F7FA47.4010507@poignantguide.net>
+
+Hi, list.
+
+Sorry for the delay on the latest (Poigant) Guide chapter.  It's four 
+weeks late already, I know.  Fortunately I have a few comics here to 
+whet your appetites and momentarily appease you as I finish wrapping 
+things up.
+
+Part of the delay has been caused by a revamping of Chapter 3.  I've 
+been redrawing all the comics and cleaning up the text for publication.  
+That's right.  I'm told that Chapter 3 will be published in Joel 
+Spolsky's year-end anthology of essays.  Titled: // comment.  He talks 
+about it here: <http://www.joelonsoftware.com/items/2004/10/27.html>
+
+With any luck, this will fall together so you can get a portion of the 
+Guide in your hands soon enough.
+
+I'd also like to thank Chris Pine for his extensive analysis of the 
+Guide.  I've been reworking some instruction based on his comments and 
+the critical analysis has been of soaring value.
+
+_why
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wixl-2.gif
+Type: image/gif
+Size: 21895 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050126/e18387fe/wixl-2-0001.gif
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wixl.blix-1.gif
+Type: image/gif
+Size: 19263 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050126/e18387fe/wixl.blix-1-0001.gif
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: porcupine-1.gif
+Type: image/gif
+Size: 16546 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050126/e18387fe/porcupine-1-0001.gif

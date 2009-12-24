@@ -1,0 +1,89 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>even the nazis get quiet when they are sleeping in a truck</TITLE>
+
+
+
+<script language="JavaScript">
+
+<!-- hide for non-javascriptos
+
+
+imgNow = 1;
+
+
+
+if (document.images) {     // Load all the comics
+
+  stripe1 = new Image();
+
+  stripe1.src = "stripeg1.gif";
+
+  stripe2 = new Image();
+
+  stripe2.src = "stripeg2.gif";
+
+  stripe3 = new Image();
+
+  stripe3.src = "stripeg3.gif";
+
+  stripe4 = new Image();
+
+  stripe4.src = "stripeg4.gif";
+
+  stripe5 = new Image();
+
+  stripe5.src = "stripeg5.gif";
+
+  stripe6 = new Image();
+
+  stripe6.src = "stripeg6.gif";
+
+
+
+
+
+}
+
+
+function imgNext(imgName) {
+
+    if (document.images) {
+
+        imgNow++;
+        if (imgNow == 7)
+          imgNow=1;
+        document[imgName].src = eval(imgName + imgNow + ".src");
+
+    }
+
+}
+
+function imgPrev(imgName) {
+
+    if (document.images) {
+
+       imgNow--;
+       if (imgNow == 0)
+         imgNow=6;
+       document[imgName].src = eval(imgName + imgNow + ".src");
+
+    }
+
+} 
+// stop hiding -->
+</script>
+</HEAD>
+<body BGCOLOR="#FFFFCC">
+
+<CENTER><IMG SRC="girl.gif" WIDTH=550 HEIGHT=350></CENTER>
+<CENTER><IMG NAME="stripe" SRC="stripeg1.gif" border="1" height=400></CENTER>
+<center>click these arrows.</CENTER>
+<CENTER><IMG SRC="prev.jpg" onclick="imgPrev('stripe')"><IMG SRC="next.jpg" onclick="imgNext('stripe')"></CENTER>
+<BR><BR>
+<CENTER>
+kindly <A HREF="../subscribe.html">subscribe</A></CENTER>
+</body>
+</HTML>

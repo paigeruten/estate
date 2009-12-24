@@ -1,0 +1,162 @@
+<h1>Wearing Ruby Slippers To Work</h1>
+
+<p>(Also available in <a href="http://sl33p3r.free.fr/blog//ruby/ruby-slippers-1.html">French</a>.)</p>
+
+<p>This is Part One of an ongoing series to get us all comfortable using Ruby in the harshest of conditions.  Hopefully, by the end of this series, you will feel as attached to Ruby as you are to your leg.  And your work can't keep you from taking your leg with you to the office.</p>
+
+<p>Next time someone frowns on you for using Ruby just scream, "YOU <span class="caps">CAN</span>'T <span class="caps">TAKE AWAY MY LEG</span>!!"  Stick up for yourself.  I may just start an abuse hotline for that kind of bigotry.</p>
+
+<p>Now, seriously.  Seriously.  You can't use Ruby at work, can you?  You'd be hijacking the project!  You can't make the rules, can you?  You don't want to be the pusher, do you?</p>
+
+<p>No, hey, we're not crazy enough to storm the castle.  We're just going to wear the ruby slippers quietly on our feet.  Just watch for a second.</p>
+
+<h3>Slippers That Shuffle Through<br />(Using Dir.glob and File#grep)</h3>
+
+<p>Not long ago a friend asked me how to recursively search his <span class="caps">PHP</span> scripts for  a string.  He had a lot of big binary files and templates in those directories that could have really bogged down a plain <code>grep</code>. I couldn't think of a way to use  <code>grep</code> to make this happen, so I figured using <code>find</code> and <code>grep</code> together  would be my best bet.</p>
+
+<p>I ended up with this:</p>
+
+<pre>
+  find . -name "*.php" -exec grep 'search_string' {} \; -print
+</pre>
+
+<p>I'm not great at chaining together shell commands.  It's fun and momentarily challenging, but often I hunt around on man pages for awhile and sometimes I wish I knew sed better.  Can't keep it all straight all the time.  You know?</p>
+
+<p>But, why would I want to know sed better when I know Ruby?  Say, if I started formulating my shell command magic in Ruby, then I'd be able to be even more expressive if I needed.</p>
+
+<p>Here's the above file search reworked in Ruby:</p>
+
+<pre>
+  Dir['**/*.php'].each do |path|
+    File.open( path ) do |f|
+      f.grep( /search_string/ ) do |line|
+        puts path, ':', line
+      end
+    end
+  end
+</pre>
+
+<p>I think Ruby has a wealth of handy ways of managing the filesystem.  <code>Dir::glob</code> is a big one for me.  Above, I used the shortcut for <code>Dir::glob</code> called <code>Dir::[]</code>.  The globbing expression can contain a few special characters: ? to match any single character, * to match any set of characters within a given filename, ** to match any set of characters within a complete path (meaning ** is recursive).</p>
+
+<p>The <code>Dir::glob</code> returns an Array of matching filenames.  Thereafter, I'm cycling through each file, opening it up and checking each line for a match.</p>
+
+<p>Notice the <code>f.grep</code> line.  The <code>File</code> class has an <code>each</code> method, which iterates through each line in a text file.  Also, the <code>File</code> class has the <code>Enumerable</code> module mixed in.  This mixin provides the <code>grep</code> method, which will try <code>each</code> of those lines against the regular expression and pass the block each line which matches.</p>
+
+<p>Your first reaction may be, "Well, that's quite a bit wordier than the original." And I just have to shrug and let it be.  "It's a lot easier to extend," I say.  And it works across platforms.</p>
+
+<p>The moral is: <strong>use your Ruby slippers to elegantly shuffle through your files.</strong></p>
+
+<h3>Slippers That Clean-up<br />(Using FileUtils and Find)</h3>
+
+<p>Okay, so I've been using Ruby to handle any shell command which require more than a single pipe.  And, of course, no shell scripting allowed.</p>
+
+<p>I needed to check a directory into <span class="caps">CVS</span> that was kind of a mess.  All kinds of Old and Trash folders.  And images that I didn't want to check into <span class="caps">CVS</span>.  I started deleting files, but it was time-consuming and decided upon a script to scan a directory and copy over the good files into a new directory.<br /><pre>
+  require 'find'
+  require 'fileutils'
+
+  include FileUtils::Verbose
+  from_dir = File.expand_path( ARGV[0] ) + "/" 
+  to_dir = File.expand_path( ARGV[1] ) + "/" 
+
+  makedirs( to_dir )
+  chdir( to_dir ) do
+    Find.find( from_dir ) do |path|
+      fname = path.sub( from_dir, '' )
+      fdir, base = File.split( fname )
+      if FileTest.directory? path
+        Find.prune if base[0] == ?. or 
+                    base =~ /^(?:CVS|images|Old|Trash|delme|bak)/i
+        makedirs( fname )
+      elsif FileTest.file? path
+        unless base =~ /(?:\.jpg|\.jpeg|\.pdf|\.gif|\.psd|~)$/
+          copy path, fname
+        end
+      end
+    end
+  end
+</pre></p>
+
+<p>A bunch of great modules at work here.  I'll start with FileUtils, cause it's the simplest.</p>
+
+<p>The <code>FileUtils</code> module simply provides many of the same file-level commands you see at any shell prompt.  In the script above, you can see <code>copy</code> and <code>chdir</code> (aka <code>cd</code>) at work.</p>
+
+<p>I've mixed-in the <code>FileUtils::Verbose</code> version of the module, though, which is perfect for shell scripting.  This version of the module prints to the terminal the full text of the operation.  So you can see what's going on when you run the script.</p>
+
+<p>I'm also using the <code>Find</code> module, which simple recurses through every file under a directory. You can tell the <code>find</code> to avoid searching a directory by issuing a <code>Find.prune</code>.  This is exactly what I'm doing to ensure the copy skips any Old or Trash directories.  Notice that I'm also skipping any directory which start with a dot.</p>
+
+<p>These modules come with Ruby 1.8, so it's all kosher.  If you have 1.9 installed (or you've actually got Ri working with 1.8), then you can get docs for these modules with: <code>ri Find</code> and <code>ri FileUtils</code>.</p>
+
+<p>So, I'm saying: <strong>use your Ruby slippers to clean up.  It's like you've got brushes under your feet!</strong></p>
+
+<h3>Slippers That Merge</h3>
+
+<p>I ended up doing a bit more than the above script, though.  You see, each of these directories represented a manual versioning of code.  So, not only did I want to clean the directory, but then I wanted to merge it into a checked out copy of a <span class="caps">CVS</span> module.</p>
+
+<pre>
+  require 'find'
+  require 'fileutils'
+
+  include FileUtils::Verbose
+  checkout_dir = File.expand_path( ARGV[0] ) + "/" 
+  add_dir = File.expand_path( ARGV[1] ) + "/" 
+
+  checked = {}
+  chdir( checkout_dir ) do
+    # 1. compare directories, copying missing or updated text files,
+    #  skipping binary files, skipping Old/Trash/delme/bak
+    #  and renaming .htaccess to htaccess.sample.
+    Find.find( add_dir ) do |path|
+      fname = path.sub( add_dir, '' )
+      fdir, base = File.split( fname )
+      if FileTest.directory? path
+        Find.prune if base[0] == ?. or 
+                    base =~ /^(?:CVS|images|Old|Trash|delme|bak)/i
+        unless File.exists?( fname ) or fname.empty?
+          mkdir fname
+          `cvs add #{ fname }`
+        end
+      elsif FileTest.file? path
+        base_to = base.dup
+        base_to = "htaccess.sample" if base_to == ".htaccess" 
+        unless base =~ /(?:\.jpg|\.jpeg|\.pdf|\.gif|\.psd|~)$/
+          path_to = fdir == "." ? base_to : File.join( fdir, base_to )
+          unless File.exists? path_to
+            copy path, path_to
+            `cvs add #{ path_to }`
+          else  
+            copy path, path_to
+          end
+          checked[path_to] = true
+        end
+      end
+    end
+
+    # 2. mark for deletion any missing files
+    Find.find( checkout_dir ) do |path|
+      fname = path.sub( checkout_dir, '' )
+      fdir, base = File.split( fname )
+      if FileTest.directory? path
+        Find.prune if base[0]  ?. or
+                      base  "CVS" 
+      elsif FileTest.file? path
+        unless checked[fname]
+          rm fname
+          `cvs rm #{ fname }`
+        end
+      end
+    end
+  end<br /></pre>
+
+<p>You're seeing a lot of the same use of <code>Find</code> and <code>FileUtils</code> here.  But I also needed to get out to <span class="caps">CVS</span>.  So I just used the backticks and went out to the shell.  It's not that we need to avoid the shell.  I like <code>FileUtils</code> because it looks nice and it outputs to the terminal.</p>
+
+<h3>So, a Bit</h3>
+
+<p>Yeah, so we got a bit of Ruby in today.  It's the little sidekick automating the chores.  It's not all over the place, yet.  But it has its place.</p>
+
+<p>Ruby has saved us a bit of manual labor today.  In a few weeks I'll go over how you can use Ruby to help you manage your brain work and scheduling.</p>
+
+<p>(<em>Many thanks to my good friend Sleeper for the French translation!.</em>)</p>
+
+<hr />
+<p>by <em>why the lucky stiff</em></p>
+<p>july 2, 2004</p>

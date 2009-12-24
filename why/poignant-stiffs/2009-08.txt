@@ -1,0 +1,32 @@
+From fwoncn at gmail.com  Wed Aug  5 06:36:29 2009
+From: fwoncn at gmail.com (felex)
+Date: Wed, 5 Aug 2009 18:36:29 +0800
+Subject: Error in Chapter-6?
+Message-ID: <bdc2730c0908050336k27b7f980uc06fe35bd87dcb77@mail.gmail.com>
+
+Chapter 6 talks about metaprogramming. The example of Dwemthy Creature
+cannot go through my Ruby 1.8.6 interpreter. When I new a Dragon an error
+reports "./dwemthy.rb:28:in `initialize': undefined method `each' for
+nil:NilClass (NoMethodError)"
+Personally, I'm new to metaprogramming, although I've heard of it in C++.
+Basically I can understand the theory in class Creature, but there are still
+some lines I'm puzzled in.
+One of them, I don't know why we need line#12: attr_accessor *arr
+cuz Creature attributes need to be read-only
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://rubyforge.org/pipermail/poignant-stiffs/attachments/20090805/1f6115ff/attachment.html>
+
+From fwoncn at gmail.com  Wed Aug  5 08:34:26 2009
+From: fwoncn at gmail.com (felex)
+Date: Wed, 5 Aug 2009 20:34:26 +0800
+Subject: Error in Chapter-6?
+In-Reply-To: <bdc2730c0908050336k27b7f980uc06fe35bd87dcb77@mail.gmail.com>
+References: <bdc2730c0908050336k27b7f980uc06fe35bd87dcb77@mail.gmail.com>
+Message-ID: <bdc2730c0908050534y38e35757i3f854416cd625e56@mail.gmail.com>
+
+sorry, I myself made it wrong
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://rubyforge.org/pipermail/poignant-stiffs/attachments/20090805/1de96671/attachment.html>
+

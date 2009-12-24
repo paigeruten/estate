@@ -1,0 +1,653 @@
+From why at poignantguide.net  Mon Aug  1 17:24:36 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Aug  1 17:18:50 2005
+Subject: The Carefully Executed Soundtrack
+In-Reply-To: <1122675203.7865.156.camel@localhost.localdomain>
+References: <42E58E31.1040702@poignantguide.net>
+	<1122675203.7865.156.camel@localhost.localdomain>
+Message-ID: <42EE9314.9000301@poignantguide.net>
+
+MenTaLguY wrote:
+
+>On Mon, 2005-07-25 at 19:13 -0600, why the lucky stiff wrote:
+>  
+>
+>>Whilst listening, you might wonder the following:
+>>* How will these be entwined with the online manual (vis-a-vis scrolling 
+>>and listening)?
+>>(This I'm not sure.  A miniature flash ghettoblaster?)
+>>    
+>>
+>What I would probably recommend is adding links to stream and download
+>the chapter's song (i.e. a one-song .m3u pointing to the .mp3 and a
+>direct link to the .mp3, respectively) to the top and bottom of each
+>chapter, and leaving it at that.
+>  
+>
+Do you think people will start futzing with their audio software, 
+getting it to work right and get distracted?  I know I would.
+
+>This lets them use their music player of choice, and isn't overly
+>intrusive.
+>  
+>
+But there's this.  Right.
+
+_why
+From red at mit.edu  Mon Aug  1 17:44:58 2005
+From: red at mit.edu (Rachel Elizabeth Dillon)
+Date: Mon Aug  1 17:39:31 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+Message-ID: <20050801214458.GN30061@yiff.mit.edu>
+
+First, go to the printable copy:
+
+http://poignantguide.net/ruby/print.html
+
+Then, depending on your operating system, you should be able to spool the
+print job either to PDF or PostScript (which can then be converted to PDF,
+though most print shops should be able to handle PostScript as well).
+
+Under Windows:
+
+Select "Print" then, in the Print dialog box, select "Print to File"
+and save the file as wpgtr.ps. Then, if you have Acrobat Distiller or
+Acrobat installed, you can use one of those tools to turn the file into
+a PDF; if not, I am sure there are a plethora of free tools, but I cannot
+recommend one for you.
+
+Under Mac OS X:
+
+Select "Print" then, in the Print dialog box, select "Save as PDF..."
+It should be pretty self-explanatory from here on out.
+
+Under your favorite Linux/BSD/Solaris/Whatever:
+
+Select "Print" then, in the Print dialog box, select "Print to File"
+and save the file as wpgtr.ps. Then, you can run pstopdf or pd2pdf
+(at least one of these comes as part of the xpdf package) in order to
+produce a PDF file. The details of installing the xpdf package if you
+don't have it are left as an exercise to the reader.  Warning: When I
+tried this with the xpdf out of backports on Debian woody, the images
+lost resolution, though everything was still legible.
+
+-
+
+If teaching you how to fish is failing for some reason, I'd be happy
+to go through this process myself and put a PDF up for you. I would
+do it on my Mac, if only because Macs speak PDF as a first language,
+while my Linux machine is clearly still learning.
+
+Hope this helps,
+
+-r.
+
+
+
+
+On Mon, Jul 25, 2005 at 02:40:26PM -0700, Jon Dodo wrote:
+> I'd love to print out a paper copy to savor, but there
+> aren't any local print shops willing or able to print
+> HTML with Firefox.   
+> 
+> By chance, has anyone already done a conversation to
+> PDF?
+> 
+> 
+> 
+> __________________________________________________
+> Do You Yahoo!?
+> Tired of spam?  Yahoo! Mail has the best spam protection around 
+> http://mail.yahoo.com 
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050801/3dd7146f/attachment.bin
+From leon.spencer at gmail.com  Mon Aug  1 18:03:06 2005
+From: leon.spencer at gmail.com (Leon Spencer)
+Date: Mon Aug  1 18:03:02 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+Message-ID: <A37A3D76-DE23-45B6-9C40-6B96400868C8@gmail.com>
+
+I have, right here. I actually proofread the damn thing all the way  
+through to get the page breaks right (Firefox printed nastily, only  
+Safari was nice and it didn't process page break css directives).  
+Then I manually inserted page breaks so as to ensure the page doesn't  
+cut off text or end a sidebar right at the top of the page, or break  
+a page in half. It represents about 5 hours work.
+
+-- L.
+
+On 26/07/2005, at 7:40 AM, Jon Dodo wrote:
+
+> I'd love to print out a paper copy to savor, but there
+> aren't any local print shops willing or able to print
+> HTML with Firefox.
+>
+> By chance, has anyone already done a conversation to
+> PDF?
+>
+>
+>
+> __________________________________________________
+> Do You Yahoo!?
+> Tired of spam?  Yahoo! Mail has the best spam protection around
+> http://mail.yahoo.com
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From why at poignantguide.net  Mon Aug  1 18:18:44 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Aug  1 18:12:55 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <20050801214458.GN30061@yiff.mit.edu>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+	<20050801214458.GN30061@yiff.mit.edu>
+Message-ID: <42EE9FC4.70406@poignantguide.net>
+
+Rachel Elizabeth Dillon wrote:
+
+>Then, depending on your operating system, you should be able to spool the
+>print job either to PDF or PostScript...
+>
+Escalators!  That was magnificent.
+
+I'll find a place for this on the site.
+
+_why
+From why at poignantguide.net  Mon Aug  1 18:20:48 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Aug  1 18:15:00 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <A37A3D76-DE23-45B6-9C40-6B96400868C8@gmail.com>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+	<A37A3D76-DE23-45B6-9C40-6B96400868C8@gmail.com>
+Message-ID: <42EEA040.3010804@poignantguide.net>
+
+Leon Spencer wrote:
+
+> I have, right here. I actually proofread the damn thing all the way  
+> through to get the page breaks right (Firefox printed nastily, only  
+> Safari was nice and it didn't process page break css directives).  
+> Then I manually inserted page breaks so as to ensure the page doesn't  
+> cut off text or end a sidebar right at the top of the page, or break  
+> a page in half. It represents about 5 hours work.
+
+Good and gracious moving walkways!  Can you share this?
+
+_why
+From ckhoge at mac.com  Mon Aug  1 20:21:20 2005
+From: ckhoge at mac.com (ckhoge)
+Date: Mon Aug  1 20:19:12 2005
+Subject: A FORTRAN Coloring Book
+In-Reply-To: <42EE9314.9000301@poignantguide.net>
+References: <42E58E31.1040702@poignantguide.net>
+	<1122675203.7865.156.camel@localhost.localdomain>
+	<42EE9314.9000301@poignantguide.net>
+Message-ID: <B68E9243-8EDB-48D5-AE75-BCCDABEC6620@mac.com>
+
+Has this been said Why? Am I shouting shouts from a near past?  
+Behold, a book from 1978, that I would have read as a three year old  
+computer prodigy.
+
+A Fortran Coloring Book
+http://www.seas.gwu.edu/~kaufman1/FortranColoringBook/ 
+ColoringBkCover.html
+
+Perhaps the foxes are related to the ducks and geese in that book.
+
+-Chris
+From red at mit.edu  Tue Aug  2 14:24:19 2005
+From: red at mit.edu (Rachel Elizabeth Dillon)
+Date: Tue Aug  2 14:18:51 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <42EE9FC4.70406@poignantguide.net>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+	<20050801214458.GN30061@yiff.mit.edu>
+	<42EE9FC4.70406@poignantguide.net>
+Message-ID: <20050802182419.GT30061@yiff.mit.edu>
+
+Thank you!
+
+For completeness, here's a recommendation for a free Windows PDF creation
+program:
+
+http://sourceforge.net/projects/pdfcreator/
+
+It acts a printer driver, so instead of printing to file and then running
+the application on the postscript file, you print to the PDF Creator
+printer, and get a PDF out. This has the same problems as the pstopdf
+method with regard to losing image quality (I assume because they are
+both based on the same version of GhostScript).
+
+Interestingly, the commercial product Acrobat Distiller also has these
+problems; I'll have to try on my Mac (which lives at home, while I am
+at work, or I would do it now) and see if those problems happen there too.
+
+-r.
+
+
+
+On Mon, Aug 01, 2005 at 04:18:44PM -0600, why the lucky stiff wrote:
+> Rachel Elizabeth Dillon wrote:
+> 
+> >Then, depending on your operating system, you should be able to spool the
+> >print job either to PDF or PostScript...
+> >
+> Escalators!  That was magnificent.
+> 
+> I'll find a place for this on the site.
+> 
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050802/30c1451b/attachment.bin
+From why at poignantguide.net  Sat Aug  6 16:43:13 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Sat Aug  6 16:37:42 2005
+Subject: OSCON videos
+Message-ID: <42F520E1.1080308@poignantguide.net>
+
+Good people, I've just come back from a fantastic adventure at OSCON, 
+where I was allowed to fiddle with my computer and hack Ruby code in 
+front of a large audience.  It was an experiment I'm proud of, a live 
+version of the emotions and mnemomics I've been stockpiling in the 
+(Poignant) Guide.
+
+I'm placing the videos on a BitTorrent tracker: 
+<http://whytheluckystiff.net/starry/>
+
+I thought you might want to know.  If you like what you're reading or 
+hearing about the performances at FOSCON and OSCON, consider coming to 
+RubyConf in San Diego.  I'll be playing an offsite show that weekend, 
+more details to come.  The agenda itself looks fantastic: 
+<http://www.rubycentral.org/conference/agenda.html>
+
+_why
+From murphy at cYcnus.de  Mon Aug  8 21:22:45 2005
+From: murphy at cYcnus.de (murphy)
+Date: Mon Aug  8 21:16:13 2005
+Subject: Chunky Bacon Server - Obfuscated
+Message-ID: <42F80565.1010308@cYcnus.de>
+
+Hi!
+
+I like to present an obfuscated Ruby script dedicated to the Two Foxes and their
+Funny Phrase:
+
+http://ruby.cycnus.de/chunky_bacon.rb
+
+Zoom out to watch the gag :-Y
+
+It runs a WEBrick server, and if you now visit http://localhost:203, you have
+your browser window filled with CB. http://localhost:203/200 gives you even more
+CB, http://localhost:203/10000 might crash your system (if you are on Windows.)
+CB overflow.
+
+By the way: port 203 seems to be "AppleTalk Unused"; I declare it to be the
+Chunky Bacon port from now on. 0xCB == 203.
+
+I hope your browser supports "position: fixed"; at least Firefox does.
+
+Thanks to why for the image, RMagick for the Ascii-art, Ruby herself for
+creating the obfuscated code.
+
+If the triumphal procession of CB goes on, it may be more famous than Ruby one
+day. Books will be written, RPGs will be invented, commercials and movie
+trilogies will pop up everywhere; maybe you can study ChunkyBaconology in 10 years!
+
+Ruby changed the world.
+[murphy]
+
+
+From danny at amelang.net  Mon Aug  8 21:36:39 2005
+From: danny at amelang.net (Daniel Amelang)
+Date: Mon Aug  8 21:30:36 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <42F80565.1010308@cYcnus.de>
+References: <42F80565.1010308@cYcnus.de>
+Message-ID: <42F808A7.4010501@amelang.net>
+
+Good show!
+
+murphy wrote:
+
+> Hi!
+>
+> I like to present an obfuscated Ruby script dedicated to the Two Foxes 
+> and their
+> Funny Phrase:
+>
+> http://ruby.cycnus.de/chunky_bacon.rb
+>
+> Zoom out to watch the gag :-Y
+>
+> It runs a WEBrick server, and if you now visit http://localhost:203, 
+> you have
+> your browser window filled with CB. http://localhost:203/200 gives you 
+> even more
+> CB, http://localhost:203/10000 might crash your system (if you are on 
+> Windows.)
+> CB overflow.
+>
+> By the way: port 203 seems to be "AppleTalk Unused"; I declare it to 
+> be the
+> Chunky Bacon port from now on. 0xCB == 203.
+>
+> I hope your browser supports "position: fixed"; at least Firefox does.
+>
+> Thanks to why for the image, RMagick for the Ascii-art, Ruby herself for
+> creating the obfuscated code.
+>
+> If the triumphal procession of CB goes on, it may be more famous than 
+> Ruby one
+> day. Books will be written, RPGs will be invented, commercials and movie
+> trilogies will pop up everywhere; maybe you can study ChunkyBaconology 
+> in 10 years!
+>
+> Ruby changed the world.
+> [murphy]
+>
+>
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+>
+
+From murphy at cycnus.de  Tue Aug  9 10:40:52 2005
+From: murphy at cycnus.de (murphy)
+Date: Tue Aug  9 10:34:22 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <42F808A7.4010501@amelang.net>
+References: <42F80565.1010308@cYcnus.de> <42F808A7.4010501@amelang.net>
+Message-ID: <42F8C074.8010602@cYcnus.de>
+
+Oh, it seems that Linux doesn't like my Chunky Bacon port :(
+
+alternative: 3258 = 0xCBA.
+patched version (thx to malte):
+
+   http://ruby.cycnus.de/chunky_bacon_patch.rb
+
+I could start a petition to open 203 to the public in the Linux kernel.
+
+203! [murphy]
+From aaron at munge.net  Tue Aug  9 13:41:59 2005
+From: aaron at munge.net (Aaron Malone)
+Date: Tue Aug  9 13:32:43 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <42F80565.1010308@cYcnus.de>
+References: <42F80565.1010308@cYcnus.de>
+Message-ID: <200508091242.00561.aaron@munge.net>
+
+On Monday 08 August 2005 20:22, murphy wrote:
+> If the triumphal procession of CB goes on, it may be more famous than
+> Ruby one day. Books will be written, RPGs will be invented,
+> commercials and movie trilogies will pop up everywhere; maybe you can
+> study ChunkyBaconology in 10 years!
+
+Chunky bacon ice cream!  The future is today!
+
+http://www.apostropher.com/blog/archives/002641.html
+
+-- 
+Aaron Malone
+aaron@munge.net
+From ryan.platte at gmail.com  Tue Aug  9 13:58:49 2005
+From: ryan.platte at gmail.com (Ryan Platte)
+Date: Tue Aug  9 13:52:33 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <200508091242.00561.aaron@munge.net>
+References: <42F80565.1010308@cYcnus.de> <200508091242.00561.aaron@munge.net>
+Message-ID: <718693F2-9BE4-417A-9E81-6A2C77FD6015@gmail.com>
+
+Skipped content of type multipart/alternative-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 2371 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050809/ace19bfd/smime.bin
+From Bil.Kleb at nasa.gov  Tue Aug  9 16:00:20 2005
+From: Bil.Kleb at nasa.gov (Bil Kleb)
+Date: Tue Aug  9 15:54:20 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <200508091242.00561.aaron@munge.net>
+References: <42F80565.1010308@cYcnus.de> <200508091242.00561.aaron@munge.net>
+Message-ID: <42F90B54.2070307@NASA.gov>
+
+Aaron Malone wrote:
+> 
+> Chunky bacon ice cream!  The future is today!
+> 
+> http://www.apostropher.com/blog/archives/002641.html
+
+Or, for the animatronic lovers:
+
+  http://www.baconrobots.com/
+
+-- 
+Bil
+http://fun3d.larc.nasa.gov
+From caiomoritz at gmail.com  Wed Aug 10 08:24:26 2005
+From: caiomoritz at gmail.com (Caio Moritz Ronchi)
+Date: Wed Aug 10 08:18:21 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <42F8C074.8010602@cYcnus.de>
+References: <42F80565.1010308@cYcnus.de> <42F808A7.4010501@amelang.net>
+	<42F8C074.8010602@cYcnus.de>
+Message-ID: <af14bcd405081005245a431207@mail.gmail.com>
+
+have you tried running the script as the root user? i did that and it
+worked just fine (I'm running Ubuntu Linux 5.04)
+
+cheers,
+
+On 8/9/05, murphy <murphy@cycnus.de> wrote:
+> Oh, it seems that Linux doesn't like my Chunky Bacon port :(
+> 
+> alternative: 3258 = 0xCBA.
+> patched version (thx to malte):
+> 
+>    http://ruby.cycnus.de/chunky_bacon_patch.rb
+> 
+> I could start a petition to open 203 to the public in the Linux kernel.
+> 
+> 203! [murphy]
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+> 
+
+
+-- 
+Caio Moritz Ronchi
+
+From sl33p3r at free.fr  Thu Aug 11 15:22:00 2005
+From: sl33p3r at free.fr (Frederick Ros)
+Date: Thu Aug 11 14:56:09 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <af14bcd405081005245a431207@mail.gmail.com>
+References: <42F80565.1010308@cYcnus.de> <42F808A7.4010501@amelang.net>
+	<42F8C074.8010602@cYcnus.de>
+	<af14bcd405081005245a431207@mail.gmail.com>
+Message-ID: <20050811192200.GA8401@hal.void.org>
+
+Caio Moritz Ronchi wrote :
+| have you tried running the script as the root user? i did that and it
+| worked just fine (I'm running Ubuntu Linux 5.04)
+
+Errr ... do you always run obfuscated scripts as root ? .. because that
+quite a big risk on your data ... ;)
+
+-- 
+Frederick Ros aka Sleeper -- sleeper@jabber.org
+
+Use data arrays to avoid repetitive control sequences.
+            - The Elements of Programming Style (Kernighan & Plaugher)
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050811/2763bb62/attachment.bin
+From caiomoritz at gmail.com  Thu Aug 11 17:03:17 2005
+From: caiomoritz at gmail.com (Caio Moritz Ronchi)
+Date: Thu Aug 11 16:57:13 2005
+Subject: Chunky Bacon Server - Obfuscated
+In-Reply-To: <20050811192200.GA8401@hal.void.org>
+References: <42F80565.1010308@cYcnus.de> <42F808A7.4010501@amelang.net>
+	<42F8C074.8010602@cYcnus.de>
+	<af14bcd405081005245a431207@mail.gmail.com>
+	<20050811192200.GA8401@hal.void.org>
+Message-ID: <af14bcd405081114032efced71@mail.gmail.com>
+
+i don't =)
+
+On 8/11/05, Frederick Ros <sl33p3r@free.fr> wrote:
+> Caio Moritz Ronchi wrote :
+> | have you tried running the script as the root user? i did that and it
+> | worked just fine (I'm running Ubuntu Linux 5.04)
+> 
+> Errr ... do you always run obfuscated scripts as root ? .. because that
+> quite a big risk on your data ... ;)
+> 
+> --
+> Frederick Ros aka Sleeper -- sleeper@jabber.org
+> 
+> Use data arrays to avoid repetitive control sequences.
+>             - The Elements of Programming Style (Kernighan & Plaugher)
+> 
+> 
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+> 
+> 
+> 
+> 
+
+
+-- 
+Caio Moritz Ronchi
+
+From leon.spencer at gmail.com  Sat Aug  6 23:22:59 2005
+From: leon.spencer at gmail.com (Leon Spencer)
+Date: Mon Sep 12 11:36:58 2005
+Subject: Anyone done a PDF conversation?
+In-Reply-To: <42EEA040.3010804@poignantguide.net>
+References: <20050725214027.2078.qmail@web51608.mail.yahoo.com>
+	<A37A3D76-DE23-45B6-9C40-6B96400868C8@gmail.com>
+	<42EEA040.3010804@poignantguide.net>
+Message-ID: <239CC1AD-D8C7-484E-B677-82971215E1A4@gmail.com>
+
+On 02/08/2005, at 8:20 AM, why the lucky stiff wrote:
+
+
+> Leon Spencer wrote:
+>
+>> I have, right here. I actually proofread the damn thing all the  
+>> way  through to get the page breaks right (Firefox printed  
+>> nastily, only  Safari was nice and it didn't process page break  
+>> css directives).  Then I manually inserted page breaks so as to  
+>> ensure the page doesn't  cut off text or end a sidebar right at  
+>> the top of the page, or break  a page in half. It represents about  
+>> 5 hours work.
+>>
+>>
+>
+> Good and gracious moving walkways!  Can you share this?
+>
+
+
+For you, Why, anything. I'd also like to take the opportunity to come  
+out of my little lurker box to thank you profusely for doing such a  
+thing. (The rest of you may scroll down to the location of the  
+files). Undertaking a task such as mine for any other work would  
+inevitably leave me with a deep and abiding hatred for the author and  
+subject matter, but I find myself closer to Poignicity than ever before.
+
+I have to admit something, Why. I've been stalking you. Rummaging  
+through your garbage. Reading your stories. Tapping your phone  
+conversations. I'm quite tall, at 6 feet, 6 inches, with long dark  
+hair; you may have spotted me out of the corner of your eye as you  
+were writing another RedHanded post, or maybe when you were working  
+on the new CSS for the guide.
+
+And here's the reason: your writing is far, far too addictive. And,  
+despite all your blogs and all of your archives and six chapters of  
+the guide (beautifully page-breaked), the cravings aren't going away,  
+no matter how many RSS feeds I throw at it, no matter how many  
+Googled mailing list archives, I desire more. I need it.
+
+So, here's the rub: having a soundtrack, and a new blue thing around  
+the pages, and everything, is all really spiffy, sure. But I'd kill  
+for you, Why, if you would put chapter seven up there. Or even part  
+of the chapter, you know, kind of beta-book-ey? If it follows the  
+same pattern as the last one's, it's probably even longer. I know  
+what creative procrastination looks like, because that's what I spend  
+most of my time doing and spend the rest of my time hating myself for  
+it.
+
+I've introduced many friends, programmers and non-programmers;  
+professors, even god help me, parents to your little poignant guide.  
+They snapped it up, you see, and got addicted, just like you wrote,  
+just like you warned us all little smotchkkisses. Don't hold out on  
+us now, man! We want to do all of those cool things you promised.
+
+And we'll work for it, too. This little pagebreaking extravaganza is  
+just the beginning of the tireless work I and many others like me  
+(who are reading this very sentence on the mailing list!) will do.  
+We'll happily solve little problems, proofread, recruit music  
+artists, talk to publishers, maintain forums, test out examples, even  
+impersonate your signature for autographs. We'll take care of all the  
+mundane crap. What we all want *you* to do, Why, is write! Write down  
+those fantastic worlds of word inside your head and share them,  
+because we all want to play in them. Delegate to your loyal legions  
+of smotchkkisses that you created, that you trained, and that are  
+addicted to your very words!
+
+Keep this in mind, and you'll always remember why, Why, you're the  
+luckiest of all stiffs.
+
+The files may be found here. Each chapter is there, along with  
+guide.pdf, which is the joining together of all the chapters. The  
+individual files are of higher quality, but you only have to download  
+one file. The classic conundrum. You are all free to share the files  
+of course, but please, don't share the links. I've gotten enough  
+notice from the administrators, thank you.
+
+http://void.arch.usyd.edu.au/~lspe7954/poignantpdf/
+
+Rabidly,
+-- Leon Spencer.
+
+
+

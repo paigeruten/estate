@@ -1,0 +1,722 @@
+From why at poignantguide.net  Mon Mar  1 10:34:21 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Mar  1 12:45:01 2004
+Subject: development office up, an offer to translators, developers
+In-Reply-To: <F361AA94-6A5F-11D8-8463-000393AF5510@mac.com>
+References: <18751.67.40.116.230.1078020840.squirrel@mail.soccerriot.com>
+	<F361AA94-6A5F-11D8-8463-000393AF5510@mac.com>
+Message-ID: <4043741D.4060202@poignantguide.net>
+
+Chris Hoge wrote:
+
+> I'm happy to help with TeX and pdf. Probably the simplest formats out 
+> there (probably famous last words). Shoot, I would help even without 
+> the bribe, not that I would turn it down, though.
+
+a kind offer, thankyou.  as for obstacles: the flow of images and 
+sidebars could make some editions difficult to build.  fortunately, this 
+is a strength of css.  i truly respect its cooperation in this regard.  
+pdf won't be so cooperative.
+
+currently, the images checked into cvs are 800px wide.  but i'd really 
+like to keep 300dpi or 600dpi images somewhere in cvs so that nicely 
+printed versions could be produced.
+
+can anyone suggest a good resolution for these master images?  what 
+image depth would you like to see in the pdf version?
+
+_why
+From why at poignantguide.net  Mon Mar  1 14:05:03 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Mar  1 16:16:39 2004
+Subject: Why's (Poignant) Guide to Ruby, Chapter Four: Little Leaves of Code
+Message-ID: <4043A57F.2050204@poignantguide.net>
+
+Chapter Four of my ongoing Ruby book is done, done, walk on, walk on. 
+
+I know this chapter was supposed to be six months in the making, but 
+what can I say?  I looked at it today and said, "Yeah, that's good."
+
+Here's a link directly to the chapter: 
+http://poignantguide.net/ruby/chapter-4.html
+
+If you find yourself wanting to pitch in and help translate the book or 
+convert to new formats, head over the the development office: 
+http://poignant.rubyforge.org/  Just a few ideas there on how you can 
+help tease this thing along.
+
+Thanks everybody,
+
+_why
+From ckhoge at mac.com  Mon Mar  1 13:51:15 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Mon Mar  1 17:01:33 2004
+Subject: Error in building wpgtr
+In-Reply-To: <4043A57F.2050204@poignantguide.net>
+References: <4043A57F.2050204@poignantguide.net>
+Message-ID: <901CC75E-6BCA-11D8-B2B8-000502771EB0@mac.com>
+
+Hi,
+
+Ok, so maybe I'm suffering because I live in OS X land. Tonight when I 
+get the chance to drop into Linux I will try to reproduce this on a 
+different OS. Using Ruby 1.8, complete with the 0.6 version of the YAML 
+library and the current versions of erb (2.0.4) and redcloth (2.0) from 
+the RAA, I get the following error when I run "ruby poignant.rb" on the 
+CVS tree:
+
+/sw/lib/ruby/1.8/yaml.rb:39:in `load': parse error on line 1162, col 4: 
+`    - !^sidebar' (ArgumentError)
+         from /sw/lib/ruby/1.8/yaml.rb:39:in `load'
+         from poignant.rb:11:in `load'
+         from poignant.rb:71
+
+(the /sw prefix you see in front of everything is the fink sandbox. 
+Think of it as the /usr/local of OS X)
+
+I've taken a quick look at the libraries and at the poignant.yml file. 
+None of the other sidebars fail to load correctly, the libraries seem 
+to be up to date, and I'm wondering if anyone has ideas on how to 
+proceed.
+
+On a different note, I'm using anonymous CVS access at RubyForge. I've 
+made an account, but does CVS access work for project contributors? I 
+can't check out the project using my RubyForge login.
+
+Thanks,
+
+Chris
+
+On Mar 1, 2004, at 1:05 PM, why the lucky stiff wrote:
+
+> Chapter Four of my ongoing Ruby book is done, done, walk on, walk on.
+> I know this chapter was supposed to be six months in the making, but 
+> what can I say?  I looked at it today and said, "Yeah, that's good."
+>
+> Here's a link directly to the chapter: 
+> http://poignantguide.net/ruby/chapter-4.html
+>
+> If you find yourself wanting to pitch in and help translate the book 
+> or convert to new formats, head over the the development office: 
+> http://poignant.rubyforge.org/  Just a few ideas there on how you can 
+> help tease this thing along.
+>
+> Thanks everybody,
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+
+From jgb3 at email.byu.edu  Mon Mar  1 16:14:22 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Mon Mar  1 18:28:02 2004
+Subject: Why's (Poignant) Guide to Ruby,
+	Chapter Four: Little Leaves of Code
+In-Reply-To: <4043A57F.2050204@poignantguide.net>
+References: <4043A57F.2050204@poignantguide.net>
+Message-ID: <4043C3CE.3070307@email.byu.edu>
+
+why the lucky stiff wrote:
+
+> Chapter Four of my ongoing Ruby book is done, done, walk on, walk on.
+> I know this chapter was supposed to be six months in the making, but 
+> what can I say?  I looked at it today and said, "Yeah, that's good."
+>
+> Here's a link directly to the chapter: 
+> http://poignantguide.net/ruby/chapter-4.html
+>
+> If you find yourself wanting to pitch in and help translate the book 
+> or convert to new formats, head over the the development office: 
+> http://poignant.rubyforge.org/  Just a few ideas there on how you can 
+> help tease this thing along.
+>
+> Thanks everybody,
+>
+> _why
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+> .
+>
+
+Another inspired chapter from the master of Ruby prose. :)  Thanks, _why_!
+
+However, one gripe, and I'm afraid it's a tough one... the art work, 
+though wonderful, is a real strain to read. :(  I found myself getting 
+mildly frustrated tring to decipher the text in strips.  It's not 
+difficult, it's just more time-consuming than I would like.  The wild 
+fonts are great decoration, and from an artistic perspective I really 
+like them, but when I'm trying to read them, it really slows me down.
+
+I saw a few typos, too, but didn't mark them.  :)  I'll do a second 
+read-through later and post the ones I catch.
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/blog/jamis.cgi
+
+ruby -h | ruby -e 'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+
+From why at poignantguide.net  Mon Mar  1 17:59:02 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Mar  1 20:09:22 2004
+Subject: Chapter Four in CVS
+In-Reply-To: <901CC75E-6BCA-11D8-B2B8-000502771EB0@mac.com>
+References: <4043A57F.2050204@poignantguide.net>
+	<901CC75E-6BCA-11D8-B2B8-000502771EB0@mac.com>
+Message-ID: <4043DC56.5030201@poignantguide.net>
+
+Chris Hoge wrote:
+
+> Ok, so maybe I'm suffering because I live in OS X land. Tonight when I 
+> get the chance to drop into Linux I will try to reproduce this on a 
+> different OS. Using Ruby 1.8, complete with the 0.6 version of the 
+> YAML library and the current versions of erb (2.0.4) and redcloth 
+> (2.0) from the RAA, I get the following error when I run "ruby 
+> poignant.rb" on the CVS tree:
+>
+> /sw/lib/ruby/1.8/yaml.rb:39:in `load': parse error on line 1162, col 
+> 4: `    - !^sidebar' (ArgumentError)
+>         from /sw/lib/ruby/1.8/yaml.rb:39:in `load'
+>         from poignant.rb:11:in `load'
+>         from poignant.rb:71
+
+Just committed Chapter Four to CVS.  Try it out.
+
+If you continue to have errors, there may be some YAML in there that's 
+triggering a bug that's been fixed in Ruby CVS.  Quite a bit has been 
+debugged from 1.8.0 to 1.8.1 and 1.8.1 to the present.
+
+_why
+From why at poignantguide.net  Mon Mar  1 18:04:29 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Mar  1 20:15:00 2004
+Subject: Why's (Poignant) Guide to Ruby, Chapter Four: Little Leaves of
+ Code
+In-Reply-To: <4043C3CE.3070307@email.byu.edu>
+References: <4043A57F.2050204@poignantguide.net>
+	<4043C3CE.3070307@email.byu.edu>
+Message-ID: <4043DD9D.1080507@poignantguide.net>
+
+Jamis Buck wrote:
+
+> However, one gripe, and I'm afraid it's a tough one... the art work, 
+> though wonderful, is a real strain to read.
+
+It's all sort of leafy and overgrown I suppose.  I didn't think of this, 
+but now that you've pointed out the problem I can't tolerate it at all.  
+I'll tame down these letters and see if I can improve the scans.
+
+_why
+From ckhoge at mac.com  Mon Mar  1 18:21:34 2004
+From: ckhoge at mac.com (Chris Hoge)
+Date: Mon Mar  1 21:31:52 2004
+Subject: Success in building wpgtr locally
+In-Reply-To: <4043DC56.5030201@poignantguide.net>
+References: <4043A57F.2050204@poignantguide.net>
+	<901CC75E-6BCA-11D8-B2B8-000502771EB0@mac.com>
+	<4043DC56.5030201@poignantguide.net>
+Message-ID: <53A69F00-6BF0-11D8-B2B8-000502771EB0@mac.com>
+
+Hi,
+
+I just finished building wpgtr from the CVS source on my local machine. 
+First, the OS: Mac OS X 10.3 with dev tools and fink installed.
+
+Next, the Ruby installation:
+Ruby Stable Snapshot (available from http://ruby-lang.org)
+Redcarpet CVS (available from http://sourceforge.net/projects/yaml4r/)
+erb 2.0.4 (available from http://raa.ruby-lang.org/list.rhtml?name=erb)
+
+You can not build wpgtr using earlier versions of the packages I listed 
+above.
+
+Finally, the build (with bugs?):
+You need to create a target directory. I used wpgtr/html/
+Enter the command "ruby poignant.rb html/" to build the book in the 
+wpgtr/html/ directory.
+
+You need to specify a build location, or the copy commands in ftools.rb 
+library will clobber your guide.css and every image in wpgtr/i/. It is 
+sad when that happens.
+
+Maybe something like this should go into a README file?
+
+-Chris
+
+From demerzel at fastmail.fm  Mon Mar  1 19:58:34 2004
+From: demerzel at fastmail.fm (Shajith C T)
+Date: Mon Mar  1 23:09:04 2004
+Subject: Typos in Chap. 4
+Message-ID: <1078199914.26378.181930413@webmail.messagingengine.com>
+
+A couple that I noticed on the site
+(http://poignantguide.net/ruby/chapter-4.html):
+
+1) Below 
+" Now You?re Going to Hear the Animal Perfect Mission Statement Because
+This Is A Book And We Have Time And No Rush, Right?"
+in http://poignantguide.net/ruby/chapter-4.html#section1
+
+7th paragraph:
+"But now, the whole operation is up and running. And the cleaniless of
+the place is astonishing.[..]"
+                                                         ^^^^^^^^^^
+"cleanliness" ?
+
+2) Below
+"Your Repetitiveness Pays Off" in
+http://poignantguide.net/ruby/chapter-4.html#section3
+
+3rd paragraph:
+"The code word well be swapped in for the real word."   
+               ^^^^
+"will" ?                        
+
+
+Also, THANK YOU for this wonderful book, and godspeed on the next
+chapters!
+- Shajith
+
+-- 
+http://www.fastmail.fm - A no graphics, no pop-ups email service
+
+From rasputnik at hellooperator.net  Tue Mar  2 13:29:40 2004
+From: rasputnik at hellooperator.net (Dick Davies)
+Date: Tue Mar  2 08:40:05 2004
+Subject: Why's (Poignant) Guide to Ruby, Chapter Four: Little Leaves of
+ Code
+In-Reply-To: <4043A57F.2050204@poignantguide.net>
+References: <4043A57F.2050204@poignantguide.net>
+Message-ID: <40448C44.1060406@hellooperator.net>
+
+why the lucky stiff wrote:
+
+> Chapter Four of my ongoing Ruby book is done, done, walk on, walk on.
+> I know this chapter was supposed to be six months in the making, but 
+> what can I say?  I looked at it today and said, "Yeah, that's good."
+> 
+> Here's a link directly to the chapter: 
+> http://poignantguide.net/ruby/chapter-4.html
+
+Typo:
+
+Nil
+
+..... This sketelon?s smiling in all the pictures.
+            ^^^^^^^^^
+skeleton?
+
+And it's probably just me but
+
+starmonkey = ratchet.attach( captive_monkey, pipe.catch_a_star ) + 
+deco_hand_frog
+
+makes me twitchy. I know the + is a method but that hasn't been 
+explained yet. How about:
+
+
+starmonkey = ratchet.attach( captive_monkey, pipe.catch_a_star )
+starmonkey.left_hand.glue(deco_hand_frog)
+
+?
+
+
+You can even show how to smash those together:
+
+ratchet.attach( captive_monkey,
+pipe.catch_a_star).left_hand.glue(deco_hand_frog)
+
+Ugh. Actually maybe not, that's a bit confusing
+(plus there's no starmonkey to grab hold of)...
+
++1 for the Jesus Jones reference though!
+
+
+
+From why at poignantguide.net  Tue Mar  2 13:36:28 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Mar  2 15:47:08 2004
+Subject: Typos in Chap. 4
+In-Reply-To: <1078199914.26378.181930413@webmail.messagingengine.com>
+References: <1078199914.26378.181930413@webmail.messagingengine.com>
+Message-ID: <4044F04C.2070301@poignantguide.net>
+
+Shajith C T wrote:
+
+>Also, THANK YOU for this wonderful book, and godspeed on the next
+>chapters!
+>
+most salient thanks to you, shajith!  (mentioned misspellings are 
+vanquished from the premises.)
+
+_why
+From why at poignantguide.net  Tue Mar  2 13:47:10 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Mar  2 15:57:47 2004
+Subject: Why's (Poignant) Guide to Ruby, Chapter Four: Little Leaves of
+ Code
+In-Reply-To: <40448C44.1060406@hellooperator.net>
+References: <4043A57F.2050204@poignantguide.net>
+	<40448C44.1060406@hellooperator.net>
+Message-ID: <4044F2CE.5050301@poignantguide.net>
+
+Dick Davies wrote:
+
+> And it's probably just me but
+>
+> starmonkey = ratchet.attach( captive_monkey, pipe.catch_a_star ) + 
+> deco_hand_frog
+>
+> makes me twitchy. I know the + is a method but that hasn't been 
+> explained yet. How about:
+>
+> starmonkey = ratchet.attach( captive_monkey, pipe.catch_a_star )
+> starmonkey.left_hand.glue(deco_hand_frog)
+
+okay.  that might work nicely.  i have largely been ignoring methods 
+which act as properties so far in the book.  while operator methods get 
+quite a bit of show time in chapter four.  referring to 
+'starmonkey.left_hand' might help prep that discussion.
+
+what does everyone think of the two above examples?
+
+_why
+
+From why at poignantguide.net  Thu Mar  4 02:01:50 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu Mar  4 04:12:41 2004
+Subject: Blix, the foxes, the elf, the pet ham all agree: "it feels so good
+ to merchandise!"
+Message-ID: <4046F07E.5000809@poignantguide.net>
+
+Are you dying to find subtle ways to introduce Why's (Poignant) Guide to 
+Ruby to your friends and business colleagues?  Why be subtle any longer 
+when you can wear (poignant) merchandise at point-blank?  Be blunt.  Let 
+them see exactly what kinds of foxes you read.
+
+   http://www.cafeshops.com/blixytees
+
+Blixy Tees.  Six hi-quality shirts featuring a few highlights of the 
+first four chapters.  "Addiction is like Pokemon! Let's collect every 
+cigarette ever!"  Blix introducing the Elf. The complementary starmonkey 
+cutouts.  And a medley of "chunky bacon" panels that will have the other 
+manservants laughing so hard, they'll leave their wheelbarrows rolling 
+straight down the mountainside unattended!
+
+Seriously, how great is the Internet?  You can buy t-shirts advertising 
+a book that is nowhere near completion from a complete stranger who is 
+personally haranguing you from his home computer (which is incidentally 
+stationed on an ironing board at the moment.)
+
+I *starch* you!
+
+_why
+
+
+
+From why at poignantguide.net  Mon Mar  8 11:53:11 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon Mar  8 14:05:51 2004
+Subject: recent reviews
+Message-ID: <404CC117.30503@poignantguide.net>
+
+here's a few reviews that i've been sent over the past week which you 
+might find faceted:
+
+* Tomas Jogin - http://jogin.com/weblog/archives/000502/
+   so Tomas told me that he was only reading the Guide for the comics.  
+he said he didn't want to learn Ruby, but it looks like Ruby's gonna 
+take its prey.  dying to see how this sort of thing plays out.
+
+* Bret Pettichord - 
+http://www.io.com/~wazmo/blog/archives/2004_03.html#000071
+   the Guide as a trap for non-proggies.  and: will they make it through 
+the code examples?
+
+* Ned Batch Elder - 
+http://www.nedbatchelder.com/reactor/comment.php?entryid=e20040223T211359
+   a variety of reactions.  admittedly, i can see how the structure of 
+the instruction could really get under someone's skin.  i guess before i 
+started, i sort of felt like taming everything down.  but really, what's 
+the point in that?  i just don't feel like exercising a whole lot of 
+restraint at the moment.  it's an experiment. and truthfully: not really 
+up to snuff with most other literature out there.
+
+_why
+From bret at pettichord.com  Mon Mar  8 21:32:02 2004
+From: bret at pettichord.com (Bret Pettichord)
+Date: Mon Mar  8 22:48:06 2004
+Subject: recent reviews
+In-Reply-To: <404CC117.30503@poignantguide.net>
+Message-ID: <5.1.0.14.2.20040308212355.0227d008@127.0.0.1>
+
+
+>Nat      4:43 PM on 24 Feb 2004
+>
+>It's certainly an entertaining read about Ruby. I especially liked the 
+>comics. Technical manuals need more comics, dammit!
+>
+>I can't say it got me excited about the Ruby though. I don't know if it 
+>was just the examples, but I find Ruby to be almost as cryptic as Perl. 
+>For instance:
+>
+>exit unless "restaurant".include? "aura"
+>
+>The author talks about how the language makes good use of punctuation. It 
+>may make sense in Japanese, but in English, question marks go at the end 
+>of the sentence.
+
+Give this line to one of the foxes.
+
+>Python, on the other hand seems clearer:
+>
+>if "aura" in "restaurant": sys.exit(-1)
+
+It may make sense in German, but in English, you don't stick negative 
+numbers at the end of a sentence.
+
+>His other example is even more confusing:
+>
+>[toast, cheese, wine].each {|food| eat food}
+>
+>What's going on here? Does the food eat itself? Again, Python is much more 
+>elegant (in my opinion, anyway)
+
+Have you ever heard the phrase "each one teach one?" it means that whenever 
+someone teaches you something, you should turn around and teach some one 
+else what you learned. That concept has the same meter as what you have 
+here. Use it.
+
+>for food in ['toast', 'cheese', 'wine']: eat(food)
+>
+>I'll admit I'm a bit of a Python zealot and I should really learn about 
+>Ruby. But so far, Python is still king.
+
+Python is cleaner here, because it overfocuses on iterators at the expense 
+of support for blocks. So you need a good block example later sell the 
+Python folks.
+
+>Nat
+
+
+
+
+_____________________________________
+  Bret Pettichord, Software Tester
+    Book - www.testinglessons.com
+    Consulting - www.pettichord.com
+    Blog - www.io.com/~wazmo/blog
+
+    Homebrew Automation Seminar
+    March 19, Redmond, Washington
+    www.sasqag.org/99days/#automation
+
+From dave at pragprog.com  Mon Mar  8 21:48:08 2004
+From: dave at pragprog.com (Dave Thomas)
+Date: Mon Mar  8 23:00:31 2004
+Subject: recent reviews
+In-Reply-To: <5.1.0.14.2.20040308212355.0227d008@127.0.0.1>
+References: <5.1.0.14.2.20040308212355.0227d008@127.0.0.1>
+Message-ID: <948BEEF2-717C-11D8-B198-000A95676A62@pragprog.com>
+
+
+On Mar 8, 2004, at 21:32, Bret Pettichord wrote:
+>> for food in ['toast', 'cheese', 'wine']: eat(food)
+>>
+>> I'll admit I'm a bit of a Python zealot and I should really learn 
+>> about Ruby. But so far, Python is still king.
+>
+> Python is cleaner here, because it overfocuses on iterators at the 
+> expense of support for blocks. So you need a good block example later 
+> sell the Python folks.
+
+Actually, the OP is spreading snake oil. His Python code is also 
+syntactically correct Ruby:
+
+dave[~ 21:47:10] irb
+irb(main):001:0> def eat(food)
+irb(main):002:1>   puts "Yum: #{food}"
+irb(main):003:1> end
+=> nil
+irb(main):004:0> for food in ['toast', 'cheese', 'wine']: eat(food)
+irb(main):005:1> end
+Yum: toast
+Yum: cheese
+Yum: wine
+
+
+Cheers
+
+Dave
+
+From nutate at speakeasy.net  Tue Mar  9 10:04:30 2004
+From: nutate at speakeasy.net (Richard Seymour)
+Date: Tue Mar  9 10:16:01 2004
+Subject: recent reviews
+In-Reply-To: <948BEEF2-717C-11D8-B198-000A95676A62@pragprog.com>
+References: <5.1.0.14.2.20040308212355.0227d008@127.0.0.1>
+	<948BEEF2-717C-11D8-B198-000A95676A62@pragprog.com>
+Message-ID: <404DDCFE.7030806@speakeasy.net>
+
+Yum: irony
+
+I'm going to take the liberty to post that on the OPs blog in the next 
+half hour.  With proper attribution, of course.
+
+-Rich
+
+Dave Thomas wrote:
+> 
+> On Mar 8, 2004, at 21:32, Bret Pettichord wrote:
+> 
+>>> for food in ['toast', 'cheese', 'wine']: eat(food)
+>>>
+>>> I'll admit I'm a bit of a Python zealot and I should really learn 
+>>> about Ruby. But so far, Python is still king.
+>>
+>>
+>> Python is cleaner here, because it overfocuses on iterators at the 
+>> expense of support for blocks. So you need a good block example later 
+>> sell the Python folks.
+> 
+> 
+> Actually, the OP is spreading snake oil. His Python code is also 
+> syntactically correct Ruby:
+> 
+> dave[~ 21:47:10] irb
+> irb(main):001:0> def eat(food)
+> irb(main):002:1>   puts "Yum: #{food}"
+> irb(main):003:1> end
+> => nil
+> irb(main):004:0> for food in ['toast', 'cheese', 'wine']: eat(food)
+> irb(main):005:1> end
+> Yum: toast
+> Yum: cheese
+> Yum: wine
+> 
+> 
+> Cheers
+> 
+> Dave
+> 
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs@rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+From why at poignantguide.net  Tue Mar 16 11:51:48 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Tue Mar 16 14:06:38 2004
+Subject: the continuing adventures of one frail and very slow author with
+ achy joints
+Message-ID: <40574CC4.3050508@poignantguide.net>
+
+just checking in to let everyone know that the fifth chapter is going 
+really well.  i think the fourth chapter met my expectations of digging 
+into Ruby and moving the plot along.  things start to get quite busy in 
+the next two chapters and, by end of chap 6, you should feel fully 
+immersed in a deep, tangled wilderland of assorted animals, do-gooders, 
+and smoky corridors.  i'm tempted to flash you some imagery from 
+chapters five and six (which I've been working on side-by-side), but I 
+really want the whole thing to spill out on to your lap at once.
+
+this is wonderful.  once these chapters are out, i'll be at the halfway 
+point.
+
+chapter five won't be ready until april.  i'm sorry about this.  i have 
+vacation all through next week and i intend to leave the writing alone 
+for the time and concentrate on feeling air currents and adjusting the 
+strap on my backpack.
+
+surprisingly, the site is still going so strong.  i believe we owe that 
+to being #2 on google for the word 'poignant'.  hopefully the guide can 
+become the exclusive home to poignancy on web.  no one will feel a thing 
+without checking the site first.
+
+thanks to everyone who has bought shirts.  i ordered an 'addiction' 
+shirt [1] to check the quality and it's really nice actually.  you can 
+tell they did it with a transfer if you look closely, but the colors and 
+dots are well done.
+
+== now, a question ==
+
+i would like to include some basic reference materials with the guide.  
+here are a few ideas i've had.  you can vote or propose as you please:
+
+* flash cards.
+
+               SIDE A                              SIDE B
+
+   [ 'bear', 'rabbit', 'racoon']        caterpillar stapled into code is
+                                                  AN ARRAY
+
+
+   :fizz                                     antacid with bubbles is
+                                                  A SYMBOL
+
+   YukihiroMatsumoto               capital letters, it is specific, 
+unchanging,
+                                                 A CONSTANT
+
+...illustrations on side B.
+
+* a reference poster with a block of code, dissected into parts like the 
+above, with illustrations.
+
+* oggs of verbal drills and memory songs.
+
+* costumes which could be made entirely from a roll of tin foil.
+
+* yo-yo tricks, sleights-of-hand which illustrate iteration, mixins.
+
+alright, then.  i hear ya.  a mix of it.  a musical for salt-dough hand 
+puppets to be performed from a bathtub with curtains.  well done!
+
+_why
+
+[1] http://www.cafeshops.com/blixytees.10117492
+From jgb3 at email.byu.edu  Thu Mar 18 07:59:06 2004
+From: jgb3 at email.byu.edu (Jamis Buck)
+Date: Thu Mar 18 10:14:48 2004
+Subject: Translations
+Message-ID: <4059B93A.8000409@email.byu.edu>
+
+For what it's worth: ever seen the Dialectizer?  It'll translate the 
+Guide into Jive, Redneck, or any of several other dialects.  Might help 
+get to some of those hard-to-reach demographics...
+
+   http://rinkworks.com/dialect/
+
+It's worth a grin, anyway. ;)
+
+-- 
+Jamis Buck
+jgb3@email.byu.edu
+http://www.jamisbuck.org/jamis
+
+ruby -h | ruby -e 
+'a=[];readlines.join.scan(/-(.)\[e|Kk(\S*)|le.l(..)e|#!(\S*)/) {|r| a << 
+r.compact.first };puts "\n>#{a.join(%q/ /)}<\n\n"'
+From why at poignantguide.net  Wed Mar 31 11:01:21 2004
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed Mar 31 13:20:50 2004
+Subject: recommended?
+Message-ID: <406B0771.80808@poignantguide.net>
+
+cheerio.  just been getting back from vacation.  was very nice, thankyou.
+
+getting back, here's the question primary on my mind:
+
+  'can you foresee any reason you wouldn't recommend the Guide as the #1 
+starting point for a Ruby newcomer?'
+
+i can understand not recommending it as it is incomplete.  but so far, 
+does the book meet your criteria for instructing a newcomer?  are the 
+topics being covered in an intuitive manner?  do you like the order they 
+are being presented?  do you feel it is the premier launchpad for a learner?
+
+_why

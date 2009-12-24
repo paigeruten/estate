@@ -1,0 +1,27 @@
+From jacob.tomaw at gmail.com  Thu Oct  6 17:44:15 2005
+From: jacob.tomaw at gmail.com (Jacob Tomaw)
+Date: Thu, 6 Oct 2005 16:44:15 -0500
+Subject: unexpected redo
+Message-ID: <373f59ea0510061444o3753e087p1f6112e0344822f3@mail.gmail.com>
+
+I am going through the book and came to chapter 5 section 5 with the lottery
+machine. I am following along with the examples in irb. I added
+
+ class LotteryTicket
+   def self.new_random
+     new( rand( 25 ) + 1, rand( 25 ) + 1, rand( 25 ) + 1 )
+   rescue ArgumentError
+     redo
+   end
+ end
+
+to my running session. I ran LotteryTicket.new_random a few times and when
+it gets to redo I get an error, LocalJumpError: unexpected redo, Is this
+something I did wrong?
+
+Thanks,
+Jacob Tomaw
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://rubyforge.org/pipermail/poignant-stiffs/attachments/20051006/e3ab72fa/attachment.htm
+

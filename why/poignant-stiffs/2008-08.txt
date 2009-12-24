@@ -1,0 +1,237 @@
+From bug at insecti.com  Sun Aug  3 14:33:06 2008
+From: bug at insecti.com (Harrison Reiser)
+Date: Sun, 3 Aug 2008 12:33:06 -0600
+Subject: Let's play Find the Typo!
+Message-ID: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+
+Hint: it's in Chapter #{true.object_id}.
+
+Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+"supper moon key" =~ /(up).*(down)?.*(moo)/}.
+
+Have fun!
+
+--Bug
+
+From kprojection at gmail.com  Sun Aug  3 20:19:36 2008
+From: kprojection at gmail.com (Eric Mill)
+Date: Sun, 3 Aug 2008 20:19:36 -0400
+Subject: Let's play Find the Typo!
+In-Reply-To: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+References: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+Message-ID: <c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+
+That was fun!  Is it that "timeshare" needs to be pluralized?
+
+On Sun, Aug 3, 2008 at 2:33 PM, Harrison Reiser <bug at insecti.com> wrote:
+> Hint: it's in Chapter #{true.object_id}.
+>
+> Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+> "supper moon key" =~ /(up).*(down)?.*(moo)/}.
+>
+> Have fun!
+>
+> --Bug
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From bug at insecti.com  Sun Aug  3 20:28:10 2008
+From: bug at insecti.com (Bug)
+Date: Sun, 3 Aug 2008 18:28:10 -0600
+Subject: Let's play Find the Typo!
+In-Reply-To: <c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+References: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+	<c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+Message-ID: <644666c80808031728l638bb5a6q5c8f72f43caa8f73@mail.gmail.com>
+
+Ah, no, but I suppose that was also a mistake. Look again! :)
+
+Triple hint: it's not in the dictionary.
+
+On Sun, Aug 3, 2008 at 6:19 PM, Eric Mill <kprojection at gmail.com> wrote:
+> That was fun!  Is it that "timeshare" needs to be pluralized?
+>
+> On Sun, Aug 3, 2008 at 2:33 PM, Harrison Reiser <bug at insecti.com> wrote:
+>> Hint: it's in Chapter #{true.object_id}.
+>>
+>> Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+>> "supper moon key" =~ /(up).*(down)?.*(moo)/}.
+>>
+>> Have fun!
+>>
+>> --Bug
+
+From kprojection at gmail.com  Sun Aug  3 21:01:58 2008
+From: kprojection at gmail.com (Eric Mill)
+Date: Sun, 3 Aug 2008 21:01:58 -0400
+Subject: Let's play Find the Typo!
+In-Reply-To: <644666c80808031728l638bb5a6q5c8f72f43caa8f73@mail.gmail.com>
+References: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+	<c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+	<644666c80808031728l638bb5a6q5c8f72f43caa8f73@mail.gmail.com>
+Message-ID: <c658be6b0808031801m24ba657bscd2710062cd462ac@mail.gmail.com>
+
+Smotchkiss?!
+
+On Sun, Aug 3, 2008 at 8:28 PM, Bug <bug at insecti.com> wrote:
+> Ah, no, but I suppose that was also a mistake. Look again! :)
+>
+> Triple hint: it's not in the dictionary.
+>
+> On Sun, Aug 3, 2008 at 6:19 PM, Eric Mill <kprojection at gmail.com> wrote:
+>> That was fun!  Is it that "timeshare" needs to be pluralized?
+>>
+>> On Sun, Aug 3, 2008 at 2:33 PM, Harrison Reiser <bug at insecti.com> wrote:
+>>> Hint: it's in Chapter #{true.object_id}.
+>>>
+>>> Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+>>> "supper moon key" =~ /(up).*(down)?.*(moo)/}.
+>>>
+>>> Have fun!
+>>>
+>>> --Bug
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From bug at insecti.com  Sun Aug  3 21:14:51 2008
+From: bug at insecti.com (Bug)
+Date: Sun, 3 Aug 2008 19:14:51 -0600
+Subject: Let's play Find the Typo!
+In-Reply-To: <c658be6b0808031801m24ba657bscd2710062cd462ac@mail.gmail.com>
+References: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+	<c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+	<644666c80808031728l638bb5a6q5c8f72f43caa8f73@mail.gmail.com>
+	<c658be6b0808031801m24ba657bscd2710062cd462ac@mail.gmail.com>
+Message-ID: <644666c80808031814q229ccee7kf60db7873742b185@mail.gmail.com>
+
+Oh, of course not!
+
+On Sun, Aug 3, 2008 at 7:01 PM, Eric Mill <kprojection at gmail.com> wrote:
+> Smotchkiss?!
+>
+> On Sun, Aug 3, 2008 at 8:28 PM, Bug <bug at insecti.com> wrote:
+>> Ah, no, but I suppose that was also a mistake. Look again! :)
+>>
+>> Triple hint: it's not in the dictionary.
+>>
+>> On Sun, Aug 3, 2008 at 6:19 PM, Eric Mill <kprojection at gmail.com> wrote:
+>>> That was fun!  Is it that "timeshare" needs to be pluralized?
+>>>
+>>> On Sun, Aug 3, 2008 at 2:33 PM, Harrison Reiser <bug at insecti.com> wrote:
+>>>> Hint: it's in Chapter #{true.object_id}.
+>>>>
+>>>> Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+>>>> "supper moon key" =~ /(up).*(down)?.*(moo)/}.
+>>>>
+>>>> Have fun!
+>>>>
+>>>> --Bug
+
+From kprojection at gmail.com  Sun Aug  3 21:16:35 2008
+From: kprojection at gmail.com (Eric Mill)
+Date: Sun, 3 Aug 2008 21:16:35 -0400
+Subject: Let's play Find the Typo!
+In-Reply-To: <644666c80808031814q229ccee7kf60db7873742b185@mail.gmail.com>
+References: <644666c80808031133x79fbc610me6ccee9bb24a253b@mail.gmail.com>
+	<c658be6b0808031719q5dc8fd16x97d24e73cfee7075@mail.gmail.com>
+	<644666c80808031728l638bb5a6q5c8f72f43caa8f73@mail.gmail.com>
+	<c658be6b0808031801m24ba657bscd2710062cd462ac@mail.gmail.com>
+	<644666c80808031814q229ccee7kf60db7873742b185@mail.gmail.com>
+Message-ID: <c658be6b0808031816n2baa67d9rc8b0f253995aa886@mail.gmail.com>
+
+Boom!: "ancronyms"
+
+On Sun, Aug 3, 2008 at 9:14 PM, Bug <bug at insecti.com> wrote:
+> Oh, of course not!
+>
+> On Sun, Aug 3, 2008 at 7:01 PM, Eric Mill <kprojection at gmail.com> wrote:
+>> Smotchkiss?!
+>>
+>> On Sun, Aug 3, 2008 at 8:28 PM, Bug <bug at insecti.com> wrote:
+>>> Ah, no, but I suppose that was also a mistake. Look again! :)
+>>>
+>>> Triple hint: it's not in the dictionary.
+>>>
+>>> On Sun, Aug 3, 2008 at 6:19 PM, Eric Mill <kprojection at gmail.com> wrote:
+>>>> That was fun!  Is it that "timeshare" needs to be pluralized?
+>>>>
+>>>> On Sun, Aug 3, 2008 at 2:33 PM, Harrison Reiser <bug at insecti.com> wrote:
+>>>>> Hint: it's in Chapter #{true.object_id}.
+>>>>>
+>>>>> Double hint: it's in Section #{(2..42).find {|i| eval "$#{i}"} if
+>>>>> "supper moon key" =~ /(up).*(down)?.*(moo)/}.
+>>>>>
+>>>>> Have fun!
+>>>>>
+>>>>> --Bug
+> _______________________________________________
+> poignant-stiffs mailing list
+> poignant-stiffs at rubyforge.org
+> http://rubyforge.org/mailman/listinfo/poignant-stiffs
+>
+
+From neotrobe at gmail.com  Thu Aug  7 23:14:27 2008
+From: neotrobe at gmail.com (Adam Smith)
+Date: Thu, 7 Aug 2008 23:14:27 -0400
+Subject: Error in the Poignant Guide
+Message-ID: <3865360d0808072014m599b7630g3157adbb1d80b2d8@mail.gmail.com>
+
+I am going to say I love this book and am very grateful that Why
+comprised this series of stories intertwined with breaks of laughable
+content so the important parts can be digested by the brain.  However,
+while working through Chapter 5 I found an example that I could not
+complete.  It was the regular expression example found in chapter 5
+where Why is showing how to remove stuff found in parenthesis.  The
+regular expression did not perform as expected so I looked further
+into and found a better regular expression that performed a little
+better.
+
+sent1 =  "This is a string with (some parens and stuff in it ) that I
+hope my regexp will remove properly"
+sent2 =  "this will test multi(((pules of stuff in the parenss)) here
+is some more"
+sent3 =  "Third test ))) ((( will this fail or work?"
+sent4 =   "Fourth test I hope this ((( does indeed( wor)k) ou)t)))  or
+I might look like a fool"
+
+Why's regular expression: sentence.gsub( /\([-\w]+\)/, ")
+Regular expression I found to perform as intended:
+sentence.gsub(/\s*\(+(\S|\s)*\)+/, '')
+
+Again I love the book just wondering if anyone else found this too?
+However, when I did find it and found out what was going on and why it
+was not working and how to get it work properly just goes to show that
+Why's books is truly a great book.
+-- 
+Adam
+QED
+
+From jacob.tomaw at gmail.com  Tue Aug 19 11:59:23 2008
+From: jacob.tomaw at gmail.com (Jacob Tomaw)
+Date: Tue, 19 Aug 2008 15:59:23 +0000
+Subject: New invitation from Jacob Tomaw
+Message-ID: <20080819163436.790E318585C7@rubyforge.org>
+
+
+You have been invited to connect as friends with Jacob Tomaw <jacob.tomaw at gmail.com>
+
+Please accept or reject this invitation by clicking below:
+http://www.bebo.com/in/7670115480a386004443b135
+
+......................................................................
+Please do not reply directly to this email. 
+
+This email was sent to you at the direct request of Jacob Tomaw <jacob.tomaw at gmail.com>. You have not been added to a mailing list.
+
+If you would prefer not to receive invitations from ANY Bebo members please click here - http://www.bebo.com/unsub/7670115480a386004443 
+
+Bebo, Inc., 795 Folsom St, 6th Floor, San Francisco, CA 94107, USA.
+
+
+

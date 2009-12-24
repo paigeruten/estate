@@ -1,0 +1,576 @@
+From why at poignantguide.net  Wed May 18 03:32:20 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Wed May 18 03:25:46 2005
+Subject: Why's (Poignant) Guide to Ruby, Chapter Six: Downtown
+Message-ID: <428AEF84.20901@poignantguide.net>
+
+Hallo, after months of work sweating ferociously, wringing my hands into 
+soft-serve ice cream, troubling over how I would introduce all these 
+readers to metaprogramming--
+
+I happened upon an ancient blue elixir which was hidden in the cupboard 
+of my grandfather clock!  And I drank it and I cackled aloud for seven 
+months solid!  And then I had to get writing.  And I did.
+
+And: http://poignantguide.net/ruby/
+
+Chapter Six, "Downtown," rejoins the friendly foxes, the tall and the 
+short, on their misadventures to locate their lost pickup truck.  As 
+always: much code.  And now with syntax highlighting!
+
+One sad note.  I feel that it is time to remove the introductory 
+paragraph which emphasizes that the (Poignant) Guide "is just a small 
+Ruby book."  Now weighing in at 180 pages, it's time to rephrase.  Or is 
+this still small for a programming manual?  I dare not say.  So you tell me.
+
+--
+A bit of news as well...
+
+* Chapter 3 will be printed in Joel Spolsky's "Best Software Writing I" 
+due out next month.  They are printing the sidebars and everything.  
+http://www.apress.com/book/bookDisplay.html?bID=453
+
+* Subversive chunky bacon sloganeering at the FSF meeting: 
+http://loxosceles.org/photos/2005-03-26_fsf_meeting/img_2480-small.jpg
+
+* I will be speaking in August with the assistance of a synthesizer and 
+some puppets at OSCON 2005: 
+http://conferences.oreillynet.com/cs/os2005/view/e_sess/6948
+
+_why
+From murphy at cycnus.de  Sun May 22 20:12:53 2005
+From: murphy at cycnus.de (murphy)
+Date: Sun May 22 20:06:30 2005
+Subject: highlighting problems / period is not everything
+Message-ID: <42912005.2030600@cYcnus.de>
+
+hi why and list!
+
+the new syntax highlighting surely brought more colors to the guide, but also a 
+few problems.
+
+some boxes shouldn't get highlighted, namely shell input like in The Tiger's Vest:
+
+	ri Enumerable#zip
+
+or some irb result output like in chapter 6:
+
+	irb> NameCaller.new.simon( 'Hello?', 'Hello? Simon?' )
+	You're calling `simon' and you say:
+	  Hello?
+	  Hello? Simon?
+	But no one is there yet.
+
+is highlighted with a string 're calling `simon'.
+
+also, it seems that Syntax doesn't get o.class, also in The Tiger's Vest:
+	
+	42.class      42.instance_eval ...
+
+is highlighted like a class definition.
+
+
+another thing in chapter 6, in the section about character classes:
+
+	. the period matches everything.
+
+everything _but_ a newline. you should mention that, I think.
+it's one of the pitfalls that confuse beginners.
+and then, you should also introduce the /m modifier.
+
+the cartoons in #6 are great!
+[murphy]
+From why at poignantguide.net  Mon May 23 01:18:07 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Mon May 23 01:11:52 2005
+Subject: highlighting problems / period is not everything
+In-Reply-To: <42912005.2030600@cYcnus.de>
+References: <42912005.2030600@cYcnus.de>
+Message-ID: <4291678F.3040209@poignantguide.net>
+
+murphy wrote:
+
+> the new syntax highlighting surely brought more colors to the guide, 
+> but also a few problems.
+
+I've fixed the stuff in Expansion Pak #1 you mentioned.  I need to weed 
+through the inline code stuff and do the same.
+
+All the, uh, stuff from chapter six is in CVS now.  If you want to keep 
+the German edition up-to-date, you can sort through the diff. 
+<http://rubyforge.org/cgi-bin/viewcvs.cgi/wpgtr/poignant.yml.diff?r1=1.5&r2=1.6&cvsroot=poignant>
+
+I'm resisting sweeping changes to previous chapters but subtle 
+improvements are being made all the time.  They may not even effect 
+translation.
+
+Thanks, murph.
+
+_why
+From glasse at rpi.edu  Wed May 25 12:29:23 2005
+From: glasse at rpi.edu (Ethan Glasser-Camp)
+Date: Wed May 25 12:22:49 2005
+Subject: Book feedback!
+Message-ID: <4294A7E3.9030600@rpi.edu>
+
+Hey!
+
+I may be out of line in offering these my thoughts, which are mostly critical. I
+may be criticizing because I am too lame to create anything of my own. I may be
+criticizing work too incredible for me to comprehend. Perhaps I am too
+inexperienced, and my criticism is simple hubris. Why has stated (in an email
+posted only today, I think) that he is not making sweeping changes to the early
+part of the work (although I don't know if this is permanent) -- if my
+suggestions are taken to heart, he may become discouraged and abandon the whole
+affair, which would be disastrous. If for these or other reasons my feedback is
+not desired, I apologize thoroughly in advance. My honest feeling is that the
+Poignant Guide is brilliant, and I will probably be calling people "Smotchkkiss"
+for a long time (how do you pronounce that?). I debated about whether to write
+this email when I do not feel qualified to write it, but I decided that if those
+of you on the list can accept this email as a genuine attempt to express my
+feelings, it will at least be data, even if the advice is crap. I know that if I
+wrote something like this, I'd want feedback, no matter what flavor.
+
+Background:
+
+I am a programmer, an undergraduate in computer science and psychology at RPI,
+which is a technical school in New York state. I have been programming for a few
+years, including a few years in high school, originally in C++ and then C but
+recently in Python. I like to write sometimes. I hate the outdoors.
+
+Factual:
+
+Chapter 5 states that Paij-ree reuses his LotteryDraw class -- but LotteryDraw
+explicitly draws a LotteryTicket rather than an AnimalLotteryTicket. If you call
+AnimalLotteryTicket.score on a LotteryTicket, you'll always get zero, which
+means Paij-ree is cheating Merphy out of his money. Maybe you should state that
+Paij-ree reuses the code with modifications?
+
+In Chapter 6: "He was airborned and yelled, ?Tallyho!? But he held too tightly
+and the cloud evaporated under his arm and sent him back down with a short hop."
+-- airborned should be airborne? "Airborne" is an adjective, and technically
+speaking can't be put in past tense, though this is what artistic judgement is for.
+
+"# The class_eval method runs code is if inside a class definition." -- I think
+"is if" should be "as if".
+
+A regular expression to match 'truck' case insensitively is introduced:
+
+puts line if line.match( /[Tt][Rr][Uu][Cc][Kk]/i )
+
+/i on this regular expression, though safe and probably wise, may be unnecessary
+-- more to the point, this is the paragraph before introducing the /i option, so
+a reader may get confused.
+
+Philosophical:
+
+I think this book is brilliantly written and very entertaining. As for learning
+Ruby, I'm not sure I got too much out of it. Part of this was that I wasn't sure
+at what level to be reading this book at -- the light writing style makes it
+very tempting to think of this as an introductory programming book. On the other
+hand, concepts are introduced very briefly (for example, metaprogramming in
+Chapter 6) and the ability to consider parts of a program outside of its context
+is assumed (see chapter 5 and the use of Endertromb::make( wish ) without any
+explanation of what it does or how it works).
+
+I think the comics are hysterical, and I especially liked the way the text is
+drawn differently for each character. The use of colorful mnemonics to explain
+syntax is inspired (for instance, the caterpillar analogy in chapter 2) -- this
+is one of the reasons I assumed this book was targeted at those who had never
+programmed before.
+
+When reading this book, the comparison that leapt to mind was between this and
+Dive Into Python. Clearly this book does not set out to be another Dive Into
+Python; instead it forsakes dry program analysis in favor of epic and meandering
+storytelling. On the other hand, Dive Into Python does a very good job at
+analyzing entire digestable programs in a fashion that teaches those already
+familiar with programming, a new language. W(P)GtR does not have numerous
+examples of each language feature at work, which would have been helpful to a
+journeyman code-monkey trying to learn Ruby, nor does it follow step-by-step the
+progress of the code on solving the problems posed. While I wanted to read more
+of the story being told, I needed to spend more time with the code to understand
+it and become comfortable with it.
+
+I finished chapter 6 wondering: Who was this book meant for? Is it for
+beginners? If so, perhaps narrowing the focus and explaining the concepts more
+would be helpful. I would suggest this route because I worry that not many
+experienced programmers are going to read a novel in order to learn a
+programming language -- and, as I have stated, I think the prose is of the
+highest caliber. In any case, I think more time spent with the pieces involved
+and doing more detailed analysis of the programs listed would help those trying
+to learn Ruby to piece together the pieces, remember that not all function calls
+have parentheses, and so forth.
+
+I look forward to reading the rest of the book. Best of luck!
+
+Ethan
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 256 bytes
+Desc: OpenPGP digital signature
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050525/1952d517/signature-0001.bin
+From why at poignantguide.net  Thu May 26 15:30:52 2005
+From: why at poignantguide.net (why the lucky stiff)
+Date: Thu May 26 15:24:01 2005
+Subject: Book feedback!
+In-Reply-To: <4294A7E3.9030600@rpi.edu>
+References: <4294A7E3.9030600@rpi.edu>
+Message-ID: <429623EC.8020106@poignantguide.net>
+
+Ethan Glasser-Camp wrote:
+
+>I may be out of line in offering these my thoughts, which are mostly critical.
+>
+You know, it's great to have this stuff!  I like to hear about what is 
+frustrating readers, since it's still possible to improve the state of 
+things (especially the code).  It also gives me a picture of what your 
+expectations of the book were and in what ways the book failed those 
+expectations.
+
+And it's especially useful that you've been thorough and intermingled 
+your criticism with immediately helpful corrections so I have a starting 
+place.
+
+>if my suggestions are taken to heart, he may become discouraged and abandon the whole affair, which would be disastrous.
+>
+Really? I didn't think any of your criticisms were that bad.  Besides, 
+did I create this list just so visitors could notify me of scented bath 
+products they intend to send me?  I need no more foam.  This list is 
+here, hopefully, so I can find out what works and what doesn't.  And if 
+you are firmly declaring that the book simply doesn't work in any manner 
+(which you aren't), then I hope you don't mind if I don't let that 
+comment sink too deep, you know?  I have to have a bit of esteem for the 
+underlying structure.
+
+>Chapter 5 states that Paij-ree reuses his LotteryDraw class -- but LotteryDraw
+>explicitly draws a LotteryTicket rather than an AnimalLotteryTicket. If you call
+>AnimalLotteryTicket.score on a LotteryTicket, you'll always get zero, which
+>means Paij-ree is cheating Merphy out of his money. Maybe you should state that
+>Paij-ree reuses the code with modifications?
+>  
+>
+Okay, I see.  Yeah, I need to modify LotteryDraw.play.  I'll probably 
+allow play to take the name of a class.  This will give premonitions of 
+duck typing and passing of classes as arguments (a beginning stage of 
+introspection).
+
+Your other spelling corrects are graciously appreciated.
+
+>As for learning Ruby, I'm not sure I got too much out of it...concepts are introduced very briefly (for example, metaprogramming in Chapter 6) and the ability to consider parts of a program outside of its context is assumed (see chapter 5 and the use of Endertromb::make( wish ) without any explanation of what it does or how it works).
+>  
+>
+I agree on both points.  I have a rewrite for the whole Endertromb 
+section that I believe will remedy the fragmentation of the code in that 
+spot.  Part of which is: I'm using a show/hide JavaScript layer to 
+reveal missing code for fragments.  But also, the code [has been/is 
+still being] reworked.
+
+The metaprogramming stuff I feel is rather thorough.  I think the 
+introduction to metaprogramming is more revealing than anything else 
+I've seen around.  The code is simple, useful, practical (a usable RPG 
+game is hardly contrived) and fully explained.  I think the problem is 
+still in chapter 5.  Chapter 5 needs to ramp up better into the chapter 
+6 code.  But I might be horrible wrong?  Can anyone else speak to their 
+reading of it?
+
+Keep in mind that I don't want to be long-winded on metaprogramming and 
+I'm counting on the reader to use the code, play with it, re-read, 
+understand, stick with it.
+
+>When reading this book, the comparison that leapt to mind was between this and
+>Dive Into Python. Clearly this book does not set out to be another Dive Into
+>Python; instead it forsakes dry program analysis in favor of epic and meandering
+>storytelling. On the other hand, Dive Into Python does a very good job at
+>analyzing entire digestable programs in a fashion that teaches those already
+>familiar with programming, a new language.
+>
+I checked out Dive Into Python, which I haven't read much and the only 
+comparison you can make between my book and Dive is that they're both 
+freely available.  We're catering to two totally different crowds.
+
+Basically, I'm writing for bloggers.  Or thereabouts.  Folks who like to 
+read, are interested in computers, aren't programmers, but can be 
+challenged and aren't stupid.  I'm writing for smart people who don't 
+want to read manuals.
+
+The book I feel is closest to my book is "The Curious Incident of The 
+Dog in the Night-time," which interleaves brief math puzzles and 
+astronomical diagrams with the story.  Now, certainly no one is reading 
+"The Curious..." to learn math or astronomy.  And, for that matter, I'm 
+okay if no one actually learns Ruby from the (Poignant) Guide.  I'm more 
+interested in presenting an initial stab at giving literary value to a 
+programming text.  I'm also interested in getting people to at least 
+feel what I feel when I program.
+
+And some who read "The Curious..." may actually become more interested 
+in math and may pursue the studies presented by the main character 
+simply because they liked the book.
+
+If my books fails to teach, oh well, it was an experiment.  Worse has 
+happened.  I have had fun writing it and I plan to continue to write 
+stuff which hopefully will mature into better experiments.
+
+>In any case, I think more time spent with the pieces involved
+>and doing more detailed analysis of the programs listed would help those trying
+>to learn Ruby to piece together the pieces, remember that not all function calls
+>have parentheses, and so forth.
+>
+Yes, right.  I spend a majority of my day tormented as I contemplate 
+solutions to these problems and better explanations, better cohesion.  
+Which has paid off, but there is still much promise.
+
+Anyway, thankyou.  If you would like a complimentary drawing of a duck, 
+please e-mail me your address privately.
+
+_why
+From citizen428 at gmail.com  Fri May 27 10:00:45 2005
+From: citizen428 at gmail.com (citizen428)
+Date: Fri May 27 09:53:53 2005
+Subject: Book feedback!
+In-Reply-To: <429623EC.8020106@poignantguide.net>
+References: <4294A7E3.9030600@rpi.edu> <429623EC.8020106@poignantguide.net>
+Message-ID: <552d348305052707007e2ace01@mail.gmail.com>
+
+This gets a little off-topic, I hope you're ok with that.
+
+On 5/26/05, why the lucky stiff <why@poignantguide.net> wrote:
+
+> The book I feel is closest to my book is "The Curious Incident of The
+> Dog in the Night-time," which interleaves brief math puzzles and
+> astronomical diagrams with the story.  
+
+Wow, someone else has read this book. :) I've recommended it to quite
+a few people since I've originally read it, but nobody ever cared to
+read it. Well, that's their problem, Smotchkkisses...
+
+> And, for that matter, I'm okay if no one actually learns Ruby from the (Poignant) Guide.  
+
+I knew Ruby long before I found the (Poignant) Guide, but I wish I had
+found it earlier! It's not that it taught me an awful lot I couldn't
+find anywhere else or didn't know before (haven't read the
+metaprogramming stuff as of yet though), but it is highly
+entertaining, creative and an overall pleasure for the reader. In
+short, it's like Ruby itself, with the added bonus of chunky bacon,
+wizards and cartoon foxes. What more can one ask for?
+
+> And some who read "The Curious..." may actually become more interested
+> in math and may pursue the studies presented by the main character
+> simply because they liked the book.
+
+I think it's the same with the (Poignant) Guide. You can either read
+it as an entertaining story in itself, no matter if you already have
+experience in programming Ruby or not. But I guess a good deal of the
+latter crowd may further pursue their studies of the language, if only
+to find out what's really up with this secretive Dwemthy guy.
+
+> I have had fun writing it and I plan to continue to write
+
+Please do so! And don't forget about writing code while doing it,
+'cause your Redcloth for Ruby is really neat too! :)
+
+Cheers,
+Michael
+
+From murphy at cycnus.de  Fri May 27 16:54:05 2005
+From: murphy at cycnus.de (murphy)
+Date: Fri May 27 16:46:46 2005
+Subject: Book feedback!
+In-Reply-To: <552d348305052707007e2ace01@mail.gmail.com>
+References: <4294A7E3.9030600@rpi.edu> <429623EC.8020106@poignantguide.net>
+	<552d348305052707007e2ace01@mail.gmail.com>
+Message-ID: <429788ED.2050106@cYcnus.de>
+
+> I knew Ruby long before I found the (Poignant) Guide, but I wish I had
+> found it earlier! It's not that it taught me an awful lot I couldn't
+> find anywhere else or didn't know before (haven't read the
+> metaprogramming stuff as of yet though), but it is highly
+> entertaining, creative and an overall pleasure for the reader. In
+> short, it's like Ruby itself, with the added bonus of chunky bacon,
+> wizards and cartoon foxes. What more can one ask for?
+Mmh...I disagree. I don't think the Guide is like Ruby, but my reasons are 
+difficult to explain (also because my English is so week.) But I already wanted 
+to write something about what I feel about the Guide, and this is a good keyword.
+
+The Guide _is_ like Ruby in terms of fun, yes.
+
+But the main thing about Ruby is (I think) that it's a pragmatic (yet beautiful) 
+language. Ruby is not extremely after some magic priciple, like Smalltalk, LISP 
+or Haskell. That's what I love Ruby for: you have Integer objects, but you also 
+have heredocs and fancy strings. What other language provides that?
+
+The (poignant) Guide, in contrast, is _not_ pragmatic. The pragmatic Ruby book 
+is the Pickaxe, which is great. But it's technical. It transports information, 
+not feelings. That's what WpGtR fixes, and maybe almost reverses: It's 
+emotional, inconsequent, poetic. Objective information is secondary. But it does 
+something no manual or reference can do: It awakes the reader. It awoke me from 
+the dream I had of Ruby: I know now that there are more people that feel so 
+strong about some software/language/syntax many just describe as "hype". I know 
+now that Ruby isn't just happily wasted time. And I thought about many things I 
+never thought about before.
+
+The question is always: What is the meaning of (my) live? I don't know. But I 
+feel meaningful when I produce or consume art, music, or anything creative.
+Surely the Pickaxe and Ruby give me something of real-world-value.
+But the programs I write myself, the experiments I do in Ruby, the search for 
+the BEST solution give me something individual. Ruby is the tool, I am the 
+artist. And the Guide is written from an artists' view. It is not (useful) like 
+Ruby, but it has the aura of transcendence that only art can have. It's so 
+unprofessional, so out-of-mainstream, so avant-garde, so crazy, so brilliant, so 
+surprising, so funny. That's why I'm translating it, instead of some mearly 
+informative Ruby introduction.
+
+I'm sorry if my theses are confusing. In fact, matz is an artist too, as well as 
+why is surely not an unprofessional person. But I think there's a difference 
+between the _tool_ Ruby and the _philosophy_ and art around it.
+
+[murphy]
+From citizen428 at gmail.com  Fri May 27 17:16:03 2005
+From: citizen428 at gmail.com (citizen428)
+Date: Fri May 27 17:09:10 2005
+Subject: Book feedback!
+In-Reply-To: <429788ED.2050106@cYcnus.de>
+References: <4294A7E3.9030600@rpi.edu> <429623EC.8020106@poignantguide.net>
+	<552d348305052707007e2ace01@mail.gmail.com>
+	<429788ED.2050106@cYcnus.de>
+Message-ID: <552d3483050527141675666bc9@mail.gmail.com>
+
+On 5/27/05, murphy <murphy@cycnus.de> wrote:
+
+> The Guide _is_ like Ruby in terms of fun, yes.
+
+That's the point I tried to get across. :)
+ 
+> I'm sorry if my theses are confusing. In fact, matz is an artist too, as well as
+> why is surely not an unprofessional person. But I think there's a difference
+> between the _tool_ Ruby and the _philosophy_ and art around it.
+
+I was talking about the "flair" of Ruby too when I compared the
+poignant guide to the language itself. That's why I wrote about
+"highly entertaining", "creative" and "overall pleasure". Those are
+not adjectives I'd usually attribute to a programming language, but I
+*do* attribute them to the way Ruby "feels" for me.
+
+I guess I'll leave it at that before why starts sending the foxes
+after us for getting too off-topic (they couldn't find me anyway
+because of this anti-fox-cloaking-device (tm) I stole from Dwemthy,
+but that's a wholly different subject) .
+
+Cheers,
+Michael  
+
+-- 
+http://citizen428.net
+
+From glasse at rpi.edu  Fri May 27 23:45:31 2005
+From: glasse at rpi.edu (Ethan Glasser-Camp)
+Date: Fri May 27 23:38:54 2005
+Subject: Book feedback!
+In-Reply-To: <429623EC.8020106@poignantguide.net>
+References: <4294A7E3.9030600@rpi.edu> <429623EC.8020106@poignantguide.net>
+Message-ID: <4297E95B.3070101@rpi.edu>
+
+I've rearranged the original email; be warned.
+
+why the lucky stiff wrote:
+> Ethan Glasser-Camp wrote:
+> 
+>> I may be out of line in offering these my thoughts, which are mostly
+>> critical.
+>>
+> You know, it's great to have this stuff!  I like to hear about what is
+> frustrating readers, since it's still possible to improve the state of
+> things (especially the code).  It also gives me a picture of what your
+> expectations of the book were and in what ways the book failed those
+> expectations.
+
+I'm glad. I didn't know what to expect for sure, because there's no mention on
+the front page of who the target audience was. Thus my confusion.
+
+> 
+>> When reading this book, the comparison that leapt to mind was between
+>> this and
+>> Dive Into Python. Clearly this book does not set out to be another
+>> Dive Into
+>> Python; instead it forsakes dry program analysis in favor of epic and
+>> meandering
+>> storytelling. On the other hand, Dive Into Python does a very good job at
+>> analyzing entire digestable programs in a fashion that teaches those
+>> already
+>> familiar with programming, a new language.
+>>
+> I checked out Dive Into Python, which I haven't read much and the only
+> comparison you can make between my book and Dive is that they're both
+> freely available.  We're catering to two totally different crowds.
+> 
+> Basically, I'm writing for bloggers.  Or thereabouts.  Folks who like to
+> read, are interested in computers, aren't programmers, but can be
+> challenged and aren't stupid.  I'm writing for smart people who don't
+> want to read manuals.
+
+You're right. The comparison is totally off the mark. If you wanted
+expectations, this basically sums them all up. I was expecting a programming
+manual. I think the title ".. Guide to Ruby" suggests this to people who know
+what Ruby is. I think you take a few liberties in introducing programming to
+nonprogrammers -- for instance, you introduce Array#collect in Chapter 5,
+without explaining what makes Array#collect different from Array::collect or
+Array.collect. I don't think I'm underestimating your audience's intelligence
+when I say things like this can throw off a newbie to programming, but it's been
+a long time since I was a newbie to programming so you should probably ask one.
+Anyhow, I guess you might consider this one of those places that your work
+encourages further exploration.
+
+Also, as another factual-type suggestion, you might want to link the words
+"Expansion Pak #1" in Chaapter 4 to the actualy expansion pak.
+
+> The book I feel is closest to my book is "The Curious Incident of The
+> Dog in the Night-time," which interleaves brief math puzzles and
+> astronomical diagrams with the story.  Now, certainly no one is reading
+> "The Curious..." to learn math or astronomy.  And, for that matter, I'm
+> okay if no one actually learns Ruby from the (Poignant) Guide.  I'm more
+> interested in presenting an initial stab at giving literary value to a
+> programming text.  I'm also interested in getting people to at least
+> feel what I feel when I program.
+
+If "literary value" is your goal, I think you have succeeded handily. This is a
+great book and I enjoyed reading it. Reading this makes me worry that
+understanding the story depends on understanding the programming, but I
+basically understood the code so I can't tell for sure.
+
+> The metaprogramming stuff I feel is rather thorough.  I think the
+> introduction to metaprogramming is more revealing than anything else
+> I've seen around.  The code is simple, useful, practical (a usable RPG
+> game is hardly contrived) and fully explained.  I think the problem is
+> still in chapter 5.  Chapter 5 needs to ramp up better into the chapter
+> 6 code.  But I might be horrible wrong?  Can anyone else speak to their
+> reading of it?
+> 
+> Keep in mind that I don't want to be long-winded on metaprogramming and
+> I'm counting on the reader to use the code, play with it, re-read,
+> understand, stick with it.
+
+I just didn't understand what metaprogramming was, or why this constituted
+metaprogramming. I understood this program as an expression of duck typing,
+introspection (with the method_missing function), and inheritance. Looking back,
+I think I probably just wasn't reading very carefully. Then I got confused with
+metaclass programming, which is obviously something totally different.
+Nonetheless, reading the code didn't impress me too much -- I've written loops
+that make functions and things like that before. It's one of the things that
+makes your skin crawl when you're writing in a compiled language. The name
+"metaprogramming" had me expecting something more obtuse.
+
+> Anyway, thankyou.  If you would like a complimentary drawing of a duck,
+> please e-mail me your address privately.
+
+If this is a serious offer, I'd be very interested.
+
+Ethan
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 256 bytes
+Desc: OpenPGP digital signature
+Url : http://rubyforge.org/pipermail/poignant-stiffs/attachments/20050527/d249dbf4/signature.bin
