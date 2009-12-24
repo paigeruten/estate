@@ -12,15 +12,18 @@ end
 # helper functions for HTML output
 #
 
-def a(text, url)
-  "<a href=\"#{url}\">#{text}</a>"
-end
-
-def span(klass, text)
-  "<span class=\"#{klass}\">#{text}</span>"
-end
-
 module HTML
+  # <a href="...">
+  def a(text, url)
+    "<a href=\"#{url}\">#{text}</a>"
+  end
+
+  # <span class="...">
+  def span(klass, text)
+    "<span class=\"#{klass}\">#{text}</span>"
+  end
+
+  # <p>, <h1>, <h3>, <li>
   [:p, :h1, :h3, :li].each do |tag|
     define_method(tag) { |text| "<#{tag}>#{text}</#{tag}>\n" }
   end
@@ -29,7 +32,7 @@ end
 include HTML
 
 #
-# interpolate_header
+# function that interpolates variables in header.html
 #
 
 def interpolate_header(text, title, dir)
