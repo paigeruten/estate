@@ -185,7 +185,8 @@ LIST = [
     ['RubyKaigi Wallpapers', [
       ['http://jp.rubyist.net/RubyKaigi2007/Goodies.html', '2007'],
       ['http://jp.rubyist.net/RubyKaigi2008/?Goodies', '2008']
-    ]]
+    ]],
+    ['http://oreilly.com/catalog/9780596516178', 'The Ruby Programming Language illustrations']
   ]],
   ['Music', [
     ['The Thirsty Cups', [
@@ -224,10 +225,13 @@ LIST = [
       ['http://everyoneishereinthefuture.com/', 'Everyone Is Here In The Future']
     ]]
   ]],
-  ['Links', [
+  ['Miscellaneous', [
     ['Archived websites and blogs', [
-      ['http://web.archive.org/web/*/http://whytheluckystiff.net', 'whytheluckystiff.net'],
-      ['http://web.archive.org/web/*/whytheluckystiff.net/quiet/', '(.~) what a quiet stiff (~.)'],
+      ['whytheluckystiff.net', [
+        ['http://web.archive.org/web/*/http://whytheluckystiff.net', 'whytheluckystiff.net'],
+        ['http://web.archive.org/web/*/whytheluckystiff.net/quiet/', '(.~) what a quiet stiff (~.)'],
+        ['http://web.archive.org/web/*/http://code.whytheluckystiff.net', 'code.whytheluckystiff.net']
+      ]],
       ['http://web.archive.org/web/*/http://hackety.org', 'hackety.org'],
       ['http://web.archive.org/web/*/http://redhanded.hobix.com', 'redhanded.hobix.com'],
       ['http://web.archive.org/web/*/http://hobix.com', 'hobix.com'],
@@ -246,7 +250,8 @@ LIST = [
     ]],
     ['http://rubyforge.org/pipermail/poignant-stiffs/', 'The poignant-stiffs Archives'],
     ['http://_why.usesthis.com/', '_why interview by The Setup'],
-    ['http://www.reddit.com/r/programming/comments/9c5on/where_is_why/c0c83zg', 'An email']
+    ['http://www.reddit.com/r/programming/comments/9c5on/where_is_why/c0c83zg', 'An email'],
+    ['estate://code/WELCOME.txt', '_why\'s welcome']
   ]]
 ]
 
@@ -257,7 +262,8 @@ NOTES = {
   'Blogs' => '<strong>My Rails Blob</strong> is a satirical Ruby on Rails blog by _why. <strong>On the Lake by the Snacks</strong> is part of the <a href="http://www.turbulence.org/Works/ten-sided/about.html">Ten-sided</a> project, for which _why is listed as a writer.',
   'moonboots' => 'It can be confirmed that <strong>moonboots</strong> is some sort of band _why was in. By putting this on the list I\'m starting to creep past the persona of _why to the real person lying behind it, and that\'s exactly what I don\'t want to do on this page. I just decided to include this for those people who desire more of _why\'s unique music.',
   '(.~) what a quiet stiff (~.)' => '<strong>(.~) what a quiet stiff (~.)</strong> was a photoblog by _why. He talks about it in one of his <a href="http://www.advogato.org/person/whytheluckystiff/diary/48.html">Advogato entries</a>.',
-  '_why interview by The Setup' => 'Linux users will not be able to reach <strong>_why.usesthis.com</strong> because of the underscore in the domain.  however, since _why\'s side of the interview is all images, you can view them here: <a href="http://usesthis.com/images/interviews/_why.1.jpg">one</a> <a href="http://usesthis.com/images/interviews/_why.2.jpg">two</a> <a href="http://usesthis.com/images/interviews/_why.3.jpg">three</a> <a href="http://usesthis.com/images/interviews/_why.4.jpg">four</a>.'
+  '_why interview by The Setup' => 'Linux users will not be able to reach <strong>_why.usesthis.com</strong> because of the underscore in the domain.  however, since _why\'s side of the interview is all images, you can view them here: <a href="http://usesthis.com/images/interviews/_why.1.jpg">one</a> <a href="http://usesthis.com/images/interviews/_why.2.jpg">two</a> <a href="http://usesthis.com/images/interviews/_why.3.jpg">three</a> <a href="http://usesthis.com/images/interviews/_why.4.jpg">four</a>.',
+  'The Ruby Programming Language illustrations' => '_why drew an illustration for each chapter of <strong>The Ruby Programming Language</strong>.  They appear at the beginning of each chapter and are all available for viewing through the Google Preview of the book on the website linked to.'
 }
 
 INDEX_FOOTER = '<hr /><p style="font-size: 10pt;"><img src="elf.png" alt="" title="A crucial remark from the Elf.  The ham undoubtedly concurs." /> This page is totally mutable! Just send in to <a href="mailto:jeremy.ruten@gmail.com">jeremy.ruten@gmail.com</a> with your rousing list of ideas.</p>'
