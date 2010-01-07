@@ -251,7 +251,8 @@ LIST = [
     ['http://rubyforge.org/pipermail/poignant-stiffs/', 'The poignant-stiffs Archives'],
     ['http://_why.usesthis.com/', '_why interview by The Setup'],
     ['http://www.reddit.com/r/programming/comments/9c5on/where_is_why/c0c83zg', 'An email'],
-    ['estate://code/WELCOME.txt', '_why\'s welcome']
+    ['estate://code/WELCOME.txt', '_why\'s welcome'],
+    ['http://aberant.tumblr.com/post/167375099/a-letter-from-why', 'a letter from _why']
   ]]
 ]
 
