@@ -198,6 +198,7 @@ LIST = [
       ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere']
     ]],
     ['moonboots', [
+      ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
       ['http://ftp.df.lth.se/pub/scene.org/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_(starvingbuthappy,_2004)/', 'elfin princess']
     ]]
   ]],
@@ -261,7 +262,6 @@ NOTES = {
   'The Preeventualist' => '_why created <strong>The Preeventualist</strong> to go along with his Poignant Guide. It\'s a philosophy he made up for the book. It comes up in <a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-6.html">chapter 6</a>, right at the beginning. Read <a href="http://shack-a-nerd.livejournal.com/70594.html">shack_a_nerd\'s story</a> about this, you\'ll love it!!',
   'Soccer Riot' => '<strong>Soccer Riot Magazine</strong> appears to be _why\'s first website. I hope he doesn\'t mind me drawing attention to it. I\'m not sure what he thinks of these old writings and I am worried that he doesn\'t want them elevated like this. But I will elevate them nonetheless, as I find them just as valuable as any of his other works. Still, I purposely didn\'t provide any links to the various well-hidden pages on the site. There\'s a lot of flash and the site is choppy and unorganized. So you\'ll have to blaze through it yourself, as _why intended.',
   'Blogs' => '<strong>My Rails Blob</strong> is a satirical Ruby on Rails blog by _why. <strong>On the Lake by the Snacks</strong> is part of the <a href="http://www.turbulence.org/Works/ten-sided/about.html">Ten-sided</a> project, for which _why is listed as a writer.',
-  'moonboots' => 'It can be confirmed that <strong>moonboots</strong> is some sort of band _why was in. By putting this on the list I\'m starting to creep past the persona of _why to the real person lying behind it, and that\'s exactly what I don\'t want to do on this page. I just decided to include this for those people who desire more of _why\'s unique music.',
   '(.~) what a quiet stiff (~.)' => '<strong>(.~) what a quiet stiff (~.)</strong> was a photoblog by _why. He talks about it in one of his <a href="http://www.advogato.org/person/whytheluckystiff/diary/48.html">Advogato entries</a>.',
   '_why interview by The Setup' => 'Linux users will not be able to reach <strong>_why.usesthis.com</strong> because of the underscore in the domain.  however, since _why\'s side of the interview is all images, you can view them here: <a href="http://usesthis.com/images/interviews/_why.1.jpg">one</a> <a href="http://usesthis.com/images/interviews/_why.2.jpg">two</a> <a href="http://usesthis.com/images/interviews/_why.3.jpg">three</a> <a href="http://usesthis.com/images/interviews/_why.4.jpg">four</a>.',
   'The Ruby Programming Language illustrations' => '_why drew an illustration for each chapter of <strong>The Ruby Programming Language</strong>.  They appear at the beginning of each chapter and are all available for viewing through the Google Preview of the book on the website linked to.'
