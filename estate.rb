@@ -222,7 +222,7 @@ Dir[dir_out + "/*/*.src.html"].each do |filename|
 
   File.open(outfile, "w") do |f|
     f << interpolate_header(header, TITLE + " - " + file_title, "../")
-    f << "<p>back to <a href=\"..\">#{TITLE}</a></p><hr />"
+    f << "<p>back to <a href=\"../index.html\">#{TITLE}</a></p><hr />"
     f << File.read(filename)
     f << footer
   end
