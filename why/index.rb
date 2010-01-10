@@ -205,7 +205,7 @@ LIST = [
   ['Videos', [
     ['The Least Surprised', [
       ['http://www.youtube.com/watch?v=ng95M-cRb44', 'Time.now.is_a? MagicTime'],
-      ['http://www.youtube.com/watch?v=mXZ_htL1rOl', 'The Red Scared'],
+      ['http://www.youtube.com/watch?v=mXZ_htL1rOI', 'The Red Scared'],
       ['http://www.youtube.com/watch?v=Du_RTMmofWM', 'UnboundMyth\'d']
     ]],
     ['OSCON 2005', [
