@@ -3,9 +3,24 @@
 
 require 'fileutils'
 
-unless ARGV.length == 2
-  puts "Usage: ruby estate.rb <indir> <outdir>"
+unless (2..3) === ARGV.length
+  puts "Usage: ruby estate.rb [--index-only] <indir> <outdir>"
   exit
+end
+
+if ARGV.length == 3
+  if ARGV[0] == "--index-only"
+    index_only = true
+    dir_in = ARGV[1]
+    dir_out = ARGV[2]
+  else
+    puts "`#{ ARGV[0] }' isn't a valid option!"
+    exit
+  end
+else
+  index_only = false
+  dir_in = ARGV[0]
+  dir_out = ARGV[1]
 end
 
 #
@@ -120,9 +135,6 @@ end
 # get input and output dirs
 #
 
-dir_in = ARGV[0]
-dir_out = ARGV[1]
-
 if Dir[dir_in].empty?
   puts "Input directory '#{dir_in}' doesn\'t exist."
   exit
@@ -142,26 +154,28 @@ end
 # just copy all the files to the output directory
 #
 
-FileUtils::rm_r(dir_out, :force => true)
-FileUtils::cp_r(dir_in, dir_out)
+unless index_only
+  FileUtils::rm_r(dir_out, :force => true)
+  FileUtils::cp_r(dir_in, dir_out)
+end
 
 #
 # load some input files
 #
 
-require(dir_out + "/config.rb")
-require(dir_out + "/index.rb")
+require(dir_in + "/config.rb")
+require(dir_in + "/index.rb")
 
-if Dir[dir_out + "/header.html"].empty?
+if Dir[dir_in + "/header.html"].empty?
   header = ''
 else
-  header = File.read(dir_out + "/header.html")
+  header = File.read(dir_in + "/header.html")
 end
 
-if Dir[dir_out + "/footer.html"].empty?
+if Dir[dir_in + "/footer.html"].empty?
   footer = ''
 else
-  footer = File.read(dir_out + "/footer.html")
+  footer = File.read(dir_in + "/footer.html")
 end
 
 #
@@ -216,15 +230,17 @@ end
 # convert .src.html files to .html files with headers and footers
 #
 
-Dir[dir_out + "/*/*.src.html"].each do |filename|
-  outfile = filename.gsub(/\.src\.html$/, ".html")
-  file_title = File.read(filename).match(/<h1>(.+?)<\/h1>/)[1]
+unless index_only
+  Dir[dir_out + "/*/*.src.html"].each do |filename|
+    outfile = filename.gsub(/\.src\.html$/, ".html")
+    file_title = File.read(filename).match(/<h1>(.+?)<\/h1>/)[1]
 
-  File.open(outfile, "w") do |f|
-    f << interpolate_header(header, TITLE + " - " + file_title, "../")
-    f << "<p>back to <a href=\"../index.html\">#{TITLE}</a></p><hr />"
-    f << File.read(filename)
-    f << footer
+    File.open(outfile, "w") do |f|
+      f << interpolate_header(header, TITLE + " - " + file_title, "../")
+      f << "<p>back to <a href=\"../index.html\">#{TITLE}</a></p><hr />"
+      f << File.read(filename)
+      f << footer
+    end
   end
 end
 
@@ -232,8 +248,10 @@ end
 # remove config files from output directory
 #
 
-to_delete = ["config.rb", "index.rb", "header.html", "footer.html"]
-to_delete.collect! { |filename| dir_out + "/" + filename }
-FileUtils::rm(to_delete, :force => true)
-FileUtils::rm(Dir[dir_out + "/*/*.src.html"])
+unless index_only
+  to_delete = ["config.rb", "index.rb", "header.html", "footer.html"]
+  to_delete.collect! { |filename| dir_out + "/" + filename }
+  FileUtils::rm(to_delete, :force => true)
+  FileUtils::rm(Dir[dir_out + "/*/*.src.html"])
+end
 
