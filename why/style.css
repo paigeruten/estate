@@ -9,7 +9,7 @@ body {
 #container {
   width: 800px;
   margin: 0 auto;
-  padding: 1px 1em;;
+  padding: 1px 1em;
   background-color: #fff;
 }
 
@@ -66,5 +66,15 @@ pre.soccer {
 
 .tweet a:hover {
   text-decoration: none;
+}
+
+#jump {
+  font-size: 17px;
+  padding: 0.5em;
+  background-color: #eee;
+}
+
+#jump a {
+  color: #F39;
 }
 

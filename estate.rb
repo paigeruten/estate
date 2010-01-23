@@ -28,6 +28,8 @@ end
 #
 
 module HTML
+  NBSP = "&nbsp;"
+
   # <a href="...">
   def a(text, url)
     "<a href=\"#{url}\">#{text}</a>"
@@ -40,7 +42,13 @@ module HTML
 
   # <p>, <h1>, <h3>, <li>
   [:p, :h1, :h3, :li].each do |tag|
+    # lone & neat
     define_method(tag) { |text| "<#{tag}>#{text}</#{tag}>\n" }
+
+    # with id attribute
+    define_method("#{tag.to_s}_id") do |id, text|
+      "<#{tag} id=\"#{id}\">#{text}</#{tag}>\n"
+    end
   end
 end
 
@@ -191,12 +199,19 @@ File.open(dir_out + "/index.html", "w") do |f|
   f << h1(TITLE)
   f << p(DESCRIPTION)
 
+  # jump to
+  section_links = LIST.collect do |section|
+    name = section.first
+    a(name, "#" + name.tr(" ", "_"))
+  end
+  f << p_id("jump", "Jump to: " + section_links.join(NBSP * 3)) unless section_links.empty?
+
   # the list
   estate = Estate.new
   LIST.each do |section|
     name, list = *section
 
-    f << h3(name)
+    f << h3_id(name.tr(" ", "_"), name)
 
     desc = list.assoc('desc')
     if desc
