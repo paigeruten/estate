@@ -251,7 +251,7 @@ LIST = [
       ['http://aberant.tumblr.com/post/167375099/a-letter-from-why', 'a letter from _why']
     ]],
     ['http://rubyforge.org/pipermail/poignant-stiffs/', 'The poignant-stiffs Archives'],
-    ['http://_why.usesthis.com/', '_why interview by The Setup'],
+    ['http://usesthis.com/interviews/_why', '_why interview by The Setup'],
     ['estate://code/WELCOME.txt', '_why\'s welcome']
   ]]
 ]
@@ -262,7 +262,6 @@ NOTES = {
   'Soccer Riot' => '<strong>Soccer Riot Magazine</strong> appears to be _why\'s first website. I hope he doesn\'t mind me drawing attention to it. I\'m not sure what he thinks of these old writings and I am worried that he doesn\'t want them elevated like this. But I will elevate them nonetheless, as I find them just as valuable as any of his other works. Still, I purposely didn\'t provide any links to the various well-hidden pages on the site. There\'s a lot of flash and the site is choppy and unorganized. So you\'ll have to blaze through it yourself, as _why intended. (If you want to make sure you don\'t miss a thing, you can always <a href="http://viewsourcecode.org/browse/why/SoccerRiot">browse the directory</a> yourself.)',
   'Blogs' => '<strong>My Rails Blob</strong> is a satirical Ruby on Rails blog by _why. <strong>On the Lake by the Snacks</strong> is part of the <a href="http://www.turbulence.org/Works/ten-sided/about.html">Ten-sided</a> project, for which _why is listed as a writer.',
   '(.~) what a quiet stiff (~.)' => '<strong>(.~) what a quiet stiff (~.)</strong> was a photoblog by _why. He talks about it in one of his <a href="http://www.advogato.org/person/whytheluckystiff/diary/48.html">Advogato entries</a>.',
-  '_why interview by The Setup' => 'Linux users will not be able to reach <strong>_why.usesthis.com</strong> because of the underscore in the domain.  however, since _why\'s side of the interview is all images, you can view them here: <a href="http://usesthis.com/images/interviews/_why.1.jpg">one</a> <a href="http://usesthis.com/images/interviews/_why.2.jpg">two</a> <a href="http://usesthis.com/images/interviews/_why.3.jpg">three</a> <a href="http://usesthis.com/images/interviews/_why.4.jpg">four</a>.',
   'The Ruby Programming Language illustrations' => '_why drew an illustration for each chapter of <strong>The Ruby Programming Language</strong>.  They appear at the beginning of each chapter and are all available for viewing through the Google Preview of the book on the website linked to.'
 }
 
