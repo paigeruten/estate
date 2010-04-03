@@ -197,7 +197,8 @@ LIST = [
     ]],
     ['The Child Who Was a Keyhole', [
       ['http://www.myspace.com/thechildwhowasakeyhole', 'Band MySpace'],
-      ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere']
+      ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere'],
+      ['estate://lyrics/inTheFaxedAtmosphere.html', 'In The Faxed Atmosphere lyrics']
     ]],
     ['moonboots', [
       ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
