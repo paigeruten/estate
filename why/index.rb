@@ -227,7 +227,8 @@ LIST = [
     ]],
     ['Art && Code Symposium', [
       ['http://www.vimeo.com/5047563', 'Hackety Hack'],
-      ['http://www.youtube.com/watch?v=l4U1vO-lMS0', 'Just the Kaxxt portion of the above video']
+      ['http://www.youtube.com/watch?v=l4U1vO-lMS0', 'Just the Kaxxt portion of the above video'],
+      ['http://mattt.me/2010/05/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture']
     ]],
     ['RailsConf 2006', [
       ['http://video.google.com/videoplay?docid=7470881644241559852', 'Why the Lucky Stiff presents at RailsConf 2006'],
