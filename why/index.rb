@@ -170,23 +170,7 @@ LIST = [
 
         ['estate://lost_children/lostChildrenLostChildrenLostChildrenSeeSuchFeverishCastles.html', 'one']
       ]],
-      ['The Least Surprised', [
-        ['horizontal'],
-
-        ['estate://the_least_surprised/the-least-suprised-1.png', 'one'],
-        ['estate://the_least_surprised/the-least-suprised-3.png', 'three'],
-        ['estate://the_least_surprised/the-least-suprised-4.png', 'four'],
-        ['estate://the_least_surprised/the-least-surprised-5.png', 'five'],
-        ['estate://the_least_surprised/the-least-surprised-6.png', 'six'],
-        ['estate://the_least_surprised/the-least-surprised-7.png', 'seven'],
-        ['estate://the_least_surprised/the-least-surprised-8.png', 'eight'],
-        ['estate://the_least_surprised/the-least-suprised-9.png', 'nine'],
-        ['estate://the_least_surprised/the-least-surprised-10.png', 'ten'],
-        ['estate://the_least_surprised/the-least-surprised-11.png', 'eleven'],
-        ['estate://the_least_surprised/the-least-suprised-12.png', 'twelve'],
-        ['estate://the_least_surprised/the-least-suprised-13.png', 'thirteen'],
-        ['estate://the_least_surprised/the-least-suprised-14.png', 'fourteen']
-      ]]
+      ['http://the-least-surprised.judofyr.net/', 'The Least Surprised']
     ]],
     ['RubyKaigi Wallpapers', [
       ['http://jp.rubyist.net/RubyKaigi2007/Goodies.html', '2007'],
