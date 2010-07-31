@@ -184,15 +184,6 @@ LIST = [
       ['http://mislav.uniqpath.com/poignant-guide/soundtrack/', 'The Poignant Guide soundtrack'],
       ['http://www.archive.org/details/whytheluckystiff2006-06-23.railsconf_chicago', 'RailsConf Chicago 23 June 2006'],
       ['http://podcast.rubyonrails.org/programs/1/episodes/sxswi_why_the_lucky_stiff', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival']
-    ]],
-    ['The Child Who Was a Keyhole', [
-      ['http://www.myspace.com/thechildwhowasakeyhole', 'Band MySpace'],
-      ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere'],
-      ['estate://lyrics/inTheFaxedAtmosphere.html', 'In The Faxed Atmosphere lyrics']
-    ]],
-    ['moonboots', [
-      ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
-      ['http://ftp.df.lth.se/pub/scene.org/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_(starvingbuthappy,_2004)/', 'elfin princess']
     ]]
   ]],
   ['Videos', [
@@ -250,13 +241,7 @@ LIST = [
 ]
 
 NOTES = {
-  'Incidents' => '_why\'s <strong>incidents</strong> are inspired by <a href="http://www.reocities.com/Athens/8926/Kharms/Incidences.html">Daniil Kharms\' Incidences</a>. Kharms is a large influence on _why: <a href="http://rubyforge.org/pipermail/poignant-stiffs/2005-March.txt">"Gogol and Kafka and Kharms (and anything Oberiu) hold the lion\'s share in my mind\'s governing committee."</a>',
-  'The Preeventualist' => '_why created <strong>The Preeventualist</strong> to go along with his Poignant Guide. It\'s a philosophy he made up for the book. It comes up in <a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-6.html">chapter 6</a>, right at the beginning. Read <a href="http://shack-a-nerd.livejournal.com/70594.html">shack_a_nerd\'s story</a> about this, you\'ll love it!!',
-  'Soccer Riot' => '<strong>Soccer Riot Magazine</strong> appears to be _why\'s first website. I hope he doesn\'t mind me drawing attention to it. I\'m not sure what he thinks of these old writings and I am worried that he doesn\'t want them elevated like this. But I will elevate them nonetheless, as I find them just as valuable as any of his other works. Still, I purposely didn\'t provide any links to the various well-hidden pages on the site. There\'s a lot of flash and the site is choppy and unorganized. So you\'ll have to blaze through it yourself, as _why intended. (If you want to make sure you don\'t miss a thing, you can always <a href="http://viewsourcecode.org/browse/why/SoccerRiot">browse the directory</a> yourself.)',
-  'Blogs' => '<strong>My Rails Blob</strong> is a satirical Ruby on Rails blog by _why. <strong>On the Lake by the Snacks</strong> is part of the <a href="http://www.turbulence.org/Works/ten-sided/about.html">Ten-sided</a> project, for which _why is listed as a writer.',
-  '(.~) what a quiet stiff (~.)' => '<strong>(.~) what a quiet stiff (~.)</strong> was a photoblog by _why. He talks about it in one of his <a href="http://www.advogato.org/person/whytheluckystiff/diary/48.html">Advogato entries</a>.',
-  'The Ruby Programming Language illustrations' => '_why drew an illustration for each chapter of <strong>The Ruby Programming Language</strong>.  They appear at the beginning of each chapter and are all available for viewing through the Google Preview of the book on the website linked to.'
 }
 
-INDEX_FOOTER = '<hr /><p style="font-size: 10pt;"><img src="elf.png" alt="" title="A crucial remark from the Elf.  The ham undoubtedly concurs." /> This page is totally mutable! Just send in to <a href="mailto:jeremy.ruten@gmail.com">jeremy.ruten@gmail.com</a> with your rousing list of ideas.</p><p style="font-size: 10pt;"><img src="toast.png" alt="" title="But don\'t take it from me, I\'m just an Original." /> And stroll anytime to the Estate\'s <a href="http://github.com/yjerem/estate/commits/master">commit cottage</a> to keep up on any updates that may take place!</p>'
+INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
 
