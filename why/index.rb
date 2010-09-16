@@ -125,6 +125,7 @@ LIST = [
       ]]
     ]],
     ['Blogs', [
+      ['http://viewsourcecode.org/why/redhanded/', 'RedHanded (mirror)'],
       ['http://railsblob.blogspot.com/', 'My Rails Blob'],
       ['http://onthelakebythesnacks.blogspot.com/', 'On the Lake by the Snacks']
     ]],
