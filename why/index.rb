@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 INDEX_HEADER = ''
 
 LIST = [

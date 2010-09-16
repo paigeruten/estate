@@ -1,6 +1,8 @@
 # estate.rb
 # the erector of _why's Estate
 
+$:.unshift '.'
+
 require 'fileutils'
 
 unless (2..3) === ARGV.length
