@@ -4,7 +4,7 @@ INDEX_HEADER = ''
 
 LIST = [
   ['Code', [
-    ['desc', 'I believe <a href="http://whymirror.github.com/">whymirror.github.com</a> has it all taken care of.  Still, let\'s replicate the list of projects here, for convenience and effect.'],
+    ['desc', 'Thankyou <a href="http://whymirror.github.com/">whymirror.github.com</a>.'],
     ['quiet'],
 
     ['http://github.com/mental/bloopsaphone', 'bloopsaphone'],
@@ -184,9 +184,20 @@ LIST = [
   ]],
   ['Music', [
     ['The Thirsty Cups', [
-      ['http://mislav.uniqpath.com/poignant-guide/soundtrack/', 'The Poignant Guide soundtrack'],
+      ['http://mislav.uniqpath.com/poignant-guide/soundtrack/', 'The Poignant Guide Soundtrack'],
       ['http://www.archive.org/details/whytheluckystiff2006-06-23.railsconf_chicago', 'RailsConf Chicago 23 June 2006'],
-      ['http://podcast.rubyonrails.org/programs/1/episodes/sxswi_why_the_lucky_stiff', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival']
+      ['http://podcast.rubyonrails.org/programs/1/episodes/sxswi_why_the_lucky_stiff', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival'],
+      ['estate://lyrics/theThirstyCups.html', 'Lyrics']
+    ]],
+    ['The Child Who Was a Keyhole', [
+      ['http://www.myspace.com/thechildwhowasakeyhole', 'Band MySpace'],
+      ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere'],
+      ['estate://lyrics/theChildWhoWasAKeyhole.html', 'Lyrics']
+    ]],
+    ['moonboots', [
+      ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
+      ['http://ftp.df.lth.se/pub/scene.org/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_(starvingbuthappy,_2004)/', 'elfin princess'],
+      ['estate://lyrics/moonboots.html', 'Lyrics']
     ]]
   ]],
   ['Videos', [
