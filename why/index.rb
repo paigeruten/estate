@@ -185,7 +185,7 @@ LIST = [
       ['http://jp.rubyist.net/RubyKaigi2008/?Goodies', '2008']
     ]],
     ['http://oreilly.com/catalog/9780596516178', 'The Ruby Programming Language illustrations'],
-    ['http://www.apress.com/book/downloadfile/3457', 'The foreword to Beginning Ruby']
+    ['http://www.rubyinside.com/why-the-lucky-stiffs-delightful-foreword-for-beginning-ruby-4550.html', 'The foreword to Beginning Ruby']
   ]],
   ['Music', [
     ['The Thirsty Cups', [
