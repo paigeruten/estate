@@ -111,7 +111,8 @@ LIST = [
     ]],
     ['Twitter', [
       ['http://favstar.fm/users/_why', '@_why\'s most favourited tweets'],
-      ['estate://twitter/lastTweets.html', '@_why\'s last ~300 tweets']
+      ['estate://twitter/lastTweets.html', '@_why\'s last ~300 tweets'],
+      ['estate://twitter/youWouldDoWellToEnjoyThisDay.html', 'You Would Do Well To Enjoy This Day']
     ]],
     ['The Preeventualist', [
       ['estate://preeventualist/', 'Mirror of the website, missing the FAQ page'],
