@@ -129,11 +129,7 @@ LIST = [
     ]],
     ['Blogs', [
       ['http://viewsourcecode.org/why/redhanded/', 'RedHanded (mirror)'],
-      ['Hackety', [
-        ['http://web.archive.org/web/*/http://hackety.org', 'Old archive of hackety.org'],
-        ['http://lubutu.com/mirror/a-costly-parade', 'A Costly Parade'],
-        ['http://lubutu.com/mirror/this-hack-was-not-properly-planned', 'This Hack Was Not Properly Planned']
-      ]],
+      ['http://viewsourcecode.org/why/hackety.org/', 'Hackety.org (mirror)'],
       ['http://railsblob.blogspot.com/', 'My Rails Blob'],
       ['http://onthelakebythesnacks.blogspot.com/', 'On the Lake by the Snacks']
     ]],
