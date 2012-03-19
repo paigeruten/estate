@@ -194,6 +194,7 @@ LIST = [
     ['The Child Who Was a Keyhole', [
       ['http://www.myspace.com/thechildwhowasakeyhole', 'Band MySpace'],
       ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere'],
+      ['http://lubutu.com/mirror/in-the-faxed-atmosphere', 'In The Faxed Atmosphere (Ogg Vorbis provided under Creative Commons Sampling Plus 1.0)'],
       ['estate://lyrics/theChildWhoWasAKeyhole.html', 'Lyrics']
     ]],
     ['moonboots', [
