@@ -35,7 +35,8 @@ LIST = [
     ['http://github.com/fogus/processor', 'processor'],
     ['http://github.com/fogus/rb_parse_args', 'rb_parse_args'],
     ['http://github.com/whymirror/yown', 'yown'],
-    ['http://rubyforge.org/projects/dns-zone', 'dns-zone']
+    ['http://rubyforge.org/projects/dns-zone', 'dns-zone'],
+    ['http://dotfiles.org/~_why', '_why\'s dotfile setup']
   ]],
   ['Writings', [
     ['Books', [
