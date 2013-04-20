@@ -43,10 +43,7 @@ LIST = [
       ['http://mislav.uniqpath.com/poignant-guide/', 'Why\'s (Poignant) Guide to Ruby [HTML]'],
       ['http://www.rubyinside.com/media/poignant-guide.pdf', 'Why\'s (Poignant) Guide to Ruby [PDF]'],
       ['http://cloud.github.com/downloads/shoes/shoes/nks.pdf', 'Nobody Knows Shoes [PDF]'],
-      ['CLOSURE', [
-        ['https://dl.dropboxusercontent.com/u/5764687/CLOSURE.pdf', 'CLOSURE [PDF]'],
-        ['http://github.com/steveklabnik/CLOSURE', 'steveklabnik\'s CLOSURE repo']
-      ]]
+      ['http://github.com/steveklabnik/CLOSURE', 'CLOSURE'],
     ]],
     ['Stories', [
       ['estate://stories/theBobbyWolves.html', 'The Bobby Wolves'],
@@ -263,7 +260,7 @@ LIST = [
 ]
 
 NOTES = {
-  'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="http://madx.me/why.txt.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE".'
+  'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="http://madx.me/why.txt.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.'
 }
 
 INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
