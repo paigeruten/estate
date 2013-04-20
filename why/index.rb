@@ -225,7 +225,7 @@ LIST = [
       ['http://mattt.me/2010/05/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture']
     ]],
     ['RailsConf 2006', [
-      ['http://video.google.com/videoplay?docid=7470881644241559852', 'Why the Lucky Stiff presents at RailsConf 2006'],
+      ['http://www.youtube.com/watch?v=f7HIbTijiYw', 'Why the Lucky Stiff presents at RailsConf 2006'],
       ['http://video.google.com/videoplay?docid=5517353410373048287', 'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006'],
       ['http://everyoneishereinthefuture.com/', 'Everyone Is Here In The Future'],
       ['http://www.scribemedia.org/2006/11/25/why-oh-why/', 'RailsConf Chicago 2006 Keynote']
