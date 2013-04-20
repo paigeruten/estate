@@ -132,8 +132,8 @@ class Estate
   def domain_from_url(url)
     url = url.dup
 
-    url.gsub!("http://www.", "")
-    url.gsub!("http://", "")
+    url.gsub!(/https?:\\www\./, "")
+    url.gsub!(/https?:\/\//, "")
 
     url.split("/")[0]
   end
