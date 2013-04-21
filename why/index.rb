@@ -260,7 +260,8 @@ LIST = [
 ]
 
 NOTES = {
-  'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="http://madx.me/why.txt.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.'
+  'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="http://madx.me/why.txt.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.',
+  'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006' => 'This video has gone missing. If you have a copy, please <a href="mailto:jeremy.ruten@gmail.com">send it to me</a>!'
 }
 
 INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
