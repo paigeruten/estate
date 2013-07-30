@@ -172,6 +172,16 @@ LIST = [
         ['estate://the_open_window/The-Open-Window-8.jpg', 'eight'],
         ['estate://the_open_window/The-Open-Window-9.jpg', 'nine']
       ]],
+      ['Brody Pools', [
+        ['horizontal'],
+
+        ['estate://brodypools/brody-1-square.gif', 'one'],
+        ['estate://brodypools/brody-2-square.gif', 'two'],
+        ['estate://brodypools/brody-3-square.gif', 'three'],
+        ['estate://brodypools/brody-4-square.gif', 'four'],
+        ['estate://brodypools/brody-5-square.gif', 'five'],
+        ['estate://brodypools/brody-6-square.gif', 'six']
+      ]],
       ['Lost Children, Lost Children, Lost Children, See Such Feverish Castles', [
         ['horizontal'],
 
@@ -261,7 +271,8 @@ LIST = [
 
 NOTES = {
   'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="CLOSURE/ircLog.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.',
-  'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006' => 'This video has gone missing. If you have a copy, please <a href="mailto:jeremy.ruten@gmail.com">send it to me</a>!'
+  'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006' => 'This video has gone missing. If you have a copy, please <a href="mailto:jeremy.ruten@gmail.com">send it to me</a>!',
+  'Brody Pools' => 'Whoever <a href="http://dl.dropboxusercontent.com/u/1225304/brodypools/index.html">did this</a>, I\'d like to thank you, heartily. I don\'t know who you are or where you found this comic, but it was because you linked here that I was able to find your mirror of it.'
 }
 
 INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
