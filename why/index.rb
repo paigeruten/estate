@@ -236,7 +236,7 @@ LIST = [
     ]],
     ['RailsConf 2006', [
       ['http://www.youtube.com/watch?v=f7HIbTijiYw', 'Why the Lucky Stiff presents at RailsConf 2006'],
-      ['http://video.google.com/videoplay?docid=5517353410373048287', 'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006'],
+      ['https://www.youtube.com/watch?v=6tsnmclMGD8', 'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006'],
       ['http://everyoneishereinthefuture.com/', 'Everyone Is Here In The Future'],
       ['http://www.scribemedia.org/2006/11/25/why-oh-why/', 'RailsConf Chicago 2006 Keynote']
     ]]
@@ -271,8 +271,7 @@ LIST = [
 
 NOTES = {
   'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="CLOSURE/ircLog.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.',
-  'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006' => 'This video has gone missing. If you have a copy, please <a href="mailto:jeremy.ruten@gmail.com">send it to me</a>!',
-  'Brody Pools' => 'Whoever <a href="http://dl.dropboxusercontent.com/u/1225304/brodypools/index.html">did this</a>, I\'d like to thank you, heartily. I don\'t know who you are or where you found this comic, but it was because you linked here that I was able to find your mirror of it.'
+  'Brody Pools' => 'Whoever <a href="http://dl.dropboxusercontent.com/u/1225304/brodypools/index.html">did this</a>, I\'d like to thank you. I don\'t know who you are or where you found this comic, but it was because you linked here that I was able to find your mirror of it.'
 }
 
 INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
