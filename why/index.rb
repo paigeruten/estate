@@ -213,7 +213,8 @@ LIST = [
       ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
       ['http://ftp.df.lth.se/pub/scene.org/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_(starvingbuthappy,_2004)/', 'elfin princess'],
       ['estate://lyrics/moonboots.html', 'Lyrics']
-    ]]
+    ]],
+    ['http://web.archive.org/web/*/http://leafandlime.hobix.com', 'The House of Leaf and Lime (mp3 blahg)']
   ]],
   ['Videos', [
     ['The Least Surprised', [
