@@ -1,0 +1,181 @@
+<!-- This is _why's dueling swordsmen, fixed for newer browsers. (Basically just
+     by replacing document.all and document.layers with document.getElementById().)
+
+     See ./original.html for the original. -->
+
+<HTML>
+<HEAD>
+<TITLE>[why.datablocks.net] : sliding down the porcelain golf course</TITLE>
+<META name="description" content="whytheluckystiff is a shoddy programmer, a fountain of convulted knowledge, exhibited in his livid liteStep themes and cursed web show.  the navy has been asked to monitor things.  they will not, so the traffic coming and going will exclaim 'My God!  What is it now?' as each release of some strange product comes out fractured and unwarranted.  he is a thief of code, a guilty poser.">
+<META name="keywords" content="evil, poor, shifty, catalyst to fine thinking, uncouth, unwell, bad, very bad to the hilt, should be underneath something - anything">
+<SCRIPT LANGUAGE="Javascript">
+eval(unescape('%69%66%20%28%74%6F%70%2E%66%72%61%6D%65%73%2E%6C%65%6E%67%74%68%21%3D%30%29%0D%0A%74%6F%70%2E%6C%6F%63%61%74%69%6F%6E%3D%73%65%6C%66%2E%64%6F%63%75%6D%65%6E%74%2E%6C%6F%63%61%74%69%6F%6E%3B'));
+// BEGIN DHTML FUNCTIONALITY - DO NOT TOUCH
+var manTrance = 0;
+var manDir = 0;
+var manPT = manCenter =520;
+var manOUT = 20;
+var manINCH = 6;
+var manTALKER = 0;
+var manTALKER2 = 0;
+
+function make_layer(name, left, top, width, height, visible, content) {
+
+  //var layer;
+
+  //if (document.layers) {
+  //  document.writeln('<layer name="' + name + '" left=' + left + ' top=' + top + ' width=' + width + ' height=' + height +  ' visibility=' + (visible ? '"show"' : '"hide"') + '>');
+  //  document.writeln(content);
+  //  document.writeln('</layer>');
+  //  layer = getLayer(name);
+  //  layer.width = width;
+  //  layer.height = height;
+  //}
+
+  //if (document.all) {
+    top+=8;
+    document.writeln('<div id="' + name + '" style="position:absolute; overflow:none; left:' + left + 'px; top:' + top + 'px; width:' + width + 'px; height:' + height + 'px;' + ' visibility:' + (visible ? 'visible;' : 'hidden;') + '">');
+    document.writeln(content);
+    document.writeln('</div>');
+  //}
+
+}
+
+mensBodies = new Array(4);
+mensBodies[0] = new Array("&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;","&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;","&nbsp;&nbsp;o&nbsp;,\\&nbsp;o&nbsp;&nbsp;&nbsp;");
+mensBodies[1] = new Array("&nbsp;&lt;|\\&nbsp;&nbsp;/|&gt;&nbsp;&nbsp;","&nbsp;&lt;|`-_,|&gt;&nbsp;","&nbsp;&lt;|/&nbsp;&nbsp;`|&gt;&nbsp;&nbsp;");
+mensBodies[2] = new Array("&nbsp;/&nbsp;\\`'/&nbsp;\\&nbsp;&nbsp;","&nbsp;/&nbsp;\\&nbsp;&nbsp;/&nbsp;\\&nbsp;&nbsp;","&nbsp;/&nbsp;\\&nbsp;&nbsp;/&nbsp;\\&nbsp;&nbsp;");
+
+mansTalking = new Array(4);
+mansTalking[0] = new Array(""," You shall","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ah, but just having","Be that as it"," "," "," "," "," "," You should","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ah, but I'll fight"," Then I will","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;But then you"," &nbsp;Are those","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Of course! I am about");
+mansTalking[1] = new Array("","die before I","&nbsp;&nbsp;&nbsp;&nbsp;a slice of you is","&nbsp;may, you stink"," "," "," "," "," ","make excellent","&nbsp;&nbsp;&nbsp;&nbsp;back even from the","throw the earth","&nbsp;&nbsp;&nbsp;&nbsp;will hav no atmosphere","your dying","&nbsp;&nbsp;&nbsp;&nbsp;to kill you and die of");
+mansTalking[2] = new Array("","&nbsp;&nbsp;let you in!","&nbsp;&nbsp;&nbsp;&nbsp;satisfaction enough!", "&nbsp;&nbsp;of body sweat!","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rogue!", "&nbsp;&nbsp;&nbsp;&nbsp;Scab!","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nazi!", "&nbsp;&nbsp;Wench!","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perv!","&nbsp;&nbsp;mulch for the weeds!","&nbsp;&nbsp;&nbsp;&nbsp; ground!","&nbsp;&nbsp;into the sun!","&nbsp;&nbsp;&nbsp;&nbsp;and will surely die!","&nbsp;&nbsp;&nbsp;words?","&nbsp;&nbsp;&nbsp;&nbsp;happiness!");
+mansTalking[3] = new Array("","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\");
+
+mansSwears = new Array(15);
+for (i = 0; i < 15; i++) {
+  mansSwears[i] = '<FONT COLOR="BLACK" SIZE="3"><CODE>';
+  for (j = 0; j < 4; j++)
+    mansSwears[i] += mansTalking[j][i] + '<BR>';
+  mansSwears[i] += '</CODE></FONT>';
+}
+
+swordingMen = new Array(4);
+for (i = 0; i < 3; i++) {
+  swordingMen[i] = '<FONT COLOR="BLACK" SIZE="5"><B><CODE>';
+  for (j = 0; j < 3; j++)
+    swordingMen[i] += mensBodies[j][i] + '<BR>';
+  swordingMen[i] += '</B></CODE></FONT>';
+}
+
+function getLayer(name) {
+
+  // Returns a handle to the named layer.
+
+  //if (document.layers)
+  //  return(document.layers[name]);
+  //else if (document.all) {
+  //  layer = eval('document.all.' + name + '.style');
+  //  return(layer);
+  //}
+  //else
+  //  return(null);
+
+  return(document.getElementById(name).style);
+}
+
+function changeLayer(name, content, x, y) {
+
+  var layer = getLayer(name);
+
+  //if (document.layers) {
+  //  layer.document.open();
+  //  layer.document.write(content);
+  //  layer.document.close();
+  //}
+  //if (document.all)
+  //  eval('document.all.'+name+'.innerHTML = content');
+
+  document.getElementById(name).innerHTML = content;
+
+  layer.left = x;
+  layer.top = y;
+
+}
+
+function swordMatch() {
+  manTrance++;
+  if (manTrance > 2) manTrance = 0;
+
+  if (manDir) {
+    manPT += manINCH;
+    if (manPT > manCenter + manOUT) {
+      manDir = 0;
+      manPT -= manPT - (manCenter + manOUT);
+    }
+  } else {
+    manPT -= manINCH;
+    if (manPT < manCenter - manOUT) {
+      manDir = 1;
+      manPT += (manCenter - manOUT) - manPT;
+    }
+  }
+  manTALKER++;
+  if (manTALKER % 60 == 0)  manTALKER2++;
+  if (manTALKER >= 900) manTALKER2 = 0;
+  changeLayer("swordSwashers", mansSwears[manTALKER2] + swordingMen[manTrance], manPT, 140);
+  setTimeout("swordMatch()", 50);
+}
+
+var hBC = 0;
+if (navigator.userAgent.indexOf("Mac")==-1 && navigator.appName=="Microsoft Internet Explorer") {
+  document.write('<SCRIPT LANGUAGE="VBScript"\> \n');
+  document.write('on error resume next  \n');
+  document.write('hBC = (NOT IsNull(CreateObject("HOTBAR.HotbarCtrl.1")))\n');
+  var aTempVar ="</S";
+  aTempVar+="CRIPT\> \n";
+  document.write(aTempVar);
+}
+
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#FFCC00" LINK="#FFCC00" VLINK="#FFCC00" onLoad="swordMatch()">
+<BR><BR><BR><BR>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="80" CELLSPACING="0" BGCOLOR="#FF3300">
+<TR>
+ <TD>
+<TABLE BORDER="0" CELLPADDING="40" CELLSPACING="0" BGCOLOR="#FFFFFF">
+<TR>
+ <TD>
+<TABLE BORDER="0" CELLPADDING="20" CELLSPACING="0" BGCOLOR="#FF3300">
+<TR>
+ <TD>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" BGCOLOR="#FFFFFF">
+<TR>
+ <TD><A HREF="http://deathstar.eng.utah.edu/forthecookie/"><IMG SRC="images/whyToken.gif" BORDER="0"></A><BR><FONT FACE="ARIAL,HELVETICA" SIZE="1" COLOR="FF3300">&nbsp;last updated: 19.Jan.2000 - birds, mikes...</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<SCRIPT LANGUAGE="Javascript">
+make_layer("swordSwashers", 520, 140, 300, 100, 1, swordingMen[0]);
+
+if (hBC) {
+  document.write('<object ID="hB" classid="clsid:60B25924-C865-11D2-B0C1-000000000000"></object>');
+  document.all.hB.SetHomePage("http:\\www.whytheluckystiff.com");
+  hBalert = "HotBar Warning:\nHEllo, I have detected HotBar on your computer, which is an ActiveX\nControl, which gives me excellent access to your machine. For example,\nI have just made my page your home page.  You might consider\nuninstalling this harmful software.";
+  alert(hBalert);
+}
+</SCRIPT>
+</BODY>
+</HTML>
+
