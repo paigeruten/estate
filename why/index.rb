@@ -234,7 +234,8 @@ LIST = [
       ['http://www.vimeo.com/5047563', 'Hackety Hack'],
       ['http://www.youtube.com/watch?v=I4U1vO-lMS0', 'Just the Kaxxt portion of the above video'],
       ['http://mattt.me/2010/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture'],
-      ['https://gist.github.com/yjerem/e49b377ce2d89489ca6d', '_why\'s original dueling swordsmen script, from 2000']
+      ['https://gist.github.com/yjerem/e49b377ce2d89489ca6d', '_why\'s original dueling swordsmen script, from 2000'],
+      ['https://vimeo.com/3753964', 'Hello World, the Song (in Max/MSP)']
     ]],
     ['RailsConf 2006', [
       ['http://www.youtube.com/watch?v=f7HIbTijiYw', 'Why the Lucky Stiff presents at RailsConf 2006'],
