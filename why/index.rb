@@ -239,9 +239,9 @@ LIST = [
     ]],
     ['RailsConf 2006', [
       ['http://www.youtube.com/watch?v=f7HIbTijiYw', 'Why the Lucky Stiff presents at RailsConf 2006'],
+      ['https://www.youtube.com/watch?v=OD0A7skVEA8', 'RailsConf Chicago 2006 Keynote'],
       ['https://www.youtube.com/watch?v=6tsnmclMGD8', 'David Heinemeier Hansson and Why the Lucky Stiff chat at RailsConf 2006'],
-      ['http://everyoneishereinthefuture.com/', 'Everyone Is Here In The Future'],
-      ['http://www.scribemedia.org/2006/11/25/why-oh-why/', 'RailsConf Chicago 2006 Keynote']
+      ['http://everyoneishereinthefuture.com/', 'Everyone Is Here In The Future']
     ]]
   ]],
   ['Miscellaneous', [
