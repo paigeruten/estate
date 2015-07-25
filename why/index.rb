@@ -211,7 +211,7 @@ LIST = [
     ]],
     ['moonboots', [
       ['http://www.myspace.com/elfinprincess', 'Band MySpace'],
-      ['http://ftp.df.lth.se/pub/scene.org/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_(starvingbuthappy,_2004)/', 'elfin princess'],
+      ['https://files.scene.org/browse/music/groups/starving_but_happy/sbh-lp003-moonboots-elfin_princess_%28starvingbuthappy,_2004%29/', 'elfin princess'],
       ['estate://lyrics/moonboots.html', 'Lyrics']
     ]],
     ['estate://phonequail/', 'phonequail']
