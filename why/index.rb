@@ -201,6 +201,7 @@ LIST = [
       ['http://mislav.uniqpath.com/poignant-guide/soundtrack/', 'The Poignant Guide Soundtrack'],
       ['http://www.archive.org/details/whytheluckystiff2006-06-23.railsconf_chicago', 'RailsConf Chicago 23 June 2006'],
       ['http://podcast.rubyonrails.org/programs/1/episodes/sxswi_why_the_lucky_stiff', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival'],
+      ['https://soundcloud.com/kcomandich/sets/why-the-lucky-stiff-and-the', 'Why the Lucky Stiff and the Thirsty Cups, live at FOSCON 2005'],
       ['estate://lyrics/theThirstyCups.html', 'Lyrics']
     ]],
     ['The Child Who Was a Keyhole', [
