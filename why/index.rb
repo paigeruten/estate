@@ -40,7 +40,7 @@ LIST = [
   ]],
   ['Writings', [
     ['Books', [
-      ['http://mislav.uniqpath.com/poignant-guide/', 'Why\'s (Poignant) Guide to Ruby [HTML]'],
+      ['http://poignant.guide', 'Why\'s (Poignant) Guide to Ruby [HTML]'],
       ['http://www.rubyinside.com/media/poignant-guide.pdf', 'Why\'s (Poignant) Guide to Ruby [PDF]'],
       ['http://cloud.github.com/downloads/shoes/shoes/nks.pdf', 'Nobody Knows Shoes [PDF]'],
       ['http://github.com/steveklabnik/CLOSURE', 'CLOSURE'],
