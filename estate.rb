@@ -206,7 +206,7 @@ File.open(dir_out + "/index.html", "w") do |f|
     name = section.first
     a(name, "#" + name.tr(" ", "_"))
   end
-  f << p_id("jump", "Jump to: " + section_links.join(NBSP * 3)) unless section_links.empty?
+  f << p_id("jump", "Jump to: " + section_links.join(" " + NBSP * 2)) unless section_links.empty?
 
   # the list
   estate = Estate.new
