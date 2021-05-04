@@ -7,7 +7,7 @@ LIST = [
     ['desc', 'Thankyou <a href="http://whymirror.github.com/">whymirror.github.com</a>.'],
     ['quiet'],
 
-    ['http://github.com/mental/bloopsaphone', 'bloopsaphone'],
+    ['https://github.com/whymirror/bloopsaphone', 'bloopsaphone'],
     ['http://github.com/bterlson/blimlimb', 'blimlimb'],
     ['http://github.com/bruce/bumpspark', 'bumpspark'],
     ['http://github.com/camping/camping', 'camping'],
