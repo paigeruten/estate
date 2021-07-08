@@ -1,23 +1,23 @@
-# coding: UTF-8
+# coding: utf-8
 
 INDEX_HEADER = ''
 
 LIST = [
   ['Code', [
-    ['desc', 'Thankyou <a href="http://whymirror.github.com/">whymirror.github.com</a>.'],
+    ['desc', 'Thankyou <a href="http://whymirror.github.io/">whymirror.github.io</a>.'],
     ['quiet'],
 
-    ['http://github.com/mental/bloopsaphone', 'bloopsaphone'],
+    ['http://github.com/whymirror/bloopsaphone', 'bloopsaphone'],
     ['http://github.com/bterlson/blimlimb', 'blimlimb'],
     ['http://github.com/bruce/bumpspark', 'bumpspark'],
     ['http://github.com/camping/camping', 'camping'],
     ['http://github.com/drnic/8cpj', '8cpj'],
-    ['http://github.com/steveklabnik/hacketyhack', 'hacketyhack'],
+    ['http://github.com/whymirror/hacketyhack', 'hacketyhack'],
     ['http://github.com/hobix/hobix', 'hobix'],
     ['http://github.com/robbyrussell/hoodwinkd', 'hoodwinkd'],
     ['http://github.com/ecarnevale/hpricot', 'hpricot'],
-    ['http://github.com/joho/markaby', 'markaby'],
-    ['http://github.com/dannytatom/metaid', 'metaid'],
+    ['http://github.com/whymirror/markaby', 'markaby'],
+    ['http://github.com/whymirror/metaid', 'metaid'],
     ['http://github.com/rkh/mixico', 'mixico'],
     ['http://github.com/evaryont/mousehole', 'mousehole'],
     ['http://github.com/mattjamieson/parkplace', 'parkplace'],
@@ -29,11 +29,11 @@ LIST = [
     ['http://github.com/shoes/shoes', 'shoes'],
     ['http://github.com/indeyets/syck', 'syck'],
     ['http://github.com/devyn/unholy', 'unholy'],
-    ['http://github.com/fogus/chirrup', 'chirrup'],
-    ['http://github.com/fogus/skistrap', 'skistrap'],
-    ['http://github.com/fogus/fakeplus', 'fakeplus'],
-    ['http://github.com/fogus/processor', 'processor'],
-    ['http://github.com/fogus/rb_parse_args', 'rb_parse_args'],
+    ['http://github.com/whymirror/chirrup', 'chirrup'],
+    ['http://github.com/whymirror/skistrap', 'skistrap'],
+    ['http://github.com/whymirror/fakeplus', 'fakeplus'],
+    ['http://github.com/whymirror/processor', 'processor'],
+    ['http://github.com/whymirror/rb_parse_args', 'rb_parse_args'],
     ['http://github.com/whymirror/yown', 'yown'],
     ['http://rubyforge.org/projects/dns-zone', 'dns-zone'],
     ['http://dotfiles.org/~_why', '_why\'s dotfile setup']
