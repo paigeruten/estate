@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; DragonFly's Freezer</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/02/27/dragonflysFreezer.html">DragonFly's Freezer</a></h1>
+  <div class="time"><strong>February
+27th
+</strong>
+    15:19</div>
+  <div class="author">by why</div>
+  <div class="content"><p style="float:right;"><img src="../../../images/dfly-bug.png" alt="" /></p>
+<p>People tend to dismiss <a href="http://dragonflybsd.org/"><strong>DragonFlyBSD</strong></a> as the pipe dream of Matt Dillon, discounting all the work Matt and his little team have done.  DragonFly is my favorite OS and it works great for me.  Virtual kernels are nicer than jails (in my opinion) and are becoming much easier thanks to stuff like the <a href="http://leaf.dragonflybsd.org/mailarchive/kernel/2008-02/msg00051.html">vkernel manager</a>.  Pkgsrc integration is getting much better (try: <code>man pkg_radd</code>) and checkpointing is such a juicy feature.  And, of course, we&#8217;re all excited about <a href="http://leaf.dragonflybsd.org/mailarchive/kernel/2008-02/msg00072.html"><span class="caps">HAMMER</span></a>.</p>
+<p>The dfly 1.12 release was yesterday.  And I guess it&#8217;s not much of a big deal compared to what 2.0 will be.  But if you&#8217;re new to dfly, then you need some time to catch up anyway.  (Look, just play with it.  Run the <a href="http://www.theshell.com/pub/DragonFly/iso-images/dfly-1.12.0_REL.iso.gz">1.12 iso</a> under Qemu 0.9.1.  <a href="http://forums.bsdnexus.com/viewtopic.php?id=142">These instructions</a> still apply.)</p>
+<hr />
+
+<p>But let&#8217;s get back to <strong>checkpointing</strong>.  Awhile ago, I started working on improvements to Try Ruby.  To allow users to save and resume their sessions.  A perfect job for checkpointing.</p>
+<p>Here&#8217;s the deal.  On DragonFly, you can send <a href="http://leaf.dragonflybsd.org/cgi/web-man?command=signal&section=3"><span class="caps">SIGCKPT</span></a> to a process.  And that process will be frozen to disk.  It saves as an executable binary.  You run the binary and the app is back.  Similar to how the Terminator was back, if that helps at all.  (On Linux, you can use <a href="http://cryopid.berlios.de/">CryoPID</a>.)</p>
+<p>After some searching, I found some broken links to a lib that Michael Neumann had scrabbled together.  A checkpointing <span class="caps">API</span> for Ruby.  Believe it!  He sent me his work by e-mail and I added some auto-gzip support to it.</p>
+
+<pre><code class="sh">svn co http://code.whytheluckystiff.net/svn/dfly/trunk dfly</code></pre>
+<p>Checkpointing as an <span class="caps">API</span> call is just marvellous.  In a way, it&#8217;s sort of treated like forking.  Because when you fork, you return from the same method twice: once in the child process and once in the parent.  And each scenario gets a different return value.</p>
+<p>You call <code>Dfly.checkpoint("test.ckpt.gz")</code> to save a snapshot.  And the <code>checkpoint</code> either returns <code>Dfly::FROZEN</code> or <code>Dfly::RESUMED</code>.  So, <code>Dfly::FROZEN</code> is returned after the snapshot is saved.  And <code>Dfly::RESUMED</code> is returned if the app is just now coming back into animation.</p>
+<p>So like, imagine:</p>
+
+<pre><code class="rb">require 'dfly'
+puts "THIS APP IS GOING TO FREEZE"
+case Dfly.checkpoint("test.ckpt.gz")
+when Dfly::FROZEN
+  exit
+when Dfly::RESUMED
+  puts "THIS APP IS THAWED OUT"
+end
+</code></pre>
+<p>Alternatively, you can give <code>Dfly.checkpoint</code> a block that runs only when the app is resumed.  Great for re-opening sockets and the like.  This block was Michael Neumann&#8217;s idea in the first place, so <a href="http://www.ntecs.de/blog">give him</a> the extra bonus lives and carnation wreaths.</p>
+<p>To resume: <code>Dfly.resume("test.ckpt.gz")</code>.  Which can be done from another script entirely and the process will jump back to when it was first clubbed on the head.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>andre</h3>
+    <div class="time">said on <strong>February
+      27th</strong>
+    21:21</div>
+    <div class="content"><p>I guess in the long run you&#8217;ll be able to run a dfly cluster and move processes around machines by checkpointing them and restarting somewhere else. That would be way cool.</p><p>why, sorry to make a support request here, but hoodwink.d seems to be broken for my site (sneakymustard.com): <code>ActiveRecord::StatementInvalid Mysql::Error: Column &#8216;site_id&#8217; cannot be null: INSERT INTO hoodwinkd_posts (`permalink`, `site_id`, `title`, `last_wink_id`, `layer_id`, `wink_count`, `created_at`, `first_wink_id`) VALUES (&#8216;/2008/02/25&#8217;, NULL, &#8216;&#8217;, 0, 931, 0, &#8217;2008-02-27 21:16:47&#8217;, 0)</code>. Do you think you could have a look at that?</p></div>
+</div>
+
+<div class="entry">
+    <h3>ryantm</h3>
+    <div class="time">said on <strong>February
+      27th</strong>
+    22:54</div>
+    <div class="content"><p>What are the long term performance considerations of this? What if you want to upgrade your ruby version running, or inject some new code?</p></div>
+</div>
+
+<div class="entry">
+    <h3><|:{</h3>
+    <div class="time">said on <strong>February
+      27th</strong>
+    23:07</div>
+    <div class="content"><p>Ah, this is wonderful&#8230; and just in time for Spring!</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>February
+      27th</strong>
+    23:56</div>
+    <div class="content"><p><strong>andre:</strong> I don&#8217;t think you can thaw a checkpointed app out on a different machine under DragonFly.  I guess it&#8217;s been several months since I&#8217;ve tried.  I think you can with CryoPID, though.</p><p><strong>ryantm:</strong> Upgrading the checkpointed app?  No, well, bad news: unfortunately, checkpointing doesn&#8217;t just magically turn everything into Smalltalk.</p></div>
+</div>
+
+<div class="entry">
+    <h3>technomancy</h3>
+    <div class="time">said on <strong>February
+      27th</strong>
+    23:57</div>
+    <div class="content"><p>does this mean I don&#8217;t have to learn how continuations work?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jesse</h3>
+    <div class="time">said on <strong>February
+      28th</strong>
+    02:07</div>
+    <div class="content"><p>Andre: I&#8217;ve noticed that problem recently posting comments against any url that ends with a slash. You know, like &#8220;domain.com/dir&#8221; instead of &#8220;domain.com/page.html&#8221;. To whit, I can&#8217;t comment on homestarrunner or xkcd.</p><p>Oh yeah, and it&#8217;s lonely out there, unless you all stuck me in a satelite office. :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>defunkt</h3>
+    <div class="time">said on <strong>February
+      28th</strong>
+    11:36</div>
+    <div class="content"><p>I didn&#8217;t really understand until I re-read the Terminator reference.  It&#8217;s all so clear now!</p><p>Also, this is really great.  It makes me want to install dfly to check it out.  Dfly.checkpoint(&#8220;user.#{user.id}.ckpt.gz&#8221;) on top of something simple like Camping or Sinatra might be amazing.</p></div>
+</div>
+
+<div class="entry">
+    <h3>andre</h3>
+    <div class="time">said on <strong>February
+      28th</strong>
+    13:39</div>
+    <div class="content"><p>why: not now, but I believe this is planned for the future&#8230; when there&#8217;s a global FS and something to deal with cluster-wide process numbers, files descriptors, etc&#8230; I mean, dfly&#8217;s end goal is to provide SSI, so it should be possible one day.</p><p>But we&#8217;re still seeing the beginning of it all.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Carsten</h3>
+    <div class="time">said on <strong>February
+      28th</strong>
+    16:24</div>
+    <div class="content"><p>Re checkpointing looking like fork(): In 1994, we <a href="http://www-rn.informatik.uni-bremen.de/software/elk/doc/usenix.html">wrote</a>:</p><blockquote><p>The dump primitive of Elk differs from existing, similar mechanisms in that the newly created executable, when called, starts at the point where dump was called in the original invocation (as opposed to the program&#8217;s main entry point). Here the return value of dump is ``true&#8217;&#8217;, while in the original invocation it returns ``false&#8217;&#8217;&#8212;not unlike the UNIX fork system call.</p></blockquote><p>It worked great for my thesis project in 1990, when it would have taken minutes to start up an editor with all the initializations required.  Of course, the underlying code was inspired by Emacs.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>February
+      29th</strong>
+    00:03</div>
+    <div class="content"><p>Very cool citation, Carsten.  It&#8217;s good to see the idea&#8217;s still moving along.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Campzilla</h3>
+    <div class="time">said on <strong>February
+      29th</strong>
+    15:27</div>
+    <div class="content"><p>Its like plugging an Action Replay MK VI cartridge into ruby.  Poke 53222, $EA for infinite stack!</p><p>http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Action.JPG/200px-Action.JPG</p><p>http://everything2.com/index.pl?node_id=1294633</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan de Vries</h3>
+    <div class="time">said on <strong>March
+      3rd</strong>
+    05:15</div>
+    <div class="content"><p>It&#8217;s strange how people start talking about things you&#8217;ve recently been thinking about. I was recently talking to some friends at work about how cool it would be to use continuations for debugging purposes . Instead of sending out an email with a stacktrace &amp; a bunch of context info, why not create a continuation which may later be used to recreate the problematic environment.</p><p>Being able to do process hibernation would be pretty damn cool in that scenario (imagine getting a loadable application_error.tgz?), let alone in a Seaside-like sessions-are-continuations web framework.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Your Eight Second Calling Card</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/04/23/yourEightSecondCallingCard.html">Your Eight Second Calling Card</a></h1>
+  <div class="time"><strong>April
+23rd
+</strong>
+    15:04</div>
+  <div class="author">by why</div>
+  <div class="content"><p>See, it&#8217;s just a lick of Javascript.  And you end up with this:</p>
+<p><img src="../../../images/chirrp-rec.png" class="cb" alt="" /></p>
+<p>Which makes <a href="http://tweetscan.com/?s=chirrp.net">these</a>.</p>
+<blockquote>
+<p><a href="http://twitter.com/manveru/statuses/791634854">manveru</a>: now we can have asynchronous phone calls!</p>
+</blockquote>
+<p>Get your Firefox extension, Greasemonkey script or bookmarklet at <a href="http://chirrp.net/">this</a> place.</p>
+<hr />
+
+<p>But, more pertinently, <em>for the hacketeers</em>: I would like to add that Chirrp was largely written in <a href="http://haxe.org/intro">haXe</a>.  So, the code for the Flash recorder and player is <a href="http://github.com/why/chirrup">here</a>.  And, if you&#8217;ve got haXe and swfmill installed, you run <code>./build.sh</code>.  And you wind up with two Flash movies.</p>
+<p>I&#8217;m sure quite a few of you have used haXe (or its relative: Neko VM.)  This language&#8217;s even closer to Javascript than the ScummC language mentioned yesterday.  You&#8217;ve even got anonymous functions in haXe.</p>
+
+<pre><code class="haxe">static function startRecording(e) {
+  stopButton.visible = true;
+  recButton.visible = false;
+  Base.record(uuid + ".flv", function(ns) {
+    start = 0;
+    clock = new Timer(200);
+    clock.run = timeRecording;
+  });
+}
+</code></pre>
+<p>Now, if you decide to hack the recorder to capture longer messages, just keep in mind that there&#8217;s a 200k file limit on the server, so you might be able to squeeze twenty seconds out, but it&#8217;ll be a bit tight.  Maybe take the microphone rate down to 11 or something.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">3 comments</a></div>
+
+<div class="entry">
+    <h3>asdfasdf</h3>
+    <div class="time">said on <strong>April
+      23rd</strong>
+    14:28</div>
+    <div class="content"><p>hola amigo</p></div>
+</div>
+
+<div class="entry">
+    <h3>dan</h3>
+    <div class="time">said on <strong>April
+      23rd</strong>
+    17:03</div>
+    <div class="content"><p>why &#8211; What are you doing on the server side? I looked at setting up something similar a little while ago, but the flash streaming media server was major $&#8217;s&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Pascal</h3>
+    <div class="time">said on <strong>April
+      24th</strong>
+    05:24</div>
+    <div class="content"><p>Hi,</p>
+<p>I like it, but I think it&#8217;d be even better if you could add some text of your own to the Chirrp link.  So you can add some context (especially for non-Chirrp users), or also use the d username and @username Twitter syntax.</p>
+<p>In fact, I think I&#8217;d mainly use Chirrp for directed birthday or other congratulations&#8230;</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

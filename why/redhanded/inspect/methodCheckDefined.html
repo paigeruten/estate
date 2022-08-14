@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0093)redhanded.hobix.com/inspect/methodCheckDefined.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/methodCheckDefined.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Method Check: defined?</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Method Check: defined?
+  <SPAN class="entryPermalink"><A href="../inspect/methodCheckDefined.html" title="Permanent link to &ldquo;Method Check: defined?&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>How would it be if, today, I blew you away with a Ruby keyword, huh?  At any rate, I’ve decided to.  Ga-shoom!  (The wizard descends.)</P>
+
+
+	<P>So, <CODE>defined?</CODE> actually isn’t a method, as I normally uncover in a chilling episde of Method Check.  But it does look like one, so no one will blame you if you’ve nailed it as a method in days of yore, what with the question mark and all.  And you can dress it like a method, because Ruby’s parser allows its argument to be surrounded with parens.</P>
+
+
+<PRE> &gt;&gt; x = 1     
+ =&gt; 1
+ &gt;&gt; defined? x
+ =&gt; "local-variable" 
+ &gt;&gt; defined?( y )
+ =&gt; nil
+</PRE>
+
+	<P>At heart, the <CODE>defined?</CODE> keyword is something of a hack, a rather rare anomaly in Ruby’s syntax.  Since an undefined variable is a perfectly legal argument, the <CODE>defined?</CODE> keyword couldn’t be implemented as a method.  Which means that this keyword is left out of Ri documentation.  The Pickaxe groups it with operators. So, it often gets overlooked.</P>
+
+
+	<P>From <CODE>eval.c</CODE>, here’s a list of possible returns from <CODE>defined?</CODE>:</P>
+
+
+	<BLOCKQUOTE>
+		<P>“expression”, “super”, “assignment”, “method”, “yield”, “self”, “nil”, “true”, “false”, “assignment”, “local-variable”, “local-variable(in-block)”, “global-variable”, “instance-variable”, “constant”, “class variable” and a few other assorted keywords and global variables (such as “<CODE>$'</CODE>“).</P>
+	</BLOCKQUOTE>
+
+
+	<P>As it happens, <CODE>defined?</CODE> takes its argument and simply queries the symbol table to see if it is defined.  If it is, you get a simple string of identification (as listed above.)</P>
+
+
+	<P>However, the Ruby parser handles the parens variation of <CODE>defined?</CODE> a bit differently.  Simply because it allows for complex expressions to be evaluated.  But this makes for madly syruprous mayhem!</P>
+
+
+	<P>Everything contained in the parens is parsed, a node tree is built, and all nodes are scanned for the validity of their “definition” within Ruby.</P>
+
+
+<PRE> &gt;&gt; defined?( class &lt;&lt; String; def n; 18; end; end )
+ =&gt; "expression" 
+ &gt;&gt; String.n
+ =&gt; 18
+ &gt;&gt; defined?( class &lt;&lt; NonExistent; def n; 18; end; end )
+ =&gt; nil
+</PRE>
+
+	<P>Check that out.  The first call to <CODE>defined?</CODE> parses the code, establishes that its a valid expression, then executes the code and returns <CODE>"expression"</CODE>.  The second call parses the code, finds an undefined class name of <CODE>NonExistent</CODE> and returns <CODE>nil</CODE>—meaning “undefined”.</P>
+
+
+	<P>So, <CODE>defined?</CODE> is a great way to perform some parser sanity without triggering a myriad of exceptions.  My one gripe with <CODE>defined?</CODE> is that it will throw a <CODE>SyntaxError</CODE> if the expression in the parens is malformed.  But, wouldn’t it be cool if that could be sniffed out as well??</P>
+
+
+	<P>Now, go.  Play with it.  I’ll bet you can come up with some crazy recipes.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>29 Dec 2004</NOBR> at <NOBR>13:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    5 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>flgr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Dec 2004</NOBR> at <NOBR>18:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>and a few other assorted keywords and global variables (such as "$'").</BLOCKQUOTE>
+
+So where do I find a complete list of those? :)</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>flgr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Dec 2004</NOBR> at <NOBR>18:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Oh, and a preview button for the comment form would be wonderful.</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>batkins</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Dec 2004</NOBR> at <NOBR>12:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+So where do I find a complete list of those? :)
+</BLOCKQUOTE>
+
+In the <A href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/eval.c?rev=1.747">eval.c source</A> in the function is_defined.
+
+++ about the preview feature</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>flgr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Dec 2004</NOBR> at <NOBR>16:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Thanks!</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>trans</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>25 Aug 2005</NOBR> at <NOBR>21:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Actually this is pretty silly. It ought to be a real method and take a string argument which it then “psuedo-evals”. As is there is no way to use this when meta_programming, ie. dynamically creating methods. That stinks.</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

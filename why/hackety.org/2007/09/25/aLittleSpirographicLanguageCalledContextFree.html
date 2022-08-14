@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Another Fun House Language Called Context-Free</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/09/25/aLittleSpirographicLanguageCalledContextFree.html">Another Fun House Language Called Context-Free</a></h1>
+  <div class="time"><strong>September
+25th
+</strong>
+    14:06</div>
+  <div class="author">by why</div>
+  <div class="content"><p>This tapestry of circles, believe it or not, was hacked out in just 12 lines of code.</p>
+<p><img src="../../../images/cfdg-square.png" class="c" alt="" /></p>
+
+<pre><code class="cfdg">startshape LIMIT
+rule LIMIT {
+  4*{r 90 h 90} QUAD [r 45 x .5 y .5 h 45 sat 1 b 1 |b 0]
+}
+rule SHAPE {
+  SQUARE{a -.5}
+  CIRCLE{s .8 sat -1 b 1 a -.5 z 1}
+}
+rule QUAD {
+  SHAPE{} 2*{x -1 y 1}
+  QUAD [x .5 y -.5 s .618 x .5 y .5 b .15| h 90]
+}
+</code></pre>
+<p>This is <a href="http://www.contextfreeart.org/gallery/view.php?id=816">Square Limit I</a> by AlliedEnvy and it&#8217;s written using the <a href="http://www.contextfreeart.org/">Context-Free Design Grammar</a>.  Which is basically <span class="caps">LOGO</span> with recursion and functions.  You run your code and you get back a <span class="caps">PNG</span>.</p>
+<p>This stuff really lights me up.  So, there are three functions in this drawing: <code>LIMIT</code>, <code>SHAPE</code> and <code>QUAD</code>.  The most basic part is the <code>SHAPE</code>, which is just a circle and square.  The <code>QUAD</code> function is a neat little tree-like function which draws a series of <code>SHAPE</code> and then calls itself.  The <code>LIMIT</code> rotates 90 degrees and draws four <code>QUAD</code>.</p>
+<p>Then, from the commandline:</p>
+
+<pre><code class="sh">$ cfdg sqlimit1.cfdg sqlimit1.png</code></pre>
+<p>The trickiest part of all this is just how succinct it is.  All the shape properties are listed <a href="http://www.contextfreeart.org/mediawiki/index.php/Shape_adjustments">here</a>.  But while <code>x</code> and <code>y</code> are obvious, attrs like <code>size</code> can be abbreviated as <code>s</code> and <code>rotate</code> can be abbreviated as <code>r</code>.</p>
+<p>What really grabs me is that Context-Free is this tiny, unassuming language of just thirty or so parts.  And it stops right there.  It&#8217;s so tight and minimal.  So you can create some rather delightful eyecandy in just ten or so lines.  Some other really short examples are <a href="http://www.contextfreeart.org/gallery/view.php?id=635">Alhambra</a>, <a href="http://www.contextfreeart.org/gallery/view.php?id=647">Spike</a>, <a href="http://www.contextfreeart.org/gallery/view.php?id=631">BW Circles</a>, <a href="http://www.contextfreeart.org/gallery/view.php?id=729">Hex Cloud</a>, <a href="http://www.contextfreeart.org/gallery/view.php?id=731">Orbido</a> and <a href="http://www.contextfreeart.org/gallery/view.php?id=748">Youthfulness</a>.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>bronson</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    16:41</div>
+    <div class="content"><p>Are you going to port any of this to Shoes?  It seems like it would be pretty straightforward!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matt B</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    17:52</div>
+    <div class="content"><p>Logo does have functions and recursion, by the way.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    18:43</div>
+    <div class="content"><p>I think the key difference to Logo is that ContextFree is entirely declarative (versus Logo&#8217;s very procedural approach to drawing), and that it is not turing-complete (assuming no features were added which allow you to write context-dependent grammars).</p><p>This would be a cool thing to have in Shoes, really.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    19:03</div>
+    <div class="content"><p>Oh, here we go: <a href="http://korsh.com/cfdg/">an online interp</a>.  With a cheat sheet.</p></div>
+</div>
+
+<div class="entry">
+    <h3>shev</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    23:00</div>
+    <div class="content"><p>I saw cfdg about two years ago&#8230; <br>
+it blew me away, especially some user-submitted .cfdg files. It was one of my favourite apps :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Quilter</h3>
+    <div class="time">said on <strong>September
+      25th</strong>
+    23:00</div>
+    <div class="content"><p>This is a great pattern for a quilt.  Beautiful colours.  I bet I can make this quilt out of scraps that I already have.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Oliver Steele</h3>
+    <div class="time">said on <strong>September
+      26th</strong>
+    13:02</div>
+    <div class="content"><p>I love cfdg.  I wrote Ruby and JavaScript interpreters for it a couple of years ago; I&#8217;ll clean them up and post them this weekend in case anyone wants to do anything with them.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Travis Reitter</h3>
+    <div class="time">said on <strong>September
+      26th</strong>
+    13:46</div>
+    <div class="content"><p>This reminds me a lot of the syntax of <a href="http://povray.org/">POV-Ray</a>, except 2D. Either way, it gets even more interesting when you generate this code from other programs :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>September
+      26th</strong>
+    15:21</div>
+    <div class="content"><p>Oliver: anything that generates SVG, out of curiosity?  Something I&#8217;ve wanted to see for a long time is a CFDG extension for Inkscape.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tim</h3>
+    <div class="time">said on <strong>September
+      26th</strong>
+    21:47</div>
+    <div class="content"><p>Logo is basically CFDG but with colors!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Zellyn</h3>
+    <div class="time">said on <strong>October
+      4th</strong>
+    15:38</div>
+    <div class="content"><p>I came up with this after learning a bit of Nodebox and CFDG.</p><pre>
+<code>
+# Nodebox version of Square Limit I
+# http://www.contextfreeart.org/gallery/view.php?id=816
+# Adapted by Zellyn Hunter
+
+sz = 700
+g = 1.61803399
+
+size(sz,sz)
+translate(sz/2, sz/2)
+transform(CORNER)
+rotate(135)
+scale(sz/4)
+colormode(HSB)
+
+def circles(hue, iter):
+    if (iter < 11):
+        fill(hue%1, 1.0, 0.85**iter, 0.5)
+        rect(0,0,1,1)
+        fill(0.0, 0.0, 1.0, 0.5)
+        oval(0.1,0.1,0.8,0.8)
+        push()
+        scale(g-1)
+        translate(0, g)
+        circles(hue+0.25, iter+1)
+        translate(g,-g)
+        circles(hue+0.25, iter+1)
+        pop()
+
+for i in range(4):
+    circles(i/4.0 + 0.125, 0)
+    rotate(90)
+
+</code>
+</div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    22:55</div>
+    <div class="content"><p>Another interesting doohicky out there for the 3D realm is alice.org<br>
+(More related to hacketyhack than CFDG, but there it is)</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

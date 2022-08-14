@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Sandbox.set</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/10/09/sandboxSet.html">Sandbox.set</a></h1>
+  <div class="time"><strong>October
+9th
+</strong>
+    17:00</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Okay, well, a year later&#8230; David Stevenson offered a patch on the mailing list for <a href="http://code.whytheluckystiff.net/sandbox/">freakyfreaky</a> which adds a method for setting variables inside the Sandbox.  This got expanded a bit and has become <code>Sandbox.set</code>!</p>
+<pre><code class="rb">>> box = Sandbox.safe
+>> box.set "radish", "`,"
+>> box.eval "radish"
+=> "`,"
+</code></pre>
+<p>And the object_ids for the two strings are different.  Meaning: it got marshalled in.</p><p>However, it&#8217;s also smart about passing references in and out.</p>
+<pre><code class="rb">>> class Katsuhito; end
+>> box.ref Katsuhito
+>> k = Katsuhito.new
+=> (Katsuhito:0xb7d1dce4)
+>> box.set "k", k
+>> k.class.ancestors
+=> [Katsuhito, Object, Kernel]
+>> box.eval "k.inspect"
+=> "(Katsuhito:0xb7d1dc6c)"
+>> box.eval("k.class.ancestors.inspect")
+=> "[Katsuhito, BoxedClass, Object, Kernel]"
+>> box.eval "k"
+=> (Katsuhito:0xb7d1dce4)
+</code></pre>
+<p>This is a bit twisted to look through, but anyway.  We&#8217;re dealing with two variables here named <code>k</code>.  The original <code>k</code> is outside the sandbox.  And the second is <code>set</code> inside.</p><p>The original <code>k</code> is the real thing.  You can see its ancestry is intact.  But the <code>k</code> inside the sandbox is descended from BoxedClass.  Meaning its just an empty proxy class.  More on this at <a href="http://redhanded.hobix.com/inspect/freakyfreakyNowResumesItsUsualSandlySelf.html">RedHanded</a>.</p><p>Oh, and the last line.  When <code>k</code> is passed back to the main environment, we get back the original <code>k</code> object!</p>
+</div>  
+  
+<div id="comments">
+<div class="total">5 comments</a></div>
+
+<div class="entry">
+    <h3>Blueberry</h3>
+    <div class="time">said on <strong>October
+      9th</strong>
+    17:27</div>
+    <div class="content"><p>That is pretty darn funky!</p></div>
+</div>
+
+<div class="entry">
+    <h3>zimbatm</h3>
+    <div class="time">said on <strong>October
+      10th</strong>
+    06:33</div>
+    <div class="content"><p>_why, are the last ruby patches integrated in the ruby source ? I think they&#8217;ll release a version soon.</p></div>
+</div>
+
+<div class="entry">
+    <h3>misuba</h3>
+    <div class="time">said on <strong>October
+      10th</strong>
+    12:57</div>
+    <div class="content"><p>This gets us way, way closer to that dream of the sandbox wiki where the world writes your web application for you. Kudos!</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>October
+      16th</strong>
+    20:47</div>
+    <div class="content"><p>_why, have you gotten any of my recent emails regarding updating/moving the hobix.com website?  If you&#8217;ve replied, I didn&#8217;t get them.  If you&#8217;d tried before and the email didn&#8217;t get through, please drop me a line with my <a href="http://moonbase.rydia.net/feedback/">comment form</a> at least so I know what&#8217;s going on.</p><p>I don&#8217;t particularly want to fork the project, but if there&#8217;s no way I can get the official site updatable, I will.  People are upset about the out-of-date and incomplete stuff on the site, and I don&#8217;t want to deal with it anymore if I can&#8217;t do something about it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Evan</h3>
+    <div class="time">said on <strong>October
+      24th</strong>
+    03:52</div>
+    <div class="content"><p>Do you know about http://www.c-jump.com/ just asking.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0100)redhanded.hobix.com/inspect/hpricotAndSandboxForWin32.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/hpricotAndSandboxForWin32.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Hpricot and Sandbox for Win32</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Hpricot and Sandbox for Win32
+  <SPAN class="entryPermalink"><A href="../inspect/hpricotAndSandboxForWin32.html" title="Permanent link to &ldquo;Hpricot and Sandbox for Win32&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Mauricio checked in some Rakefiles for cross-compiling to win32, so I’ve got some win32 gems for Hpricot and the (FF)Sandbox.  The majority of you can now:</P>
+
+
+<PRE> gem install hpricot --source code.whytheluckystiff.net
+ gem install sandbox --source code.whytheluckystiff.net
+</PRE>
+
+	<P><STRONG><SPAN class="caps">THE SANDBOX ONE IS COMPILED FOR 1</SPAN>.8.4 <SPAN class="caps">SO IT HAS TOTALLY GOT HOLES</SPAN>.</STRONG>  And yet, fun can still be had I’m sure.</P>
+
+
+	<P>As for cross-compiling, I’m using mingw on FreeBSD.  Here’s how:</P>
+
+
+<PRE> cd /usr/ports/devel/mingw32-gcc
+ sudo make install
+
+ cd ~/sand
+ wget http://ftp.ruby-lang.org/pub/ruby/binaries/mingw/1.8/ruby-1.8.4-i386-mingw32.tar.gz
+ mv usr/local RUBY-1_8_4-MINGW32
+ rm -rf usr
+
+ cd ~/dev
+ svn co https://code.whytheluckystiff.net/svn/sandbox/trunk sandbox
+ cd sandbox
+ export MINGW32_RUBY=/home/why/sand/RUBY-1_8_4-MINGW32
+ export MINGW32_PREFIX=mingw32
+ rake rubygems_win32
+</PRE>
+
+	<P>I mean that’s alot better than putting together a VM and trying to track down a decent free Microsoft compiler.  A couple weeks ago, I spent six hours on it and made no progress.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>14:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    26 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>RSL</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>15:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yay! Hpricot totally rocks the Windows. Thanks for the speedy work on that!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>15:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Is this what you mean by VM?
+<PRE><CODE>
+VM/370 ONLINE
+            VV        VV    MM        MM
+            VV        VV    MMM      MMM
+            VV        VV    MMMM    MMMM
+            VV        VV    MM MM  MM MM
+     3333333333     777777777777MMMM  00000000
+   333333333333    77777777777  MM  0000000000
+    33      VV33    77VV    77      00MM      00
+             V33     VV    77M      00MM      00
+              33    VV    77MM      00MM      00
+           3333VV  VV    77 MM      00MM      00
+           3333 VVVV     77 MM      00MM      00
+              33 VV      77 MM      00MM      00
+              33         77         00        00
+    33        33         77         00        00
+    333333333333         77          0000000000
+     3333333333          77           00000000
+</CODE></PRE><CODE></CODE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Asztal</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>15:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>I mean that’s alot better than putting together a VM and trying to track down a decent free Microsoft compiler. A couple weeks ago, I spent six hours on it and made no progress.</P>
+	</BLOCKQUOTE>
+
+
+	<P>Is there something wrong with Microsoft’s own C++ compiler (on Windows, that is, of course)? The toolkit is free as in beer.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mfp</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>15:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>These win32 binaries provided by the puny MinGW toolchain, which doesn’t stand comparison with the almighty  MS VC2005  Express, but empowers non-win32 developers to build binaries for their win32 users.</P>
+	</BLOCKQUOTE>
+
+
+	<P>More details about the cross-compilation magic in the Rakefile, and <A href="http://eigenclass.org/hiki.rb?cross+compiling+rcovrt">here</A> .</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mfp</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>15:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Asztal: First of all, it runs on win32 only :-) Second, and most importantly: it’s not binary-compatible with the  VC6  ruby build (I read now that MinGW isn’t fully either, but it works for all but a few extensions).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>16:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Does Hpricot not support [] in an Xpath?  I know I can index the elements from the resultant ruby array following a search, but I have to believe it could be faster using an internal lookup to an internal C data structure via an Xpath string.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>17:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">OK, even though Hpricot isn’t an  XML  parser, it seems to handle  RSS  well enough, but feedburner’s atom feeds forces this exception…
+<PRE>irb(main):008:0&gt; Hpricot(URI.parse("http://feeds.feedburner.com/vedana").read)
+/usr/lib/ruby/gems/1.8/gems/hpricot-0.3/lib/hpricot/parse.rb:164:in `build_node': 
+[bug] unknown structure: 
+[:xmlprocins, "href=\"http://feeds.feedburner.com/~d/styles/itemcontent.css\" 
+type=\"text/css\" media=\"screen", nil, nil] (Exception)
+ from /usr/lib/ruby/gems/1.8/gems/hpricot-0.3/lib/hpricot/parse.rb:59:in `make' 
+ from /usr/lib/ruby/gems/1.8/gems/hpricot-0.3/lib/hpricot/parse.rb:59:in `make'
+ from /usr/lib/ruby/gems/1.8/gems/hpricot-0.3/lib/hpricot/parse.rb:11:in `parse'
+ from /usr/lib/ruby/gems/1.8/gems/hpricot-0.3/lib/hpricot/parse.rb:4:in `Hpricot'
+ from (irb):8:in `irb_binding'
+ from /usr/lib/ruby/1.8/irb/workspace.rb:52:in `irb_binding' 
+ from /usr/lib/ruby/1.8/irb/workspace.rb:52</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>17:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>hoyhoy:</STRONG> Thankyou for that.  Is fixed in  SVN , the feed parses fine.</P>
+
+
+	<P>The thing is: I’m not keeping any internal C data structures here.  It’s usually the parsing that really slows you down, not the data structures.  It would be faster to do it all in C, but then it would be something that I couldn’t possibly finish.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>17:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>That makes supporting [] in XPath kind of moot.  I’ve often considered making my own whizbang  XML  parser gem using flex/bison or spirit. Unfortunately, after having that kind of thought, I usually sit down and eat a sandwich and it goes away.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Jul 2006</NOBR> at <NOBR>18:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Haha, oh yeah dreaming about scanners and parsers is really fun, it’s too bad the reality is so vomitously bleak.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matt Todd</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>02:08</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Well, maybe we should make that not so. :) (HAH)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dr Nic</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>02:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I am the proud owner of a 2006 Win32 Sandbox, Unsafe Edition, with leather seats.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>15:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">More  XML  weirdness:
+<PRE><CODE>
+irb(main):035:0&gt; Hpricot(URI.parse("http://rss.slashdot.org/Slashdot/slashdot").read).search("item")[1].to_html.each_line { |l| puts l if l.match(/dc:date/) }; nil&lt;dc:date&gt;2006-07-22T19:29:00+00:00&lt;/dc:date&gt;=&gt; nilirb(main):036:0&gt; puts Hpricot(URI.parse("http://rss.slashdot.org/Slashdot/slashdot").read).search("dc:date")[1]nil=&gt; nil
+</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>15:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Terminal.app et me newlines.
+<PRE><CODE>irb(main):035:0&gt; Hpricot(URI.parse("http://rss.slashdot.org/Slashdot/slashdot").read).search("item")[1].to_html.each_line
+ { |l| puts l if l.match(/dc:date/) }; nil
+&lt;dc:date&gt;2006-07-22T19:29:00+00:00&lt;/dc:date&gt;
+=&gt; nil
+irb(main):036:0&gt; puts Hpricot(URI.parse("http://rss.slashdot.org/Slashdot/slashdot").read).search("dc:date")[1]
+nil
+=&gt; nil
+</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>20:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">I added a colon to this match on line 102, and then search will find tags with colons. 
+<PRE><CODE>
+m = expr.match %r!^([#.]?)([a-z0-9\\*_:-]*)!i
+</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Jul 2006</NOBR> at <NOBR>20:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Line 102 in traverse.rb, but you knew that.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>capn_midnight</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Jul 2006</NOBR> at <NOBR>08:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><CITE>... it’s not binary-compatible with the <B> VC6 </B> ruby build…</CITE></P>
+
+
+	<P>Dear God, why do people still use  VC6 ?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>FlashHater</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Jul 2006</NOBR> at <NOBR>10:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Capn:</STRONG> Because it’s become a de facto standard, and tends to have good windows compatibility.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Adam</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Jul 2006</NOBR> at <NOBR>11:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hoyhoy: You have a sneaky smiley man in your regexp!  :-]</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Michael</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>25 Jul 2006</NOBR> at <NOBR>06:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>this is great! but i have a little problem: is v0.3 missing something? Container::Trav.filter calls to_node.subst_subnode on line 402, but that doesn’t seem to exist?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>capn_midnight</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>25 Jul 2006</NOBR> at <NOBR>10:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>FlashHater:</STRONG> However,  VC7  has the same perfect level of windows compatibility  AND  is one of the most standards compliant compilers on the market. Essentially, with the availability of  VC7 , there is <STRONG>no reason</STRONG> to use  VC6 .</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hpricot_newbie</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Aug 2006</NOBR> at <NOBR>10:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>So am I using hpricot wrong or is this a bug?</P>
+
+
+	<P>doc = Hpricot(open(“http://usgenweb.org/”))
+puts (doc/:a).length # =&gt; 15 but it should be 66</P>
+
+
+	<P>also the follow errors out</P>
+
+
+	<P>doc.to_s</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bearik</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>03 Aug 2006</NOBR> at <NOBR>12:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hpricot doesn’t support this:</P>
+
+
+<PRE>doc.search("//table/tr/td[3]")
+</PRE>
+
+	<P>... does it?</P>
+
+
+	<P>I’m trying to fetch the 3rd td in each tr.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Boris K.</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>04 Aug 2006</NOBR> at <NOBR>08:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>bearik, this should work</P>
+
+
+<CODE>doc.search("//table/tr/td")[3]</CODE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Boris K.</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>05 Aug 2006</NOBR> at <NOBR>09:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">bearik, I missed the word “each” in your post, so my previous recipe would not work. I think the only way is to use nested searches. Something, on the lines of:
+<CODE><PRE>doc.search("//table/tr).each do {|x|
+  x.search(/td/)[2]
+}</PRE></CODE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>07 Aug 2006</NOBR> at <NOBR>10:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><PRE> doc.search("table tr td:nth(3)")
+</PRE>
+
+	<P>There’s still some unimplemented XPath.  Refer to the <A href="../https://code.whytheluckystiff.net/hpricot/wiki/SupportedCssSelectors">supported  CSS  selectors</A> for other ideas.</P></DIV></DIV>
+</DIV>
+
+
+<DIV class="entry">
+<FORM name="userComment" method="post" action="/api/comment/inspect/hpricotAndSandboxForWin32">
+  <DIV class="entryAttrib">
+     <DIV class="entryAuthor"><INPUT name="sayor" type="textbox" size="15" maxlength="50"></DIV>
+     <DIV id="liveTime" class="entryTime"><NOBR>11 Jul 2010</NOBR> at <NOBR>21:31</NOBR></DIV>
+  </DIV>
+  <DIV class="entryContentOuter"><DIV class="entryContent">
+     <INPUT type="hidden" name="timestamp" value="yopYLare1A">
+     <TEXTAREA name="consay" rows="6" cols="50"></TEXTAREA>
+     <P><INPUT type="button" name="pleasePreview" value="preview" onclick="liveTextilePreview(document.forms[&#39;userComment&#39;].elements[&#39;consay&#39;], &#39;textilePreview&#39;, &#39;/api/preview&#39;)">
+        <INPUT type="submit" name="submit" value="&gt;&gt;">
+        <SMALL>* do <A href="../javascript:quickRedReference();">fancy stuff</A> in your comment.</SMALL>
+     </P>
+     <DIV id="textileWrap"><H4>PREVIEW PANE</H4>
+     <DIV id="textilePreview"></DIV>
+     </DIV>
+     </DIV>
+  </DIV></FORM></DIV>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</BODY></HTML>

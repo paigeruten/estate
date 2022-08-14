@@ -1,0 +1,325 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Ctrl+B For Concurrency</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2009/03/13/ctrlB.html">Ctrl+B For Concurrency</a></h1>
+  <div class="time"><strong>March
+13th
+</strong>
+    18:23</div>
+  <div class="author">by why</div>
+  <div class="content"><p><a href="http://www.flickr.com/photos/golanlevin/3349985414/in/photostream/"><img src="../../../images/artandcode1.jpg" class="cb" title="Photo by Golan Levin." alt="Photo by Golan Levin." /></a></p>
+<p>I&#8217;ve walked away from <a href="http://artandcode.ning.com/"><span class="caps">ART</span> &amp; <span class="caps">CODE</span></a> in Pittsburgh with a pile of new hackers to idolize. Krikey, the things these artists are doing while everyone else is rewording their unit tests and staring at the <span class="caps">TIOBE</span> index. My mind has been shredded into wispy, semi-autonomous ribbons.</p>
+<p><img src="../../../images/vvvv.gif" class="rb" alt="" /></p>
+<p>One profound change of mind for me is this: I haven&#8217;t given visual languages a fair shake. These languages (such as Max/<span class="caps">MSP</span> and vvvv) aren&#8217;t just good languages. To watch someone code fluently on a canvas just looks completely natural. And, particularly in the case of <a href="http://vvvv.org/">vvvv</a>, you have a language which moves effortlessly between visual and textual. (I&#8217;ll cover that more next week.)</p>
+<p>vvvv defies so much of the usual criterion. The thing runs only on Windows and is written in Delphi.  For scripting, it embeds a language called <span class="caps">HLSL</span>. (Who really cares, though. No one&#8217;s going to put away Zelda if we ever found out it had some Visual Basic in it.) Sebastian wasn&#8217;t apologetic of Delphi, he doesn&#8217;t seem to know bout the language wars, and I was more than happy to forego the opinions.</p>
+<p><a href="http://www.flickr.com/photos/schmarty/3344879765/"><img src="../../../images/artandcode2.jpg" class="cb" title="Photo by Marty McGuire." alt="Photo by Marty McGuire." /></a></p>
+<p>Yes, that&#8217;s Sebastian Oschatz in the green scarf. He is normally joined by Max Wolf, Sebastian Gregor and Joreg, who comprise the rest of the vvvv team.</p>
+<p>As you can clearly see, he&#8217;s a nice, gentle fellow who believes in visual coding and kept needling me all weekend to cross over to their side.</p>
+<hr />
+
+<p>A vvvv program looks like this.</p>
+<p><a href="http://vvvv.org/tiki-browse_image.php?galleryId=11&sort_mode=created_desc&desp=0&offset=0&imageId=6834"><img src="../../../images/vvvv1.gif" class="cb" alt="" /></a></p>
+<p>And the output can be, well, <a href="http://www.flickr.com/photos/tags/vvvv">anything beautiful</a> at all.</p>
+<p><a href="http://www.flickr.com/photos/22914155@N07/3329732666/"><img src="../../../images/vvvv2.jpg" class="cb" alt="" /></a></p>
+<p>(Oh and if you plan to install vvvv, be sure to read the <a href="http://vvvv.org/tiki-index.php?page=Downloads">Installation Issues</a> notice at the bottom of the download page. DirectX gave me problems until I slowed down and gave all those points my full attention.)</p>
+<hr />
+
+<p>One astounding feature of vvvv is a thing they call <em>boygrouping</em>. (An allusion to the precision that can only achieved by young pop stars thanks to the gift of the hands-free mic.)</p>
+<p>He drove the point home with this photo, taking care to point out the sublime positioning of the hands. Imagine each hand is a box running vvvv.</p>
+<p><img src="../../../images/boygroup1.png" class="cb" alt="" /></p>
+<p>So, let&#8217;s say you have a taxing operation in vvvv that you want to farm out to an armada of machines, all of whom are listening intently. Or, more commonly, you might be spreading an animation out between displays, but keeping the timing unified.</p>
+<p>Every node in vvvv has a set of inputs (at the top of the node) and and a set of outs (at bottom.) You simply highlight the nodes you want to boygroup and hit Ctrl+B.</p>
+<p><a href="http://vvvv.org/tiki-index.php?page=Boygrouping"><img src="../../../images/boygroup2.gif" class="cb" alt="" /></a></p>
+<p>And they turn blue. Syntax highlighting, let&#8217;s call it.</p>
+<p>The input value coming into the <span class="caps">LFO</span> node (a single toggle button value) gets marshalled and broadcast over <span class="caps">UDP</span> periodically to the group. Only primitive data types are transferred (numbers, strings, colors) and the highlighted nodes are executed on all slaves. If you discover that too much data is being passed around, maybe the block you chose isn&#8217;t working spread out, you can simply re-highlight and Ctrl+B to try a different set of ins and outs.</p>
+<p>Each machine in the boygroup has its own ID, so you can selectively pass data to certain machines and choreograph with finer control.</p>
+<p>If you&#8217;re running vvvv right now and hitting Ctrl+B and wondering why you&#8217;re not suddenly controlling a fleet somewhere on Earth, bear in mind that you have <a href="http://vvvv.org/tiki-index.php?page=Boygrouping">some setup</a> to do in advance. (Namely, running vvvv with either <code>/client</code> or <code>/server</code> flags, then initiating a connection with each machine.)</p>
+<p><img src="../../../images/boygroup3.gif" class="c" alt="" /></p>
+<p>Abstracting concurrency away to a hotkey. Can you believe that? Wild. There&#8217;s more even. And I&#8217;ll get into it next week.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">23 comments</a></div>
+
+<div class="entry">
+    <h3>Carlo Cabanilla</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    13:53</div>
+    <div class="content"><p>Have you ever played with Quartz Composer on  OSX ? It&#8217;s also a visual programming language similar to the one you describe.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Agree with Carlo</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    15:37</div>
+    <div class="content"><p>Quartz Composer is worth checking out.</p></div>
+</div>
+
+<div class="entry">
+    <h3>oh man</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    15:39</div>
+    <div class="content"><p>ok those 2 little kids in the front row of the top photo make me feel old &#8230; and I&#8217;m only 28 &#8230;.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    17:04</div>
+    <div class="content"><p>Good, glad you mentioned Quartz Composer. In a way, vvvv is a lot more minimalistic than Composer. For instance, you have iterators in Composer. Whereas vvvv doesn&#8217;t have any kind of looping!</p>
+<p>Sebastian said they held off adding it and never ended up needing it. A truly unbelievable statement, until you see that vvvv itself is just a giant loop. More on that next week, I have a lot more to tell you.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Klondike</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    18:09</div>
+    <div class="content"><p>To be honest, I hadn&#8217;t really noticed vvvv the same way you did &#8212; perhaps because I was just extremely tired. I definitely got distracted through that particular session.  But you&#8217;re really selling me on it.  Your points about the hotkey for concurrency make more sense when laid out and explained in writing and pictures, too.</p>
+<p>It seems like a merger between Processing (focus on visual transformations, but text based language) and Max/ MSP  (focus on audio transformations, but visually based language).  I&#8217;m interested to see more posts on it, and anything you do with it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>RJ Ryan</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    20:15</div>
+    <div class="content"><p> HLSL  isn&#8217;t really a scripting language :) it&#8217;s a shader description language for DirectX so you don&#8217;t have to write your shaders in  GPU  assembly.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Brandon</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    20:24</div>
+    <div class="content"><p>I didn&#8217;t get your comparision between  HLSL  &amp; VB.   HLSL  is about as hardcore as you get (short of asm).  You&#8217;re writing programs that run on a  GPU  using massive parallelism.  VB is, well, not hardcore at all.</p></div>
+</div>
+
+<div class="entry">
+    <h3>"GRUNNUR"</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    20:51</div>
+    <div class="content"><p><b>Brandon:</b> The comparison was between VB and Delphi, it seemed to me.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Zorbid</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    20:54</div>
+    <div class="content"><p>Could it be that neither of them is exactly&#8230; elegant :-p</p></div>
+</div>
+
+<div class="entry">
+    <h3>Zorbid catching up</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    20:55</div>
+    <div class="content"><p>I was replying to Brandon..</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>March
+      13th</strong>
+    22:59</div>
+    <div class="content"><p>Sure, I&#8217;m still new to  HLSL  and its use in vvvv. Sebastian seemed to use  HLSL  much like a scripting language (in that he translated some visual code into textual) and the snippets he showed appeared to be something of a strongly-typed Javascript.</p>
+<p>I&#8217;ll show a concrete example soon and you&#8217;ll probably be correcting my language and reclassifying things properly a second time.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Also</h3>
+    <div class="time">said on <strong>March
+      14th</strong>
+    01:51</div>
+    <div class="content"><p>Check out Alice http://www.alice.org/</p>
+<p>programming with characters from the Sims. Concurrency included!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Cane</h3>
+    <div class="time">said on <strong>March
+      14th</strong>
+    03:41</div>
+    <div class="content"><p>Talking about &#8220;Art &amp; Code&#8221;, and beginners&#8230; when will you update the Hackety Hack site and release the new version?<br>
+The anticipation is killing me. ;)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Simon Strandgaard</h3>
+    <div class="time">said on <strong>March
+      14th</strong>
+    08:00</div>
+    <div class="content"><p>&#8230;concurrency, very clever!</p>
+<p>relevant shameless self-promotion&#8230;</p>
+<p>I have made a <a href="http://bit.ly/language_comparison">long list of visual languages</a>, with my own opinion to each of them (strongly biased).</p>
+<p>I&#8217;m working on a <a href="http://test.gdtoolbox.com/">similar program called GraphicDesignerToolbox</a> (version 1 soon to be released).</p></div>
+</div>
+
+<div class="entry">
+    <h3>aze</h3>
+    <div class="time">said on <strong>March
+      15th</strong>
+    11:38</div>
+    <div class="content"><p>thanks for the quote i&#8217;m touched you appreciate my work <br>
+best regards &amp; code bless vvvv!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Andy</h3>
+    <div class="time">said on <strong>March
+      15th</strong>
+    15:04</div>
+    <div class="content"><p>How about the (open source) <a href="http://openendedgroup.com/field/wiki">Field</a>.  It looks like a visual wrapper around Processing dressed in Jython.  Or something.</p></div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>March
+      15th</strong>
+    18:11</div>
+    <div class="content"><p>vvvv looks a lot like the shader tools one finds in various game packages, like unreal.  It also looks a lot like werkkzeug [sp?], which is a very nice demo generator.</p>
+<p>The ctrl+B concurrency switch, though?  That&#8217;s just pure hotness :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>James</h3>
+    <div class="time">said on <strong>March
+      16th</strong>
+    10:43</div>
+    <div class="content"><p>wow thanks for pointing out Field and Graphic Designer Toolbox,  GDT  in particular is awesome because it looks like it can do what I was wanting to use Zborntoy (an After Effects plugin) to do, but couldn&#8217;t justify the price tag.</p></div>
+</div>
+
+<div class="entry">
+    <h3>rbxbx</h3>
+    <div class="time">said on <strong>March
+      16th</strong>
+    20:07</div>
+    <div class="content"><p>not to be a lazy jerk, but how does vvvv compare to say, jitter (from the cycling74(max/msp)camp) ?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>March
+      19th</strong>
+    16:50</div>
+    <div class="content"><p><code>rbxbx</code>: Jitter is a really nice setup for mixing and editing videos live, probably second to none. vvvv has some video support (like you can use FreeFrame plugins, for instance) but people mostly use vvvv for video graphics generation, both 2-D and 3-D.</p>
+<p>With all of these kits (PureData as well,) it&#8217;s sort of about what kind of look you&#8217;re shooting for and what environment you feel comfortable in.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Kristleifur</h3>
+    <div class="time">said on <strong>March
+      23rd</strong>
+    16:05</div>
+    <div class="content"><p>Oh man, the &#8220;Meaning of vvvv&#8221; page is <a href="http://vvvv.org/tiki-index.php?page=MeaningOfVVVV">beautiful</a>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>rbxbx</h3>
+    <div class="time">said on <strong>March
+      25th</strong>
+    15:12</div>
+    <div class="content"><p>@_why thanks for clearing that up.  I wonder if vvvv will run in crossover&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>April
+      7th</strong>
+    22:43</div>
+    <div class="content"><p>So now you see why us concurrent types are so keen on functional purity. :)</p></div>
+</div>
+
+
+<div class="entry">
+<form name="userComment" method="post" action="../../../api/comment/news/ctrlB">
+  <h3><input name="sayor" type="textbox" size="15" maxlength="50" /></h3>
+  <div class="time">said on <span id="liveTime"><nobr>Mon DD</nobr> <nobr>HH:MM</nobr></span></div>
+  <div class="content">
+     <input type="hidden" name="timestamp" value="fd$2kBn29l" />
+     <textarea name="consay" rows="6" cols="50"></textarea>
+     <p><input type="button" name="pleasePreview" value="preview"
+         onClick="liveTextilePreview(document.forms['userComment'].elements['consay'], 'textilePreview', '/api/preview')" />
+        <input type="submit" name="submit" value="&gt;&gt;" />
+        <small>* do <a href="javascript:quickRedReference();">fancy stuff</a> in your comment.</small>
+     </p>
+     <div id="textileWrap"><h4>PREVIEW PANE</h4>
+     <div id="textilePreview"></div>
+     </div>
+     </div>
+  </div>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

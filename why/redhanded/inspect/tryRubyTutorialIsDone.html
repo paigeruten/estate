@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0096)redhanded.hobix.com/inspect/tryRubyTutorialIsDone.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/tryRubyTutorialIsDone.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Try Ruby is Done, Makes HTML Now</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Try Ruby is Done, Makes HTML Now
+  <SPAN class="entryPermalink"><A href="../inspect/tryRubyTutorialIsDone.html" title="Permanent link to &ldquo;Try Ruby is Done, Makes HTML Now&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Just wrapped things up.  I’m really pleased with the last half of this tutorial. I’m sure I’ve introduced a bunch of bugs in my haste to add the virtual filesystem and a couple of libraries to the mix.</P>
+
+
+	<P>The most glorious addition is a simple <SPAN class="caps">HTML</SPAN> generation library.  Want to try it out?  Go to <A href="http://tryruby.hobix.com/">Try Ruby</A> and run this:</P>
+
+
+<PRE> require 'popup'
+
+ Popup.make do
+   h1 "Things To Do" 
+   list do
+     p "Try out Ruby" 
+     p "Ride a tiger" 
+     p "(down River Euphrates)" 
+   end
+ end
+</PRE>
+
+	<P>Also, the upsy quizzies are fixed in Firefox for Windows.  You can type slashes now.  So sorry about all that.  I’ll pretty things up over the next few days.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>02:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    29 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Christian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>02:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>In Safari, the popup appears <EM>behind</EM> the input window! Nevertheless truly amazing :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Zeljko</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>03:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“Hey, Summary #1 Already” has “Let’s look at what you’ve learned what you’ve learned…”. (“what you’ve learned” is doubled)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rasputnik</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>05:08</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Shouldn’t that be a tyre?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rosco</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>07:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Still no love for us Opera plebs though :( No keyboard at all …</P>
+
+
+	<P>Still though, can get to it from the prompt now, so s’all good :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>08:31</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Good, okay, working on Safari.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>brianmuckian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>09:07</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>oh what have we done….is there no hope of slowing this juggernaut.  Y’know, the next thing you know we’re gonna have a full featured web application development environment running within a web browser….y’know.</P>
+
+
+	<P>Oh the horror.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Gyoung-Yoon Noh</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>09:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why, have you checked the mail I sent to you about translating? :/</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>slip</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>09:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>did you ever know that you’re my hero? and everything i would like to be?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>aberant</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>09:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hmmm.. now just to create the ruby code to open a popup of a “try ruby” window of my own.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>09:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>brianmuckian</STRONG>: Probly a dozen different people have emailed me about turning this into an  IDE .  I’m sure it’ll be done at some point, but it seems so daunting.  The idea of having to edit files in a browser, particularly.</P>
+
+
+	<P><STRONG>Gyoung-Yoon Noh</STRONG>: I was just looking for your e-mail last night.  Translation will begin in January.  I have translators lined up for German, Portuguese and French also.  You can even get a jump on it by looking at viewing the source.  The whole tutorial is right there in the index.html.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Neil</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>10:07</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>On Firefox 1.5, I can’t move the popup browser, and I can’t read the next bit of the tutorial behind it…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>10:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Neil</STRONG>: You’ll need to close the window with the little X on the right side.  Yeah, this is one of those things I need to friendly around with.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ethan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>10:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+	<BLOCKQUOTE>
+	<P>4+5                                           
+	An error has occured.  Try refreshing this page to reload your session.</P>
+
+	</BLOCKQUOTE>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+	<P>(Firefox 1.5, Linux. I had this problem with a slightly older version of Firefox too.)</P>
+
+
+	<P>Ethan</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>10:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Ethan</STRONG>: Do you have cookies on?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Branstrom</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>10:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“This tutorial is only partway complete.. but it’s getting better! Now you can hop chapters, you know? That’s decent!”</P>
+
+
+	<P>Declare it complete if it is. :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ethan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>11:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>No, let me try that.</P>
+
+
+	<P>Aha! That makes all the difference.</P>
+
+
+	<P>Ethan</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>11:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Thanks, Branstrom.  I totally forgot to change that.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>curtis3000</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>11:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>schweet</EM> like bear meat</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>vapidbabble</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>11:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>It’s the cat’s pajamas!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lukfugl</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>14:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>_why:</STRONG> I can work the Spanish translation if you want. However, good as my Spanish might be, I’m not a native speaker, so we’ll probably want to find somebody to proof it…</P>
+
+
+	<P>Drop me a line if you’re interested: lukfugl AT gmail.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matt</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Dec 2005</NOBR> at <NOBR>22:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What a great way to introduce Ruby.  Bravo!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Dec 2005</NOBR> at <NOBR>20:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Ooh, nice.  You should make a sequel that goes deeper.  Or is that the job of the (Poignant) Guide?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Dec 2005</NOBR> at <NOBR>21:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Nice~</P>
+
+
+	<P>I still think that “Stop, You’re Barking Mad!” bit is a bit too harsh on newbies who you may well have just tricked into their first error though.</P>
+
+
+	<P>Is it possible to make the clipboard work, by the way?  I’m not sure how, but if you know a way, that would rock…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Amr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Dec 2005</NOBR> at <NOBR>18:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The html generation library library is simply brilliant (and most subversive).</P>
+
+
+	<P>Stupid Question: Why don’t we build web-pages like this to begin with? isn’t this how that Squeaky toy does the page generations?</P>
+
+
+	<P>What I mean is, the “V” part also being pure ruby rather than .r[ht,x]ml step? (in Rails for example?)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>netghost</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Dec 2005</NOBR> at <NOBR>13:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Will it ever be possible to download the source for this?  I really want to hook it up to my Rails exception reports and poke my system when there are errors :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>assman</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Dec 2005</NOBR> at <NOBR>15:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What about making Try Ruby into a  wiki-like ide for ruby.  Anybody would be able to edit source code and documentation.  The wiki would run automated unit tests (which would also be created collaboratively) automatically.  Code changes would be allowed even if they failed unit test but this would be frowned upon.  Using this you could start software projects that would be collaborative like the wikipedia.</P>
+
+
+	<P>This could be really cool.  You could have wiki style collaborative development for software.  This would be the ultimate ide.  You could even have some system whereby the code could be edited client side and then submitted to the wiki.  You could even have the source code for the wiki itself as part of the wiki.  So that even this code could be edited in real time.  This would be a really radical style of collaborative software development.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>dasdas</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2006</NOBR> at <NOBR>08:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>gfgdfgfddas</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hede</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>08 Feb 2006</NOBR> at <NOBR>05:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hodo</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>XoloX</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Mar 2006</NOBR> at <NOBR>19:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>brianmuckian</STRONG>: Is that a poke at <A href="http://trimpath.com/project/wiki/TrimJunction">TrimJunction</A>? If not, you are so going to regret posting that comment :^)</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

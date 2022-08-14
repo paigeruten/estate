@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Clearing Up The Whole Shoes And RubyGems Deal</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/05/08/clearingUpTheWholeShoesAndRubyGemsDeal.html">Clearing Up The Whole Shoes And RubyGems Deal</a></h1>
+  <div class="time"><strong>May
+8th
+</strong>
+    00:18</div>
+  <div class="author">by why</div>
+  <div class="content"><p>So, I have a matter of Shoes business.  Everybody always asks about how to get SQLite working with Shoes.  Or, uh, what&#8217;s the other one: ImageMagick?  No, that can&#8217;t be it.  Well, krikey, I can&#8217;t remember.</p>
+<p>At any rate, here&#8217;s my reason for stalling.</p>
+<p><img src="../../../images/shoes-setup-1.png" class="c" alt="" /></p>
+<p>This is Shoes.  Which isn&#8217;t a Ruby library.  It&#8217;s not a gem.  It&#8217;s a kit.  Shoes has an installer.  You click on a .shy file (such as <a href="http://the-shoebox.org/apps/25">Tetris</a>) and it launches Shoes.</p>
+<p>And Shoes does the pulling down of gems and libraries.  Take this small and very contrived Shoes script:</p>
+
+<pre><code class="rb">Shoes.setup do
+  gem 'json >= 1.1.1'
+  gem 'activerecord'
+end
+
+require 'json'
+require 'activerecord'
+
+Shoes.app do
+  @msg = para "ALL SYSTEMS GO"
+  animate(20) { @msg.toggle }
+end
+</pre></code>
+<p>By putting your gem list in the <code>Shoes.setup</code> block, you&#8217;ll end up encountering the Shoes popup seen above if any of the gems happens to be absent.  Gems are installed in <code>~/.shoes</code>, to avoid needing superuser rights.  (And just to keep Shoes away from messing with your normal Ruby stuff.)  Leopard has some compiling problems, but other platforms are doing good.  That setup window needs a cancel button.</p>
+<hr />
+
+<p>And that&#8217;s all.  I hope you have learned something.  I know I did.  Because I realized the thing about the cancel button.</p>
+<p>Yes, well, and for Ruby scripts that aren&#8217;t in a gem: no sweat.  Just drop those in the same directory as your Shoes script and require them.  That was probably obvious, but it still feels good to get that off my chest.</p>
+<p>Oh, also: the SQLite lib comes with Shoes since about a week ago.  See, sometimes I need these gems, too.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>nil</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    03:29</div>
+    <div class="content"><p>Can we still set something up to bootstrap Shoes from little Red Ballons?</p></div>
+</div>
+
+<div class="entry">
+    <h3>dan</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    07:49</div>
+    <div class="content"><p>Out-frigging-standing!  Well played, master!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Juixe TechKnow</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    08:48</div>
+    <div class="content"><p>Lacing up the latest release of Shoes.</p></div>
+</div>
+
+<div class="entry">
+    <h3>evanfarrar</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    13:47</div>
+    <div class="content"><p>I noticed the sample/simple-rubygems.rb last night. This was the last thing I was waiting for in order to release a couple of little apps on the world. I just couldn&#8217;t bear to provide installation instructions with my shy files. Thanks Why!</p></div>
+</div>
+
+<div class="entry">
+    <h3>whynot?</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    15:15</div>
+    <div class="content"><p>Why is shoes not available as a gem itself?</p></div>
+</div>
+
+<div class="entry">
+    <h3>zerohalo</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    21:48</div>
+    <div class="content"><p>I&#8217;m still wondering the same myself</p></div>
+</div>
+
+<div class="entry">
+    <h3>OMouse</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    23:59</div>
+    <div class="content"><p>@whynot?<br>
+@zerohalo</p>
+<p>Shoes is self-contained. It makes sure your socks/ruby-gems are on. The point of this is that it&#8217;s easier for a user to get started using a Shoes app. <em>No worries about dependencies, Shoes will put your socks on for you</em>.</p>
+<p>(At least I think that&#8217;s how it works.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>whynot?</h3>
+    <div class="time">said on <strong>May
+      12th</strong>
+    08:51</div>
+    <div class="content"><p>@OMouse: I still don&#8217;t understand why shoes can&#8217;t be packaged up as a gem for those of us who prefer managing code installs that way.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>May
+      12th</strong>
+    17:22</div>
+    <div class="content"><p>Shoes isn&#8217;t a gem.  It&#8217;s a Ruby distro.  It&#8217;s like asking why Squeak isn&#8217;t a ruby gem!</p></div>
+</div>
+
+<div class="entry">
+    <h3>whynot? </h3>
+    <div class="time">said on <strong>May
+      15th</strong>
+    10:34</div>
+    <div class="content"><p><i>It’s like asking why Squeak isn’t a ruby gem!</i></p>
+<p>Well, why isn&#8217;t it ;)?</p>
+<p>Ah, ok&#8230;.I thought Shoes was merely a  GUI  library for Ruby?</p></div>
+</div>
+
+<div class="entry">
+    <h3>kcbanner</h3>
+    <div class="time">said on <strong>May
+      21st</strong>
+    12:38</div>
+    <div class="content"><p>I thought it was just a lib as well</p></div>
+</div>
+
+<div class="entry">
+    <h3>Ian</h3>
+    <div class="time">said on <strong>May
+      24th</strong>
+    22:17</div>
+    <div class="content"><p>Shoes is a way of life. You cant package this in a gem. That is blasphomius</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

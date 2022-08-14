@@ -1,0 +1,267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; NodeBox</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/05/03/nodeBox.html">NodeBox</a></h1>
+  <div class="time"><strong>May
+3rd
+</strong>
+    19:27</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/nodebox-swirling.gif" class="rb" alt="" /></p>
+<p>Let&#8217;s all agree to be proponents of <a href="http://nodebox.net/">NodeBox</a>.  Here, I&#8217;ll start.  I call this <em>Star Crash Get Out of The Way, Deirdre</em>.</p>
+
+<pre><code class="py"># Setup the field
+size(500, 700)
+green = color(0.9, 0.9, 0.6)
+black = color(0, 0, 0)
+fill(green)
+rect(0, 0, 500, 700)
+# Stars big and arrows not as big
+for i in range(0, 40):
+  skew(random(4.0, 20.0), random(4.0, 20.0))
+  fill(black)
+  star(random(500), random(700), random(5, 100))
+  fill(green)
+  arrow(random(500), random(700), random(1, 100))
+</code></pre>
+<p>Like <span class="caps">LOGO</span>, it&#8217;s purely artware.  But rather than just shapes, you get Bezier curves and typography. The gallery is <a href="http://nodebox.net/code/index.php/Gallery">full</a> of gorgeous stuff, many come with source code.</p>
+<p>NodeBox is for Mac platforms and scripts are written in Python.</p>
+<p>I see alot of strengths in NodeBox: it has a very complete manual (and the manual isn&#8217;t that long,) lines and shapes are beautifully antialiased, gradients are smooth.  A good name, a great icon.  These are important things!  It&#8217;s so rare to find lovely programming tools.</p>
+<p>You basically have a very simple window with boxes for editing, running and debugging scripts.  I&#8217;m curious why they didn&#8217;t label the different areas or add some toolbar buttons to switch between them.  I think this would go a long way with the newbs!</p>
+<p><img src="../../../images/nodebox-screen.jpg" class="c" alt="" /></p>
+<p>Lots of math in NodeBox.  Mostly simple math: plus, times, minus.  But some geometry.  A good way to learn geometry.</p>
+<p>One thing about NodeBox that helps soften the math pains, though: you&#8217;re mostly going to be throwing numbers and shapes together to see what kinds of patterns you can come up with. So, if you&#8217;re going to start off, just plug random numbers in!  Or start with the code in the sample and flip the numbers up one at a time and watch things change.</p>
+<p>The <a href="http://nodebox.net/code/index.php/Tutorial">tutorial</a> is very good, with lots of pictures, but feels too long.  The page on variables could be cut in a quarter.  And if they could work out an interactive tutorial (in that third debugging window perhaps,) well, that would really make NodeBox a great starter program for young kids.</p>
+<p><img src="../../../images/nodebox-tom.jpg" class="cb" alt="" /></p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">18 comments</a></div>
+
+<div class="entry">
+    <h3>Nathan Weizenbaum</h3>
+    <div class="time">said on <strong>May
+      3rd</strong>
+    21:42</div>
+    <div class="content"><p>No Linux? Too bad.</p><p>It would be really cool if we could do something like this for Ruby and HacketyHack. I wonder if it would be possible to do something with <a href="http://cairographics.org/rcairo">rcairo</a>. I think it&#8217;s bundled with the XUL stuff, too, so if we can figure out how to link it it shouldn&#8217;t add much weight to the H-ety H distribution.</p></div>
+</div>
+
+<div class="entry">
+    <h3>lemon</h3>
+    <div class="time">said on <strong>May
+      3rd</strong>
+    22:02</div>
+    <div class="content"><p>I love my NodeBox!<br>
+This one time, I drew a truck and animated it falling off a cliff. It was like using the old Amiga program DELUXE PAINT, except I was doing everything with code!</p><p>When someone decided to pay me money for making rising bubbles in flash, I got so frustrated because it wasn&#8217;t immediately obvious how to do it with code. I wanted to hack like this: drawMeACirclePlease(x,y,magic), but nooo it wanted me to find the math on the internets. I like geometry and maths but I don&#8217;t see why it wouldn&#8217;t let me draw a circle like my NodeBox lets me :(!</p><p>Eventually I just had to do everything with the GUI and it was really 500 times harder than it should be.</p><p>Hackety is clearly the place to be I already love it to bits and I hope I&#8217;m welcome! Hello!</p></div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      3rd</strong>
+    22:40</div>
+    <div class="content"><p><strong>Nathan Weizenbaum</strong>: I would be okay using DirectX and OpenGL directly.  The graphics library doesn&#8217;t need to be that heavy really.  Maybe Flash (through Gnash.)</p><p><strong>lemon:</strong> I never had an Amiga.  You are so incredibly lucky.  I really wanted both an Apple IIgs and an Amiga.  So, then.  What&#8217;s a good Amiga model?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      3rd</strong>
+    23:38</div>
+    <div class="content"><p>The thing about using DirectX and OpenGL is that we&#8217;d have to write two sets of code for everything. Also, it seems that there are no pre-existing Ruby bindings for DirectX, and using the Windows API is a big headache.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    03:27</div>
+    <div class="content"><p>Just go with OpenGL. It&#8217;s a lot more easy to code with anyway. :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>eli</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    05:15</div>
+    <div class="content"><p>Although I have no mac, and NodeBox looks light-years ahead, it still reminds me of <a href="http://www.contextfreeart.org/">Context Free</a>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>stungeye</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    09:15</div>
+    <div class="content"><p>A similar multi-platform tool: <a href="http://processing.org/">Processing.org</a></p><p>Beautiful things can be made: <a href="http://www.vimeo.com/clip:174525">Magnetic Sphere</a></p><p>Scripts, however, are written in Java.</p><p>Similar sketching abilities in HacketyHack would be lovely.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Mr. K</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    09:30</div>
+    <div class="content"><p>A while ago I wrote a simple JRuby interface for Processsing.</p><p>http://www.ifhere.org/Dynamite</p><p>JRuby has improved a lot since I wrote this, and it might not even work any more.  But Processing and NodeBox are both great platforms.</p></div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    09:31</div>
+    <div class="content"><p><strong>Mr. K:</strong> Fantastic!  I&#8217;m going to give this a try today, I just can&#8217;t stop myself.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Mel Gray</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    10:00</div>
+    <div class="content"><p>One of the guys at my local Ruby meetup has already tackled a Ruby version of something like this.  Its called RubyCube and can be found here: http://jrepp.com/rubycube/</p></div>
+</div>
+
+<div class="entry">
+    <h3>Frederik</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    10:28</div>
+    <div class="content"><p>Hi,</p><p>I&#8217;m the creator of NodeBox. Glad you like it! (I&#8217;m also a big fan of Hackety-Hack, nice to know the feeling&#8217;s mutual)</p><p>Just wanted to point out that there&#8217;s a nice number-slider-gizmo thing in NodeBox. You can &#8220;drag&#8221; any number in the source code by holding the Command (Apple) key and clicking and dragging the number. This runs the script over and over with the new number. Random values are &#8220;locked&#8221;, so things don&#8217;t jump around. This is nice for trying values out. (You can hold command-shift to increase tenfold, control-command to make small changes)</p><p>The documentation for this is a bit hidden, but you can find it at the bottom of <a href="http://nodebox.net/code/index.php/Environment">the environment  page</a> .</p><p>Have fun!</p></div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    10:44</div>
+    <div class="content"><p>Oh, hey, that&#8217;s fantastic.  Just fantastic.</p><p>There are actually quite a lot of similarities between HH and NodeBox.  I just noticed your <a href="http://nodebox.net/code/index.php/Library">Libraries</a> page a few days ago.  I&#8217;m trying to cover alot of the same stuff: quick little web functions.  I love the WordNet Explode script, such a cool mix of things.</p><p>Anyway, say Frederik: if you want to write up a truly tricky hack for NodeBox, I&#8217;d really like to post a bit more about it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Zorbid</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    12:27</div>
+    <div class="content"><p>Although OpenGL is lighter, Fl/Gnash would have the advantage of being web embedable&#8230; (or SVG maybe?)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Frederik</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    13:14</div>
+    <div class="content"><p>Because NodeBox is directly layered on top of the Cocoa framework, we can access all of its functionality, such as the speech recognizer, hardware-accelerated image manipulation using Core Image, etc. That makes for some interesting hacks.</p><p>We did a <a href="http://lahti.grafitron.com/2007/code">NodeBox workshop in Lahti, Finland</a> recently where we created a sound player, a speech recognizer, and various scripts that use Core Image. Check it out.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    13:55</div>
+    <div class="content"><p>Alright, so I&#8217;ve worked up a little Cairo-based thing. Cairo&#8217;s nice because it can render to SVG, which in turn can be displayed in a browser. In fact, for H-ety H, I believe Firefox uses Cairo to render the SVGs, so we could probably tap into that directly.</p><p>It&#8217;s not really fleshed-out enough to show around yet, but I&#8217;ll put it up in a day or two (or maybe this evening) when it is. In the meantime, here&#8217;s a little snippet of how I envision it working:</p><pre>
+  brush.fill = "blue"
+  brush.stroke = "red"
+  brush.opacity = 25
+  rect :top => 100, :left => 200, :width => 10, :height => 30
+  shape.do |s|
+    s.point 0, 0
+    s.point 100, 20
+    s.point 20, 100
+  end
+</div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      4th</strong>
+    15:03</div>
+    <div class="content"><p>Oh, wow!  That Lahti 2007 link is hot.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    18:47</div>
+    <div class="content"><p>I&#8217;ve got a <a href="http://nex3.leeweiz.net/posts">working version</a>! Check it out!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Krishna</h3>
+    <div class="time">said on <strong>May
+      11th</strong>
+    20:36</div>
+    <div class="content"><p>Nodebox is awesome! Great find.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

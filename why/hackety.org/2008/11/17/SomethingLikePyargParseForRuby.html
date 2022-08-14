@@ -1,0 +1,205 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Something Like PyArg_ParseTuple For Ruby</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/11/17/SomethingLikePyargParseForRuby.html">Something Like PyArg_ParseTuple For Ruby</a></h1>
+  <div class="time"><strong>November
+17th
+</strong>
+    23:58</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Calling into Ruby from C is great, but I&#8217;ve noticed that I spend a lot of time casting arguments coming into each function.</p>
+
+<pre><code class="c"> rb_scan_args(argc, argv, "11", &port, &opts);
+ if (rb_respond_to(port, rb_intern("to_str"))
+   StringValue(port);
+ else if (!rb_respond_to(port, rb_intern("read")))
+   rb_raise(rb_eArgError, "a String or IO object only, please");
+ if (TYPE(opts) != T_HASH && !NIL_P(opts))
+   rb_raise(rb_eArgError, "options must be a hash");
+</code></pre>
+<p>Ruby is dynamically typed, but object types are a bit more reified in C. The <span class="caps">TYPE</span> macro can check an object to see if it&#8217;s a T_FIXNUM, T_HASH, T_STRING, T_ICLASS, etc. You can duck type all you want, but when you&#8217;re inside an extension, you&#8217;ll need to know the type before calling <code>rb_str_cat</code> or <code>rb_hash_aref</code>.</p>
+<p>And <code>StringValue</code> does this, it&#8217;ll cast using <code>to_str</code> and then make sure you&#8217;ve actually a real T_STRING.</p>
+<hr />
+
+<p>I&#8217;m disappointed with <code>rb_scan_args</code>. It&#8217;s wimpy. The function signatures it uses aren&#8217;t very expressive. It&#8217;s basically describing arity and that&#8217;s it.</p>
+<p>One thing I like better in Python&#8217;s <span class="caps">API</span>, though, is the <a href="http://docs.python.org/c-api/arg.html">PyArg_ParseTuple</a> function and its cousins.</p>
+
+<pre><code class="c"> const char *file;
+ const char *mode = "r";
+ int bufsize = 0;
+ ok = PyArg_ParseTuple(args, "s|si", &file, &mode, &bufsize);
+ /* A string, and optionally another string and an integer */
+ /* Possible Python calls:
+    f('spam')
+    f('spam', 'w')
+    f('spam', 'wb', 100000) */
+</code></pre>
+<p>The function signature is more expressive here (<code>"s|si"</code>), indicating which types are allowed. You don&#8217;t have to check the types individually, nor do you need to throw individual exceptions.</p>
+<hr />
+
+<p>Here&#8217;s <a href="http://github.com/why/rb_parse_args">an equivalent</a> I&#8217;m working on for Ruby:</p>
+
+<pre><code class="c"> rb_arg_list args;
+ rb_parse_args(argc, argv, "s|h,-|h", &args);
+ /* a string and optionally a hash OR an IO and an optional hash */
+</code></pre>
+<p>The <code>rb_parse_args</code> function returns the number of the match. If the first signature (<code>"s|h"</code>) is matched, you get 1. If the second signature is matched, you get 2.</p>
+<p>I&#8217;m planting this in a switch statement when I want to overload a method.</p>
+
+<pre><code class="c"> rb_arg_list args;
+ /* "k" means Class, "h" means Hash */
+ switch (rb_parse_args(argc, argv, "kh,h,", &args))
+ {
+   case 1: /* "kh" - style(Link, :background => white) */ break;
+   case 2: /* "h"  - style(:width => "100%") */ break;
+   case 3: /* ""   - style() => {...hash of styles...} */ break;
+ }
+</code></pre>
+<p>This is saving me some tedium. In typical shoddy form, my error messages blow. I am undisciplined&#8217;s middle name.</p>
+<p>Ah, how good it feels to be inspired by Python. A bit good, a bit slimey. I&#8217;m like Joe Lieberman, guys.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">8 comments</a></div>
+
+<div class="entry">
+    <h3>automatthew</h3>
+    <div class="time">said on <strong>November
+      17th</strong>
+    18:24</div>
+    <div class="content"><p>Aha! I knew you were a &#8220;conservative|liberal&#8221;.</p></div>
+</div>
+
+<div class="entry">
+    <h3>OMouse</h3>
+    <div class="time">said on <strong>November
+      17th</strong>
+    22:04</div>
+    <div class="content"><p>doesn&#8217;t Ruby have symbols? or am I thinking of Smalltalk/Lisp?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>November
+      18th</strong>
+    05:58</div>
+    <div class="content"><p>Beware the snakes!</p></div>
+</div>
+
+<div class="entry">
+    <h3>j`ey</h3>
+    <div class="time">said on <strong>November
+      18th</strong>
+    07:26</div>
+    <div class="content"><p>beware the everything :S</p></div>
+</div>
+
+<div class="entry">
+    <h3>automatthew</h3>
+    <div class="time">said on <strong>November
+      18th</strong>
+    09:30</div>
+    <div class="content"><p>OMouse:  Ruby does have symbols, signified by a colon-preceded identifier:</p>
+<p>:symbol1, :other_symbol</p>
+<p>All the (non-Python) code in this post appears to be from a C extension to Ruby.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Daniel Berger</h3>
+    <div class="time">said on <strong>November
+      19th</strong>
+    14:40</div>
+    <div class="content"><p>&#8220;I’m disappointed with rb_scan_args. It’s wimpy. The function signatures it uses aren’t very expressive. It’s basically describing arity and that’s it.&#8221;</p>
+<p>Then I guess you&#8217;re disappointed with plain Ruby, since it doesn&#8217;t check argument types, either.</p>
+<p>Still, it would be handy to have something like this.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Rubypanther</h3>
+    <div class="time">said on <strong>November
+      19th</strong>
+    14:46</div>
+    <div class="content"><p>Daniel,<br>
+It may be that it&#8217;s not so much that it&#8217;s cared about, but that in C you Have To Know. So it&#8217;s disappointing when it&#8217;s a  PITA .</p></div>
+</div>
+
+<div class="entry">
+    <h3>zem</h3>
+    <div class="time">said on <strong>November
+      20th</strong>
+    21:41</div>
+    <div class="content"><p>very neat. fits well with ruby&#8217;s &#8220;all about the expressiveness&#8221; mindset.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

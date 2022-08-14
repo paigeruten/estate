@@ -1,0 +1,228 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; BlimLimb, the Travelling Bot Troupe</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/05/16/blimlimb.html">BlimLimb, the Travelling Bot Troupe</a></h1>
+  <div class="time"><strong>May
+16th
+</strong>
+    16:39</div>
+  <div class="author">by why</div>
+  <div class="content"><p>I thought I had deleted this hack!  I probably should still delete this hack, it was so poorly received!  To quote those who were there: &#8220;the implementation lacketh much.&#8221;  Oh, and: &#8220;what&#8217;s going on?&#8221;</p>
+<p>Well, the idea was: what if you had a dozen bots that you could feed dramatic scripts to and they would perform the show in synchronization on <span class="caps">IRC</span>?  And, furthermore, what if you could stop the bots and issue ad-hoc improvisational scripting to really spook the guests?  To give the idea that the bots are either pretty smart or pretty broken. Low-bandwidth txt vaudville, here we come!</p>
+<hr />
+
+<p>The troupe was called <a href="http://github.com/why/blimlimb">BlimLimb</a> (previously known as the Tragicepticons).</p>
+
+<pre><code class="blimlimb">s: oh, take heart, young lad.
+s: after all, we are most definitely the /ONE', the /ONLY', the .(OFFICIAL).
+s: entertainers of #camping, a gift from your KING< a true offering
+s: of haste and scenic tales >PERFORMING TODAY!< for your gifted
+(a) gasps.
+s: minds, to lift your spirits and to spread luxurious laughter, as
+b: ** the show starts in roughly -- checks watch -- four minutes -- get comfortable. **
+s: it were a catapult travelling o'er the oval moons and roof boats!!
+a: :) alright
+a: i am aidelaide.
+s: and:            i am starlight huxley!
+b: and: :)                               i am b.e.o. stepfisdein.
+s:    >>     we are blimLimb, the bot troupe!        <<<
+b: previously known as blimLimb limLirrm, the bot troupe.
+a: we go by either :)
+F: I PLAY MYSELF.
+</code></pre>
+<p>The scripts follow an extremely simple syntax.  Every bot has a short alias.  So, in the above script, Starlight Huxley is abbreviated as <strong>s</strong>.  You set up the aliases at the beginning of the script.</p>
+
+<pre><code class="blimlimb">[a] aidelaide
+[F] FNONt
+[t] teslyANDERSowens
+[s] ^sHuxley^
+a: hello
+s: (( //......\\'''''''//.....\\ ))
+s:  )) <good><day><#camping><!> ((
+[b] beo_stepfIsDein
+</code></pre>
+<p>So the square brackets contain the bot&#8217;s short alias.  Followed by the nick the bot will use in the channel.  Those lines also cause the bot to join the channel.</p>
+<p>Other commands are:</p>
+<ul>
+	<li><code>alias:</code> speaks a line of dialogue.</li>
+	<li><code class="alias">alias)</code> performs an action or aside.</li>
+	<li><code>alias=</code> re-nicks the bot.</li>
+	<li><code>-alias</code> causes a bot to part the channel.</li>
+	<li><strong>+n</strong> delays for <strong>n</strong> seconds.</li>
+	<li><code>*</code> enters puppet mode.</li>
+</ul>
+<p>A short sample <a href="http://github.com/why/blimlimb/tree/master/scripts/the.unchanging.monkey.that.smiled">script</a> illustrates each of these.</p>
+<p>All the while, you, Gepetto, are watching the console.  Dialogue is spewed by the bots with pseudorandom timing, to avoid flooding and make things a bit more stilted.  Once you hit puppet mode, you gain control of the console and can use all the commands above to control the bots.  And you can use the asterisk command to deliver the bots back to their script.</p>
+<p>Annoying, yes.  Certainly that is the whole idea.</p>
+<hr />
+
+<p>The cast had six players in all:</p>
+<ul>
+	<li><strong>starlight huxley</strong>, he&#8217;s a part-time electrician and deeply religious bot, wears glasses, central figure in the troupe, calls on volunteers, hands out cash prizes, handsome but elderly, easily pushed over.</li>
+	<li><strong>aidelaide</strong>, she&#8217;s a hillbilly acrobat, largely sticks to doing the splits and winking, some light <span class="caps">ASCII</span> art, emotionally needy, always trying to smooth over conflict, married to <strong>tesly anders owens</strong>, has a ponytail.</li>
+	<li><strong>b.e.o. stepfinsdein</strong>, retired biplane pilot, nationally-ranked lightbulb collector, counterpart to starlight huxley, heavy on the <span class="caps">ASCII</span> art, pompous and neoconservative.</li>
+	<li><strong>FNONt</strong>, an ancient and boxy bot, yelly and numeric.  May not actually be in the troupe, possibly just heat-seeking.</li>
+	<li><strong>poor kit kalloway</strong>, the naive understudy, shoeless, sometimes sleeveless, constantly leeching movie soundtrack mp3s from bittorrent, adores Peter Gallagher, stubborn and plays viola.</li>
+	<li><strong>tesly anders owens</strong>, a smoker, man about town, given to fine apparels, handles the spotlight, estranged from the others, enjoys fisticuffs with audience members.</li>
+</ul>
+<hr />
+
+<p>I only have logs from two shows.  Both were total disasters.</p>
+<p>The first was a showing of <a href="http://github.com/why/blimlimb/tree/master/logs/edward.and.his.book.knowledge.txt">Edward and His Book Knowledge</a> from November 9th, 2006.  This was the first script and it was clearly pretty empty, mostly just a test.  The trouble is that the scripts are heavy on participating with the crowd and the crowd is, well, idling, of course.</p>
+<p>And the second was a bit better.  This one was titled <a href="http://github.com/why/blimlimb/tree/master/logs/prin.and.whitely.txt">Prin and Whitely</a> and the show lasted about an hour and a half on November 10th, 2006.  A bit more reaction here, but mostly ambivalence.  And by the end, the channel is totally dead.</p>
+<p>And that&#8217;s how Freenode&#8217;s only travelling <span class="caps">IRC</span> bot troupe bombed on opening night.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>engtech</h3>
+    <div class="time">said on <strong>May
+      16th</strong>
+    13:29</div>
+    <div class="content"><p>This is the same technique we used to use for Dungeon Mastering in Neverwinter Nights.</p>
+<p>There was a listener script where you could assign character key aliases to various NPCs, then you&#8217;d type away all the parts of the conversation in the DM back channel.</p></div>
+</div>
+
+<div class="entry">
+    <h3>hiffy</h3>
+    <div class="time">said on <strong>May
+      16th</strong>
+    13:44</div>
+    <div class="content"><p>Just so you know, dear why, your hacks always make me smile.</p>
+<p>A bot theatre troupe? How quaint!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Krevan</h3>
+    <div class="time">said on <strong>May
+      16th</strong>
+    14:24</div>
+    <div class="content"><p>Very &#8220;interesting!&#8221;</p>
+<p>Would be, perhaps, even more &#8220;interesting&#8221; if the bots incorporated some sort of genetic algorithms and some sort of emotional physics engine that could dynamically interact with the other bots and the audience with motivations coming from the (very clever) background stories. The idea being the channel is perpetual and ceasless. The audience just check into the channel whenever they want, to see what drama is going on at that moment.</p>
+<p>&#8220;Interesting&#8221; &#8212; Joel Speigal, Chicago Daybune<br>
+&#8220;Riveting&#8221; &#8212; Rosie Rosebot, Android Telegraph<br>
+&#8220;Fanciful&#8221; &#8212; Marge Bitter, Spikan Sponderf Tymes</p></div>
+</div>
+
+<div class="entry">
+    <h3>nil</h3>
+    <div class="time">said on <strong>May
+      16th</strong>
+    17:50</div>
+    <div class="content"><p>up next: nethack othello!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dalice</h3>
+    <div class="time">said on <strong>May
+      16th</strong>
+    22:55</div>
+    <div class="content"><p>Ah, it was you all along. I remember those days. I&#8217;m glad I didn&#8217;t embarrass myself.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Hoyhoy</h3>
+    <div class="time">said on <strong>May
+      18th</strong>
+    00:04</div>
+    <div class="content"><p>Isn&#8217;t starlight huxley the least prominent member of the Huxley family?  He&#8217;s forever living in the shadows of Aldous.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      18th</strong>
+    00:39</div>
+    <div class="content"><p>I ran prin and whitely in a channel with a few friends, and we all had great fun. Thanks for this.</p></div>
+</div>
+
+<div class="entry">
+    <h3>dvrensk</h3>
+    <div class="time">said on <strong>May
+      18th</strong>
+    05:59</div>
+    <div class="content"><p>Could we perchance have some escaping of less-than signs in the code examples?  I check the page source, and there are a &lt;good&gt; and a &lt;day&gt; that don&#8217;t get the ramp light they signed up for.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      18th</strong>
+    23:33</div>
+    <div class="content"><p><a href="http://rc.nex-3.com/public/blimlimb.html">Here&#8217;s a log of that performance I mentioned</a>.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

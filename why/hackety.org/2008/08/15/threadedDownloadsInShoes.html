@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Threaded XMLHttpRequest In Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/08/15/threadedDownloadsInShoes.html">Threaded XMLHttpRequest In Shoes</a></h1>
+  <div class="time"><strong>August
+15th
+</strong>
+    17:36</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Threads can be tough and don&#8217;t suit beginners very well.  And, well, Ruby threads can tie up the main app thread.</p>
+<p>So, Shoes steals the underpinnings of Ajax to give you asynchronous downloads without needing to get into threading.  Many of the young Sneakers are building Twitter and Flickr apps; it seemed the morally upright thing to do.  In addition, I was able to use these <span class="caps">HTTP</span> threads to load remote images in the background.  So, in Shoes, images loaded from the web will appear as they load.</p>
+<p>Here&#8217;s the <code>simple-downloader.rb</code> from the samples that come with Shoes:</p>
+<p><img src="../../../images/shoes-downloader.png" class="c" alt="" /></p>
+<p>To achieve this, Shoes uses platform code for both threading and <span class="caps">HTTP</span>.  On Windows, CreateThread and WinHTTP.  On Linux, pthread and curl.  And, on OS X, NSURLDownload &#8212; which does the threading for you.</p>
+<p>Downloading is reduced to a single line:</p>
+
+<pre><code class="rb">Shoes.app { download "http://shoooes.net/shoes.png", :save => "shoes.png" }
+</code></pre>
+<p>This happens asynchronously, so <code>shoes.png</code> won&#8217;t be there yet when this method ends.  It might be huge.  It might appear an hour later.  You can attach a <code>finish</code> event to be notified when the download is complete.</p>
+
+<pre><code class="rb">Shoes.app do
+  download "http://shoooes.net/shoes.png", :save => "shoes.png" do |dl|
+    alert "Scuse me. Your shoes.png has arrived."
+  end
+end
+</code></pre>
+<p>Omit the <code>:save</code> option and you can get back the download as a string.</p>
+
+<pre><code class="rb">Shoes.app do
+  download "http://hacketyhack.net/pkg/osx/shoes" do |dl|
+    alert "The latest OS X download is: #{dl.response.body}"
+  end
+end
+</code></pre>
+<p>You can also attach <code>:method</code>, <code>:headers</code> and <code>:body</code> options to the download, if you want to customize the request beyond that.  I studied XMLHttpRequest closely and tried to be sure the same things could be done with this.</p>
+<hr />
+
+<p>As for events, you get four of them: <code>start</code>, <code>progress</code>, <code>finish</code> and <code>error</code>.  You can either pass proc objects in as options:</p>
+
+<pre><code class="rb">Shoes.app do
+  url = "http://shoooes.net/dist/shoes-0.r905.exe"
+  status = para "Downloading #{url}"
+
+  download url, :save => "shoes.exe",
+    :start => proc { |dl| status.text = "Connecting..." },
+    :progress => proc { |dl| status.text = "#{dl.percent}% complete" },
+    :finish => proc { |dl| status.text = "Download finished" },
+    :error => proc { |dl, err| status.text = "Error: #{err}" }
+end
+</code></pre>
+<p>Or, use the method syntax:</p>
+
+<pre><code class="rb">Shoes.app do
+  url = "http://shoooes.net/dist/shoes-0.r905.exe"
+  status = para "Downloading #{url}"
+
+  get = download url, :save => "shoes.exe"
+  get.start { |dl| status.text = "Connecting..." }
+  get.progress { |dl| status.text = "#{dl.percent}% complete" }
+  get.finish { |dl| status.text = "Download finished" }
+  get.error { |dl, err| status.text = "Error: #{err}" }
+end
+</code></pre>
+<p>The last thing I will mention is that every queued download is attached to the window containing it.  When you close the window, the download stops.  So, if you&#8217;re queueing a download from a temporary popup, be sure to queue it on the main app window.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>bonzo</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    14:24</div>
+    <div class="content"><p>What happens when you use method syntax and the download finishes before you set any of the other events up?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    16:45</div>
+    <div class="content"><p>Originally I was going to say that the download doesn&#8217;t actually start until the next repaint.  But I checked the code and that isn&#8217;t so.  Going to change that now, thanks, bonzo!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    17:13</div>
+    <div class="content"><p>How about uploading?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Semaphore Horse</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    17:23</div>
+    <div class="content"><p>Ooh, that is rather fancy! I wish the interfaces in the browser were as nice and simple as this!</p>
+<p>So, adding a download causes a repaint even if you have changed none of the actual UI? How delightfully hacky.</p>
+<p>The one little niggling inkling that is bugging me, while this sure is powerful enough to do all your http doings as far as I can see, it provides no <i>easy</i> interface for file uploads. If you could add a :upload parameter which results in setting the request content-type to multipart, and doing all that mime stuff for us, that&#8217;d be great.</p>
+<p>No no, wait, that&#8217;s a bad idea! Here&#8217;s a better one:</p>
+<p>When :body.is_a?(Hash) we loop through all :body&#8217;s .values, if any of them are File&#8217;s, we change the default Content-Type to multipart/form-data, and do multipart encoding for the file uploads.</p>
+<p>A convenience :params option would be funky too, which just translates a hash in to to_s&#8217;d key and value pairs and sets that as the URL&#8217;s query variable. Extra awesomeness points for decoding any existing params in the  URL , and merging the new ones in with the existing ones. Half an awesomeness point for instead just adding a &amp; to the end and appending the new stuff when a query string is already present.</p>
+<p>None of this couldn&#8217;t be implemented in pure ruby on top of this thing, but there are some Super BonusMonkeyAwesomenessBall points in it for you if it&#8217;s implemented in such a way that file uploads are streamed out to the web server, and the file isn&#8217;t completely loaded in to system memory at any point for those lovely 20gig uploads the kids are so fond of these days.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Semaphore Horse</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    17:25</div>
+    <div class="content"><p>@Jim: Well, you could do your multipart encoding, set the Content-Type header to multipart/form-data, set the method to  POST , shove the encoded stuff in to @body, and glory in the amazing effort of doing it yourself.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    17:32</div>
+    <div class="content"><p>I think upload will go like this:</p>
+
+<pre><code>upload "shoooes.png", :save => "http://shoooes.net/upload"
+</code></pre>
+<p>With all of the same other events and options.  I have been meaning to scrutinize something like SWFUpload before going too far.  Multiple file uploads?  If you wanted to send a string do you pass in a StringIO?</p></div>
+</div>
+
+<div class="entry">
+    <h3>loincloth</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    17:39</div>
+    <div class="content"><p>vury kool, thx thx thx</p></div>
+</div>
+
+<div class="entry">
+    <h3>Semaphore Horse</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    18:00</div>
+    <div class="content"><p>So what if you pass in a StringIO? It&#8217;d get to_s&#8217;d like everything else that isn&#8217;t a File. Mind you, a StringIO might be a smart way to do file uploads from sources that aren&#8217;t files! I like my way, because it&#8217;s obvious how multiple file uploads work, also, your way may very well be good for  PUT  uploads, but nothing uses them. What we need is multipart  POST  uploads, like forms do on the web. These can have multiple files, all the files have a filename and a content type, as well as a variable name. Most importantly, your syntax needs to at least require the variable name, and also simply must provide a way to specify other variables to include along with it for authentication and the likes.</p>
+<p>Does the cache work on the same rules as XMLHTTPRequest? I mean, stuff like, non-get requests are never cached? And does it respect the various competing ways of doing cache control from the server side, if so, which headers are supported?</p>
+<p>To properly support multipart file uploads, the syntax for upload becomes a lot like the syntax for download. We might as well call download &#8216;request&#8217; and if we have upload and download, make them shortcuts to the fuller functionality of a &#8216;request&#8217;&#8230; or do we call it a web_request? or a http_request? or maybe we just call it http? hrmm. Also, there&#8217;s another crazy possibility that Elliot Cable once showed me.</p>
+<p>If http is a method, which accepts a symbol called ://something.blah as an argument, and symbols implement the / operator&#8230; well, it suddenly becomes rather possible to write simple http url&#8217;s inline in your code and have that be meaningful.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Semaphore Horse</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    18:08</div>
+    <div class="content"><p>This sort of crazy thing: http://gist.github.com/5673</p>
+<p>Kinda crazy, but you get the idea.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Birthday Pony</h3>
+    <div class="time">said on <strong>August
+      15th</strong>
+    23:40</div>
+    <div class="content"><p>I suppose it would work fine to have the syntax of upload be: upload &#8220; URL &#8221;, {:param_name =&gt; File.open(&#8220;whatever.mp4&#8221;)}</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>August
+      27th</strong>
+    16:19</div>
+    <div class="content"><p>Thank heavens.  Threads really aren&#8217;t the tool for this stuff.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>August
+      27th</strong>
+    16:20</div>
+    <div class="content"><p>Well, raw threads as an  API  anyway.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; The Curious Look</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/01/09/theCuriousLook.html">The Curious Look</a></h1>
+  <div class="time"><strong>January
+9th
+</strong>
+    14:55</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Well, that&#8217;s pretty wild.  Simultaneous to yesterday&#8217;s Shoes release, there&#8217;s a <a href="http://www.oreillynet.com/pub/a/ruby/2008/01/14/shoes-meets-merb-interfacing-a-gtk2-front-end-and-a-rails-web-service.html">big article</a> exploring a little Shoes app on O&#8217;Reilly&#8217;s site by Gregory Brown and Brad Ediger.  And it goes through Shoes and Merb together.  Let us be friends, Merb.  Anyway, you&#8217;ve probably already seen it.</p>
+<p>I totally have no complaints with the article, writing those long articles has got to take forever.  I just wanted to post another screenshot of Shoes here, because I think those could be better.</p>
+<p><img src="../../../images/shoes-jot.png" class="c" alt="" /></p>
+<p>So, this example is actually really close to the pastebin example given in the article.  This one&#8217;s the start of a clone of  <del>Chris Wanstrath&#8217;s</del>  PJ Hyett&#8217;s <a href="http://vjot.com/">vJot</a> site, which is sort of a pastebin, too.  You paste a title and a full entry and it saves as it goes.</p>
+<p>This example doesn&#8217;t save to disk, so <a href="http://code.whytheluckystiff.net/svn/shoes/tags/0.r396-curious/samples/jot.rb">the code</a> focuses on just adding new elements and handling link clicks.  And this example here was a big part of shaping the new Curious look and shaping some new features in Shoes.</p>
+<ul>
+	<li><strong>Scroll panes.</strong>  The link list in the middle is a fixed-height stack.  It&#8217;s 200 pixels high.  And when its contents grow longer than that, a vertical scroll bar shows.  (Shoes doesn&#8217;t do horizontal scrollbars.)</li>
+	<li><strong>Change events.</strong>  This example saves as you type.  This is done by tacking a block on to the edit_line or edit_box.  And the block is executed with each keystroke.</li>
+	<li><strong>Dynamic link text.</strong>  The link text is altered as you type.</li>
+	<li><strong>Curved borders and backgrounds.</strong>  This is rather minor, but you can supply a :radius option to any border or background.  Perhaps we will see a plethora of decorative corners for Shoes!!</li>
+</ul>
+<p>Perhaps Shoes is already a bit antiquated since most programming has moved to the web already.  Who knows the future of desktop apps.  I guess I figure that, when it comes to learning and to hobby, it doesn&#8217;t matter whether it&#8217;s running far or near.  The code with the least resistance and the most action wins.</p>
+<p>I&#8217;m not saying Shoes is that code.  But maybe Shoes will inspire something new, just as NodeBox and Processing and <span class="caps">REBOL</span>/View have inspired Shoes.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>PJ</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    17:19</div>
+    <div class="content"><p>a clone of a clone, when will the madness end?!</p></div>
+</div>
+
+<div class="entry">
+    <h3>the_hack</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    19:20</div>
+    <div class="content"><blockquote><p>&quot;Perhaps Shoes is already a bit antiquated since most programming has moved to the web already&#8230;&#8217;</p></blockquote><p>I wouldn&#8217;t say antiquated.  I like shoes because it&#8217;s helping me to do something I wouldn&#8217;t otherwise.</p><p>Hackety Hack inspired me to learn Rails and now shoes is teaching me to better understand how ruby actually works.</p><p>I think what I am saying is that the sum of Shoes&#8217; good points are greater than its parts. Let&#8217;s not define its usefulness too narrowly&#8211;which brings me to another point: count me as one more vote for a shoes gem.  That is my NOVICE opinion!</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    19:53</div>
+    <div class="content"><p><strong>PJ:</strong> I have done my homework.  Now I realize.  I err&#8217;d the blog.</p><p><strong>the_hack:</strong> I understand where you&#8217;re coming from.  I&#8217;m a novice, too. (In the making-a-gem department.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Gregory Brown</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    21:42</div>
+    <div class="content"><p>_why, to be fair&#8230; Brad Ediger wrote most of the shoes stuff for this article, so you may want to cred him.  (I focused on the merb stuff).</p><p>This screenshot is definitely prettier, with us about 2 times over our article length limit&#8230; we sadly didn&#8217;t have room for pretty. :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Brad Ediger</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    22:07</div>
+    <div class="content"><p>Well, Greg did thoroughly rebuke me for my original version that monkeypatched both Shoes and Merb. Apparently such skin-tight coupling of vastly disparate components is a bad thing these days?</p><p>And I know my screenshots don&#8217;t have a tenth of the sex appeal that yours do, but hey, people still need to buy <a href="../../../2007/10/29/nobodyKnowsShoes.html">the book</a>, right?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    23:12</div>
+    <div class="content"><p><strong>Brad:</strong> Many apologies.  I can&#8217;t believe this!  I screwed up all the names in this article.  Woe is me!</p></div>
+</div>
+
+<div class="entry">
+    <h3>RyanTM</h3>
+    <div class="time">said on <strong>January
+      9th</strong>
+    23:51</div>
+    <div class="content"><p>Well. Now you agree that &#8220;shoes is a monkey on LSD&#8221; (Quote from that big article about shoes and merb).</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    12:49</div>
+    <div class="content"><p>Hm, there&#8217;s a fencepost error with the border-versus-background thing in the above example: there&#8217;s a one-pixel leakage of background past the border to the right and to the bottom.  I&#8217;m guessing you need to internally make backgrounds smaller by a pixel or else borders larger by that same amount.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    14:17</div>
+    <div class="content"><p>Actually, I think the curved borders/backgrounds are rather big news since they remove the need for a log of ugly image hacks.  I think that&#8217;s worth a lot more than it might look on face value.</p></div>
+</div>
+
+<div class="entry">
+    <h3>defunkt</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    16:14</div>
+    <div class="content"><p>This is great, Shoes is growing up so fast!</p></div>
+</div>
+
+<div class="entry">
+    <h3>tripdragon</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    18:21</div>
+    <div class="content"><p>Now,,, Can shoes make titlebarless apps Apples Widgets ? Or Vistas Gadgets? That way we could make Hud like programs</p></div>
+</div>
+
+<div class="entry">
+    <h3>_eric</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    20:33</div>
+    <div class="content"><p>Is there a way with this release of Shoes to make use of other gems?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

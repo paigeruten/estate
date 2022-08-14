@@ -1,0 +1,400 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Stamping EXEs And DMGs</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/06/19/stampingExesAndDmgs.html">Stamping EXEs And DMGs</a></h1>
+  <div class="time"><strong>June
+19th
+</strong>
+    15:15</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Here&#8217;s a brief Ruby script&#0151;one that demos Shoes&#8217; events and animation&#0151;and it&#8217;s been injected into an <span class="caps">EXE</span> and a <span class="caps">DMG</span>:</p>
+<div style="text-align: center; width: 340px; margin: 0 auto"><div style="width: 160px; float:left"><a href="../../../bin/accordion.exe"><img src="../../../images/accordion-exe.png" /></a><br /><a href="../../../bin/accordion.exe">accordion.exe</a><br /><span style="color:#552">84.0 KB</span></div><div style="width: 160px; float:left"><a href="../../../bin/accordion.dmg"><img src="../../../images/accordion-dmg.png" /></a><br /><a href="../../../bin/accordion.dmg">accordion.dmg</a><br /><span style="color:#552">43.4 KB</span></div><p></div><br clear="all" /></p>
+<p>These are web installers. Using native calls on each platform, they&#8217;ll install Shoes if no Shoes is found on the system.  (If you already have Shoes installed, though, it won&#8217;t <a href="http://code.whytheluckystiff.net/shoes/wiki/RecentBuilds">update</a> for you.)  Not a big deal, not worth mentioning really.  Installers.</p>
+<p>But, hold up.  What if I told you that Shoes can build EXEs and DMGs on any of its platforms?  Without needing a compiler.  You can build EXEs and DMGs from Windows.  And from Linux.  And from OS X.</p>
+<p><img src="../../../images/shoes-packager.png" class="c" alt="" /></p>
+<p>This is the built-in packager, which can be brought up with <code>shoes -p</code> (or <code>shoes --package</code> on Windows and Linux.  On OS X, it&#8217;s in the Shoes main menu.  (Or ⌘-x.)</p>
+<p>Even as Ron Popeil is to the unflavored turkey, so is Shoes to these most willing binaries.</p>
+<hr />
+
+<p>The magic is a little Ruby extension I use for manipulating EXEs and DMGs.  It&#8217;s based on two programs: <a href="http://www.mikekohn.net/file_formats/anal_pe.php">anal_pe</a> and <a href="http://github.com/planetbeing/xpwn">xpwn</a>.</p>
+<p>If you poke around with a hex editor inside Windows&#8217; PE binary format, you&#8217;ll find an .rsrc section at the end of the file which contains the icons and dialog boxes.  I insert the Ruby script into this mess.</p>
+
+<pre><code class="rb">binj = Binject::EXE.new("blank.exe")
+binj.inject("SHOES_FILENAME", "simple-accordion.rb")
+File.open("simple-accordion.rb") do |f|
+  binj.inject("SHOES_PAYLOAD", f)
+end
+binj.save("accordion.exe")
+</code></pre>
+<p>The <strong>blank.exe</strong> is the empty web installer.  It&#8217;s an executable that scans its own resources and then bases its moves on what it finds.  If it finds a Ruby script (or Shy file) in the <code>SHOES_PAYLOAD</code> resource, it&#8217;ll run it.  And if it finds an installer in the <code>SHOES_SETUP</code> resource, it&#8217;ll run the installer rather than going out to the web.</p>
+<p>So, yeah, <strong>blank.exe</strong> comes with Shoes and we inject when you go to package.  Yeah?</p>
+<hr />
+
+<p>Fabricating DMGs is a different kind of binary hacking.  In this case, we&#8217;ve got to build an HFS+ partition and then convert that to a <span class="caps">DMG</span>.</p>
+<p>One would start by making a small, raw HFS+ file and gzipping it.</p>
+
+<pre><code class="sh">$ dd if=/dev/zero of=blank.hfs bs=512K count=1
+$ mkfs.hfsplus -v Shoes blank.hfs
+$ gzip blank.hfs
+$ mv blank.hfs.gz blank.hfz
+</code></pre>
+<p>This blank disk gets included with Shoes as well.  And at runtime, we use our extension to build the innards of the <span class="caps">DMG</span>.</p>
+
+<pre><code class="rb">binj = Binject::DMG.new("blank.hfz", "Accordion")
+binj.inject_dir("Accordion.app", "/tmp/accordion.app")
+binj.chmod_file(0755, "Accordion.app/Contents/MacOS/accordion-launch")
+binj.save("accordion.dmg")
+</code></pre>
+<p>This amazing code is only possible due to tons of incredible work by the XPwn dev team.  First of all, their <span class="caps">DMG</span> and HFS+ code is totally portable and only depends on zlib.  But also, the <span class="caps">API</span> is just too easy.  Their project is going to catch on big, not only in jail breaking the iPhone from any platform, but in building DMGs from the commandline on OS X itself!</p>
+<p>Since both anal_pe and XPwn are <span class="caps">GPL</span>, I&#8217;m afraid this extension must be <span class="caps">GPL</span> as well.  The rest of Shoes is <span class="caps">MIT</span>.  Which is okay I guess since the packager isn&#8217;t really needed to run Shoes apps.</p>
+<hr />
+
+<p>This is all a bleeding fresh part of <a href="http://code.whytheluckystiff.net/shoes/wiki/RecentBuilds">today&#8217;s</a> builds.</p>
+<p>As for Linux.  I&#8217;m not decided as to what to do about generating Linux binaries.  Either using <a href="http://megastep.org/makeself/">makeself</a> or plain shell scripting will do.  But do I download binaries or automate package manager steps?  The unsurety.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">30 comments</a></div>
+
+<div class="entry">
+    <h3>tstrokes</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    10:42</div>
+    <div class="content"><p>Man this is awesome stuff. Shoes was already cool but now it is on a completely different level.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Inferis</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    10:48</div>
+    <div class="content"><p>Wow, this is super. We can actually give our apps to other people now :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Phil</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    10:59</div>
+    <div class="content"><p>I&#8217;m going to ask people to give back the apps I&#8217;ve already given to them.</p></div>
+</div>
+
+<div class="entry">
+    <h3>I wrote anal_pe</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    13:06</div>
+    <div class="content"><p>I wrote anal_pe and I have no problem with changing the license to accommodate what you&#8217;re doing.  You should have emailed me to let me know&#8230;</p>
+<p>/mike</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    14:20</div>
+    <div class="content"><p>This is a new level of inspired genius.</p>
+<p>Re: linux, on debian/ubu I&#8217;d&#8230; well&#8230; I can&#8217;t think of the last thing I installed that was&#8217;t a rubygem or via apt-get or via source. I only live in that world on ui-less production boxes, so no fancy Shoes apps in that world anyway. I could have not written this paragraph.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    14:32</div>
+    <div class="content"><p>Those are great programs. Nice find indeed.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    14:38</div>
+    <div class="content"><p><strong>mike</strong> (of anal_pe): Since XPwn is  GPL  as well, I&#8217;m perfectly okay with this licensing.  I&#8217;m not down on the  GNU  way, that was just a note.  Thankyou for your nice work, of course!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Will</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    14:44</div>
+    <div class="content"><p>It&#8217;s like being able to wear <b>and</b> tie your shoes. Great!</p></div>
+</div>
+
+<div class="entry">
+    <h3>technomancy</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    15:09</div>
+    <div class="content"><p>&gt; But do I download binaries or automate package manager steps?</p>
+<p>I&#8217;d suggest creating a .deb file and uploading it to a Launchpad  PPA  maybe? Launchpad is to debs as github is to gems in a way. If the client supports apturl, things are easy peasy. (Ignoring fedora/gentoo users.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Feoh</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    16:09</div>
+    <div class="content"><p>Seems like downloading binaries for Linux is the way to go.  If you&#8217;re reasonably conservative about the shlibs you require a fairly vanilla Linux binary will run in virtually every distribution.  The package approach would be nice but you&#8217;d need to support at least .deb and .rpm which could be more pain than it&#8217;s worth.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    20:10</div>
+    <div class="content"><p><strong>Feoh:</strong> I think I&#8217;ll follow your suggestion, only relying on openssl and zlib to be present on the system.  I guess I could probably have the shell script sniff out exactly what it needs.  That could prevent the download of gtk, glib, cairo, pango and vlc.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ms_windows</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    20:55</div>
+    <div class="content"><p>Whoa, this is truly awesome. Congrats. However you would do well to remove your rubies from my   TEMP   after you&#8217;re done.</p></div>
+</div>
+
+<div class="entry">
+    <h3>oh yeah</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    21:03</div>
+    <div class="content"><p>as awesome as this is, it doesn&#8217;t actually seem to work on windows. It gets as far as &#8216;packaging&#8217; and then nothing happens. It leaves behind a small, non-working exe with the same name as the ruby script.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    21:38</div>
+    <div class="content"><p><strong>oh yeah:</strong>  Oh, I have no doubts that there are bugs.  Send me the script you tried to bundle.</p></div>
+</div>
+
+<div class="entry">
+    <h3>oh yeah</h3>
+    <div class="time">said on <strong>June
+      19th</strong>
+    22:25</div>
+    <div class="content"><p>I tried simple-accordian.rb from the Shoes sample dir.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    00:08</div>
+    <div class="content"><p>Looks like the windows build has an older copy of the Ruby extension.  I&#8217;ve got to run, but a new build should be out in a day or two.  Thanks for finding that.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Bluebie</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    00:22</div>
+    <div class="content"><p>It isn&#8217;t working on Mac OS Leopard intel either, frozen progress bar doodad. It does make the .dmg and .exe though, even though there is no progress, however when I mount the  DMG  and run the .app, shoes opens and asks me which ruby file to run. O_o</p>
+<p>Also what about dependancies like pictures and junk? gotta figure those in too! Maybe shoes should be like camping, have appname.rb and a directory named appname, and put all your junk in there. Be easy to do on Mac, but on windows maybe you could shove the directory data in to a zip and write the zipped data in to the exe? Surely windows provides api&#8217;s for unzipping stuff, which could be shoved out to a temporary directory. :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Julik</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    00:44</div>
+    <div class="content"><p>On Leopard  PPC  the downloaded app does one jump in the dock and dies.<br>
+review:~ julik$ /SimpleAccordion.app/Contents/MacOS/simple-accordion-launch<br>
+/SimpleAccordion.app/Contents/MacOS/simple-accordion-launch: line 9: ./cocoa-install: Bad  CPU  type in executable<br>
+FSPathMakeRef(/Applications/Shoes.app) failed with error -43.</p>
+<p>Are we  PPC  oldies with the 4-core number crunchers sent away from the door at the Shoes party?</p></div>
+</div>
+
+<div class="entry">
+    <h3>oh yeah</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    03:07</div>
+    <div class="content"><p>Bluebie: You can package a .shy (which can include pictures and stuff)</p></div>
+</div>
+
+<div class="entry">
+    <h3>proppy</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    04:16</div>
+    <div class="content"><p>On Linux, I heard one could use <a href="http://www.packagekit.org/pk-intro.html">PackageKit</a> to trigger installation of packages in a cross distribution way.</p>
+<p>That could be handy for installing shoes and its dependencies, before installing the distributed shoes application.</p></div>
+</div>
+
+<div class="entry">
+    <h3>cmw</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    05:18</div>
+    <div class="content"><p>I got it figured out on an Intel-Leopard to build the apps. works like charm (even with pics and stuff if you build a shy).<br>
+Only there are some flaws I discovered:<br>
+- It won&#8217;t build any &#8216;Linux&#8217; package for me<br>
+- It freezes after having created the exe and dmg and dies eventually (might be connected to the above)<br>
+- It does not include shoes in the exe/dmg if asked to do so</p>
+<p>Oh and one minor thing is that I need to dig around to find a way of building the shy since shoes -s won&#8217;t work and you don&#8217;t have the option to build it in the menu.<br>
+shoes-launch -s is the way on Leopard.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jdefontes</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    10:16</div>
+    <div class="content"><p>Punting on the version dependecies is kinda sucky.</p>
+<p>I&#8217;ve got a really old version installed. The exe above launches fine but the app itself errors out on &#8220;uninitialized constant&#8221; or some such. If you&#8217;re going to detect that I have Shoes installed and not upgrade me, you could at least tell me that the version I have isn&#8217;t compatible with the app I&#8217;m trying to run. And then give me the option to upgrade.</p></div>
+</div>
+
+<div class="entry">
+    <h3>tim</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    10:43</div>
+    <div class="content"><p>woo hoo!</p></div>
+</div>
+
+<div class="entry">
+    <h3>on ubuntu hardy:</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    11:07</div>
+    <div class="content"><p>( :7693): Gtk- CRITICAL  **: gtk_widget_show: assertion `GTK_IS_WIDGET (widget)&#8217; failed</p></div>
+</div>
+
+<div class="entry">
+    <h3>DeeJay</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    11:44</div>
+    <div class="content"><p>&#8220;These are web installers. Using native calls on each platform, they’ll install Shoes if no Shoes is found on the system.&#8221;</p>
+<p>On Windows, unsurprisingly, the installer fails &#8211; silently &#8211; if not run with Administrator rights. The short cuts get created, but the &#8216;Common Files\Shoes\&#8230;&#8217; directory tree cannot be built.</p>
+<p>But once it&#8217;s installed it&#8217;s really exciting news!</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    12:07</div>
+    <div class="content"><p>This hack is only a few days old, so it&#8217;s great to finally get some reaction and some bug reports.  My complements to all of you.</p>
+<p><strong>jdefontes:</strong> Okay, good point, I will go with a prompt if it finds a new installer.</p></div>
+</div>
+
+<div class="entry">
+    <h3>cmw</h3>
+    <div class="time">said on <strong>June
+      20th</strong>
+    15:29</div>
+    <div class="content"><p>on jdefontes&#8217; post:</p>
+<p>perhaps one could also add the version number it is built/tested with like that:<br>
+Shoes. app(:version =&gt; &#8217;r726&#8217;) do &#8230; end</p>
+<p>Or directly include the version of the builder?</p>
+<p>Anyway, kudos to you _why. Awesome Shoes. Shiny!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Girvo</h3>
+    <div class="time">said on <strong>June
+      23rd</strong>
+    17:47</div>
+    <div class="content"><p>Hi there! Love shoes :)</p>
+<p>I built the latest release from source on Ubuntu here, worked like a charm. Only the package manager won&#8217;t build the programs for me :(</p>
+<table>
+	<tr>
+		<td><code>(&lt;unknown&gt;:13474): Gtk-CRITICAL **: gtk_widget_show: assertion `GTK_IS_WIDGET (widget)' failed</code></td>
+	</tr>
+</table>
+<p>That&#8217;s my error.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      23rd</strong>
+    21:52</div>
+    <div class="content"><p>Hey, Girvo.  Yes, this is fixed in commit <a href="http://github.com/why/shoes/commit/d1ac0ded79318256c726c1ddd57127e70cf1d171">d1ac0de</a>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Girvo</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    08:28</div>
+    <div class="content"><p>Wicked, I&#8217;ll test it when I get into work :D</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

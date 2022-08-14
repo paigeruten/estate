@@ -1,0 +1,364 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Dismantling BrowserPlus</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/06/09/dismantlingBrowserPlus.html">Dismantling BrowserPlus</a></h1>
+  <div class="time"><strong>June
+9th
+</strong>
+    03:58</div>
+  <div class="author">by why</div>
+  <div class="content"><p>So, Yahoo!&#8217;s <a href="http://browserplus.yahoo.com/">BrowserPlus</a> came out of nowhere.  And, well, it does other things, but I want to look at how it embeds Ruby in the browser.  I know, I know.  Enough with Ruby in the browser.</p>
+<p><img src="../../../images/bplus.png" class="cb" alt="" /></p>
+<p>But I had to peek a little.  And to pry it open like the upturned crab it was.  Don&#8217;t ask me if they are doing the <strong>right</strong> thing or if they are going to <strong>win</strong> or anything.  (I look at Facebook and all I see is a guy in an over-starched shirt with a blue collar who leans on the wall with his legs crossed and has to analyze everything I say <em>to death</em>.  Go peg your pants, guy.)</p>
+<p>I wanted to find out if the interpreter was sandboxed, first of all.  And, next, I wanted to set up an <code>eval</code> method so you can run arbitrary Ruby code.</p>
+<p>And to what end?  Come on, everybody quit asking me that.</p>
+<hr />
+
+<p>Actually, BrowserPlus doesn&#8217;t come with a Ruby interpreter.  Ruby is an addition you can download and a couple of the samples use it for talking to Flickr and for storing marshalled data.  (Their equivalent to Google Gears&#8217; SQLite is just a PStore wrapper?)  The Photo Uploader and <span class="caps">IRC</span> Client <a href="http://browserplus.yahoo.com/demos/">demos</a> both use the Ruby interp.</p>
+<p>It also doesn&#8217;t really embed Ruby directly in the browser.  Plus runs as a separate process that you pass calls out to.  The process hosts these additions called <em>services</em> or <em>corelets</em> (but I like to call them roo-dads!)  And they are sort of like a ruby gem.  A versioned library that&#8217;s downloaded only when you need it.</p>
+<p>Okay, so that&#8217;s the nutshell.  And the hacks hereforward will be:</p>
+<ul>
+	<li>A web app which serves up the roo-dads.</li>
+	<li>Some OpenSSL commandline scripting to sign them.</li>
+	<li>Some Ruby scripts in a zip file to act as our sample.</li>
+	<li>Injecting a library into their RubyInterpreter corelet.</li>
+	<li>And a few hacks on the user-side to get things opened up.</li>
+</ul>
+<p>After you&#8217;ve got a handle on these hacks, you&#8217;ll be able to screw around with Plus yourself, rather than being confined to the restricted set of demos on the Yahoo! dev site.</p>
+<hr />
+
+<p>Let&#8217;s free up Plus first.  Since this is just a beta release, the Plus team have it all locked up so you can only use it on the <code>browserplus.yahoo.com</code> subdomain.</p>
+<p>Step one.  Edit <strong>BrowserPlus.config</strong>.</p>
+<ul>
+	<li>On Windows, look for <code>C:\Program Files\Yahoo! BrowserPlus\2.0.4\BrowserPlus.config</code>.</li>
+	<li>On OS X, it&#8217;s at <code>$HOME/Library/Application Support/Yahoo!/BrowserPlus/2.0.4/BrowserPlus.config</code>.</li>
+</ul>
+
+<pre><code class="js">/* THIS FILE IS GENERATED BY THE BUILD SYSTEM.  EDIT THE CORRESPONDING .cmakeIn FILE.
+ */
+
+/*
+ * This is the configuration file for BrowserPlus
+ */
+
+{
+   // the base url for the "primary" distribution server.  This server will
+   // be the single source of truth for Permissions, and will used to
+   // attain services
+   "DistServer": "http://browserplus.yahoo.com",
+
+   // An array of "secondary" distribution servers, which will be checked
+   // in order for services if the primary server has no components
+   // available which match an issued require statement.
+   "SecondaryDistServers": [ "" ],
+
+</code></pre>
+<p>Alter the <code>DistServer</code> line.  Change <code>"http://browserplus.yahoo.com"</code> to <code>"http://plus.hackety.org"</code>.</p>
+<p>Second step, we&#8217;ve got to add some S/<span class="caps">MIME</span> keys.  I can&#8217;t sign stuff as Yahoo! considering that I lack their private keys.</p>
+<p>Download <a href="../../../crt/BrowserPlus.crt">BrowserPlus.crt</a> and copy to the <strong>Permissions</strong> folder.</p>
+<ul>
+	<li>On Windows, this is at <code>C:\Program Files\Yahoo! BrowserPlus\Permissions\BrowserPlus.crt</code>.</li>
+	<li>On OS X, go to <code>$HOME/Library/Application Support/Yahoo!/BrowserPlus/Permissions/BrowserPlus.crt</code>.</li>
+</ul>
+<p>Don&#8217;t worry about overwriting the file.  Yahoo!&#8217;s cert is still in there as well.</p>
+<p>Third and last step, alter the <strong>Permissions</strong> file.</p>
+<ul>
+	<li>On Windows, you&#8217;ll want <code>%LOCALAPPDATA%/Yahoo!/BrowserPlus/Permissions/Permissions</code>.</li>
+	<li>On OS X, edit <code>$HOME/Library/Application Support/Yahoo!/BrowserPlus/Permissions/Permissions</code>.</li>
+</ul>
+
+<pre><code class="js">{
+    // What domains are approved?  Entries are PCRE regular expressions
+    // which must match the scheme://host:port of the requesting URI.
+    // Regular expressions must be anchored with $.
+    // Note that the PCRE expression may need to be protected in order
+    // to be valid JSON (e.g. a '\' needs to be '\\')
+    //
+    "whitelist" : [
+      "^http(s?)://(.*)\\.yahoo\\.com$",
+      "^http(s?)://(.*)\\.yahoo\\.com:[0-9]+$"
+    ],
+</code></pre>
+<p>Add to the <code>"whitelist"</code> array an entry for hackety.org: <code>"^http(s?)://(.*)\\.hackety\\.org$"</code>.</p>
+<p>If you want to write your own web pages using BrowserPlus, you can follow that last step for your site as well.  However, to actually write Ruby extensions, you&#8217;ll need a cert and a dist server of your own, until Yahoo! opens up their dist server.</p>
+<hr />
+
+<p>The certificate is an <a href="http://kb.mozillazine.org/Getting_an_SMIME_certificate">S/<span class="caps">MIME</span> cert</a>.  Which is used for signing e-mail.  In fact, all the meat cutlet core-dads get served as <code>smime.p7m</code>.  They look like e-mail attachments.  (Here&#8217;s <a href="http://browserplus.yahoo.com/api/v1/corelet/strings/ImageAlter/1.2.6/win32">one</a> for your inspection, if you like.)</p>
+<p>So, let&#8217;s say you get a cert and end up with a <span class="caps">PEM</span> file that has a list of certs and your private key.  You&#8217;ll want to split that file up into separate files.  From a <a href="http://www.kfu.com/~nsayer/encryption/openssl.html">really great <span class="caps">HOWTO</span></a> that explains it all:</p>
+<blockquote>
+<p>You should get out a bunch of certificates. You&#8217;ll need to look at the text above each one to find the one that is your certificate. The rest are part of Thawte&#8217;s Certifying Authority. It turns out that if you want your messages to verify correctly, you must also include Thawte&#8217;s intermediate CA key.</p>
+</blockquote>
+<blockquote>
+<p>There should be 3 certificates. The one whose identity is your e-mail address is your certificate. The one whose subject and issue are identical is the Thawte CA root. You won&#8217;t need that one, since we&#8217;ll include it in the trusted root file later. The 3rd one will have the CA root as the issuer and something else as the subject (which will be the same as the issuer of your certificate). You need to save that vertificate as an additional certificate for signing. We&#8217;ll refer to the file containing this cert as othercert.</p>
+</blockquote>
+<p>To <code>BrowserPlus.crt</code>, you add the 3 certificates.  If your CA is a common one, you can probably omit the CA root certificate.</p>
+<p>As for signing the payload, you take a zip with Ruby scripts inside and use <code>openssl</code> from the commandline.</p>
+
+<pre><code class="sh">$ openssl smime -sign -inkey HacketyPlus.key -signer HacketyPlus.crt \
+    -certfile HacketyPlus.other -in Payload-1.0.0.zip -out Payload-1.0.0.p7m \
+    -nodetach -binary
+</code></pre>
+<p>You can test unpacking the payload with your master <code>BrowserPlus.crt</code>.</p>
+
+<pre><code class="sh">$ openssl smime -verify -CAfile BrowserPlus.crt \
+    -in Payload-1.0.0.p7m -out Payload-1.0.0.zip
+</code></pre>
+<p>So, yeah, cert created.  Signing and unpacking is good.</p>
+<p>The zip itself should have Ruby scripts and a <code>manifest.json</code> in the root.</p>
+
+<pre><code>  Eval-1.0.0.zip:
+    manifest.json
+    eval.rb
+</code></pre>
+
+<hr />
+
+<p>Now, what goes in the Ruby scripts?  Here&#8217;s a trivial example:</p>
+
+<pre><code class="rb">
+class Eval
+  def initialize(args)
+  end
+
+  def eval(bp, args)
+    begin
+      code = args['code']
+      obj = Kernel.eval(code, TOPLEVEL_BINDING)
+      bp.complete(obj.inspect)
+    rescue Exception => err
+      bp.error('FAIL', "Error: #{err}")
+    end
+  end
+end
+
+RubyCoreletDefinition = {
+  'class' => "Eval",
+  'name' => "Eval",
+  'major_version' => 1,
+  'minor_version' => 0,
+  'micro_version' => 0,
+  'documentation' => 'Run any Ruby whatsoever.',
+  'functions' =>
+  [
+    { 
+      'name' => 'eval',
+      'documentation' => "Executes a string of Ruby code.
+         Returns a string of the inspected data.",
+      'arguments' =>
+      [ 
+        { 
+          'name'          => 'code',
+          'type'          => 'string',
+          'required'      => true,
+          'documentation' => 'The code to execute.'
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>Gah.  That&#8217;s a pretty arduous Hello World.  The definition at the bottom declares the signature of every method you expose to JavaScript.</p>
+<p>Take particular note of the <code>eval</code> method.  For every method you offer up, you get a pair of arguments: the first being a <code>bp</code> object for communicating with BrowserPlus and an <code>args</code> hash containing the incoming <span class="caps">JSON</span>-marshalled object.</p>
+<p>We need not go through that mess, though.  Since I was able to unpack the RubyInterpreter corelet, I&#8217;ve injected a bit of code into my version (3.1.2) to make this more comfortable for you.</p>
+
+<pre><code class="rb">
+class Eval
+  bp_version "1.0.0"
+  bp_doc "Run any Ruby whatsoever."
+
+  def eval(code)
+    obj = Kernel.eval(code, TOPLEVEL_BINDING)
+    obj.inspect
+  end
+  bp_doc :eval, 
+    "Executes a string of Ruby code.
+     (code: string) The code to execute."
+end
+
+RubyCoreletDefinition = Eval.to_corelet
+</code></pre>
+<p>The code that makes this possible is found in <a href="http://github.com/why/fakeplus/tree/master/stdlib/bp_hacks.rb">stdlib/bp_hacks.rb</a> in the RubyInterpreter 3.1.2 download.</p>
+<hr />
+
+<p>As for serving up all these libs, I give you <a href="http://github.com/why/fakeplus">FakePlus</a>.  This is a very small Camping app, accompanied by a <span class="caps">YAML</span> index.  The index lists all the available additions.  The Camping app mimicks Yahoo!&#8217;s web service at <code>browserplus.yahoo.com/api</code>.</p>
+<p>Finally, you can mess with the Eval addition by visiting <a href="http://plus.hackety.org/eval.html">here</a> once you&#8217;ve got the hacks at the beginning all nicely in place.  And I think if you horse around on that page for a little while, it will become very evident whether things are sandboxed or not.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">11 comments</a></div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    04:42</div>
+    <div class="content"><p>Inspirational hacking. Now I need to muster the energy to setup the pre-hacking steps :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Charles </h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    07:07</div>
+    <div class="content"><p>This looks cool. I admit I&#8217;m curious to know if they did sandbox it properly (they&#8217;d better&#8230;), but not curious enough to go to all that effort yet.</p></div>
+</div>
+
+<div class="entry">
+    <h3>bryanl</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    07:47</div>
+    <div class="content"><p>Cool hack. I&#8217;m with Dr Nic on this one.  I need to find the energy and the time to set it up.</p></div>
+</div>
+
+<div class="entry">
+    <h3>CyndyA</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    09:06</div>
+    <div class="content"><p>Well, that sure didn&#8217;t take long to see. ;)</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    09:34</div>
+    <div class="content"><p>The only steps you really need to follow (in order to use the Eval module) are the three steps in the first section.  Edit BrowserPlus.config.  Replace BrowserPlus.crt.  And alter Permissions.</p>
+<p>The other steps are for serving your own code.  Which is much harder and difficult to troubleshoot.</p></div>
+</div>
+
+<div class="entry">
+    <h3>elliottcable</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    11:07</div>
+    <div class="content"><p>Dontcha gotta love &#8216;much harder and difficult to troubleshoot&#8217;? I have to say, that half of most things is where I spend 90% of my time and 90% of my interest &#8211; so it balances out.</p></div>
+</div>
+
+<div class="entry">
+    <h3>stepheneb</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    12:55</div>
+    <div class="content"><p>Did the first three steps, restarted Safari, and am getting:</p>
+<blockquote>
+<p><code>Error Loading Eval: core.serverError</code></p>
+</blockquote>
+<p>when I connect to http://plus.hackety.org</p></div>
+</div>
+
+<div class="entry">
+    <h3>kamran</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    16:43</div>
+    <div class="content"><p>wish it supported linux</p></div>
+</div>
+
+<div class="entry">
+    <h3>zapnap</h3>
+    <div class="time">said on <strong>June
+      9th</strong>
+    20:47</div>
+    <div class="content"><p>Hrmm very cool. Going to have to toy around with this later in the week. Thanks!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dan M</h3>
+    <div class="time">said on <strong>June
+      10th</strong>
+    18:27</div>
+    <div class="content"><p>Awesome, that is interesting. I actually just heard a talk from one of the browser plus developers. It was kind of interesting I didn&#8217;t realize how much it was competing with the Silverlight / Google Gears space. It is odd that all three companies have basically decided browser development isn&#8217;t going towards these solutions fast enough and that plugging in an providing additional functionally is the way to improve the system.</p>
+<p>I guess I could see why I might want to run Ruby in the browser because I like Ruby, but most of the time I would just expect to make server calls and ajax back the results. Is there some real benefits to running Ruby locally or is it just a great way to offload some of the more complex tasks onto the client and into languages that can handle the tasks.</p></div>
+</div>
+
+<div class="entry">
+    <h3>lloyd</h3>
+    <div class="time">said on <strong>June
+      11th</strong>
+    20:00</div>
+    <div class="content"><p>I dig stdlib/bp_hacks.rb <i>very</i> deeply.  started out with return value being what gets passed back, but then folks wanted to do sync stuff and not block up other calls from getting executed:</p>
+<pre><code>
+Thread.new(foo) { |myfoo|
+  ... blocking stuff ... 
+  bp.complete(returnValue) 
+}
+</code></pre>
+<p>Any idea how to get the simplicity of the return value approach and the flexibility of the bp.complete() route?</p>
+<p>_why, may I roll some of these ideas into the official distro?</p>
+<p>lloyd</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

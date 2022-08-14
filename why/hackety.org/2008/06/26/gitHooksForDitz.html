@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Git Hooks For Ditz</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/06/26/gitHooksForDitz.html">Git Hooks For Ditz</a></h1>
+  <div class="time"><strong>June
+26th
+</strong>
+    13:04</div>
+  <div class="author">by why</div>
+  <div class="content"><p><code>~/.ditz/hooks/after_add.rb</code>:</p>
+
+<pre><code class="rb">Ditz::HookManager.on :after_add do |project, config, issues|
+  issues.each do |issue|
+    `git add #{issue.pathname}`
+  end
+end
+</code></pre>
+<p><code>~/.ditz/hooks/after_delete.rb</code>:</p>
+
+<pre><code class="rb">Ditz::HookManager.on :after_delete do |project, config, issues|
+  issues.each do |issue|
+    `git rm #{issue.pathname}`
+  end
+end
+</code></pre>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">2 comments</a></div>
+
+<div class="entry">
+    <h3>alternaman</h3>
+    <div class="time">said on <strong>June
+      26th</strong>
+    15:22</div>
+    <div class="content"><p>Admittedly, this isn&#8217;t as cool, but here&#8217;s the Mercurial hook:</p>
+<pre>
+<code>
+  hg addre bugs
+</code>
+</pre></div>
+</div>
+
+<div class="entry">
+    <h3>William</h3>
+    <div class="time">said on <strong>June
+      26th</strong>
+    17:47</div>
+    <div class="content"><p>Funny, I just today added a Ditz plugin to tie issues to Git feature branches, so you get a list of commits associated with each issue. (If you are a feature branch addict like me.)</p>
+<p>http://all-thing.net/2008/06/ditz-git-integration-plugin-in-git.html</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

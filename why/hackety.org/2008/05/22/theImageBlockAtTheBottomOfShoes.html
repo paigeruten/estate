@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; The Image Block At The Bottom Of Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/05/22/theImageBlockAtTheBottomOfShoes.html">The Image Block At The Bottom Of Shoes</a></h1>
+  <div class="time"><strong>May
+22nd
+</strong>
+    23:57</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-image-1.png" class="r" alt="" /></p>
+<p>In Shoes, images have been much as they are in <span class="caps">HTML</span>.  Generally, a path to the image.  And maybe its width and height.</p>
+
+<pre><code class="rb">Shoes.app do
+  image "static/shoes-icon.png"
+end
+</pre></code>
+<p>You have a picture window.</p>
+<hr />
+
+<p>In recent times, some Shoesers have been eschewing images and preferring to fabricate the shapes on their own.  An example would be the minesweeper <a href="http://the-shoebox.org/apps/36">clone</a>, which paints the circles and lines for all the bombs and flags.  Probably to keep things as a single Ruby script.</p>
+<p><img src="../../../images/shoes-image-2.png" class="c" alt="" /></p>
+<p>The little bombs get drawn with something akin to this <code>bomb</code> method.</p>
+
+<pre><code class="rb">module Arsenal
+  def bomb x, y
+    nostroke
+    fill "#000"
+    oval x+3, y+3, 13
+    fill "#333"
+    oval x+5, y+5, 7
+    fill "#AAA"
+    oval x+6, y+6, 3
+
+    fill "#000"
+    stroke "#222"
+    strokewidth 2
+    oval x+12, y+3, 2
+    oval x+14, y+3, 1
+  end
+end
+
+Shoes.app do
+  extend Arsenal
+  background white
+  bomb 0, 0
+end
+</code></pre>
+<p>So, the bomb gets drawn at <code>0, 0</code>.  Holy goalie, though.  Look at all that math.  And the worst part of it is that every time you move the bomb, you&#8217;ve got to recompute and redraw everything.  Either that or you&#8217;ve got to move each little oval individually.</p>
+<p><img src="../../../images/shoes-image-3.png" class="c" alt="" /></p>
+<p>Rather, let&#8217;s draw a bomb inside an image block.</p>
+
+<pre><code class="rb">module Arsenal
+  def bomb x, y
+    image 20, 20, :top => x, :left => y do
+      nostroke
+      fill "#000"
+      oval 3, 3, 13
+      fill "#333"
+      oval 5, 5, 7    
+      fill "#AAA"
+      oval 6, 6, 3    
+
+      fill "#000"
+      stroke "#222"
+      strokewidth 2
+      oval 12, 3, 2
+      oval 14, 3, 1
+    end
+  end
+end
+</pre></code>
+<p>This image syntax creates a bitmap surface in memory.  In this case: 20 pixels by 20 pixels.  Upon which shapes are drawn on to.  And it&#8217;s then treated like an image loaded from a file.</p>
+<p>The advantages in this case are:</p>
+<ul>
+	<li>The image block is only drawn <strong>once</strong>.  So faster paint times.  Shapes aren&#8217;t constantly recomputed.</li>
+	<li>Everything is positioned according to the image&#8217;s origin.  Less math.  (Notice no <code>x</code> and <code>y</code> used in the image block.)</li>
+	<li>Image effects (such as <code>blur</code> and <code>shadow</code> effects) can be applied to this image.</li>
+	<li>Can be moved and resized as a single image.  Conceptually easier, I guess.</li>
+</ul>
+<hr />
+
+<p>Shoes is pretty meager on image effects right now, but a good example of using the <code>blur</code> effect is in <a href="http://github.com/why/shoes/tree/master/samples/simple-sphere.rb">samples/simple-sphere.rb</a>.</p>
+<p><img src="../../../images/shoes-image-4.jpg" class="c" alt="" /></p>
+<p>Alls I did was follow <a href="http://www.axialis.com/tutorials/tutorial-misc003.html">this</a> Photoshop tutorial, each of its steps for piling on the inner and outer glows and gradients.  This was a lot of fun to do and I think could be the basis of a pretty inspiring class for kids.  Give them a Photoshop tutorial and work through expressing each of its steps in code.</p>
+<p>You will need a <a href="http://code.whytheluckystiff.net/shoes/wiki/RecentBuilds">recent build</a> to make any of this fly, though.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">11 comments</a></div>
+
+<div class="entry">
+    <h3>Tieg</h3>
+    <div class="time">said on <strong>May
+      22nd</strong>
+    21:48</div>
+    <div class="content"><p>I don&#8217;t know what kind of magic just happened, but updating to the recent build just made my current script much faster! Unfortunately I don&#8217;t think that&#8217;ll make my coding skills any faster, but I must learn patience.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matt</h3>
+    <div class="time">said on <strong>May
+      23rd</strong>
+    04:19</div>
+    <div class="content"><p>It would be easy to paint the bomb in different places if Shoes had an affine transform per drawing context, like Java2D or OpenGL.  You could write a bomb method that drew a bomb at 0,0.  Then to draw a bomb at (x, y) you could just use the code &#8220;x,y); bomb;&#8221;.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>May
+      23rd</strong>
+    09:25</div>
+    <div class="content"><p><strong>Matt:</strong> True, good point! You can accomplish an affine transform in Shoes with the <code>rotate</code>, <code>skew</code> or <code>scale</code> methods, followed by a <code>translate</code>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>failureontheweb</h3>
+    <div class="time">said on <strong>May
+      23rd</strong>
+    09:56</div>
+    <div class="content"><p>I wonder if there is a practical way to pull in an OpenGL library into shoes&#8230;.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      24th</strong>
+    12:13</div>
+    <div class="content"><p>I should say dislike the  API . The ethernal problem of graphic APIs is their imperativitiy: we typically say &#8220;set fill; then draw somethings&#8221;, while having in mind &#8220;draw something with fill&#8221;. Like <a href="http://pastie.caboo.se/202773">this</a></p>
+<p>Next: for parameters (oval) seems to bee already as much as it requires parameter naming (through hash). It may seem bit too verbose, but with upcoming ruby1.9 hashes (like `width: 100`) and parameters abbreviations (`w: 100, h: 200, :f =&gt; &#8216;#4df&#8217;, :b =&gt; &#8216;20%&#8217;) it seems to be &#8220;just right&#8221;.</p>
+<p>And next: z-order question is also solved in imperative way (&#8220;A is drawn on top of B because A is drawn <i>after</i> B&#8221;). Why not to solve it through nesting of drawing commands? (&#8220;Oval, having oval and text inside it&#8221;). This solution also allows usage of &#8220;relative&#8221; sizes (like &#8220;50%&#8221;) and maybe even fills (transformations in  HSV  space?). Think about reusable function drawing this image with sphere (with changable width, height and color parameters). With current solution, you should calculate all sizes of ovals when drawing with another width/height, but having relative sizes, you can handle this case naturally.</p></div>
+</div>
+
+<div class="entry">
+    <h3>danield</h3>
+    <div class="time">said on <strong>May
+      26th</strong>
+    02:53</div>
+    <div class="content"><p>Nice blog!<br>
+What is the window theme you use with Shoes and  GTK /Gnome?</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      26th</strong>
+    05:06</div>
+    <div class="content"><p>one more example with changed  API : <a href="http://pastie.caboo.se/203365">bomb method</a></p></div>
+</div>
+
+<div class="entry">
+    <h3>someguy</h3>
+    <div class="time">said on <strong>May
+      26th</strong>
+    08:57</div>
+    <div class="content"><p>I&#8217;m encouraged to see the progress on Shoes; when will this translate into some work on hackety hack?  I was using it with some kids but stopped when development seemed to cease.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>May
+      26th</strong>
+    17:33</div>
+    <div class="content"><p><strong>zverok:</strong> Shoes already allows that hash syntax.  Most things even accept <code>:stroke</code> and <code>:fill</code>.  I&#8217;m just using the shorter syntax above.  Rather than <code>:x</code>, <code>:y</code> and <code>:r</code>, you&#8217;d use <code>:left</code>, <code>:top</code> and <code>:radius</code>.</p>
+<p>This and your z-order question make me think you didn&#8217;t read this post and haven&#8217;t really done your homework on Shoes at all.  Have you ever written anything in Shoes?</p>
+<p><strong>someguy:</strong> Stick around, this stuff just needs to get completely stable.</p></div>
+</div>
+
+<div class="entry">
+    <h3>someotherguy</h3>
+    <div class="time">said on <strong>May
+      29th</strong>
+    19:11</div>
+    <div class="content"><p>Thanks _why, I&#8217;ll keep my eyes open.  Except when I&#8217;m sleeping.</p></div>
+</div>
+
+<div class="entry">
+    <h3>kamran</h3>
+    <div class="time">said on <strong>May
+      30th</strong>
+    03:21</div>
+    <div class="content"><p>So i want to create 2 different kinds of blocks, one blue and one green, but i want to make many of them. Should i assign the image block for creating them to variables, and then just copy that variable when i need a copy of the image, or is there a better way to do that? I really enjoy using shoes, and for zverok, i&#8217;d try checking out <a href="../../../press/">Nobody Knows Shoes</a>, a very useful book if your interested in this toolkit.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

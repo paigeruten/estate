@@ -1,0 +1,506 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Hpricot Strikes Back</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/11/03/hpricotStrikesBack.html">Hpricot Strikes Back</a></h1>
+  <div class="time"><strong>November
+3rd
+</strong>
+    19:13</div>
+  <div class="author">by why</div>
+  <div class="content"><p>My my. How the sensationalist press does carry on.</p>
+<blockquote>
+<p><a href="http://www.rubyinside.com/nokogiri-ruby-html-parser-and-xml-parser-1288.html">Peter Cooper</a>: On an <a href="http://gist.github.com/18533">Hpricot vs Nokogiri benchmark</a>, Nokogiri clocked in at 7 times faster at initially loading an <span class="caps">XML</span> document, 5 times faster at searching for content based on an XPath, and 1.62 times faster at searching for content via a <span class="caps">CSS</span>-based search. These are impressive results, since Hpricot was previously considered to be quite speedy itself.</p>
+</blockquote>
+<p>I feel just awful (just <em>supreeeeemely</em> lousy) that these benchmarks were only good for four days.  Nokogiri is no longer seven times faster than Hpricot.</p>
+<p>And that means these guys have to go back through all their docs and promotional materials and&#8230; wow, what a job it&#8217;s going be.  It&#8217;s just a tough situation, folks.  My heart goes out to all the fine young lads who worked so hard to bring Hpricot down, only to discover, <em>hey, boss, there she goes!</em> Hpricot is strolling right along the boardwalk, smiling, waving, checking its watch, fit as a fiddle.</p>
+<p>This fruit is tiny, shiny and can be spit-polished in a single weekend.</p>
+<p><img src="../../../images/hpricot.png" class="c" alt="" /></p>
+<hr />
+
+<p>Before we get to the news&#8230; Here&#8217;s the <span class="caps">XML</span> those Nokogiri benchmarks are based on: <a href="http://static.bezurk.com/fragments/wikitravel/sin.xml">sin.xml</a>.</p>
+<p>Someone help me here.  Am I reading that right?  There are six <span class="caps">XML</span> tags in that whole file.  Is this for reals?  Six, right?</p>
+
+<pre><code>&lt;location&gt;
+&lt;refUrl&gt;http://wikitravel.org/en/Singapore&lt;/refUrl&gt;
+  &lt;info&gt;
+    &amp;lt;b&amp;gt;Singapore&amp;lt;/b&amp;gt; is an island-state in Southeast
+    Asia, connected by bridges to Malaysia. Founded as a British trading colony 
+    in 1819, since independence it has become one of the &amp;lt;b&amp;gt;world's 
+    most prosperous countries&amp;lt;/b&amp;gt; and sports the world's busiest 
+    port.   Combining the skyscrapers and subways of a &amp;lt;b&amp;gt;modern, 
+    affluent city&amp;lt;/b&amp;gt; with a medley of Chinese, Indian and Malay 
+    influences and a &amp;lt;b&amp;gt;tropical climate&amp;lt;/b&amp;gt;, with 
+    tasty food, good shopping and a vibrant nightlife scene, this Garden City 
+    makes a great stopover or springboard into the region.
+  &lt;/info&gt;
+&lt;/location&gt;
+</code></pre>
+<p>This benchmark was linked all over the place last week.  Does anyone look at this stuff?</p>
+<hr />
+
+<p>Okay, great.  Let&#8217;s battle!</p>
+<p>Time for a new benchmark based on <code>timeline.xml</code> from John Nunemaker&#8217;s <a href="http://railstips.org/2008/8/12/parsing-xml-with-ruby">libxml vs. hpricot</a> stuff.</p>
+<blockquote>
+<p><a href="http://gist.github.com/21936">gist: 21936</a>:<pre><code>    user system total real
+hpricot:doc 2.630000 0.030000 2.660000 ( 2.655527)
+hpricot2:doc 0.340000 0.000000 0.340000 ( 0.349340)
+nokogiri:doc 0.600000 0.020000 0.620000 ( 0.611570)
+    user system total real
+hpricot:xpath 1.910000 0.000000 1.910000 ( 1.911496)
+hpricot2:xpath 0.890000 0.010000 0.900000 ( 0.897664)
+nokogiri:xpath 0.060000 0.000000 0.060000 ( 0.061546)
+    user system total real
+hpricot:css 1.880000 0.000000 1.880000 ( 1.889301)
+hpricot2:css 0.680000 0.010000 0.690000 ( 0.677072)
+nokogiri:cssbenchmark.rb:77: [BUG] Bus Error
+ruby 1.8.6 (2007-09-24) [i686-darwin8.11.1]</code></pre></p>
+</blockquote>
+<p>Try it yourself with the <a href="../../../dist/hpricot-0.6.170.gem">hpricot-0.6.170 gem</a>, which includes source code, so you&#8217;ll need a compiler.</p>
+<p>This is only a rewrite of the parser, not the Ragel lexer.  I&#8217;m actually surprised the XPath and <span class="caps">CSS</span> parser numbers are cut in half, basically, just by changing my object structures.  I&#8217;ve just finished a new Ragel-based <span class="caps">CSS</span> selector parser which should cause those searches to drop dramatically.  I am considering dropping XPath support this time.</p>
+<p>I haven&#8217;t got the new parser totally switched in yet.  Right now you call <code>Hpricot.scan</code> without a block.  Once I&#8217;m finished testing the two side-by-side, I&#8217;ll swap in the new parser and release 0.7.</p>
+<hr />
+
+<p>I feel some regret posting a benchmark at all, because I don&#8217;t want to detract from my main point.</p>
+<p>Someday, Nokogiri may be seven times faster than Hpricot.  Someday it may be twelve times slower.  In fact, on one single day, it may be five time faster, then fourteen times slower, then eleven-point-three times faster!</p>
+<p>But Nokogiri has no fuzzy fruited emblem.  And it does not dwell in an orchard of markup.  (Such a very yummy orchard, you&#8217;d never believe!)  I can put those statements in my promos and newsreels and they&#8217;ll never change.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">40 comments</a></div>
+
+<div class="entry">
+    <h3>jontyjont</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    14:14</div>
+    <div class="content"><p>Well said _Why!!</p>
+<p>I think perhaps that some people are unripe fruit coloured at your excellence!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Alistair Holt</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    14:18</div>
+    <div class="content"><p>Hooray for Hpricot!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matt Aimonetti</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    14:30</div>
+    <div class="content"><p>Great stuff, I&#8217;m actually pretty happy that nokogiri and hpricot are both trying to improve perfs. I know of people saying that the Ruby community doesn&#8217;t have an awesome parser like python&#8217;s. I&#8217;m pretty happy to see that things are improving!</p>
+<p>Thanks _why for your valuable contribution.</p>
+<p>-Matt</p></div>
+</div>
+
+<div class="entry">
+    <h3>Aaron Patterson</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    14:31</div>
+    <div class="content"><p>If my only contribution is that I motivate you to update Hpricot, then I have achieved my goal.</p>
+<p>Thanks.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    14:55</div>
+    <div class="content"><p><code>Aaron Patterson:</code>  Wait a minute. But I am only working on Hpricot to put some pressure on Nokogiri and LibXML.  So they can live up to their potential.  So that you can grow as a person.</p>
+<p>I actually think that, for xml, Nokogiri is going to school Hpricot&#8217;s sorry ass-shaped apricot crease.  I can&#8217;t turn off my flexible parsing mode, it&#8217;s built-in.  I can&#8217;t do checks for well-formedness, nor am I able to parse utf-16 and utf-32.  And, like I said, I&#8217;ll probably drop XPath support since JQuery did the same.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Aaron Patterson</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    15:05</div>
+    <div class="content"><p>_why: Thanks for the motivation!  I can feel the pressure!  urnnghhhh!  ack!</p></div>
+</div>
+
+<div class="entry">
+    <h3>defunkt</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    15:24</div>
+    <div class="content"><p>Hpricot is dead, long live Hpricot!</p></div>
+</div>
+
+<div class="entry">
+    <h3>doki_pen</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    15:39</div>
+    <div class="content"><p>Sowwy _why.  To hew wit pawsing speeds.  He wins on haiw alone. <br>
+<img src="http://www.gravatar.com/avatar/f29327647a9cff5c69618bae420792ea?s=48&d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&r=G" alt=""></p></div>
+</div>
+
+<div class="entry">
+    <h3>Jon</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    15:58</div>
+    <div class="content"><p>I just want to thank Aaron Patterson, _why, and the LibXML-Ruby team for putting together these great, open source libraries. It&#8217;s so amazing to have choices and seeing you guys are constantly upping the ante, that I just may have to start committing code to y&#8217;all</p></div>
+</div>
+
+<div class="entry">
+    <h3>leethal</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    16:30</div>
+    <div class="content"><p>The Return of the Epic and Forgotten Hpricot Library.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    16:40</div>
+    <div class="content"><p>I&#8217;m proud to be considered sensationalist by the king of sensationalism himself. If it gets people talking, thinking, and doing, it&#8217;s a very rewarding thing to stir the pot as you know yourself!</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    16:50</div>
+    <div class="content"><p>Get your grimey, upskirt-hungry camera lenses out of here, Peter Coooper!!  And take your no-good besmirched and libel-stained microphones with you.  Humpf.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    16:56</div>
+    <div class="content"><p>I wish hpricot could render its bountiful logo on my terminal after I had finished install it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:01</div>
+    <div class="content"><p>I had to change line 9 to</p>
+<pre><code>content = open("http://railstips.org/assets/2008/8/9/timeline.xml").read</code></pre>
+<p>to avoid this error</p>
+<pre><code>`read': No such file or directory - http://railstips.org/assets/2008/8/9/timeline.xml (Errno::ENOENT)</code></pre></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:04</div>
+    <div class="content"><p>And tell your goons in the Ruby Inside shirts to unhand me.  I&#8217;m very delicate.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:39</div>
+    <div class="content"><p>You can tell I&#8217;ve been taking Rupert Murdoch&#8217;s correspondence course by tape! Anyway, stop giving me ideas &#8211; I&#8217;m now trying to think of how I can work the word &#8220;upskirt&#8221; into my next post.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:41</div>
+    <div class="content"><p>I&#8217;ve updated the Ruby Inside post to recognize the new greatness that is Hpricot.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Alex Pooley</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:45</div>
+    <div class="content"><p>Noooo.. whyyyyy.. people will die and children will bleed when you drop xpath support.</p>
+<p>How else will I so elegantly extract values of nodes and attributes with just  CSS  selectors?</p>
+<p>Think of the children why. The children!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:55</div>
+    <div class="content"><p>A quick search of this post finds that the first reference to &#8220;upskirt&#8221; is in your own comment&#8230; what were you looking at just before you commented here? :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    17:55</div>
+    <div class="content"><p>Actually I wish that was true&#8230; I suck at in-line browser searching apparently.</p></div>
+</div>
+
+<div class="entry">
+    <h3>collintmiller</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    18:05</div>
+    <div class="content"><p>here here!</p>
+<p>Glad to hear about giving xpath the boot.</p>
+<p>Never used it. And project managers go apesh*t for xpath, seemingly ignorant that we can reuse our css skillset. And just use json on the wire&#8230;</p>
+<p>Curses</p></div>
+</div>
+
+<div class="entry">
+    <h3>Senator the Unicorn</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    19:10</div>
+    <div class="content"><p>Removing X-Path will help a great many  PTSD  sufferers in dire need of a framework which doesn&#8217;t bring back terrible memories of a past where they were forced to create  XSLT  documents all day long.</p>
+<p>The community thanks you ever so muchly for your consideration and kind heartedness towards these oft-forgotten tech veterans.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Chu Yeow</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    19:38</div>
+    <div class="content"><p>Just a bit of trivia: that Nokogiri vs. Hpricot benchmark was mine and it was a specific revision of Nokogiri vs. a specific revision of Hpricot that we were using on our own  XML   API  (the http://static.bezurk.com/fragments/wikitravel/sin.xml file that had like 6  XML  tags), it was never intended to be a comprehensive benchmark :) It sure convinced us to use Nokogiri at this time though since it benchmarked actual code in my own application (and thus was an entirely practical benchmark for my own purposes of deciding whether to switch).</p>
+<p>Anyway, I&#8217;m liking the competition if it means nicer and faster code all around!</p></div>
+</div>
+
+<div class="entry">
+    <h3>rick</h3>
+    <div class="time">said on <strong>November
+      3rd</strong>
+    19:40</div>
+    <div class="content"><p>When can we get one of these in the stdlib to replace rexml?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Alastair Brunton</h3>
+    <div class="time">said on <strong>November
+      4th</strong>
+    03:37</div>
+    <div class="content"><p>Top class why, you are my hero!</p></div>
+</div>
+
+<div class="entry">
+    <h3>hosiawak</h3>
+    <div class="time">said on <strong>November
+      4th</strong>
+    07:33</div>
+    <div class="content"><p>rick: why would you want to replace rexml? Can you parse a large xml file as a stream using Hpricot or Nokogiri ?</p></div>
+</div>
+
+<div class="entry">
+    <h3>PeeDee</h3>
+    <div class="time">said on <strong>November
+      4th</strong>
+    13:21</div>
+    <div class="content"><p>Benchmarks. My benchmark:</p>
+<ul>
+	<li>Time spent coding scripts to chop up html or xml to make it useful: 99%.</li>
+	<li>Time spent running the code on target pages: 1% (and I can do something else in the meantime).</li>
+</ul>
+<p>It&#8217;s the elegance and ease of use that matters to me, _why. Thanks.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Szinek</h3>
+    <div class="time">said on <strong>November
+      4th</strong>
+    14:43</div>
+    <div class="content"><p>Dropping XPath support would suck &#8211; for example scRUBYt! is relying solely on Hpricot XPath support, and I somewhat doubt it&#8217;s the only gem depending on Hpricot using XPaths (?).</p></div>
+</div>
+
+<div class="entry">
+    <h3>topfunky</h3>
+    <div class="time">said on <strong>November
+      4th</strong>
+    18:20</div>
+    <div class="content"><p>Such drama!</p>
+<p>I especially liked the part where nokogiri threw a Bus Error. I did not expect that.</p></div>
+</div>
+
+<div class="entry">
+    <h3>anildigital</h3>
+    <div class="time">said on <strong>November
+      5th</strong>
+    09:58</div>
+    <div class="content"><p>seriously nice drama! I hope competition continues!</p></div>
+</div>
+
+<div class="entry">
+    <h3>SeanJA</h3>
+    <div class="time">said on <strong>November
+      5th</strong>
+    12:10</div>
+    <div class="content"><p>Throwing buses is never the answer</p></div>
+</div>
+
+<div class="entry">
+    <h3>stepheneb</h3>
+    <div class="time">said on <strong>November
+      6th</strong>
+    16:55</div>
+    <div class="content"><p>I like the xpath support in hpricot &#8212; I use it for transmogrifying xml documents &#8230; I also like that I can use it in jruby.</p></div>
+</div>
+
+<div class="entry">
+    <h3>HULK</h3>
+    <div class="time">said on <strong>November
+      7th</strong>
+    14:47</div>
+    <div class="content"><p> HULK  tell SeanJA:  Throwing buses  ALWAYS  good answer!</p></div>
+</div>
+
+<div class="entry">
+    <h3>RubyPanther</h3>
+    <div class="time">said on <strong>November
+      7th</strong>
+    19:01</div>
+    <div class="content"><p>I wouldn&#8217;t recommend actually <em>using</em> the xpath support in a real project, but I think it&#8217;s really useful to have it there for when you want to get down and dirty, or when you&#8217;re stuck sharecropping, or even debugging.</p>
+<p>Not to mention that I for one am usually pleased by backwards compatibility.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Lawrence Pit</h3>
+    <div class="time">said on <strong>November
+      9th</strong>
+    05:05</div>
+    <div class="content"><p>Nokogiri released Oct 31st. Nov 7th it slipped into webrat which previously used hpricot. Nov 8th Merb releases it&#8217;s v1.0, which requires webrat, and hence nokogiri.</p>
+<p>I didn&#8217;t run into a bus btw :</p>
+<pre>
+      user     system      total        real
+hpricot:doc  1.640000   0.030000   1.670000 (  1.694201)
+hpricot2:doc  0.210000   0.000000   0.210000 (  0.219147)
+nokogiri:doc  0.300000   0.010000   0.310000 (  0.314110)
+      user     system      total        real
+hpricot:xpath  1.100000   0.010000   1.110000 (  1.113361)
+hpricot2:xpath  0.570000   0.010000   0.580000 (  0.579962)
+nokogiri:xpath  0.030000   0.000000   0.030000 (  0.036501)
+      user     system      total        real
+hpricot:css  1.040000   0.010000   1.050000 (  1.058107)
+hpricot2:css  0.440000   0.000000   0.440000 (  0.450744)
+nokogiri:css  0.260000   0.000000   0.260000 (  0.260388)
+</pre>
+<p>Gem used is nokogiri-1.0.3.</p>
+<p>Anyways, I&#8217;ll always love those fruity markup!</p></div>
+</div>
+
+<div class="entry">
+    <h3>ryan_a</h3>
+    <div class="time">said on <strong>November
+      9th</strong>
+    21:10</div>
+    <div class="content"><p>Nnokogirl threw a bus? Them&#8217;s some big muscle arms!!</p></div>
+</div>
+
+<div class="entry">
+    <h3>huh?</h3>
+    <div class="time">said on <strong>November
+      18th</strong>
+    19:44</div>
+    <div class="content"><p>Yes I&#8217;m new and only understand half the things said here. But let me be so bold as to ask&#8230;what is wrong with XPath?  We use it all the time with Hpricot and it works well.</p></div>
+</div>
+
+<div class="entry">
+    <h3>lzell</h3>
+    <div class="time">said on <strong>November
+      22nd</strong>
+    15:30</div>
+    <div class="content"><p>Another vote for keeping XPath support.  What is motivating you to drop it?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Anko Painting</h3>
+    <div class="time">said on <strong>January
+      1st</strong>
+    20:37</div>
+    <div class="content"><p>Hey Why,<br>
+what&#8217;s going on with the hpricot bug tracker? Any plans to support 1.9.1? :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>why what the heck happened to hpricot?</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    16:49</div>
+    <div class="content"><p>I googled hpricot&#8230;<br>
+Clicked on the first result&#8230;<br>
+https://code.whytheluckystiff.net/hpricot/<br>
+Failed to Connect&#8230;</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Lazy Bricks, Lazy Mortar</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/01/10/lazyBricksLazyMortar.html">Lazy Bricks, Lazy Mortar</a></h1>
+  <div class="time"><strong>January
+10th
+</strong>
+    15:47</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Here&#8217;s a bit more Io.  Don&#8217;t feel obligated to spread this stuff around.  I like keeping things here obscure.  After RedHanded, it&#8217;s nice to have a bit smaller crowd.  And this stuff is just written for the few dedicated readers who don&#8217;t mind travelling Wherever.</p>
+<p>Previously on Hackety Org, the topic was how you can get Io to reflect on its own code.  In the parse tree, everything is a message.  You can walk through a block and take it apart.  The mortar is still soft, so you can move the bricks around.</p>
+<p>Here&#8217;s a stack of bricks right here:</p>
+
+<pre><code class="io">Builder html(
+  head(title("Lazy Bricks, Lazy Mortar"))
+  body(
+    div(
+      p("Here's a bit more Io...")
+      p("Previously on Hackety Org...")
+    )
+    div(
+      p("Adieu, friends and uncles.")
+    )
+  )
+) print
+</code></pre>
+<p>So, the parse tree is all messages.  Io looks at this and sees an <code>html</code> message with one large argument: all that code inside the parens.  That argument is a series of messages as well: <code>head</code> and <code>body</code>.</p>
+<p>Most languages would just run all the messages and then get back to you afterward.  But just like Neo, pausing time and plucking bullets from the atmosphere, Io gets nice and slow and lazy.  We can step through the tree and run each message by hand.</p>
+
+<pre><code class="io">Builder := Object clone
+Builder forward := method(
+  tag(call message name, call message argAt(0))
+)
+</code></pre>
+<p>This <code>forward</code> method intercepts all messages.  So the <code>html</code> message is going to hit that slot.</p>
+<p>One vital bit here: <strong>the method lists no arguments</strong>.  Its argument list is empty.  However, it really does take arguments.  Normally, in Io, you&#8217;ll use <code>html := method(arg1, arg2, ...)</code> to tell the method to receive two arguments.  This would unpause The Matrix, though, and run all the messages like languages normally do.</p>
+<p>If you send arguments to a method (or a block) without naming them, then Io will go lazy on us.  It&#8217;ll attach those arguments to our Call object, but it&#8217;ll skip actually running them.</p>
+<p>So, the code <code>call message name</code> and <code>call message argAt(0)</code> gets the method name and the arguments from the Call object.</p>
+
+<pre><code class="io">Io> call message name
+==> html
+Io> call message argAt(0)
+==> head(title("Lazy Bricks, Lazy Mortar")) ;
+body(div(p("Here's a bit more Io...") ;
+p("Previously on Hackety Org...")) ;
+div(p("Adieu, friends and uncles.")))
+</code></pre>
+<p>See, all those messages are sitting around, waiting to be ignited!  It&#8217;s our job to slap these bricks together, kid.</p>
+<p>And I&#8217;ll bet it&#8217;ll take all of this arcane metaprogramming and snake charming, right??</p>
+
+<pre><code class="io">Builder tag := method(name, nodes,
+  inner := ""
+  while(nodes,
+    if(nodes name != ";",
+      inner = inner .. if(nodes argCount > 0,
+        tag(nodes name, nodes argAt(0)),
+        doMessage(nodes))
+    )
+    nodes = nodes next
+  )
+  "<#{name}>#{inner}</#{name}>" interpolate
+)
+</code></pre>
+<p>A little tricky, but not too bad.  We loop through each of the message <code>nodes</code> and build a string as we go.  The tricky part is inside the <code>while</code> loop.  The <code>if</code> statement skips semicolon messages.  All other messages have one of two fates: either recurse into <code>tag</code> if there are more arguments or run the message.</p>
+<p>You see, strings are messages, too.  (Since they haven&#8217;t been turned into strings yet.)  They are considered messages which ignore their arguments.</p>
+
+<pre><code class="io">Io> "facts"("opinion")
+==> facts
+</code></pre>
+<p>So the <code>doMessage</code> is used to just get us the string, to reify it so we can add it to the bigger <span class="caps">HTML</span> string.</p>
+<p>This all has given me much to think about.  I haven&#8217;t been reaching for <code>eval</code> in Io. (Where it&#8217;s called <code>doString</code>.)  Not as much spelunking for hidden caves to use for storage.  All you got is slots and locals.  Many limits, many restrictions.  But, gladly, a whole lot of built-in messages.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">13 comments</a></div>
+
+<div class="entry">
+    <h3>alex</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    16:48</div>
+    <div class="content"><p>Do you think you could come up with some imaginative examples on how to do interesting things concurrently with Io?  i.e., show how easy it is to go beyond your ruby &#8220;5¢ Concurrency&#8221; example with the async operator.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matt Brubeck</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    16:51</div>
+    <div class="content"><p>Io looks like a perfect example of <a href="http://glomek.blogspot.com/2007/12/smart-languages-and-dumb-parsers.html">Smart languages and dumb parsers.</a></p></div>
+</div>
+
+<div class="entry">
+    <h3>Brian Mitchell</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    17:01</div>
+    <div class="content"><p>All literal values in Io code are represented using messages. When messages are run one of two things happen:</p><p>1) The message checks a slot on itself (yes, messages are object) called cachedResult. If there is something set it will use it. Otherwise&#8230;</p><p>2) It will be dispatched to the target object. This is either explicitly given on the left side as an expression (possibly another message) or as an implicit object via the Locals object each scope runs its code in.</p><p>I&#8217;m looking forward to the entry that introduces removeAllProtos and forward or maybe setIsActivatable. ;-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Moritz Heidkamp</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    19:49</div>
+    <div class="content"><p>Behold my Brackets module! Can you tell what it does?</p>
+<pre><code class="io">Brackets := Object clone
+
+Brackets curlyBrackets := method(
+  map := Map clone
+  call message arguments foreach(pair, 
+    map atPut(pair name asMutable rstrip(";:"), call sender doMessage(pair next))
+  )
+  return map
+)
+
+Brackets squareBrackets := method(
+  call message argsEvaluatedIn(call sender)
+)
+
+// This is actually a work-around for something I think is a bug and is filed over here: http://iolanguage.com/issues/view.cgi?number=95
+Brackets : := method(call target)
+Object appendProto(Brackets clone)
+</code></pre>
+<p>Right, Rubyesque array literals and ECMAScriptastic Hash literals!</p></div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    22:02</div>
+    <div class="content"><p><strong>Moritz</strong>: Yes, this is the kind of stuff that Io need more of, standard.  Of course, you wouldn&#8217;t be able to redefine the brackets in another proto without messing things up&#8230;methinks Io needs to learn from Ruby about readability (and a pinch more sugar).</p></div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    22:04</div>
+    <div class="content"><p>Also, I apologize for forgetting that Io does indeed have hashes.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Djur</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    22:44</div>
+    <div class="content"><p>bug: But that&#8217;s not really an issue, because Io is primarily an extension/embedding language. The fact that it defines as little syntax as possible while leaving the door open for defining the meaning of that syntax is a plus.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Spongebob Squarepants</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    23:55</div>
+    <div class="content"><p>_Why&#8230;would love to have a poignant guide to Io once you&#8217;re done figuring it out :-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      11st</strong>
+    02:53</div>
+    <div class="content"><p><b>bug</b>: I&#8217;d suggest that Io actually have less sugar than it does now, but retaining the hooks into the language so you can define the sugar as you need it. It&#8217;s not about dictating a syntax to anyone, it&#8217;s about keeping it as simple as possible, yet as flexible as it needs to be for other people to make it complex if they so desire.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      11st</strong>
+    03:21</div>
+    <div class="content"><p><strong>jer:</strong> It is really fascinating how Io has so many hooks that it doesn&#8217;t exploit itself.  It&#8217;s like a patted-down schoolmarm whose subliminally teaching anarchy.  Or like a very tiny congress that&#8217;s only there to make sure you have gobs and gobs of freedom.  Do with it what you like, the language is yours to ruin, complements of the house.</p></div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      11st</strong>
+    11:31</div>
+    <div class="content"><p>OK, <strong>Djur</strong>, that&#8217;s fair, and I guess now I like *jer*&#8217;s idea, too.  It just almost seemed that Io was trying to be a better Ruby.  It could be, if it wanted to, but then Ruby would be thrown out to the streets, rolling off clever one-liners for food.  But Io doesn&#8217;t want that, I suppose.  It wants you to make your own language from the bottom up.  It&#8217;s a big ball of language clay, snatched from the skies of Jupiter.  Of course, that means that once you mould your Io into a swan that winks slyly at everyone, your friend&#8217;s Io, which is now a monkey with glasses and a typewriter, can&#8217;t talk to yours.  Ruby is the shiny red toolbox with mostly everything that mostly everyone needs, and also looks pretty.  (and I wonder why Mac-ies like Ruby so much!)</p></div>
+</div>
+
+<div class="entry">
+    <h3>steve</h3>
+    <div class="time">said on <strong>January
+      11st</strong>
+    19:58</div>
+    <div class="content"><p>The compatibility of customizations issue can be somewhat solved by how io doesn&#8217;t have globals&#8211;so just put your customizations in your package&#8217;s namespace.</p></div>
+</div>
+
+<div class="entry">
+    <h3>bleh</h3>
+    <div class="time">said on <strong>January
+      12nd</strong>
+    15:48</div>
+    <div class="content"><p>Why, you will notice that in time this blog will have a pretty great audience too. You did great with the Redhanded and people get attracted by your geniusity.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

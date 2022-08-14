@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Yeah, Shoes Has Just a Few Simple Controls</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/06/yeahShoesHasJustAFewSimpleControls.html">Yeah, Shoes Has Just a Few Simple Controls</a></h1>
+  <div class="time"><strong>August
+6th
+</strong>
+    14:44</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-ctrls.png" class="r" title="The ListBox, EditLine and Button controls." alt="The ListBox, EditLine and Button controls." /></p>
+<p>Hello, let&#8217;s do more Shoes.</p>
+<p>Oh and fellows: <strong>Shoes isn&#8217;t an acronym.</strong>  It&#8217;s just a name.  And the name is Shoes.  Its pronounced just like normal shoes.  Except it&#8217;s spelled Shoes.  It&#8217;s not spelled in any other way.  If you are Charles Dickens, you have permission to call it Shuse.  But <span class="caps">UNLESS</span> <span class="caps">YOU</span> <span class="caps">ARE</span> <span class="caps">CHARLES</span> <span class="caps">DICKENS</span>, I beg you.  Shoes. Trust me, I know what I&#8217;m doing this time!</p>
+<p>Here&#8217;s today&#8217;s example:</p>
+
+<pre><code class="rb">name, phone, address = nil
+Shoes.app do
+  background "rgb(240, 245, 220)"
+  stack do
+    stack :margin => 10 do
+      text "Name"
+      name = list_box :items => ["Philarp Tremaine", "Dirk Hockeybranch"]
+    end
+    stack :margin => 10 do
+      text "Address"
+      address = edit_line
+    end
+    stack :margin => 10 do
+      text "Phone"
+      phone = edit_line
+    end
+    stack :margin => 10 do
+      button "Save" do
+        Shoes.p [name.text, address.text, phone.text]
+      end
+    end
+  end
+end
+</code></pre>
+<p>So I guess this one&#8217;s a bit boring.  But the idea is to build something like an <span class="caps">HTML</span> form in Shoes.  And here we have pairs of title text and control divided into their own little stacks.  I use a stack so everything will pile up vertically.</p>
+<p>The <code>list_box</code> is akin to a select box.  The <code>edit_line</code> is the single-line text input.  And, well, <code>button</code>.  The two other Shoes controls are presently <code>edit_box</code> and <code>progress</code>, though they aren&#8217;t fully finished yet.</p>
+<p>Last thing: <code>Shoes.p</code>.  This is just like <code>Kernel.p</code>, except that it prints to the proper debug output.  On Linux and <span class="caps">OSX</span>, this is <span class="caps">STDOUT</span>.  On Windows, it&#8217;s DebugView.  Not sure if this will stick around.</p>
+<p class="update"><strong>Update:</strong> Okay, Shoes r60 builds are <a href="http://code.whytheluckystiff.net/shoes/wiki/DownloadShoes">out</a>.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">8 comments</a></div>
+
+<div class="entry">
+    <h3>Mark Murphy</h3>
+    <div class="time">said on <strong>August
+      6th</strong>
+    17:42</div>
+    <div class="content"><p>Based on this and some of the other examples, it feels like stacks are vertical layouts of elements. The <a href="http://code.whytheluckystiff.net/shoes/wiki/StacksAndFlows">StacksAndFlows</a> page on the wiki, though, says it is a &#8220;horizontal stack of elements&#8221;. Is that a typo? If not, what am I missing?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      6th</strong>
+    17:53</div>
+    <div class="content"><p>Yes, you&#8217;re absolutely right.  A typo.</p></div>
+</div>
+
+<div class="entry">
+    <h3>cdcarter</h3>
+    <div class="time">said on <strong>August
+      6th</strong>
+    21:54</div>
+    <div class="content"><p>Are there plans for HTML tables, or any sort of table display actually?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      6th</strong>
+    22:39</div>
+    <div class="content"><p>Sorry, no, the HTML support is limited and will probably go away eventually.</p><p>But you can do tables with stacks and flows.  So, I&#8217;d say: write a <code>table</code> method that generates the stacks to do it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>evan</h3>
+    <div class="time">said on <strong>August
+      7th</strong>
+    02:09</div>
+    <div class="content"><p>This is totally not the place to say! But I just had to. Are you aware of <a href="http://www.cs.uu.nl/helium/">Helium</a>? (Balloon theme returns, Haskell.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>brad</h3>
+    <div class="time">said on <strong>August
+      7th</strong>
+    02:31</div>
+    <div class="content"><p>How about Markaby style css? The code is already quite Markabyish so it would fit nicely.</p><pre>
+name, phone, address = nil
+Shoes.app do
+  background 'rgb(240, 245, 220)'
+  <b>
+  style.pudding do
+     margin 10
+     background 'rgb(255, 255, 255)'
+     text "yum-yum-yum-yum-yum"
+  end
+  </b>
+  stack do
+    stack.pudding do
+      text "Name"
+      name = list_box :items => ["Philarp Tremaine", "Dirk Hockeybranch"]
+    end
+    stack.pudding do
+      text "Address"
+      address = edit_line
+    end
+    stack.pudding do
+      text "Phone"
+      phone = edit_line
+    end
+    stack.pudding do
+      button "Save" do
+        Shoes.p [name.text, address.text, phone.text]
+      end
+    end
+  end
+end
+<p>A style would be more like a block that is instance_evaled against the original object before the custom block is run and can add common content/style to all applied components.</p><p>B</p></div>
+</div>
+
+<div class="entry">
+    <h3>Phrogz</h3>
+    <div class="time">said on <strong>August
+      8th</strong>
+    00:13</div>
+    <div class="content"><p><code>background &#8216;rgb(240, 245, 220)&#8217;</code></p><p>Oh come now, who let the quotes in? I don&#8217;t get along well with them, not after the Great Apostrophe Incident of &#8217;98.</p><p>Couldn&#8217;t <code>rgb</code> be a method that returns a simple hex string or fancy-ass UberColor instance?</p></div>
+</div>
+
+<div class="entry">
+    <h3>cdcarter</h3>
+    <div class="time">said on <strong>August
+      8th</strong>
+    09:41</div>
+    <div class="content"><p>_why:<br>
+I tried writing a table method and ended up having all the text elements floating on top of each other. Two questions:<br>
+* Is there a way to introspect the current window size?<br>
+* Can I give a stack or flow a border?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

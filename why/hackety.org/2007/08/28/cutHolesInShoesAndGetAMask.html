@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Cut Holes In Shoes And Get A Mask</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/28/cutHolesInShoesAndGetAMask.html">Cut Holes In Shoes And Get A Mask</a></h1>
+  <div class="time"><strong>August
+28th
+</strong>
+    12:39</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-mask.png" class="l" alt="" /></p>
+<p>This greeny rainbow text is hand-crafted.  And I&#8217;ll bet you can do this with Firefox&#8217;s canvas (or <span class="caps">SVG</span>,) but I can&#8217;t think of how.  In Shoes, you use a masking layer.</p>
+
+<pre><code class="rb">Shoes.app do
+  20.times do |i|
+    strokewidth 4
+    stroke rgb((0.0..0.5).rand, (0.0..1.0).rand, (0.0..0.3).rand)
+    line 0, i * 4, 400, i * 4
+  end
+
+  mask do
+    title "Shoes"
+  end
+end
+</code></pre>
+<p>The rainbow of lines is painted first.  Twenty lines with a four pixel thickness.</p>
+<p>Then, the text is laid over it in a masking layer.  The masking layer is basically a box just like Shoes&#8217; stacks and flows.  Inside a masking box, colors do not matter.  It&#8217;s like a stencil.  Wherever you paint inside the mask is where the holes of the stencil are.</p>
+<p>So when the mask is painted, it acts as the stencil and the box containing it is the spray paint.  And, there, it says, &#8220;Shoes.&#8221;  Which we all like to say so much.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>defunkt</h3>
+    <div class="time">said on <strong>August
+      28th</strong>
+    14:34</div>
+    <div class="content"><p>Shoes.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Stephen Touset</h3>
+    <div class="time">said on <strong>August
+      28th</strong>
+    14:55</div>
+    <div class="content"><p>Doesn&#8217;t it seem like the masking layer should, well, mask? Stencils and masks are semantically opposites of one another.</p><p>Change the method name. :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>nil</h3>
+    <div class="time">said on <strong>August
+      28th</strong>
+    16:54</div>
+    <div class="content"><p><a href="http://www.youtube.com/watch?v=ZSKIIiE8py4">The SHOES!</a></p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Burns</h3>
+    <div class="time">said on <strong>August
+      28th</strong>
+    17:48</div>
+    <div class="content"><p>I agree with Stephen here.  The name and semantics could be more intuitive.  One way of thinking of this would be: you cut out down a stencil, paint, then remove the stencil.</p><p>In this fashion, you could do:</p><pre>
+
+Shoes.app do
+  stencil do
+    title "Shoes"
+
+    paintStencil do
+      20.times do |i|
+        strokewidth 4
+        stroke rgb((0.0..0.5).rand, (0.0..1.0).rand, (0.0..0.3).rand)
+        line 0, i * 4, 400, i * 4
+      end  
+    end    
+  end
+
+end
+
+<p>I&#8217;d think of a mask as doing the opposite.  Take something that&#8217;s already drawn and cover it up with a layer on top.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ps level 1</h3>
+    <div class="time">said on <strong>August
+      28th</strong>
+    23:03</div>
+    <div class="content"><p>For a second it was 1984 and I was reading <a href="http://www.nerdbooks.com/item.php?id=0201379228">The Red Book</a> again. Then I realized we used to call &#8217;em clipping paths and it was all better.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Paragon</h3>
+    <div class="time">said on <strong>August
+      29th</strong>
+    00:04</div>
+    <div class="content"><p>He&#8217;s using the term &#8220;mask&#8221; just like it would be used in an imaging program: the mask of a layer determines which parts of the layer are visible.</p><p>Great work :).</p></div>
+</div>
+
+<div class="entry">
+    <h3>Leon</h3>
+    <div class="time">said on <strong>August
+      29th</strong>
+    04:10</div>
+    <div class="content"><p>Peter, that&#8217;s what this does. it takes something that&#8217;s drawn, and covers it up with a layer. It all seems perfectly straightforward to me.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>August
+      29th</strong>
+    16:33</div>
+    <div class="content"><p>Hm, the API doesn&#8217;t seem very flexible.  How can I draw some stuff beneath the masked bits, if the mask applies to everything before it?</p></div>
+</div>
+
+<div class="entry">
+    <h3>angel</h3>
+    <div class="time">said on <strong>August
+      30th</strong>
+    12:24</div>
+    <div class="content"><p>&#8220;mask&#8221; is cairo terminology and it makes sense to me to stick with the same name for the same functionality.</p><p>As an aside, I noticed in the shoes source that you are using your own C methods to access cairo directly. Other than rcairo sucking as a gem, what stopped you from using that lib directly in ruby methods?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

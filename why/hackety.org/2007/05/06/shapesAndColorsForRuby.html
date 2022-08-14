@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Shapes and Colors for Ruby</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/05/06/shapesAndColorsForRuby.html">Shapes and Colors for Ruby</a></h1>
+  <div class="time"><strong>May
+6th
+</strong>
+    01:10</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/scribble.png" class="r" alt="" /></p>
+<p>Looks like the infectious hacking spirits are really sinking their teeths in!! Nathan W started cobbling together a NodeBox-alike for Ruby using Cairo and it&#8217;s really <a href="http://nex3.leeweiz.net/posts/3">coming along</a>.</p>
+<p>Good use of blocks to start shapes, Nathan.  You start a shape with <code>shape(x, y)</code> and attach a block that lets you further the shape with the <code>line</code>, <code>jump</code> and <code>curve</code> methods.  I really like how the block houses the complete shape outline.</p>
+<p>So, to get this up and running you need GTK2, Cairo and the Ruby bindings for both.  On Windows, you can get the <a href="http://sourceforge.net/project/showfiles.php?group_id=53614">Ruby-Gnome2</a> installer, which includes all of that.  Good show, Nathan.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>Peter</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    05:25</div>
+    <div class="content"><p>When will something like this appear inside HH? :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Kiddo</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    08:01</div>
+    <div class="content"><p>it would be cool if the brush fill colors were words like GREEN and RED and we should be able to do GREEN+BLUE and pass that to the brush.fill command.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    15:53</div>
+    <div class="content"><p><strong>Peter:</strong> Soon, hopefully. I tried to structure it so that it would be easily embeddable in HH.</p><p><strong>Kiddo:</strong> I just committed a version where you can set brush colors by name. They aren&#8217;t addable, because I wanted to have them settable with symbols.</p><pre>
+  brush.fill, brush.stroke = :navajo_white, :red
+</div>
+</div>
+
+<div class="entry">
+    <h3>misuba</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    16:45</div>
+    <div class="content"><p>Now can we combine this with LittleCoder somehow?</p></div>
+</div>
+
+<div class="entry">
+    <h3>nertzy</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    18:41</div>
+    <div class="content"><p>The site talks about some &#8220;Why the lucy stiff&#8221;! Is this your female counterpart?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Klondike</h3>
+    <div class="time">said on <strong>May
+      7th</strong>
+    08:45</div>
+    <div class="content"><p>Nathan, perhaps you could define the + method on symbols, to control what mixing certain colors with others would produce.  Could be neat.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    04:06</div>
+    <div class="content"><p>Heehee&#8230; <code>:red + :green #=&gt; :yellow</code>. Yeah, that&#8217;s a good idea.</p></div>
+</div>
+
+<div class="entry">
+    <h3>weepy</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    03:46</div>
+    <div class="content"><p>Nathan, if you could do something like the color operators in Sass that would be great</p></div>
+</div>
+
+<div class="entry">
+    <h3>Vagabond</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    23:43</div>
+    <div class="content"><p>Sorry for the long snippet, but adding symbols as colors kinda inspired me a little:</p><pre>
+<code>
+
+module ColorSymbols
+  COLORS = {
+    :red => [255, 0, 0],
+    :green => [0, 255, 0],
+    :blue => [0, 0, 255],
+    :yellow => [127, 127, 0]
+  }
+
+  # stupid lack of non-recursive flatten...
+  REVCOLORS = Hash[*(COLORS.to_a.map{|x| x.reverse}.
+        inject([]){|sum,n| n.kind_of?(Array) ? sum + n : sum << n})]
+
+  def +(other)
+    color = [COLORS[self], COLORS[other]].transpose.map{|x| (x[0]+x[1])/2}
+    return REVCOLORS[color] ? REVCOLORS[color] : color
+  end
+
+end
+
+class Symbol
+  include ColorSymbols
+end
+</code>
+<p>Outputs:<br>
+<code><br>
+:red + :green =&gt; :yellow<br>
+:red + :yellow =&gt; [191, 63, 0]<br>
+</code></p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://code.whytheluckystiff.net/shoes/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

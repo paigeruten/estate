@@ -1,0 +1,291 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Martin DeMello's Gooey Challenge</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/06/12/martinDemellosGooeyChallenge.html">Martin DeMello's Gooey Challenge</a></h1>
+  <div class="time"><strong>June
+12th
+</strong>
+    12:57</div>
+  <div class="author">by why</div>
+  <div class="content"><blockquote>
+<p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/304341">Martin DeMello</a>: One of the most interesting facets of a desktop <span class="caps">GUI</span> system is how easy it makes it to go off the beaten track, particularly how well you can add &#8220;first class&#8221; components to the system. (Using &#8216;first class&#8217; here to mean &#8216;on an equal footing with the widgets supplied by the toolkit&#8217;). Also, as a ruby programmer, I&#8217;d naturally rather not drop down into C (or Java) to do this.</p>
+</blockquote>
+<p>So how does <a href="http://code.whytheluckystiff.net/shoes/">Shoes</a> hold up against this challenge?  And i mean: without hacking anything new into Shoes, using syntax introduced before the challenge was posed.</p>
+<p>Well, let&#8217;s go over the four parts of the contest:</p>
+<ol>
+	<li><strong>A component consisting of a series of existing components hooked together to act as a single widget.</strong> (Such as an <code>icon</code> widget that incorporates a picture and a textfield.  With options to turn off or size the image and make the text editable.)</li>
+	<li><strong>A component built &#8216;from scratch&#8217; atop a canvas, that is, handling its own drawing and event management.</strong> (Like a speedometer-type dial with a configurable range and tick interval.)</li>
+	<li><strong>A component combining a canvas and existing widgets.</strong> (For example, a box that holds a component and paints a customised border around it.)</li>
+	<li><strong>A container that takes a collection of widgets and lays them out according to some userdefined algorithm.</strong> (He suggests a pure-ruby implementation of a <a href="http://zem.novylen.net/ruby/wrapboxdemo.png">wrapbox</a>, but I thought this point might be better illustrated by a cascading container.)</li>
+</ol>
+<p>My initial <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/304372">response</a> had a few simple code examples, but I didn&#8217;t take the chance to do all the examples just as Martin described.  That e-mail touches on how Shoes custom widgets work.</p>
+<p>Now I&#8217;ve had a minute and I&#8217;d like to present just my new, unadorned entries.  In each of these, a custom Shoes widget is setup by inheriting from the <code>Widget</code> class.  And Shoes then creates a method using the lowercased name of the class which is used in the <code>app</code>. (And you can try these out with today&#8217;s super-fresh <a href="http://code.whytheluckystiff.net/shoes/wiki/RecentBuilds">recent builds</a>.)</p>
+<hr />
+
+<h2>Icon Widget (<code>challenge1.rb</code>)</h2>
+
+<pre><code class="rb">class Icon < Widget
+  attr_accessor :image, :caption
+  def initialize opts = {}
+    @stack = stack
+    @image = @stack.image(*opts[:image]) if opts[:image]
+    @caption = @stack.para(*opts[:text])
+  end
+  def edit
+    return if @edit
+    @caption.hide
+    @stack.append do
+      @edit = edit_line :width => 200, :text => @caption
+    end
+  end
+  def save
+    return unless @edit
+    @caption.replace @edit.text
+    @edit.remove
+    @caption.show
+  end
+end
+
+Shoes.app do
+  stack do
+    @icon = icon :image => "static/shoes-icon.png",
+                 :text => "Welcome!"
+
+    button("image.hide") { @icon.image.hide }
+    button("image.show") { @icon.image.show }
+    button("image.size") { @icon.image.style :width => 64, :height => 64 }
+    button("text.edit") { @icon.edit }
+    button("text.save") { @icon.save }
+  end
+end
+</code></pre>
+
+<hr />
+
+<h2>Speedometer Widget (<code>challenge2.rb</code>)</h2>
+
+<pre><code class="rb">class Speedometer < Widget
+  attr_accessor :range, :tick, :position
+  def initialize opts = {}
+    @range = opts[:range] || 200
+    @tick = opts[:tick] || 10
+    @position = opts[:position] || 0
+    @cx, @cy = self.left + 110, self.top + 100
+
+    nostroke
+    rect :top => self.top, :left => self.left,
+      :width => 220, :height => 200
+    nofill
+    stroke white
+    oval :left => @cx - 50, :top => @cy - 50, :radius => 50
+    (ticks + 1).times do |i|
+      radial_line 225 + ((270.0 / ticks) * i), 70..80
+      radial_line 225 + ((270.0 / ticks) * i), 45..49
+    end
+    strokewidth 2
+    oval :left => @cx - 70, :top => @cy - 70, :radius => 70
+    stroke lightgreen
+    oval :left => @cx - 5, :top => @cy - 5, :radius => 5
+    @needle = radial_line 225 + ((270.0 / @range) * @position), 0..90
+  end
+  def ticks; @range / @tick end
+  def radial_line deg, r
+    pos = ((deg / 360.0) * (2.0 * Math::PI)) - (Math::PI / 2.0)
+    line (Math.cos(pos) * r.begin) + @cx, (Math.sin(pos) * r.begin) + @cy,
+      (Math.cos(pos) * r.end) + @cx, (Math.sin(pos) * r.end) + @cy
+  end
+  def position= pos
+    @position = pos
+    @needle.remove
+    append do
+      @needle = radial_line 225 + ((270.0 / @range) * @position), 0..90
+    end
+  end
+end
+
+Shoes.app do
+  stack do
+    para "Enter a number between 0 and 100"
+    flow do
+      @p = edit_line
+      button "OK" do
+        @s.position = @p.text.to_i
+      end
+    end
+
+    @s = speedometer :range => 100, :ticks => 10
+  end
+end
+</code></pre>
+
+<hr />
+
+<h2>Native Button with Custom Border (<code>challenge3.rb</code>)</h2>
+
+<pre><code class="rb">class BorderButton < Widget
+  def initialize *args, &blk
+    opts = args.detect { |a| a.is_a? Hash }
+
+    border opts[:border], :strokewidth => opts[:strokewidth]
+
+    args[args.index(opts)] = opts.
+      merge(:width => opts[:width] - (opts[:strokewidth] * 2))
+    stack(:margin => opts[:strokewidth]).button *args, &blk
+  end
+end
+
+Shoes.app do
+  borderbutton "OK", :width => 200,
+    :strokewidth => 4, :border => "#000".."#FFF" do
+      alert("PROOF!")
+  end   
+end
+</code></pre>
+
+<hr />
+
+<h2>Cascading Container (<code>challenge4.rb</code>)</h2>
+
+<pre><code class="rb">class Cascade < Widget
+  def initialize &blk
+    instance_eval &blk
+  end
+  def draw(a,b)
+    x, y = 0, 0
+    contents.each do |e|
+      if x != e.left && y != e.top
+        e.move x, y
+      end
+      x += e.height
+      y += e.width
+    end
+    super(a,b)
+  end
+end
+
+Shoes.app do
+  cascade do
+    button "1"
+    button "2"
+    button "3"
+  end
+end
+</code></pre>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">5 comments</a></div>
+
+<div class="entry">
+    <h3>Awesome!</h3>
+    <div class="time">said on <strong>June
+      12th</strong>
+    16:18</div>
+    <div class="content"><p>I&#8217;m giving it a try right now&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>kamran</h3>
+    <div class="time">said on <strong>June
+      13th</strong>
+    00:12</div>
+    <div class="content"><p>This is very cool</p></div>
+</div>
+
+<div class="entry">
+    <h3>David</h3>
+    <div class="time">said on <strong>June
+      18th</strong>
+    13:49</div>
+    <div class="content"><p>What happened to Hoodwink&#8217;d? Why is http://hoodwink.d sending me to a site titled &#8220;Online Generic Viagra&#8221;?</p></div>
+</div>
+
+<div class="entry">
+    <h3>cygo</h3>
+    <div class="time">said on <strong>June
+      18th</strong>
+    15:34</div>
+    <div class="content"><p>A competitor?</p>
+<p>http://www.sproutcore.com</p></div>
+</div>
+
+<div class="entry">
+    <h3>Axis</h3>
+    <div class="time">said on <strong>June
+      21st</strong>
+    13:41</div>
+    <div class="content"><p>In addition to a repository of Shoes apps, how about a repository of Shoes widgets? That could keep the core of Shoes simple, while also allowing you to go shopping for all those exotic shoes that other toolkits have.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

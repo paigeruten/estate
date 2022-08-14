@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; HyperShoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/17/hypershoes.html">HyperShoes</a></h1>
+  <div class="time"><strong>August
+17th
+</strong>
+    02:54</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-book-in-cursive.png" class="c" title="The latter half of August is ALWAYS the do-your-code-in-cursive half." alt="The latter half of August is ALWAYS the do-your-code-in-cursive half." /></p>
+<p>So Shoes is for writing desktop apps.  But the deal was that Shoes was supposed to be <strong>more like the web</strong> than regular desktop appy wares.  Hmm?  How so?</p>
+<p>Well, a big reason is that every window inside a Shoes app has a path (a <span class="caps">URL</span>.)  If you&#8217;re writing a simple app, then that window is simply the root window and you don&#8217;t need to think about URLs.  Only if your app jumps around between windows.</p>
+<p>And, so, why does Shoes bother using URLs?  Well, I found that URLs came in really handy when I was writing Hackety Hack the first time around.  Basically, the <span class="caps">URL</span> lets you refer to a window by a string, which is great if you need to save place.  Hackety Hack has an interactive tutorial that walks around the app and saving the <span class="caps">URL</span> of a window ended up saving me a lot of time.</p>
+<p>And making a page of links becomes as simple as it is on the web.  Here&#8217;s <a href="http://code.whytheluckystiff.net/shoes/browser/trunk/samples/book.rb?rev=117">samples/book.rb</a>:</p>
+<p><img src="../../../images/shoes-book.png" class="c" alt="" /></p>
+<p>However, even though I&#8217;m using URLs, I&#8217;m not using <span class="caps">HTTP</span> methods like <span class="caps">GET</span> or <span class="caps">POST</span>.  I&#8217;m not sure if they have their place yet.  I know these verbs are a big deal right now, but I&#8217;m not sure I see them being as potent in Shoes, you know?</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>The Talking Watch</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    03:17</div>
+    <div class="content"><p>I want to know what happened to the watch.  Seriously, thanks for keeping up the good work.<br>
+-Tim</p></div>
+</div>
+
+<div class="entry">
+    <h3>Judofyr</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    05:16</div>
+    <div class="content"><p>I think the story is here: http://code.whytheluckystiff.net/shoes/browser/trunk/samples/book.yaml?rev=117</p></div>
+</div>
+
+<div class="entry">
+    <h3>nertzy</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    06:46</div>
+    <div class="content"><p>Are these really URLs? The U in URL is &#8220;universal&#8221; but these &#8220;resource locators&#8221; seem to be &#8220;relative&#8221; to your application.</p><p>I think you have an RRL!</p></div>
+</div>
+
+<div class="entry">
+    <h3>zerohalo</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    07:26</div>
+    <div class="content"><p>Cool idea! How about instead of using HTML for the formatting, to instead use Markaby, or similar? Less typing, plus would be in keeping with the program structure.</p></div>
+</div>
+
+<div class="entry">
+    <h3>roberthahn</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    08:04</div>
+    <div class="content"><p>I&#8217;m not sure if using HTTP&#8217;s verbs would necessarily be good either, but if you&#8217;re promoting accessible hacking (in the sense of &#8216;accessible to every skill level&#8217;) I wonder if designing the app so that you&#8217;re exposing the same set of verbs for all classes would be good? IOW, follow a Resource Oriented Architecture&#8212;just not on http&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matt Katz</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    10:27</div>
+    <div class="content"><p>At my job I&#8217;ve stumbled on a similar pattern.  We want to make contextual help easy to generate and easy to take folks from place to place in our application.</p><p>We&#8217;re going to be emulating urls for the different control panes in our app.  I think the metaphor can be extended to also reference each control through maybe a query string.<br>
+So pane://add_stocks?new_symbol_text=GOOG&amp;price_override_text=10.50 could send you to a new part of the app and help fill in the values of various fields.  How to handle more complex things?  More complex urls?</p></div>
+</div>
+
+<div class="entry">
+    <h3>netghost</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    11:41</div>
+    <div class="content"><p>This is starting to sound more and more like HyperCard, at least in the the metaphors.  In HyperCard, there was a stack of cards, their uri was essentially a card index number.  This seems like a very good idea to me, it gives a clear means of traversing from one piece of an application to another.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jashkenas</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    11:51</div>
+    <div class="content"><p>Hey why, I&#8217;m working on a web application for writing hypertexts, and I&#8217;m also using <em>Incidents</em> (the Kharms ones) for practice material. That&#8217;s funny. Take a peek:</p><p><a href="http://hobix.com/"><img alt=""></a></p></div>
+</div>
+
+<div class="entry">
+    <h3>A peek:</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    11:54</div>
+    <div class="content"><p><a href="http://hypertextopia.com/images/incidents.png"><img src="http://hypertextopia.com/images/incidents_small.png" alt=""></a></p></div>
+</div>
+
+<div class="entry">
+    <h3>Leon</h3>
+    <div class="time">said on <strong>August
+      17th</strong>
+    20:34</div>
+    <div class="content"><p>^^ that is damned pretty.</p></div>
+</div>
+
+<div class="entry">
+    <h3>RubyPanther</h3>
+    <div class="time">said on <strong>August
+      18th</strong>
+    12:21</div>
+    <div class="content"><p>You only need verbs if you want apps to be able to talk to each other. Which would be neat.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>August
+      18th</strong>
+    19:48</div>
+    <div class="content"><p>If  _why  can merely create the HyperCard of the 2000s, he will have the gratefulness of so many.  But he&#8217;s doing more besides!</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

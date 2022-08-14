@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Calling Cocoa Commandline</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site2.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+    <p><a href="../../../about/">About?</a></p>
+<p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+<div class="description">
+<p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+<p><img src="../../../images/duck.png" /></p>
+</div>
+
+  </div>
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/06/25/callingCocoaCommandline.html">Calling Cocoa Commandline</a></h1>
+  <div class="time"><strong>June
+25th
+</strong>
+    19:31</div>
+  <div class="author">by why</div>
+  <div class="content"><p>The euphoria.  All of Shoes&#8217; Carbon code is gone, rewritten using entirely Cocoa native code.  Not only did this shrink the native code to nearly half of its previous size, but things actually work now.  The euphoria.  And also: the elation.</p>
+<p>The only painful part was figuring out how to get started with only gcc and get it all linked with the C code.  To get away without an <span class="caps">IDE</span>.  It&#8217;s been done in lots of other cross-platform libs, sure.  Buried under autotools and lost in deep directories.</p>
+<p>Here&#8217;s a summary of using Cocoa from the commandline.</p>
+<hr />
+
+<p>A truly trivial Cocoa program reads thusly:</p>
+
+<pre><code class="objc">#import &lt;Cocoa/Cocoa.h&gt;
+
+#define INIT    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+#define RELEASE [pool release];
+
+int
+main(int argc, char *argv[])
+{
+  NSApplication *app = [NSApplication sharedApplication];
+  INIT;
+
+  NSWindow *win = [[NSWindow alloc] initWithContentRect: NSMakeRect(0, 0, 340, 140)
+    styleMask: (NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask)
+    backing: NSBackingStoreBuffered defer: NO];
+  NSTextField *text = [[[NSTextField alloc] initWithFrame: NSMakeRect(40, 90, 260, 18)]
+    autorelease];
+
+  [[win contentView] addSubview: text];
+  [text setBezeled: NO];
+  [text setStringValue: @"Drink Coke-O"];
+  [text setBackgroundColor: [NSColor windowBackgroundColor]];
+  [text setEditable: NO];
+  [text setSelectable: NO];
+
+  [win center];
+  [win orderFront: nil];
+
+  RELEASE;
+  [app run];
+  return 0;
+}
+</code></pre>
+<p>Save this as <code>coke-o.m</code> and compile it (you&#8217;ll need the Xcode tools installed):</p>
+
+<pre><code class="sh">$ gcc -framework Cocoa -o coke-o coke-o.m
+</code></pre>
+<p>Run it: <code>./coke-o</code> (although the window will appear behind your terminal for now.)</p>
+<p>While we&#8217;re messing with gcc, let&#8217;s compile it as a Universal binary.  Since Universal binaries aren&#8217;t that much bigger for little progs.</p>
+
+<pre><code class="sh">$ export MACOSX_DEPLOYMENT_TARGET=10.4
+$ gcc -O -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc \
+    -framework Cocoa -o coke-o coke-o.m
+</code></pre>
+
+<hr />
+
+<p>Now, about the window coming up behind the Terminal.  To me, this just seems to be one of those things that Apple is so pedantic about that it ends up not really making sense when you&#8217;re starting out with Cocoa.</p>
+<p>From what I can gather, this is all tied into OS X&#8217;s demand that every app have a menu and an icon.  And, in order to get a menu and an icon, you&#8217;ve got to get an Info.plist file and a .app directory structure and all of that.  So, that&#8217;s one way of solving the problem.</p>
+<p>Since our commandline app is being launched from the terminal, though, it&#8217;s just becoming another window in Terminal.app&#8217;s environment.</p>
+<p>So, if you just want your app to work from the terminal, expand the <code>win center</code> call to also move the window up to the floating level.</p>
+
+<pre><code class="objc">[win center];
+[win setLevel: NSFloatingWindowLevel];
+[win makeKeyAndOrderFront: nil];
+</code></pre>
+
+<hr />
+
+<p>In the case of the Shoes installer, I also needed to sniff out the <span class="caps">CPU</span> type.  I was okay having the little installer stub be a universal binary, but I really wanted to have it download other libraries specific to either PowerPC or Intel architectures.</p>
+<p>The simplest way of doing this is to use the <code>__ppc__</code> pre-processor def.</p>
+
+<pre><code class="objc">NSString *url;
+#ifdef __ppc__
+url = @"http://hacketyhack.net/pkg/osx/shoes-ppc";
+#else
+url = @"http://hacketyhack.net/pkg/osx/shoes";
+#endif
+</code></pre>
+<p>Since the universal binary will actually compile this code twice (once for <code>-arch i386</code> and once for <code>-arch ppc</code>,) each of the <code>url</code> assignment lines will end up in the proper side of the binary for its architecture.</p>
+<p>If you&#8217;d rather sniff out the <span class="caps">CPU</span> type at runtime (or if you need the <span class="caps">CPU</span> frequency as well,) I&#8217;d look into calling <code>sysctl</code> with the <code>CTL_HW</code> and <code>HW_CPU_FREQ</code> flags.  For some nice, complete examples, see the <a href="http://plumber.gnu-darwin.org/home/pub/Documents/samples-c/arch_info.c">arch_info.c</a> sample from the Darwin sources.</p>
+<hr />
+
+<p>Lastly, I will mention briefly about linking to C.  While you may be able to get away with just writing plain C functions in <code>coke-o.m</code> that can be exposed to C, you might eventually need to pass around Cocoa objects in your C structs.</p>
+<p>Since Objective-C is a superset of C, I found it easiest to just compile everything as Objective-C.  All of Cocoa&#8217;s controls can be passed as C pointers.</p>
+<p>I kept all my C sources with the <code>.c</code> extension and added <code>-x objective-c</code> to the gcc flags when compiling vanilla C sources.  And then you can safely <code>#include &lt;Cocoa/Cocoa.h&gt;</code> throughout your program.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">12 comments</a></div>
+
+<div class="entry">
+    <h3>aemadrid</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    16:10</div>
+    <div class="content"><p>I&#8217;m totally lost. Does this all mean the next release of Shoes will support  PPC  back again? That would be a dream. I&#8217;m still a poor developer running an old G4 macbook.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    17:30</div>
+    <div class="content"><p>Yes, definitely, the  PPC  builds will be out with the next set.  Sans video support, however.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    17:56</div>
+    <div class="content"><p>This is some sweet behind-the-scenes compiler info. I suck at this stuff. Hmm, I wonder if I can just pass &#8216;arm&#8217; as the -arch flag for the rubycocoa.framework to get it into the iphone.</p></div>
+</div>
+
+<div class="entry">
+    <h3>matthew</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    18:21</div>
+    <div class="content"><p>hey sweet. curious why you made those  INIT  and  RELEASE  macros, tho.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    19:29</div>
+    <div class="content"><p> FYI , in TextMate the &#8216;pool&#8217; snippet generates:</p>
+<pre>NSAutoreleasePool *pool = [NSAutoreleasePool new];
+$0
+[pool release];</pre>
+<p>(the cursor ends at $0; its not printed)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tim Burks</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    19:50</div>
+    <div class="content"><p>Good digging! You might also enjoy having your Cocoa the Nu way:</p>
+<pre>
+#!/usr/local/bin/nush
+
+(import Cocoa)
+
+(set app (NSApplication sharedApplication))
+
+(set window ((NSWindow alloc) initWithContentRect:'(0 0 450 140)
+             styleMask:(+ NSTitledWindowMask
+                          NSClosableWindowMask
+                          NSMiniaturizableWindowMask)
+             backing:NSBackingStoreBuffered
+             defer:NO))
+
+((window contentView) addSubview:
+ (((NSTextField alloc) initWithFrame:'(40 90 400 18))
+  set:(bezeled:NO
+       stringValue:"Get nush, the Nu shell, at http://programming.nu."
+       backgroundColor:(NSColor windowBackgroundColor)
+       editable:NO
+       selectable:NO)))
+
+(window center)
+(window makeKeyAndOrderFront:nil)
+
+(app run)
+</pre></div>
+</div>
+
+<div class="entry">
+    <h3>Tim Burks</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    19:57</div>
+    <div class="content"><p>One more thing: put this before (app run) to make your program exit when the window is closed.</p>
+<pre>
+(class WindowDelegate is NSObject
+     (- (void) windowWillClose:(id) sender is
+        ((NSApplication sharedApplication) terminate:0)))
+(window setDelegate:(set windowdelegate ((WindowDelegate alloc) init)))
+</pre></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    21:47</div>
+    <div class="content"><p>Lovely, Tim.  That delegate is <em>edible</em>.</p>
+<p>Say, while you&#8217;re here.  Did you ever figure out Cocotron?  I saw that you were trying to get Nu going on that.  Anyhow, I downloaded Cocotron and I couldn&#8217;t make head nor tail of it.  Does it go?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tim Burks</h3>
+    <div class="time">said on <strong>June
+      25th</strong>
+    23:58</div>
+    <div class="content"><p>Not for me, but I didn&#8217;t spend much time with it. That&#8217;s mainly because its focus is Windows, which just isn&#8217;t on my radar.  I&#8217;ve ported Nu to Linux using a smaller and simpler library called libFoundation.  People have also expressed interest in GNUstep, but I haven&#8217;t seen a GNUstep-based Nu myself yet. I thought I would be doing that by now, but this iPhone  SDK  has been so much fun&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Socketwiz</h3>
+    <div class="time">said on <strong>June
+      26th</strong>
+    05:44</div>
+    <div class="content"><p>Your &#8220;Shoes&#8221; link in the right column is pointing to a broken web site: http://code.whytheluckystiff.net/shoes/</p></div>
+</div>
+
+<div class="entry">
+    <h3>till</h3>
+    <div class="time">said on <strong>June
+      26th</strong>
+    12:34</div>
+    <div class="content"><p>&#8220;If you’d rather sniff out the  CPU  type at runtime &#8230;&#8221;</p>
+<p>/usr/bin/arch  + NSTask</p></div>
+</div>
+
+<div class="entry">
+    <h3>aemadrid</h3>
+    <div class="time">said on <strong>June
+      26th</strong>
+    16:54</div>
+    <div class="content"><p>Can&#8217;t wait for the next release!</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

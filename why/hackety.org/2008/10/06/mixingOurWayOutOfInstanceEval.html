@@ -1,0 +1,537 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Mixing Our Way Out Of Instance Eval?</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/10/06/mixingOurWayOutOfInstanceEval.html">Mixing Our Way Out Of Instance Eval?</a></h1>
+  <div class="time"><strong>October
+6th
+</strong>
+    17:36</div>
+  <div class="author">by why</div>
+  <div class="content"><p>The lynchpin of Ruby&#8217;s pidgins and so-called DSLs (Douchebaggery as a Second Language) is the method known as <code>instance_eval</code>.</p>
+<p>From an article titled <a href="http://blog.8thlight.com/articles/2007/05/20/ruby-dls-blocks">Ruby <span class="caps">DSL</span> Blocks</a>:</p>
+
+<pre><code class="rb"> def self.order(&block)
+   order = Order.new
+   order.<strong>instance_eval</strong>(&block)
+   return order.drinks
+ end
+</code></pre>
+<p>And another one <a href="http://blog.jayfields.com/2008/02/implementing-internal-dsl-in-ruby.html">Implementing an internal <span class="caps">DSL</span> in Ruby</a>:</p>
+
+<pre><code class="rb"> def Expectations(&block)
+   Expectations::Suite.instance.<strong>instance_eval</strong>(&block)
+ end
+</code></pre>
+<p>From <a href="http://www.artima.com/rubycs/articles/ruby_as_dsl2.html">Creating DSLs with Ruby</a>:</p>
+
+<pre><code class="rb"> class MyDSL
+   def define_parameters
+     yield self
+   end
+
+   def self.load(filename)
+     dsl = new
+     dsl.<strong>instance_eval</strong>(File.read(filename), filename)
+     dsl
+   end
+ end#class MyDSL
+</code></pre>
+<p>So far, so good?  Most often <code>instance_eval</code> is used, but you&#8217;ll see <code>module_eval</code>, too.</p>
+<hr />
+
+<p>Now, the reason for this.</p>
+<blockquote>
+<p><a href="http://onestepback.org/index.cgi/Tech/Ruby/BuilderObjects.rdoc">Jim Weirich</a>: Within the builder code blocks, any method call with an implicit object target needs to be sent to our builder. To achieve this, the code blocks are evaluated with instance_eval which changes the value of self to be the builder.</p>
+</blockquote>
+<p>He goes on to say why this could be troubling.</p>
+<blockquote>
+<p>This is OK until you want to call a method in the calling object. Since self is no longer the calling object, you have to explicitly provide the caller.</p>
+</blockquote>
+<p>In Weirich&#8217;s <a href="http://builder.rubyforge.org/">Builder</a>, he prefers to use plain blocks and hand you the variable.</p>
+
+<pre><code class="rb"> builder { |xm|
+   xm.em("emphasized")
+   xm.em { xm.b("emp & bold") }
+   xm.a("A Link", "href" => "http://onestepback.org")
+   xm.div { xm.br }
+   xm.target("name" => "compile", "option" => "fast")
+   xm.instruct!
+   xm.html {
+     xm.head {
+       xm.title("History")
+     }
+     xm.body {
+       xm.comment! "HI"
+       xm.h1("Header")
+       xm.p("paragraph")
+     }
+   }
+ }
+</code></pre>
+<p>With <code>instance_eval</code>, you&#8217;d end up with:</p>
+
+<pre><code class="rb"> builder {
+   em("emphasized")
+   em { b("emp & bold") }
+   a("A Link", "href" => "http://onestepback.org")
+   div { br }
+   target("name" => "compile", "option" => "fast")
+   instruct!
+   html {
+     head {
+       title("History")
+     }
+     body {
+       comment! "HI"
+       h1("Header")
+       p("paragraph")
+     }
+   }
+ }
+</code></pre>
+<p>Builder once did use <code>instance_eval</code>, but now offers this explanation in the docs:</p>
+<blockquote>
+<p>The instance_eval implementation which forces self to refer to the message receiver as self is now obsolete. We now use normal block calls to execute the markup block. This means that all markup methods must now be explicitly send to the xml builder.</p>
+</blockquote>
+<p>Rails&#8217; routing stuff also prefers to <a href="http://weblog.jamisbuck.org/2006/10/2/under-the-hood-rails-routing-dsl">go without</a> <code>instance_eval</code>:</p>
+
+<pre><code class="rb"> ActionController::Routing::Routes.draw do |map|
+   map.with_options :controller => 'blog' do |blog|
+     blog.show '',  :action => 'list'
+   end
+   map.connect ':controller/:action/:view'
+ end
+</code></pre>
+<p>By now, it probably seems like <code>instance_eval</code> has been driven out of play by the mature libs and now only lingers in the dabbling blog posts.</p>
+<hr />
+
+<p>I don&#8217;t care about the best way to do this.  The fact is: even &#8220;normal blocks&#8221; are prone to bugs.  I had to fix up the Builder example above because it&#8217;s wrong in <a href="http://builder.rubyforge.org/classes/Builder/XmlMarkup.html">the docs</a>.</p>
+
+<pre><code class="rb"> xm.em("emphasized")             # => <em>emphasized</em>
+ xm.em { xmm.b("emp & bold") }   # => <em><b>emph &amp; bold</b></em>
+ xm.a("A Link", "href"=>"http://onestepback.org")
+                                 # => <a href="http://onestepback.org/">A Link</a>
+ xm.div { br }                    # => <div><br/></div>
+</code></pre>
+<p>There are two errors in the above example.  The date on the RDoc is Sun Feb 05 23:49:01 <span class="caps">EST</span> 2006.</p>
+<hr />
+
+<p>Recently I discovered another option to all of this, thanks to the work of Guy Decoux.</p>
+<p>While investigating a library Guy never released (called <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/20293">prop</a>,) I realized that perhaps he was on to something while fooling with mixins and the inheritance chain.</p>
+<p>Think about it: <code>instance_eval</code> changes self, intercepts method calls and alters instance variables.  Really, all we really want to do is dispatch method calls.  As Jim Weirich says, changing self is the troubling side effect here.</p>
+<p>This is a pertinent topic.  Even today, ruby-core discusses a <code>with</code> operator and Paul Brannan <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/19138">chimes in</a>:</p>
+<blockquote>
+<p>Instance_eval for initialization has surprising behavior for instance variables (e.g. as in Ruby/Tk).</p>
+</blockquote>
+<blockquote>
+<p>A method that affects only method calls and not instance variables would make this idiom more viable.</p>
+</blockquote>
+<blockquote>
+<p>I don&#8217;t know whether that is a good thing or a bad thing.</p>
+</blockquote>
+<p>Again with the <em>good</em> and <em>bad</em>.</p>
+<p>What if there was a way to temporarily add methods for the duration of a block?</p>
+
+<pre><code class="rb"> def to_html
+    Builder.capture do
+      html do
+       head do
+         title self.friendly_title
+       end
+       body do
+         comment! "HI"
+         h1("Header")
+         p("paragraph")
+       end
+     end
+   end
+ end
+</code></pre>
+<p>The essence of Builder.capture is to mixin a bunch of Builder methods, inject them into the block&#8217;s binding.  This adds the <code>html</code>, <code>head</code>, <code>comment!</code> methods into the calling self.</p>
+<p>Using a very small extension called <a href="http://github.com/why/mixico">mixico</a>:</p>
+
+<pre><code class="rb"> def Builder.capture &blk
+   mix_eval(self, &blk)
+ end
+</code></pre>
+<p>This extension enables and disables mixins atomically.  It is a single, quick operation to add and remove a module from the inheritance chain.  (See the mixico <a href="http://github.com/why/mixico/tree/master/README"><span class="caps">README</span></a> for more on this technique.)</p>
+<hr />
+
+<p>The <code>mix_eval</code> method code looks like this:</p>
+
+<pre><code class="rb"> class Module
+   def mix_eval mod, &blk
+     blk.mixin mod
+     blk.call
+     blk.mixout mod
+   end
+ end
+</code></pre>
+<p>The <code>mixin</code> and <code>mixout</code> methods enable and disable the Module in the block&#8217;s binding.</p>
+<p>While you might be inclined to dismiss this on the grounds of it being mixin <strong>magic</strong>, I&#8217;m starting to believe that this is a notable omission from Ruby.  It&#8217;s very quick and efficient to disable and enable mixins and could prove to be a very handy technique.</p>
+<p>Like open classes, however, I&#8217;m afraid the timidity of the business community might label it as taboo, despite it offering great flexibility to you &#8212; all of my fine, able-minded friends out there.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">25 comments</a></div>
+
+<div class="entry">
+    <h3>lemon</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    12:59</div>
+    <div class="content"><p>mix_eval is the kind of thing I&#8217;d use all the time were it part of ruby core.</p>
+<p>(by the way, is markaby is getting a makeover any time soon?)</p></div>
+</div>
+
+<div class="entry">
+    <h3>]\)et(,host</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    13:17</div>
+    <div class="content"><p>Looks really neat, this could help clear up some of the weirdness you get with DSLs. Thankya!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Austin</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    13:44</div>
+    <div class="content"><p>This seems like it could also be an answer to the much-asked-for selector namespaces.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    13:54</div>
+    <div class="content"><p>How does this relate: http://www.somethingnimble.com/bliki/mixology</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    14:18</div>
+    <div class="content"><p><strong>Jim:</strong> It looks like mixico&#8217;s <code>disable_mixin</code> is identical to mixology&#8217;s <code>unmix</code> in the C extension.  It just reverses what&#8217;s done in Ruby&#8217;s <code>rb_include_module</code>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>nakajima</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    14:42</div>
+    <div class="content"><p>How wonderful! I had been fooling around with this sort of approach, except I was calling remove_method for each of a module&#8217;s methods. This is much cooler.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim Weirich</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    16:11</div>
+    <div class="content"><p>How well does this work in the presence of threads?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim Weirich</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    16:15</div>
+    <div class="content"><p>Hmmm &#8230; Actually, I&#8217;m thinking that this won&#8217;t work with builder because the builder object needs to <em>remove</em> methods (in order for method_missing to kick in) rather than <em>add</em> methods via a mixin.  However, it might be useful in other contexts.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim Weirich</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    16:18</div>
+    <div class="content"><p>I also experimented with another solution to this problem.  Instance eval the block in a director object that will try the method on both the builder and the containing object.  Hopefully the director object can choose the right object (probably by giving proirity to one or the other).  I decided against this because the solution seemed unnecessarily complex.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    16:31</div>
+    <div class="content"><p><strong>Jim Weirich:</strong> I actually think that further work on this should focus on masking methods so that the mixin could capture everything except the stuff that&#8217;s in BlankSlate or 1.9&#8217;s BasicObject.</p>
+<p>This exercise may not have any answers in this incarnation.  The specific idea is more about investigating the greys between the two extremes of <code>instance_eval</code> and regular blocks, in the hopes of leading us to something genuinely useful  SLASH  futuristic!</p></div>
+</div>
+
+<div class="entry">
+    <h3>charly</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    17:29</div>
+    <div class="content"><p>hi,<br>
+i totally agree, mixins have i great unexplored potential, we just should think more architecture than magic. I ran in this &#8220;unconscious self&#8221; problem as well and used a similar &#8220;uninclude&#8221; lib in : <a href="http://ruby.simapse.com/2008/10/rails-refactoring-exercise.html">Refactoring rails exercise</a></p></div>
+</div>
+
+<div class="entry">
+    <h3>Zing</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    19:15</div>
+    <div class="content"><p>If you get an exception in blk.call, it appears that you need to ensure the mixout is performed&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dan42</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    19:25</div>
+    <div class="content"><p>I am so going to start using mixico in my projects. I think this will become very important with ruby1.9, because now instance_eval impacts the lookup of <strong>constants</strong> in addition to instance variables.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Martin Dürst</h3>
+    <div class="time">said on <strong>October
+      6th</strong>
+    20:56</div>
+    <div class="content"><p>I have been (and still am) heavily using <code>instance_eval</code> in <a href="http://rubyforge.org/projects/svugy/">SVuGy</a>. I have been trying to understand where exactly the problems are, and why e.g. Jim Weirich has abandoned it in <code>Builder</code>. The explanation provided (&#8220;This is OK until you want to call a method in the calling object. Since self is no longer the calling object, you have to explicitly provide the caller.&#8221;) didn&#8217;t really cut it for me.</p>
+<p>All the examples use tons of methods on the <code>Builder</code> objects, and<br>
+virtually none on the calling object. Actually, as long as you already have a local variable outside the <code>Builder</code> blocks, things should be fine. If you have to create a local variable because all you have is an instance variable, it&#8217;s more of a hassle, but I currently still think that it&#8217;s preferable to sprikling around tons of <code>xm.</code>.</p>
+<p>But having a mixin on/off system gives you the best of two worlds, so why not? Actually, there&#8217;s one more advantage: You don&#8217;t really want your users to access the instance variables of your implementation internals. And making the client&#8217;s instance variables available will hide the implementation-internal instance variables, if I understand correctly.</p>
+<p>This is too late for 1.9, but I hope it will go into 2.0, in one shape or another.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Robert Klemme</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    02:22</div>
+    <div class="content"><p> IMHO  the method has two issues:</p>
+<ol>
+	<li>return value is lost</li>
+	<li>no exception safety</li>
+</ol>
+<p>So, I&#8217;d rather do</p>
+<pre><code> class Module
+   def mix_eval mod, &amp;blk
+     blk.mixin mod
+     begin
+       blk.call
+     ensure
+       blk.mixout mod
+     end
+   end
+ end</code></pre>
+<p>I also agree with Jim&#8217;s concern about thread safety.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    09:32</div>
+    <div class="content"><p><strong>Robert Klemme:</strong> Hey, alright.  Thank you for that fix, it is applied.</p>
+<p>As for thread-safety, tell me your concerns.  Mixin just uses <code>extend</code> and mixout is a single pointer assignment, totally atomic.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Pit Capitain</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    10:07</div>
+    <div class="content"><p>While I would love to be able to uninclude modules or otherwise change the inheritance chain, I don&#8217;t think this feature is necessary for the examples shown. Here&#8217;s a simple way to implement the Builder example (note the local variable &quot;myself&quot;)</p>
+<pre>
+  def to_html
+    myself = self
+    Builder.capture do
+      html do
+        head do
+          title myself.friendly_title
+        end
+        body do
+          comment! "HI"
+          h1("Header")
+          p("paragraph")
+        end
+      end
+    end
+  end
+</pre>
+<p>And Builder.capture can be almost as simple as</p>
+<pre>
+ def Builder.capture &amp;blk
+   instance_eval(&amp;blk)
+ end
+</pre>
+<p>No need to guess who is self, no need to change the inheritance chain, no problems with accidentally overriding methods, &#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tammer Saleh</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    10:13</div>
+    <div class="content"><p>_why:  I think the worries with thread safety are about a thread seeing a class with extended behavior because it interrupted another thread that temporarily extended that class.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>October
+      7th</strong>
+    10:31</div>
+    <div class="content"><p><strong>Tammer Saleh:</strong> Look at <code>mix_eval</code> again.  In this case, we&#8217;re mixing into objects rather than classes (using <code>extend</code>.)  This could still be cause for concern about thread-safety (eventually it might be nice to mixin for only a given scope,) but the concern should be greatly diminished since we&#8217;re not effecting the global set of classes, only a single object.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Ola Bini</h3>
+    <div class="time">said on <strong>October
+      8th</strong>
+    01:54</div>
+    <div class="content"><p>_why: of course, pointer assignment is only atomic on a 32bit machine&#8230; =)</p></div>
+</div>
+
+<div class="entry">
+    <h3>raggi</h3>
+    <div class="time">said on <strong>October
+      8th</strong>
+    07:31</div>
+    <div class="content"><p>This looks like a good deal of fun :-)</p>
+<p>Maybe I&#8217;ll try my hand at some meta-fu, if you&#8217;ll have me for just a moment&#8230;</p>
+<pre>
+<code>
+def MethodsOverride(obj_or_methods, &amp;global_method)
+  case obj_or_methods.size
+  when 1
+    meths = obj.instance_methods
+  else
+    meths = obj_or_methods
+  end
+
+  Module.new do
+    define_method(:__global_method, &amp;global_method)
+    instance_methods.each { |m| undef m unless m =~ /^__/ }
+
+    meths.each do |m|
+      define_method(m) do |*args|
+        __global_method(*args)
+      end
+    end
+  end
+end
+</code>
+</pre>
+<p>Now inject <strong>that</strong> in your metaclass! :O</p>
+<p>Hopefully I&#8217;ll have some time later to play with more of an example&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>raggi</h3>
+    <div class="time">said on <strong>October
+      8th</strong>
+    07:34</div>
+    <div class="content"><p>oh drat, well I did forget the odd * and refactor, but you should get the idea, outside the busted arguments!</p></div>
+</div>
+
+<div class="entry">
+    <h3>dok_pen</h3>
+    <div class="time">said on <strong>October
+      9th</strong>
+    08:09</div>
+    <div class="content"><p>myself, self = self, myself</p>
+<p>lol</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>November
+      5th</strong>
+    10:47</div>
+    <div class="content"><p>Also, atomicity is only the thin end of the pencil when it comes to thread safety.  You basically have to completely lock a shared object upon which mixico is in use, because otherwise other threads will be able to see the mixicoed-in methods.  Also there are difficulties with frozen objects&#8230;</p>
+<p>Which is a shame, because the thing that mixico is here being invoked to address really has more to do with method lookup in local execution contexts, something which shouldn&#8217;t have any thread issues at all.</p></div>
+</div>
+
+<div class="entry">
+    <h3>banisterfiend</h3>
+    <div class="time">said on <strong>November
+      14th</strong>
+    22:08</div>
+    <div class="content"><p>@ MenTalGuy: here&#8217;s one way to make mixico thread-safe http://coderrr.wordpress.com/2008/11/14/making-mixico-thread-safe/</p>
+<p>also it&#8217;s possible to make mix_eval a mix_exec (analogous to instance_exec) by calling/yielding to the block with parameters:</p>
+<p>class Module<br>
+  def mix_exec mod, *args, &amp;blk<br>
+    blk.mixin mod<br>
+    begin<br>
+      yield *args<br>
+    ensure<br>
+      blk.mixout mod<br>
+    end<br>
+  end</p>
+  alias_method :mix_eval, :mix_exec
+<p>end</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Sorting Out Libskia</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/09/09/sortingOutLibskia.html">Sorting Out Libskia</a></h1>
+  <div class="time"><strong>September
+9th
+</strong>
+    18:09</div>
+  <div class="author">by why</div>
+  <div class="content"><blockquote>
+<p><a href="http://blog.vlad1.com/2008/09/09/better-random-thoughts-than-none-at-all/">Vladimir Vukićević</a>: Another graphics library, Skia, has recently appeared as part of the Google Chrome code drop.  It&#8217;s unfortunate that Google felt they needed to develop their own alternative in a closed fashion instead of joining an existing open source project.  The Cairo project, and through it the many open source projects that depend on it, could have benefitted from the work that was done on Skia behind closed doors.  Even worse, unlike most of the rest of the Chrome code, Skia is licensed under the Apache Public License v2.0.  This creates difficulties in being able to reuse the Skia code in most projects.</p>
+</blockquote>
+<p>However, on a happy note, hopefully it will ignite a performance race between itself and Cairo.  I also wonder if Cairo will ever pick up what Skia has in the way of effects and animation.  Cairo does have filters, gradients.  But not blurs and lighting effects.</p>
+<p>The biggest obstacle to using Skia on its own, though, is that Skia is really only partially released.  It&#8217;s a <a href="http://code.google.com/p/skia/">403</a>.  Allegedly, some folks were able to <a href="http://www.satine.org/archives/2007/03/05/the-skia-source-code-dilemma/">nab the source</a> during a brief window on March 4th of last year.  And the source code in the <a href="http://src.chromium.org/viewvc/chrome/trunk/src/skia/">Chrome tree</a> is a snapshot that seems incomplete.  For example, much of the native code (to paint directly to X11, Windows, OS X contexts) seems missing.</p>
+<p>For my part, I&#8217;d like to see how Shoes would run if forked to be Skia-powered.  Can&#8217;t seem to hook it all up just yet.</p>
+<hr />
+
+<p>Skia can be built seperately, though.</p>
+
+<pre><code class="sh">$ git clone git://github.com/why/skistrap.git
+$ cd skistrap
+$ make fetch
+$ make
+</code></pre>
+<p>Presuming you have the includes and libs for libpng, libjpeg, libgif and libX11, you&#8217;ll end up with <strong>libskia.so</strong>.</p>
+<p>There&#8217;s also a <code>make test</code>, but I haven&#8217;t got it hooked up to X11 quite yet, as there&#8217;s no <code>ports/SkOSWindow_Unix.cpp</code> or the like.  And it looks like the GL bindings it uses are for other platforms.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">5 comments</a></div>
+
+<div class="entry">
+    <h3>Evan M</h3>
+    <div class="time">said on <strong>September
+      9th</strong>
+    23:44</div>
+    <div class="content"><p>We&#8217;re hard at work getting Skia (and the rest of Chromium) working on other platforms.  We (those working on Chromium) on try to not patch third-party code, preferring to submit stuff upstream.  I notice mention of an upstream in the commit log for that skia directory you mention.  To be honest, I don&#8217;t know hardly anything about Skia&#8217;s status as an upstream project.</p>
+<p>Most of our porting work has gone on under base/gfx (see commit log: http://src.chromium.org/viewvc/chrome/trunk/src/base/gfx/?view=log ), which may have some useful platform-specific bits for you to nab.  But nothing for Linux yet.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Simon</h3>
+    <div class="time">said on <strong>September
+      10th</strong>
+    04:22</div>
+    <div class="content"><p>If this is what draws Chromes render then its a pretty shoddy job. <br>
+Come on ugly clumsy blocky edges on text<br>
+aliased rounded corners</p>
+<p>lame</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>September
+      10th</strong>
+    17:45</div>
+    <div class="content"><p><strong>Evan M:</strong> Thankyou for reporting from the inside.  How nice it would be to hear from some Skia staff on their plans.</p>
+<p><strong>Simon:</strong> Sure, but I wonder about the art used to draw the browser tabs and animations.  If that stuff is all painted by Skia, then it might end up being something rather lovely.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Simon</h3>
+    <div class="time">said on <strong>September
+      11th</strong>
+    08:00</div>
+    <div class="content"><p>Good point then, the actual browser itself looks and feels very very slick by windows app standards. I was pleasantly surprised.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ka2</h3>
+    <div class="time">said on <strong>September
+      12th</strong>
+    19:39</div>
+    <div class="content"><p>@_why I believe they are pngs: http://src.chromium.org/viewvc/chrome/trunk/src/chrome/app/theme/</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

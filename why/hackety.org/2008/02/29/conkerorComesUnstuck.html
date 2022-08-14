@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Conkeror Comes Unstuck</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/02/29/conkerorComesUnstuck.html">Conkeror Comes Unstuck</a></h1>
+  <div class="time"><strong>February
+29th
+</strong>
+    17:36</div>
+  <div class="author">by why</div>
+  <div class="content"><p>The surgery was a success.  Conkeror has landed its separation manuever.  Really, honestly, I wasn&#8217;t sure for a second.</p>
+<p><img src="../../../images/conkeror-links.png" class="rb" alt="" /></p>
+<p><a href="http://conkeror.mozdev.org/">Conkeror</a> is a keyboard-driven browser.  You navigate links with the keyboard.  Select text with the keyboard.  And you can add commands using JavaScript.  Since its commands are loosely based on Emacs commands, you can combine key cuts in really fantastic ways.</p>
+<ul>
+	<li>Like: the command <code>g hackety.org</code> takes you here.</li>
+	<li><code>Ctrl-u g hackety.org</code> opens this site in a new buffer (like a tab.)</li>
+	<li><code>f 12</code> opens link #12.</li>
+	<li>Thus, <code>Ctrl-u f 12</code> opens link #12 in a new buffer.</li>
+</ul>
+<p>Use <code>Ctrl-h t</code> to get briefed.  And <code>Ctrl-h b</code> for the cheat codes.</p>
+<p>Previously, Conkeror was a Firefox extension.  Late last year the team detached from Firefox and started rebuilding the browser on top of Xulrunner.  This seemed a perilous move at first, but it&#8217;s really <a href="http://repo.or.cz/w/conkeror.git?a=shortlog">energized</a> the developers and has resulted in some great features.  Such as the minibuffer, simpler bookmarks work with <code>g</code>, much improved link highlighting.</p>
+<hr />
+
+<p>Installation is a bit of a trial.  You just need to be sure you start with the specific Xulrunner distro <a href="http://conkeror.mozdev.org/drupal/content/common-problems">mentioned</a> on the wiki.</p>
+<p>On Linux, after you get Xulrunner, it&#8217;s along the lines of:</p>
+
+<pre><code class="sh">git clone git://repo.or.cz/conkeror.git
+cd conkeror
+./build.sh xulapp
+sudo ./install.sh
+</code></pre>
+<p>And you&#8217;ll have <code>/usr/local/bin/conkeror</code>.</p>
+<hr />
+
+<p>The new link following is just genius.  Previously, links on the page were all numbered right when you hit a page.  Some times this would blow the layout.  (Such as the del.icio.us sidebar.)  And a lot of times it would slow page loading.  Really, it wasn&#8217;t until I was able to kill half of my custom link styling javascripts that I realized how nicely Conkeror was coming along.</p>
+<p>Now, pages are loaded just as in Firefox.  You hit <code>n</code> and it hovers a highlight over all links and form elements <em>in view</em>.  The highlight doesn&#8217;t break any layouts.  And, yeah, it&#8217;s doesn&#8217;t highlight the whole page.  Just the stuff you can actually see.</p>
+<p>So even if you&#8217;re at the bottom of the page, the link numbers aren&#8217;t in the hundreds.</p>
+<p><img src="../../../images/conkeror-letter.png" class="cb" alt="" /></p>
+<p>If you&#8217;d rather not use numbers, you can also type the text of the link to follow.  I type <code>s</code> and it limits the links to those with text containing that letter.</p>
+<hr />
+
+<p>Okay, check out this script.  This goes in the <code>.conkerorrc</code>.</p>
+
+<pre><code class="js">interactive("proxy-port",
+  "Change the HTTP proxy port.",
+  function (I) {
+    var portnum;
+    user_pref("network.proxy.http_port", 
+      portnum = (yield I.minibuffer.read($prompt = "Proxy port:")));
+    I.minibuffer.message("port set to " + portnum);
+  });
+</code></pre>
+<p>See, you can use the minibuffer (the command line) as a prompt.  In this script, I&#8217;m prompting for a port number.  Using the <code>minibuffer.read("Proxy port:")</code> line.  And print a success with <code>minibuffer.message</code>.</p>
+<p>There&#8217;s a similar method <code>read_hinted_element_with_prompt</code> that prompts for an element and you can type in the element&#8217;s text or pick its number off the page.  Really, this browser needs a nice scripter&#8217;s guide once the git pull dries up.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>Skorgu</h3>
+    <div class="time">said on <strong>February
+      29th</strong>
+    19:17</div>
+    <div class="content"><p>I&#8217;ve been using <a href="http://vimperator.mozdev.org/">Vimperator</a> with FF3 beta and I&#8217;m in love with keyboard browsing. Definitely have to check this out.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Enart</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    04:24</div>
+    <div class="content"><p>Konqueror also has the direct link navigation feature, it&#8217;s great if you don&#8217;t want to use the mouse. You press Ctrl once and each link is overlaid with a number or a letter, which you then can press to follow the link.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Norgg</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    06:25</div>
+    <div class="content"><p>I&#8217;ve also been using Vimperator, but not properly.  I leave the address bar and menus around so that other people can actually borrow my browser if they need.  The downside is that I still use a mix of Vimperator commands and normal firefox ones.</p></div>
+</div>
+
+<div class="entry">
+    <h3>hazal</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    14:41</div>
+    <div class="content"><p>i want to learn your true email to ask some queastions about &#8220;TRY RUBY&#8221; because why@whythekucystiff.net  is not work.</p></div>
+</div>
+
+<div class="entry">
+    <h3>hazal</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    14:43</div>
+    <div class="content"><p>i try to ruby on my browser but some problems ;<br>
+ <br>
+its freezed some times in the middle of tutorial.<br>
+ <br>
+but big problem is writing code because ;<br>
+ <br>
+my OS win xp and i.e.7.0   and my computer is ASUS A6vm notebook <br>
+ <br>
+and i cannot write &quot;   {     [       ]      }       &quot; symbols. <br>
+ <br>
+normally i can write them by   &quot;Alt-Gr &quot; pressing as i wrote here or  to ms word or to notepad  . but it could not work in   &quot; try ruby &quot;   screen. <br>
+ <br>
+pls help me i stayed  in the middle of tutorial</p><p>e- mail : emre.iletisim.at.superonline.com</p></div>
+</div>
+
+<div class="entry">
+    <h3>RyanTM</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    17:00</div>
+    <div class="content"><p>I&#8217;m having loads of trouble installing this. It&#8217;s asking me about GRE&#8217;s after I&#8217;ve ran the register command. Blah. Do I need Firefox-3.0 for this or something?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Brian</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    17:01</div>
+    <div class="content"><p>Tried it and &#8230; it works but the key bindings don&#8217;t.  I can click on a link (hooray) but can&#8217;t use the keyboard to do anything.</p><p>My poor conkeror&#8211;so pretty on my MacBook and yet so in need of fixing.</p><p>I IRC&#8217;d to the conkeror channel and was told that I&#8217;m probably the first person to try this with &#8216;os x&#8217;.  Hooray, I&#8217;m a pioneer!</p><p>This is the price one pays for playing with the shiny new toys&#8211;you have to fix stuff and learn what you&#8217;re doing.</p></div>
+</div>
+
+<div class="entry">
+    <h3>technomancy</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    18:04</div>
+    <div class="content"><p>Yay conkeror! Looks like they&#8217;ve come a long way since I last checked. Having a Thinkpad pointer means rodent usage is less onerous, but now that Conk has come so far (and is based on Gecko 1.9, right?) it&#8217;s probably time to switch back.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ka2</h3>
+    <div class="time">said on <strong>March
+      1st</strong>
+    20:41</div>
+    <div class="content"><p>@hazal: get a decent browser &amp; os</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -44,6 +44,7 @@ LIST = [
       ['http://www.rubyinside.com/media/poignant-guide.pdf', 'Why\'s (Poignant) Guide to Ruby [PDF]'],
       ['http://cloud.github.com/downloads/shoes/shoes/nks.pdf', 'Nobody Knows Shoes [PDF]'],
       ['http://github.com/steveklabnik/CLOSURE', 'CLOSURE'],
+      ['https://www.dropbox.com/s/c0n2dljz8anih62/CLOSURE.pdf?dl=0', 'CLOSURE [PDF]'],
     ]],
     ['Stories', [
       ['estate://stories/theBobbyWolves.html', 'The Bobby Wolves'],
@@ -130,8 +131,8 @@ LIST = [
       ]]
     ]],
     ['Blogs', [
-      ['http://viewsourcecode.org/why/redhanded/', 'RedHanded (mirror)'],
-      ['http://viewsourcecode.org/why/hackety.org/', 'Hackety.org (mirror)'],
+      ['estate://redhanded/', 'RedHanded (mirror)'],
+      ['estate://hackety.org/', 'Hackety.org (mirror)'],
       ['http://railsblob.blogspot.com/', 'My Rails Blob'],
       ['http://onthelakebythesnacks.blogspot.com/', 'On the Lake by the Snacks']
     ]],
@@ -235,7 +236,7 @@ LIST = [
       ['http://www.vimeo.com/5047563', 'Hackety Hack'],
       ['http://www.youtube.com/watch?v=I4U1vO-lMS0', 'Just the Kaxxt portion of the above video'],
       ['http://mattt.me/2010/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture'],
-      ['https://gist.github.com/yjerem/e49b377ce2d89489ca6d', '_why\'s original dueling swordsmen script, from 2000'],
+      ['https://gist.github.com/paigeruten/e49b377ce2d89489ca6d', '_why\'s original dueling swordsmen script, from 2000'],
       ['https://vimeo.com/3753964', 'Hello World, the Song (in Max/MSP)']
     ]],
     ['RailsConf 2006', [
@@ -274,9 +275,8 @@ LIST = [
 ]
 
 NOTES = {
-  'CLOSURE' => 'On April 18, 2013 (and the months leading up to it) _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="CLOSURE/ircLog.html">this IRC chat log</a>. It\'s generally thought that this is _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE", which can be gotten from the linked github repo.',
-  'Brody Pools' => 'Whoever <a href="http://dl.dropboxusercontent.com/u/1225304/brodypools/index.html">did this</a>, I\'d like to thank you. I don\'t know who you are or where you found this comic, but it was because you linked here that I was able to find your mirror of it.'
+  'CLOSURE' => 'On 18 April 2013, _why came back to publish a 95-page book (of sorts) by placing each page one at a time on a public print queue on whytheluckystiff.net throughout the day. The events of the day are captured in <a href="CLOSURE/ircLog.html">this IRC chat log</a>. It\'s generally thought that this was _why\'s final act of closure, and so Steve Klabnik put all 95 pages together into a book called "CLOSURE".',
 }
 
-INDEX_FOOTER = '<hr /><p><a href="mailto:jeremy.ruten@gmail.com">me</a> … <a href="http://github.com/yjerem/estate">and git</a></p>'
+INDEX_FOOTER = '<hr /><p>See any dead links? <a href="http://github.com/paigeruten/estate">Open a PR or issue here!</a></p>'
 

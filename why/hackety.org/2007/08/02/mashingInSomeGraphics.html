@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Mashing In Some Graphics</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/02/mashingInSomeGraphics.html">Mashing In Some Graphics</a></h1>
+  <div class="time"><strong>August
+2nd
+</strong>
+    12:30</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Okay, so, all these samples so far have used <a href="http://code.whytheluckystiff.net/shoes/wiki/StacksAndFlows">stacks and flows</a> to get all the text and buttons and stuff into place.  This way it all happily resizes just like a browser would.</p>
+<p><img src="../../../images/shoes-rectangles.png" class="r" title="It's samples/rect.rb." alt="It's samples/rect.rb." /></p>
+<p>But it all ultimately just gets pasted in the square.  And, so, Shoes offers a NodeBox-like set of methods for painting in the window bounds.  Check this out. (<em>And see below for updated code!</em>)</p>
+
+<pre><code class="rb">rectangles = proc do
+  20.times do
+    nostroke
+    fill rand(0.6) + 0.4, rand(0.1) + 0.9,
+      rand(0.2) + 0.8, rand(0.4) + 0.1
+    r = rand(300) + 60
+    rect rand(100), rand(200), r, r
+  end
+  button "OK", :x => 300, :y => 400 do
+    clear &rectangles
+  end
+end
+
+Shoes.app :width => 400, :height => 500, &rectangles
+</pre></code>
+<p>These calls aren&#8217;t just inspired by NodeBox.  I tried to match things as close as possible.  In retrospect, however, I might end up using an options hash.  (So rectangles would be: <code>rect :x =&gt; 10, :y =&gt; 10, :height =&gt; 50, :width =&gt; 50</code>.  Not too sure yet.)</p>
+<p>The hacketiest part about this sample though is the <code>clear</code> method.  That method there.  It wipes the window.  And if you pass it a block, it&#8217;ll use that to rebuild the window.  Anyway, there are lots of ways to alter and clear out elements.  Or swap in new ones.  (Sorry I got no docs.  Experimental shoes season ends September 1st.)</p>
+<hr />
+
+<p><strong>Update:</strong> This sample has changed in recent builds of Shoes.  Try:</p>
+
+<pre><code class="rb">Shoes.app :width => 400, :height => 500 do
+  rectangles = proc do
+    20.times do
+      nostroke
+      fill rgb(rand(0.6) + 0.4, rand(0.1) + 0.9, rand(0.2) + 0.8, rand(0.4) + 0.1)
+      r = rand(300) + 60 # radius
+      rect rand(100), rand(200), r, r
+    end
+    button "OK", :top => 300, :left => 400 do
+      # clear wipes out the window and uses the passed block to repaint
+      # it again.
+      clear &rectangles
+    end
+  end
+  rectangles.call
+end
+</pre></code>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">8 comments</a></div>
+
+<div class="entry">
+    <h3>Jon Leighton</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    13:16</div>
+    <div class="content"><p>You realise that <code>rand(0.6)</code> can return a value greater than 0.6 because the argument is converted <code>to_i</code>?</p><p>Other than that, cool. Have you looked at Scribble lately? Our syntax is nicer than NodeBox :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jon Leighton</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    13:19</div>
+    <div class="content"><p>Just to be uber-correct, the <em>actual</em> reason it can be great than 0.6 is because <code>Kernel#rand</code> &#8220;converts max to an integer using <code>max1 = max.to_i.abs</code>. If the result is zero, returns a pseudorandom floating point number greater than or equal to 0.0 and less than 1.0.&#8221;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Drew Olson</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    13:58</div>
+    <div class="content"><p>I&#8217;m very intrigued by the project, but for some reason the last two samples aren&#8217;t working for me on my windows system. The simple editor will not update when I press keys and in today&#8217;s sample there is no color differentiation between rectangles. Plus I get some bizarre error when I click &#8220;OK&#8221;.</p><p>Don&#8217;t mean to rant, I absolutely love your projects and enjoy following this blog. Just thought you might like to know that I&#8217;m getting some weird behavior on the windows end.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    14:08</div>
+    <div class="content"><p><strong>Jon Leighton:</strong> I couldn&#8217;t seem to find Scribble last I checked.  Anyway, good tips on rand.</p><p><strong>Drew Olson:</strong> If you&#8217;re using the binary builds, they&#8217;re a bit behind.  I&#8217;m working on getting a new one out today, but the only way to keep up is to <a href="http://code.whytheluckystiff.net/shoes/wiki/BuildingShoes">build shoes yourself</a>.  Which has become much easier as of today.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jon Leighton</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    14:50</div>
+    <div class="content"><p>We don&#8217;t have a website yet but we have:</p><ul>
+	<li>Mailing list: http://groups.google.com/group/scribbl</li>
+	<li>Launchpad: https://launchpad.net/scribble</li>
+	<li>Campfire: http://scribblers.campfirenow.com/login</li>
+</ul><p>Progress is a bit slow at the moment because both Nathan and I are quite busy, but when we get a 0.1 out the door we intend to push for some more developers in order to keep the ball rolling.</p><p>Stuff I particularly like about Scribble syntax:</p><ul>
+	<li><code>brush.fill = :red / 2 # =&gt; 50% opacity red</code></li>
+	<li><code>brush.stroke = :red + :yellow # =&gt; orange</code></li>
+</ul></div>
+</div>
+
+<div class="entry">
+    <h3>raggi</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    22:33</div>
+    <div class="content"><p>You can build with the latest <a href="http://www.microsoft.com/downloads/details.aspx?familyid=C2B1E300-F358-4523-B479-F53D234CDCCF&displaylang=en">Windows SDK</a>, you may need to copy <code>SetEnv.cmd</code> to <code>vcvars32.bat</code> inside of the <code>Microsoft SDKs\Windows\v6.0\Bin</code> directory. (Add this one to the rakefile?)</p><p>This evening I&#8217;ve been mostly playing around with:<br>
+<pre><code><br>
+	stack do<br>
+		LiveCode::Context = Proc.new{}.binding<br>
+	end<br>
+</code></pre></p><p>Allowing one to:<br>
+<pre><code><br>
+    when :alt_r<br>
+    	begin<br>
+    		debug.replace LiveCode.run(str)<br>
+  	rescue Exception =&gt; e<br>
+  		debug.replace e.message<br>
+	end<br>
+</code></pre><br>
+Which does:<br>
+<pre><code><br>
+	def LiveCode.run str<br>
+		Shoes.escape(eval(str, Context).to_s)<br>
+	end<br>
+</code></pre></p><p>Or something to that effect anyway&#8230;</p><p>Been suffering a few crashes here and there, but it&#8217;s all fun and games at this early stage!</p><p>Muchos gracias _why.</p></div>
+</div>
+
+<div class="entry">
+    <h3>hgs</h3>
+    <div class="time">said on <strong>August
+      3rd</strong>
+    05:43</div>
+    <div class="content"><p>I&#8217;d recommend going with the options hash, for consistency with the shoes command itself.</p><p>Looking at that Scribble syntax above, I think Scribble and Shoes need to jump into Martin Brundle&#8217;s teleporter at the same time&#8230; :-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Maz</h3>
+    <div class="time">said on <strong>August
+      3rd</strong>
+    09:07</div>
+    <div class="content"><p>Great code to make simple dialogs, been waiting for something like shoes for years.</p><p>While I was trying to get a grip on stacks and flows, I ran into a few problems.</p><p>The doc does not say how you specify either fixed width, or percentage. Even if I figured it out myself, you could add a quick note about Integer and Float.</p><p>From now, I&#8217;m only talking on win32 0.r27, I don&#8217;t have others systems to test, nor can I compile the latest version.</p><p>After some time, if I resize the window too many times, or for too long, it stops drawing background and text, however, buttons and keystroke still works.</p><p>There is also a problem with stacks and flows, I think. Let&#8217;s take the example :</p><p><code><pre><br>
+label = &#8220;Shoes is a very informal GUI toolkit. It&#8217;s for making regular old windowing apps.\<br>
+ It&#8217;s a blend of my favorite things from the Web, some Ruby style, and a sprinkling of cross-platform widgets.\<br>
+ (More in the README.)&#8221;</p><p>Shoes.app :height =&gt; 800, :width =&gt; 600 do<br>
+  background &#8220;240, 250, 208)&#8221;<br>
+  stack :width =&gt; 0.50 do<br>
+    button &#8220;foo&#8221;<br>
+    button &#8220;bar&#8221;<br>
+    button &#8220;baz&#8221;<br>
+    text label<br>
+  end<br>
+  stack :width =&gt; 0.20 do<br>
+    text label<br>
+  end<br>
+end<br>
+</pre></code></p><p>From what I understand, the second stack should be aligned with the top of the canvas, while it is aligned with the top of the other text. Same with a stack followed by a flow. If I use 2 flows, the first text can go weird, and print on the other half of the canvas, on a single line. Same with a flow followed by a stack.</p><p>It acts the same with fixed widths.</p><p>If I try with multiple text, results are also strange.</p><p><code><pre><br>
+label = &#8220;Shoes is a very informal GUI toolkit. It&#8217;s for making regular old windowing apps.\<br>
+ It&#8217;s a blend of my favorite things from the Web, some Ruby style, and a sprinkling of cross-platform widgets.\<br>
+ (More in the README.)&#8221;</p><p>Shoes.app :height =&gt; 400, :width =&gt; 600 do<br>
+  background &#8220;240, 250, 208)&#8221;<br>
+  stack :width =&gt; 200 do<br>
+    text label<br>
+    text label<br>
+  end<br>
+  stack :width =&gt;&#8211;400 do<br>
+    text label<br>
+    text label<br>
+  end<br>
+end<br>
+</pre></code></p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

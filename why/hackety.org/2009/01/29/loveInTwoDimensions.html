@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Löve In Two Dimensions</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2009/01/29/loveInTwoDimensions.html">Löve In Two Dimensions</a></h1>
+  <div class="time"><strong>January
+29th
+</strong>
+    20:09</div>
+  <div class="author">by why</div>
+  <div class="content"><p style="text-align:center;"><img src="../../../images/love2d-particles.png" alt="" /></p>
+<p>It&#8217;s a wonder. These pockets of people you can happen upon. The graphics environment is called <a href="http://love2d.org/">Löve</a> and it&#8217;s Lua and <span class="caps">SDL</span> glued together. So, somewhere between Pygame and Processing.</p>
+<p>And it&#8217;s actually a rather active community with <a href="http://love2d.org/forum/">forums</a> that are busy and full of tiny demos. It&#8217;s an attractive, fun, flippant site &#8212; which is surprisingly unusual among toolkits geared toward amateurs. (If you want to attract newbs to your site, I think you need to spend as much time on the art as you do on the code.)</p>
+<p>Anyway, yeah, runs on Windows, OS X and Linux.</p>
+<hr />
+
+<p>Let&#8217;s see, what else? How bout one of the creators of Löve showing how to move a potato around?</p>
+<p style="text-align:center;"><object width="504" height="380"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1628621&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=1628621&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="504" height="380"></embed></object><br /><a href="http://vimeo.com/1628621">LÖVE Tutorial: Moving Around</a> from <a href="http://vimeo.com/michaelenger">Michael Enger</a> on <a href="http://vimeo.com/">Vimeo</a>.</p>
+<hr />
+
+<p>The documentation is also <a href="http://love2d.org/docs/love_graphics.html">fantastic</a>. (Look at the one-line summaries of functions &#8212; that&#8217;s the stuff.) I mean this is a noble effort and they&#8217;re pulling it off.</p>
+<p>Many great built-in libraries for common physics and graphics trick. Take, for example, the class wrapping <a href="http://love2d.org/docs/Animation.html">sprites</a>. Or the standard <a href="http://love2d.org/docs/ParticleSystem.html">particle system</a>.</p>
+<p>That last one&#8217;s a good way to add explosions or steam effects to your game.</p>
+<pre><code class="lua"> local p = love.graphics.newParticleSystem(circle, 1000)
+ p:setEmissionRate(100)
+ p:setSpeed(300, 400)
+ p:setGravity(0)
+ p:setSize(2, 1)
+ p:setColor(clr(255, 255, 255, 255), clr(58, 128, 255, 0))
+ p:setPosition(400, 300)
+ p:setLifetime(1)
+ p:setParticleLife(1)
+ p:setDirection(0)
+ p:setSpread(360)
+ p:setRadialAcceleration(-2000)
+ p:setTangentialAcceleration(1000)
+ love.graphics.draw(p, 0, 0)
+</code></pre><p>In summary: A+.</p>
+<p>Exceptional.</p>
+<p>Does need to cool off on its use of <span class="caps">CPU</span> and memory. You&#8217;ll all help them fix that, right? Maybe even show them where Github is. All in all, fine fine work.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">10 comments</a></div>
+
+<div class="entry">
+    <h3>toothrot</h3>
+    <div class="time">said on <strong>January
+      29th</strong>
+    16:03</div>
+    <div class="content"><p>Wow!  I can&#8217;t wait to dig into this.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      29th</strong>
+    23:33</div>
+    <div class="content"><p>Well, I just want to add that one of the first things that bit me was that you can&#8217;t just pass in a lua script. Watch the intro video. You can run a folder that has a <code>game.conf</code> and <code>main.lua</code>. Or you run a zip of the folder, named with the <code>.love</code> extension.</p>
+<p>Happy loving.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Will</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    02:07</div>
+    <div class="content"><p>Thaqt&#8217;s <em>wicked</em>. :D</p></div>
+</div>
+
+<div class="entry">
+    <h3>James</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    06:07</div>
+    <div class="content"><p>Really sweet find, think this might get me back into programming a game</p></div>
+</div>
+
+<div class="entry">
+    <h3>Fester</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    06:22</div>
+    <div class="content"><p>It reminds me about StructureSynth (http://structuresynth.sourceforge.net/) for some reason.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jakob</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    10:07</div>
+    <div class="content"><p>Whoa, I&#8217;m intrigued …</p></div>
+</div>
+
+<div class="entry">
+    <h3>Bram</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    05:58</div>
+    <div class="content"><p>To Fester: Thanks for pointing to StructureSynth, looks cool!</p></div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>February
+      1st</strong>
+    17:46</div>
+    <div class="content"><p>Nice video and site and everything, but it currently fails the &#8220;just works&#8221; test.  Even just small things like configure warns that you need Lua, but doesn&#8217;t specify which version (5.1).  Also, configure seems to overlook other dev-libs if missing.  Still, only 0.5x release, so&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>teco</h3>
+    <div class="time">said on <strong>February
+      2nd</strong>
+    04:27</div>
+    <div class="content"><p>Why not Chipmunk?</p></div>
+</div>
+
+<div class="entry">
+    <h3>iamwilhelm</h3>
+    <div class="time">said on <strong>February
+      3rd</strong>
+    21:52</div>
+    <div class="content"><p>Actually, you  CAN  just pass in a script.  Kinda.  I was stuck on this for a while, because they had instructions for windows, where you just drag the main.lua file onto love, but nothing for linux.</p>
+<p>But then I was able to get love to print some help messages and basically, if you run:</p>
+<p>love .</p>
+<p>on the current directly with main.lua in it, it&#8217;ll run the script.</p></div>
+</div>
+
+
+<div class="entry">
+<form name="userComment" method="post" action="../../../api/comment/news/loveInTwoDimensions">
+  <h3><input name="sayor" type="textbox" size="15" maxlength="50" /></h3>
+  <div class="time">said on <span id="liveTime"><nobr>Mon DD</nobr> <nobr>HH:MM</nobr></span></div>
+  <div class="content">
+     <input type="hidden" name="timestamp" value="yopYLare1A" />
+     <textarea name="consay" rows="6" cols="50"></textarea>
+     <p><input type="button" name="pleasePreview" value="preview"
+         onClick="liveTextilePreview(document.forms['userComment'].elements['consay'], 'textilePreview', '/api/preview')" />
+        <input type="submit" name="submit" value="&gt;&gt;" />
+        <small>* do <a href="javascript:quickRedReference();">fancy stuff</a> in your comment.</small>
+     </p>
+     <div id="textileWrap"><h4>PREVIEW PANE</h4>
+     <div id="textilePreview"></div>
+     </div>
+     </div>
+  </div>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0087)redhanded.hobix.com/inspect/functionCall.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/functionCall.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Function Call</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Function Call
+  <SPAN class="entryPermalink"><A href="../inspect/functionCall.html" title="Permanent link to &ldquo;Function Call&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://d.hatena.ne.jp/babie/" title="Visit babie&#39;s homepage">babie</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Translated from matz blog, <A href="http://www.rubyist.net/~matz/20050218.html#p01">2005-02-18</A>:</P>
+
+
+	<BLOCKQUOTE>
+		<P>There is no breathing space because I had a deadline for periodical article.
+On the rebound, I contemplated Ruby.
+I suppose that I’m filled with pleasure in this time.</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>Python emulates <SPAN class="caps">OOP</SPAN> by being based on Function and Record, 
+but Ruby’s Function is an emulation based on <SPAN class="caps">OOP</SPAN>. Therefore
+it’s not cool when we call lambda.</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>We need the ”.call”.</P>
+	</BLOCKQUOTE>
+
+
+<PRE>    f = lambda{|x| p x}
+    f.call(12)
+</PRE>
+
+	<BLOCKQUOTE>
+		<P>I wanna write it like this.</P>
+	</BLOCKQUOTE>
+
+
+<PRE>    f = lambda{|x| p x}
+    f(12)
+</PRE>
+
+	<BLOCKQUOTE>
+		<P>On this new rule,
+	</P><UL>
+	<LI>When the name of something like function is a local variable, it apply a “call” to the variable.</LI>
+	</UL><P></P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>What do you think?</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>Actually, I tried it before, but I failed for:
+	</P><UL>
+	<LI>I used the special method “()” instead of “call”.</LI>
+		<LI>I tried to support that “foo.bar(12)” means “foo.bar.().call(12)”.</LI>
+	</UL><P></P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>The new way’s fault is that a method can’t called if a local variable has a same name.
+There is no matter usually, but there’s a case that it’s frequently duplicated like “p” method.
+Should I prepare the way to avoid?</P>
+	</BLOCKQUOTE></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>11:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    17 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>gab</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>12:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I would <STRONG>love</STRONG> this. 
+it seem a slight variation on the theme found <A href="../ruby-talk/119113">here</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jamis</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>12:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’ve wanted this for some time. I’ve found that the #call method is kind of embarrassing to explain to new Rubyists, because on one hand I say that Ruby supports first-class functions, and on the other hand I say that you can invoke them directly… This would be awesome.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>15:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">I would love this too, but it seems to open ambiguities when dealing with functions that don’t take any parameters (and when you pass in arguments w/out the parans).
+<PRE><CODE>
+f = lambda{ "yea baybe" }
+p f
+</CODE>
+</PRE>
+Does the above ‘p’ operate on the function ‘f’ or the return value of function f? Or do we have to explicitly put the parans on the end like this to get the function called?
+<PRE><CODE>
+p f()
+</CODE>
+</PRE>
+In which case, when <EM>can</EM> we leave off the parans? Only when dealing with local variables? Just functions, not methods, right? Ugh. Seems like ’.call’ is looking easier to deal with than all the new rules to remember. What about functions returned from a method?
+<PRE><CODE>
+class Klass
+  attr_reader :f
+  def initialize
+    f = lambda{ "yea baybe" }
+  end
+  def m
+    "yea baybe" 
+  end
+end
+
+o = Klass.new
+p o.m            # =&gt; "yea baybe" 
+p o.f.call       # =&gt; "yea baybe" 
+
+# Now using the new idea, can we do this?
+p o.f()          # =&gt; Does this work?
+p o.f            # =&gt; does this return the function or the return value of the function?
+p o.method(:m)   # and this?
+p o.method(:m)() # ???
+</CODE>
+</PRE>
+More questions!!
+<CODE>
+</CODE><PRE><CODE>f = lambda{ lambda{|i| p i} }
+f(3)   # who gets the '3' argument?
+</CODE>
+</PRE>
+Ok, enough! I’d <STRONG>love</STRONG> to see this work, too. But I hope we can work out all the little twists it might introduce.</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>timsuth</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>16:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Personally, I’m happy with the <CODE>f[3]</CODE> syntax.</P>
+
+
+	<P>This seems too magic…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>17:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I like it.  I especially like the idea that Matz tried this before and couldn’t reconcile the behavior.  It’s satisfying to revisit an idea and find a simpler answer.  Read that first paragraph and sense his elation.  It’s cool.  Go for it.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>17:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Gab, 1.9 procs can take blocks.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>17:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dan, here are the answers:</P>
+
+
+<PRE>f = lambda{ "yea baybe" }
+p f   # no call happen without parens
+
+p f() # execute f.call due to explicite parens
+
+p o.f()          # 'o.f' is not a local variable
+p o.f            # this returns the function
+p o.method(:m)   # plain method object
+p o.method(:m)() # 'o.method(:m)' is not a local variable
+
+f = lambda{ lambda{|i| p i} }
+f(3)   # who gets the '3' argument?
+# outer lambda, and since it does not take argument,
+# error will be raised.
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ulysses</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>18:05</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Personally I would be against this. To be honest, I don’t find myself using .call an extreme amount. I do however, call tons of methods without using brackets, ala x = y.z. In my opinion you would be sacrificing a commonly used convience for a small teaspoon of syntactical sugar.</P>
+
+
+	<P>Of course, that’s just what I think (And perhaps I’ve misunderstood you)—it’s your language, and a beautiful one, I might add, so do as you see fit!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Feb 2005</NOBR> at <NOBR>18:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Wow. Talk about quick feedback (and from the source!). Thanks, matz!</P>
+
+
+	<P>I understand now. Essentially only local variables that refer to a function will feel the change. Parans are necessary for the call to be made. Gotcha.</P>
+
+
+	<P>Although it <EM>would</EM> be nice for <STRONG>all</STRONG> variables that refer to a function to be treated this new way. It too much to ask, I know :( Oh, yea, and allowing objects to define a ‘()’ operator…whoops, didn’t say it. Move along.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>gab</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Feb 2005</NOBR> at <NOBR>00:08</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>you can0t see me but I’m dancing the mud monkey dance, whatever that is :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Feb 2005</NOBR> at <NOBR>00:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>the mud monkey dance?  isn’t that just the roger rabbit except you fly out of a saxophone and land in the year 2121?  no wonder i can’t see you.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Alex</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Feb 2005</NOBR> at <NOBR>06:31</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Names flying here… :) greetz @ matz + why
+j/k… :))</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Feb 2005</NOBR> at <NOBR>09:47</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dan, I’m afraid that your prefered way is python/scheme way after all, which I don’t want.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>eero</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Feb 2005</NOBR> at <NOBR>15:07</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I like the parens-optional normal syntax and don’t mind the mandatory parens for this purpose. It’s much better than #call, anyway.</P>
+
+
+	<P>But can we override operator()? :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matt</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Feb 2005</NOBR> at <NOBR>18:06</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I don’t strongly oppose this, but I really don’t see why it’s necessary.  Are there any situations where this would really make a large difference?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Feb 2005</NOBR> at <NOBR>09:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What if you invert this?</P>
+
+
+<CODE>f = lambda{|z| z.y}</CODE>
+
+	<P>produces a callable object.  <CODE>def g ; end</CODE> does, but it doesn’t <STRONG>return</STRONG> a Method object, it just makes g callable.  Maybe allow <CODE>::f</CODE> and <CODE>::g</CODE> to refer to the objects and <CODE>f</CODE> and <CODE>g</CODE> be calls with no args?  Then you can have <CODE>::f()</CODE> be a call with no args, also.  We have a convention, but not enforced that <CODE>::</CODE> is used in the construction of paths to objects and <CODE>Class.x</CODE> or <CODE>instance.x</CODE> is a call to a method.</P>
+
+
+	<P>Present whitespace rules mean that <CODE>x.y</CODE> is <CODE>x  .y</CODE>  and is <CODE>x. y</CODE>, otherwise we could have .x as the explicit method call syntax.  Actually, it seems that the same whitespace rules apply to <CODE>::</CODE> as to <CODE>.</CODE>  Interesting.</P>
+
+
+	<P>Final thought: would <CODE>.do</CODE> be [50%] better than <CODE>.call</CODE>?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Malte</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Jun 2005</NOBR> at <NOBR>04:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>As some others, I’m really wondering why you would want this. What is the problem about call? And if you really implement calling procs with parentheses, what is the essential difference between procs and methods now?</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

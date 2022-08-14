@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Shoes, Clock & Dictionary</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/12/10/shoesClockAndDictionary.html">Shoes, Clock & Dictionary</a></h1>
+  <div class="time"><strong>December
+10th
+</strong>
+    17:47</div>
+  <div class="author">by why</div>
+  <div class="content"><p>The Shoes mailing list has been hoppin with little apps lately.  Some breakout and tetris clones are taking shape.  MenTaLguY&#8217;s crafting some kind of an adventure game.  And Thomas Bell has been writing some nice little widgets like the Shoes clock (now included with Shoes as <a href="http://code.whytheluckystiff.net/shoes/browser/trunk/samples/clock.rb">samples/clock.rb</a>.)</p>
+<p><img src="../../../images/shoes-clock.png" class="c" alt="" /></p>
+<p>Here&#8217;s little fragment from the most recent source code which controls the colors and the font styles in the clock banner across the top:</p>
+
+<pre><code class="rb">stack do
+  background black
+  para @time.strftime("%a"),
+    span(@time.strftime(" %b %d, %Y "), :stroke => "#ccc"),
+    strong(@time.strftime("%I:%M"), :stroke => white),
+    @time.strftime(".%S"), :align => "center", :stroke => "#666"
+end
+</code></pre>
+<p>This may look a bit like Markaby, but it doesn&#8217;t translate into <span class="caps">HTML</span>.  Shoes has its own <code>span</code> and <code>strong</code> and <code>para</code> elements, which are based on the <span class="caps">HTML</span> elements.  And, similar to <span class="caps">HTML</span>, these elements are just aliases for certain styles.</p>
+<p>From shoes/app.c (shoes_app_reset_style):</p>
+
+<pre><code class="c">STYLE(cCode,        family, monospace);
+STYLE(cDel,         strikethrough, single);
+STYLE(cEm,          emphasis, italic);
+STYLE(cIns,         underline, single);
+STYLE(cLink,        underline, single);
+STYLE(cLink,        stroke, #06E);
+STYLE(cLinkHover,   underline, single);
+STYLE(cLinkHover,   stroke, #039);
+STYLE(cLinkHover,   fill,   #EEE);
+STYLE(cStrong,      weight, bold);
+STYLE(cSup,         rise,   10);
+STYLE(cSup,         size,   x-small);
+STYLE(cSub,         rise,   -10);
+STYLE(cSub,         size,   x-small);
+</code></pre>
+<p>Within the Shoes source code, the <code>STYLE</code> macro simply adds a style setting to a text class.</p>
+<p><img src="../../../images/shoes-dict.png" class="c" alt="" /></p>
+<p>The <code>samples/definr.rb</code> is an example of a threaded Shoes app.  When you hit <strong>Go</strong>, the <span class="caps">HTTP</span> call to definr.com is made in the background.</p>
+<p>This example is trivial enough that I can inline the source:</p>
+
+<pre><code class="rb">require 'open-uri'
+
+Shoes.app :title => "Dictionary, powered by Definr" do
+  stack do
+    background red, :height => 60
+    flow :margin => 20 do
+      caption "Define: ", :stroke => white
+      @lookup = edit_line
+      button "Go" do
+        Thread.start do
+          doc = open(URI("http://definr.com/definr/show/#{@lookup.text}")).read.
+              gsub('&nbsp;', ' ').
+              gsub(%r!\(http://.+?\)!, '').strip
+          title, doc = doc.split(/\n+/, 2)
+          @deft.replace title
+          @defn.replace doc
+        end
+      end
+    end
+    stack :margin => 20 do
+      @deft = subtitle "", :margin => 10
+      @defn = para ""
+    end
+  end
+end
+</code></pre>
+<p>No work has been done to convert <span class="caps">HTML</span> into Shoes objects, so this sort of primitive <code>gsub</code> chaining is pretty common.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">6 comments</a></div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>December
+      10th</strong>
+    18:31</div>
+    <div class="content"><p>Beyond making HTML nice, I think we&#8217;ll also need to think hard about how threads and asynchronous stuff should be handled.  It&#8217;d be nice if we could give them the basic stuff without throwing them to the concurrency wolves.</p><p>(even the above example has technical problems)</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>December
+      10th</strong>
+    18:40</div>
+    <div class="content"><p>For instance: with a little network lag and impatient fingers, you could end up with definition requests in flight for two different words, ending up with things interleaved like:</p><pre><code>T1> @deft.replace title # "chocolate"
+T2> @deft.replace title # "cat"
+T2> @defn.replace doc # "n 1: feline mammal..."
+T1> @defn.replace doc # "adj: composed of or flavored or coated in chocolate..."</code><p>Not such a big deal here, but kids are going to hit that kind of stuff a lot more if they try to make things like games with threads.  And it&#8217;d get discouraging.</p></div>
+</div>
+
+<div class="entry">
+    <h3>David Parker</h3>
+    <div class="time">said on <strong>December
+      10th</strong>
+    19:46</div>
+    <div class="content"><p>Great stuff; I&#8217;ve been playing around with Shoes as well, though sadly nothing quite as interesting as above.  Keep up the good work!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Manfred</h3>
+    <div class="time">said on <strong>December
+      11st</strong>
+    03:30</div>
+    <div class="content"><p>I really like how Shoes has us all acting again as though we just got our very first Commodore 64.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Soleone</h3>
+    <div class="time">said on <strong>December
+      11st</strong>
+    16:45</div>
+    <div class="content"><p>The definr is a great app and really shows the beauty and simplicity of shoes. It also shows that it&#8217;s a nice framework for building REST-clients in no time.</p><p>I will never leave my house without shoes from now on&#8230;</p><p><strong>Thanks Why!</strong></p></div>
+</div>
+
+<div class="entry">
+    <h3>the_hack</h3>
+    <div class="time">said on <strong>December
+      12nd</strong>
+    14:38</div>
+    <div class="content"><p>Hi, the clock is not working for me&#8211;r331, on Ubuntu Gutsy.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</body>
+</html>

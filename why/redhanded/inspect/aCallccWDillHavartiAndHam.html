@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0100)redhanded.hobix.com/inspect/aCallccWDillHavartiAndHam.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/aCallccWDillHavartiAndHam.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » A Callcc w/ Dill Havarti and Ham</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">A Callcc w/ Dill Havarti and Ham
+  <SPAN class="entryPermalink"><A href="../inspect/aCallccWDillHavartiAndHam.html" title="Permanent link to &ldquo;A Callcc w/ Dill Havarti and Ham&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>An old one, but worth repeating if you’ve yet to understand continuations:</P>
+
+
+	<BLOCKQUOTE>
+		<P>Say you’re in the kitchen in front of the refrigerator, thinking about a sandwitch.  You take a continuation right there and stick it in your pocket.  Then you get some turkey and bread out of the refrigerator and make yourself a sandwitch, which is now sitting on the counter.  You invoke the continuation in your pocket, and you find yourself standing in front of the refrigerator again, thinking about a sandwitch.  But fortunately, there’s a sandwitch on the counter, and all the materials used to make it are gone.  So you eat it. :-)</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>A continuation doesn’t save data.  It’s just a closure that closes over the execution stack (and any lexicals associated with it; thus the “I want a sandwitch” thought).  If things change between the taking and invoking of the continuation, those things remain changed after invoking.</P>
+	</BLOCKQUOTE>
+
+
+	<P>From the <A href="http://groups-beta.google.com/group/perl.perl6.language/msg/b0cfa757f0ce1cfd">perl6 list</A>.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>13:45</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    15 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>dema</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>14:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Ok, I’ve seen these metaphores before (like the guy who chose the wrong road and so on…) and I understood the concept alright, but could you point me to some real code usage that actually wouldn’t be possible without continuations? (I’m not at all advocating against continuations, I just didn’t get it yet…)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>callcc advocate</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>14:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You might want to look at Borges or Wee (with calcc).</P>
+	<P>Or seaside.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>flgr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>14:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Binding.of_caller uses continuations. It works by capturing a continuation, specifying a trace function (via set_trace_func) letting the calling function return and captioning the new context (trace functions get contexts passed on most events and the context for a return is the context that was set before the call to that function) and invoking the continuation with the context as an argument as soon as the return event was triggered—it will find itself back at the beginning of the function, but this time it will have the context and just return it.</P>
+	<P>So technically a continuation even allows you to return from a method multiple times which is quite funky.</P>
+	<P>Perhaps you will also find the following code useful when using continuations:</P>
+<PRE># Creates a continuation in a way that is easier to use than callcc.
+# On the initial call this will return the created Continuation and
+# the arguments you gave to Continuation.create in an Array. If you
+# then issue .call() on the Continuation execution will jump back to
+# the point of time where you initially invoked Continuation.create,
+# but this time it will return the Continuation and the arguments
+# you supplied in an Array.
+#
+# You can supply a block instead of default arguments which will
+# cause that block to be executed once and its result to be returned
+# along side the created Continuation, but this form is confusing
+# and does only rarely make sense.
+#
+# Here's a few samples:
+#
+#   # Count from 0 to 10
+#   cc, counter = Continuation.create(0)
+#   puts counter
+#   cc.call(counter + 1) if counter &lt; 10
+#
+#   # Implement something similar to Array#inject using Continuations.
+#   # For simplicity's sake, this is not fully compatible with the real
+#   # inject. Make sure that you understand Array#inject before you try
+#   # to understand this.
+#   class Array
+#     def cc_inject(value = nil)
+#       copy = self.clone
+#       cc, result, item = Continuation.create(value, nil)
+#       next_item = copy.shift
+#       if result and item
+#         # Aggregate the result using the block.
+#         cc.call(yield(result, item), next_item)
+#       elsif next_item
+#         # item not yet set and Array is not empty:
+#         # This means we did not get a value and thus need to use the
+#         # first item from the Array before we can start using the
+#         # block to aggregate the result.
+#         cc.call(next_item, result)
+#       end
+#
+#       return result
+#    end
+#  end
+#  [1,2,3,4,5].cc_inject { |acc, n| acc + n } # =&gt; 15
+def Continuation.create(*args, &amp;block)
+  args = [args] if not args.nil? and not args.is_a? Array # 1.6.8 compatibility
+  cc = nil; result = callcc {|c| cc = c; block.call(cc) if block and args.empty?}
+  result ||= args
+  return *[cc, *result]
+end
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jim Weirich</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>14:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Consider the  AMB  function described <A href="http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme-Z-H-16.html#node_chap_14">here</A>.</P>
+	<P>I’ve got a Ruby version of  AMB  laying around somewhere if Scheme puts you off.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>15:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>dema</STRONG> said:</P>
+	<BLOCKQUOTE>
+		<P>...could you point me to some real code usage that actually wouldn’t be possible without continuations?</P>
+	</BLOCKQUOTE>
+	<P>Continuations don’t make the impossible possible.  A continuation has access to the same resources your methods and blocks have.  It’s just a tool.</P>
+	<P>But continuations allow you to place bookmarks in your code that you can skip between.  To a degree, it frees you from the traditional line-by-line chronology of procedural programming.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>flgr</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>15:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Well, sometimes they do. ;)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>sam</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Feb 2005</NOBR> at <NOBR>21:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Mikael Brockman’s <A href="http://www.phubuh.org/Media/Writing/Continuations/">Continuations on the Web</A> is another great, easily understandable guide to continuations.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Phil</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 Feb 2005</NOBR> at <NOBR>02:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>could you point me to some real code usage that actually wouldn’t be possible without continuations? </I></P>
+
+	<P>I used continuations in  RHDL  to implement concurrent process statements.  It would have taken a lot more code to do it otherwise, but it was probably possible.  You can find a link to  RHDL  on the  RAA .</P>
+
+	<P> BTW : You should really see the movie “Run Lola Run” to help understand continuations. ;-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 Feb 2005</NOBR> at <NOBR>06:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>There’s a <A href="http://merd.sourceforge.net/pixel/language-study/various/callcc/ruby.html">page about continuations and callcc</A>
+on the Merd site, but although it gives several examples, I haven’t got it yet. I think the difficulties I have involve holding in my head:
+what is saved and restored from the closure;
+what is going on with the return value;
+the fact the jump backwards can come from anywhere, and seems unstructured;
+and what parts will not be changed with the “jump back in time”—which is really only the other part to what is saved.</P>
+	<P>I think they would be really useful in creating a search program performing like prolog.  But I haven’t quite figured out how to do that.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zem</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 Feb 2005</NOBR> at <NOBR>13:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>One of my favourite ‘practical’ uses of Ruby continuations is in the Generator library, to convert an internal iterator to an external one.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>william</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 Feb 2005</NOBR> at <NOBR>16:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>funny, i just wrote about generator.rb and how it works: <A href="http://www.all-thing.net/Ruby/iterators_generators_and_continuations_in_ruby.html">Iterators, Generators and Continuations in Ruby</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Mikael Brockman</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 Feb 2005</NOBR> at <NOBR>17:57</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Sam:  No you are great!!!</P>
+	<P>hgs:</P>
+	<P>Only these things are saved by callcc: the complete stack, and the instruction pointer.  In other words, it saves all local variables, and it saves the code position where it was executing—nothing more.</P>
+	<P>So if you want to shield something from callcc: put it on the heap.  Or, in other words: make it an instance variable.</P>
+	<P>You could say that callcc ignores your objects.  It only cares about methods.
+ Which makes sense, ‘cause it’s stolen from a language without objects.</P>
+
+	<P>And what goes on with the return value?  The tricky thing here, is: there are two ways to return from the block you pass to callcc.</P>
+	<P>One way is to just not call the continuation, and let the block return like any other block.</P>
+	<P>The other way is to call the continuation.  That’s a shortcut.  It lets you hop right out with the return value.</P>
+	<P>And you can take the shortcut with you.  You can save it away in a hash table, or whatever—and then return from the callcc, even hours <STRONG>after</STRONG> you’ve left the method that called callcc!  Even after you’ve returned from that very same block a hundred times before!  And that’s what’s so cool about callcc.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>10 Feb 2005</NOBR> at <NOBR>11:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Mikael, 
+You talk about it saving local variables and using instance vars to shield from callcc. Are you saying that when you do <CODE>continuation.call()</CODE> then <CODE>@x</CODE> will not be restored to its old value, but <CODE>y</CODE>, if local, will.  That seems to be what is happening, but “[I’m] not thinking fourth-dimensionally!!”, to quote <EM>Back to the Future</EM> :-)</P>
+	<P>Thank you.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Feb 2005</NOBR> at <NOBR>05:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dug around a bit last night and found <A href="http://www.ps.uni-sb.de/~duchier/python/continuations.html">Continuations Made Simple and Illustrated</A>
+which together with Jim Weirich’s <A href="http://onestepback.org/index.cgi/Tech/Programming/Kata/KataTwoCps.rdoc">Kata Two Worked (continued)—Continuation Passing Style</A>
+make it somewhat clearer what is happening.  These, to summarize, suggest that continuations really get their power when there is more than one, and if you consider them as “when I finished some function, I’d like to continue from <EM>here</EM>”. Now, you could normally do that with a return and a case statement, except that continuations allow you to end up in a different method than that from which you started, and allow you to do so from anywhere.  The Generator discussed in links above relies on this.</P>
+	<P>The Continuation Passing Style examples show how continuing or backtracking based on success or failure  are facilitated by this technique. You pass two continuations to the function, and it will pick which one to call depending on the result.  So instead of relying on a return from a method call to get you back to where you were in the call stack, you can get anywhere you have previously specified, even if that place is not on the current call stack. Thus, instead of being stuck on one branch of a tree of calls, which is what a stack would provide, you can jump to another branch.</P>
+	<P>The genre of time-travel films is filled with cases where the protagonist can take some information about consequences back with them. The ability to pass parameters to <CODE>acontinuation.call(x)</CODE> allow this to be done simply.  However going back with a continuation only “undoes” the call stack and restores local variables, so this is different from undoing the whole of the future, as time-travel ought to permit.  So it is better to think of it as searching a different area, aware that the previous search did take place.  A continuation is a closure with a call stack (I think, it is certainly descibed as a superset of a closure): it carries where it was as well as what it contains.</P>
+	<P>Hope this helps someone.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Michele</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Sep 2005</NOBR> at <NOBR>07:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Why does this Ruby program print “Calling our Continue object” twice?</P>
+<CODE><PRE>def cc
+    puts "do A" 
+    callcc {|cont| 
+   puts "taking a break" 
+        return cont
+    }
+    puts "do B" 
+end
+puts "Calling cc, getting a Continue object" 
+cont = cc()
+puts "Calling our Continue object" 
+cont.call if cont
+puts "end of work\n" 
+</PRE></CODE>
+	<P><BR>
+output:
+</P><PRE><CODE>
+Calling cc, getting a Continue object
+do A
+taking a break
+Calling our Continue object
+do B
+Calling our Continue object
+end of work
+</CODE></PRE><CODE></CODE><P></P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

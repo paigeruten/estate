@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; 5¢ Concurrency</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/01/02/fiveCentConcurrency.html">5¢ Concurrency</a></h1>
+  <div class="time"><strong>January
+2nd
+</strong>
+    15:00</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/5c-concurrency.png" class="c" alt="" /></p>
+</div>  
+  
+<div id="comments">
+<div class="total">16 comments</a></div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    15:33</div>
+    <div class="content">
+<pre><code>require 'rubygems'
+require 'aqueduct'
+require 'open-uri'
+if __FILE__ == $0
+  [aqueduct { URI("http://www.qwantz.com/archive/000001.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000002.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000003.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000004.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000005.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000006.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000007.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000008.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000009.html").read },
+   aqueduct { URI("http://www.qwantz.com/archive/000010.html").read }].
+  each do |c|
+    puts c.join[%r!&lt;span class="rss-title"&gt;(.+?)&lt;/span&gt;!, 1]
+  end
+end
+</code></pre>
+</div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    17:46</div>
+    <div class="content"><p>Bravo! Nice to see a return to RedHanded-esque teasers ;-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>timf</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    17:49</div>
+    <div class="content"><p>Awesome! I had to add <code>inn.close</code> after the <code>inn.puts</code> to get it to work though (on a Macbook).</p></div>
+</div>
+
+<div class="entry">
+    <h3>caleb</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    17:51</div>
+    <div class="content"><p>thanks, that was fun to grok</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    17:51</div>
+    <div class="content"><pre>
+$ sudo gem install aqueduct --source=http://code.whytheluckystiff.net
+Password:
+Updating metadata for 155 gems from http://code.whytheluckystiff.net
+<p>I&#8217;m so lame&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    18:01</div>
+    <div class="content"><pre>
+ERROR:  could not find aqueduct locally or in a repository
+<p>Now I really suck.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic</h3>
+    <div class="time">said on <strong>January
+      2nd</strong>
+    18:02</div>
+    <div class="content"><p>oh, require &#8216;rubygems&#8217; is for the gems listed in 1st line. Pooey. Back to typing it all out&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    02:59</div>
+    <div class="content"><p>Don&#8217;t scare the kids!</p></div>
+</div>
+
+<div class="entry">
+    <h3>chris2</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    04:21</div>
+    <div class="content"><p>You are nuts.  In a good way.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nonni</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    05:02</div>
+    <div class="content"><p>Won&#8217;t somebody please think of the children?!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Magnus Holm</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    08:46</div>
+    <div class="content"><p>Is <a href="http://pastie.caboo.se/134422">this</a> childish enough for you?</p></div>
+</div>
+
+<div class="entry">
+    <h3>raggi</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    14:44</div>
+    <div class="content"><p>Someone else has been watching Tim Brays blog too then?</p><p>I&#8217;m glad I may not be alone :D</p><p>And yes, good fun to have the old post style back, even if the parents like spoiling the fun! ;)</p></div>
+</div>
+
+<div class="entry">
+    <h3>seydar</h3>
+    <div class="time">said on <strong>January
+      3rd</strong>
+    18:22</div>
+    <div class="content"><p>I really like this hack for concurrency!  It struck me as cheating at first, but I think it&#8217;s more suited for all things.</p><p>Awesome job. Looks like I didn&#8217;t <b>completely</b> miss out of RedHanded</p></div>
+</div>
+
+<div class="entry">
+    <h3>timf</h3>
+    <div class="time">said on <strong>January
+      4th</strong>
+    04:25</div>
+    <div class="content"><p>The style is <a href="http://code.macournoyer.com/atchoum/">catching on</a>. Hooray!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nonni</h3>
+    <div class="time">said on <strong>January
+      6th</strong>
+    04:37</div>
+    <div class="content"><p>Magnus, the children use win32, so if we change open3 to win32/open3, they&#8217;ll be happy.</p><p>Remember hackers! The children use win32 because they&#8217;re oppressed!</p></div>
+</div>
+
+<div class="entry">
+    <h3>J`ey</h3>
+    <div class="time">said on <strong>January
+      13rd</strong>
+    06:28</div>
+    <div class="content"><p>Hey _why!<br>
+Remember me? :P<br>
+Glad to see some of the redhanded style still here!</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

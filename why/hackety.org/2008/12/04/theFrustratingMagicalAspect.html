@@ -1,0 +1,341 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; The Frustrating Magical Aspect</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/12/04/theFrustratingMagicalAspect.html">The Frustrating Magical Aspect</a></h1>
+  <div class="time"><strong>December
+4th
+</strong>
+    17:29</div>
+  <div class="author">by why</div>
+  <div class="content"><p>While plundering around in the NodeBox forums, I happened upon a very stirring library for creating <span class="caps">SVG</span> drawings in Ruby. Goes by the name of <a href="http://xrvg.rubyforge.org/"><span class="caps">XRVG</span></a>.</p>
+<p><img src="../../../images/rxvg-1.png" class="lb" alt="" /></p>
+<p>Let me give you an idea of the mind at work behind this. <span class="caps">XRVG</span> is a response to &#8220;the frustrating magical aspect of generative fractals like the Mandelbrot set&#8221; and, perhaps even moreso, &#8220;the hermetique aspect of the dominant graphics programming toolkits notation.&#8221; You get the sense this fellow&#8217;s trying to work out new ways to express shapes, particularly generative shapes like fractals.</p>
+<p>And, for further study, I highly recommend the author&#8217;s <a href="http://www.fractalyze.blogspot.com/">blog of fractals</a>, which he has filled with nearly 200 samples throughout the year.</p>
+<hr />
+
+<p>Toward the middle of the <a href="http://xrvg.rubyforge.org/XRVGPhilosophy.html">philosophy</a> page, XRVG&#8217;s author Julien Léonard goes into a very compelling rationale for why <span class="caps">XRVG</span> strays from using coordinate systems. I&#8217;m quoting liberally from this, because it&#8217;s really fantastic stuff that speaks well on behalf of context-free art kits.</p>
+<p><img src="../../../images/rxvg-2.png" class="r" alt="" /></p>
+<blockquote>
+<p>Nearly every programming toolkit that you may find, in any programming language, instanciates shapes with absolute geometrical coordinates. What that means is that if you want to do graphics programming with them, you rapidly get lost in a list of basic drawing primitives with lots of numbers, without being able to recover the abstract compositional content of the graphic.</p>
+</blockquote>
+<blockquote>
+<p>Actually, a graphic is foremost a composition of basic shapes and color. It is not their absolute values (that is absolute spatial and color coordinates) but their relations that matters. This is even more true because our visual perceptive chain processes its inputs in a relative way, as paradoxical visual games highlight it.</p>
+</blockquote>
+<blockquote>
+<p>As a consequence, <span class="caps">XRVG</span> strives to get rid of these absolutes, by using shapes and functions as numerical patterns to compute shapes and composition. Thus, if you want to draw five circles in a regular way, you must be able to do it without using trigonometric formulae to figure out where these circles have to be drawn. Instead, you just need to use a first circle and &#8220;sample&#8221; it five times to have subcircle centers.</p>
+</blockquote>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">26 comments</a></div>
+
+<div class="entry">
+    <h3>Seb</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    13:51</div>
+    <div class="content"><p>That&#8217;s a pretty neat library! Since you seem to know your way around the graphical libraries in Ruby, are there any pure-Ruby libraries you recommend for generating pretty graphs of data?</p>
+<p>I liked your post on Processing but don&#8217;t have the time to get cracking with JRuby at the moment.</p></div>
+</div>
+
+<div class="entry">
+    <h3>magiker</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    16:15</div>
+    <div class="content"><p>Anything else than sudo gem install xrvg i need to get &#8216;require &#8220;xrvg&#8221;&#8217; to work in irb? O_o</p></div>
+</div>
+
+<div class="entry">
+    <h3>little gray alien</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    16:54</div>
+    <div class="content"><p>This could be useful for prototyping crop circles.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    18:00</div>
+    <div class="content"><p><strong>Seb:</strong> Well, if we can get the gem to work, you could use  XRVG  to create graphs. It generates an  SVG  file, which is just an image format.</p>
+<p>But, since I imagine you&#8217;re asking for business purposes, I think a lot of people use libraries like <a href="http://nubyonrails.com/pages/gruff">Gruff</a> or <a href="http://scruffy.rubyforge.org/">Scruffy</a> or <a href="http://rmagick.rubyforge.org/">RMagick</a>, all of which generate the good old formats for the web.  PNG  and  JPEG .</p>
+<p><strong>magiker:</strong> Sure enough, I can&#8217;t seem to find a version that works either. ﾐ◎_◎彡,,/)</p></div>
+</div>
+
+<div class="entry">
+    <h3>mmb</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    18:03</div>
+    <div class="content"><p>I get LoadError: no such file to load &#8212; attributable when I try to use it after installing the gem.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Bill Mill</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    18:21</div>
+    <div class="content"><p>@magiker do you get &#8220;LoadError: no such file to load &#8212; attributable&#8221; like I do?</p></div>
+</div>
+
+<div class="entry">
+    <h3>seydar</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    19:45</div>
+    <div class="content"><p>After a bit of detective work, it turns out attributable.rb was last seen in xrvg-0.0.3. I don&#8217;t know how it got removed from later versions, but it&#8217;s in there. I made a pastie of it so you can print it out and show to your grandma: http://pastie.org/331502</p>
+<p>At least that&#8217;s what I&#8217;m doing with my print copy.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    20:28</div>
+    <div class="content"><p>I get the attributable error like those above.</p>
+<p>I downloaded and unpacked several old version of the library and attributable.rb was still not present.. so I went back all the way to 0.1 and it&#8217;s in there. I&#8217;ve put it up at http://pastie.org/331530</p>
+<p>I added that to the latest version of xrvg and.. then I get a different error:</p>
+<p>uninitialized constant  XRVG ::Samplable (NameError)</p>
+<p>..</p>
+<p>This is just a experimental beta &#8211; hold out until the developer releases a version that works :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter Cooper</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    20:29</div>
+    <div class="content"><p>I guess this shows the value of refreshing before posting. seydar&#8217;s approach and mine match &#8211; although it still doesn&#8217;t work for me :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Seb</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    00:28</div>
+    <div class="content"><p>@_why: yeah, the gem not working is kind of a deal-breaker at the moment. :P</p>
+<p>And you&#8217;re right, I was asking on a business note, but they like pretty graphics where I work, so I thought it was worth asking. Thank you for the links!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tim</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    00:47</div>
+    <div class="content"><p> WOW !<br>
+<img src="http://lh3.ggpht.com/jblondinet/SILby-b5tTI/AAAAAAAAAxg/xmCa9axnoMQ/s288/Unbugged.png"></p>
+<p><img src="http://lh4.ggpht.com/jblondinet/SKCpuXsuO-I/AAAAAAAAAzY/vHfjs3BIsu0/s288/Lichen.png"></p>
+<p><img src="http://lh6.ggpht.com/jblondinet/SLLzo0h8JhI/AAAAAAAAA1c/cRBRALs44p8/s288/Globular%20intersection%20test.png"></p>
+<p><img src="http://lh6.ggpht.com/jblondinet/SLxAajOXMEI/AAAAAAAAA2k/TlkukJhDhk8/s288/Ondulated%20cocoon.png"></p></div>
+</div>
+
+<div class="entry">
+    <h3>Tim</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    03:07</div>
+    <div class="content"><p>At first I didn&#8217;t really get all the nodebox/processing/fractal enthusiasm on here, but it is definitely growing on me.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Martin</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    04:31</div>
+    <div class="content"><p>I&#8217;m also getting the attributable error and then the uninitialized constant  XRVG  ::Samplable after install the suggested pastie. Think I&#8217;ll drop a bug in Rubyforge about it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Julien</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    06:22</div>
+    <div class="content"><p>Hello everyone, I&#8217;m afraid I am the author of the  XRVG  library :-) <br>
+First my apologizes about problems encountered with the  XRVG  gem, I actually didn&#8217;t test gem building and installation carefully (mainly because I prefer drawing something than making an install :-(.<br>
+Second, I am very pleased to notice interest here, so I will try to release a next version usable very soon so that you may play with it for the WE.<br>
+Last, thanks a lot &#8220;why&#8221; for your article.</p></div>
+</div>
+
+<div class="entry">
+    <h3>acts_as_buffoon</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    08:11</div>
+    <div class="content"><p>Awesome, thanks Julien! I&#8217;m really looking forward to checking this out.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Martin</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    16:31</div>
+    <div class="content"><p>I&#8217;ve got the gem working after some help from Julien:</p>
+<p>http://rubyforge.org/tracker/?func=detail&amp;atid=20126&amp;aid=23113&amp;group_id=5206</p>
+<p>Add the attached attributable.rb to the xrvg gem lib directory, then add:</p>
+<p>require &#8216;forwardable&#8217;</p>
+<p>to lib/spiral.rb</p>
+<p>Works for me.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Trying to make it work..</h3>
+    <div class="time">said on <strong>December
+      5th</strong>
+    20:53</div>
+    <div class="content"><p>I installed the gem, followed those instructions, but..</p>
+<p>&#8220;LoadError: no such file to load &#8212; xrvg&#8221;</p>
+<p>Anyone?</p></div>
+</div>
+
+<div class="entry">
+    <h3>onigiri</h3>
+    <div class="time">said on <strong>December
+      6th</strong>
+    07:17</div>
+    <div class="content"><p>now the gem works perfectly and I&#8217;m already in love with it.<br>
+Checking the implementation details and I definitely like the work done on ranges.</p>
+<p>off to fractalize some reality now!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Julien</h3>
+    <div class="time">said on <strong>December
+      6th</strong>
+    09:32</div>
+    <div class="content"><p>As Onigiri wrote it (by the way, thanks a lot for your message),  XRVG  gem must be usable now (I added attribute.rb, and remove (for the moment) dependancy on Forwardable). Note however that the example in   README  is broken :-(: you must add a &#8220;include  XRVG &#8221; line after &#8220;require&#8221;, as  XRVG  had been packed in a namespace.<br>
+If you &#8220;read&#8221; through fractalyze blog, you may have noticed that for the last six months, I actually rewrote  XRVG  into C++ (CVG), to gain efficiency. As a consequence,  XRVG  developpment has been frozen since :-(.<br>
+Anyway, I hope  XRVG  would be useful whatever your purpose, and be sure to check tutorials page (http://xrvg.rubyforge.org/XRVGTutorials.html) to ease your learning curve. Wish you a nice hacking :-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>on making it work...</h3>
+    <div class="time">said on <strong>December
+      6th</strong>
+    20:14</div>
+    <div class="content"><p>This was probably obvious to you guys, but it didn&#8217;t work for me until I added: <code>include 'rubygems'</code>, which is not included the sample or tutorial files.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Julien</h3>
+    <div class="time">said on <strong>December
+      7th</strong>
+    09:29</div>
+    <div class="content"><p>&#8220;on making it work &#8230;&#8221;, well, no, it is absolutely not obvious to me but weird that you need to include rubygems to use  XRVG . I cannot write about  XRVG  gem (as I us e code straightforward instead of gem), but for other gems I downloaded, I never needed to do such a thing. Furthermore, Onigiri did not seem to have problem &#8230; Maybe something wrong with your ruby install ? Anyone else got this problem, and solved it ?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>December
+      7th</strong>
+    23:44</div>
+    <div class="content"><p><strong>on making it work&#8230;:</strong> A lot of people have the <code>RUBYOPT</code> environment variable set so that RubyGems is automatically loaded. See the <a href="http://www.rubygems.org/read/chapter/3#page70">end of this page</a>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Seb</h3>
+    <div class="time">said on <strong>December
+      8th</strong>
+    18:09</div>
+    <div class="content"><p>http://lolinator.com/lol/hackety.org/2008/12/04/theFrustratingMagicalAspect.html</p>
+<p>Because lolcats are coming back in a big way.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Bil Kleb</h3>
+    <div class="time">said on <strong>December
+      11th</strong>
+    18:37</div>
+    <div class="content"><p>Thank you Julien and Why: this post sparked an idea for unstructured grid generation as used in <a href="http://en.wikipedia.org/wiki/Computational_fluid_dynamics">Computational Fluid Dynamics</a>. I&#8217;ll be sure to pass along results if the idea pans out.  Thanks again!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Julien</h3>
+    <div class="time">said on <strong>December
+      12th</strong>
+    06:21</div>
+    <div class="content"><p>Bil<br>
+Be sure to share your progress, I am very interested in (once I used to do a lot of fluid mechanic, but I switched to softdev :-).</p></div>
+</div>
+
+<div class="entry">
+    <h3>Bil Kleb</h3>
+    <div class="time">said on <strong>December
+      22nd</strong>
+    21:27</div>
+    <div class="content"><p>It seems that my idea has already been developed&#8212;see <a href="http://www.trl.ibm.com/projects/meshing/mesh98E.htm">Bubble Meshing</a> and the man behind it, <a href="http://www.andrew.cmu.edu/user/shimada/research.htm">Kenji Shimada</a>.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

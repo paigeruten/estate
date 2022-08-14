@@ -1,0 +1,161 @@
+
+         |>          |>
+         1   _   _   1
+        |_|_| |_| |_|_|
+         |           |
+         |  estate.  |
+         |     _     |
+         |____| |____|
+        ~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~
+
+it makes you an archive of links.
+the links can go out to other
+websites or point inward.  mirrored
+html pages are put between a common
+header and footer and link back to
+the archive index.  that's about
+all it does, and that is why it is
+so little.
+
+i do not expect anyone to use this
+but the maintainer of _why's estate.
+and if i ever hand over that
+position, i totally expect the new
+maintainer to switch over to
+something else, as they would have
+to be crazy to try and pick through
+this codemess.
+
+_why's estate can be reached at:
+http://viewsourcecode.org/why
+
+               ~~~
+
+ok, perhaps a basic explanation is
+in order.
+
+so here's the usage:
+
+  $ ruby estate.rb why why_out
+
+in this case, 'why' is the directory
+with the source files, and 'why_out'
+is the directory that will be
+created and filled with the output
+html files ready to be viewed in a
+browser.
+
+estate.rb has three main jobs:
+
+  1. copy the exact directory
+     structure and all unrecognized
+     files within the source
+     directory to the destination
+     directory.
+  2. use 'config.rb' and 'index.rb'
+     and (if they exist) 'header.html'
+     and 'footer.html' to create an
+     index.html file which contains
+     the list of links in the archive.
+     the two ruby files must be in the
+     source directory.
+  3. each file whose name ends in
+     '.src.html' and who is *exactly*
+     one level deep in the directory
+     structure (i.e. inside a direct
+     subdirectory of the source
+     directory) will be renamed to a
+     '.html' (without the '.src') and
+     its contents will be wrapped in
+     between the contents of
+     'header.html' and 'footer.html',
+     if they exist.  a link going back
+     to index.html will also be placed
+     at the top.
+
+the data structure of index.rb's LIST
+is probably not ideal, i know.  i
+started with nested hashes but found
+that they got the ordering messed up,
+and the ordering is important here. so
+i switched to arrays.  and now my code
+is full of staples.
+
+so you can pretty much figure out how
+it works yourself by looking at the
+example of 'why/index.rb'.  but let me
+point out a few things that might not
+be obvious.
+
+  - when you see ['desc', 'Blah blah'],
+    that's a special item that causes
+    a paragraph to be written above that
+    section, in this case "Blah blah".
+  - when you see ['quiet'], it's
+    another special item which stops any
+    external links in that section from
+    showing their domain name on the
+    right.
+  - the final special item is
+    ['horizontal'], which causes the
+    links in that section to be displayed
+    beside each other separated simply by
+    a space, rather than each having
+    their own bullet in the list.
+  - links can be internal (local) or
+    external. URLs starting with "http://"
+    are external, and URLs starting with
+    "estate://" are internal, and are
+    relative to the output directory.
+  - footnotes are totally separate in
+    terms of data structures from the
+    index.  they have their own constant,
+    NOTES, and come after LIST.  it's like
+    they're an afterthought, which is what
+    footnotes should be, no?  so how it
+    works is it's a hash where the keys
+    are the names of sections or link text
+    in LIST, and values are the
+    corresponding notes on that list item.
+    obviously there could very possibly be
+    name collision problems here, but i
+    won't worry about that until it
+    happens.  i'll probably just work
+    around it with a stupid hack, like
+    putting an invisible space after the
+    name or something.
+
+some final miscellaneous notes:
+
+  - 'config.rb' contains the title and
+    description of the archive.  the
+    description will be simply printed
+    as a paragraph below the title on
+    the index page.
+  - 'header.html' and 'footer.html' are
+    used to wrap the index.html file
+    and any .src.html files in a common
+    header and footer.  in 'header.html',
+    all occurrences of '{title}' will be
+    replaced with the title of the
+    archive in index.html, or the title
+    of the archive plus the title of
+    the current page in .src.html files.
+    the title of a .src.html file is
+    gleaned from the first occurrence of
+    an <h1> tag in the file.  so each
+    .src.html file should have a title
+    at the top wrapped in <h1> ... </h1>.
+    also, any occurrences of '{dir}' in
+    'header.html' will be replaced with
+    the empty string in index.html, or
+    '../' in .src.html files since they
+    are required to be exactly one level
+    deep in the directory structure.  i
+    use this to refer relatively to the
+    css file for _why's estate.
+
+sorry about the length and detail of all
+this.  maybe somebody will be helped.
+probably me.

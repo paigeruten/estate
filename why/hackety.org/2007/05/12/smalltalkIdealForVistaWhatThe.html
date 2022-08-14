@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Smalltalk Ideal For... Vista? What The!</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/05/12/smalltalkIdealForVistaWhatThe.html">Smalltalk Ideal For... Vista? What The!</a></h1>
+  <div class="time"><strong>May
+12th
+</strong>
+    17:41</div>
+  <div class="author">by why</div>
+  <div class="content"><p>I left out a contender in the <a href="../../../2007/05/09/soGooeyCanYouSeeTheButton.html">gooey post</a>.</p>
+<pre class="smalltalk">
+  | w b |
+  b := Button label: 'Press me' function: 
+    [Transcript showcr: 'You pressed me'].
+  w := SizeableTitleWindow open: 'Demo'.
+  w addChild: b.
+</pre>
+<p>If you&#8217;ve got Flash installed, you can have this running in just a few seconds.</p><p><img src="../../../images/vst-do-it.png" class="rb" alt="" /></p><ol>
+	<li><a href="http://vistascript.net/vistascript/flex/vst.swf">Start</a> Vista Smalltalk.</li>
+	<li>Right-click the dark grey background.</li>
+	<li>Select SmalltalkWorkspace.</li>
+	<li>Copy-and-paste the above code into the white window.</li>
+	<li><strong>Ctrl+A</strong> to select all the text.</li>
+	<li>Right-click the text and select <strong>Do It</strong>.</li>
+</ol><p>Vista Smalltalk is incredibly precocious and capable.  And yet, lots of things have changed and I couldn&#8217;t get hardly anything working from the <a href="http://vistascript.net/vistascript/docuwiki/doku.php?id=general:tutorial">tutorial</a>.  Instead of improving his tutorial and docs, the creator (Peter Fisk) is porting <a href="http://vistasmalltalk.wordpress.com/2007/05/09/smalltalk-dlr-progress/">everything to the DLR</a>.  Uhm?  Now I understand why all of you get so mad at me.</p><p>One really fascinating thing about this whole thing: the creator actually has a symmetric <a href="http://vistascript.net/vistascript/data/adobe/tests/lisptest18.jpg">lisp dialect</a> that corresponds to Smalltalk.  So the prelude is basically all written in lisp.  And kept in memory as sexp.</p><p><hr /></p><p>And&#8230; yet&#8230; all this for Vista??</p><blockquote><p>(from <a href="http://vistascript.net/vistascript/docuwiki/doku.php?id=general:overview">the overview</a>): Vista is just part of a much larger architectural change in how Microsoft applications will be written and deployed.  The Smalltalk language is ideally suited for the enhanced application connectivity that these new architectures will allow.  Vista Smalltalk runs in Internet Explorer 7 as well as on the Windows Vista desktop and is designed to be fully compatible with the .Net framework including future (WPF/E) cross-platform implementations.</p></blockquote><p>Runs pretty well in Flash and Firefox for me!!</p>
+</div>  
+  
+<div id="comments">
+<div class="total">5 comments</a></div>
+
+<div class="entry">
+    <h3>misuba</h3>
+    <div class="time">said on <strong>May
+      12th</strong>
+    21:55</div>
+    <div class="content"><p>And although nothing anywhere comes out and says otherwise, you don&#8217;t need to be running Vista.</p></div>
+</div>
+
+<div class="entry">
+    <h3><=></h3>
+    <div class="time">said on <strong>May
+      13th</strong>
+    04:49</div>
+    <div class="content"><p>I firmly believe that Microsoft is on the road to becoming more awesome.  They have some of the greatest minds working for them in both static (Haskell, via the Simons) and dynamic (the DLR) programming languages.  Their tight grip over the PC platform is already crumbling; they will be forced to evolve or die.  Programming languages will be a key avenue of attack.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      13th</strong>
+    13:38</div>
+    <div class="content"><p>I think awesome would have to include licensing their stuff in a reasonable way.  I don&#8217;t think it would be very awesome if Microsoft patented all the interesting stuff, such that our choices would be between either staying a decade or two behind in software technology or using modern techniques under very onerous licensing arrangements.</p><p>So far things are not too bad, but on the other hand they aren&#8217;t quite in a dominant position yet.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      13th</strong>
+    13:46</div>
+    <div class="content"><p>More on-topic, Vista Smalltalk is quite cool.  Lisp, or at least s-exps, is probably a good idea when implementing any language&#8212;it lets you worry about the parser later.  Not as huge an issue for SmallTalk, perhaps, but parsing is a pretty big deal for certain other languages (e.g. Ruby).</p><p>When I was toying with a Ruby-on-JavaScript implementation, I punted on the Ruby syntax in favor of s-exps and working on getting the language semantics sorted first.  Sadly, I never finished since current-generation JavaScript sucks too much for it to be fun.  Maybe I&#8217;ll give it another shot when we have a more modern JavaScript out there.</p></div>
+</div>
+
+<div class="entry">
+    <h3>gemtech</h3>
+    <div class="time">said on <strong>May
+      14th</strong>
+    08:09</div>
+    <div class="content"><p>I was encouraged by what I read about the speed / performance. What about <a href="http://www.mono-project.com/Moonlight">moonlight</a>?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0105)redhanded.hobix.com/inspect/stickItInYourIrbrcMethodfinder.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/stickItInYourIrbrcMethodfinder.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Stick it in Your ~/.irbrc: MethodFinder</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Stick it in Your ~/.irbrc: MethodFinder
+  <SPAN class="entryPermalink"><A href="../inspect/stickItInYourIrbrcMethodfinder.html" title="Permanent link to &ldquo;Stick it in Your ~/.irbrc: MethodFinder&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Ooh, nice ripoff from Smalltalk.  A class called <A href="http://www.nobugs.org/developer/ruby/method_finder.html">MethodFinder</A> for looking up methods based on what they should return.</P>
+
+
+	<P>You use <CODE>MethodFinder.show( "hello", 5 )</CODE> and it’ll suggest the <CODE>length</CODE> and <CODE>size</CODE> methods.  Maybe we could hack it to be a bit more terse?</P>
+
+
+<PRE> &gt;&gt; "hello".what?  5
+ "hello".length  5
+ “hello”.size == 5
+ =&gt; [“length”, “size”]
+
+ &gt;&gt; “foo”.what?(“bar”)  "foobar" 
+ "foo".&lt;&lt;("bar")  “foobar” 
+ “foo”.+(“bar”)  "foobar" 
+ "foo".concat("bar")  “foobar” 
+ =&gt; [“&lt;&lt;”, ”+”, “concat”]
+</PRE>
+
+	<P>Just add to Andrew’s code:</P>
+
+
+<PRE> class MethodFinder
+   def initialize( obj, *args )
+     @obj = obj
+     @args = args
+   end
+   def ==( val )
+     MethodFinder.show( @obj, val, *@args )
+   end
+ end
+
+ class Object
+   def what?(*a)
+     MethodFinder.new(self, *a)
+   end
+ end
+</PRE>
+
+	<P>In any case, use the syntax easiest to remember.  Lest we need a <CODE>whatwhat?</CODE></P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>16 May 2006</NOBR> at <NOBR>15:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    32 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ezra</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>16:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Pretty neat rick. This comes in handy in irb.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Andrew Birkett</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>16:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>That’s very cool.  Like it a lot!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>16:43</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Medallions go to you, Andrew.  I would also encourage you to suppress the warnings by temporarily redirecting <CODE>$stderr</CODE></P>
+
+
+<PRE>  require 'stringio'
+  # Pretty-prints the results of the previous method
+  def MethodFinder.show( anObject, expectedResult, *args )
+    $old_stderr = $stderr; $stderr = StringIO.new
+    methods =
+      find( anObject, expectedResult, *args ).each { |name|
+        print "#{anObject.inspect}.#{name}" 
+        print "(" + args.map { |o| o.inspect }.join(", ") + ")" unless args.empty?
+        puts " == #{expectedResult.inspect}" 
+      }
+    $stderr = $old_stderr
+    methods
+  end
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>16:50</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><A href="http://www.whytheluckystiff.net/ruby/what.irbrc">~/.irbrc</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Kian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>20:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Very nice. Sort of like my commonly used:
+<PRE>class Object
+  def method_like(regex)
+    methods.select {|m| m =~ regex}
+  end
+end
+</PRE>
+(Although I actually abbreviate it to #mlike for faster typing)</DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>myavuzselim</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>21:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Very handy. I start liking ruby :)</P>
+
+
+	<P>But what if you don’t know the order of the parameters? I used the <A href="http://permutation.rubyforge.org/">permutation</A> class to make it work for each order of the parameters. <A href="http://studwww.ugent.be/~msoyturk/progs/methodfinder.rb">here</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>myavuzselim</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 May 2006</NOBR> at <NOBR>21:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Usage:
+<PRE>irb(main):005:0&gt; how?(", ", [1,2,3]) &gt;&gt; "1, 2, 3" 
+[1, 2, 3].*(", ")
+=&gt; nil</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>J`ey</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>00:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Kian:
+class Object
+  def methods_like(regexp)
+    methods.grep(regexp)
+  end
+end</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>J`ey</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>00:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Kian:</P><PRE><CODE>class Object
+  def methods_like(regexp)
+    methods.grep(regexp)
+  end
+end
+</CODE></PRE><P></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>musteatyemen</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>01:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>ruby, work smarter not harder?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jim</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>02:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">To save some time: Windows lacks a fork routine, which gets me a:
+<PRE>NotImplementedError: the fork() function is unimplemented on this machine
+</PRE>
+
+	<P>for anything I try</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>jakdak</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>03:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>call me a thicky – but what do i do with this code ?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mathie</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>04:06</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hrm.</P>
+
+
+<PRE><CODE>
+mathie@laphroaig:mathie$ irb
+irb(main):001:0&gt; "foo".what?("bar") == "foobar" 
+LoadError: no such file to load -- bar
+        from /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:21:in `require__'
+        from /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:21:in `require'
+        from /Users/mathie/.irbrc:43:in `find'
+        from /Users/mathie/.irbrc:42:in `find'
+        from /Users/mathie/.irbrc:51:in `show'
+        from /Users/mathie/.irbrc:37:in `=='
+        from (irb):1</CODE>
+</PRE>
+
+	<P>Looks like it’s an interaction with the <CODE>require 'rubygems'</CODE> at the top of my ~/.irbrc.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>llasram</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>07:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>So this is all fine and dandy in your typical irb session, but when I try it in the Rails console I get:</P>
+
+
+<PRE><CODE>  &gt;&gt; "hello".which? == 5
+  $</CODE></PRE><CODE></CODE>
+
+	<P>i.e., irb immediately aborts, all error messages going down with the process.</P>
+
+
+	<P>Any ideas before I start debugging?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>llasram</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>07:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>So this is all fine and dandy in your typical irb session, but when I try it in the Rails console I get:</P>
+
+
+<PRE><CODE>  &gt;&gt; "hello".which? == 5
+  $</CODE></PRE>
+
+	<P>i.e., irb immediately aborts, all error messages going down with the process.</P>
+
+
+	<P>Any ideas before I start debugging?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Brian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>07:50</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I am seeing have the same trouble as reported by Jim and by mathie.</P>
+
+
+	<P>I am on Windows though not sure that matters.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>08:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Jim, mathie, Brian</STRONG>: That’s really odd.  Looks like mathie’s on  OSX , though, so it’s not platform-specific.  I just tested on Windows and it worked fine like double donkeys.  I think we need to catch exceptions and put together a whitelist of desctructive methods (ignoring bangs.)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>llasram</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>09:17</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>My problem turned out to be the Rails “daemonize” method—my irb session wasn’t dying, just slipping into the background.</P>
+
+
+	<P>Adding a <CODE>@@black_list</CODE> and a <CODE>select</CODE> on <CODE>not @@black_list.include? name</CODE> in <CODE>MethodFinder#find</CODE> fixed it.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Kian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>11:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>J`ey: Thanks. Can’t believe I haven’t done it that way all this time… I always forget to look at the Enumerable  API  when dealing with arrays. Really wish they’d just include those methods on the Array  API  page!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Vrensk</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>14:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Wow!  I found this just after I spent a few hours (or so it felt) searching for the #camelize method (that turns “dragon_controller” to “DragonController”).  #what? would have saved those hours—or so I thought.</P>
+
+
+	<P>It turns out that</P>
+
+
+<PRE>  "dragon_controller".what? == "DragonController" 
+</PRE>
+
+	<P>does not return #camelize since #camelize has an optional first argument (capiltalize_first = true).  So it has an arity of -1.  So here’s my suggestion:</P>
+
+
+<PRE>  def self.find( anObject, expectedResult, *args )
+    $old_stderr = $stderr; $stderr = StringIO.new
+    targetArity = [args.size, - args.size - 1]
+    methods = anObject.methods.select do |name|
+      targetArity.include?(anObject.method(name).arity) &amp;&amp;
+      ! @@blacklist.include?(name) &amp;&amp;
+      begin anObject.megaClone.method( name ).call(*args) == expectedResult; rescue; end
+    end
+    $stderr = $old_stderr
+    methods
+  end
+
+  @@blacklist = %w(daemonize what? display)
+</PRE>
+
+	<P>Note that ‘what?’ must be in the <CODE>@@blacklist</CODE> or we will get eternal recursion.  Oh, and I moved the  STDERR  stuff to the find method since that is where the errors are printed.</P>
+
+
+	<P>I’ll try to work the permutations in there too.  But again: wow!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>14:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>That’s a good Vrensk!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Schierbeck</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>15:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I streamlined the code, and changed it to use my preferred coding style (change it back if you want to). I hope it’s ok with Andrew that I post it here; I couldn’t comment on his own entry.</P>
+
+
+	<PRE><CODE>class Object
+  def mega_clone
+    self.clone
+  rescue
+    self
+  end
+end</CODE></PRE>
+
+
+	<PRE><CODE>class MethodFinder
+  # Find all methods on <INS>obj</INS> which, when called with <INS>args</INS>
+  # return <INS>expected_result</INS>
+  def self.find(obj, expected_result, <STRONG>args)
+    obj.methods.select do |name|
+      obj.method(name).arity == args.size and
+      obj.mega_clone.send(name, </STRONG>args) == expected_result rescue nil
+    end
+  end
+end</CODE></PRE>
+
+
+	<OL>
+	<LI>Pretty-prints the results of the previous method
+def self.show(obj, expected_result, <STRONG>args)
+  find(obj, expected_result, </STRONG>args).each do |name|
+    print ”#{obj.inspect}.#{name}” 
+    print “(#{args.map{|arg| arg.inspect }.join(’, ‘)})” unless args.empty?
+    puts ” == #{expected_result.inspect}” 
+  end
+end</LI>
+	</OL>
+
+
+	<P>Just add the #what? method yourself.</P>
+
+
+	<P>By the way, is there a better name for #mega_clone ? It sounds kind of odd…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Schierbeck</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>15:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hmmm, it seems your preview function ain’t working—trying again:</P>
+
+
+	<P>I streamlined the code, and changed it to use my preferred coding style (change it back if you want to). I hope it’s ok with Andrew that I post it here; I couldn’t comment on his own entry.</P>
+
+
+<PRE><CODE>
+  class Object
+    def mega_clone
+      self.clone
+    rescue
+      self
+    end
+  end
+
+  class MethodFinder
+    # Find all methods on +obj+ which, when called with +args+
+    # return +expected_result+
+    def self.find(obj, expected_result, *args)
+      obj.methods.select do |name|
+        obj.method(name).arity == args.size and
+        obj.mega_clone.send(name, *args) == expected_result rescue nil
+      end
+    end
+
+    # Pretty-prints the results of the previous method
+    def self.show(obj, expected_result, *args)
+      find(obj, expected_result, *args).each do |name|
+        print "#{obj.inspect}.#{name}" 
+        print "(#{args.map{|arg| arg.inspect }.join(', ')})" unless args.empty?
+        puts " == #{expected_result.inspect}" 
+      end
+    end
+  end
+</CODE></PRE>
+
+	<P>Just add the #what? method yourself.</P>
+
+
+	<P>By the way, is there a better name for #mega_clone ? It sounds kind of odd…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>llasram</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>18:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Daniel: Maybe just <CODE>#clone</CODE>?  Given that you can clone frozen objects, being unable to clone numbers seems odd to me.  Even if you actually get a new object, you still can’t change it so it might as well be the old object.  Maybe “<CODE>#clone_if_mutable</CODE>”? “<CODE>#clone_or_self</CODE>”?</P>
+
+
+	<P> OTOH , I just realized that the code as stands could be rather dangerous if the clonee was (a) mutable but (b) raised an exception in <CODE>#clone</CODE>.  Time to start checking for TypeError in particular?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jim</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 May 2006</NOBR> at <NOBR>19:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Forgive me for not being precise, am a nuby.  On Windows, I had originally tried under script/console, which is where I spend more time, and where I get the fork error.  On  IRB  it works just fine, warning about Object#type &amp; Object#id being deprecated.</P>
+
+
+	<P>Brian, did you make the same mistake?</P>
+
+
+	<P>Non nubies: what could I do to make it work in the script/console mode?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Schierbeck</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 May 2006</NOBR> at <NOBR>07:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>llasram: yeah, I added the TypeError restriction to the rescue clause after posting here.</P>
+
+
+<PRE><CODE>class Object
+  alias_method :__clone__, :clone
+  def clone
+    __clone__
+  rescue TypeError
+    self
+  end
+end</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Schierbeck</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 May 2006</NOBR> at <NOBR>07:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Okay, I’ve boiled it down even further. I’ve removed the output method (I don’t really need it) and I’ve used a block to specify the output requirements. Remember to use the #clone version from my earlier post.</P>
+
+
+<PRE><CODE>
+  class Object
+    def find_methods(*args)
+      method.select do |name|
+        begin
+          method(name).arity == args.size and
+          yield clone.send(name, *args)
+        rescue NameError, TypeError
+          nil
+        end
+      end
+    end
+  end
+</CODE></PRE>
+
+	<P>which reminds me; why no rescue clauses on do … end blocks?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Nikolas Coukouma</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 May 2006</NOBR> at <NOBR>19:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">I’ve posted my <A href="http://atrustheotaku.livejournal.com/339449.html">own improvements</A>
+It fixes the following:
+	<UL>
+	<LI>Missing support for varargs and blocks</LI>
+		<LI>Failed to catch some things</LI>
+		<LI>Output from printing methods is annoying</LI>
+	</UL>
+
+
+I hadn’t looked at the comments here (just the main post), but I believe I coincidentally fixed the following:
+	<UL>
+	<LI>Supression of warnings</LI>
+		<LI>Fork error</LI>
+		<LI>Optional arguments</LI>
+	</UL>
+
+
+	<P>My recursion prevention hack isn’t as elegant as Vrensk’s :(</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bobfoc</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 May 2006</NOBR> at <NOBR>01:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>is there a version of the .irbrc file that includes all these improvements ?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Nikolas Coukouma</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 May 2006</NOBR> at <NOBR>19:22</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’ve made a <A href="http://hacks.atrus.org/ruby/method_finder.rb">combo version</A> and included some credits.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>David Tran</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 May 2006</NOBR> at <NOBR>23:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P> FYI : Steven Grady posted MethodFinder on <A href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/32844">ruby-talk</A>  in 2002.</P>
+
+
+	<P>Based on all people’s programs, I come out mine versions like:
+(1) <A href="http://www.doublegifts.com/pub/ruby/methodfinder.rb.html">simple MethodFinder</A></P>
+
+
+	<P>(2) <A href="http://www.doublegifts.com/pub/ruby/methodfinder2.rb.html">permutation arguments MethodFinder</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>slumos</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 May 2006</NOBR> at <NOBR>15:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Now to integrate this with rspec and koders.com.  I get direct deposit, so all I need now is a hologram of me typing madly.  Hmm, maybe as long as  CVS  commits keep happening, a cardboard version will work just as well.</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

@@ -1,0 +1,841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0107)redhanded.hobix.com/inspect/namedParametersArenTTheyAllNamed.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/namedParametersArenTTheyAllNamed.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Named Parameters? Aren't They All Named?</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Named Parameters? Aren't They All Named?
+  <SPAN class="entryPermalink"><A href="../inspect/namedParametersArenTTheyAllNamed.html" title="Permanent link to &ldquo;Named Parameters? Aren&#39;t They All Named?&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>None of us wants to delve back into the block/method/param argument again, right?  But we could still use a good answer.  Dan Berger has <A href="http://www.livejournal.com/users/djberg96/50162.html">an explanation</A> of how Sydney got named parameters <EM>without need to plunder Ruby’s current method definitions</EM>.</P>
+
+
+<PRE> # A standard Ruby method declaration
+ def foo(a, b, c=4)
+   ...
+ end
+
+ # Ideal syntax
+ foo(a:1, b:2, c:3) # a=1, b=2, c=3
+ foo(a:1, b:2)      # a=1, b=2, c=4
+ foo(1, 2, c:3)     # a=1, b=2, c=3
+ foo(1, 2, 3)       # a=1, b=2, c=3
+</PRE>
+
+	<P>If you’d like to give Sydney a try, scan for tarballs on <A href="http://blog.fallingsnow.net/">Evan’s blog</A>.  (Spotted on <A href="http://cwilliams.textdriven.com/">Late to the Party</A>.)</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>16:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    32 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rick</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>16:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>That’s exactly what I thought.  I was going to ask but I figured someone would just tell me to read ruby-talk.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>TG</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>17:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>eww. Someone tell Perl Ruby’s catching up!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dave Burt</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>17:06</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">Interesting. The following is conspicuously absent from the examples; is it allowed?
+<P><CODE>foo(b:2, a:1)  # a=1, b=2, c=4</CODE></P>
+
+	<P>And do all of these work?</P>
+
+
+<P><CODE>foo(1, module_var::ConstantName)</CODE></P>
+<P><CODE>foo(1, b: :two)</CODE></P>
+<P><CODE>foo(1, ::ConstantName)</CODE></P>
+<P><CODE>foo(1, 2, b: :two)</CODE></P>
+<P><CODE>foo(1, b: x ? 2 : :two)</CODE></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>20:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dave, yes, you could do foo(b:2, a:1) and it would work.</P>
+
+
+	<P>Your second case, foo(1, mod::Const), would work like a regular positional parameter, but that’s a good test case to add.  Same for foo(1, ::Const) example.  Again a good test case.</P>
+
+
+	<P>The foo(1, 2, b: :two) example would fail. There cannot be a space between the keyword, the colon and the value.  Hm…I wonder how it should handle symbols then.  That will look strange.</P>
+
+
+	<P>I suspect the last example will fail, though I’ve never used conditional logic like that for a parameter.  I’ll ask Evan. :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Merc</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>20:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hmm, that’s an explanation of why Sydney got keyword parameters, but not how it was done.  I do really like the syntax though.</P>
+
+
+	<P>If you want to use the variable names, use them, if you don’t, don’t.  There are no special keyword parameters.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Oct 2005</NOBR> at <NOBR>21:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Two issues:</P>
+
+
+	<UL>
+	<LI>Ruby  C API  does not have any way to provide name information for
+  methods defined in C.  I’m afraid that making ordinary arguments as
+  named as well would cause serious breakage of extensions and
+  built-in methods.</LI>
+	</UL>
+
+
+	<UL>
+	<LI>many positional arguments are not named properly, since they have
+  been a part of implementation, not public interface.  For the same
+  reason, argument names varies among overriding methods, that may
+  confuse the users.</LI>
+	</UL>
+
+
+	<P>Proposed keyword arguments are not that complex once you understands
+the whole picture.</P>
+
+
+	<P>- matz.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>00:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Matz, as to your first point, I’ll have to talk to Evan about that.  If it takes extra work to create named parameters in C extensions, then so be it.  Something like a “define_named_parameters()” function perhaps, but whatever.  The onus will be on the C extension developers.</P>
+
+
+	<P>Regarding the second point, I’m not sure where you’re going.  If the interface isn’t public it’s a non issue because no one is going to use it anyway.  As for proper names, well, I think being forced to use proper names is a good thing.</P>
+
+
+	<P>Now, when I say that, I have the stdlib and 3rd party stuff in mind, not the core.  One potential option to avoid the “keywords run amok” scenario that you envision is to make keyword arguments something that must be explicitly enabled via Evan’s “Behaviors” implementation.</P>
+
+
+	<P>In fact, that’s how it works now, but Evan was going to make that the default behavior.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>00:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dave, correction, a space <STRONG>is</STRONG> allowed after the colon.  So, your symbol example should work.  I suspect the ternary operation might require an extra set of parens, but we’ll see.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Tsela</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>01:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Daniel, matz’s second point wasn’t about the entire method not being public, but the fact that the actual names of the arguments are <STRONG>not</STRONG> part of the interface of a public method. They are implementation details that are hidden from the user, and rightly so (they are basically local variables to the method. The user shouldn’t need to know about their names).</P>
+
+
+	<P>When one uses keyword arguments, one is basically breaking the premise that implementation details are hidden. Suddenly implementation details (the names of the arguments) become part of the interface. So it makes sense that this case should be the <STRONG>marked</STRONG> one, thus that keywords arguments should explicitly be marked that way in the definition of the method, to insist that they are suddenly part of its public interface.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Patrick May</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>06:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>All arguments could be returned in a single ordered hash/array:</P>
+
+
+<PRE><CODE>
+foo( 1, 2, key1: 3, key2: 4 )
+
+{ 0 =&gt; 1,
+  1 =&gt; 2,
+key1 =&gt; 3,
+key2 =&gt; 4 }
+</CODE>
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>07:42</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Patrick, it is possible, but I’m afraid it slows down (already slow) method invocation even worse.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>09:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Patrick May: Did I ever mention that I’m still envious of Lua’s tables, and want them in Ruby? (grin)</P>
+
+
+Daniel Berger: Could we have named params without default values, like:
+<CODE>def foo(bar:, baz:); do_stuff_with(bar,baz); end</CODE>?
+
+	<P>(I don’t understand the colo(u)r rules for paragraphs :), off-topic-ly.)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>09:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hgs, I’m not sure without asking.  I’m also not sure what you want to happen in that case.  Seems a pointless thing to do.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Patrick May</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>11:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Matz: Fair enough.  What I’m curious about is, what is necessary to delegate a method?</P>
+
+
+currently:
+<PRE><CODE>
+def method_missing( symbol, *args, &amp;block )
+  delegate.send( symbol, *args, &amp;block )
+end
+</CODE>
+</PRE>
+future?
+<PRE><CODE>
+def method_missing( symbol, *rest, **keys, &amp;block )
+  @delegate.send( symbol, *rest, **keys, &amp;block )
+end
+</CODE>
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Patrick May</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>11:17</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hgs: Lua looks interesting, I’m checking it out.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>12:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Daniel Berger: <CODE>def foo(a:, b:)...</CODE> (with more params) would allow people who wished to use the names to order the parameters differently.  I’ve been using Ruby since about 2000 but I’ve  always had to lookup which way round alias works.  I’ve got it now, but to be able to do <CODE>alias new: :bar, old: :foo</CODE> would be less confusing for me because I always want to read it as “alias that to this_new_name”, which is actually backwards.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>13:05</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hgs, oh, I think I misread your post as a method call, not a declaration.  Like I said, you won’t have to do anything special in the method declaration.  Thus “def foo(a, b)” can be called as “foo(b:1, a:2)” if you want.</P>
+
+
+	<P>And yes, with the current Sydney syntax, you can do exactly what you want wrt alias. :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>murphy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>16:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>@Patrick, @matz: I also thought about delegation of all parameters, whether normal, multiple, named or block. It would get really verbose if you’d have to give four different variables just for delegating; and it’s bad for performance either, I think.</P>
+
+
+	<P>Ruby already has a cool syntax for “any parameters allowed”, it’s <CODE>def foo(*)</CODE>.</P>
+
+
+	<P>So what about making this available for method calls, too:<CODE></CODE></P><CODE><PRE>def foo(*)
+  bar(*)
+end</PRE></CODE><P></P>
+
+
+	<P>Is that possible? Or is there another solution?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>17:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Since all keyword arguments will be packed in a hash at the end of ordinal argument list, delegation should be done by plain</P>
+
+
+<PRE>  def foo(*args)
+    bar(*args)
+  end
+</PRE>
+
+	<P>even after introducing keyword arguments.  That’s one of the design goal of <EM>my</EM> keyword argument design.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>**keys</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>18:45</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I don’t mind Matz’s proposal. In fact I like it a lot. You guys don’t give anything a try it seems. There are plenty of good points about it:</P>
+
+
+	<UL>
+	<LI>It isn’t too hard to use. If it is there are plenty of other things in Ruby that you can complain about</LI>
+		<LI>It works with C extensions</LI>
+		<LI>It works with catch alls. Clean and easy conditional delegation. How would *args work with simple named params?</LI>
+		<LI>It doesn’t break anything nor does the other proposal.</LI>
+		<LI>It allows some easier specialization of an interface. Think of having a strict number of positional arguments and a variable number of named arguments. It just doesn’t work without splitting them up. This is powerful and aids Ruby in providing small, compact, but still flexible and capable interfaces.</LI>
+	</UL>
+
+
+	<P>I think pushing for the simple Python style model will be passing up an oportunity to allow for things that can’t be done otherwise. Play around with some psuedo code and see what I mean.</P>
+
+
+	<P>You guys are all whining and it is not that big of a deal. Give Matz a break at least…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>trans</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>20:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Matz, then todays hash elements would be index -2? Or are named arguments and ending hash parameters mixed?</P>
+
+
+	<PRE><CODE>def foo(*args)
+  p args
+end</CODE></PRE>
+
+
+	<PRE><CODE>foo( :b=&gt;2, a:1 )</CODE></PRE>
+
+
+	<PRE><CODE>=&gt; [ {:b=&gt;2}, {:a=&gt;1} ]</CODE></PRE>
+
+
+	<P>or</P>
+
+
+	<PRE><CODE>=&gt; [ {:b=&gt;2, :a=&gt;1} ]</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Trejkaz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>20:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Mixing named arguments and ending hash parameters might make sense.  For instance, if Rails switched from using hashes to named parameters, it would be rather painless if the two were the same.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Oct 2005</NOBR> at <NOBR>23:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Trans, you can’t mix in-line hash and keyword arguments, so that</P>
+
+
+<PRE>foo(:b=&gt;2,a:1)
+</PRE>
+
+	<P>would cause an error.  But both</P>
+
+
+<PRE>foo(b:2,a:1)
+</PRE>
+
+	<P>and</P>
+
+
+<PRE>foo(:b=&gt;2,:a=&gt;1)
+</PRE>
+
+	<P>works, and args becomes [{:a=&gt;1,:b=&gt;2}]</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Patrick May</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Oct 2005</NOBR> at <NOBR>06:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Matz: Thanks for the answers!  I think I understand… :-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>riffraff</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Oct 2005</NOBR> at <NOBR>11:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I really like the new proposal, I always thought splitting named arguments from positional ones was ugly. 
+Even if I still think <CODE>**rest</CODE> arguments are more clean than catch-all <CODE>*rest</CODE>. 
+But should’nt a debate like this happen on rcrchive?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Oct 2005</NOBR> at <NOBR>18:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">I’m confused by the delegation statements made by Matz and **keys.  Say you have this snippet of code:
+<PRE>class Foo
+   def foo(*args)
+      bar(*args)
+   end
+
+   def bar(x:,y:,z:)
+      p x
+      p y
+      p z
+   end
+end
+
+f = Foo.new
+f.foo(a:1, b:2, c:3)
+</PRE>
+What happens here?  Is this an ArgumentError?  Or are the arguments passed positionally, left to right?
+
+	<P>If the former, what’s special about the delegation abilities you mention?  If the latter, how do you get around using an ordered hash?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Brian M.</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Oct 2005</NOBR> at <NOBR>20:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I don’t like the simplified version. It seems to me that you are taking positional arguments and making them unpositional with some naming syntax sugar.</P>
+
+
+	<P>With Matz’s proposal we can treat named arguments like attributes of a call. I think the difference in potency is like night and day.</P>
+
+
+	<P>In the end I would rather not have named arguments if we don’t have something equivalent to Matz’s proposal. It just adds too much with little gain. I should make it more clear: Matz’s proposal and this one are not equivalent in fact they are quite different.</P>
+
+
+	<P>Maybe we can spend all of this energy trying to make syntax more intuitive than trying to accomplish something <EM>completely</EM> different.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Daniel Berger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Oct 2005</NOBR> at <NOBR>22:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I have absolutely no idea what you’re going on about Brian M.  The only external differences between the Rite and Sydney implementations are in explicit declaration vs. implicit and the way *rest arguments are handled.</P>
+
+
+	<BLOCKQUOTE>
+		<P>It seems to me that you are taking positional arguments and making them unpositional with some naming syntax sugar.</P>
+	</BLOCKQUOTE>
+
+
+	<P>That’s true of any named argument scheme in existence.</P>
+
+
+	<BLOCKQUOTE>
+		<P>With Matz’s proposal we can treat named arguments like attributes of a call. I think the difference in potency is like night and day.</P>
+	</BLOCKQUOTE>
+
+
+	<P>Care to elaborate? I don’t follow.</P>
+
+
+	<BLOCKQUOTE>
+		<P>It just adds too much with little gain.</P>
+	</BLOCKQUOTE>
+
+
+	<P>So, somehow, Matz’s proposal, which requires more syntax, is not “too much”?</P>
+
+
+	<BLOCKQUOTE>
+		<P>Maybe we can spend all of this energy trying to make syntax more intuitive than trying to accomplish something completely different.</P>
+	</BLOCKQUOTE>
+
+
+	<P>I’m not sure how you get more intuitive than foo(x:1, y:2), unless you want something like foo(:x=&gt;1, :y=&gt;2), which can also be done.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Matz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Oct 2005</NOBR> at <NOBR>00:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Daniel, take time to think about my slides please.  Although it has more syntax, it’s much simpler in reality.</P>
+
+
+<PRE>class Foo
+   def foo(*args)
+      bar(*args)
+   end
+
+   def bar(x:,y:,z:)
+      p x
+      p y
+      p z
+   end
+end
+
+f = Foo.new
+f.foo(a:1, b:2, c:3)
+</PRE>
+
+	<P>Foo#foo receives [{:a=&gt;1, :b=&gt;2, :c=&gt;3}], since all keyword arguments are packed in a hash at the the last argument, thus it is contained in the rest argument (args this case).  Baceuse Foo#bar takes three non-optional keyword arguments x, y and z, and arguments passed from foo (args) does not have either of them, so that Foo#bar causes ArgumentError.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Brian M.</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Oct 2005</NOBR> at <NOBR>00:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I started writing a response but with the examples it became very long. I will be posting it to the ruby-talk ML shortly.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Clive</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Oct 2005</NOBR> at <NOBR>19:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>For symbols, couldn’t you just use this?</P>
+
+
+	<P><CODE>foo(1, b:(:two))</CODE></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>jan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>25 Oct 2005</NOBR> at <NOBR>02:42</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Matz’s last example can be extended by adding: bar(args.sort.collect {|i| i + 1}. *args.sort may (also) become useful if you want to use unpositional constructs like: f.foo(“c:” &lt;&lt; 1.to_s, ...; you may cut off “c:” again in the collect block). – For a different kind of hash, google for “ruby, pseudohash” (or use associative arrays: a = [[1,2,3], [4,5,6]]; p a[ 0].type in combination with hashes)!</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

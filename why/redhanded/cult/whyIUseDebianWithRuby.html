@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0093)redhanded.hobix.com/cult/whyIUseDebianWithRuby.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/cult/whyIUseDebianWithRuby.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Why I Use Debian With Ruby</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Why I Use Debian With Ruby
+  <SPAN class="entryPermalink"><A href="../cult/whyIUseDebianWithRuby.html" title="Permanent link to &ldquo;Why I Use Debian With Ruby&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://www.sgtpepper.net/hyspro/diary/" title="Visit daigo&#39;s homepage">daigo</A> 
+  in <A href="../cult" title="List of entries in the &ldquo;cult&rdquo; category">cult</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Some debian developers discussed the split of Ruby standard libraries and gave a proposal to add two new packages and change the meaning of the current ‘ruby’ package at the debian-ruby list (<A href="http://lists.debian.org/debian-ruby/2005/01/threads.html">not archived yet</A>) (I need to modify dependency lines in my tDiary packages).  I am sure that it will soon be available and I’d like to say “Wait a minute, it is too early to leave Debian.”</P>
+
+
+	<P>I like Debian’s Ruby because <A href="http://ukai.org/d/">Ukai-san</A> and <A href="http://arika.org/diary/">Yamada-san</A> are members of <A href="http://packages.qa.debian.org/r/ruby1.8.html">its maintainers</A>. They are super hackers of Debian and Ruby. Ukai-san is the leader of <A href="http://www.debian.or.jp/">Debian.jp</A> and the president of <A href="http://jla.linux.or.jp/">Japan Linux Association</A>. Yamada-san seems to maintain Vine’s Ruby also, however, make Debian’s package at first.</P>
+
+
+	<P>See the changelog.Debian.gz at /usr/share/doc/ruby1.8 in Debian. You can find Debian’s Ruby more stable than the original. I appreciate their contribution. I cite a recent entry. Who else can do that?</P>
+
+
+<PRE>ruby1.8 (1.8.2-1) unstable; urgency=high
+
+  * akira yamada &lt;akira@debian.org&gt;
+  - new upstream version, 1.8.2:
+      - removed debian/patches/{100_cvs_updates.patch,801_syck_segv.patch,
+        802_syck_segv.patch}.  they ware included 1.8.2.
+      - (urgency high) fixed segv bugs:
+          - Process.groups= dumps core again.  [ruby-dev:25285]
+          - YAML::Syck::Parser#load dumps core.  [ruby-core:03973]
+          - IO.select dumps core.  [ruby-dev:25312]
+      - fixed bugs:
+          - prohibit to change access mode for special IO ports  (stdin,
+            stdout and stderr).  [ruby-dev:25225]
+  - added debian/patches/100_cvs_updates.patch:
+      - (urgency high) fixed segv bugs:
+          - String#center dumps core.  [ruby-dev:25341]
+          - require "openssl" dumps core.  [ruby-dev:25325]
+          - Zlib memory leak.  [ruby-list:39235][ruby-dev:25309]
+          - String#ljust dumps core again.  [ruby-dev:25367]
+          - bmcall() causes core dump.  [ruby-dev:25366]
+          - Module#autoload? dumps core.  [ruby-dev:25373]
+          - OpenSSL::Netscape::SPKI#challenge= dumps core.  [ruby-dev:25359]
+          - Segfault in Thread#initialize / caller  [ruby-core:04067]
+      - fixed bugs:
+          - webrick/httpauth bugs.
+            [ruby-list:40467][ruby-list:40482][ruby-dev:25336]
+          - rand uniformity  [ruby-dev:25396]
+
+ -- akira yamada &lt;akira@debian.org&gt;  Fri,  7 Jan 2005 11:17:10 +0900
+</PRE></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>27 Jan 2005</NOBR> at <NOBR>09:37</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    6 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Paul van Tilburg</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Jan 2005</NOBR> at <NOBR>10:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I wanted say that I too really appreciate the work of Yamada and Ukai. The packages are always in a really good state and bugs are resolved swiftly.  Our proposol is not to counter their work at all, but I feel since Ruby popularity seems to be growing, we need more involvement and communication. A Debian Ruby team won’t be a bad idea,  IMO .</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Jan 2005</NOBR> at <NOBR>11:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>“Wait a minute, it is too early to leave Debian.”</P>
+	</BLOCKQUOTE>
+
+	<P>Good stuff, daigo.</P>
+
+	<P>I’m so glad you posted this.  I need to merge that <CODE>801_syck_segv.patch</CODE> pronto.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bogbog</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Jan 2005</NOBR> at <NOBR>12:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>So many people bashing Debian lately, and insulting the maintainers. This is so sad. And as usual, some of the people protesting the most are the most clueless ones.</P>
+
+	<P>This is the fate of the packager; if it works, nobody will know. If there’s something wrong, there will be no end to complaints. In many ways, life is much easier… upstream. Some jobs are so thankless.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Austin</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Jan 2005</NOBR> at <NOBR>10:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Clueless? No, bogbog, I’m not clueless on this. I personally think that the packagers for Ruby on Debian have made life harder for themselves, for Ruby, and for users by making the decisions that they’ve made. As I said on  ruby-talk, the problem is that there are real users who are experiencing real problems because Ruby is so badly subdivided; there are certain expectations of the “Ruby environment”, and any breaking of those expectations by others is a bad thing.</P>
+
+	<P>The packager who repackages my work had best be prepared to catch hell if they do something that makes me, the developer, look bad. This is precisely what has happened to the developers of RubyGems and Rails recently because of the bad packaging decisions made by the Debian packagers. Great for making it available; now make it usable.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lypie</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Jan 2005</NOBR> at <NOBR>04:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>i’ve mailed the deb ruby maintainer without response 
+in several days. the ubuntu guys otoh gave me a
+decent reply on irc in minutes even though their
+official policy is python usage. oh well. and calling
+some of the more respected members of the ruby
+community clueless. well that tells me a lot about
+debian users. i’m glad to no longer be running it =)
+otoh maybe the guy is just busy ;) but lets ignore
+that for a second, i wanna rant!  </P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>slumos</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Jul 2005</NOBR> at <NOBR>16:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>“I cite a recent entry. Who else can do that?”</P>
+	</BLOCKQUOTE>
+
+
+	<P>I don’t mean to sound harsh, but did it occur to you to actually research the question before you wrote?</P>
+
+
+	<P>For example, <A href="http://akinori.org/">knu-san</A> is a FreeBSD committer and ports collection maintainer for Ruby and about a gob-zillion modules.</P>
+
+
+	<P>Is anyone actually surprised that Ruby luminaries would end up maintaining Ruby on whatever their prefered platform?</P>
+
+
+	<P>Incidentally, knu is also responsible for some truly excellent FreeBSD utilities which have caused Ruby to show up on a lot more FreeBSD systems than it would have otherwise.  Heck, if it was a little more difficult to install Ruby on FreeBSD, portupgrade(1) alone would probably cause it to get into the base system.</P>
+
+
+	<P>(Yes, I’m replying late.  What you get for showing up on a google search for “ruby autoload”. :-)</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

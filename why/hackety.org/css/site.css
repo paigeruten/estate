@@ -1,0 +1,190 @@
+body {
+  color: #011;
+  background-color: white;
+  font-family: "Trebuchet MS", serif;
+  margin: 0; padding: 0;
+  text-align: right;
+}
+h1, h2, h3, h4 {
+  font-family: verdana, arial, sans-serif;
+  font-weight: normal;
+}
+a img { border: none; }
+img.r, img.rb { float: right; margin-left: 10px; }
+img.l, img.lb { float: left; margin-right: 10px; }
+img.c, img.cb { display: block; margin: 0 auto; }
+img.rb, img.lb, img.cb { border: solid 1px #999; }
+#blog {
+  border-left: solid 15px #112;
+  border-right: solid 150px #112;
+  padding: 10px 40px 40px 40px;
+  text-align: left;
+  overflow: hidden;
+}
+#blog .premiere {
+  text-align: right;
+  padding-bottom: 10px;
+  width: 610px;
+  margin: 0 auto;
+}
+#sidebar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  color: #bba;
+  background: #112;
+  padding: 8px;
+  width: 130px;
+  font-size: 12px;
+  text-align: left;
+}
+*html #sidebar {
+  position: absolute;
+}
+#sidebar h2,
+#sidebar strong {
+  color: #dec;
+}
+#sidebar a {
+  color: #efe;
+  font-weight: bold;
+}
+#sidebar .yelp {
+  color: white;
+  font-size: 14px;
+}
+#sidebar ul {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+#sidebar li {
+  margin: 0; padding: 0;
+}
+p.feed {
+  text-align: right;
+}
+p.feed a {
+  color: black;
+  background: url(../images/feed.gif) 3px 3px no-repeat;
+  padding-left: 16px;
+  font-size: 12px;
+}
+
+/* blog entries */
+div.entry {
+  margin-bottom: 20px;
+}
+div.entry img { padding: 2px; background: white; }
+div.entry h1,
+div.entry h2,
+div.entry h3,
+div.entry h4 {
+  margin: 0;
+  font-weight: normal;
+}
+div.entry .author {
+  color: #aaa;
+}
+div.entry a {
+  color: #F30;
+}
+div.entry a:hover {
+  color: black;
+  padding: 2px;
+  margin: -2px;
+  background-color: #eefede;
+}
+div.entry h1 {
+  clear: both;
+  font-size: 28px;
+  border-bottom: solid 1px #690;
+  padding-right: 120px;
+  padding-top: 10px;
+}
+div.entry h1 a,
+div.entry h1 a:hover {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+  background: none;
+}
+div.entry h1 a:hover {
+  color: #F00;
+}
+div.entry h2 {
+  font-size: 14px;
+}
+div.entry hr {
+  border: none;
+  border-top: dotted 1px #9b7;
+  margin: 10px 70px;
+}
+div.entry div.time {
+  background-color: #eefede;
+  padding: 0 4px;
+  color: #6ca73b;
+  float: right;
+  margin-top: -23px;
+}
+div.entry div.time strong {
+  color: black;
+}
+div.entry .comments {
+  clear: all;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* comments area */
+#comments {
+  margin: 10px 70px;
+  padding: 10px;
+}
+#comments .total {
+  font-weight: bold;
+  text-align: center;
+  border-bottom: dotted 1px #9b7;
+  padding: 6px 0;
+  margin: 10px 0;
+}
+#comments h3 {
+  font-size: 28px;
+  border-bottom: solid 1px #690;
+  padding-right: 120px;
+}
+#comments h3 input {
+  font-size: 28px;
+}
+#comments textarea {
+  margin: 6px 0;
+  width: 100%;
+}
+
+/* code highlighting */
+pre {
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 6px;
+  font-size: 11px;
+  overflow: auto;
+}
+
+pre .comment, .ruby .comment {
+  color : green;
+}
+
+pre .string, .ruby .string {
+  color : teal;
+}
+
+pre .keywords, .ruby .keywords {
+  color : navy; font-weight : bold;
+}
+
+pre .global {
+  color : blue;
+}
+
+pre .brackets, .ruby .brackets {
+  color : navy;
+}

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; YAML 1.2 Ensconces and Envelopes JSON</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/05/23/yamlOneTwo.html">YAML 1.2 Ensconces and Envelopes JSON</a></h1>
+  <div class="time"><strong>May
+23rd
+</strong>
+    13:13</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Hey, some progress.  Three-and-a-half years after the working draft of <span class="caps">YAML</span> 1.1, Oren Ben-Kiki has put up <a href="http://yaml.org/spec/1.2/">a draft</a> of <span class="caps">YAML</span> 1.2.  The big deal here is (at last) complete compatibility with <span class="caps">JSON</span>.</p>
+<p>From the new section (1.4) <a href="http://yaml.org/spec/1.2/#id2560236">Relation to <span class="caps">JSON</span></a>:</p>
+<blockquote>
+<p><span class="caps">YAML</span> can therefore be viewed as a natural superset of <span class="caps">JSON</span>, offering improved human readability and a more complete information model. This is also the case in practice; every <span class="caps">JSON</span> file is also a valid <span class="caps">YAML</span> file. This makes it easy to migrate from <span class="caps">JSON</span> to <span class="caps">YAML</span> if/when the additional features are required.</p>
+</blockquote>
+<p>This took some movement from the triumverate (Oren, Ingy, Clark) who govern <span class="caps">YAML</span>.  JSON&#8217;s adoption dwarfs YAML&#8217;s.  They have always been very, very close.  But always cigarless.  The issues have been <a href="http://groups.google.com/group/yaml-core/browse_thread/thread/ea6d1a3d9724e628">encoding</a>, whitespace, escape characters and the <a href="http://groups.google.com/group/yaml-core/browse_thread/thread/5762db91764efc34">colon issue</a> (fourth paragraph.)</p>
+<p>Still, <span class="caps">YAML</span> has seen some in-roads with nods from Rails and RubyGems and App Engine.  Which is surprising since <span class="caps">YAML</span> development has always been slow.  Writing a <span class="caps">YAML</span> parser is pretty difficult.</p>
+<p>Finally, these discrepancies are all ironed out.  And, so, <span class="caps">YAML</span> 1.2 describes itself as &#8220;mostly a superset of version 1.1, defined for the purpose of ensuring <span class="caps">JSON</span> compatibility.&#8221;  Uhh, let&#8217;s see, what else can I tell you&#8230; The name <em><span class="caps">JSON</span></em> appears 72 times?</p>
+<hr />
+
+<p>Oh, and, the new <a href="http://yaml.org/"><span class="caps">YAML</span>.org</a> is sensational.  A snapshot, in case it changes one day:</p>
+<p><img src="../../../images/yaml-org.png" class="cb" alt="" /></p>
+<p>Reminiscent of the <a href="http://clarkevans.com/">home page</a> of Clark Evans, one of YAML&#8217;s creators.  Eat whitespace, microformats!  I&#8217;m really glad to see <span class="caps">YAML</span>.org embrace the two-space indent, though.</p>
+<p>The odd part of the <span class="caps">YAML</span>.org serialization is the news section:</p>
+
+<pre><code class="yaml">News:
+  - 11-MAY-2008 -- Oren Ben-Kiki has released a new YAML 1.2 spec draft.
+  - 29-NOV-2007 -- Alexey Zakhlestin has updated his Syck (YAML 1.0) binding for PHP
+</code></pre>
+<p>Each of these one-liner announcements is an entry in a <span class="caps">YAML</span> array.  However, the line itself is just a string.  Despite having a timestamp format and inline lists, here we&#8217;ve got an array of strings.</p>
+<p>A nested array means no extra parser to read the dates.</p>
+
+<pre><code class="yaml">News:
+  - [2008-05-11, Oren Ben-Kiki has released a new YAML 1.2 spec draft.]
+  - [2007-12-29, Alexey Zakhlestin has updated his Syck (YAML 1.0) binding for PHP]
+</code></pre>
+<p>And now the page is its own news feed.  If you remove all the <span class="caps">HTML</span> tags and serve it as text/x-yaml, that is.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">3 comments</a></div>
+
+<div class="entry">
+    <h3>Brian</h3>
+    <div class="time">said on <strong>May
+      28th</strong>
+    21:37</div>
+    <div class="content"><p>Four years ago <a href="http://redhanded.hobix.com/inspect/yamlIsJson.html">you called it!</a>. Now, is there any practical functional relation between  YAML  and microformats? Is there a way to unobtrusively embed  YAML  in  HTML  maybe all wrapped up in  CSS ? That would be a useful easy-reading approach for microformats. (The whitespace parsing <a href="http://www.oracle.com/technology/pub/articles/wang-whitespace.html">in  XML </a> and <a href="http://microformats.org/wiki/hcard-parsing#white-space_handling">microformats</a> seem similar, with  YAML  a good bit friendlier.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>crzwdjk</h3>
+    <div class="time">said on <strong>May
+      28th</strong>
+    23:51</div>
+    <div class="content"><p>So is there going to be a Syck for  YAML  1.2? Cause syck is totally the bee&#8217;s knees of  YAML -parsing. I use it everywhere I go. Even in C++.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Merkle</h3>
+    <div class="time">said on <strong>June
+      5th</strong>
+    13:24</div>
+    <div class="content"><p>Neat!</p>
+<p>Any word on if anybody&#8217;s planning to fix yaml.rb&#8217;s <a href="http://www.arkanis-development.de/weblog/2007/6/20/options-for-rubys-@to_yaml@-method">mishandling of option passing</a>?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

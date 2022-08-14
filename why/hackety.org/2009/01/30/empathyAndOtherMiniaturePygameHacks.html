@@ -1,0 +1,290 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Empathy And Other Miniature Pygame Hacks</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2009/01/30/empathyAndOtherMiniaturePygameHacks.html">Empathy And Other Miniature Pygame Hacks</a></h1>
+  <div class="time"><strong>January
+30th
+</strong>
+    19:01</div>
+  <div class="author">by why</div>
+  <div class="content"><p><a href="http://code.google.com/p/vectorpoem/wiki/empathy"><img src="../../../images/empathy-anim.gif" class="cb" alt="" /></a></p>
+<p>You know, you don&#8217;t have to finish a game or a project for it to be worth it. Before you throw all the time into writing your own protocols and scrabbling together a client/server and doing all the art&#8230; why not do something primitive to get your act together?</p>
+<p>That&#8217;s not a stunning monologue or anything. It&#8217;s just an introductory paragraph and segue into this series of experimental games done by <a href="http://vectorpoem.com/">JP LeBreton</a>. His experiments are short. Nice and digestable. I really like this one pictured above called <a href="http://code.google.com/p/vectorpoem/wiki/empathy">Empathy</a>.</p>
+<hr />
+
+<p>To bring it up on Ubuntu:</p>
+<pre><code class="sh"> $ apt-get install pygame subversion
+ $ svn checkout http://vectorpoem.googlecode.com/svn/trunk/ vectorpoem
+ $ cd vectorpoem/empathy
+ $ PYTHONPATH=../shared python empathy.py
+</code></pre><p>~300 lines. Move the mouse around. Spacebar to reset. Escape to quit.</p>
+<hr />
+
+<p>Of special interest is how concise and nicely commented the code is where he builds the polygon shape outlining the lighted area.</p>
+<pre><code class="py"> def update(self):
+   # clear list from last frame
+   self.points = []
+   x, y = 0, 0
+   angle = 0
+   for i in range(LIGHT_CIRCLE_VERTICES):
+     # determine circle edge point
+     angle += math.radians(360.0 / LIGHT_CIRCLE_VERTICES)
+     x = self.loc.x + math.cos(angle) * self.radius
+     y = self.loc.y + math.sin(angle) * self.radius
+     end = Vector2D(x, y)
+     # trace to edge point
+     trace = tile.Trace(self.loc, end, world)
+     if trace.hit is False:
+       self.points.append(end)
+     else:
+       self.points.append(trace.hit_loc)
+       # add a point along edge of hit tile for proper "shadow" shape
+       # turn angle into a normal
+       angle_vec = Vector2D(math.sin(angle), math.cos(angle))
+       # next point in direction of that normal is the correct one?
+       next = trace.hit_tile.nearest_point(trace.hit_loc, angle_vec, trace.hit_line)
+       self.points.append(next)
+   self.polygon = Polygon(self.points) 
+</code></pre><p>See think about this: the <code>tile.Trace</code> method determines if there are any walls in the way. Knowing that, can you see how the <code>trace</code> object is used to cut off light at the wall?</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">18 comments</a></div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    13:17</div>
+    <div class="content"><p>Y&#8217;know, even the hyper-compact game libs have always seemed verbose to me. I mean, it&#8217;s such a perverse step up from console utilities. It doesn&#8217;t feel fun any more.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    13:31</div>
+    <div class="content"><p>I know I know. &#8220;Concise&#8221; might be a stretch. But I&#8217;m torn. Do things need to be dumbed down or do we need to evolve? Things are probably due for change. The ideals of <a href="../../../2008/12/04/theFrustratingMagicalAspect.html">Julien Léonard</a> still strike me as a good way to go.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    16:22</div>
+    <div class="content"><p>I think a lot of the blame lies in the languages. They&#8217;re so suited to sequential I/O&amp;execution that making them do fancier stuff gets kludgy.</p>
+<p>A language designed to escape this could be interesting.</p></div>
+</div>
+
+<div class="entry">
+    <h3>andy</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    17:06</div>
+    <div class="content"><p>like a functional language?</p></div>
+</div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    17:40</div>
+    <div class="content"><p>andy: Solves the execution side, not the I/O side. (Scheme just does it in the regular way, and Haskell just makes the ordering explicit.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>JP</h3>
+    <div class="time">said on <strong>January
+      30th</strong>
+    21:38</div>
+    <div class="content"><p>Wow, thanks for the look &#8211; wasn&#8217;t expecting people to try and run this stuff!</p>
+<p>&#8220;Y’know, even the hyper-compact game libs have always seemed verbose to me.&#8221;</p>
+<p>Anything verbose &#8211; like Vector2D, trace, tile &#8211; is probably my own code, and I&#8217;m still relatively new to programming.  Almost nothing in that sample calls PyGame, the module I&#8217;m using to draw graphics, get input etc.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    10:40</div>
+    <div class="content"><p>JP: I wasn&#8217;t referring to your code as much as pygame :) I really like Empathy!</p></div>
+</div>
+
+<div class="entry">
+    <h3>omouse</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    12:34</div>
+    <div class="content"><p>time to evolve. you can&#8217;t expect everything to be doable in less than 100 lines. it&#8217;s time to start looking at the Smalltalk way of managing code, where code is relatively small and you don&#8217;t see the code of a whole class at once. check out the browser in Squeak to see what I&#8217;m talking about.</p></div>
+</div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    15:18</div>
+    <div class="content">  you can’t expect everything to be doable in less than 100 lines.<br>
+<br>
+Well, I can&#8230; There are environments which produce compact, readable code in their niches, but unifying them all proves nontrivial.<br>
+<br>
+You&#8217;d think it&#8217;d be pretty easy.</div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    17:09</div>
+    <div class="content"><p>I&#8217;m finding some success using generators.  Like, right now I&#8217;m making a little point and click game that uses a set of finite state machines.  The programming in AS3 is simple, but verbose.  I was going to use Ragel for the  FSM , but even that seemed like too much gun.  So, I just wrote a little language spec and a compiler that turns my little language into the complete AS3 code (lines of code I would never want to hand-type, y&#8217;know).</p>
+<p>Granted, the little language has few applications outside of this project, but DSLs don&#8217;t have to be generic languages.  The extra information I would normally have to supply to a full language are supplied by he context of the project and code generator.  Which means, a more concise language.   LISP  programmers generally do the same thing with macros.  First, they write the macros to write their program, then they write the program :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>omouse</h3>
+    <div class="time">said on <strong>January
+      31st</strong>
+    22:22</div>
+    <div class="content"><p>I just found a suitable quote from Ted Nelson, &#8216;The problem is not software &#8220;friendliness.&#8221; It is conceptual clarity. A globe does not say &#8220;good morning.&#8221; It is simple and clear, not friendly.&#8217;</p>
+<p>ehird, this is what you want. Clarity in concept and you want it all to work in a cohesive, unified way. 1000 lines isn&#8217;t painful when it functions well and the flow can be found easily or you have a tool that can organize it into small chunks for you (again, take a look at how Squeak does this with classes and their methods).</p></div>
+</div>
+
+<div class="entry">
+    <h3>ehird</h3>
+    <div class="time">said on <strong>February
+      1st</strong>
+    09:33</div>
+    <div class="content"><p>&gt; I just found a suitable quote from Ted Nelson, ‘The problem is not software “friendliness.” It is conceptual clarity. A globe does not say “good morning.” It is simple and clear, not friendly.’</p>
+<p>I don&#8217;t feel that that quote is particularly relevant (and don&#8217;t put much stock in Ted Nelson).</p>
+<p>&gt; ehird, this is what you want. Clarity in concept and you want it all to work in a cohesive, unified way. 1000 lines isn’t painful when it functions well and the flow can be found easily or you have a tool that can organize it into small chunks for you (again, take a look at how Squeak does this with classes and their methods).</p>
+<p>I&#8217;m not sure we&#8217;re thinking along the same track. I&#8217;m complaining about the paradigms that most languages today use &#8211; they&#8217;re not built for things that aren&#8217;t sequential.</p></div>
+</div>
+
+<div class="entry">
+    <h3>koning_robot</h3>
+    <div class="time">said on <strong>February
+      2nd</strong>
+    05:14</div>
+    <div class="content"><p>I think ehird wants stuff like this to be more declarative: instead of having to update the screen every once in a while, it&#8217;d be less clunky if you could just declare a bunch of constraints and let the &#8220;framework&#8221; figure out how and when to update what.</p>
+<p>See the <a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-24.html#%25_sec_3.5"> SICP </a> chapter (or even just its introduction) on this.  See also <a href="http://en.wikipedia.org/wiki/Declarative_programming">declarative programming</a> on Wikipedia.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>February
+      2nd</strong>
+    10:18</div>
+    <div class="content"><p>The further abstracted you are from the actual math and detailed concepts, the more control you lose. Like, in this case, JP needs to come down into trigonometric functions in order to mess with circles. That&#8217;s just the reality of it. His polygon is inherently complex. Look at the image: it can have twenty or thirty sides, some curved and some at sharp angles. All have to be built from the triangles inside a circle. That&#8217;s trig.</p>
+<p>This example is going to be awfully hard to abstract. Even if you were able to boil up some kind of an language that could cut down JP&#8217;s code, I&#8217;d wager that the language would have to be designed with JP&#8217;s specific experiment in mind. And you can&#8217;t anticipate all of JP&#8217;s future experiments. Either you give him all the primitives he needs or you end up limiting his experiments.</p>
+<p>I think JP&#8217;s doing good. I mean if he really is &#8220;relatively new to programming&#8221; then that&#8217;s a bit of proof that Pygame is actually a rather good medium.</p></div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>February
+      3rd</strong>
+    01:17</div>
+    <div class="content"><p>PyGame is definitely a great dev environment, especially when compared to an environment like Panda3d.  Panda has a great feature set, but does annoying things like having gigantically long method names and lots of boilerplate initialization steps.  Of course, you could just go in and write a better interface, but that&#8217;s time and effort that should be going into making your game or art project.</p></div>
+</div>
+
+<div class="entry">
+    <h3>j`ey</h3>
+    <div class="time">said on <strong>February
+      3rd</strong>
+    05:06</div>
+    <div class="content"><p>&#8220;scrabbling together a client/server and doing all the art… why not do something primitive to get your act together&#8221;<br>
+<strong>whistles</strong></p></div>
+</div>
+
+<div class="entry">
+    <h3>gymbrall</h3>
+    <div class="time">said on <strong>February
+      21st</strong>
+    23:23</div>
+    <div class="content"><p>_why said:<br>
+&#8220;This example is going to be awfully hard to abstract. Even if you were able to boil up some kind of an language that could cut down JP’s code, I’d wager that the language would have to be designed with JP’s specific experiment in mind. And you can’t anticipate all of JP’s future experiments. Either you give him all the primitives he needs or you end up limiting his experiments.&#8221;</p>
+<p>Half the people who come to your blog either don&#8217;t understand this or don&#8217;t believe it. They think general and specific aren&#8217;t really mutually exclusive and that 1,000,000 monkeys typing at a keyboard really will eventually produce the complete works of Shakespeare.</p></div>
+</div>
+
+<div class="entry">
+    <h3>koning_robot</h3>
+    <div class="time">said on <strong>March
+      2nd</strong>
+    08:46</div>
+    <div class="content"><p>Don&#8217;t jump to conclusions gymbrall.  First, a million monkeys will indeed produce the complete works of Shakespeare eventually.  How you can deny this is beyond me.  (Unless you&#8217;re being realistic, in which case &#8220;eventually&#8221; means something else entirely and it becomes highly unlikely.  In reality, getting a million monkeys to type on keyboards is highly unlikely to begin with.)</p>
+<p>Second, yes, general and specific are mutually exclusive.  That&#8217;s why well-designed systems will provide multiple levels of abstraction so that you can pick and choose the appropriate level for each task.</p>
+<p>JP&#8217;s experiment is kinda sorta like ray-tracing and it wouldn&#8217;t surprise me if people have treated it as such before.  All you really care about is where each ray ends.  The rest is noise.</p>
+<p>I&#8217;m not saying it&#8217;s appropriate here or that I&#8217;d be capable of abstracting this well; just that it&#8217;s conceivably a useful way to model what&#8217;s going on here.  If properly done, such an abstraction wouldn&#8217;t limit you any more than Arrays and Hashes limit the way you work with scalars.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

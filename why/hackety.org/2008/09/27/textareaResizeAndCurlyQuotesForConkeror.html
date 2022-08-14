@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Textarea Resize And Curly Quotes For Conkeror</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2008/09/27/textareaResizeAndCurlyQuotesForConkeror.html">Textarea Resize And Curly Quotes For Conkeror</a></h1>
+  <div class="time"><strong>September
+27th
+</strong>
+    22:29</div>
+  <div class="author">by why</div>
+  <div class="content"><p>People say Google Chrome is a step behind Firefox because Firefox has addons.  Well, excuse me, but Firefox was already a step behind Conkeror and Vimperator!  Making Google Chrome a whopping <span class="caps">TWO</span> steps behind.  (But I&#8217;m sure we&#8217;re all another full step behind some completely obscure browser which only runs on Plan 9 and is being ported to the Erlang VM.)</p>
+<p>Here are a few Conkeror hacks that can be easily dropped into your <code>~/.conkerorrc</code>.  (If you need a introduction to Conkeror, see <a href="../../../2008/02/29/conkerorComesUnstuck.html">Conkeror Comes Unstuck</a>.)</p>
+<hr />
+
+
+<pre><code class="js"> function resize_textarea_up(field) {
+   var h = field.offsetHeight;
+   if (h > 120)
+     field.style.height = (h - 60) + "px";
+ }
+ function resize_textarea_down(field) {
+   field.style.height = (parseInt(field.offsetHeight) + 60) + "px";
+ }
+ interactive(
+   "resize-textarea-up",
+   "Resize a textarea to be smaller.",
+   function (I) call_on_focused_field(I, resize_textarea_up)
+ );
+ interactive(
+   "resize-textarea-down",
+   "Resize a textarea to be taller.",
+   function (I) call_on_focused_field(I, resize_textarea_down)
+ );
+ define_key(content_buffer_textarea_keymap, "C-up", "resize-textarea-up", $category = "Movement");
+ define_key(content_buffer_textarea_keymap, "C-down", "resize-textarea-down", $category = "Movement");
+</code></pre>
+<p>This one enables <code>Ctrl-Up</code> and <code>Ctrl-Down</code> inside a textarea.  So you can stretch the box without reaching for the mouse.  How about that!</p>
+<hr />
+
+
+<pre><code class="js"> var quotes = [["squote", "C-quote", "2018"],
+ ["apostrophe", "M-quote", "2019"],
+ ["lquote", "C-S-quote", "201c"],
+ ["rquote", "M-S-quote", "201d"],
+ ["emdash", "M--", "2014"],
+ ["ellipsis", "M-.", "2026"]];
+for (var i in quotes) {
+  var q = quotes[i];
+  eval("function curly_" + q[0] + "(field) { modify_region(field, function(str) \"\\u" + q[2] + "\" ); }");
+  interactive(
+    "curly-" + q[0],
+    "Inserts a curly " + q[0] + " at the cursor in a textarea.",
+    eval("function (I) call_on_focused_field(I, curly_" + q[0] + ")")
+  );
+  define_key(content_buffer_text_keymap, q[1], "curly-" + q[0], $category = "Editing");
+}
+</code></pre>
+<p>I find myself using more <span class="caps">UTF</span>-8 characters that aren&#8217;t on the keyboard.  Like these are four keybindings for curly quotes.</p>
+<p>If you hit the <code>Ctrl</code> key and the single- or double-quote key, you&#8217;ll get a left-side curl.  An <code>Alt</code> gives a right-side curl.  There are a few dashes in there, too.  This stuff could be done in the keymaps, but I wanted to see how it could be scripted. OS X already has keymaps for these I think.</p>
+<hr />
+
+<p>One other thing.  If you are in a textarea and you hit <code>Ctrl-I</code>, it&#8217;ll open the textarea in an external editor.  For some reason, vim wasn&#8217;t doing it for me.  Well, I had the setting wrong.</p>
+
+<pre><code class="js"> define_variable("editor_shell_command", "gvim -f");</code></pre>
+
+<hr />
+
+<p>Lastly, if you&#8217;re using a site that has its own keybindings (such as Try Ruby,) you can use <code>Ctrl-Alt-Q</code> to let all keystrokes pass through.  Hit <code>Esc</code> to give focus back to the browser.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>diogo_terror</h3>
+    <div class="time">said on <strong>September
+      27th</strong>
+    20:40</div>
+    <div class="content"><p>Now, that&#8217;s a Hacketyfull browser!</p></div>
+</div>
+
+<div class="entry">
+    <h3>dadeafea</h3>
+    <div class="time">said on <strong>September
+      28th</strong>
+    07:37</div>
+    <div class="content"><p>feafaefafaf<br>
+fe<br>
+fea<br>
+fae<br>
+f<br>
+fae<br>
+f<br>
+af<br>
+af</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matthias Georgi</h3>
+    <div class="time">said on <strong>September
+      28th</strong>
+    08:46</div>
+    <div class="content"><p>Conkeror is nice, but how about a full emacs implementation running inside a web browser (including a lisp-to-javascript compiler)?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Burke Libbey</h3>
+    <div class="time">said on <strong>September
+      28th</strong>
+    11:59</div>
+    <div class="content"><p>@matthias: As cool as that would be, many people have tried and failed miserably to reimplement emacs and emacs lisp, whether it be in common lisp (this happened a couple times), ruby, or javascript. As tempting as it sounds, emacs&#8217; code base has been growing for the last 30-some years. It&#8217;s scary. Most people seem to end up realizing it&#8217;s easier to implement the language in emacs than it is to implement emacs in the language.</p>
+<p>Back on topic, as much as I liked the emacs-ness when I tried conkeror, I just couldn&#8217;t rip myself away from the real Firefox. _why (or others), have you tried <a href="https://addons.mozilla.org/en-US/firefox/addon/4141">Firemacs</a> ? &#8212; I haven&#8217;t got around to trying it, but it seems to be a decent compromise.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Matthias Georgi</h3>
+    <div class="time">said on <strong>September
+      28th</strong>
+    15:53</div>
+    <div class="content"><p>@burke: Perhaps it&#8217;s possible to reuse most of the emacs souce code and to implement the rendering and input routines inside a browser extension.</p></div>
+</div>
+
+<div class="entry">
+    <h3>stephencelis</h3>
+    <div class="time">said on <strong>September
+      28th</strong>
+    20:51</div>
+    <div class="content"><p>Ah, but is there a WebKit-based hacker&#8217;s browser?</p>
+<p>If not, there very well should be.</p></div>
+</div>
+
+<div class="entry">
+    <h3>James</h3>
+    <div class="time">said on <strong>September
+      29th</strong>
+    08:13</div>
+    <div class="content"><p>&#8220;Ah, but is there a WebKit-based hacker’s browser?&#8221;</p>
+<p> SECONDED !</p></div>
+</div>
+
+<div class="entry">
+    <h3>Sebastian</h3>
+    <div class="time">said on <strong>September
+      29th</strong>
+    13:58</div>
+    <div class="content"><p>@burke &#8211; Holy cow! I just installed Firemacs, and it is totally <strong>awesome</strong>! I&#8217;ve only played with it for a few minutes, but it&#8217;s already improved my browsing experience by leaps and bounds.</p>
+<p>Someone (hint, hint) should write a blog entry on all it&#8217;s nifty features.</p></div>
+</div>
+
+<div class="entry">
+    <h3>doki_pen</h3>
+    <div class="time">said on <strong>October
+      9th</strong>
+    08:55</div>
+    <div class="content"><p>I&#8217;ve always dreamed of having a vim editor embedded in all the web page text areas.  How many times have I hit escape and lost all my work. :(</p></div>
+</div>
+
+
+<div class="entry">
+<form name="userComment" method="post" action="../../../api/comment/news/textareaResizeAndCurlyQuotesForConkeror">
+  <h3><input name="sayor" type="textbox" size="15" maxlength="50" /></h3>
+  <div class="time">said on <span id="liveTime"><nobr>Mon DD</nobr> <nobr>HH:MM</nobr></span></div>
+  <div class="content">
+     <input type="hidden" name="timestamp" value="yopYLare1A" />
+     <textarea name="consay" rows="6" cols="50"></textarea>
+     <p><input type="button" name="pleasePreview" value="preview"
+         onClick="liveTextilePreview(document.forms['userComment'].elements['consay'], 'textilePreview', '/api/preview')" />
+        <input type="submit" name="submit" value="&gt;&gt;" />
+        <small>* do <a href="javascript:quickRedReference();">fancy stuff</a> in your comment.</small>
+     </p>
+     <div id="textileWrap"><h4>PREVIEW PANE</h4>
+     <div id="textilePreview"></div>
+     </div>
+     </div>
+  </div>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

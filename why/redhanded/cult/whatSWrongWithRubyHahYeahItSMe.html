@@ -1,0 +1,3385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0102)redhanded.hobix.com/cult/whatSWrongWithRubyHahYeahItSMe.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/cult/whatSWrongWithRubyHahYeahItSMe.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » What's Wrong with Ruby? Hah Yeah, It's Me!</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">What's Wrong with Ruby? Hah Yeah, It's Me!
+  <SPAN class="entryPermalink"><A href="../cult/whatSWrongWithRubyHahYeahItSMe.html" title="Permanent link to &ldquo;What&#39;s Wrong with Ruby? Hah Yeah, It&#39;s Me!&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../cult" title="List of entries in the &ldquo;cult&rdquo; category">cult</A>
+</DIV>
+
+     <DIV class="entryContent"><P>In an article posted entitled <A href="http://www.bitwisemag.com/2/What-s-Wrong-With-Ruby">What’s Wrong With Ruby?</A>, the author cites me as one of the main problems:</P>
+
+
+	<BLOCKQUOTE>
+		<P>If I was put off Ruby by the hype, I was put off more by the many cutesy introductory tutorials I encountered when trying to get into it.  Why’s (Poignant) Guide is a particular horrid example… I don’t want someone chatting away to me and telling me how “cool” it all is (I’ve lived long enough as a computer programmer to know it’ll never really be “cool” to be one). I just want the straight facts, plainly put.</P>
+	</BLOCKQUOTE>
+
+
+	<P>These are such great points and so well-put.  See, actually, I’ve known since birth that I’m a problem, so this is no surprise to me.  As a child, I caused a giant meadow fire that all the dads had to go fix!  Also, I broke a statue!  And now I’ve ruined Ruby.  Uh. Oh.</P>
+
+
+	<P>If I may build on his argument for just a sec.</P>
+
+
+	<P>The problem here is: the author of the article is trying to do academics, to gain knowledge, to build a career.  And my cartoons and stories have patronized him, belittled him, by treating him as if he wasn’t a real professional.  This is a terrible breach of conduct.  He has accolades innumerable.  He has done no small deed.  His peers are all gathered around him, wishing him the best and swelling with nothing but respect and esteem for him.  <EM><SPAN class="caps">NOW WHAT IS THIS CARTOON BOOK DOING HERE</SPAN>??</EM></P>
+
+
+	<P>Programming is for world commerce.  It is like agriculture or fossil fuels.  It is lot a like baling hay.  I’ll give you an example: You wouldn’t write a cartoon book with a plot and running narrative just to show a guy how to bale hay!  That would frustrate the guy!  He would throw that book in the pig’s pen!  He just wants to get straight to the nitty-gritty and, for once in his life, just bale hay, straightway!</P>
+
+
+	<P>Fortunately, as I’ve mentioned before, I have a strong feeling that I will die young without artifact.  That I will make no lasting impression.  This will be my avenue.  So hold your horses, I just have a few more things to do in life and I’m sure I’ll be out of your hair.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    168 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ray</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Aw. You’re what’s <STRONG>right</STRONG> with Ruby, why.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Amy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You better not be talkin about hastening your departure, _why! Or we will surely have to crawl down into the very depths of hell, straight through the slavering jaws and down the gullet of the beast, to drag you out and demand our encore.</P>
+
+
+	<P>Also… fuck the academic nerd. In the butt. With something sharp. You can tell he really, really wants it <DEL>- with cartoons! a la some horrific hard-core Chick tract! -</DEL> deep, deep down.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Skorgu</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>See the problem here is two-fold. Firstly, he’s not looking very hard for the “straight facts, plainly put”. I learned what I know of ruby from examples and the  API , the way all right-thinking people do, but I would have stopped at page 1 of the Pragmatic book if it hadn’t been for the Poginant one. I rather enjoyed being shown exactly why ruby was so cool.</P>
+
+
+	<P>Far more importantly, he has self-admittedly closed his mind to the merest possibility of programming being cool. With a mindset like that, of <STRONG>course</STRONG> the poignant guide is going to be annoying.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dr Nic</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“I’ve lived long enough as a computer programmer to know it’ll never really be “cool” to be one” – but has he lived long enough as a programmer to find the joy in it?</P>
+
+
+	<P>Doubt he ever will.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dr Nic</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>This reminds me for no particular reason of the quote from EuropeRailsConf – “I didn’t realise Why was a real person?”</P>
+
+
+	<P>‘Why The Lucky Stiff’ is the Fonz.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>badcarl</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>One of the greatest things about Ruby is the community.  If he can’t take the creativity that Ruby inspires, that’s his own problem.</P>
+
+
+	<P>I’d rather take my daily dose of chunky bacon over foo bar any day.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>g g giles</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I couldn’t make heads or tails of your Ruby book, but I knew its existence and popularity were a very good sign for the health of the community. It’s good to make the normal people run away.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Klondike</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Another quote of his in the same paragraph that why quotes from: “However, that’s just me, and if there weren’t plenty of others who disagree, the ‘Head First’ books would never have sold so well.”</P>
+
+
+	<P>So it’s not just cartoons and poignancy that he can’t handle associating with programming, but also any kind of graphical or casual tone.  Problem sets only, please!</P>
+
+
+	<P>It doesn’t matter if programming, or Ruby, is never “cool” to the world at large—we know it.  Almost nobody but programmers understand that we work in something more an art than a science, but that doesn’t mean it isn’t true.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>betty barbecue</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>15:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I don’t even do Ruby but I read All About the foxes.  Mostly because of the bacon.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I can’t believe you guys are disagreeing with him.  How low will you stoop to cover up that I’m the wrong one here?  He is an academic and honestly deserves the respect my book won’t give him.</P>
+
+
+	<P>As an aside: thankyou, betty barbecue.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>forrest</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I doubt you’re fishing for a lovefest, but I’ve learned about a hundred different programming languages over the course of my life (maybe not well, but enough to write lil sample applications in each one) and I found the Poignant Guide to be my favorite learner’s guide, bar maybe Guy Steele’s Scheme book and <A href="http://en.wikipedia.org/wiki/Ralph_Griswold">Ralph Griswold’s</A> (RIP) awesome  SNOBOL  and Icon books. I’m with the others here—I can hit ri and the Pickaxe and the mailing lists for the details, but learning with chunky bacon and Dwemthy and foxes has given Ruby a flavor for me it would otherwise lack. It’s magical and strange and wonderful and oddly dark.</P>
+
+
+	<P>Furthermore, anybody who compares the Poignant Guide to the Head First guides has failed to understand the Poignant Guide altogether. There’s no false jocosity or spoonful of sugar bullcrap to the Poignant Guide. It’s like the <A href="http://mitpress.mit.edu/e-books/HP/">Hypnerotomachia Poliphili</A>—it’s a legitimate work of art and literature as well as a programming manual. (It doesn’t talk about how cool Ruby is, really. Does it?)</P>
+
+
+	<P>Man, I don’t know why that kind of response bugs me so much. Maybe it’s because I’ve read a lot of programming lore from the 70s and 80s, when there were a lot more weirdo geek-hippies striding the plains with their 41CXs and Emerson, Lake &amp; Palmer records, playing Dungeons &amp; Dragons and writing arcane articles for the Whole Earth guide when they weren’t cranking out the code. Tech writers used to be less afraid of individual expression and personalized prose, I think. Some of the old programming manuals I have in my collection read like they were written under the influence of acid and Tolkien, and these were manuals for shrink-wrapped products from big companies. I like it better that way. So many of the technical books these days are not only passionless cash-ins, that lack of passion saps them of any real desire to inform at the same time. Great! Bring them on!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>xml-blog</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>If it weren’t for  WPGTR I ’d still be programming in C#. Talk about sucking the joy out of coding…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>RubyPanther</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I thought programmers became <I>cool</I> around abouts 1997?!</P>
+
+
+	<P>What I find really funny is that an academic would be so intellectually dishonest as to claim any knowledge of what is or isn’t actually <I>cool</I>, since <I>cool</I> is so obviously trivial and astudious.</P>
+
+
+	<P>Clearly this underscores the need in the world for freelance professors and students.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>ianmcorvidae</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:37</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Absolutely disgusting. You are, indeed, destroying the Ruby community; you’re doing nasty and horrible things like making Ruby accessible to folks like me who have wanted to do something programming-related for a long time but haven’t had much patience for long, rambling software manuals that they didn’t understand because they hadn’t taken the courses on the jargon. Your book might even make people who weren’t interested in programming at all come along and join the community! We’d never want <EM>amateurs</EM> joining us. They might pollute the code base, you know. Especially with a guide that tells them absolutely nothing of syntax, labeling conventions, or anything important like that. My thinking is that you should just go and kill yourself now, considering all your crimes. That meadow? You killed some deer there. <EM>You</EM> are the one who killed Bambi’s parents. That statue, it was an ancient greek one, very important to the art community. Now it’s time to pay, why.</P>
+
+
+	<P>But before you do go kill yourself for all your horrible crimes, would you mind writing a bit more stuff like the poignant guide, as well as more of your horrible, nasty and disgusting code, like Camping and MouseHole and all that other stuff over in the Subversion repo? I rather enjoye-... I mean, I need examples for my future classes of bad people in programming. Yeah, that.</P>
+
+
+	<P>Finally, long live chunky bacon (or at least its mold colonies); and say hello to Blix for me. I’ve been missing him.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zenlunacy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:40</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>This guy seems like the type that dooms himself to chunky Microsoft Certification books. He will not indulge in the delights of chunky bacon! Sad.</P>
+
+
+	<P>Coolness is in the eye of the beholder.
+_why, you are the god of Cool!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>forrest</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P> ARRRGH . That guy makes me crazy! I could literally write a book in response to that article (I’ve now gone off and read most of it and returned). It’s so ridiculously prescriptive and closed-minded.</P>
+
+
+	<P>I’m busy evaluating a bunch of languages for a new project (for a variety of reasons, Ruby hasn’t made the list, even though I’m very fond of it) and I’m looking at a lot of these languages he talks about approvingly at the beginning (OCAML, Haskell, etc), and to use <STRONG>those</STRONG> languages requires a different style of development than the one he seems to want to teach his students. In his attention to various things (like the limitations of blocks, which he pretty clearly doesn’t fully understand) he overlooks the fact that Ruby, like Perl before it, has a fully functional core and supports closures and at least a degree of higher-order programming. So maddening!</P>
+
+
+	<P>There’s a place for strong typing, there’s a place for type inference and there’s a place for duck typing. It all comes down to what best fits your hand or the task at your hand. Trying to pretend that there are objective winners in the language wars is so depressingly… I don’t know,  maybe “reactionary” is the word I’m looking for. Maybe “didactic” is another, because I think part of his dislike for the Poignant Guide comes down to the fact that he’s an academic and the Poignant Guide is by an autodidact for other autodidacts (I loved my computer science classes in school, and I have 95+% of a CS degree, but I taught myself how to program rather than learning it in school, ultimately).</P>
+
+
+	<P>I love Haskell and I love Ruby at the same time. I’m gonna use them both. I think they’re both awesome and awesomely useful languages. I don’t think either one is going to make it easier to learn to program, because as dude mentions, learning to program is, always has been, and always will be, hard.</P>
+
+
+	<P>Sorry for using up all your comment space.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>andre</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Wait. What about the University of Mininova? You are an academic too, so you must be right.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>netghost</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>16:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Comics or not, the poignant guide is the single best book on some topics like metaprogramming.</P>
+
+
+	<P>I have a friend who tried learning ruby off the guide, and just got confused.  I suggested he read the pick-axe book first, and then look at your guide to learn why ruby is fun ;)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>topfunky</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:07</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I look forward to Why’s Poignant Guide to Hay Baling. Hopefully the foxes’ agent won’t demand too high of a royalty.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>alex</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I love the cute foxes.  I’m looking forward to Why’s (Poignant) Guide to Life, the Universe and Everything.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I think what a lot of you are trying to say is that I have failed, that I am doomed, and that the other guy is right and that I have messed everything up.  <EM>Which is exactly what I’m trying to say.</EM></P>
+
+
+	<P><STRONG>forrest</STRONG>: I can’t believe you’re trying to compare the Head First books and the (Poignant) Guide!  First of all, the Head First books use a wall-eye lens.  And second, the Head First book are sold in the marketplace and are real books.  The (Poignant) Guide is only casually printed by college students whose universities subsidize their printer paper.</P>
+
+
+	<P>I like what you’re saying about Haskell, though.</P>
+
+
+	<P><STRONG>ianmcorvidae:</STRONG> The statue I’m thinking of wasn’t Greek.  It was a statue of a woman nursing a premature rabbit.  Of Spanish origin.  So, wait, there was a Greek one??</P>
+
+
+	<P><STRONG>andre:</STRONG> The University of Mininova, where I am beginning my freelance professorship, happens to be <STRONG>an unaccredited school</STRONG>.  This means that classifying my studies as “academic” is dubious at best!  The dean of a popular Ivy League college has been pursuing legal matters against me, demanding that I change my appellation from “freelance professor” to the more appropriate title of “disenfranchised person.”  I only use the prior because Google does.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You shouldn’t mock that guy because he invented the for loop and recursion.  If it weren’t for him, we’d all be subsistence farmers.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Denovich</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:40</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The real crime is how you are forced to read Why’s Poignant Guide before you can even use ruby.  It’s the world’s longest  EULA .  I say we need to relicense ruby so that you can legally learn it without suffering through cartoons.</P>
+
+
+	<P>Software wants to be (cartoon) free.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Danno</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>17:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Fuck that guy, _why.  The Poignant Guide is everything that’s right with programming, it’s everything that I ever want to be as a professional: brilliant, concise, and whimsical.</P>
+
+
+	<P>It’s like Steve Jobs reduced down to hypertext.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Marze</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>18:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>It looks like somebody wants to spoil the party, I’m actually a designer (industrial designer) and before _why’s stuff everything related to programming was really boring for me, could you belive how much fun is ruby? (and it’s community), hey keep it in the fun plz</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>_lynX</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>18:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>This all coming from a guy whose current interest is the Aldwych programming language.</P>
+
+
+<H1>main==</H1>
+
+	<P>Screen&lt;-aio\stdio(),
+   Screen.fwrite(“Enter first number: “)
+         .readInt-&gt;x
+         .fwrite(“Enter second number: “)
+         .readInt-&gt;y
+         .fwrite(“Their sum is: ”&gt;+z&gt;”\n”),
+   z&lt;-x+y;</P>
+
+
+
+	<P>Ugh.</P>
+
+
+	<P>Seriously though, _why, you are my hero. All of your goofy, artsy posts and the sheer amazingness of Poignant remind me just how blessed I am to use Ruby and to be able to bask in the glory of its community.</P>
+
+
+	<P>The _ I always use at the beginning of my usernames now is a tribute to you! Will you have my e-children? :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mac</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>19:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>thank you why for bringing back passion into my coder’s life with ruby</P>
+
+
+	<P>Will you marry me ?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>ryan</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>19:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>to his own detriment that he ignore the poignant guide – in-between the foxes and drgns are nuggets of ruby gold! oh yeah you’re bad for ruby _why, with all that new ruby website committee and try ruby and yaml/syck and etc, absolutely terrible!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mabs29</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>20:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>If you’ll indulge my snobbery briefly as a Londoner and graduate of University College London, I’d like to inform those who don’t understand this guy’s background: University of Sussex is rubbish and this guy went on to teach at somewhere worse: Queen Mary. Don’t be fooled by the ‘University of London’ crap—it means it’s part of a financial conglomerate of all London schools, which has no academic import. And Queen Mary is one of the worst of the London schools for higher education. In England you’d call it a Polytechnic, in the States a Community College. Basically, you just need to have gutted out high school / secondary education. The fact he is teaching in a place infinitely worse than where he schooled (and even that was crap),  the guy is a total academic failure. He’s talking out of his ass.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Bitdumb</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>20:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Don’t forget to check the article of the guy who <A href="http://www.bitwisemag.com/2/The-Hell-That-Is-Linux">coldn’t install linux</A></P>
+
+
+	<P>Some experts these are…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>stipes</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Oh, and by the way why, Linux is made of ass and fail, and Windows XP will do all I ever need without the hassle:</P>
+
+
+	<P>http://www.bitwisemag.com/2/The-Hell-That-Is-Linux</P>
+
+
+	<P>D: <STRONG>tear</STRONG></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lambda lambada</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:05</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>He epitomizes everything that’s wrong with academic computer science.</P>
+
+
+	<P>Programming language research has long been sidetracked toward inventing toy languages that are primarily useful for pseudo-mathematical wanking.</P>
+
+
+	<P>Unfortunately, the best possible language for pseudo-mathematical wanking (Lisp/Scheme) was invented 50 years ago.  One must never admit this, because….well… if you did, there’d be no need for “programming language research”, would there? :-)</P>
+
+
+	<P>Even worse, Lisp is actually a pretty good general-purpose programming language (if a little hard for a novice to get his head around), which poses the risk that someone who writes real-world applications may run across your toy code in a journal article, resulting in much pointing and laughing.</P>
+
+
+	<P>It’s better by far to invent a new language that’s only understood by the 5 guys who work in your tiny little corner of the research landscape. That way you can all peer-review each other’s papers and recommend each other for funding.</P>
+
+
+	<P>It’s not an accident that only  ONE  of the widely-used languages developed over the last three decades (C, C++, Java,  PHP , Perl, Python, Visual Basic,  SQL ) came out of academia, and the lone exception (Python) was developed for prototyping, not analysis (note: I’m not saying these are all <STRONG>good</STRONG> languages, but they’re the main ones that people have used to write all those zillions of lines of useful code that make our world go).</P>
+
+
+	<P>The really interesting new programming languages tend to be the  work of obsessed lone hackers (Ruby) or else come out of industry (Erlang).</P>
+
+
+	<P>I’m sorry to hear about Ralph Griswold, btw. I remember coming across an ancient  SNOBOL  book in the library back in the day and deciding that  SNOBOL  rocked.  Hard. I didn’t have access to a  SNOBOL  compiler, alas, and now that time has passed.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>leethal</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m glad I’m not an academic, sounds boring! Only Ruby could have a poignant guide (Why’s (poignant) guide to  PHP ?).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rcorsaro</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Why: In thirty years, there will be a Why 101 class.  You are a genius.  Nuf’ said.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>caton</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:31</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Perhaps he would have found <A href="http://railsblob.blogspot.com/"> Rails Blob</A> more to his liking.</P>
+
+
+	<P><IMG src="../images/rb.0.gif" alt="Rails Blob: RIP" title="Rails Blob: RIP"></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>elliott</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>16 Mar 2007</NOBR> at <NOBR>21:37</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Your poignant guide is what turned me on to ruby ! The words ‘chunky bacon’ and ‘programming’ in the same text, I was instantly hooked.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lwu</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>01:14</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why, we’re putting together our research paper for submission to a peer-reviewed  ACM  Symposium at the end of this month.</P>
+
+
+	<P>When we cite your work, how would you like to be referenced? “whytheluckystiff”?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Anon</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>01:17</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>He’s not trying to do academics, he’s a lecturer, not tenure-track (according to the  QMUL DCS  Staff::Detail page).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lwu</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>01:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The last time I had tea with Christos, he mentioned he was working on <A href="http://www.apostolosdoxiadis.com/page/default.asp?la=1&id=7&ap=132&pl=135&pk=8">a graphic novel about the ‘remarkable people who developed mathematical logic’</A>.</P>
+
+
+	<P>I’ll have to ask him what he thinks of your work the next time I’m up at Berkeley…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Fooball</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>04:08</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>There’s nothing wrong with the foxes. Except that they get all the bacon and I don’t. Keep on writing and drawing.</P>
+
+
+	<P>I didn’t like the last chapter though because it’s all drawing, hard to test out the things myself (when you can’t copy&amp;paste). That’s a small fault. Other than that you rock.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>TGoddard</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>04:57</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>A boring loner
+Academic in a
+Unfreaky Sandbox</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>TGoddard</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>04:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dammit, let me redo that:</P>
+
+
+	<P>A boring loner</P>
+
+
+	<P>Academic in a</P>
+
+
+	<P>Unfreaky sandbox</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>FlashHater</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>05:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>If _why is wrong, then I don’t want to be right!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jon Leighton</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>05:11</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Some people are intent on being doing Serious Things in their Serious Jobs. And I’m glad if they don’t like Ruby. We don’t need them.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Nikolai Weibull</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>05:43</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Wait, we all knew this already.  What’s the news here?</P>
+
+
+	<P><EM>(If you didn’t get it, I’m joking, so please don’t bash me.)</EM></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>some guy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>05:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I love you as no man should love another, why.</P>
+
+
+	<P>You are the anti-Bileblog.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rufo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>06:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why,
+He’s right – I’ve been taken in by your cartoon foxes and your chunky bacon (mmm, bacon). I’m furious that I’ve found Ruby through your work. I shall erase the ruby interpreter off my macbook pro, G4, windows box, other windows box, nokia n800, treo, tivo and every dedicated server I own immediately. I’m going back to coding websites with cobbled-together C and bash scripts – who’s with me?!?</P>
+
+
+	<P>In other news, are you performing at RailsConf this year? I’d like to know so I know whether or not to pack my air horn collection.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Lyle</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>06:45</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why, I almost feel like trashing you just to provide some balance to this big love-fest. But I will resist. You’re one of the best things about the Ruby community, and I hope that you have a long life and produce many more artifacts.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>vince</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>06:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Q: What can you say about a man that does not like cartoons?</P>
+
+
+	<P>A: A person with no imagination is a terrible programmer.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Logan Capaldo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>08:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>One thing, the poignant guide isn’t everyone’s cup of tea; it’s not mine for instance. On the other hand, tryruby is the best way in the world to be introduced to ruby.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>guysmiley</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>08:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Who loves _why?  I do, that’s who.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>A HUBLE EX-HOBO</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>08:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I used to be a hobo, I used to ride trains, I used to live on dumpsters,I used to have no name. Then I found the Poignant Guide To Ruby. Now all I want to do is learn how to code. I want to be a programmer and write code all day and night. It is like being a wizard. Say magic words and make things h a p p e n! It’s like finding a box of donouts after a two days of starvation. Thank you Why for writing a guide that actually teaches something for real except boring tech-specs!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>A HUMBLE EX-HOBO</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>08:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I used to be a hobo, I used to ride trains, I used to live on dumpsters,I used to have no name. Then I found the Poignant Guide To Ruby. Now all I want to do is learn how to code. I want to be a programmer and write code all day and night. It is like being a wizard. Say magic words and make things h a p p e n! It’s like finding a box of donouts after a two days of starvation. Thank you Why for writing a guide that actually teaches something for real except boring tech-specs!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dave</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>09:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You are one of the reasons I love Ruby so much. You keep it fresh. You keep it real. Don’t listen to those old washed up programmers that wish they could get excited about what they do.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Yters</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>09:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Just how well does an average person’s mind cleave to and recall your average dry college textbook?  Now, how well does this same said mind connect to and understand a comic book?  Therefore, why not write all textbooks as comic books – by the why?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>jherber</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>10:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>i hate to break the news, but i think the real issue here is the lack of a pop up book format.  that is what keeps ruby from legitimately solving problems.</P>
+
+
+	<P>why, please keep the creative faucet running full blast. anyone reaching for the valve lever, simply doesn’t understand.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zapnap</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>10:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hrmm interesting point. perhaps 3-d glasses would make the read more enjoyable?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>noHumourFailureHere</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>11:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I should probably apologise for my fellow Englishman (if he turns out not to have been English then I apologise some more in advance) for his apparent humour failure when the deeply serious and completely non-funny subject of computer programming is concerned.</P>
+
+
+	<P>Perhaps he’s job not been around long enough. I started out in, um … 1978 with  IBM  mainframe  COBOL . After that pretty much anything has an element of humour in it. And I see funny code every day – often the code I wrote the day before.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>recoveringAcademic</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>11:31</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Haskell would be perfect if only there was a Why in our community</P>
+
+
+	<P>Come here, Why! The grass is greener!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>11:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I still remember my first lesson from the  WPG2R  “The variables slide down the chute and into the block” or something like that.. the best explanation of ruby blocks  EVAR !!!</P>
+
+
+	<P>oh and <STRONG> FIKK </STRONG> that guy.. he’s what’s wrong with computer “science”.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>12:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>bit wise and mega-byte foolish!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>A Comment</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>12:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>on that article</P>
+
+
+	<BLOCKQUOTE>
+		<P>If you want to get a better understanding of what devs need, get off your academic butt and start writing code to deadlines set by market forces and projects managed by insecure psychopaths with users who have been sold utopia by salesmen with no soul.</P>
+	</BLOCKQUOTE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jon</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>13:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The funny thing is that book like  WPG2R  follow in the footsteps of other books for ‘academic’ languages like the Little Schemer.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>dnite</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>13:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Chunky Bacon,  FTW !!</STRONG> Screw this guy and his “programming isn’t fun”. Gives <I>me</I> wood, that’s all that matters.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bernie</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>14:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Forget that idiot!  You’re the man, why. Thank you for all you’ve done and all you will do!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bb3</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>15:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I didn’t like your book and I didn’t like his article. In fact I didn’t complete either of them. I feel so left out. Who can I side with? Wait, I do really enjoy reading redhanded, so now I can feel like I belong. Seriously, I don’t know why any body cares about what this guy is saying. You know what they say about opinions and arse holes?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rluv</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>15:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hey everyone be careful of _why’s head, you’re gonna make it explode; he is a big man, has had enough head-pats</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>beef</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>15:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>That was a lame article. No real examples, not even very good arguments.</P>
+
+
+	<P>Then, at the end, he says, “Oh, by the way, I’m going to use Ruby any time I need a scripting language.” So…I guess it isn’t that bad after all?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>17:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Oh, comeon, here’s factorial in Aldwych:</P>
+
+
+<H1>fact(n)&lt;</H1>
+
+	<P>{
+ n&gt;0 |&gt;n*&lt;,n-=1;
+  :  ||&gt;1;
+}</P>
+
+
+
+	<P>now that’s cool!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>&lt;|:{</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>21:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Who says programmers can’t be cool?  _why is a freaking rock star and an artist in many types of media including programming.</P>
+
+
+	<P>Keep setting the meadows aflame, _why.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>/.\</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Mar 2007</NOBR> at <NOBR>22:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why: creativity shines through everything you do. keep the flame alive!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>QuickBrownFox</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>00:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You’re the reason I’m all the more passionate about ruby. The guy who wrote the article is probably some old-time programmer who has never learned what cool is and is jealous of all the little  DHH ’s and Chad Hurleys getting all the attention (and money) while he’s been sitting at the same desk for 30 years… I don’t know the guy but it sure sounds like it to me. And anyways, if he’s so good, why can’t he make his own boring book and see how many people look at that!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>progfrog</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>03:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What? “Why’s (Poignant) Guide” was about… <EM>programming</EM>? Now I have to go read it again!</P>
+
+
+	<P>Keep on frying the chunky bacon!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>virtualmice</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>09:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Why your poignant book is the hardest Ruby book ever.
+I can’t just browse through it, you do force me to read everything, lest I should miss an enjoyable paragraph !</P>
+
+
+	<P>Chunky bacon will still be remembered when computers have learnt to do without programmers.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Polar bear</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>11:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I think he’s found the grave deficit in your book: it’s too logical !  Stop that !  Realize that when programmers aren’t cool to everyone, programming can’t be cool to individuals.</P>
+
+
+	<P>A remedy: Everyone thinks the arctic is pretty cool, so you need some Eskimoes or polar bears in your book.  Lucky you haven’t finished it yet, or we might have seen eBay bidding wars for the early, unpolarbeared versions.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>burns</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>12:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I agree!  I couldn’t even read the code through my tears.</P>
+
+
+	<P>Stupid  BOOK !</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>McD</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>14:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I hope this guy get’s Joel Spolsky’s “Best Writing About Software” book and discovers that the madness that is your method is considered to be great writing.</P>
+
+
+	<P>It did have the effect of keeping certain anal types away from Ruby… and for that… we owe you more than we can repay.</P>
+
+
+	<P>When I was young we called it “scaring away the straights.”</P>
+
+
+	<P>If you’re in a mad rush to grok Ruby then I’ll accept that Why may not be the most efficient our guide. But if you’re interested in a pleasurable learning experience then enjoy the cruise.</P>
+
+
+	<P>If you  REALLY  want mastery… yyou must read everything you can find and practice writing a lot of code… and that’s true of all modern languages. Ruby, as a rule, has a better set of books now than most languages,  IMHO .</P>
+
+
+	<P>I love the 2nd Ed.”Ruby Way” book and loved the 1st one too, come to think of it. I think your critic would enjoy that approach a bit more. But there’s no sure thing for someone who’s bound to hate anything that has raving fans… is there?</P>
+
+
+	<P>Rave on. It helps keep things from getting so bloody boring.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mreh</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>14:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>i was appalled in a nice way to find why’s poignant guide to ruby.  yes, programming is probably the biggest sin in the book if you are doing it for fun and not global productivity.  same for any intellectual pursuit.  we’ve got brains, but we’re not supposed to use them.  coercion to use our brain is all around though.  and then we have ruby and rails; and it’s almost like using our brain to program in ruby is somehow not a sin—it feels so natural.  so i think a cartoon book showing how liberating it is to flow with ruby is pretty much innocent and benevolent.  and no, we don’t need to practice global productivity when using it, but most-likely folks will still feel like that is their role in life for some time to come.  but at present programming can be an art, and ruby on rails a palette.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>16:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Right, so the book didn’t do it for me? So because I don’t like what you like, and admitted that’s my taste, <STRONG>I’M</STRONG> the intolerant one? What about “live and let live”? Why can’t I do things my way and you do them yours?</P>
+
+
+	<P>So I looked at Ruby and thought, huh, it’s ok, but I don’t see what all the fuss is about, and there’s a few things I think might not scale up? I didn’t act some some raving evangelical who’s discovered god and wants to tell everyone about it, like some people seem to when they discover Ruby.</P>
+
+
+	<P>Heh, what I’ve learnt from this is that Ruby programmers are pretty intolerant stuck up people. Can’t take a bit of criticism without pouring down insults.</P>
+
+
+	<P>And  UCL  guy, actually the AI dept at Sussex is acknowledged to be a world leader,  RAE 5  rated (and I got my first degree from Imperial so you know what I think about  UCL ). But university snobbery “I’m at a  TOP  university  YAH , you’re a litte oik at a proles’ university. Oh, really “cool” heh?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>regeya</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>16:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You’re an amazing programmer, and have dome so much, but I must admit I didn’t learn a damn thing from the Poignant Guide.  It’s just too off the wall.  Fortunately there are other guides out there, so now I’m beginning to grok the lowest levels of why’s genius.  I feel like a cave man who’s been invited to the  ISS . :-&gt;</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rich</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>16:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>To be honest, I’ve not read all of the poignant guide although I did find the foxes somewhat amusing.  I’ve picked up most of what I know about ruby from Pickaxe and the the api.  I quite like ruby, but it isn’t perfect.</P>
+
+
+	<P>Some people can be a bit over-enthusiastic about ruby, but we’re not all intolerant and stuck up, Mr Huntbach.  Your original article made some OK points, but I’m afraid you’ve not done your argument any favours by posting this kind of comment here.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>brian</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>16:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>He’s right. You suck.</P>
+
+
+	<P>...kidding. You rule, _why!!!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>yters</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>17:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>fun is such a waste of time.  seriousness is much more efficient.  therefore, being serious is a moral imperative.  all fun havers are immoral.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>22:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG> MMH :</STRONG> Quite honestly, I don’t question your rank for a second!  I especially recognize the high caliber of your AI department and I honor, cherish and revere them as timeless legend.  In my mind, their shadows cast down from the hill’s crest as they pause atop gallant steed!</P>
+
+
+	<P>Please, accept my most finely woven apologies.  For my part, I have done nothing but agree with your article so far.  As a young freelance professor, at <STRONG>an unaccredited university</STRONG> of the lowest order, I am totally glee-smacked to have some review from those of higher thought.  Oh, to be at Sussex!  I can only imagine the comraderie and the jubilant glugging of knowledge.  You are so fortunate to have the love and adoration of your colleagues.  I am banished from campuses, having spent my life wandering in lands of ignominy, dispensing formless lecture and leaving adhoc pop quizzes on tree bark in the freelance way.  This is no man of concern.</P>
+
+
+	<P>Let us forget this paltry quarrelling and be best of friends!  Please, come to my pavillion and we will dine on quail and great hound.  Bring your lovely, frail wife and any of your long time friends rated  RAE 4  or above!  Very good.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>some guy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>18 Mar 2007</NOBR> at <NOBR>23:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I find the Poignant Guide to follow a stylistic tradition certainly established before, but perhaps most recognizably evidenced by, Russ Walter’s <U>Secret Guide to Computers</U>.  In fact, I was getting worried that the idea of conversational documentation had entirely given way to dry, unhelpful bundles of man pages and intensely product-/version-specific documentation (as popularized by a certain publisher that only puts woodcuts on the <B>covers</B> of its volumes) when I stumbled upon this thing.</P>
+
+
+	<P>That said… I haven’t actually checked on its progress for a year or two, and have only given the latest installments the most cursory glance, but please tell me you’ll get to a brief overview of ‘design patterns,’ or, to the point, sane organization of a project and its main loop or equivalent.</P>
+
+
+	<P>All the Ruby documentation I’ve encountered is great at demonstrating how to assemble little methods (with inheritance and all that good stuff), but leaves creating an actual ‘program’ with more complexity than a shell script as some sort of zen exercise for the reader.  We all know the language doesn’t enforce many practices; just show us some options for structure or layout that work.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>dies-el</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>03:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>It’s a classic anti-ruby post that’ll see his site get a massive surge of traffic from the Matz army… Don’t fall for his ploy!  MINASWAN . WICBASWACB!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>cubicle67</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>04:17</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why got me into R.</P>
+
+
+	<P>How? tryruby. Lowest entry barier to any languague ever (or, for those of you from reddit – Lowest. Entry Barrier. To any Language. Ever. ).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>05:14</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m a university lecturer, yes. I don’t think this makes me special. If you must know, the reason I went into academia is when I graduated I found all the fun coding jobs were defence-related, and I didn’t want to be writing programs to kill people.</P>
+
+
+	<P>One thing being in this job has shown me is just how difficult most people find coding. There’s a few of us – I’m one – who find it real fun, do it naturally, love to explore new programming languages etc. But most kids – and they must have some sort of interest in computers otherwise why did they register for a CS degree – seem to find it amazingly difficult. And if you say “that’s because you’re a bad teacher”, it’s something that’s experienced across the world by whoever does it. Different people, different styles, different languages chosen, different paradigms, still the end result which almost everyone teaching intro programming on CS degrees finds is that a small proportion of the class really likes it, gets it right away, get good marks, the rest do really badly, hate it, and fail.</P>
+
+
+	<P>From my experience I don’t think Ruby’s the magic solution to this. I’ve read a lot about it, tried it out, and  I STILL  don’t see why so many people think it’s some amazing thing so much better than any other programming language. It’s OK, that’s all – I’m open to be persuaded of its special nature, but when I questioned it, all I got was abuse poured on my head. Couldn’t you guys have tried to convince me instead?</P>
+
+
+	<P>Sorry to Why, no doubt your stuff’s great to those who enjoy that sort of thing, but I didn’t find it helped me into the language. People trying to impose their own sense of humour on me when I’m trying to learn something doesn’t work. But if others share yours and it works for them, well, fine for them.</P>
+
+
+	<P>One reason I’m looking at this is I think academic research into programming languages has been sterile for many, many years. When I look at the academic conferences, it’s all boring mathematical stuff that sends me to sleep. What interests me is practical ideas for new programming languages ordinary people can use. It seems to me all the exciting stuff on the development of new programming languages is taking place outside the universities, which is why I’m looking at places like those involved with Ruby, which is where it’s happening.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>horia314</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>10:14</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“One of the greatest things about Ruby is the community. If he can’t take the creativity that Ruby inspires, that’s his own problem.”</P>
+
+
+	<P>then …</P>
+
+
+	<P>“Also… fuck the academic nerd. In the butt. With something sharp. You can tell he really, really wants it – with cartoons! a la some horrific hard-core Chick tract! – deep, deep down.”</P>
+
+
+	<P>I think Amy missposted from a  BDSM  site … :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zeef</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>12:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hum.</P>
+
+
+	<P>arrow slinging from ivory towers.</P>
+
+
+	<P>who couldn’t see that coming.</P>
+
+
+	<P>and how very english!</P>
+
+
+	<P>it is good not to be disappointed.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>derek</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>12:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>uh there are some many issues with ruby, i don’t think cartoons description are the issue. more likely he ran into some idiot like zenspider</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zeef</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>12:43</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“Couldn’t you guys have tried to convince me instead?”</P>
+
+
+	<P>alright, sir, you deserve an answer to that very fine question.</P>
+
+
+<H2>no.</H2>
+
+
+	<P>these are not university professors, lecturers, or academics, who have spent years cultivating great respect for things like decorum and the formalities of scientific study.   we’re amateurs, we’re self-taught hacks, we’re dilitantes.  and a few of us are degreed professionals as well.</P>
+
+
+	<P>but by and large, i suggest, it is apparent “we” don’t care much about convincing anyone who needs to be convinced, for that very reason.  such is my observation, anyhow.</P>
+
+
+	<P>you might be hopeless,  MMH , but some of these folks will still love you and your ilk for being who and what they are, because without them, there would be no them.  you’re like the evil chunky stuff from  TIME BANDITS , you know?    DON ’T  TOUCH ! IT’S  PURE , RAW,  UNDILUTED EVIL !</P>
+
+
+	<P>yes, you’ll get abuse heaped on you out here.  we all do.  welcome to the real world free market / bazaar, where the letters you drag around after your name are only dead weight.  i doubt you could swim in it any better than any random one of us would fare as a university instructor charged with taking free-thinking young minds and turning them into the sort of rigid little automatons i regularly bounce from job interviews.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Klondike</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>12:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I think we collectively are being harsher to  MMH  than he is to us.  Remember, Matz Is Nice And So We Are Nice!  If he couldn’t pick that up in the first 10 seconds of knowing us, and in fact we convinced him of the opposite, we are clearly not living up to it.</P>
+
+
+	<P> MMH , you stated a little more than the fact that _why’s and your senses of humor didn’t align.  You said the book was “horrid”, and that it’s symbolic of one of the biggest things wrong with Ruby.  Them’s fighting words.  As you can see in a few of the comments above, there are some people who enjoyed the book but had to do their learning elsewhere, and people who didn’t enjoy the book but learned Ruby anyway because it was awesome on its own.  It’s possible to coexist with _why’s book, regardless of your humor or whether you like Ruby. :)</P>
+
+
+	<P>I agree wholeheartedly with your last point, that programming in the academic setting is becoming sterile, and making it accessible and fun again is necessary.  And indeed, if you keep your eye on the Ruby community and on _why, I’m sure you’ll find out that Ruby is exactly, as you said, where it is happening.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>14:05</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Setting aside our widespread outrage for the moment, I think one of the other issues raised by Herr Professor Huntback deserves particular attention—namely, that Ruby doesn’t parallelize very well: our very mutable classes, shared between threads, mean that we’ve got all kinds of synchronization points and possible contention just for a simple method call.  Multiply up, and you can see we’ve got problems.</P>
+
+
+	<P>Part of the solution, as the world gets ever more parallel around us, is going to have to be something along the lines of establishing “partitions” which run in separate threads, each with their own independent set of classes and so forth.  Of course, sometimes we will want to share some objects or classes, so there would need to be some mechanism to import, or proxy, such things from one such “partition” to another.</P>
+
+
+	<P>Thankfully, _why has been working on an  API  to accomplish just that: we call it <A href="http://code.whytheluckystiff.net/sandbox/">sandbox</A>.  Now, while  MRI  and even  YARV  haven’t gotten very parallel about their interpreters yet, JRuby already is, with its multiple interpreter contexts per process.  Combined with Ola’s JRuby implementation of that sandlish sandbox (which lets us take advantage of those multiple contexts in a single program), we’ve accomplished a major step in getting Ruby to the parallel world.  There’s lots more to do, but _why has gotten us over a very important hump.</P>
+
+
+	<P>If by Huntback’s reckoning _why is wrong for Ruby, _why also demonstrably very right.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zerohalo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>14:36</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why, I like the Poignant book (there’s lots of boring stuff out there, so some humor and cartoons is refreshing; I have to admit some of the humor in the book and on your site, which I read regularly, goes over my head, but I don’t mind). And I love Ruby—it’s what got me interested in programming again. But methinks  the rock-star/guru accolades from your devotees are a bit too much… And if someone disagrees with the Poignant book, or indeed dislikes Ruby itself, no need for everyone to cut them down so viciously. Let the work speak for itself (which it does).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>17:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yea, the fanboism’s a bit much at times.  I’m kind of sad to see how things went with  MMH  above, but I stand by what I said—if we’re looking at the problem areas in Ruby, they’re stuff like concurrency and static analysis, not surfeits of cartoon foxes.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>BonePicker</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>19:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I have a bone to pick with the so called “fans” here. I find it offensive that most people keep mentioning “cartoons” as if that is the whole point of the book. The problem is that most “fans” are guilty of the same thing as our beloved  MMH  over here. They never bothered to seriously read it as a n original work of art or literature. From all these comments about “cartoons” this and cartoons that.. it would seem that they think it is some kind of a silly ruby-for-dummies book “WITH  CARTOONS !”</P>
+
+
+	<P> JEEZUZ -H-T-F-Krrrrrrrrrist! is that all you “fans” think it is? Have you even bothered to read it? Or just looked at a few pages and decided it was “a cute book with cartoons” and you just have to toe the line and be the good little fan-boi’s that you have been trained to be over in the rails pen?</P>
+
+
+	<P>Read the caption of the blog again: “Sneaking Ruby through the system”</P>
+
+
+	<P>And stop mentioning “cartoons” as an implication that you’ve <EM> READ </EM> the book, which you clearly have not and you are guilty of the same jump-to-conclusion thing that you are accusing  MMH  of.</P>
+
+
+	<P>And I am pissed with  MMH  because he chose to pick on quite possibly the least controversial players in the Ruby arena and concocted sloppy and hastily slapped together attacks on Ruby without even taking the time to properly prepare his case. I hope he doesn’t publish his papers with the same level of “rigour” that he applied in his opinion piece.</P>
+
+
+	<P>Hey, don’t look at me, he put himself in the public arena by starting the whole thing.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>random8r</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>19:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hello peoplez and why. I love why. Do you know why I love why? Oh Why?/! I love him because he understands a lot.</P>
+
+
+	<P>Mostly, I love him because he understands how people learn good.</P>
+
+
+	<P>People are made up of thinking (mind), emotions (feeling) and being (body). When two of these things connect and work on something at once, it sticks better. If all three work together, it changes us.</P>
+
+
+	<P>Learning is a process of changing us. Why’s stories engage our imagination, which binds two or sometimes even three of our parts together to work on the one problem.</P>
+
+
+	<P>He’s a G-Knee-us!</P>
+
+
+	<P>Why on, Whyernator! Why It Up!</P>
+
+
+	<P>Keep on Why’in!</P>
+
+
+	<P>All my hearty heart heart.</P>
+
+
+	<P>Random8r</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lambda lambada</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>19 Mar 2007</NOBR> at <NOBR>23:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>they must have some sort of interest in computers otherwise why did they register for a CS degree</EM></P>
+
+
+	<P>Money? Someone they respect said “computers” to them in the hushed, reverential tones that were reserved for “plastics” in ancient Dustin Hoffman movies? They got their sense of what programmers do from watching The Matrix?</P>
+
+
+	<P><EM>that a small proportion of the class really likes it, gets it right away, get good marks, the rest do really badly, hate it, and fail.</EM></P>
+
+
+	<P>The same is true for art school, cooking school, and probably undertaker’s school (whatever it’s called) and cosmetology.  In fact, I’d wager a large sum that the ratio of incoming students to successful careers is <B>far</B> worse for art school than it is for CS. At a minimum, the CS guys probably fail out at an earlier stage, while there’s still time to change to something else.</P>
+
+
+	<P>Some people have natural talent, some don’t. We generally recognize that this is the case for art and cooking, but oddly think that programming is something that can be “taught”, regardless of inherent aptitude. Sure, just about anyone can be taught to write a for loop, just as just about everyone can be taught to draw something simple, or cook a basic meal. That won’t make him a great (or even competent) artist or chef, though. To do that he needs both talent and enough interest in the subject to practice, practice, practice.</P>
+
+
+	<P>From a pedagogic perspective, I would argue that scripting languages are a  MUCH  better choice than whatever bondage-and-discipline language is in vogue in academia at the moment. Scripting language = gets working code on the screen faster = student programmer writes more code in the same amount of time. Before you can teach Java you need to spend a substantial amount of time on the mechanics of compilation and all the syntax crapola. The edit/compile/debug cycle is a major motivation trap, too, especially when someone’s first starting out. Do not underestimate the advantage of being able to type your code right into  IRB  and see it work (or not) on the spot.</P>
+
+
+	<P><EM>From my experience I don’t think Ruby’s the magic solution to this.</EM></P>
+
+
+	<P>There isn’t one.</P>
+
+
+	<P><EM>I’m open to be persuaded of its special nature,</EM></P>
+
+
+	<P>Well, you might start by writing some code that actually does something, say, recursively iterates over the file system, finds all  MP3  files, extracts the  ID3  tags, and puts them in some sort of simple database.</P>
+
+
+	<P>Write it in Ruby, then rewrite it in Java, C, or (shudder) Aldwych.</P>
+
+
+	<P>I write code when I need to do something, said something rarely being an elegant reimplementation of quicksort or Dijkstra’s algorithm. I like languages that let me do my stuff without strewing a lot of bullshit in my path. Ruby spreads less bullshit in my path than any language I’ve ever used (Lisp is more elegant, but the bullshit factor ramps up exponentially when you start needing to talk to libraries written in other languages).</P>
+
+
+	<P>Trust me, your students will be far more motivated to write a project that lets them grab (football scores, stock prices, pictures of their favorite actor or musician) from a web site and display them in some cool way than they ever by writing quicksort or the  KMP  string matching algorithm. Do you realize how many guys are actually needed to write quicksort in today’s job market? Answer: one guy per language.</P>
+
+
+	<P><EM>I didn’t find it helped me into the language.</EM></P>
+
+
+	<P>“Not my cup of tea” is a long way from “horrid”. I think the Poignant Guide is pretty cool, but personally I learned from the Pickaxe book.</P>
+
+
+	<P>Jeez, it’s not like any famous CS guy ever wrote <A href="http://www.csd.uwo.ca/~magi/personal/humour/Computer_Audience/The%20Great%20Quux%20Poem%20Collection.html">silly songs</A> or <A href="http://www.jargondb.org/part_ii_the_jargon_lexicon">drew cartoons.</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Que?</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>03:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Now you are being too modest, Why. The book is a masterpiece in several ways. It’s a great didactic tool and a fun read which occasionally enlightens and makes you laugh throughout.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>06:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>OK, here’s a fairly detailed reply to Lambda Lambada.</P>
+
+
+	<P><I>
+ MMH : they must have some sort of interest in computers otherwise why did they register for a CS degree</I></P><I>
+
+
+	</I><P><I>LL: Money? Someone they respect said “computers” to them in the hushed, reverential tones that were reserved for “plastics” in ancient Dustin Hoffman movies?
+</I></P>
+
+
+	<P>No, it’s not the money these days. For a short time CS departments got a lot of applicants who though that way, but since the dot.com crash it’s been hard to recruit as there seems to be a widespread opinion that there aren’t any jobs in it, and what there are have all been outsourced from Europe/US anyway.</P>
+
+
+	<P><I>
+Some people have natural talent, some don’t. We generally recognize that this is the case for art and cooking, but oddly think that programming is something that can be “taught”, regardless of inherent aptitude.
+</I></P>
+
+
+	<P>Yes, I’m agreeing with you there, that’s one of the points I was trying to make in my article, I don’t see Ruby or any other programming language as solving this, becuase it isn’t the programming language used that’s the issue.</P>
+
+
+	<P><I>
+From a pedagogic perspective, I would argue that scripting languages are a  MUCH  better choice than whatever bondage-and-discipline language is in vogue in academia at the moment.
+</I></P>
+
+
+	<P>Yes, that’s why I’m looking at scripting languages, I happened to mention this to the editor of Bitwise magazine, and he asked me to write an article on my first impressions of Ruby after I’d spent a couple of weeks with it.</P>
+
+
+	<P><I>
+Before you can teach Java you need to spend a substantial amount of time on the mechanics of compilation and all the syntax crapola.
+</I></P>
+
+
+	<P>But Ruby has syntax as well, I don’t see the issues as so dramatically different. Sure, you lose the stuff required by Java to maintain static types, but is this really such a major issue? I don’t think it makes the fundamental difference between understanding programming and not understanding it.</P>
+
+
+	<P><I>
+Well, you might start by writing some code that actually does something, say, recursively iterates over the file system, finds all  MP3  files, extracts the  ID3  tags, and puts them in some sort of simple database.
+</I></P>
+
+
+	<P>My own interest is more on the abstract nature of algorithms rather than the practical details of interacting with the file system or a database. In the end, whether it’s a loop over an array or a loop over the file system, it’s still the same thing – a loop. Sure, I’m well aware that for writing practical code you need all that interaction with the system stuff, but I find that boring detail that doesn’t turn me on.</P>
+
+
+	<P><I>
+Write it in Ruby, then rewrite it in Java, C, or (shudder) Aldwych.
+</I></P>
+
+
+	<P>Why “(shudder) Aldwych”? Have you looked at the language and its aims? Actually it’s some ideas I have for a language, not a fully developed language. Because of that, it doesn’t have the libraries to interact with the real world, just something crude to link to stdin and stdout. The important stuff is the way it represents objects interacting concurrently. And actually in many ways it’s close to Ruby, and it is dynamically typed. I’d appreciate constructive comments.</P>
+
+
+	<P><I>
+I write code when I need to do something, said something rarely being an elegant reimplementation of quicksort or Dijkstra’s algorithm.
+</I></P>
+
+
+	<P>Sure, no-one needs to write code for these things. But I find when I want to assess a new language and how it works, what I do is to write some well-known and understood algorithm in it to see what it looks like.</P>
+
+
+	<P><I>
+Trust me, your students will be far more motivated to write a project that lets them grab (football scores, stock prices, pictures of their favorite actor or musician) from a web site and display them in some cool way than they ever by writing quicksort or the  KMP  string matching algorithm.
+</I></P>
+
+
+	<P>Right, but to do this they’re still going to have to understand basic computational mechanisms, such as loops and assignment and conditionals and passing arguments to methods etc. As recent discussion elsewhere shows, there’s large numbers of guys who have trouble writing code to do “fizzbuzz”, if they haven’t mastered that, how can they do the more complex stuff you suggest which assumes they can do the basics if computing? As it happens, where I teach we DO have a first year course in web programming, which covers scripting languages and grabbing things off the web, so all that stuff isn’t ignored. My job is to teach the algorithms and data structures stuff.</P>
+
+
+	<P><I>
+“Not my cup of tea” is a long way from “horrid”. I think the Poignant Guide is pretty cool, but personally I learned from the Pickaxe book.
+</I></P>
+
+
+	<P>The use of the rather childish word “horrid” was mean to be an indication I wasn’t being entirely serious. But now, to be serious, isn’t one of the most tiresome things, if you’re at university, a lecturer who tries to be funny? Personally I don’t like to be instructed by someone who pads out the facts I want to master with his own sense of humour.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>horse with no name</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>07:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I learned from Poignant Guide.</P>
+
+
+	<P>To improve it,  you just have to cut it in half,  Volume I and Volume II.</P>
+
+
+	<P>Pick whichever one of these comments is better,  I got confused by the comment box lack of feedback…thought I did something wrong.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>07:42</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>Personally I don’t like to be instructed by someone who pads out the facts I want to master with his own sense of humour.</EM></P>
+
+
+	<P>Dude, no one forced you to be instructed by  WPG2R . You picked it, out of a myriad of publications available, and based a quickly formed (not to mention half baked) opinion  on that, and tried to paint the language with just “exhibit A” (And frankly, the attempts at backpeddalling are a bit awkward now.)</P>
+
+
+	<P>You could have chosen the PickAxe book to comment on and heaven knows its got it’s flaws (but so does K&amp;R some nitpickers would say) though it’s an excellent book . As another reader pointed out, the methods of rigor applied by your highness leave a lot to be desired (especially coming from someone who claims to be fond of exactitudes more than occasional levity during the course of teaching something.)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Observer</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>07:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Dear  MMH , perhaps you should put “Aldwych” out in the big bad world (the real one) and see how people take to it. It would be nice to have a download link on its home page. Personally, if I had to pick between Ruby and Aldwych, I’d take Ruby.</P>
+
+
+	<P>Perhaps you have “language envy” ? sir?</P>
+
+
+	<P><A href="http://www.dcs.qmul.ac.uk/research/logic/aldwych.html">The Aldwych Language</A></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>yup</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>08:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>But, Matthew, chunky bacon really does make you a better programmer! Please don’t knock it until you’ve tried it.</P>
+
+
+	<P><IMG src="../images/chunky_bacon.png" alt=""></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>assplecake</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>09:07</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>Why’s (Poignant) Guide  is a particular horrid example…</P>
+	</BLOCKQUOTE>
+
+
+	<P>Aww, that big dummy probly thinks hentai ain’t real porn!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>A</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>09:22</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>But now, to be serious, isn’t one of the most tiresome things, if you’re at university, a lecturer who tries to be funny? Personally I don’t like to be instructed by someone who pads out the facts I want to master with his own sense of humour.</I>
+No!! Lecturers who rely on the student’s participation in order to maintain their attention are not very good lecturers at all – in my opinion. As a first year CS undergrad at a respected institute I can tell you right now that my most rewarding classes have been those with teachers who incorporate their own style within their lectures, not those who simply read off their notes – in which case I’ll read the textbook instead. A good laugh every now and again has never hurt anybody.</P>
+
+
+	<P>I would love for a teacher such as _why.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>09:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I wouldn’t have mentioned Aldwych at all if it wasn’t for the fact that _lynX must have looked at my home page, picked up on he kludgy way it currently interacts with the outside world, and posted that as if it was what the language was all about. Well, I had to defend it after that. If I ever got as far as releasing the language, quite obviously I’d fix that and put in the Aldwych equivalent to irb, so code to prompt a user to enter two numbers and print their sum would look completely different.</P>
+
+
+	<P>I’m not claiming Aldwych is a complete language, so obviously it isn’t comparable to Ruby. It’s ideas for a language, just the punctuation really (literally – no key words, just punctuation symbols), and if it were ever to be released as a useable language, it would need the words – a full range of good library code.</P>
+
+
+	<P>What’s on my home page about it is pretty old and brief as well. I need time to write more down, and I need implementors to work on a better version of it. The one I have compiles down to the Japanese language  KLIC , but I don’t have source code for that, and I need to build my own “core language” rather than use  KLIC  so that I can do more with it to bring the whole thing closer to useability.</P>
+
+
+	<P>I’ve been trying to get students where I teach to do work developing it as project, but all most students want to do is boring stuff like building a database with a  GUI  front end which works over the web. Yawn, yawn, yawn, where’s the fun in that?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lambda lambada</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>10:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>My own interest is more on the abstract nature of algorithms rather than the practical details of interacting with the file system or a database.</EM></P>
+
+
+	<P>I think we’ve found the problem here.</P>
+
+
+	<P>Your interests and the interests of your students aren’t the same. More important, your interests and the interests of the people who will be hiring your students are not the same (and your students know it).</P>
+
+
+	<P><EM>Right, but to do this they’re still going to have to understand basic computational mechanisms, such as loops and assignment and conditionals and passing arguments to methods etc.</EM></P>
+
+
+	<P>Really? So you could write the code to find all the MP3s on the file system and do something with them without using loops, assignments, conditionals, or passing arguments to methods? Nice trick!</P>
+
+
+	<P>I realize that you think that people should admire these things for their abstract beauty, unsullied by application to that nasty, nasty real world, but your students will remember how a loop works much better when they see that there’s something in it for them. Finding all your MP3s and doing something with them is a problem that most undergraduates can understand. If they use loops to do it, they now see loops as a useful thing, and may well be more amenable to studying them in the abstract at a later time.</P>
+
+
+	<P><EM>As recent discussion elsewhere shows, there’s large numbers of guys who have trouble writing code to do “fizzbuzz”</EM></P>
+
+
+	<P>I suggest that this is because come out of school having learned a lot of abstract stuff about algorithms, but have rarely had to apply that knowledge to solving a real problem. People learn how to write code by writing lots of code. It’s no different from writing prose, painting, or cooking.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:45</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Sorry to change the subject, but I’ve got a steak of halibut that has to be fried up in the next 24 hours.  Can anyone suggest some seasoning?  Try to avoid lime, balsamic vinegar and cumin because that’s all in the past for now.  Also: I do have loads of coconut milk on hand.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:47</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>
+ MMH : My own interest is more on the abstract nature of algorithms rather than the practical details of interacting with the file system or a database.</I></P><I>
+
+
+	<P>LL: I think we’ve found the problem here.</P>
+
+
+	</I><P><I>Your interests and the interests of your students aren’t the same. More important, your interests and the interests of the people who will be hiring your students are not the same (and your students know it).
+</I></P>
+
+
+	<P>No, you’ve jumped two steps here. I’m saying the features of a languages which enable it to interact with a file system or database aren’t of particular interest to me as a person, so that’s not somethng that would turn me on personally to Ruby. I’m not saying they aren’t valuable skills or that they shouldn’t be taught to students.</P>
+
+
+	<P><I>
+ MMH : Right, but to do this they’re still going to have to understand basic computational mechanisms, such as loops and assignment and conditionals and passing arguments to methods etc.</I></P><I>
+
+
+	</I><P><I>LL: Really? So you could write the code to find all the MP3s on the file system and do something with them without using loops, assignments, conditionals, or passing arguments to methods? Nice trick!
+</I></P>
+
+
+	<P>I think my point is obvious here, but just in case you didn’t get it, I’ll explain again. If students are going to write the code to find all the MP3s on the file system and do something with them, they’re going to have to use loops, conditionals, assignments etc. So aren’t they going to have to be taught these features first before they can use them? That will be the same whatever language they use. When I look at Ruby tutorials – including Why’s – do they start off immediately with a program that finds all the MP3s on the file system and does something with them? No, they start off with the basic syntax and build up. Yours is an interesting suggestion – start off by throwing the students in at the deep end with a fairly complex program that does “real world” stuff and try and teach them from that. And I have seen people who advocate such an approach, and it might work. But not even our hero Why does that, does he?</P>
+
+
+	<P><I>
+ MMH : As recent discussion elsewhere shows, there’s large numbers of guys who have trouble writing code to do “fizzbuzz”</I></P><I>
+
+
+	</I><P><I>LL: I suggest that this is because come out of school having learned a lot of abstract stuff about algorithms, but have rarely had to apply that knowledge to solving a real problem. People learn how to write code by writing lots of code.
+</I></P>
+
+
+	<P>Yes, I know that people learn how to write code by writing lots of code. That’s a point I make constantly to my students. The course I teach, though it’s algorithms and data structures, is very code oriented, and I think that’s the right way.</P>
+
+
+	<P>But your claim that students have come out of school having learnt a lot of abstract stuff about algorithms, but have rarely had to apply that knowledge to solving a real problem is nonsense. Where I teach, and in most other university Computer Science departments, there’s at least one course on web technology, with stuff like picking up files off the web. Most students do final year projects which are very much oriented around this sort of practical stuff. But the “fizzbuzz” debate is actually saying that’s part of the problem – students spend too much of their time rote-memorising library commands to fetch things off the web etc, and not enough time on basic algorithmic and abstract thinking. That is why, when you throw them a problem which involves writing code for a very basic algorithm, they can’t do it.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:50</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><A href="http://poignantguide.net/ruby/chapter-3.html">Why</A></P>
+
+
+	<BLOCKQUOTE>
+		<P>Block arguments are a set of variables surrounded by pipe characters and separated by commas.</P>
+	</BLOCKQUOTE>
+
+
+<CODE>|x|, |x,y|, and |up, down, all_around|</CODE> 
+
+	<BLOCKQUOTE>
+		<P>are examples.</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>...</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>I like to think of the pipe characters as representing a tunnel. They give the appearance of a chute that the variables are sliding down. (An x goes down spread eagle, while the y neatly crosses her legs.) This chute acts as a passageway between blocks and the world around them.</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>Variables are passed through this chute (or tunnel) into the block.</P>
+	</BLOCKQUOTE>
+
+
+	<P><A href="http://www.dcs.qmul.ac.uk/~mmh/aldwych/tutorial/part3.html"> MMH </A></P>
+
+
+	<BLOCKQUOTE>
+		<P>If P is an object variable, then <CODE>P.mess(arg1,...,argm)</CODE> is an expression which evaluates to the return value of sending message <CODE>mess(arg1,...,argm)</CODE> to P, that is, it is equivalent to using a variable v in an expression and having a separate statement <CODE>P.mess(arg1,...,argm)-&gt;v</CODE>. In this case there is no type-checking, so it is up to the programmer to ensure that P can take a message of that sort which returns a value or an object as the expression in used. A message send expression can have multiple messages, but return variables must be given for all but the last for every message that requires a return variable. For example, the expression <CODE>P.mess1(x).mess2(y)-&gt;z.mess3(u)</CODE> is equivalent to v with separate statement <CODE>P.mess1(x).mess2(y)-&gt;z.mess3(u)-&gt;v</CODE></P>
+	</BLOCKQUOTE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:57</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>sorry, I couldn’t resist! (<SUP>.</SUP>)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>T</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P> MMH :</P>
+
+
+	<P>As a recent (2004) CS graduate in the UK, I’m quite surprised by your comment that there is the assumption amongst undergrads that aren’t any jobs left out there that are worth doing or haven’t been outsourced.</P>
+
+
+	<P>After I graduated, I had a development job inside three weeks. I’m still there, and now part of my job responsibilities also include sitting in on interviews. Wow. What a revelation. There are  SO MANY  <B> AWFUL </B> CS graduates, including a lot from ‘decent’ universities. I never thought it possible to graduate from a red brick university with a degree in CS and not ‘get’ m-n relationships in RDBMs.</P>
+
+
+	<P>This maybe why your students want to study DB based web systems – its where the world works nowadays, and, as I’ve said, there will always be jobs for talented programmers to earn decent wages. Our office is eagerly looking forward to recruitment this year, we have lots of spaces for new nuggets.</P>
+
+
+	<P>Ability to write complex and fancy algorithms using esoteric research languages like Haskell not required.</P>
+
+
+	<P>Ability to program in a coherent and logical manner, preferabley with a good knowledge of how a computer works, together with the ability (and yes, I do think its anability, not a skill) to manage memory allocation, an understanding of  RAII  a  DEFINITE  plus.</P>
+
+
+	<P>I dont mean this as a dig, but you haven’t worked commercially have you? I really think that what CS needs (especially in the UK) is a bit less science, and a bit more BI<STRONG>. You should be teaching these students how to make a career out of their skills.</STRONG></P><STRONG>
+
+
+	</STRONG><P><STRONG>You do actually raise a decent point in your article about universities setting the bar too low on programming assignments. The answer is to raise the bar.  A LOT . Anyone who doesn’t pass their programming courses over the first year should be encouraged to transfer to a non programming IT speciality –  DBA -orientated course for example. 
+Of course, this couldn’t happen, because of that *S</STRONG> part again – its all got to be <STRONG>S</STRONG>cience to academia. Never mind that you turn out substandard ‘programmers’, dont challenge the ones who can actually program remotely well.</P>
+
+
+	<P>Still, you’ve churned out 200 students a year who  maybe 80% of them couldnt write a program to use a static circular buffer, 70% cant normalise to  BCNF  a relational DB schema and 50% cant write a simple stack. Well done.</P>
+
+
+	<P>If I divert my attention from lambasting the state of higher education in the UK to Ruby briefly (heh), I think Matz said it best – Ruby is a better Perl. I sneak ruby through the system wherever and whenever I can at work, and I can get away with it because it is ruby. It’s readable, and even the Head of IT can grok a printout of a ruby program and know what its doing. Perl scripts, on the other hand, are invariabley hard to read.</P>
+
+
+	<P>Perl isnt a write-once language, its just its very damn easy for it to end up that way. I find objectively that ruby groks quite well with my colleagues, compared to the various nasty-ass sh/perl scripts they invariably replace. I can develop quicker in ruby than in perl and it makes me more productive.</P>
+
+
+	<P>One of the most important things about writing code that adheres to the  POLS  is that you dont write code using obscure, arcane or misleading syntax. Your 2d array example in your article is all of the above. Its a two way street writing code. Make it clear off the bat what is happening and two things happen – you need less documentation of boring internal bits of your code, and your code will forever be readable. I take it you didnt have readability of code as one of your aims with Aldwych.. probably because maintenace of code is not something that academics ever deal with (hey, its research right? Wont need to do that again after I’ve published..)</P>
+
+
+	<UL>
+	<LI>Of course this could rarely happen; you earn far more in the private sector than you do in academia, consequently, who is going to give that up to teach students?</LI>
+	</UL></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>11:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>dang textile!!! messed up my emoticon! 
+:-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>T</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>12:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The bolding is all gone to fecundity and beyond :/ BI should have a * next to it, denoting the footnote. The bolded paragraph shouldnt be bolded and the only things that should be bolded are a standalone capital ‘S’, and the ‘S’ in ‘Science’ :/</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>some guy (that second one)</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>12:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Actually, suck it up—a good CS program needs both.  Without someone around to play Dijkstra, you’re just doing vocational training for one set of products, and with nothing but CS-as-a-branch-of-mathematics folk you’ve got a graduating class more likely to write papers than code.</P>
+
+
+	<P>I have experienced both extremes.  They are not fun (or usefully educational).  A teaching environment should be able to show the practical kids why theory is important and the math/logic whizzes how to actually implement in a ‘production environment.’</P>
+
+
+	<P>Similarly, entertainment can be great (though I’d settle for fluency in the human language the class is supposed to be taught in, these days), but matters for little if the information itself is wrong.  There’s a reason many of those Matrix fans can only conceive of evolution as Lamarckian—to ‘engage the audience,’ their science teachers attributed desires and intent to nature, then rushed through the reality of natural selection with population dynamics exercises presented more as math problems than models.</P>
+
+
+	<P>Good teaching is about conveying information effectively, and cartoon foxes or Ben Stein’s drone are just methods that can be used (or misused).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>12:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Oh, I forgot!  I also have fresh garlic, basil and ginger.  So my resources are lookin pretty good.  This is <EM>fresh halibut</EM>, peoples!!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lambda lambada</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>13:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>So aren’t they going to have to be taught these features first before they can use them?</EM></P>
+
+
+	<P>Nope. They should be taught them <B>while</B> they’re using them. For something real.</P>
+
+
+	<P><EM>The course I teach, though it’s algorithms and data structures, is very code oriented</EM></P>
+
+
+	<P>So, how much of the code that your students write would you suppose that they ever use again? Also, how much time do you spend on optimization techniques that don’t lend themselves to clever analysis? Even though the typical algorithms class pretends that it doesn’t matter, I can assure you that in the real world there is a difference between n and 100n. In fact, it’s pretty uncommon to see a choice between n and n log n. It’s usually something more like n and 5n, but you can’t solve that problem through theoretical handwaving. You have to actually know what you’re doing.</P>
+
+
+	<P><EM>there’s at least one course on web technology, with stuff like picking up files off the web. Most students do final year projects</EM></P>
+
+
+	<P>Wow, one course and one project. That certainly makes me optimistic for the future!</P>
+
+
+	<P><EM>But the ‘fizzbuzz’ debate is actually saying that’s part of the problem – students spend too much of their time rote-memorising library commands to fetch things off the web etc, and not enough time on basic algorithmic and abstract thinking.</EM></P>
+
+
+	<P>That is total bollocks. Sorry, it just is.</P>
+
+
+	<P>If you ask those guys who can’t solve the fizzbuzz problem what the modulus operator does, I’ll bet every single one of them can tell you. They know the abstract meaning fine. They don’t know the practical implications.</P>
+
+
+	<P>There’s a fair amount of reseach on this in physics teaching, by the way. Physics students will be quite commonly be able to recite every single law, and be able to do all the calculus, algebra, and trignometry just fine,  but won’t have have a clue how to figure out where the damned ball will be when it comes to rest. They know your all-important “abstract knowledge”  COLD , but can’t solve realistic problems.</P>
+
+
+	<P>Sound familiar?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>jonny</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>13:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Academic ones &amp; zeros just don’t get it: the proof of the pudding is in the eating. And real artists ship … bon appetit, _why!!!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Klondike</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>13:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>why:</STRONG> Have you considered kiwi skin shavings?  Many don’t know this, but the skin is the most tangy and exciting part of the kiwi.  When my guests ask what I’ve done, a sly wink has sufficed to staunch their curiosity, but I can’t hold out much longer!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Kombinat!</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>14:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>no ginger, definitely no giner with basil. Halibut will go great with garlic and a bit of basil but no ginger please….hold the coconut milk… unless you have some tomato paste… 
+Yummmy! Yummmmmmmy! Fish Fish Fishyyyy Fish!!! Let’s eat!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>YeahRight</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>17:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You start out wrong,  MMH . There <I>is</I> no Ruby “sales pitch”, that I see. There are Ruby <I>enthusiasts</I> enthusi-izing. Just like there are “Pythonistas” crowing about Python and some guys like me that still feel the most dangerous when slicing through data with Perl.</P>
+
+
+	<P>Computer Science is the wrong field for this, it has more to do with human behavior. As much as anti-proselytizers would like to get everyone to adopt their behavior and not proselytize – and in turn proselytize for the adopted cause, humans can’t help “sharing” things we’ve found useful. I think it’s the natural behavior that promotes that thing we call “shared knowledge”: “I found something that  works for me, maybe it will help you.”</P>
+
+
+	<P>The natural complication to this is that a few enthusiasts can over-promise.</P>
+
+
+	<P>I think the reason why “their supporters have proposed them as general purpose programming languages” is because people <I>are</I> developing what they want with them – just like other general purpose programming languages. Some people like MentalGuy may have hit a wall with them – with regard to parallel programming – but that does not sound that much different from early threads in C++ on a SunOS  SPARC . So, we hit a wall back then as well; you just needed to find a workaround for some things you wanted to do.</P>
+
+
+	<P>I also think you lumped Why’s book in with other things when it contains this: “So whereas I should probably be pounding your teeth in with hype about Ruby… I will just let you coast. I’ll let you freefall through some code, interjecting occasionally with my own heartfelt experiences. It’ll be quite easy, quite natural.”</P>
+
+
+	<P>That’s what the book is about. And that’s the way I saw it. Just a weird way to feature code examples and some explanation of how they do what they do. The three reasons he gives to try Ruby is 1) it’s expressive, 2) It’s from Japan, 3) Free. Number 1 does get a little hype-y. Why even uses overstatement here (even identifying it as such), but it does not specifically say that non-programmers will be transmogrified into programmers because of it. I think your major point is about a threshold that most people who are <I>interested</I> in programming – and not just its fruits – don’t think about. And I can relate a personal story about why I think that concerns you and why I think it’s a “professor problem”. 15 years ago, when I was in school, my professors were under the impression that programming was a skill and you could teach anybody. A student—somewhat perceptive – <I>kept</I> telling them that it is a <I>craft</I>, and some people just don’t seem to get it. It looks like tons of studies and 15 years later, profs have now realized what I grasped intuitively. I think the idea that anybody is saying that a language is going to make people with 0-interest or 0-aptitude a programmer is a projection that <I>hobbyists</I> automatically and implicitly exclude. No stereotypical jock who walks around bouncing computer geeks off sidewalks is likely ever going to read what I say about Ruby, Python, or Perl. Thus I might not consider <I>them</I> when I say, “easy to program”. That’s a peculiar and unnecessary injection upon the subject matter.</P>
+
+
+	<P>I hope I’m not getting too personal to say that your piece almost sounds like frustration with the way that the real world defies academic theories and suppositions: 1) unexpected rise of script languages, 2) not maintained by company hype. 3) Perhaps low popularity of “academic” languages. And 4) upset that “easy” is at times said without qualification – that only concerns a professor anyway. Scripting languages are <I>automatically</I> created and made popular by people who don’t fit that academic category, anyway. One assumes when a language is “popular” it is not as popular as <I>American Idol</I>, so it’s well within reference context to treat “easier” in the same fashion.</P>
+
+
+	<P>To go a little further, the scripting languages incorporate functional and OO features because they end up <I>solving problems</I>. I’m sure they started out as academic theories, but one can see how they were first theories about how to solve problems. Hybrid languages are created to solve a variety of problems, and solve as many as the language creator can think to put into that language.</P>
+
+
+	<P>Scripting is about creating real-world solutions fast. Also it’s about increasing the amount of things that a small group of programmers can do in a few lines of code. It solves problems on the line with code-reuse in OO and components – I might suspect – just a different problem.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>murphy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>20 Mar 2007</NOBR> at <NOBR>20:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>I’ll give just a couple of examples. In Ruby, if a is [1,2,3] and b is [10,20,30], then a+b is [1,2,3,10,20,30]. Why not [11,22,33], which Tim Sweeney in an earlier article suggests “intuitively makes sense”? What does a[x,y] (when a is a two-dimensional array) mean in Ruby? Not what I first supposed it might mean from other languages [...]</P>
+	</BLOCKQUOTE>
+
+
+	<P>mmh. do I really have to read the whole article? I was doing rants about programming languages I didn’t like on that level when I was 15 years old…my god, was I stupid back then ^^</P>
+
+
+	<P>why: your book made me laugh and think in new directions. if Ruby is dead in 10 years, I would still like to read it again. if it’s not, it will become a classic.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Carl</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>01:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Stop being an asshole !!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>leethal</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>01:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG> MMH </STRONG>: People like you is the reason I stay away from universities. Soooo damn in love with being right. You said it yourself – when you question ruby, people harass you. So, why are you harassing people when they are questioning you?</P>
+
+
+	<P>People that know too much is dangerous, they think they’re always right.</P>
+
+
+	<P>I am gonna go have a big, nice cup of  CARE  now, jees how come you people keep on discussing this when the owner of the blog starts talking about food? Give him some nice tips for his steak.</P>
+
+
+	<P>Repeating myself for truth: stop loving being right.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>carl</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>03:42</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Clearly a case for the “Teacher Man” (Frank McCourt).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>04:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>
+leethal: People like you is the reason I stay away from universities. Soooo damn in love with being right. You said it yourself – when you question ruby, people harass you. So, why are you harassing people when they are questioning you?
+</I></P>
+
+
+	<P>Eh? Where did I say I was right? I expressed my opinion, that’s all. Why is it when I express my opinion I’m accused of being “Sooo damn in love with being right”? Why don’t you say the same about everyone else who has expressed their opinion in this discussion? And where am I “harassing people”? Here’s what someone in this discussion wrote about me:</P>
+
+
+	<P>“fuck the academic nerd. In the butt. With something sharp.”</P>
+
+
+	<P>Have I written anything like that? No, I haven’t. Isn’t there a phrase involving a colour and two kitchen items which is used to describe this situation?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>05:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Murphy: 
+<I>
+mmh. do I really have to read the whole article? I was doing rants about programming languages I didn’t like on that level when I was 15 years old…my god, was I stupid back then ^^
+</I></P>
+
+
+	<P>Why do you say it was a “rant”? I had mentioned in a comment on a previous article in Bitwise magazine that I planned to spend some time looking at Ruby, and he asked me to write an article saying what I thought of it after that. So I did.</P>
+
+
+	<P>I was actually trying to be balanced, not to rant. I thought the language was ok, and as I said at the end I’d use it in cirucmstances where I feel it’d be useful. But I also thought some of the comments I’ve seen made about it were exaggerated, I didn’t find it as wonderful as other people seem to. On the array addition thing, I didn’t actually say it should be done one way but Ruby does it another, I just used this example to question whether the “principle of least surprise” was quite so obvious as Rubyists claim (by quoting someone else, not that I necessarily agreed with him, for whom this principle would lead to array addition acting differently than it does in Ruby).</P>
+
+
+	<P>I mentioned features of Ruby which I think might lead to large scale programs written in the language being difficult to maintain in years to come. Is this really such a bad thing to bring into the discussion that it warrants me being accused of being “Soooo damn in love with being right” let alone someone calling for me being fucked in the butt with something sharp? I simply mentioned it as something that concerns me, that’s all. I’m very well aware that there’s a tension which has always existed between “hacking languages” – easy to hack something together, but hairy code that might be hard to work with later – and “strict languages” – more attention to features that would help keep the code in order as it grows, less fun to hack with due to these features.</P>
+
+
+	<P>One of the things that interest me personally is the idea of a language which is naturally concurrent, where you can have lots of things happening at the same time as each other, and they interact. I think thread and locks on synchronised variables are a very clunky and inelegant way of doing that. One of the reason I see Ruby as not particularly innovative is that it’s still completely sequential with the same concurrency mechanism as in Java etc. I’m interested in languages like Erlang where concurrency is much more neatly handled. So, is it saying that which makes me someone who deserves to be fucked in the butt with something sharp?</P>
+
+
+	<P>LL – I’ll get back to you later, I have other work to do right now.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>05:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Oh, by the way:</P>
+
+
+	<P>Ruby:</P>
+
+
+	<P>class Person
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+end</P>
+
+
+	<PRE><CODE>def to_s
+  "#{@name} (#{@age})" 
+end</CODE></PRE>
+
+
+	<PRE><CODE>attr_reader :name, :age</CODE></PRE>
+
+
+	<P>Aldwych:</P>
+
+
+<H1>person(name?,age?)~</H1>
+
+	<P>{
+ to_s |&gt;name++&lt;+age
+}</P>
+
+
+
+	<P>Which is neater and more elegant?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>05:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hmm, let’s try that again:</P>
+
+
+Ruby:
+<PRE>class Person
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+
+  def to_s
+    "#{@name} (#{@age})" 
+  end
+
+  attr_reader :name, :age
+end
+</PRE>
+
+	<P>Aldwych:</P>
+
+
+<PRE>#person(name,age)~
+{
+ to_s |&gt;name++&lt;+age
+}
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>05:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hmm, let’s try that again:</P>
+
+
+Ruby:
+<PRE>class Person
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+
+  def to_s
+    "#{@name} (#{@age})" 
+  end
+
+  attr_reader :name, :age
+end
+</PRE>
+
+	<P>Aldwych:</P>
+
+
+<PRE>#person(name?,age?)~
+{
+ to_s |&gt;name++&lt;+age
+}
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>06:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>
+ MMH : So aren’t they going to have to be taught these features first before they can use them?</I></P><I>
+
+
+	</I><P><I>LL: Nope. They should be taught them while they’re using them. For something real
+</I></P>
+
+
+	<P>So why aren’t Ruby tutorials written like that? Why is there a section which hows a very simple loop first, rather than just a section which shows a loop combined with all the other things required to pick files off a file system and do something to the mp3 ones?</P>
+
+
+	<P><I>
+ MMH : The course I teach, though it’s algorithms and data structures, is very code oriented</I></P><I>
+
+
+	</I><P><I>LL: So, how much of the code that your students write would you suppose that they ever use again? 
+</I></P>
+
+
+	<P>It’s basic coding techniques, loops and iterators going through a collection to change things, loops and iterators going through a collection to pick out the maximum item in its natural ordering, how you can do the same thing ussing recursion. Describing sorting and showing code for it is a good way of illustrating these basic coding techniques a little further. I think they are going to be using basic coding techniques again if they do coding again.</P>
+
+
+	<P><I>
+LL: Also, how much time do you spend on optimization techniques that don’t lend themselves to clever analysis? Even though the typical algorithms class pretends that it doesn’t matter, I can assure you that in the real world there is a difference between n and 100n.
+</I></P>
+
+
+	<P>Optimisation techniques with clever analysis? You think we get that far? Have you ever tried teaching the average British ug student?</P>
+
+
+	<P><I>
+ MMH : there’s at least one course on web technology, with stuff like picking up files off the web. Most students do final year projects</I></P><I>
+
+
+	</I><P><I>LL: Wow, one course and one project. That certainly makes me optimistic for the future!
+</I></P>
+
+
+	<P>Why don’t you try looking at the web pages of various university CS departments to see what course units they teach rather than jumping to conclusions?</P>
+
+
+	<P><I>
+ MMH : But the ‘fizzbuzz’ debate is actually saying that’s part of the problem – students spend too much of their time rote-memorising library commands to fetch things off the web etc, and not enough time on basic algorithmic and abstract thinking.</I></P><I>
+
+
+	</I><P><I>LL: That is total bollocks. Sorry, it just is.
+</I></P>
+
+
+	<P>You ever tried teaching undergraduates? One of teh biggest problems is that they mistake rote memorisation for learning, ane it’s hard to get them to look beyond the examples to the underlying principles.</P>
+
+
+	<P><I>
+If you ask those guys who can’t solve the fizzbuzz problem what the modulus operator does, I’ll bet every single one of them can tell you. They know the abstract meaning fine. They don’t know the practical implication
+</I></P>
+
+
+	<P>No, the fizzbuzz problem isn’t really about modulus. It’s a problem which involves goig through a collection (the integers) and doing something different depending on different properties of elements of the collection. The fact that the property which is tested involves modulus isn’t the important part of the problem.  So it’s really just another version of the problem  YOU  posed. So what does this show, LL? That  YOU  lack the ability to abstract and generalise, the key property to being a good coder. Bet you spend all your time making minor adjustments to boilerplate code, and think that’s what being a good coder is all about.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>07:14</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>
+T: As a recent (2004) CS graduate in the UK, I’m quite surprised by your comment that there is the assumption amongst undergrads that aren’t any jobs left out there that are worth doing or haven’t been outsourced
+</I></P>
+
+
+	<P>The assumption is among potential undergraduates. Applications for CS degrees have halved since 2000/1. If you ask schools careers advisers why, that’s the answer they give – they don’t think there’s any jobs in it these days.</P>
+
+
+	<P><I>
+T: There are  SO MANY  AWFUL  CS  graduates, including a lot from ‘decent’ universities. I never thought it possible to graduate from a red brick university with a degree in CS and not ‘get’ m-n relationships in RDBMs.
+</I></P>
+
+
+	<P>Yes, I think that’s true. Part of the problem is the shortage of good applicants, part of the problem is that it’s very hard to tell who’s going to “get it” until you bring them in. And UK universities don’t have a culture of failing people, it’s a bad thing, it drags you down the league tables.</P>
+
+
+	<P><I>
+T: This maybe why your students want to study DB based web systems – its where the world works nowadays, and, as I’ve said, there will always be jobs for talented programmers to earn decent wages. Our office is eagerly looking forward to recruitment this year, we have lots of spaces for new nuggets.</I></P><I>
+
+
+	</I><P><I>Ability to write complex and fancy algorithms using esoteric research languages like Haskell not required
+</I></P>
+
+
+	<P>Sure, I’m not saying that’s not the case. But why don’t you try looking at what’s taught in the universities? I think you’ll find a lot of it is more practical than you suppose. Mine certainly doesn’t have a course on writing complex and fancy algorithms in Haskell. I said I found Haskell “elegant”, I didn’t say I found it practical.</P>
+
+
+	<P><I>
+You do actually raise a decent point in your article about universities setting the bar too low on programming assignments. The answer is to raise the bar.  A LOT  . Anyone who doesn’t pass their programming courses over the first year should be encouraged to transfer to a non programming IT speciality –  DBA  -orientated course for example. Of course, this couldn’t happen, because of that *S part again – its all got to be Science to academia.
+</I></P>
+
+
+	<P>Why don’t you try looking at what is actually taught rather than jump to assumptions? A few top-level CS departments are very theory oriented, Oxford and Cambridge, for example. Most aren’t, not nearly so much as the anti-academic prejudices that are coming out here love to make out.</P>
+
+
+	<P>Actually, the real reason for not raising the bar higher is that we’re a business. If we failed 80% of our students, we’d be out of a job. Look at all those Chemistry departments that have got closed down. We’re struggling because applications have halved already. Competition for good students and pitching the market right are a lot of what we’re about. It’s a lot more “real world” than manmy suppose.</P>
+
+
+	<P><I>
+I take it you didnt have readability of code as one of your aims with Aldwych.. probably because maintenace of code is not something that academics ever deal with (hey, its research right? Wont need to do that again after I’ve published..)
+</I></P>
+
+
+	<P>Look, why don’t you just  TRY  reading what I wrote? In my original article which sparked all this, one of the points I made about Ruby was that I was concerned it would lead to hard-to-maintain code. And now here I am being accused of not being interested in code maintainability. So this just shows my attackers here are just full of prejudiced hot air – they’ll attack me for one thing, then they’ll attack me for the exact opposite.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>07:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>@MMH: What can I say, you seem to be full of contradictions. On the one hand you’re a stickler for correctness, and on the other hand you’re ever the rational pragmatist who feels the need to pass the incompetents otherwise the school would be out of business.</P>
+
+
+	<P>So what are you? A business man? or an academic?</P>
+
+
+	<P>At least one thing is for sure, You will, for the rest of your life, will not treat the interactions in the “bazaar” as you did your interactions in the “cathedral”. You will do more work in defending your case than you ever did in defending it in the academy. And you will know that tech-jargon mumbo-jumbo will only take you so far, and that credibility in the new world is not bestowed upon you, but you  EARN  it.</P>
+
+
+	<P>You were used to your lazy ass and mostly incompetent “acedemic peers” who are used to prey upon their graduate students to pad their own “research” by putting their names on research papers actually done by students. You didn’t expect the ruffians in the bazaar to fact-check your ass and give you a good hiding in the process.</P>
+
+
+	<P>Welcome to the world. I’m glad you took the red pill. Kicking and screaming and mostly by mistake, but take the red pill you did grasshopper.</P>
+
+
+	<P>Welcome. You’re one of us now. :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>08:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Going back a bit</P>
+
+
+	<P><I>
+forrest:</I></P><I>
+
+
+	<P> ARRRGH  . That guy makes me crazy! I could literally write a book in response to that article (I’ve now gone off and read most of it and returned). It’s so ridiculously prescriptive and closed-minded.</P>
+
+
+	<P>...</P>
+
+
+	</I><P><I>There’s a place for strong typing, there’s a place for type inference and there’s a place for duck typing. It all comes down to what best fits your hand or the task at your hand.
+</I></P>
+
+
+	<P>Er, that’s what I wrote. Did you actually bother reading the article? I gave a case for and a case against duck typing.</P>
+
+
+	<P><I>
+Trying to pretend that there are objective winners in the language wars is so depressingly
+</I></P>
+
+
+	<P>Er, I didn’t say there were objective winners. I said there were problems I could see with Ruby, I also said there were circumstances where I would use it. The article was actually balanced, giving arguments for and against. You accuse me of being closed-minded, I think it;s pretty onvious from the way you jump to conclusions that like most other people posting here,  YOU ’RE the closed-minded ones. “Uggh, he criticised Ruby, he’s an evil fascist boo hiss”.</P>
+
+
+	<P><I>
+Maybe “didactic” is another, because I think part of his dislike for the Poignant Guide comes down to the fact that he’s an academic and the Poignant Guide is by an autodidact for other autodidacts
+</I></P>
+
+
+	<P>Er, ever tried being an academic? What do you think an academic is? Much of the stuff I teach didn’t even exist when I was a student. How do you think I learnt it?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MMH</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>08:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><I>
+LninYo:</I></P><I>
+
+
+	</I><P><I>What can I say, you seem to be full of contradictions. On the one hand you’re a stickler for correctness, and on the other hand you’re ever the rational pragmatist who feels the need to pass the incompetents otherwise the school would be out of business.
+</I></P>
+
+
+	<P>Not at all, I think I’ve exposed a bunch of stuck-up poseurs for what they really are.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>phil</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>10:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>So, let’s hope the programming language of <A href="http://t-a-w.blogspot.com/2006/07/programming-language-of-2010.html">2010</A> won’t get bogged down by <A href="http://ridiculousfish.com/blog/archives/2007/02/17/barrier/">barriers</A> (nothings sucks more than boring code snippets btw).</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lambda lambada</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>11:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>That  YOU  lack the ability to abstract and generalise, the key property to being a good coder. Bet you spend all your time making minor adjustments to boilerplate code, and think that’s what being a good coder is all about.</EM></P>
+
+
+	<P>Whatever you say, dude. I’m just an ignorant code monkey who’s never taught programming to undergraduates at a top-ranked CS school. Yep.</P>
+
+
+	<P>Hint: you’re wrong. Badly so. Enjoy your career, such as it is.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>11:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Geez people.  Listen to yourselves, seriously.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Klondike</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>12:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Stop yelling at  MMH  and calling him names!  My god, people.  WE’RE  SUPPOSED TO BE THE NICE ONES !</P>
+
+
+	<P>Kiwi shavings.  I stand by kiwi shavings.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>B^]</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>12:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The Foxes need to meet Prawnzilla: http://www.nicecupofteaandasitdown.com/prawnzilla/</P>
+
+
+	<P>or Eagle: http://eagledna.comicgenesis.com/d/20030119.html</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>13:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yes, I’m going to stick with kiwi shavings, K.  Though, a slight change of plan: fish tacos!!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>13:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>@MMH : <EM>Not at all, I think I’ve exposed a bunch of stuck-up poseurs for what they really are.</EM></P>
+
+
+	<P>Have to agree with you on one point at least, i.e., every poser needs a little exposition once in a while, and no one is contesting that Ruby doesn’t have those (but that wasn’t the original purpose of the “Knights of Ni” when they set about the fetch the shrubbery as it were LoL! ) .</P>
+
+
+	<P>Also, the future readers of this and other threads will make up their minds as to who the posers were. That is the beauty of the bazaar.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>ChrisColon</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>14:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The important question here is, does <STRONG>why</STRONG> like McDonalds or Burger King?</P>
+
+
+	<P>I have to admit that sometimes why’s poignant guide can be a bit too.. ehm.. weird-ish (why-esk?), though I still like the parts were he keeps the weirdness down to a few funny sentences pretty much. It’s a totally different approach to teach people Ruby and that’s great, because people <STRONG>are</STRONG> different. And the most important thing to consider is, if you don’t like it, you don’t have to read it. There are quite a few Ruby books out there, no one should be offened by <STRONG>why</STRONG>’s effort to make an original one. And an original one it is.</P>
+
+
+	<P>And the fact remains, that apart from the comic foxes and the weird space stories, how why actually teaches the language makes it really easy to learn Ruby. I used why’s guide as a starting point because the Pickaxe was a bit too hard for me and then I dived into the Pickaxe and had no problems understanding the more complex parts of Ruby any more.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>_lynX</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>15:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><EM>Not at all, I think I’ve exposed a bunch of stuck-up poseurs for what they really are.</EM></P>
+
+
+	<P>What you have really exposed is how jealous we are of you! I wish that I could only glimpse for a single moment the thoughts running through your head, so that I could understand the wonder that is the non-Ruby programming world and Aldwych! Forget programmer-oriented languages, beautiful syntax, enriched communities, and non-standard  CRAP  like that! I love you and everything you have ever thought or said  MMH , I really do!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>squarelover</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>18:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yes, _why! You ruined everything! After over 10 years of corporate programming, I was frustrated and called it quits. Had it not been for the Poignant Guide, I might have been a better politician, or working to reduce global warming, or would have become a musician that made songs that healed the world (just like those Bill and Ted guys).</P>
+
+
+	<P>Damn you and your Guide. It sucked me back in to building wacky stuff that I probably shouldn’t be. Furthermore, it removed the stress that should be keeping me away from such a worthless profession.</P>
+
+
+	<P>You ruined everything! The world might have been a better place without your silly guide and talking foxes!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>EntropyFails</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>21 Mar 2007</NOBR> at <NOBR>23:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Thank you why, Dr.  MMH  Phd., and all the rest of you.</P>
+
+
+	<P>This whole thing is just completely priceless and I’ll be smiling for days. And now I have a hankering for  FISH  too!</P>
+
+
+	<P>Could any more be asked of a webpage?</P>
+
+
+	<P>I think not.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Kombinat!</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Mar 2007</NOBR> at <NOBR>01:47</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Let’s fire up that Kernel grill. sprinkle symbols for kindling with those dot dot handles, let’s throw some in :a, :b, :c, :d, :e, :f, :zzzzzzzzzz – that last one will burn nicely, looks like a dragon or a snake, well, no – this one is a snake here :<SUB>~~</SUB><SUB>~</SUB> I do wish I can make symbols like those when I bake my rails pies, like this one :....... a firecracker, great for kindling, wouldn’t last long, but puffffff,,,,, shhhhhhhhhhhh that would burn fast, but might scare foxes.</P>
+
+
+	<P>Kiwi shavings? -hm, on the grill? My’o’My they will be done in no time. No fish tacos for me, thanks, I will throw some more logs. gather round. feel the warmth. Halibut! Halibut! I want that Halibut! yum…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Fin</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Mar 2007</NOBR> at <NOBR>05:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><IMG src="../images/funnycomic_capwank.jpg" alt=""></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>leethal</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>22 Mar 2007</NOBR> at <NOBR>07:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG> MHH </STRONG>: your attutude is not amusing. We none academic people call this kind of behaviour “trolling”, and I think we’re right. _why is the best counter troll I’ve ever seen, I wish I had his skills.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lwu</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Mar 2007</NOBR> at <NOBR>13:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Looking back, I wonder if the misunderstanding is mainly cultural and linguistic.</P>
+
+
+	<P> MHH  said “The use of the rather childish word ‘horrid’ was mean [sic] to be an indication I wasn’t being entirely serious” and indeed, the  OED  lists as one definition “colloq. in weakened sense. Offensive, disagreeable…”</P>
+
+
+	<P>I’ve had British coworkers who use horrid in this “weakened sense,” but  MHH  might not realize that “horrid” doesn’t quite translate nicely into American English, where it tends to mean “extremely horrible”.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>lwu</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Mar 2007</NOBR> at <NOBR>14:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The poignant guide doesn’t work for everyone, which is great, because if it did, we’d be weeping all day and the streets would be but saline rivers.</P>
+
+
+	<P>That said, should we get together and write a non-poignant guide?!</P>
+
+
+	<P>It would talk about concurrency (as MenTaLguY cites), the modern view of static vs dynamic typing (on a Google data center scale, so I’ve been told, one wishes to think of failure in a probabilistic rather than binary sense, as you must generally assume that things /will/ fail. The weaker probabilistic guarantee that dynamic typing provides, then, might be a reasonable trade-off if your system works 99% of the time, when compared to a system that only works when everything checks out).</P>
+
+
+	<P>It could also warrant a more detailed analysis of mixins and the dangers / opportunities in extremely open classes (compare with B. Meyer’s open-closed principle), mention recent work on using continuations to facilitate stateful webapps (Seaside), and perhaps have some light discussion on scaffolding, packaging (gems) and deployment, run-time goodness (Sandbox), the importance of  DOM  literacy (Hpricot), eigen/singleton classes versus Smalltalk paradigms, Smalltalk images vs Ruby-as-Unix friend, Ruby-as-glue (cite Shirky on “situated software”), and so on.</P>
+
+
+	<P>(Would write more, but back to academic hacking then…)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>too scared</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>23 Mar 2007</NOBR> at <NOBR>16:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>oh no, fish tacos!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>#</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Mar 2007</NOBR> at <NOBR>01:03</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Do people really like fish tacos? Frankly, I find them quite horrid. And you?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Tyler</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>24 Mar 2007</NOBR> at <NOBR>19:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m a bit late to the scene, but _why you’re one of the best things about the ruby family.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>YeahRight</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>25 Mar 2007</NOBR> at <NOBR>12:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>EntropyFails: “Could any more be asked of a webpage?”</P>
+
+
+	<P>I think Fin provided it.</P>
+
+
+	<P>So no – unless we were to include cartoon foxes – if we could do that, this could be the webpage to end all webpages – and wouldn’t that be sad – but <I>poignant!!</I>.</P>
+
+
+	<P>...</P>
+
+
+	<P>But back to bickering…I still find that Why’s main point was that Ruby was expressive and so he writes an expressive book, showing you some real neat code snippets and how to express yourself in Ruby.</P>
+
+
+	<P>I found it somewhat Calvino-esque, myself. And I think that’s finally what  MMH  doesn’t get about the book, it doesn’t <I>simply</I> belong to the Programming Guide/Tutorial genre. Time and people will tell whether it’s a great work of art, but it does as John Gardner says good “fiction” does, it stews up genres. Why wants to tell you a story, teach you ruby, and go off on tangents. If that’s not your thing—get yourself another book  PRONTO !!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>SonOfLilit</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Mar 2007</NOBR> at <NOBR>03:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG> MMH </STRONG>, I’m really ashamed of the reactions of some of my fellow Rubyists.</P>
+
+
+	<P>I think _why’s own reaction should be an example to us all.</P>
+
+
+	<P>(Disclaimer: following paragraphs only express my opinionated interpretation).</P>
+
+
+	<P>He just showed, in sattirical genius, that he has a problem with the way you associated his tutorial with Ruby as a whole product and the use of the word “horrid”, which outside the UK has connotations different than those with which you’ve intended to imbue it.</P>
+
+
+	<P>Another disclaimer: I haven’t read your article, and probably won’t. I’ve read your defense of it and was convinced very quickly that this is a huge case of miscommunication.</P>
+
+
+	<P>Now, don’t get me wrong, I love the Poignant Guide, it’s one of my favorite books, I especially like the parts where _why tells about his sister. The contents and style really touch me. I love the book as a work of art, love, poetry.</P>
+
+
+	<P>I also used it, together with other sources, to learn Ruby, because it was fun.</P>
+
+
+	<P>But _why’s masterpiece is not official Ruby documentation. It is fan art. Would you hate architecture just because you don’t like how Ayn Rand wrote about it in “The Fountainhead”? Would you hate Harry Potter because of the awfully sick tentacle-filled slash fanfics people write about the characters and world it introduced?</P>
+
+
+	<P>I wouldn’t.</P>
+
+
+	<P>That is why I advise to you not to be blown away by this work that you don’t connect with. Learn Ruby somewhere else, it rocks.</P>
+
+
+	<P>But this has nothing to do with the subject of “is Ruby a good language or isn’t it?”.</P>
+
+
+	<P>The only interesting claim regarding ruby itself in this thread was the comparison of Ruby code with Aldwych:</P>
+
+
+<PRE><CODE>
+class Person
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+  def to_s
+    "#{@name} (#{@age})" 
+  end
+  attr_reader :name, :age
+end
+</CODE></PRE>
+
+	<P>That’s the way we’d have it in Ruby: it’s more readable than your Aldwych example (which is a good example of golfing in language design,  BTW ). I like the fact that the Ruby code is almost self documenting (to a programmer of any language), whilst the Aldwych code requires a lot of knowledge about language internals. I’m sure, though, that there’s some beautiful magic going on with that Aldwych piece that I would respect had I studied it.</P>
+
+
+	<P>You can read it and understand what it does.</P>
+
+
+	<P>But that comparison wasn’t fair: you took a piece of code in one language, with it’s conventions on e.g. how to format data by default, and tried to translate that 1:1 to another language. Ruby also has a default to_s, which we think is fitting the way the language works. How would Aldwych code for the following example look in Aldwich?</P>
+
+
+<PRE><CODE>
+class Person
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+  attr_reader :name
+  attr_accessor :age
+end
+</CODE></PRE>
+
+	<P>In Ruby, for cases like your example, we have Struct:</P>
+
+
+<PRE><CODE>
+Struct.new("Person", :name, :age).class_eval(%q{def to_s() "%s (%s)" % [@name, @age]; end}
+
+#ta-da!
+</CODE></PRE>
+
+	<P>Don’t forget my question from earlier.</P>
+
+
+	<P>:)</P>
+
+
+	<P>Aur Saraf (SonOfLilit)</P>
+
+
+	<P> PS I  won’t get into the argument about universities and ways to teach code. I have my own opinions and they are completely off topic.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>LninYo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Mar 2007</NOBR> at <NOBR>08:51</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Okay, if you want a slightly less free-form/artsy guide/tutorial 
+to Ruby, you should check out Mr. Neighbourly’s <A href="http://www.humblelittlerubybook.com/">Humble LIttle Ruby Book</A> . I was going through the 2nd chapter only yesterday and I gotta tell ya, it cracked me up. I can’t find that particular para, but the book is full of light-hearted humor (and some typos … I’m looking at <EM>you</EM> “Range” section!) Also, it may not have foxes, but it has wombats.. I mean.. if that is your cuppatee..</P>
+
+
+	<P>Here is an example which made me smile:</P>
+
+
+	<BLOCKQUOTE>
+		<P>I can hear you saying, “Who cares about that crap?! I need to read a file. I made the
+file. I know all that crap about it! Tell me how to read it or I challenge you to a knife
+fight, right now, behind the Waffle House! You and me, pal! We’re taking it to the
+matresses!” I would like to now kindly respond to your anger with this little tidbit:<CODE>
+myfile = File.open("textfile.txt", "r")
+myfile.each_line {|line| puts line }
+myfile.close
+</CODE></P>
+	</BLOCKQUOTE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>murphy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Mar 2007</NOBR> at <NOBR>14:05</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hello, <STRONG> MMH </STRONG>, I’m glad youy joined the discussion.</P>
+
+
+	<BLOCKQUOTE>
+		<P>Why do you say it was a “rant”?</P>
+	</BLOCKQUOTE>
+
+
+	<P>because it felt like one to me. no deeper reason.</P>
+
+
+	<BLOCKQUOTE>
+		<P>some of the comments I’ve seen made about it were exaggerated</P>
+	</BLOCKQUOTE>
+
+
+	<P>they are. Ruby is no silver bullet. it’s simply, for many people, the best language available.</P>
+
+
+	<BLOCKQUOTE>
+		<P>I just used this example to question whether the “principle of least surprise” was quite so obvious as Rubyists claim</P>
+	</BLOCKQUOTE>
+
+
+	<P>matz has commented on this long time ago:</P>
+
+
+	<BLOCKQUOTE>
+		<P>Then they come up to me and say, ‘I was surprised by this feature of the language, so Ruby violates the principle of least surprise.’ Wait. Wait. The principle of least surprise is not for you only. The principle of least surprise means principle of least my surprise. And it means the principle of least surprise after you learn Ruby very well.</P>
+	</BLOCKQUOTE>
+
+
+	<BLOCKQUOTE>
+		<P>Is this really such a bad thing to bring into the discussion that it warrants me being accused of being “Soooo damn in love with being right” let alone someone calling for me being fucked in the butt with something sharp?</P>
+	</BLOCKQUOTE>
+
+
+	<P>no. I’m sorry for (indirectly) calling you stupid. we will get nowhere with this attitude. every community should be judged by how they deal with critic.</P>
+
+
+	<BLOCKQUOTE>
+		<P>One of the reason I see Ruby as not particularly innovative is that it’s still completely sequential with the same concurrency mechanism as in Java etc.</P>
+	</BLOCKQUOTE>
+
+
+	<P>Ruby doesn’t want to be innovative. as I said in another board, it’s <EM>not ahead of its time</EM>, and that’s what makes it strong. Ruby is the language of today, not of tomorrow. and because I live today, I love it.</P>
+
+
+	<BLOCKQUOTE>
+		<P>...concurrency…</P>
+	</BLOCKQUOTE>
+
+
+	<P>I’m sorry, but there are people out there that are not interested in this topic at all ^^ but I understand your attitude now a bit better: Ruby is just a poor lanugage for someone who’s interested in only one aspect of programming languages.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>murphy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Mar 2007</NOBR> at <NOBR>14:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I really don’t want to be a troll, but…isn’t it possible that some people here have failed in university and still have bad feelings about their past, that they now crap on someone who’s still there? please, let’s not get personal here. it’s about Ruby.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MrCode</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Mar 2007</NOBR> at <NOBR>18:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Talk about being late to the party.</P>
+
+
+	<P>I too was somewhat enraged after reading  MMH ’s article. I’ve since learned that “horrid” isn’t quite as bad for the Brits as it is for us Yanks.</P>
+
+
+	<P>Still I find it funny how people have the need to fight against perceived “hype” for some open source technology. It is not like Ruby is being sold by someone and therefore hyped for the purpose of making sales. It is hyped because people like it. Are we Ruby fans all mis-guided and brainwashed by Matz? I tend to think not.</P>
+
+
+	<P>Your article struck me as quite prudish and strict, though maybe that was the style you adopted when writing it. I found your postings here more likable.</P>
+
+
+	<P>I do agree with you that teaching programming is no easy feat. To me it came naturally so I can’t even relate to those who struggle with it. Though there are certainly skills in my life I’ve struggled to learn that others learned easily.</P>
+
+
+	<P>I doubt anyone who has used Ruby for any period of time (and is therefore still not steeped in the “Rails Kool-aid”) would disagree that it has flaws. It certainly does. You just didn’t find them in your brief look at the language.</P>
+
+
+	<P>- Ryan Leavengood, Ruby programmer since 2001</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>AkitaOnRails</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Mar 2007</NOBR> at <NOBR>10:13</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>The “_Why Way” (hm, I just created a new trend) is what I praise the most for programmers. I write about that a lot at my BalanceOnRails blog for brazilian developers. Yes, programming was born at laboratories and academia but it was a circunstance. The people involved would not call themselves just ‘academics’ but ‘artists’, ‘hackers’. That’s what I see in Douglas Engelbart, Alan Kay, Charles Simonyi, Jef Raskin, Richard Stallman, Bertrand Meyer. Programmers should not limit themselves to pure procedural engineering and production lines. Programming is all about art, taste, delight, fun. We create great stuff out of pure inspiration, not following straight recipes. _Why is, for me, the pinnacle of what I believe every programmer should aspire.</P>
+
+
+	<P>‘nuff said.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Mr. Floppy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Mar 2007</NOBR> at <NOBR>13:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m not a big fan of the guide, but am relishing the opportunity to stand up at a meeting someday and say “Now here’s an introduction by a gentleman named ‘why the lucky stiff’, who I will simply call Mr. Stiff from this point on”.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>JGoldstein</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Mar 2007</NOBR> at <NOBR>16:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m new to programming <DEL>- one  HS C ++ class 8 years ago -</DEL> and have found your guide emmensly helpful.  I bought Agile  ROR , built the depot, and wanted more info on Ruby.  I stumbled on your guide; and after only a few hours of reading, I feel like a new man!  Keep up the good work!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>BrianL</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Mar 2007</NOBR> at <NOBR>01:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I don’t like being mean but Matthew Huntbach is an elitist idiot… I’ve done it his way: enduring boring, extreme, jargon loaded, high level formal crap that serves more to stroke the author/speaker’s ego than to help the person learning…</P>
+
+
+	<P>You’re bringing back coolness and fun to learning and programming; who really cares what the pizzabox programmer thinks</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>ZephyrTheZeph</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>03 Apr 2007</NOBR> at <NOBR>08:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Sounds like he has sour grapes, Little does he know, All programmers are cool, Except him, He got left out.</P>
+
+
+	<P>Don’t worry, You’re totally awesome, Some washed up C++ programmer is just jealous</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ilan Berci</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>04 Apr 2007</NOBR> at <NOBR>13:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>“He desired a stallion, but no stallion appeared. And that’s how he discovered that the planet wouldn’t read his mind and answer his wishes.” _why  poignant guide to ruby</P>
+
+
+	<P>Book on coding, zen koan, spiritual path, horse buying guide?  You decide.</P>
+
+
+	<P>ilan</P></DIV></DIV>
+</DIV>
+
+
+<DIV class="entry">
+<FORM name="userComment" method="post" action="/api/comment/cult/whatSWrongWithRubyHahYeahItSMe">
+  <DIV class="entryAttrib">
+     <DIV class="entryAuthor"><INPUT name="sayor" type="textbox" size="15" maxlength="50"></DIV>
+     <DIV id="liveTime" class="entryTime"><NOBR>11 Jul 2010</NOBR> at <NOBR>20:36</NOBR></DIV>
+  </DIV>
+  <DIV class="entryContentOuter"><DIV class="entryContent">
+     <INPUT type="hidden" name="timestamp" value="yopYLare1A">
+     <TEXTAREA name="consay" rows="6" cols="50"></TEXTAREA>
+     <P><INPUT type="button" name="pleasePreview" value="preview" onclick="liveTextilePreview(document.forms[&#39;userComment&#39;].elements[&#39;consay&#39;], &#39;textilePreview&#39;, &#39;/api/preview&#39;)">
+        <INPUT type="submit" name="submit" value="&gt;&gt;">
+        <SMALL>* do <A href="../javascript:quickRedReference();">fancy stuff</A> in your comment.</SMALL>
+     </P>
+     <DIV id="textileWrap"><H4>PREVIEW PANE</H4>
+     <DIV id="textilePreview"></DIV>
+     </DIV>
+     </DIV>
+  </DIV></FORM></DIV>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</BODY></HTML>

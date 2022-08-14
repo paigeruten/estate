@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Key Stroking With That Technology We Like To Call Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/07/31/keyStrokingWithThatTechnologyWeLikeToCallShoes.html">Key Stroking With That Technology We Like To Call Shoes</a></h1>
+  <div class="time"><strong>July
+31st
+</strong>
+    01:58</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Whether you just like to call it Shoes or you legitimately <em>love</em> to call it Shoes, there&#8217;s no question that it really <strong>is</strong> Shoes.  Few people doubt that.  And those that do are lifeless goons who would cut a hole through a pelican without batting an eye.</p>
+<p>Let&#8217;s cover how to capture keystrokes in Shoes.  In web browsers, you get back a keycode.  On Try Ruby, I spent some time figuring out what codes where what.  I sent alot of Germans <a href="http://tryruby.hobix.com/keys.html">here</a>.</p>
+<p>In Shoes, after a key press, you get something more useful than a keycode.  You can expect to get one of these:</p>
+<ul>
+	<li>In the case of a printable letter, <strong>a <span class="caps">UTF</span>-8 string</strong>.</li>
+	<li>Special keys like Backspace come back as <strong>a symbol</strong>.  Such as <code>:backspace</code>.</li>
+	<li>Modified keys come back as <strong>a symbol</strong> as well.  Like <code>:alt_q</code>.</li>
+</ul>
+<p>Letters can only be modified right now with the Alt (or Option) key.  Special keys can be modified by Control, Shift and Alt.  In that order.  (So, if you press Control+Shift+Alt+Up, you get <code>:control_shift_alt_up</code>.)</p>
+<hr />
+
+<p>One of the things I&#8217;m writing in Shoes is a little text editor.  Here&#8217;s a snip from the key stroke bit:</p>
+
+<pre><code class="rb">str = ""
+Shoes.app do
+  keypress do |k|
+    case k
+    when String
+      str += k
+    when :backspace
+      str.slice!(-1)
+    when :tab
+      str += "  "
+    when :alt_q
+      quit
+    end
+  end
+end
+</code></pre>
+<p>Source to a working mini-editor based on this code is <a href="http://code.whytheluckystiff.net/svn/shoes/trunk/samples/edit.rb">here</a>.</p>
+<p>Now, there are a few things missing from Shoes which could really help this editor out.  A cursor.  Text selection.  Cut, copy and paste.  And win32 is missing a vertical scrollbar.  I assure these matters are of grave import to me!!</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">8 comments</a></div>
+
+<div class="entry">
+    <h3>RubyPanther</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    09:44</div>
+    <div class="content"><p>It would be nice if modified keys returned both the UTF8 string and also the modifier symbols. Guaranteed to be at least two peaches easier to work with.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Automatthew</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    10:23</div>
+    <div class="content"><p>Dear Why,</p><p>You write like the late R. A. Lafferty.  This is a good thing.  Continue.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Brian</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    12:19</div>
+    <div class="content"><p>I hadn&#8217;t read R.A. Lafferty&#8211;but will now &#8230;</p><p>Meanwhile, these Shoes feel just great. Thanks for the creations &#8230; The sample mini-editor is the nicest little Ruby-let I have used. It&#8217;s just plain fun and cool to run a little bit of code on Windows and Ubuntu and see GUI things point-and-click and work the same way on multiple platforms.</p><p>&#8220;Try your shoes!&#8221; This is software grandmothers will love.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zerohalo</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    14:08</div>
+    <div class="content"><p>Very nice, _why. I think you could be coming up with something that could be easy enough for kids to learn to make their own apps with, using Ruby. I&#8217;m going to try it with my 9 yr old daughter and see how she grasps it, as your code progresses.</p><p>I&#8217;d recommend finding a balance between making things easy but yet not having too much &#8220;magic&#8221;. The problem with magic is that it makes it easy for the kid to do stuff quickly, but it also provides a crutch to where they&#8217;re just doing certain things without understanding the process. If they can actually see the process in the code that they&#8217;re writing, even if they have to write a bit more lines of code, I think it helps them to understand the programming flow, which I believe is essential to learning programming--learning how to &#8220;think&#8221; programming. I&#8217;ve been looking at various GUI toolkits for my daughter to progress into creating small games with Ruby, now that we&#8217;re getting a bit past the console, but most of them are just a bit complex for a child&#8211;though wxSugar and RubyGame are pretty good (RubyGame is of course a completely different animal). I have a feeling you&#8217;re hitting on something here with Shoes. Thanks!</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    14:56</div>
+    <div class="content"><p>I used another approach in my (slightly competing, though still unpublished) library:</p><p><code><br>
+widget.on_key_down(&#8217;ctrl+a&#8217;) do<br>
+  #only ctrl+a&#8217;s would be here<br>
+end</p><p>widget.on_key_down(&#8217;shift+*&#8217;) do |event|<br>
+   #all shift+something would be here<br>
+   #event.key would be pressed key symbol<br>
+end</p><p>widget.on_key_down(&#8217;*&#8217;) do |event|<br>
+  #all keys WITHOUT modifiers<br>
+end</p><p>widget.on_key_down do |event|<br>
+  #all keys<br>
+  #can examine event.key and event.modifier<br>
+end<br>
+</code></p><p>there is two differences:<br>
+1. strings for me seems more natural than symbols (as symbols feels like &#8220;something integral&#8221;, while strings are &#8220;something you can concat and split&#8221;, also, strings allow more &#8220;natural&#8221; shortcuts writing, even &#8220;ctrl+shift+=&#8221;)<br>
+2. independent handlers setting for each shortcut seems more flexible than common &#8220;case&#8221; solution.</p><p>PS: pre closing tag doesn&#8217;t work in comments :(</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    15:02</div>
+    <div class="content"><p><strong>zerohalo</strong>: Thankyou for your comments.  I agree with you.  Shoes will have less magic than many of my other libraries.  I do have a few shortcuts: like how <code>button { &#8230; }</code> is a shortcut for <code>button.click { &#8230; }</code>.  Anyhow, since it&#8217;s all written in C, I can&#8217;t really get too tricky with it.</p><p><strong>zverok:</strong> Those are good points.  Similar to RubyPanther&#8217;s, in a way.  I will probably be reconsidering some of this in light of what you fellows have said.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zerohalo</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    16:36</div>
+    <div class="content"><p>_why, generally I agree with shortcuts especially if they simplify the syntax while still making it clear what is happening. If I may present a contrasting opinion on your button example, just from the standpoint of a child&#8217;s understanding (though I understand you&#8217;re not writing Shoes for children): I would say that button.click while longer, makes more sense than button. The child sees &#8220;button.click { &#8230; }&#8221; and it&#8217;s easy for them to grasp that the block is executed when the button is clicked. Whereas &#8220;button { &#8230; }&#8221; could be interpreted as meaning other things. Likewise if they see button.size() or button.color() it&#8217;s apparent that&#8217;s the size of the particular button. I can&#8217;t say I&#8217;ve thought this through really thoroughly so what I suggest may be seriously flawed, so I&#8217;m just throwing this out for your consideration, something like:</p><p>button(ask) do<br>
+   self.size = [100,233] # or perhaps self.size(100,233) <br>
+   self.color = [255,255,255] # or a named color<br>
+   self.label = &#8220;Ask&#8221;  # you might want to change the button label later<br>
+   self.position = 2 #  I&#8217;m not sure about this, but it&#8217;s basically a way to change the order of the buttons or widgets in the stack.<br>
+   self.clicked { do_stuff }  <br>
+end</p><p>PS. I like your keypress method. Makes great sense.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jtoy</h3>
+    <div class="time">said on <strong>August
+      1st</strong>
+    20:14</div>
+    <div class="content"><p>nice work!!!! this is like a mini adobe air / qt / silverlight / xulrunner engine.  This could be an extremely awesome project.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

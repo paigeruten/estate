@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0095)redhanded.hobix.com/cult/rubyGnome2andglade2demo.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/cult/rubyGnome2andglade2demo.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Ruby-GNOME2 and Glade2 Demo</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Ruby-GNOME2 and Glade2 Demo
+  <SPAN class="entryPermalink"><A href="../cult/rubyGnome2andglade2demo.html" title="Permanent link to &ldquo;Ruby-GNOME2 and Glade2 Demo&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://www.sgtpepper.net/hyspro/diary/" title="Visit daigo&#39;s homepage">daigo</A> 
+  in <A href="../cult" title="List of entries in the &ldquo;cult&rdquo; category">cult</A>
+</DIV>
+
+     <DIV class="entryContent"><P><A href="http://ruby-gnome2.sourceforge.jp/hiki.cgi?RubyZilla">Here</A> is a ten-minute flash movie made by <A href="http://www.yotabanana.com/lab/20051022.html">Mutoh-san</A> to demonstrate implementation of Web browser using <A href="http://ruby-gnome2.sourceforge.jp/">Ruby-GNOME2</A> and <A href="http://glade.gnome.org/">Glade2</A>. Glade is a user interface builder for <SPAN class="caps">GTK</SPAN>+ and <SPAN class="caps">GNOME</SPAN> and generates an <SPAN class="caps">XML</SPAN> configuration file which can be converted to Ruby script by libglade.</P>
+
+
+	<P>What is your favorite <SPAN class="caps">GUI</SPAN> tool kit for Ruby on Linux (I am investigating)?</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>28 Oct 2005</NOBR> at <NOBR>22:37</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    25 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mico</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Oct 2005</NOBR> at <NOBR>23:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yup, saw that a couple of days ago. It’s very impressive. I don’t code  GUI  apps, so I don’t have a suggestion.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Danno</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Oct 2005</NOBR> at <NOBR>23:42</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Is it okay to be shocked that a web browser can be implemented in 10 minutes?</P>
+
+
+	<P>I mean, I know he didn’t do the rendering engine for the pages or anything (or  DID  he?, I didn’t finish watching yet), but still, it’s pretty impressive.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Danno</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>28 Oct 2005</NOBR> at <NOBR>23:50</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Okay, no rendering engine (that would be impressive in 10 minutes,  VERY  impressive, impossible, I think though, in 10 minutes, maybe an hour).</P>
+
+
+	<P>Still, I like what I see, and, if I may predict where you’re going with this:  MouseHole Browser?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>osoh</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>03:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yes, quite impressive!</P>
+
+
+	<P>At this time, we’re using QtRuby. But whenever I can, I’d like to try Korundum with  KDE  goodies.</P>
+
+
+	<P>Both of them are available at <A href="http://rubyforge.org/projects/korundum">Rubyforge</A>.</P>
+
+
+	<P>See ya!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Vagabond</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>04:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m quite partial to the  GTK  toolkit, it even has <STRONG>gasp</STRONG> decent  API  documentation which at times borders on the excellent. Glade also takes the sting out of most of the UI design stuff.</P>
+
+
+	<P>I’d try the QT bindings, but I purged QT from my system 6 months ago and haven’t found a reason to reinstall it. Also, I’m not sure I want to be forced to licence my programs under the  GPL  (even tho I generally do…)</P>
+
+
+	<P>Now, if we just had a good console UI toolkit thingy I’d be happy…</P>
+
+
+	<P>Vag</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zem</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>04:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I like gtk. The  API  feels nice, though it’s not very extensible if you want to step outside the box.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>zem</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>05:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Extensible from the ruby side, I meant – I daresay it’s easy enough to extend in C</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>daigo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>07:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I did not know Glade and vnc2swf. They are great. I wondered which (Qt or Gtk) is mature for Ruby.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>kode</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>11:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I haven’t tried any yet, but I feel like foxrb is nice enough for me to try out first.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>kode</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Oct 2005</NOBR> at <NOBR>11:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>or whatever it is called, fxRuby? fox gtk, in any case.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>porges</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>04:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m not sure what you’re trying to say here: “Glade is a user interface builder for  GTK + and  GNOME  and generates an  XML  configuration file which can be converted to Ruby script by libglade.”</P>
+
+
+	<P>But it sounds wrong ;)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Vagabond</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>06:20</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yeah, its wrong, the  XML  generated by Glade can be loaded into any application that has libglade bindings or libraries. It doesn’t generate any actual application code (well glade can generate C/C++ code but its depreciated and will be removed in glade 3 I think). Basicially you load the xml into your app, then you gain access to all the widgets defined in it.</P>
+
+
+	<P>I mainly like it because it allows me to skip defining every last widget in ruby, and its easier to change (most of the time) then hardcoded widgets.</P>
+
+
+	<P>Vag</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>binbunban</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>07:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I hope the focus of Ruby’s fan will move from macosx/fox-libs to gnome/gtk.
+gtk are:
+lgpl, multiplatform (nix,win,mac) and gnome is becaming better and better.
+There are already mature apps like Alexandria.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Tsela</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>07:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Porges, Vagabond: you’re both right, of course. However, what _why meant is that you can generate Ruby code from the Glade  XML  file. The Ruby-GNOME2 bindings come with a tool for just that: create the application skeleton that loads the  XML  file and prepares the callback methods.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>riffraff</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>12:27</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I prefer Gtk since they seem to have a better api and because my desktop of choice is gnome. 
+Btw, notice that you can create glade files even from other applications i.e. <A href="http://gazpacho.sicem.biz/">this gui builder</A> written in python seem nice</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>matt</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>23:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I just started a project using Ruby-GTK, <A href="http://sf.net/projects/gnomeweb"> GNOME  Web Studio</A>.  I was initially going to write it in C, but I’ve been able to get really far in only a few hours with Ruby.
+I’m looking forward to this toolkit maturing and being a standard install on all major distributions like PyGTK is today.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Trejkaz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Oct 2005</NOBR> at <NOBR>23:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>QtRuby is rather nice, the only real flaw I can pick with it is that it’s basically a Ruby wrapper around a C wrapper around a mostly-C++  API . :-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Vagabond</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Oct 2005</NOBR> at <NOBR>05:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Tsela: Ah, I was not aware that there was a glade code generator for Ruby. I think I prefer keeping it seperate anyway though, its easier to modify  IMO .</P>
+
+
+	<P>Vag</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Oct 2005</NOBR> at <NOBR>09:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m partial to  GTK + as well.  Can’t abide Glade though.</P>
+
+
+	<P>If you use it for code-generation, you lose the advantages of easy modification, as Vagabond points out.</P>
+
+
+	<P>If you don’t (i.e. libglade), you have to code around it and lose the opportunity to refactor your UI code.  Gets all flat and mushy.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Tsela</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Oct 2005</NOBR> at <NOBR>09:24</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Vagabond:  AFAIK , the code generator doesn’t translate the Glade  XML  file into Ruby. It just creates a Ruby file which loads the  XML  file and contains empty declarations for the call-back methods. So you still have full separation of interface and implementation. It just saves you the tedious job of writing the boiler-plate code yourself.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Aj</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>31 Oct 2005</NOBR> at <NOBR>11:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m partial to wxRuby.  The wx library is stable and friendly.  Partnered with ruby, its almost too good. It’s also x-platform and uses native widgets.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>phil602</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>01 Nov 2005</NOBR> at <NOBR>11:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>All about the Glade and  GTK  lovin’. The Ruby-Gnome2 team has pulled some really sweet moves that I can appreciate. Not only are they bindings to  GTK , but they just feel…. <EM>rubyish</EM>.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Developer108</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>08 Nov 2005</NOBR> at <NOBR>23:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’d vote for wxRuby.  :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Developer108</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>08 Nov 2005</NOBR> at <NOBR>23:15</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’d vote for wxRuby.  :)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Kathy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>17 Nov 2005</NOBR> at <NOBR>00:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>wxRuby is fantastic! Give it a try! Only problem is getting it to install on Mac  OS X  (Tiger) with darwinports.</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

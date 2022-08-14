@@ -1,0 +1,534 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Io Has A Very Clean Mirror</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/01/05/ioHasAVeryCleanMirror.html">Io Has A Very Clean Mirror</a></h1>
+  <div class="time"><strong>January
+5th
+</strong>
+    03:54</div>
+  <div class="author">by why</div>
+  <div class="content"><p>The best languages are deceptively simple.  Io has an <a href="http://iolanguage.com/scm/git/checkout/Io/docs/guide.html#TOC35887">incredibly brief</a> grammar, so it&#8217;s easy to think you&#8217;ve learned everything with one short perusal.  And the manual is quite short, too, isn&#8217;t it?  Nothing to it, right?</p>
+<p>Io is just an incredibly hushed secret.  (Perhaps because it is impossible to Google stuff about it.)  Did you know that Io&#8217;s introspection and meta tricks put Ruby to serious shame?  Where Ruby once schooled Java, Io has now pogoed.</p>
+<p>Here, let&#8217;s start with a simple block:</p>
+
+<pre><code class="io">Io> plus := block(a, b, a + b)
+==> method(a, b, 
+        a + b
+    )
+Io> plus call(2, 3)
+==> 5
+</code></pre>
+<p>Okay, so the block works.  The <code>plus</code> block added two numbers.</p>
+<p>Now let&#8217;s do some introspection on this little fellow.</p>
+
+<pre><code class="io">Io> plus argumentNames
+==> list("a", "b")
+Io> plus code
+==> block(a, b, a +(b))
+Io> plus message name
+==> a
+Io> plus message next
+==> +(b)
+Io> plus message next name
+==> +
+</code></pre>
+<p>Hot holy cold mold.  Not only can you get the names of the block params.  And not only can you get a string of the block&#8217;s complete source code.  You can sneak into the code and traverse the messages inside.  And most amazing of all: it&#8217;s awfully easy and natural.  True to Io&#8217;s quest.  Ruby&#8217;s mirror can&#8217;t see any of that.</p>
+<p>But, whoa whoa, hey now, don&#8217;t touch that dial.</p>
+
+<pre><code class="io">Io> plus message next setName("-")
+==> -(b)
+Io> plus
+==> method(a, b, 
+        a - b
+    )
+Io> plus call(2, 3)
+==> -1
+</code></pre>
+<p>Gunpowder and treason!  Now <span class="caps">THAT</span> is a monkeypatch to the viscera.  Subtraction is in effect.</p>
+<p>See, I first had Io pegged as a Python.  Simple rules, very strict, few sigils, very little sugar, both adhering strongly to their own manifestos.  No way, though.  Python keeps trying to shed <a href="http://lambda-the-ultimate.org/node/2302">its functional</a> skin, only to reveal its acid wash jeans underneath.  Ironed and starched and pegged.</p>
+<p>Io pays obeisance to minimalism, but somehow cracks the door open on a wild and uncouth gymnasium of meta magic.  And it goes so much deeper than these examples.  I don&#8217;t know if Io is trying to be rebellious, but its malleability goes far beyond Ruby.  And, I&#8217;d say it goes beyond Smalltalk and Self and Lisp, since it makes this kind of ripping and tearing completely effortless.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">43 comments</a></div>
+
+<div class="entry">
+    <h3>alex</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    06:34</div>
+    <div class="content"><p>The way concurrency works in io is fun for making little prototypes (pun intended!)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Danno</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    08:37</div>
+    <div class="content"><p>IO is pretty amazing.  You&#8217;d probably also like Factor.</p></div>
+</div>
+
+<div class="entry">
+    <h3>AkitaOnRails</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    09:12</div>
+    <div class="content"><p>Wow, you&#8217;re right (and as a plus, it uses Git as its repository, great). And you&#8217;re right. It is not easy to find good info about Io from Google. I would love to see a minimalist Poignant Guide to Io from you! :-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Brian Mitchell</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    09:14</div>
+    <div class="content"><p>Indeed. Io has been a stage to some of the craziest meta-programming I&#8217;ve seen anywhere.  It has come a long way since its earlier debuts years ago&#8230; so I&#8217;d encourage people to check out the <a href="http://iolanguage.com/downloads/">source</a> and join conversation with the <a href="http://iolanguage.com/community/">community</a>. There are some exciting developments so now would be a good time to dive in.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Mod Serf</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    09:46</div>
+    <div class="content"><p>I, for one, bow to my new Io overlords.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zimbatm</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    09:48</div>
+    <div class="content"><p>I&#8217;m scared. The universe is loosing is bounds and start to fibble away in a meta fashion style. What you just showed are simple operations with an enormously complicated potential.</p><ul>
+	<li>don&#8217;t forget luke : at the end, everything still goes trough the CPU</li>
+</ul></div>
+</div>
+
+<div class="entry">
+    <h3>ReFLect</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    09:51</div>
+    <div class="content"><p>You might like to check out the ReFLect language. Equivalent code is</p><p>let plus = {| \a.\b.a+b |};<br>
+let change2minus {| \`s.\`t.`p `q `r |} = {| \`s. \`t. `q&#8211;`r |};<br>
+eval {| `(change2minus plus) 2 3 |};<br>
+: {|&#8211;1 |}</p><p>\x.E is a lambda expression. Quotes such as `s stand in for pattern matching within a term. So {| \`s.\`t.\`p `q `r |} matches any function with two arguments that consists of a function application with two arguments&#8211;s and t are the outer arguments, and p is the inner function being applied (in this case, +).</p><p>In essense, reflect makes tearing apart code even easier, because you can pattern match code expressions.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Max Battcher</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    10:23</div>
+    <div class="content"><p>I think a Lisp hacker would give you a &#8220;young whippersnapper&#8221; lesson and explain properly how all of that is possible in Lisp, particularly if you were one of the few to use a Lisp Machine in that amazing era of dinosaurs.  Io simply takes that sauce and places it entirely within a minimalist OO goodness ala Self and that&#8217;s probably the biggest reason it seems different from the Lisp way of doing this sort of thing in that the message tree looks like a nice collection of objects to those of us long schooled in the ways of OO.  Io&#8217;s a good language and something that I like returning to once in a while as a damn pretty sandbox.  I don&#8217;t think it is rebelliousness, only a deep respect for the history of languages (Steve seems to have a great knowledge of this) and a wish to do something like classic Lisp or Self in the form factor of Lua more than anything.</p><p>PS, don&#8217;t be hating on my jeans&#8230;  they are quite pragmatic for working in.</p></div>
+</div>
+
+<div class="entry">
+    <h3>tesing 123</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    10:53</div>
+    <div class="content"><p>this is a test! <a href="http://www.google.com/"><img src="http://www.google.com/intl/en_ALL/images/logo.gif" alt=""></a></p></div>
+</div>
+
+<div class="entry">
+    <h3>sb</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:02</div>
+    <div class="content"><p>Damn it, I just had my first apocalyptic vision in 3 years. People really <strong>really</strong> can&#8217;t be trusted with this kind of power, okay? As you gaze into the mirror, the mirror also gazes into you. Turn back while you still can!</p></div>
+</div>
+
+<div class="entry">
+    <h3>sb</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:04</div>
+    <div class="content"><p>(I almost forgot, insert bad joke here about how replacing the math operators is already affecting the comment system. Don&#8217;t say I didn&#8217;t warn you, is all I&#8217;m saying.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>tester</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:07</div>
+    <div class="content"><p>testing is stupid!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Test with Yahoo!</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:15</div>
+    <div class="content"><p><img src="http://blog.clickz.com/yahoo-logo-735610.jpg"></p></div>
+</div>
+
+<div class="entry">
+    <h3>arthur</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:27</div>
+    <div class="content"><p>However, let&#8217;s not forget a few weak points currently on Io (and I will only mention things which can be improved)</p><p>&#8211;Makefile based compilation only (gnu autoconfigure at least provides a &#8220;fine tuning&#8221;).<br>
+&#8211;Windows binaries lag behind. It is more than a half year now, where one ultimately wonders how much attention Io gets on non-mac plattforms.<br>
+&#8211;Documentation. The documentation is partially ok&#8211;but partially it is simply not existing, where one is to be expected to look at the source.</p><p>I am sure the two first points can easily be solved, but the third one is one that had Ruby troubled for a long time until the Pickaxe book emerged.</p><p>But where is a Pickaxe-for-Io?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:30</div>
+    <div class="content"><p><strong>Akita:</strong> Perhaps we could give Io an informal moniker (such as: Schneider) which could be more easily distinguished by the robots.</p><p><strong>ReFLect:</strong> Oh, good show.  Any other codes from the crowd are welcome.</p><p><img src="http://kruzer.co.uk/img/subaru_logo.gif" alt=""></p></div>
+</div>
+
+<div class="entry">
+    <h3>language_nazi</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:37</div>
+    <div class="content"><p>To &#8220;peruse&#8221; means to &#8220;read through with thoroughness or care.&#8221;</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    11:47</div>
+    <div class="content"><p><b>Arthur</b>: I have been working for quite a while on an &#8220;Io Tome&#8221;. It exists mostly in my head at the moment, due to other projects coming up. One of these days I&#8217;ll have enough time to sit down and work out a draft which other people can refine. Documentation does sorely lack behind in Io right now.</p><p>As far as Windows support goes, that is remarkably good considering none of the core contributors use windows as a platform, and we only ever see fading interest in Io running ontop of windows. Perhaps if there was more interest from the user base, it would improve, and that would be nice to see!</p><p>The build system is a source of huge contention. We all tend to agree that autotools isn&#8217;t exactly the best thing out there, where we deviate (at least myself and Steve Dekorte) is that it&#8217;s a better system than what we have right now, less fragile. He&#8217;s not against using it, someone just needs to come forth with a patchset demonstrating its usefulness, and he&#8217;ll consider it (at least, this was his position a year ago when I last discussed it with him&#8212;then I started a new job and have had no time since).</p><p>In any event, Io is an extremely young language, with some quirks and gotchas. Overall, it has great potential however.</p></div>
+</div>
+
+<div class="entry">
+    <h3>serhei</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    12:57</div>
+    <div class="content"><p>Holy crap your comments section just imploded.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Pupeno</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    13:16</div>
+    <div class="content"><p>It&#8217;d be nice if you added more step-by-step explanations of the code snippets, for those of us who never touched Io. It looks very interesting.</p></div>
+</div>
+
+<div class="entry">
+    <h3>AndrewO</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    13:46</div>
+    <div class="content"><p>Tip for Googling: search for &#8220;Io language&#8221;.  Slightly fewer results about I/O and a lot fewer about the Jovian moon and Greek mythology.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    13:51</div>
+    <div class="content"><p><b>Pupeno</b>: I&#8217;ll explain the code steps one by one.</p><pre>plus := block(a, b, a + b)</pre><p>This line of code assigns a lexically scoped method (or block) that takes two formal parameters, a and b, and adds those two parameters returning the result, to the method &#8220;plus&#8221;. That is to say, it assigns that block to plus, calling plus will return the results if given two arguments.</p><pre>plus call(2, 3)</pre><p>Unlike in some other languages, blocks do not automatically activate like methods or functions do. In Io, you must explicitly &#8220;call&#8221; a block. This line of code activates the block in the &#8220;plus&#8221; slot (think &quot;variable&quot;) with two arguments, 2 and 3, returning the expected result &#8220;5&#8221;.</p><pre>plus argumentNames</pre><p>Here we ask the block for the names of the formal parameters. It returns a list of items in string representation.</p><pre>plus code</pre><p>This line of code asks the interpreter for the code representing the entire method. Appending a &#8220;;&#8221; message to the string returned here can cause your method to be serializable.</p><pre>plus message name</pre><p>This line of code asks the interpreter for the message object of the body of the method (in Io by convention, the body of a control structure is always the last argument passed in, usually implicitly, since methods and blocks in Io can accept any number of arguments, it&#8217;ll just ignore the ones not used in the body) then it asks for the string representation of the first item in that message tree, in this case, the string &#8220;a&#8221;.</p><pre>plus message next</pre><p>Like the above, but instead of asking for the name of the message, we ask for the object representing the next message in the body of the block (the &#8220;+&#8221; method with the argument &quot;b&quot;).</p><pre>plus message next name</pre><p>Like above, but we ask for the message object, then skip to the next message in that tree, and ask for its name, in this case &#8220;+&#8221;.</p><p>The other examples are pretty easy to decipher, &#8220;set&#8221; methods just set the value of the objects I listed above.</p><p>So if you think of messages in Io as a simple tree (which is essentially, what they are when you include arguments), then &#8220;next&#8221; is like skipping down the left side of the tree, and arguments are like skipping down the right side of the tree. Each node in this tree has several pieces of state and behaviour that you can ask about.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    13:51</div>
+    <div class="content"><p>Grr, sorry about the crappy formatting folks. I&#8217;d edit it if I could.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    14:19</div>
+    <div class="content"><p>There you are.  Very generous, jer.  Interesting about the semicolon message.  I&#8217;ve been running into that alot but hadn&#8217;t stopped to look at it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Arrogant</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    16:32</div>
+    <div class="content"><p>As soon as I get my MacBook I plan to jump wholeheartedly back into the Io game. I love me some Io.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    17:03</div>
+    <div class="content"><p>Thanks for fixing up the formatting _why, should use Preview next time first. :)</p><p>I should make one more note about serialization. Not everything is serializable at the present time in Io. For instance, CFunction objects (that is, for instance, &#8220;clone&#8221; on the Object method (and as a result, all objects respond to it unless you get into some bit of magic, which I won&#8217;t describe here)) do not know about their source code. They could, but it&#8217;d involve modifying the source before it&#8217;s compiled, which is not only silly, it&#8217;s superfluous. Many methods in Io respond to the &#8220;serialized&#8221; method which returns a string representation of the receiver of that message, which is extremely handy in many cases. For instance:</p><pre>
+Io> list(1, 2, 3) serialized
+==> list(1, 2, 3);
+</div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    19:37</div>
+    <div class="content"><p>Ya, Io is fun stuff.  Now it just needs to get its feet wet in the coder pool (&amp; vice versa).  Ruby is only the cool kid now because he has a smooth library and a killer app.  Coding Io might become the next &#8220;elegant programming&#8221; fashion statement.</p></div>
+</div>
+
+<div class="entry">
+    <h3>thisAintMath_itsHistory</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    20:13</div>
+    <div class="content"><p>Smalltalk = Simula.messaging + AlanKay.inspiration<br>
+Ruby = the_good_bits_of(Perl + Python) + some_of(Smalltalk)<br>
+Io = the_rest_of(Smalltalk) + Ruby</p></div>
+</div>
+
+<div class="entry">
+    <h3>Rich</h3>
+    <div class="time">said on <strong>January
+      5th</strong>
+    21:40</div>
+    <div class="content"><p>Working with Io on Windows every day.  I have a bunch of Windows patches that I need to submit when I get a chance.  If anyone has any windows questions, feel free to ask.</p><p>richcollins@gmail.com</p></div>
+</div>
+
+<div class="entry">
+    <h3>crabby from a cold</h3>
+    <div class="time">said on <strong>January
+      6th</strong>
+    01:49</div>
+    <div class="content"><p>This is supposed to be elegant?  I hate to say it, but even &#8220;public static void&#8221; looks more parseable.</p></div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      6th</strong>
+    13:37</div>
+    <div class="content"><p><strong>crabby</strong>: Why&#8217;s example is pretty contrived, but the idea is that the better you can reflect onto the language itself (although not completely, as per Gödel), the DRYer your code can get.  Elegance doesn&#8217;t have to do with appearances, necessarily.  From Wikipedia, &#8220;elegance is the attribute of being impressively effective, yet slighty simplistic.&#8221;  Lisp is considered by some to be elegant, although on a functional level, as opposed to OO, but few would call its syntax pretty.</p><p>Of course, you could always make your own keywords:</p><pre><code>
+def := Object clone
+def forward := method(
+  method_name := call message name
+  call message setName("method")
+  call sender setSlot(method_name, resend)
+)
+class := Object clone
+class forward := method(
+  new_class := Object clone
+  call sender setSlot(call message name, new_class)
+  call message argsEvaluatedIn(new_class) first
+)
+
+# You can't reopen classes or methods with these,
+# (although there's probably some trick to allow it)
+# but now you can define them in a Ruby-ish way:
+
+class Norton(
+  def scan(thing,
+    "Scanning #{thing}...\n" interpolate print
+    wait(3)
+    "Done! No viruses found." print
+  )
+)
+</code></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      6th</strong>
+    17:53</div>
+    <div class="content"><p>Not exactly &#8220;re-opening&#8221; as they&#8217;re never closed, but anyway, you can do something like this (keeping in mind, newSlot is similar to attr_accessor in Ruby):</p><pre>
+Norton do(
+  newSlot("blockEverything", false)
+
+  def lockOutUser(setBlockEverything(true))
+)
+</div>
+</div>
+
+<div class="entry">
+    <h3>Erm</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    01:12</div>
+    <div class="content"><p>Anyone managed to <a href="http://pastie.caboo.se/136038">build</a> Io on OSX using macports (Io-2007-03-21.tar.gz)?</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    07:22</div>
+    <div class="content"><p>2007-03-21 is historic. I would highly recommend you grab the new tarball pushed out last night from www.iolanguage.com or download the git repository and build from that.</p></div>
+</div>
+
+<div class="entry">
+    <h3>mechazoidal</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    11:30</div>
+    <div class="content"><p>If you&#8217;re not averse to rolling up your sleeves, you can take the existing Io Portfile and add the latest tarball location+md5 hashes to it to get the latest nightly build. I would, however, check your compile environment first as I&#8217;ve never gotten build errors like that on up-to-date machines.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Erm</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    11:31</div>
+    <div class="content"><p>Thanks jer&#8230;that did the trick. Now to explore&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>tripdragon</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    16:41</div>
+    <div class="content"><p>so&#8230; are you leaving ruby ? just curious what this really is on top of things</p></div>
+</div>
+
+<div class="entry">
+    <h3>bug</h3>
+    <div class="time">said on <strong>January
+      7th</strong>
+    22:31</div>
+    <div class="content"><p><strong>tripdragon</strong>: What?  Ruby&#8217;s not dead, and Io isn&#8217;t super cool yet.  It doesn&#8217;t even have hashes!  We can still play with it, though.</p><pre><code>
+class := Object clone
+class forward := method(
+  prototypes := call evalArgs
+  new_class := if(call hasArgs, prototypes removeAt(0), Object) clone
+  prototypes foreach(prototype, new_class appendProto(prototype))
+  new_class className := call message name
+  call sender setSlot(new_class className, new_class)
+)
+
+# Everyone loves multiple inheritance!
+
+class Thing do(isPants := false)
+class Pants(Thing) do(isPants := true)
+class Square(Thing)
+class Trousers(Pants)
+class SquareTrousers(Square, Trousers)
+
+if (SquareTrousers proto == Square,
+  SquareTrousers protos foreach(thing,
+    if(thing isPants, "Pants", thing className) print))
+</code></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>January
+      8th</strong>
+    01:30</div>
+    <div class="content"><p><strong>bug:</strong> Internet communities are like moving flotillas.  And, once you&#8217;ve chained up, they like to know when you come and go.  Many dads don&#8217;t like the screen door left ajar.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Many Dads</h3>
+    <div class="time">said on <strong>January
+      8th</strong>
+    02:46</div>
+    <div class="content"><p>Speaking of doors and what they like. Will you be at SXSW, perhaps riding a mandolin pony, question.</p></div>
+</div>
+
+<div class="entry">
+    <h3>The power of Assembler</h3>
+    <div class="time">said on <strong>January
+      8th</strong>
+    05:24</div>
+    <div class="content"><p>In the 60&#8217;s and 70&#8217;s, power coders would use assembler to get the most out of those old microcontrollers masquerading as mainframes.   A primary technique was self-modifying code to avoid re-executing conditionals.</p><p>By and by, it turned out that, in large systems, self-modifying code was effectively impossible to debug.  It&#8217;s a method for hiding bugs.  Slowly, it was banned.</p><p>Yeah, things aren&#8217;t exactly the same, but there are similarities.  If my money were resting on the outcome, I&#8217;d limit self-modification in some ways, perhaps to boot-time self modding. That way it is at least possible to view a listing of the code that is executing.</p><p>If you think about testing, code coverage, provability, auditing, code reviews, and debugging, you&#8217;ll see what I mean.</p><p>There&#8217;s clearly an area for this.  Self-modding might be a good base for grad students to quickly generate new languages from Io, in order to experiment with a new or different programming paradigm.  And new DSL&#8217;s.</p><p>But people tend to guess that by trimming the code at run-time you can improve performance.  Yeah, to an extent, but self-modding interpreters have never beat straight C for performance.  Any interpreted language with &#8216;eval&#8217; can pull a more-or-less equivalent trick.  And we&#8217;ve learned to limit that.</p><p>Even simple mods like updating DLL&#8217;s has been shown to be problematic&#8212;the user is running a codebase that is different from the code that was tested.  Search for &#8216;dll hell&#8217; for further info.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Katie</h3>
+    <div class="time">said on <strong>January
+      8th</strong>
+    16:28</div>
+    <div class="content"><p><img src="http://www.cbsnews.com/images/2007/06/25/image2975535.jpg" alt=""></p></div>
+</div>
+
+<div class="entry">
+    <h3>tumble</h3>
+    <div class="time">said on <strong>January
+      10th</strong>
+    02:23</div>
+    <div class="content"><p>Reflection is not just about self-modding, thank goodness.  For more on what&#8217;s so great about reflection, look up how it&#8217;s used by Smalltalk (and probably also LISP, Ruby etc.).</p></div>
+</div>
+
+<div class="entry">
+    <h3>jer</h3>
+    <div class="time">said on <strong>January
+      11th</strong>
+    02:59</div>
+    <div class="content"><p>A language need not limit self modifying code. Convention should limit it to very few areas. This feature demonstrated in this post is used sparingly (mostly in control structures) in Io, but yes, it is used.</p><p>A language should not impose itself on the programmer. The whole idea is that the programmer imposes himself on the language. Keeping your language as flexible as you need it to be allows you to not only make mistakes and learn from them in a practical manner, by for instance, hard to find bugs; but also learn new techniques that other languages may or may not expose to you.</p><p>I find it a win-win opportunity, though I know some folks who have played with Io have run away screaming at this very feature (mostly those who did, ran straight to Haskell =]).</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

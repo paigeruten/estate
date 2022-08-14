@@ -1,0 +1,502 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Sneaking Ruby Through Google App Engine (and Other Strictly Python Places)</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/05/05/sneakingRubyThroughGoogleAppEngine.html">Sneaking Ruby Through Google App Engine (and Other Strictly Python Places)</a></h1>
+  <div class="time"><strong>May
+5th
+</strong>
+    11:11</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Despite all the clicking that has been done on a certain star.gif, I really don&#8217;t think Ruby is coming to Google&#8217;s App Engine.  Google doesn&#8217;t have much of a toe in the Ruby scene and App Engine is clearly entrenched in Python technologies (such as Pypy and WSGI).  Well, cripes.</p>
+<p>But, for my purposes, I am really enticed by App Engine, because it gives beginners a supremely cinchy way to make a web app.</p>
+<p>So, maybe let&#8217;s just convert Ruby 1.9 bytecode to Python 2.5 bytecode and decompile.  In other words: put in a .rb and get out a .pyc.  Yes, could work?</p>
+<hr />
+
+<h2>A Drop of Puts</h2>
+<p>Let&#8217;s start with converting the most trivial Ruby app to an App Engine script.  A translation of the <a href="http://code.google.com/appengine/docs/gettingstarted/helloworld.html">intro code</a> in the App Engine docs.</p>
+
+<pre><code class="rb">puts "Content-Type: text/plain"
+puts
+puts "Hello, world!"
+</code></pre>
+<p>If you&#8217;ve got Ruby 1.9 installed, you can output the bytecode for this script by looping through the arrays that come out of <code>VM::InstructionSequence</code>.  Here&#8217;s the code from my <code>rb-compile</code> script:</p>
+
+<pre><code class="rb">#!/usr/bin/env ruby
+iseq = VM::InstructionSequence.compile(IO.read(ARGV[0]))
+iseq.to_a.last.each do |inst|
+  p inst
+end
+</code></pre>
+<p>When I run <code>./rb-compile hello.rb</code>, the bytecode dump is:</p>
+
+<pre><code class="rb">1
+[:putnil]
+[:putstring, "Content-Type: text/plain"]
+[:send, :puts, 1, nil, 8, nil]
+[:pop]
+2
+[:putnil]
+[:putstring, ""]
+[:send, :puts, 1, nil, 8, nil]
+[:pop]
+3
+[:putnil]
+[:putstring, "Hello, world!"]
+[:send, :puts, 1, nil, 8, nil]
+[:leave]
+</code></pre>
+<p>The numbers are line numbers.  I&#8217;m going to skip those for now, but Python bytecode has a place for those as well.  (And, in fact, you can read about all of that in Ned Batchelder&#8217;s <a href="http://nedbatchelder.com/blog/200804/the_structure_of_pyc_files.html">The Structure of .pyc Files</a>.)</p>
+<p>We&#8217;re just going to morph these messages into Python method calls.  But one problem with this bytecode: the receiver of <code>puts</code> is <code>nil</code>.  You see all those <code>:putnil</code> lines?  Since there&#8217;s no receiver, Ruby sees these as Kernel methods.</p>
+<p>Instead, when pythongineering this code, let&#8217;s send all these methods to a <code>Kernel</code> class, where we can store the Ruby built-ins.  The resulting py-bytecode for a single method call will look like this:</p>
+
+<pre><code>36 LOAD_NAME                0 (Kernel)
+39 LOAD_ATTR                1 (puts)
+42 LOAD_CONST               4 ('Hello, world!')
+45 CALL_FUNCTION            1
+</code></pre>
+<p>This is really the largest challenge when converting rbc to pyc.  The ordering of things.  In Ruby, the message name is part of the <code>:send</code> instruction.  However, in Python, the method name is popped on to the stack, right after the receiver.</p>
+<p>But, hey, that&#8217;s all the fun of it, right?</p>
+<p>And, so, we store in Kernel.py:</p>
+
+<pre><code class="py">def puts(*args):
+  for x in args: print x
+  if not args: print
+</pre></code>
+
+<hr />
+
+<h2>Getting Unholy</h2>
+<p>Okay, to watch the above take place, you&#8217;ll need to download Unholy, the Ruby-to-<span class="caps">PYC</span> converter I&#8217;m working on.  The project is <a href="http://github.com/why/unholy">here</a>.  <strong><span class="caps">HEED</span> <span class="caps">THIS</span>: It needs Ruby 1.9 and Python 2.5.</strong></p>
+
+<pre><code class="sh">$ git clone git://github.com/why/unholy.git
+$ cd unholy
+$ vim hello.rb
+$ bin/unholy hello.rb
+$ PYTHONPATH=python python hello.rb.pyc
+</code></pre>
+<p>Okay, great, we&#8217;ve got some Ruby compiling to Python bytecode!  (The <span class="caps">PYTHONPATH</span> var is there to get our Kernel.py loading.)</p>
+<p>Unfortunately, you can&#8217;t just upload the .pyc files to Google&#8217;s machines.  How about we generate some Python source code for this?</p>
+<p>So, I&#8217;m using a patched version of decompyle, which still has some issues, but let&#8217;s get it installed.</p>
+
+<pre><code class="sh">$ cd unholy/decompyle
+$ python setup.py build
+$ sudo python setup.py install
+$ decompyle hello.rb.pyc > hello.py
+</code></pre>
+<p>And, there you are, the <code>hello.py</code> should amount to:</p>
+
+<pre><code class="py"># emacs-mode: -*- python-*-
+import Kernel
+Kernel.puts('Content-Type: text/plain')
+Kernel.puts()
+return Kernel.puts('Hello, world!')
+
+# local variables:
+# tab-width: 4
+</pre></code>
+
+<hr />
+
+<h2>Yeah So Puts is Useless</h2>
+<p>Now, I admit, I&#8217;m not that far into this idea.  And, you know, I can&#8217;t see this thing holding my attention for another four hours.  But I am close to running <a href="http://code.google.com/appengine/docs/gettingstarted/usingwebapp.html">this script</a>.  The main problem is inheriting from <code>webapp.RequestHandler</code>, which Ruby sees as a chained Kernel method call.</p>
+<p>The code I&#8217;m working off of looks like this so far:</p>
+
+<pre><code class="rb">import "wsgiref.handlers"
+from "google.appengine.ext", "webapp" => :WebApp
+
+class MainPage < WebApp::RequestHandler
+  def get
+    self.response.headers['Content-Type'] = 'text/plain'
+    self.response.out.write('Hello, webapp World!')
+  end
+end
+
+
+def main
+  application = WebApp::WSGIApplication.new([tuple('/', MainPage)])
+  wsgiref.handlers.CGIHandler().run(application)
+end
+
+if __FILE__ == $0
+  main
+end
+</pre></code>
+<p>So, here&#8217;s what I&#8217;d do if I were you and I (playing you) wanted this to be perfectly class act.  I would call up the JRuby guys and get them to write a compiler backend for targetting Python bytecode.  I&#8217;ll bet they could crank this out in two licks of an anteater&#8217;s tongue.</p>
+<p>What amazes me is how close Ruby 1.9 bytecode and Python 2.5 bytecode are.  Some things translate almost directly.  It is completely obvious that Koichi took his cues from Python.  Storing argcount, nlocals, stacksize first.  Marshalling bytecodes.  Storing classes and methods as nested bytecode fragments.</p>
+<p>And, really, if that&#8217;s true (and I vouch that it is truly, truly true,) then how are Python and Ruby still on separate runtimes?  All of these bogus scaling wars and indented code battles are a huge waste of time.  Do we <em>still</em> have to be better than each other in 2008?  No way, Rufus said, &#8220;Be excellent to each other.&#8221;  Very slight (albeit legit) syntax choices, people.</p>
+<p>Now, imagine a hypothetical <code>potion</code>:</p>
+
+<pre><code class="sh">$ potion hello.py
+HELLO FROM PYTHON
+$ potion hello.rb
+KONNICHIWA FROM RUBY
+</code></pre>
+<p>Neither of us stands a chance against Javascript.  Why persist with this pitiful feud?</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">33 comments</a></div>
+
+<div class="entry">
+    <h3>Kumar McMillan</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    15:01</div>
+    <div class="content"><p>This sounds like fun.  Using JRuby would be less fun ;)   BTW , if you want to know Python opcodes necessary for implementing ruby-style anonymous blocks, Fuzzyman made an experiment that seemed to work: http://www.voidspace.org.uk/python/articles/code_blocks.shtml</p></div>
+</div>
+
+<div class="entry">
+    <h3>mister t</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    15:49</div>
+    <div class="content"><p>you are sick!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dr Nic </h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    16:39</div>
+    <div class="content"><p>And then we could use all the Python libraries, and we could work at places only Python is loved like Google, and on our CVs we could put &#8220;Expert Python&#8221; under &#8220;Expert Ruby&#8221;.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Dag</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    17:12</div>
+    <div class="content"><p>You, sir, are both a scholar and a gentleman.</p></div>
+</div>
+
+<div class="entry">
+    <h3>L</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    17:23</div>
+    <div class="content"><p>Don&#8217;t you mean parrot?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Charles</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    17:34</div>
+    <div class="content"><p>This is beautiful, horrible, and awesome.</p>
+<p>I wonder how long it&#8217;ll take for parrot to become potion&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tijn</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    17:40</div>
+    <div class="content"><p>Now, imagine requiring/importing libraries from that other language. It would be like using <a href="http://www.swig.org/">swig</a> without actually &#8216;using&#8217; swig :-D. This would make me happy!</p>
+<p>Moreover, afaik it is totally possible&#8212;even trivial&#8212;when Ruby can be compiled to py-bytecode (&#8230;garbage collection is different, do we think libs depend on a certain gc-algorithm?)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Funny</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    18:24</div>
+    <div class="content"><p>Already seven comments and nobody asks if Rails can be translated with unholy ;-)</p></div>
+</div>
+
+<div class="entry">
+    <h3>James Block</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    18:43</div>
+    <div class="content"><p>Speaking as a Python guy, I agree with you that the Python and Ruby camps fight <em>way</em> more than they ought to. For whatever reason, I&#8217;ve never liked Ruby&#8217;s syntax (Maybe it&#8217;s that I learned Python first? Who knows), but I&#8217;ve always respected that it&#8217;s a damn fine language and people who choose Ruby are still making a Good Choice. I don&#8217;t like Rails much (or Django, for that matter), but I always try to remember that Ruby != Rails.</p>
+<p>Potion sounds absolutely awesome. The best part of a combined runtime isn&#8217;t really the code savings; it&#8217;s the potential for a good bytecode <em>optimizer</em>. With the best and brightest people from both the Python and Ruby communities working on an optimized runtime, the sky&#8217;s the limit for what could be done.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Avi Bryant</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    19:42</div>
+    <div class="content"><p>Can unholy run rails?  Kthxbye.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    19:55</div>
+    <div class="content"><p><strong>L</strong> and <strong>Charles</strong>: My concern with Parrot is that it (like .Net and Java) is a people pleaser, promising everything to everyone, eager to serve every language equally.  Well, except they each have their true intended targets: Perl 6 for Parrot, C# for .Net and Java for the  JVM .</p>
+<p>To be fair, general purpose VMs do work.  They do perform computations! JRuby has really pulled off some amazing things.  I have no power of prediction, but Java will probably never be the ultimate platform for Ruby.  As long as Java is outside the kernel, it seems the most desirable platform (for purposes of speed, linkage and lightness of distro) will be native.  And you can&#8217;t just go with a bare interpreter, so I think the strategy will continue to be a VM, tailored to the language.</p>
+<p>Which is probably a good argument for Ruby sticking with its own VM, despite its proximity to Python&#8217;s.  Fortunately, arguments have no place in this friendly land of peace.</p>
+<p><strong>Funny</strong> and <strong>Avi Bryant</strong>: Instead of asking &#8220;can unholy run Rails?&#8221; try asking &#8220;can unholy run 4 plus 7?&#8221;  And my answer to that is: no, no, no, no, it probably can&#8217;t!!</p></div>
+</div>
+
+<div class="entry">
+    <h3>evan</h3>
+    <div class="time">said on <strong>May
+      5th</strong>
+    20:08</div>
+    <div class="content"><p>Be sure to use &#8220;3 + 4&#8221; as your first program. Smalltalk linage must be upheld.</p></div>
+</div>
+
+<div class="entry">
+    <h3>4+3</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    00:02</div>
+    <div class="content"><p>3+4</p></div>
+</div>
+
+<div class="entry">
+    <h3>Red Pie</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    05:36</div>
+    <div class="content"><p>Ruby &#8212;&gt; Python &#8212;&gt; Effort City &#8212;&gt; Bizarre Software State</p></div>
+</div>
+
+<div class="entry">
+    <h3>markus</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    06:50</div>
+    <div class="content"><p>_why for president!<br>
+_why for president!</p></div>
+</div>
+
+<div class="entry">
+    <h3>topfunky</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    12:04</div>
+    <div class="content"><p>I&#8217;m looking forward to running Campyng on Google App Engine.</p></div>
+</div>
+
+<div class="entry">
+    <h3>sam</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    13:30</div>
+    <div class="content"><p>It seems to me that you&#8217;re doing part of the work that PyPy is doing (interpreting the bytecode then compiling down to the target). They&#8217;re working with Python bytecode &#8594; other things, but it&#8217;d certainly be interesting to compare and contrast your work with theirs.</p></div>
+</div>
+
+<div class="entry">
+    <h3>IdeaHamster</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    13:53</div>
+    <div class="content"><p>My oh my oh my&#8230;what to do? Should we add to the list?</p>
+<ul>
+	<li>Matz Ruby Interpreter</li>
+	<li>Rubinius</li>
+	<li>JRuby</li>
+	<li>IronRuby</li>
+	<li>MacRuby</li>
+	<li>Potion (?)</li>
+</ul>
+<p>I love all of the innovation, but the state of things makes me worry that we need a specification lest we loose sight of that thing we like to call &#8220;Ruby&#8221;</p></div>
+</div>
+
+<div class="entry">
+    <h3>failrate</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    14:08</div>
+    <div class="content"><p>Ruby on the server is nice, but how about Ruby on ECMAScript also?!<br>
+I saw this floating around the other day, and &#8217;tis most awesome:  http://hotruby.accelart.jp/</p></div>
+</div>
+
+<div class="entry">
+    <h3>mvalente</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    15:41</div>
+    <div class="content"><p>&gt;Neither of us stands a chance against Javascript.<br>
+&gt;</p>
+  Thats right. I'm working on it :
+   "CoffeePie":http://coffeepie.dyndns.ws/
+
+  -- MV</div>
+</div>
+
+<div class="entry">
+    <h3>Brian</h3>
+    <div class="time">said on <strong>May
+      6th</strong>
+    21:45</div>
+    <div class="content"><p>The Goog App Engine is a  GREAT  way to get up and running with WebApps &#8211; fast and fun. It was tough to put down Ruby and pick up Python for just this purpose, but this looks like a promising reunion. Peeking behind the runtime curtain into the bytecode is educational too. It seems like Ruby and Python have just grown closer over the years. Rufus has it: “Be excellent to each other.”</p></div>
+</div>
+
+<div class="entry">
+    <h3>gekoudi</h3>
+    <div class="time">said on <strong>May
+      7th</strong>
+    01:12</div>
+    <div class="content"><p>hello</p></div>
+</div>
+
+<div class="entry">
+    <h3>gekoudi</h3>
+    <div class="time">said on <strong>May
+      7th</strong>
+    01:13</div>
+    <div class="content"><p>hello world</p></div>
+</div>
+
+<div class="entry">
+    <h3>Andrew</h3>
+    <div class="time">said on <strong>May
+      7th</strong>
+    02:11</div>
+    <div class="content"><p>Excellent work!  I had to do a sudo apt-get install python2.5-dev on ubuntu to get decompyle working</p></div>
+</div>
+
+<div class="entry">
+    <h3>testing</h3>
+    <div class="time">said on <strong>May
+      7th</strong>
+    18:56</div>
+    <div class="content"><p>this comment box.</p>
+<p>sorry.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Elia Schito</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    03:14</div>
+    <div class="content"><p><strong>Wow!!!</strong><br>
+If somebody will end up with a Python to Ruby translator i will happily build a webapp like <a href="http://blahblahfish.com/">blahblahfish.com</a> to see ruby code through Python and vice-versa ..I&#8217;ll write it either in Ruby (using Django) or in Python (with Rails). (<a href="http://tinyurl.com/5zj5pw">See This Comment Through Japanese</a>)</p></div>
+</div>
+
+<div class="entry">
+    <h3>pedro mg</h3>
+    <div class="time">said on <strong>May
+      8th</strong>
+    10:00</div>
+    <div class="content"><p>topfunky&#8217;s +1<br>
+Camping @ AppEngine, would be sweet</p></div>
+</div>
+
+<div class="entry">
+    <h3>Obama</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    00:15</div>
+    <div class="content"><p>We want change&#8230;we want change&#8230;we want change&#8230;we want change, and&#8230;</p>
+<p>Yes we can!</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    11:18</div>
+    <div class="content"><p>Compiling to the Python VM is &#8230; well, actually it&#8217;s quite an accomplishment.  But I think the main thing for practical use is going to be figuring out how to deliver, package, and use the Ruby core classes and libraries in the context of a Python runtime environment.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Tombone</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:28</div>
+    <div class="content"><p>Elia&#8217;s link to his mangled comment didn&#8217;t work.  Here it is:<br>
+<a href="http://www.blahblahfish.com/en/mangle/show/30882">click</a></p></div>
+</div>
+
+<div class="entry">
+    <h3>Tzury</h3>
+    <div class="time">said on <strong>May
+      10th</strong>
+    04:05</div>
+    <div class="content"><p>highly appriciateed</p></div>
+</div>
+
+<div class="entry">
+    <h3>yang</h3>
+    <div class="time">said on <strong>May
+      11th</strong>
+    02:09</div>
+    <div class="content"><p>Hi, I&#8217;m actually highly interested in just the patched decompyle itself, which could be an immensely valuable standalone tool.  I tried it out on some python-2.5 .pyo files, but it didn&#8217;t get very far.  Do you have any plans to do further work on this?  If so, do you have an issue tracker of some sort where I can report with fuller details of the failure?  Thanks!</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>May
+      11th</strong>
+    23:16</div>
+    <div class="content"><p><strong>yang:</strong> The patches to decompyle were done by the <a href="http://code.google.com/p/depyc/">depyc</a> project. Take up any issues with them.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Let's Put A Cap On Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/23/letsPutACapOnShoes.html">Let's Put A Cap On Shoes</a></h1>
+  <div class="time"><strong>August
+23rd
+</strong>
+    01:41</div>
+  <div class="author">by why</div>
+  <div class="content"><p>I don&#8217;t know about you folks, but when Anselm Garbe moved from wmii to dwm, I ended up following him.  I know, I know.  I&#8217;m not crazy about the elitism of dwm (you have to alter config.h to change the window manager colors,) but I really go for the minimalism.  The window manager clocks in at 1,891 lines according to sloccount.  And it does all the right things.</p>
+<p>Shoes is definitely a minimalist&#8217;s <span class="caps">GUI</span> toolkit.  It&#8217;s at about <strong>five-thousand lines of C</strong>.  Compare with wxWindows which sloccount reports is anywhere between <strong>300,000 and a half-million lines of C</strong>.  <span class="caps">FOX</span> is at <strong>130,000 lines of cpp</strong>.  And I still feel like Shoes is getting bloated quick.</p>
+<p>Frankly, I don&#8217;t know how these guys do it.  Five-thousand lines is seriously a lot.  I think I need to put a cap of 10k because if it goes past that, it&#8217;s gonna be bankruptcy.</p>
+<p>Three-hundred THOUsand lines.  Scary, right??</p>
+</div>  
+  
+<div id="comments">
+<div class="total">18 comments</a></div>
+
+<div class="entry">
+    <h3>nornagon</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    03:27</div>
+    <div class="content"><p>Try out <a href="http://xmonad.org/">xmonad</a>. Under 500 lines of haskell!</p></div>
+</div>
+
+<div class="entry">
+    <h3>zimbatm</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    04:23</div>
+    <div class="content"><p>I was thinking of a weird solution to keep the code short (maybe?). The idea is to introduce &#8220;springs&#8221; in elements and between it&#8217;s adjacent elements. Based on a tension factor, the size and positioning of each element can be determined. Depending on their strength, they also determine which element or element-space grows/shrinks the most on resize. A tension limit on which spring break can also be added so that less-relevant items disappear in small displays. This is not my idea, but merely an adaptation or Knuth&#8217;s work on TeX (or how I think it works to produce that highly readable smooth text).</p></div>
+</div>
+
+<div class="entry">
+    <h3>chris2</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    05:01</div>
+    <div class="content"><p>zimbatm &lt;3</p><p>I always wanted that in HTML.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Danno</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    05:11</div>
+    <div class="content"><p>What nornagon said.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Erik</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    06:52</div>
+    <div class="content"><p>why, are there any things you would miss in dwm compared to wmii?</p></div>
+</div>
+
+<div class="entry">
+    <h3>Lucas</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    07:07</div>
+    <div class="content"><p>I understand your reasons for putting a cap on Shoes, and agree it&#8217;s a good idea. However, I&#8217;m worried that it might incline you (and other contributors) to use camping-style tricks to keep the source short. It&#8217;s fun for camping, and doesn&#8217;t really matter there, but isn&#8217;t it important to keep Shoes source readable, to make it easier for people to contribute?</p><p>The unabridged version of camping is readable, but it&#8217;s still a pain to keep track of the context (I find myself scrolling up and down a lot to remember what one one-letter variable did, while reading a different one-letter method).</p><p>Other than that, awesome! Looking forward to using Shoes when I have a use for it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jeem</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    08:31</div>
+    <div class="content"><p>Can we fit trees and grids under that cap?</p></div>
+</div>
+
+<div class="entry">
+    <h3>silby</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    09:36</div>
+    <div class="content"><p>Give some breathing room; cap it at 12,345 lines.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    09:43</div>
+    <div class="content"><p><strong>zimbatm:</strong> Oh, clunk, I hadn&#8217;t thought to find inspiration in TeX.</p><p><strong>Lucas:</strong> Shoes is written in C.  That&#8217;s already one layer of obfuscation too many!!</p><p><strong>jeem:</strong> You can emulate trees and grids by piling up stacks and flows.  I guess I&#8217;m hoping someone will do it as a lib.</p><p><strong>silby:</strong> And with 6,789 comments, I&#8217;m sure.</p></div>
+</div>
+
+<div class="entry">
+    <h3>harold</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    09:50</div>
+    <div class="content"><p>A cap goes on one end, and shoes goes on the other. I like the symmetry.</p><p>However, if you stop writing code when you hit 10k lines we&#8217;ll never be ready for the enterprise.</p><p>Oh, wait.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Djur</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    10:27</div>
+    <div class="content"><p>The only thing that got me back on wmii from dwm was the lack of a stacking window mode. That&#8217;s the feature that got me on wmii from ion, and I really couldn&#8217;t work comfortably without it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    10:45</div>
+    <div class="content"><p>One of the things I love about dwm is how well it works with fullscreen virtual machines.  It leaves just its little bar across the top, so I can run a bunch of VMs fullscreen on different tags.  I used to use stacking mode, too, on wmii-3, but it was really just a luxury.  Giving each window its own tag is all I need really.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Djur</h3>
+    <div class="time">said on <strong>August
+      23rd</strong>
+    12:33</div>
+    <div class="content"><p>Well, I&#8217;ve become kind of addicted to being able to spawn a terminal with a single keystroke, do stuff in it, and close it again without interfering with any other windows. Or not close it. I ended up spending a lot more time thinking about my window layout, which is exactly what dwm and allies are intended to prevent.</p><p>So these days, it&#8217;s wmii, ion, or ratpoison. The edge for wmii is actually just because it plays more nicely with Cedega.</p><p>Speaking of dwm, though, I did end up writing a <a href="http://djur.desperance.net/dwm-d.rb">status bar controller</a> for it, which is at least tangentially germane to hackety.org.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Klondike</h3>
+    <div class="time">said on <strong>August
+      24th</strong>
+    10:03</div>
+    <div class="content"><p>IronRuby is in alpha now, and the developers showed off a little demo of writing Ruby to make a simple windowed app:</p><p>http://weblogs.asp.net/scottgu/archive/2007/07/23/first-look-at-ironruby.aspx</p><p>I think it&#8217;d be neat to see a direct IronRuby/Shoes comparison, I bet Shoes would come out a lot more compact.</p></div>
+</div>
+
+<div class="entry">
+    <h3>tree and grids</h3>
+    <div class="time">said on <strong>August
+      24th</strong>
+    10:07</div>
+    <div class="content"><p>_why, I meant tree and grid <b>controls</b>, not layouts.</p></div>
+</div>
+
+<div class="entry">
+    <h3>burke</h3>
+    <div class="time">said on <strong>August
+      27th</strong>
+    13:28</div>
+    <div class="content"><p>Oh my, dwm is amazing. I just installed it on a server at work, and I&#8217;m in love. This is going on my own machine asap!</p><p>That aside, I really like what you&#8217;re doing with Shoes. I remember being terrified of starting GUI programming. The world is in desperate need of a truly intuitive toolkit, and this seems to fit the bill nicely. Great work, as always :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>raggi</h3>
+    <div class="time">said on <strong>August
+      29th</strong>
+    05:58</div>
+    <div class="content"><p><b>klondike</b>: The tie-between for the API comes as a bi-product of their shared type system. It seems there are some specific restrictions or allowances, based on language (see the discussions over in python land), but really the GUI stuff has basically no existence on the ruby side, and is plain old .NET stuffs.</p><p><b>_why</b>: Can any of the significant offenders be abstracted further, or maybe code generated?</p></div>
+</div>
+
+<div class="entry">
+    <h3>jflam</h3>
+    <div class="time">said on <strong>September
+      7th</strong>
+    22:15</div>
+    <div class="content"><p>@klondike: most of the work in that sample is done by the WPF engine. We&#8217;re also missing a lot of Ruby features in that version of IronRuby, so we&#8217;re limited in what we can do. To do things correctly, we need instance_eval, and we haven&#8217;t implemented that yet in our trunk &#8230;</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Those Impressive NodeBox Colors</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/12/04/thoseImpressiveNodeBoxColors.html">Those Impressive NodeBox Colors</a></h1>
+  <div class="time"><strong>December
+4th
+</strong>
+    07:26</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/nodebox-colors.jpg" class="cb" alt="" /></p><p>I originally neglected the new Colors library for NodeBox since, well, you know, what could be so great about a library focused only on mixing colors?  For some reason I thought it was a module that only allowed people to use verbose color names like <em>periwinkle</em> and <em>burnt umber</em>.  And, well, yeah.  But, no no, not hardly.  The Colors library <a href="http://nodebox.net/code/index.php/Colors">mandates</a> a whole whirlpool of color concepts, it&#8217;s quite a brilliant library.</p><p>I&#8217;m talking about commands like <code>range</code> which describes a certain crossection of the rainbow.  You can then randomly select colors from the range.  Or pull a color&#8217;s complementary.  Or build a drop shadow or lighting effect from the color.  And, beyond that, you can group set of color ranges into a theme.</p><p>This simple color range code pulls out the nice random sampling of hues you see <a href="http://nodebox.net/code/data/media/colors-colorrange2.jpg">depicted</a>:</p>
+<pre><code class="py">r = colors.range(h=(0,0.2))
+transform(CORNER)
+rotate(45)
+for i in range(HEIGHT/10):
+  fill(choice(r))
+  rect(-WIDTH, i*15, WIDTH*2, 20)
+</code></pre>
+<p>And the thing with themes is that this library comes packaged with thousands of color themes <a href="http://nodebox.net/code/index.php/Prism_%282%29">extracted from Yahoo search results</a> based on simple queries.</p><p><img src="../../../images/nodebox-prism.jpg" class="c" alt="" /></p><p>So, yeah, this is just more sensational work from Tom De Smedt.  I don&#8217;t think there&#8217;s been a colors library in the history of mankind that touches this.  To the moon.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">4 comments</a></div>
+
+<div class="entry">
+    <h3>Hank</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    07:47</div>
+    <div class="content"><p>Wow.  That rocks.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Evan Farrar</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    13:35</div>
+    <div class="content"><p>That prism algorithm blows me away. It&#8217;s like they have made a previously inexpressible concept an easy concrete thing that non-design types like me can do no problem. Design for the people! or robots!</p></div>
+</div>
+
+<div class="entry">
+    <h3>she</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    14:05</div>
+    <div class="content"><p>whoa<br>
+never saw that before</p><p>cool thing, is that available for use in ruby too?</p></div>
+</div>
+
+<div class="entry">
+    <h3>dgurba</h3>
+    <div class="time">said on <strong>December
+      4th</strong>
+    15:04</div>
+    <div class="content"><p>very nice :D</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

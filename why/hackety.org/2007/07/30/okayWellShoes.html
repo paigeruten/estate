@@ -1,0 +1,186 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Okay, Well... Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/07/30/okayWellShoes.html">Okay, Well... Shoes</a></h1>
+  <div class="time"><strong>July
+30th
+</strong>
+    15:48</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-0.r9.png" class="c" alt="" /></p>
+<p>The technology is called <a href="http://code.whytheluckystiff.net/shoes/">Shoes</a>.  I must be delusional to even try, I know.  Anyway, it&#8217;s primitive and not too well-mannered.  To download a build, <a href="http://code.whytheluckystiff.net/shoes/wiki/DownloadShoes">go here</a>.</p>
+<p>And the sample is:</p>
+
+<pre><code class="rb">label, time = nil, Time.now
+Shoes.app :height => 150, :width => 250 do
+  background "rgb(240, 250, 208)"
+  stack :margin => 10 do
+    start = button "Start" do
+      time = Time.now
+      label.replace "Stop watch started at #{time}"
+    end
+    stop = button "Stop" do
+      label.replace "Stopped, #{Time.now - time} seconds elapsed."
+    end
+    label = text "Press start to begin timing."
+  end
+end
+</code></pre>
+<p>More as the week goes on.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">9 comments</a></div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>July
+      30th</strong>
+    16:43</div>
+    <div class="content"><p>Samples like the one above will appear <a href="http://code.whytheluckystiff.net/shoes/browser/trunk/samples">here</a>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>jashkenas</h3>
+    <div class="time">said on <strong>July
+      30th</strong>
+    20:36</div>
+    <div class="content"><p>Why!</p><p>I don&#8217;t think you&#8217;ll rest while there&#8217;s a single arena left in the potential Rubyverse where you haven&#8217;t drawn your line in the sand.</p><p>Three cheers.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Rebol</h3>
+    <div class="time">said on <strong>July
+      30th</strong>
+    21:36</div>
+    <div class="content"><p>Why:</p><p>Have you taken a serious look at Rebol?  I&#8217;m curious to know your thoughts about it.  It seems like Try Ruby and Hackety Hack could very easily have been written in Rebol and advanced very far.  There is so much good work that has been done in Rebol and yet people continue to ignore it for some reason.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>July
+      30th</strong>
+    22:40</div>
+    <div class="content"><p>Sure, yeah, I&#8217;ve followed REBOL a few months longer than I&#8217;ve followed Ruby.</p><p>The succinctness of REBOL/View is awesome.  Shoes is definitely inspired by it!  The look of REBOL/View apps is kind of weird.  REBOL itself is a fun language.  I just can&#8217;t get myself to think in it.  Ruby is my blood type now, it&#8217;s irreversible.</p><p>Also, it&#8217;s vital for my language of choice to be free software.  Hacking Ruby internals has been an essential and glorious part of the whole experience for me.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zimbatm</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    02:44</div>
+    <div class="content"><p>By first impression, the code seems a bit spagetty-like. Why not follow your Web inspiration and split data (html), presentation (css) and logic (js) ?</p><p>Maybe you&#8217;ll also be interested by LEL, that nice table constructing DSL : http://ihate.rubyforge.org/profligacy/lel.html</p><p>I wish you all the success for your project, that really looks fantastic as usual :)</p><p>Cheers,<br>
+  zimbatm</p></div>
+</div>
+
+<div class="entry">
+    <h3>prae</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    08:46</div>
+    <div class="content"><p>Like Zim, I agree that presentation and logic should be split.  Strangely enough, I&#8217;ve always liked Visual Basic for desktop GUI programming.  The way you can easily bind click events to a method can&#8217;t really be beat.</p><p>In the button block format above, for instance, how would you go about setting an action to be executed on right click?  Double-click versus single click?  Mouse up versus mouse down?  Method bindings seem the obvious choice:</p><p>def start_click<br>
+  # Do something<br>
+end</p><p>def start_right_click<br>
+  # Do something completely different<br>
+end</p><p>start = button(&#8220;Start&#8221;,<br>
+  :click =&gt; start_click,<br>
+  :right_click =&gt; start_right_click<br>
+)</p><p>Of course, scoping becomes an issue (there&#8217;s a reason why global variables are so popular in VB).  But I&#8217;m sure it could be figured out relatively easily.</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    09:25</div>
+    <div class="content"><p>Well, these samples are small, so I&#8217;ve just inlined everything.  There&#8217;s a technique for cutting things up so it looks just like a Camping app.  I mean that&#8217;s exactly how I&#8217;m doing Hackety Hack.  All in due time.</p></div>
+</div>
+
+<div class="entry">
+    <h3>netghost</h3>
+    <div class="time">said on <strong>July
+      31st</strong>
+    10:51</div>
+    <div class="content"><p>Every time you create something my day gets just a little bit better.  Beware, I may slip off into ecstatic hallucinations if you keep this up.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Peter</h3>
+    <div class="time">said on <strong>August
+      2nd</strong>
+    02:11</div>
+    <div class="content"><p>The wiki mentions ShoesLib.zip as being required for a Windows build, but it&#8217;s nowhere to find&#8230;</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://code.whytheluckystiff.net/shoes/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

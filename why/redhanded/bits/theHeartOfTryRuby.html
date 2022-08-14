@@ -1,0 +1,710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0089)redhanded.hobix.com/bits/theHeartOfTryRuby.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/bits/theHeartOfTryRuby.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » The Heart of Try Ruby</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">The Heart of Try Ruby
+  <SPAN class="entryPermalink"><A href="../bits/theHeartOfTryRuby.html" title="Permanent link to &ldquo;The Heart of Try Ruby&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../bits" title="List of entries in the &ldquo;bits&rdquo; category">bits</A>
+</DIV>
+
+     <DIV class="entryContent"><P style="text-align:center;"><IMG src="../images/irb-lex.gif" alt=""></P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    39 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>abscond</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:17</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>oh why</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Ben</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><A href="http://pastie.caboo.se/56889">this</A> ?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>netghost</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>hehehehe :)
+Anyone suffering from epilepsy now can hit escape in FireFox and it will stop the gif ;)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Douglas F Shearer</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I think I might leave reading this one to the morning…..!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>rluv</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>15:43</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Frame 4 with the deer is a complete masterpiece!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dysinger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P> OMG  that’s horrid.  I think I just had an epileptic seizure.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Shazburg</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Right+Click in Safari makes it stop.  Makes it all stop.  They can’t hurt me as long as I have my Mighty Mouse!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>goodenough</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Cyclog</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>chris</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:43</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Where is the sound?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>DrNic</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Do you have a standard background flickr photo set for your unit test code?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P> YTMND </P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>misuba</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>16:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>your.head do |head|; asplode; end</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>17:12</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Does anyone know the Firefox command for speed-up-and-magnify?  I’m sure some of us would be so glad to hear of it.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>where</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>17:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>This looks like a job for…</P>
+
+
+	<P><IMG src="../images/stolenwallet0001.jpg" alt=""></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>bruceb3</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>17:26</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I love it!
+netghost, thanks for the firefox tip.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>evanfarrar</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>18:55</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>why: lovely! I would suggest animating it with javascript domswaps so that the user can speed up the animations easily. Also I would reccommend splicing every mod 2 character into a transparent gif then overlaying them with absolute positioning so that you can wobble even and odd chars independently.</P>
+
+
+	<P>Also, to reduce your compatibility in other browsers and make more beautiful animations that are not vulnerable to weak  OCR , please write your own fonts in  SVG  and embed the svg directly in your xhtml. With any luck, you won’t be in the ruby planet in less than 5 posts.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Anynymous coward</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>19:02</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What the fuck? Please stop this.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>evanfarrar</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>19:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I hope this helps the kid who is doing the google summer of code “rails in browser breakpointer”. I also hope he is not succeptible to seizures.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>cdcarter</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>19:34</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Do you use Exceptions as continuations?  You raise Continue, which doesn’t make sense outside that context.</P>
+
+
+	<P>Keep these coming _why, great code, and quite fun to get working!  Do you have a script that generates these?  I would love to add this to my blaagh</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Danno</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>20:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>_why, much as I appreciate your continued experimentation with Ruby, I miss the old days of clever syntax hacks that made programming not only fun and interesting, but an honest to goodness adventure.</P>
+
+
+	<P>This latest series has been more like a bad trip than anything else, I’m afraid to say.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Djur</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>21:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>What a bunch of pantswetters. Bravo, _why.</P>
+
+
+	<P>cdcarter: It would appear that he’s using the Continue exception much as one might use a catch … throw … end block. As far as I can tell, the advantage is one less indent level because of the method-level ensure.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>QuickRedFox</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>22:58</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><IMG src="../images/whymouthkd2.gif" alt=""></P>
+
+
+	<P>It’s  GREAT !</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Klondike</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>26 Apr 2007</NOBR> at <NOBR>23:04</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>IT’S  LIKE I ’M  ON DISCO VACATION !</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>yo</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>00:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>yo</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>jEFF</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>03:09</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><H2>Stayin’ Aliiiiiiiiiiiiiive</H2>
+
+
+	<P><IMG src="../images/disco_funk_fever_inclus_dvd_bonus_sony_bmg.jpg" alt=""></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>03:11</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><B>_Why</B>: I’m using <A href="http://imagezoom.yellowgorilla.net/help/?source=options&version=0.2">ImageZoom</A>
+but I don’t know how to control speed. I don’t see any mechanism for stepping through the images now that I have hit Escape to freeze it.   HTH .</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>ジョンジョイス</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>04:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>ヤベ〜
+c’est magnific!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Trejkaz</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>05:22</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You need to do this shit in  SVG  so at least we can copy it.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Anonymous</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>06:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><IMG src="../images/lolkd4.jpg" alt=""></P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Nick</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>06:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I suspect that I many people will now go to Why’s blog to not see the code, but how it is presented.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>forrestc</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>08:19</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>哥们儿，还让不让人看了？</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>llasram</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>09:32</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>_why</STRONG>, I must say: you are a man who knows how to say “fuck you” to his critics. :-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>09:35</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Just discovered that in Firefox, attempting to drag the image will give the “you can’t do that” slashed circle, and will freeze the image temporarily. Thus you can get to see all the images inside by repeating this.  This is still with the above image tool installed.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>how</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>27 Apr 2007</NOBR> at <NOBR>20:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>anybody have any comments about what the code does? or are you just masking the fact that you dont know by complaining about images on the web?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>saint_cypher</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>29 Apr 2007</NOBR> at <NOBR>14:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Is that a Fallow Deer?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>tirins.play</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>30 Apr 2007</NOBR> at <NOBR>06:37</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent">why, you had to go out and encourage him&lt;/ &gt;
+
+	<P>i see a moose</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Toast_in_the_Pants</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 May 2007</NOBR> at <NOBR>16:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You can drag the image to your Desktop and view it with Preview to see all the images.</P>
+
+
+	<P>Using Escape in Camino will also cause the image to stop.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Dave Burt</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 May 2007</NOBR> at <NOBR>19:22</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>This looks much simpler than  IRB ::Irb.</P>
+
+
+	<P>But why do you define exceptions and <CODE>raise Empty</CODE> instead of just <CODE>throw</CODE>-ing <CODE>:empty</CODE>?</P>
+
+
+	<P>Do you sometimes want to pass a message along with the thrown thing? Do you want doco on them in RDoc?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>02 May 2007</NOBR> at <NOBR>23:50</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Just not in the habit I guess.</P></DIV></DIV>
+</DIV>
+
+
+<DIV class="entry">
+<FORM name="userComment" method="post" action="/api/comment/bits/theHeartOfTryRuby">
+  <DIV class="entryAttrib">
+     <DIV class="entryAuthor"><INPUT name="sayor" type="textbox" size="15" maxlength="50"></DIV>
+     <DIV id="liveTime" class="entryTime"><NOBR>11 Jul 2010</NOBR> at <NOBR>20:34</NOBR></DIV>
+  </DIV>
+  <DIV class="entryContentOuter"><DIV class="entryContent">
+     <INPUT type="hidden" name="timestamp" value="yopYLare1A">
+     <TEXTAREA name="consay" rows="6" cols="50"></TEXTAREA>
+     <P><INPUT type="button" name="pleasePreview" value="preview" onclick="liveTextilePreview(document.forms[&#39;userComment&#39;].elements[&#39;consay&#39;], &#39;textilePreview&#39;, &#39;/api/preview&#39;)">
+        <INPUT type="submit" name="submit" value="&gt;&gt;">
+        <SMALL>* do <A href="../javascript:quickRedReference();">fancy stuff</A> in your comment.</SMALL>
+     </P>
+     <DIV id="textileWrap"><H4>PREVIEW PANE</H4>
+     <DIV id="textilePreview"></DIV>
+     </DIV>
+     </DIV>
+  </DIV></FORM></DIV>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</BODY></HTML>

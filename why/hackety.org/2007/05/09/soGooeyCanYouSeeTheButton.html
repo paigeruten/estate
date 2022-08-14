@@ -1,0 +1,329 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; So Gooey: Can You See The Button?</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2007/05/09/soGooeyCanYouSeeTheButton.html">So Gooey: Can You See The Button?</a></h1>
+  <div class="time"><strong>May
+9th
+</strong>
+    09:43</div>
+  <div class="author">by why</div>
+  <div class="content"><p>Time yourself.  Here are four equivalent samples of gooeys.  Each is trivial.  Just a button.  And a certain amount of goo.  Find that button!</p>
+<p>1. <a href="https://openjfx.dev.java.net/JavaFX_Programming_Language.html">JavaFX</a>:</p>
+
+<pre class="javafx">
+Frame {
+  content: Button {
+    text: "Press Me"
+    action: operation() {
+       System.out.println("You pressed me");
+    }
+  }
+  visible: true
+}
+</pre>
+<p>2. Silverlight (<a href="http://msdn2.microsoft.com/en-us/library/ms752059.aspx"><span class="caps">XAML</span></a>):</p>
+
+<pre class="xaml">
+&lt;Page 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  x:Class="MyNamespace.MyCanvasCodeInline"&gt;
+  &lt;Button Click="Clicked"&gt;Press Me&lt;/Button&gt;
+  &lt;x:Code&gt;&lt;![CDATA[
+    void Clicked(object sender, RoutedEventArgs e) {
+      button1.Content = "You pressed me";
+    }
+  ]]&gt;&lt;/x:Code&gt; 
+&lt;/Page&gt;
+</pre>
+<p>3. <a href="http://www.rebol.com/docs/easy-vid.html"><span class="caps">REBOL</span>/View</a>:</p>
+
+<pre class="rebol">
+REBOL [] view layout [
+  button "Press me" [print "You pressed me"]
+]
+</pre>
+<p>4. <a href="http://wiki.tcl.tk/1291">Tcl/Tk</a>:</p>
+
+<pre class="tk">
+button .press -text "Press me" -command {
+  puts stdout "You pressed me"
+}
+pack .press
+</pre>
+
+<hr />
+
+<p>Good job!  Your reward is <a href="http://obligement.free.fr/articles_traduction/itwsassenrath_en.php">this interview</a> with Carl Sassenrath.  An excerpt:</p>
+<blockquote>
+<p>One of the main goals for <span class="caps">REBOL</span> 3 is to make many parts of it open source so that it can be supported on a greater number of hardware and software systems without RT needing to do all that. Now developers can help bring <span class="caps">REBOL</span> into new products and markets.</p>
+</blockquote>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">22 comments</a></div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    10:03</div>
+    <div class="content"><blockquote><p>Note however, there will still be a kernel of REBOL that is not open source. This factor lets us keep the language 100% compatible between different computers and operating systems.</p></blockquote><p>Sure, sure.  Wake me when REBOL&#8217;s actually Open Source and I can run it on e.g. Linux/PPC (or natively on anything 64-bit, for that matter&#8230;).</p><p>That said, a Ruby GUI abstraction in the style of REBOL/View would be pretty cool.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    10:05</div>
+    <div class="content"><p><strong>tap tap tap</strong> Hmm, did this thing just eat my last comment?</p></div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    10:13</div>
+    <div class="content"><p>Back in 2005 there was a RubyCentral project of that exact nature.  See <a href="http://redhanded.hobix.com/cult/fiveCodefestsGetGrants.html">the second item</a> by Andrey Melnik.  (Vanished.)</p></div>
+</div>
+
+<div class="entry">
+    <h3>why</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    11:13</div>
+    <div class="content"><p>Oh, what am I thinking!  Here&#8217;s one for Hackety Hack:</p>
+<pre>
+Web.popup {
+  buttons("Press me") { say("OK") }
+}
+</pre>
+<p>Although some things are changing.  Like how <code>Web.popup</code> is becoming <code>Window</code>.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Djur</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    12:42</div>
+    <div class="content"><p>Guh. XAML.</p><p>Actually, one of the things I&#8217;m working on is a little declarative GUI toolkit for Ruby. My current project allows scenario developers to generate custom GUIs, but the scenario developer&#8217;s code runs in a separate process from the UI. So they need to be able to declare UI elements and style them and provide them with behavior without letting them go straight to the (potentially insecure) GUI metal. The problem is that it&#8217;s more of a &#8216;user interaction/input&#8217; system than a traditional GUI system&#8212;it&#8217;s more focused on presenting data and getting responses than on designing widgets.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    12:52</div>
+    <div class="content"><p>Seems both Melnik&#8217;s 2005 projects are worth notion. Also seems, none of them had been ended. Somebody knows, what&#8217;ve happened with my compatriot?</p><p>Back to topic. I&#8217;m working on Ruby wrapper for <a href="http://www.terrainformatica.com/htmlayout/">this library</a> (much more lightweight than Mozilla layouting), and it has it&#8217;s own Markaby-like builder (and it would have it&#8217;s own Camping-like <strong>desktop</strong> framework).</p><p>It would do something likewise:<br>
+<code><br>
+App.run {<br>
+   button(&#8220;Press me&#8221;).on_click{puts &#8220;You bet!&#8221;}<br>
+}<br>
+</code></p></div>
+</div>
+
+<div class="entry">
+    <h3>Thijs</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    13:30</div>
+    <div class="content"><p>The Amiga was&#8212;err, still is, very nice indeed. And REBOL is really nice too. If only it were really free&#8230;</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    13:55</div>
+    <div class="content"><p>I think one key thing is to make the common case simple.  The rule with buttons is that, with few exceptions, they have some text and some code that runs when you click the button.  Auf Ruby that pretty much means:</p><pre><code>
+button("Some text") { some_code }
+</code><p>There&#8217;s always option hashes for the stuff you need more seldom.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:03</div>
+    <div class="content"><p>Hmm, looks like SuperRedCloth(?) isn&#8217;t quite up to snuff with closing &amp;lt;pre&amp;gt;&amp;lt;code&amp;gt; yet.</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:06</div>
+    <div class="content"><p>Well, it seems the Ajax preview matches the real entry completely now.  That&#8217;s good.</p><p>What&#8217;s the new recipe for code samples, though?</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:32</div>
+    <div class="content"><p>&gt; I think one key thing is to make the common case simple.</p><p>If it was complain for my example (and &#8220;on_click&#8221; part of it), I can say&#8211;it&#8217;s Markaby thing. Thus, &#8220;just block&#8221; is reserved for DOM creation. Something like:<br>
+<code><br>
+button{img :src=&gt;&quot;1.gif&quot;; span &#8220;and title&#8221;}.on_click{puts &#8220;see?&#8221;}<br>
+</code></p><p>(btw, &#8220;code&#8221; without &#8220;pre&#8221; works :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:36</div>
+    <div class="content"><p>I wasn&#8217;t picking on your example in particular (more stuff like the TCL example in the original post), although I&#8217;ll admit that Markaby is not my favorite thing for templating in general.</p><p>(&#8220;code&#8221; without &#8220;pre&#8221; means you don&#8217;t get indentation)</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:43</div>
+    <div class="content"><p>Anyway, enough complaining from me!  It&#8217;s true that <code>.on_click {}</code> is the best approach when you&#8217;ve got multiple sorts of event handlers to deal with.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    14:52</div>
+    <div class="content"><p>&gt; although I’ll admit that Markaby is not my favorite thing for templating in general</p><p>Than, what&#8217;s your favourite? Just today the topic was discussed in Russian RoR list, where there was an opinions after erb, <a href="http://rashkovskii.com/articles/2007/5/7/lilu-markup">lilu</a>, Haml, Markaby, and Zope&#8217;s TAL.</p><p>(yeah, I&#8217;ve noticed)</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    15:35</div>
+    <div class="content"><p>I&#8217;m somewhat partial to lilu actually, though I&#8217;m not really happy with any of them.  The big thing is a lack of simple semantics.  I&#8217;m actually trying to develop my own templating system at the moment.</p></div>
+</div>
+
+<div class="entry">
+    <h3>zverok</h3>
+    <div class="time">said on <strong>May
+      9th</strong>
+    15:44</div>
+    <div class="content"><p>it&#8217;s a completely off-topic yet, but can&#8217;t you share in short, what your templating system would look like? i&#8217;m very interested in simple semantics!</p><p>(_why, don&#8217;t ban me, pleeeease)</p></div>
+</div>
+
+<div class="entry">
+    <h3>Nathan</h3>
+    <div class="time">said on <strong>May
+      10th</strong>
+    01:09</div>
+    <div class="content"><p>I&#8217;m a fan of Haml ;).</p><p>MenTaLguY, I&#8217;m also curious as to what you&#8217;ve got up your sleeve.</p><p>I&#8217;d love to see a nice, declarative GUI framework in Ruby. Preferably one that can have native WMs as a backend, while preserving snazzy Ruby syntax.</p></div>
+</div>
+
+<div class="entry">
+    <h3>kurtiss</h3>
+    <div class="time">said on <strong>May
+      10th</strong>
+    01:37</div>
+    <div class="content"><p>&#8230;and which sample takes the cake for finding the action to be executed when the button is pressed?</p></div>
+</div>
+
+<div class="entry">
+    <h3>MenTaLguY</h3>
+    <div class="time">said on <strong>May
+      10th</strong>
+    13:44</div>
+    <div class="content"><p>At the moment, what I&#8217;m playing with is essentially a substantially less magic version of Markaby.  All that stuff with fragments?  Gone.  (There are alternatives.)  The underlying abstraction also deals in byte streams, so it&#8217;s theoretically useful for generating more than just XML/HTML.</p><p>But I&#8217;ll post more about it when I feel I&#8217;ve got something genuinely useful.  I&#8217;d like to find a more declarative approach to do atop this the templating-via-substitution thing that lilu does, among other things.</p></div>
+</div>
+
+<div class="entry">
+    <h3>michael schurter</h3>
+    <div class="time">said on <strong>May
+      11th</strong>
+    09:55</div>
+    <div class="content"><p>What about good old XHTML + JavaScript?</p><p>&amp;lt;input type=&#8220;button&#8221; onclick=&#8220;&#8216;Hello World!&#8217;)&#8221; /&amp;gt;</p><p>Unfortunately blog software seems completely incapable of allowing me to post such beautiful and elegant code.  :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>damy</h3>
+    <div class="time">said on <strong>May
+      11th</strong>
+    14:59</div>
+    <div class="content"><p>&#8230; now it would be interesting to see a comparison for interactive 3d objects with video ..</p></div>
+</div>
+
+<div class="entry">
+    <h3>Jim d.</h3>
+    <div class="time">said on <strong>May
+      23rd</strong>
+    15:35</div>
+    <div class="content"><p>I agree that XAML can be verbose, but to be fair it&#8217;s the only example that will run (except for maybe REBOL).  You omit the necessary boilerplate code to get the javaFX or Tcl/tk code off the ground.</p><p>That said, I agree that xaml can be verbose.  However, I&#8217;d argue that it&#8217;s xml syntax has strengths when it comes to creating design tools around it.  I&#8217;m sure hand-coders will villify me, but the truth is that GUI design is best accomplished, well&#8230; with a GUI.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

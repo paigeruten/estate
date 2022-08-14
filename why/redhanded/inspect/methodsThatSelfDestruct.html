@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0098)redhanded.hobix.com/inspect/methodsThatSelfDestruct.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/methodsThatSelfDestruct.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Methods That Self-Destruct</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Methods That Self-Destruct
+  <SPAN class="entryPermalink"><A href="../inspect/methodsThatSelfDestruct.html" title="Permanent link to &ldquo;Methods That Self-Destruct&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>Expiring a method.  And let’s keep meta out of this.</P>
+
+
+<PRE> class Trial
+    def run_me
+       def self.run_me; raise Exception, "NO MORE." end
+       puts "Your trial period has ended." 
+    end
+ end
+
+ t = Trial.new
+ t.run_me
+ #=&gt; Your trial period has ended.
+ t.run_me
+ #=&gt; (trial):3:in `run_me': NO MORE. (Exception)
+</PRE>
+
+	<P>The <CODE>run_me</CODE> overwrites itself.  But notice it uses <CODE>def self</CODE>.  This overwrites the method in the object, not in the class.  So you can create more <CODE>Trial</CODE> objects which haven’t self-destructed yet.</P>
+
+
+	<P>Can also be used as a memoization technique.  But, rather than caching the data, you just ensure that the code runs only once.</P>
+
+
+<PRE> class Hit
+   def initialize(ip)
+     @ip = ip
+   end
+   def country
+     def self.country; @country end
+     @country = `geoiplookup #{@ip}`.chomp.gsub(/^GeoIP Country Edition: /,"")
+   end
+ end
+</PRE>
+
+	<P>I should correct one thing.  I’m not actually <EM>overwriting</EM> the method.  Just capping it off with a new singleton method.</P>
+
+
+	<P>For more on singleton methods: <A href="http://www.ruby-doc.org/docs/UsersGuide/rg/singletonmethods.html">an intro</A> and <A href="http://whytheluckystiff.net/clog/ruby/actualDuckTypingAdvantages.html">some old thoughts on duck-typed singletons</A>.</P>
+
+
+	<P class="update"><STRONG>Oy:</STRONG> Don’t miss MenTaL’s method-rewriting state machine.  Sixth comment down, that big one.</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>09:45</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    23 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>10:41</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yeah—this technique is simple, but really underappreciated.</P>
+
+
+	<P>However, if you’re using it to optimize <CODE>@country ||= ...</CODE>, it’s worth noting that the following technique creates a considerably faster accessor:</P>
+
+
+<PRE><CODE>def country
+  class &lt;&lt; self ; attr_reader :country end
+  @country = `geoiplookup #{@ip}`.
+    chomp.gsub(/^GeoIP Country Edition: /,"")
+end</CODE></PRE>
+
+	<P>A benchmark of 5,000,000 reads comes out like:</P>
+
+
+	<TABLE>
+		<TBODY><TR>
+			<TH>technique </TH>
+			<TH>time (seconds) </TH>
+		</TR>
+		<TR>
+			<TD> <CODE>@variable ||=</CODE> </TD>
+			<TD> 13.600000 </TD>
+		</TR>
+		<TR>
+			<TD> <CODE>def self.accessor</CODE> </TD>
+			<TD> 10.740000 </TD>
+		</TR>
+		<TR>
+			<TD> <CODE>class &lt;&lt; self ; attr_reader</CODE> </TD>
+			<TD> 7.380000 </TD>
+		</TR>
+	</TBODY></TABLE>
+
+
+
+
+	<P>As you can see, <CODE>attr_reader</CODE> wins by quite a bit.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>class Fixnum
+  def + (a)
+    case rand 4
+      when 0
+        def + (b); self+b end
+      when 1
+        def + (b); self*b end
+      when 2
+        def + (b); self-b end
+      when 3
+        def + (b); self/b end
+    end
+  end
+end</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hoyhoy</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:18</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><PRE><CODE>
+class Fixnum
+  def + (a)
+    case rand 4
+      when 0
+        def + (b); self+b end
+      when 1
+        def + (b); self*b end
+      when 2
+        def + (b); self-b end
+      when 3
+        def + (b); self/b end
+    end
+  end
+end
+</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>trans</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:30</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Hmm… is this better than the traditional form of memoization? Or does it have adverse effects by comparison?</P>
+
+
+	<P>Also, I’m still looking for a way to task dependencies with parameters just by calling them like methods at the beginning of the task def—I wonder if this would work?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>trans</STRONG>: it can be bad with inheritance—e.g. if somebody derives from <CODE>Hit</CODE> and overrides <CODE>Hit#country</CODE>, you will clobber that.  Otherwise, singleton-methods-for-memoization is very win.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:48</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>It’s worth nothing that self-replacing methods aren’t only for destruction, memoization, and messing with people who are fond of <CODE>Fixnum#+</CODE> (I think that is most of us)—you can use them to maintain state.  For example, here’s a state machine which recognizes a sequence like <CODE>a(bc)*(a|c)</CODE>:</P>
+
+
+<PRE><CODE>
+class Recognizer
+  def initialize ; _start end
+
+  def reset ; _start end
+
+private
+  def _start
+    def self.match( k )
+      case k
+      when :a: _S0
+      else _fail
+      end
+    end
+    def self.finish
+      _fail
+    end
+  end
+
+  def _S0
+    def self.match( k )
+      case k
+      when :b: _S1
+      else _S2 ; match( k )
+      end
+    end
+  end
+
+  def _S1
+    def self.match( k )
+      case k
+      when :c: _S0
+      else _fail
+      end
+    end
+  end
+
+  def _S2
+    def self.match( k )
+      case k
+      when :a: _end
+      when :c: _end
+      else _fail
+      end
+    end
+  end
+
+  def _end
+    def self.match( k ) ; _fail ; end
+    def self.finish ; end
+  end
+
+  def _fail
+    def self.match( k ) ; _fail ; end
+    def self.finish ; _fail ; end
+    raise "match failed" 
+  end
+end
+
+r = Recognizer.new
+# will match
+[ :a, :b, :c, :b, :c, :c ].each do |k|
+  r.match k
+end
+r.finish
+
+r.reset
+# will fail
+[ :a, :b, :b, :c, :a ].each do |k|
+  r.match k
+end
+r.finish
+</CODE></PRE>
+
+	<P>This is an objectless embodiment of the State pattern, in much the same way that Ruby iterators are an objectless embodiment of the Visitor pattern.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>11:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>MenTaLguY:</STRONG> Thanks for the benchmark.  That’s really nice to know.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>12:28</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Since when have we been able to have <CODE>def...end</CODE>
+directly inside <CODE>def...end</CODE>, without a class definition nested between? 
+I’ve not attempted this for a while but when I last tried it, I got a error. I concluded there was a reason for this by design, and left it there. Now, even with 1.8.2 I can.  So, do we need define_method any more?</P>
+
+
+	<P><B>MenTaLguY</B>: object-less State pattern: Nice!</P>
+
+
+	<P>I feel pulled two ways:
+this is powerful and the mechanism is clear, but it is self-modifying code, which one is taught to avoid.  Or do I need to unlearn that?  After all, goto is OK in the right circumstances…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>pHiL</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>12:40</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>hgs</STRONG>: you need to unlearn all that.  Otherwise you’ll never do any metaprogramming.  That rule against self-modifying code was for a static world.  We now are boldly entering a new dynamic world and _why is leading the way!  Onward to the glorious, <STRONG>dynamic</STRONG> future!</P>
+
+
+	<P>...OK, just don’t get too carried away with it.  Use judiciously.  Proceed with caution but tread with confidence.  Remember: self-modifying code can smell fear – never let it know you’re afraid and you’ll be fine.  A bit like lion taming in that regard.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>12:54</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yes, good point about parallels with metaprogramming. And <A href="http://en.wikiquote.org/wiki/Dune">fear is the mind-killer</A>, of course :-)</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>You’re welcome! However, I got curious how memoized reads compare to the one-time setup overhead.  This is what I found (times are normalized):</P>
+
+
+	<TABLE>
+		<TBODY><TR>
+			<TH>technique</TH>
+			<TH>setup&nbsp;</TH>
+			<TH>read&nbsp;&nbsp;&nbsp;</TH>
+			<TH><INS>setup</INS><BR>read</TH>
+		</TR>
+		<TR>
+			<TD><CODE>||=</CODE></TD>
+			<TD>1.16</TD>
+			<TD>1.00</TD>
+			<TD>1.16</TD>
+		</TR>
+		<TR>
+			<TD><CODE>def self.accessor</CODE></TD>
+			<TD>5.24</TD>
+			<TD>0.790</TD>
+			<TD>6.63</TD>
+		</TR>
+		<TR>
+			<TD><CODE>class &lt;&lt; self ; attr_reader</CODE></TD>
+			<TD>6.44</TD>
+			<TD>0.543</TD>
+			<TD>11.9</TD>
+		</TR>
+	</TBODY></TABLE>
+
+
+
+
+	<P>This means that it takes a few calls to “break even”, and a few more before one of the “faster” techniques finally wins:</P>
+
+
+	<TABLE>
+		<TBODY><TR>
+			<TH>calls</TH>
+			<TD><CODE>||=</CODE>&nbsp;&nbsp;</TD>
+			<TD><CODE>def self</CODE></TD>
+			<TD><CODE>attr_reader</CODE></TD>
+		</TR>
+		<TR>
+			<TD>1</TD>
+			<TD><STRONG>1.16</STRONG></TD>
+			<TD>5.24</TD>
+			<TD>6.44</TD>
+		</TR>
+		<TR>
+			<TD>2</TD>
+			<TD><STRONG>2.16</STRONG></TD>
+			<TD>6.03</TD>
+			<TD>6.98</TD>
+		</TR>
+		<TR>
+			<TD>3</TD>
+			<TD><STRONG>3.16</STRONG></TD>
+			<TD>6.82</TD>
+			<TD>7.53</TD>
+		</TR>
+		<TR>
+			<TD>4</TD>
+			<TD><STRONG>4.16</STRONG></TD>
+			<TD>7.61</TD>
+			<TD>8.07</TD>
+		</TR>
+		<TR>
+			<TD>5</TD>
+			<TD><STRONG>5.16</STRONG></TD>
+			<TD>8.40</TD>
+			<TD>8.61</TD>
+		</TR>
+		<TR>
+			<TD>6</TD>
+			<TD><STRONG>6.16</STRONG></TD>
+			<TD>9.19</TD>
+			<TD>9.16</TD>
+		</TR>
+		<TR>
+			<TD>7</TD>
+			<TD><STRONG>7.16</STRONG></TD>
+			<TD>9.98</TD>
+			<TD>9.70</TD>
+		</TR>
+		<TR>
+			<TD>8</TD>
+			<TD><STRONG>8.16</STRONG></TD>
+			<TD>10.8</TD>
+			<TD>10.2</TD>
+		</TR>
+		<TR>
+			<TD>9</TD>
+			<TD><STRONG>9.16</STRONG></TD>
+			<TD>11.6</TD>
+			<TD>10.8</TD>
+		</TR>
+		<TR>
+			<TD>10</TD>
+			<TD><STRONG>10.2</STRONG></TD>
+			<TD>12.4</TD>
+			<TD>11.3</TD>
+		</TR>
+		<TR>
+			<TD>11</TD>
+			<TD><STRONG>11.2</STRONG></TD>
+			<TD>13.1</TD>
+			<TD>11.9</TD>
+		</TR>
+		<TR>
+			<TD>12</TD>
+			<TD><STRONG>12.2</STRONG></TD>
+			<TD>14.0</TD>
+			<TD>12.4</TD>
+		</TR>
+		<TR>
+			<TD>13</TD>
+			<TD>13.2</TD>
+			<TD>14.7</TD>
+			<TD><STRONG>13.0</STRONG></TD>
+		</TR>
+		<TR>
+			<TD>14</TD>
+			<TD>14.2</TD>
+			<TD>15.5</TD>
+			<TD><STRONG>13.5</STRONG></TD>
+		</TR>
+	</TBODY></TABLE>
+
+
+
+
+	<P>I think there’s probably a lesson here…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>.</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Do you really need the self. here?  Wouldn’t</P>
+
+
+	<P>def runme
+  def runme; end
+end</P>
+
+
+	<P>Work just the same?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>hgs</STRONG>: you’ve always (as far as I know) been able to do a <CODE>def obj.meth</CODE> outside a class or module, just never a regular def.  The rationale: the receiver of the method definition is explicit when you’re defining a singleton method on an object, but if you’re outside a class or module and say <CODE>def meth</CODE>, where does it go?</P>
+
+
+	<P><CODE>self.class</CODE> isn’t always a desirable answer for that, nor is “the class/module on which the enclosing method was defined”...</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>.</STRONG>: it’s not allowed syntax.  If it were, I’m not sure people could agree on what it should mean.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>MenTaLguY:</STRONG> Welp, I guess the lesson is:</P>
+
+
+<PRE> def country
+   if @past == 12
+     def self.country
+       @past += 1
+       @country
+     end
+   end
+   @country ||= (@past = 0) &amp;&amp; `geoip...`
+   @past += 1
+   @country
+ end
+</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>13:53</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>pHiL</STRONG>: I think the thing to ask is always “does doing it this way make the code clearer?”</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>shadytrees</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>14:00</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><BLOCKQUOTE>
+		<P>.: it’s not allowed syntax. If it were, I’m not sure people could agree on what it should mean.</P>
+	</BLOCKQUOTE>
+
+
+	<P>His syntax works for me without warning or error on Ruby 1.8.4.</P>
+
+
+<PRE><CODE>
+class Doggie
+    def praise
+        def praise; puts "Bad boy"; end
+        puts "Good boy" 
+    end
+end
+
+h = Doggie.new
+3.times do h.praise end
+
+r = Doggie.new
+3.times do r.praise end
+</CODE></PRE>
+
+	<P>With one difference: <CODE>def praise</CODE> overwrites the method. That is, the output is one “Good boy” and five “Bad boy” instead of two “Good boy” and four “Bad boy,” which is what <CODE>def self.praise</CODE> does.</P>
+
+
+	<P>Fun.</P>
+
+
+	<P>More proof cats are for the wins and dogs are not.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>14:10</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>why</STRONG>: Dude, no, it’s got to be something like this:</P>
+
+
+<PRE><CODE>
+def country
+  start = Time.now
+  deffed = Thread.new {
+    def self.country ; @country end
+    self.country 
+  }.value
+  deffed_time = Time.now - start
+  start = Time.now
+  regular = Thread.new {
+    @country ||= `geoip...`
+  }.value
+  regular_time = Time.now - start
+  [ [ regular, regular_time ],
+    [ deffed, deffed_time ] ].sort \
+  do |(r0, t0), (r1, t1)|
+    t0 &lt;=&gt; t1
+  end.first.first
+end
+</CODE></PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>14:23</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>shadytrees</STRONG>: Wow, okay, see—I am very good at coming up with rationalizations for things which are totally wrong.</P>
+
+
+	<P>So, playing with it, the answer to where the method goes appears to be “the lexically innermost enclosing class/module block at the site where the method was defined, or Object if there is no such enclosing block”.</P>
+
+
+	<P>That means you have to be careful with def inside of a <CODE>def obj.meth</CODE> versus a def inside a def in <CODE>class &lt;&lt; obj</CODE>.  The former will put the method in the lexically enclosing class, not the singleton class of <CODE>obj</CODE>.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>nick</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>14:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Nice timing, I just <A href="http://blog.nicksieger.com/articles/2006/07/11/metaprogramming-pattern-1-self-specialize">wrote up</A> an article on the same thing, but alas with much less brevity and wit :(</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>drbrain</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>15:25</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>attr_accessor and friends are faster than real methods because they throw out the scope:</P>
+
+
+<PRE>$ parse_tree_show
+class X
+attr_reader :x
+def y; @y; end
+end
+[[:class,
+  :X,
+  :Object,
+  [:defn, :x, [:ivar, :@x]],
+  [:defn, :y, [:scope, [:block, [:args], [:ivar, :@y]]]]]]</PRE></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>nonni</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jul 2006</NOBR> at <NOBR>18:01</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>How does one look up old ruby blog articles on <A href="http://whytheluckystiff.net/">whytheluckystiff</A>  as per <B>some old thoughts…</B>?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>12 Jul 2006</NOBR> at <NOBR>07:39</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><B>nonni</B>: Googling with the expression <CODE>site:whytheluckystiff.net</CODE> along with your other keywords will probably help until a better answer appears.</P></DIV></DIV>
+</DIV>
+
+
+<DIV class="entry">
+<FORM name="userComment" method="post" action="/api/comment/inspect/methodsThatSelfDestruct">
+  <DIV class="entryAttrib">
+     <DIV class="entryAuthor"><INPUT name="sayor" type="textbox" size="15" maxlength="50"></DIV>
+     <DIV id="liveTime" class="entryTime"><NOBR>11 Jul 2010</NOBR> at <NOBR>21:29</NOBR></DIV>
+  </DIV>
+  <DIV class="entryContentOuter"><DIV class="entryContent">
+     <INPUT type="hidden" name="timestamp" value="yopYLare1A">
+     <TEXTAREA name="consay" rows="6" cols="50"></TEXTAREA>
+     <P><INPUT type="button" name="pleasePreview" value="preview" onclick="liveTextilePreview(document.forms[&#39;userComment&#39;].elements[&#39;consay&#39;], &#39;textilePreview&#39;, &#39;/api/preview&#39;)">
+        <INPUT type="submit" name="submit" value="&gt;&gt;">
+        <SMALL>* do <A href="../javascript:quickRedReference();">fancy stuff</A> in your comment.</SMALL>
+     </P>
+     <DIV id="textileWrap"><H4>PREVIEW PANE</H4>
+     <DIV id="textilePreview"></DIV>
+     </DIV>
+     </DIV>
+  </DIV></FORM></DIV>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</BODY></HTML>

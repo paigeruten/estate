@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Picture Shoes</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/08/09/pictureShoes.html">Picture Shoes</a></h1>
+  <div class="time"><strong>August
+9th
+</strong>
+    15:13</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/shoes-grad-tile.png" class="c" title="A cheap, little shadow is all you get today, folks." alt="A cheap, little shadow is all you get today, folks." /></p>
+<p>Sorry, the Shoes repo is pure shrapnel right now.  I suck!</p>
+<p>On with the lesson.  It seems like a big part of knowing <span class="caps">HTML</span> involves background image hacks.  Take the above window.  The gradient has to tile and reposition against the window edges.  That&#8217;s going to take some work!</p>
+<p>To make this stuff easier, I wanted Shoes to allow stacks and flows to each have multiple backgrounds.  And for backgrounds to simply be pattern elements that can be resized and individually positioned.</p>
+<p>The shade edge in the above window has five images involved.  The top side, the left side, the right side, and the two corners.</p>
+
+<pre><code class="rb">
+Shoes.app do
+  background "static/menu-gray.png"
+  background "static/menu-top.png", :height => 50
+  background "static/menu-left.png", :top => 50, :width => 55
+  background "static/menu-right.png", :top => 50, :right => 0, :width => 55
+  image "static/menu-corner1.png", :top => 0, :left => 0
+  image "static/menu-corner2.png", :top => 0, :right => 0
+  # ... form stuff here ...
+end
+</code></pre>
+<p>Oh, wait, six images.  The plain gray in the back.</p>
+<p>Take a look at these.  With the sides of the app, I&#8217;m able to limit the widths and heights of the backgrounds to get them to repeat only within a certain size.</p>
+<p>And, like <span class="caps">HTML</span>, you can specify a <code>right</code> offset rather than a <code>left</code>, if you want the image or background to stay against the right size.</p>
+</div>  
+  
+<div id="comments">
+<div class="total">7 comments</a></div>
+
+<div class="entry">
+    <h3>zerohalo</h3>
+    <div class="time">said on <strong>August
+      10th</strong>
+    11:46</div>
+    <div class="content"><p>Nice. Do all these images float and therefore affected by each other, or does it use  absolute positioning? How about an option for either one?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      10th</strong>
+    13:24</div>
+    <div class="content"><p>Well, Shoes doesn&#8217;t use the notion of &#8220;float&#8221; like CSS does.  The images do change position as the window size changes, if that&#8217;s what you&#8217;re asking.  They are absolutely positioned, albeit <em>against different origins</em>.</p><p>You could also accomplish this layout by using a <code>flow</code>.  It&#8217;s sort of like floating, in that all the elements fill in space horizontally before moving down.  So, the top side would be three images: <code>corner1.png</code>, <code>top.png</code> and <code>corner2.png</code>.  The widths of these three images would have to be: <code>55</code>, <code>-110</code> and <code>55</code>.  The <code>-110</code> means expand to 100% minus 110 pixels.</p><p>So, some things are obviously taken from HTML, but other things stem from ideas I had while working on HTML that just wouldn&#8217;t do what I wanted.</p></div>
+</div>
+
+<div class="entry">
+    <h3>datatec</h3>
+    <div class="time">said on <strong>August
+      10th</strong>
+    14:16</div>
+    <div class="content"><p>_why could you provide the 6 images you used?  It would really help with understanding. [And in my case debugging my misunderstanding :) ]</p></div>
+</div>
+
+<div class="entry">
+    <h3>dan</h3>
+    <div class="time">said on <strong>August
+      10th</strong>
+    14:35</div>
+    <div class="content"><p>Why not just allow for gradients to be specified directly, instead of using pngs to simulate them?</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>August
+      10th</strong>
+    15:42</div>
+    <div class="content"><p><strong>datatec</strong>: They are checked into Subversion.  See <code>samples/form.rb</code>.</p><p><strong>dan:</strong> Sure, you could do that once I get the patterns stuff done.  I don&#8217;t know, maybe sometimes programming a gradient is harder to get perfect when compared to just painting it.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Campzilla</h3>
+    <div class="time">said on <strong>August
+      14th</strong>
+    03:19</div>
+    <div class="content"><p>Maybe you could use one image and specify widths/heights for the outside non repeating bits.</p><pre>
+Shoes.app do
+  background "little_bacground.png", :top_rect => 50,
+                                     :left_rect => 55,
+                                     :bottom_rect => 0,
+                                     :right_rect => 55
+end
+<p>It&#8217;s nothing some ASCII art couldn&#8217;t explain!</p></div>
+</div>
+
+<div class="entry">
+    <h3>sdfdsfsdfdsf</h3>
+    <div class="time">said on <strong>August
+      14th</strong>
+    11:04</div>
+    <div class="content"><p>dsfdsdfsdsdfdsdf</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+    <div class="about">
+  <p><strong>Hackety.org</strong> is for artful computer hacking.  Hobbyists &amp; amateurs welcome.
+  Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a></p>
+</div>
+
+<img src="../../../images/hackety-quack.png" />
+<h2>Elsewhere</h2>
+<ul>
+  <li><a href="http://shoooes.net/">Shoes</a><br />the Ruby app toolkit</li>
+  <li><a href="http://hacketyhack.net/">Hackety Hack</a><br />the coder's starter kit</li>
+  <li><a href="http://tryruby.hobix.com/">Try Ruby!</a><br />a hands-on tutorial</li>
+</ul>
+
+  </div>
+</div>
+
+</body>
+</html>

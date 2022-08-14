@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0100)redhanded.hobix.com/inspect/duckTrustMetrics1Pagerank.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<BASE href="http://redhanded.hobix.com.wstub.archive.org/inspect/duckTrustMetrics1Pagerank.html">--><BASE href=".">
+
+
+<TITLE>RedHanded » Trust Metrics Mixin #1: PageRank</TITLE>
+<LINK rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<LINK rel="icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+
+
+
+
+<STYLE type="text/css">
+ @import "../site.css"; 
+</STYLE>
+</HEAD><BODY>
+
+<DIV id="page">
+
+<DIV id="hoodwinkd">
+  <A href="http://hoodwinkd.hobix.com/"><SPAN>hoodwink.d enhanced</SPAN></A>
+
+</DIV>
+<DIV id="buttons">
+<DL class="tab">
+  <DT><A title="Syndicate this Site" href="index.xml">RSS</A></DT>
+  <DD><A title="Syndicate this Site" href="index.xml">2.0</A></DD>
+</DL>
+<DL class="tab xhtml">
+  <DT><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">XHTML</A></DT>
+  <DD><A title="Validate this Site" href="http://validator.w3.org/check?uri=http://redhanded.hobix.com/">1.0</A></DD>
+</DL>
+</DIV>
+<H1 class="title"><A href="../"><IMG src="../images/redhanded.gif" alt="RedHanded"></A></H1>
+<DIV id="banner">
+  <DIV class="tagline">sneaking Ruby through the system</DIV>
+  <DIV class="nav"><A href="../5.gets/">5.gets</A> | <A href="../bits/">bits</A> | 
+    <A href="../inspect/">inspect</A> | <A href="../cult/">the cult</A> | <A href="../-h/">-h</A></DIV>
+</DIV>
+
+
+<DIV id="content">
+<DIV id="sidebar">
+<P>New to RedHanded? <A href="../-h/pardonAndWelcome.html">About our sections.</A></P>
+
+<DIV class="sidebarBox">
+<H2 class="sidebarTitle">Archive</H2>
+<UL>
+
+    <LI><A href="../2004/12/">December 2004</A></LI>
+
+    <LI><A href="../2005/01/">January 2005</A></LI>
+
+    <LI><A href="../2005/02/">February 2005</A></LI>
+
+    <LI><A href="../2005/03/">March 2005</A></LI>
+
+    <LI><A href="../2005/04/">April 2005</A></LI>
+
+    <LI><A href="../2005/05/">May 2005</A></LI>
+
+    <LI><A href="../2005/06/">June 2005</A></LI>
+
+    <LI><A href="../2005/07/">July 2005</A></LI>
+
+    <LI><A href="../2005/08/">August 2005</A></LI>
+
+    <LI><A href="../2005/09/">September 2005</A></LI>
+
+    <LI><A href="../2005/10/">October 2005</A></LI>
+
+    <LI><A href="../2005/11/">November 2005</A></LI>
+
+    <LI><A href="../2005/12/">December 2005</A></LI>
+
+    <LI><A href="../2006/01/">January 2006</A></LI>
+
+    <LI><A href="../2006/02/">February 2006</A></LI>
+
+    <LI><A href="../2006/03/">March 2006</A></LI>
+
+    <LI><A href="../2006/04/">April 2006</A></LI>
+
+    <LI><A href="../2006/05/">May 2006</A></LI>
+
+    <LI><A href="../2006/06/">June 2006</A></LI>
+
+    <LI><A href="../2006/07/">July 2006</A></LI>
+
+    <LI><A href="../2006/08/">August 2006</A></LI>
+
+    <LI><A href="../2006/09/">September 2006</A></LI>
+
+    <LI><A href="../2006/10/">October 2006</A></LI>
+
+    <LI><A href="../2006/11/">November 2006</A></LI>
+
+    <LI><A href="../2006/12/">December 2006</A></LI>
+
+    <LI><A href="../2007/01/">January 2007</A></LI>
+
+    <LI><A href="../2007/02/">February 2007</A></LI>
+
+    <LI><A href="../2007/03/">March 2007</A></LI>
+
+    <LI><A href="../2007/04/">April 2007</A></LI>
+
+    <LI><A href="../2007/05/">May 2007</A></LI>
+
+</UL>
+</DIV>
+
+<P><A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html"><IMG src="../images/prag-ruby-book.jpg" alt="PickAxe II"></A><BR>
+<A href="http://www.pragmaticprogrammer.com/titles/ruby/index.html">Get your copy of <I>Programming Ruby</I>!</A></P>
+
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Links</H2>
+        <A href="http://technorati.com/tags/ruby">@technorati</A><BR>
+<A href="http://del.icio.us/tag/ruby">@del.icio.us</A><BR>
+<A href="http://www.flickr.com/photos/tags/ruby">@flickr</A><BR>
+<A href="http://www.artima.com/articles/index.jsp?topic=ruby">@artima</A><BR>
+<A href="http://blog.caboo.se/">@caboo</A><BR>
+<A href="http://www.oreillynet.com/ruby">@oreilly</A><BR>
+<A href="http://ruby-lang.org/">ruby</A><BR>
+<A href="http://ruby-doc.org/">-&gt; docs</A><BR>
+<A href="http://rubyforge.org/">-&gt; wares</A><BR>
+<A href="http://rubygarden.org/ruby/">-&gt; wiki</A><BR>
+<A href="http://www.sitepoint.com/forums/forumdisplay.php?f=227">-&gt; forum</A><BR>
+<A href="http://www.rubyquiz.com/">-&gt; quizzes</A><BR>
+<A href="http://planetruby.0x42.net/">-&gt; planet</A><BR>
+<A href="http://meme.b9.com/cdates.html?channel=ruby-lang">-&gt; irc</A><BR>
+<A href="http://www.rubyweeklynews.org/">rubyweeklynews</A><BR>
+<A href="http://weblog.rubyonrails.com/">rails</A><BR>
+<A href="http://wiki.rubyonrails.org/">-&gt; wiki</A><BR>
+<A href="http://www.planetrubyonrails.org/">-&gt; planet</A><BR>
+<A href="http://thesaq.com/rubyonrails/">-&gt; irc</A><BR>
+<A href="http://anarchaia.org/">%anarchaia</A><BR>
+<A href="http://project.ioni.st/">%projectionist</A><BR>
+<A href="http://pugs.blogs.com/">~audreyt</A><BR>
+<A href="http://dablog.rubypal.com/">~black</A><BR>
+<A href="http://www.jamesbritt.com/">~britt</A><BR>
+<A href="http://www.jamisbuck.org/jamis/">~buck</A><BR>
+<A href="http://tomcopeland.blogs.com/juniordeveloper/">~copeland</A><BR>
+<A href="http://eigenclass.org/">~fernandez</A><BR>
+<A href="http://www.chadfowler.com/">~fowler</A><BR>
+<A href="http://www.loudthinking.com/">~hansson</A><BR>
+<A href="http://blog.segment7.net/">~hodel</A><BR>
+<A href="http://slash7.com/">~hoy/7</A><BR>
+<A href="http://fhwang.net/">~hwang</A><BR>
+<A href="http://blog.leetsoft.com/">~luetke</A><BR>
+<A href="http://www.worldlingo.com/wl/translate?wl_lp=JA-en&wl_glossary=gl1&wl_fl=3&wl_rurl=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_url=http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F&wl_g_table=-3">~matz</A><BR>
+<A href="http://moonbase.rydia.net/">~mental</A><BR>
+<A href="http://techno-weenie.net/">~olson</A><BR>
+<A href="http://pragprog.com/pragdave">~pragdave</A><BR>
+<A href="http://www.livejournal.com/users/premshree/">~premshree</A><BR>
+<A href="http://kronavita.de/chris/blog/">~neukirchen</A><BR>
+<A href="http://www.robbyonrails.com/">~robby</A><BR>
+<A href="http://www.rousette.org.uk/">~rousette</A><BR>
+<A href="http://nubyonrails.com/">~topfunky</A><BR>
+<A href="http://www.jvoorhis.com/">~voorhis</A><BR>
+<A href="http://onestepback.org/">~weirich</A><BR>
+<A href="http://blog.zenspider.com/">~zenspider</A><BR>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <H2 class="sidebarTitle">Syndicate</H2>
+        <UL>
+            <LI><A href="../index.xml">RSS 2.0</A></LI>
+        </UL>
+        </DIV> 
+ <DIV class="sidebarBox">
+        <P>Built upon <A href="http://hobix.com/">Hobix</A></P>
+        </DIV> 
+<IMG src="../images/redhanded-duck.gif" alt="Type the Duck">
+<DIV class="email">Got a story for us? <A href="../mailto:redhanded@hobix.com">E-mail it!</A></DIV>
+<DIV class="technorati"><P><A href="http://www.technorati.com/profile/whytheluckystiff">Technorati Profile</A>
+<A href="http://www.technorati.com/cosmos/search.html?url=http%3A%2F%2Fredhanded.hobix.com"><BR>
+<IMG src="../images/bubble_icon.gif" height="20" width="24" alt="Get Conversations about RedHanded &raquo; sneaking Ruby through the system"></A>
+</P>
+</DIV>
+
+</DIV>
+
+
+ <DIV id="blog">
+        
+<DIV class="entry">
+    <H2 class="entryTitle">Trust Metrics Mixin #1: PageRank
+  <SPAN class="entryPermalink"><A href="../inspect/duckTrustMetrics1Pagerank.html" title="Permanent link to &ldquo;Trust Metrics Mixin #1: PageRank&rdquo;">#</A></SPAN>
+</H2>
+
+<DIV class="entrySection">by <A href="http://whytheluckystiff.net/" title="Visit why&#39;s homepage">why</A> 
+  in <A href="../inspect" title="List of entries in the &ldquo;inspect&rdquo; category">inspect</A>
+</DIV>
+
+     <DIV class="entryContent"><P>We get on these little kicks.  As we’re all snooping around.  Little protocols or obscure version control systems.  Or domino games or something.</P>
+
+
+	<P>Trust metric, man.  It just strikes me all the time: I imagine everyone in the world with their hands cupped, a little ball of clay in the middle.  Everyone gets a moment to divide up their ball into pieces for selected friends and relatives.  Trick is <EM>they have to divide up the whole ball</EM>.  They can’t hang on to any.  Clay is redistributed.  One guy has a big monolith!  People, don’t give him any more!  (Unless, of course, he really can be trusted with clay.)</P>
+
+
+	<P>Here’s today’s challenge.  You are given objects which respond to:</P>
+
+
+	<UL>
+	<LI><CODE>trust(*objs)</CODE>: Assigns one unit of trust in an arc from <CODE>self</CODE> to each of the <CODE>objs</CODE>.</LI>
+		<LI><CODE>trusts?(obj)</CODE>: Tests <CODE>self</CODE> for any trust of <CODE>obj</CODE>.</LI>
+		<LI><CODE>trust_spread</CODE>: The total number of trusted objects.</LI>
+		<LI><CODE>trust_sphere</CODE>: All objects ranked in the system.</LI>
+	</UL>
+
+
+	<P>Given these objects, provide a mixin which determines a ranking.  In today’s case, we’ll be mixing in a <CODE>pagerank</CODE> method, which approximates rank based on a primitive form of Google’s algorithm.</P>
+
+
+<PRE> module GoogleTrust
+   DAMPEN = 0.85
+   def pagerank(ranks = {})
+     return ranks[self] if ranks.has_key? self
+     ranks[self] = @rank || 0.0
+     @rank =
+       (1 - DAMPEN) +
+       (DAMPEN * trust_sphere.inject(0) do |n, (o, c)|
+         n + (o.trusts?(self) ? o.pagerank(ranks) / o.trust_spread: 0)
+       end)
+   end
+ end
+</PRE>
+
+	<P>This algorithm is an approximation of Google’s PageRank, as described in <A href="http://www.iprcom.com/papers/pagerank/">PageRank Explained Correctly with Examples</A> by some third party.  Regardless, the basic equation can be seen throughout the web and I will refer you to the paper above in sorting out exactly how PageRank actually works.</P>
+
+
+	<P>You probably get the jist, though: <STRONG>by linking to sites, you are extending a unit of trust to them.</STRONG>  But also: <STRONG>the value of your link is also based on the links you are receiving.</STRONG>  So, it’s sort of like a tent, ranks evolve from a gelatinous blob into a more rigid and beautifully useful form.</P>
+
+
+	<P>Let’s get some sites running our PageRank.  I’ll use some blogs from the Ruby world:</P>
+
+
+<PRE> class Site
+   include GoogleTrust
+
+   @@sites = []
+   attr_accessor :name
+
+   def initialize(name)
+     @name = name
+     @arcs = {}
+     @@sites.push self
+   end
+
+   def trust *sites
+     sites.each { |site| @arcs[site] = (@arcs[site] || 0) + 1 }
+   end
+
+   def trusts? site;     @arcs.has_key? site end
+   def trust_worth site; @arcs[site]         end
+   def trust_spread;     @arcs.length        end
+   def trust_sphere;     @@sites             end
+ end
+
+ red = Site.new('RedHanded')
+ eig = Site.new('Eigenclass.org')
+ rails = Site.new('Ruby on Rails')
+ ana = Site.new('Anarchaia')
+ prj = Site.new('Project.ioni.st')
+</PRE>
+
+	<P>So, sites are represented by a name and an arc of other objects, representing sites which have been linked to.  Here are five blogs, let’s make a web.</P>
+
+
+<PRE> red.trust   rails, eig, ana
+ eig.trust   ana
+ rails.trust prj, eig
+ ana.trust   prj, red, rails, eig
+ prj.trust   red, rails, eig, ana
+
+ 40.times do |i|
+   puts "--- PASS #{i} ---" 
+   red.trusted_sphere.each do |site|
+     puts "#{ site.name }: #{ site.pagerank }" 
+   end
+ end
+</PRE>
+
+	<P>The <CODE>pagerank</CODE> is recursive, it computes the rank of a site based on the ranks of other sites, which are in turn based on its own rank.  (Unless the links happen to manifest a heirarchy or a tree shape.)  So, the ranking will change during the first many trials of running the metric.  After you get to about the fifth pass, things settle down.</P>
+
+
+	<P>Anyway, note the rankings and see if you can work it out.  After the first set, try adding some other sites into the mix:</P>
+
+
+<PRE> pj = Site.new('PJ Hyett')
+ tf = Site.new('Thomas Fuchs')
+ matz = Site.new('Journal of Matz')
+
+ red.trust matz, tf, pj
+ eig.trust matz
+ rails.trust tf
+ ana.trust pj, matz
+ matz.trust rails, eig
+ tf.trust rails
+ pj.trust rails, ana, prj
+
+ 10.times do
+   puts "---" 
+   red.trust_sphere.each do |site|
+     puts "#{ site.name }: #{ site.pagerank }" 
+   end
+ end
+</PRE>
+
+	<P>Other challenges applicable to this metric:</P>
+
+
+	<OL>
+	<LI>I’ve ignored the <CODE>trust_worth</CODE> method thus far.  What if a site is linked many times?  <STRONG>Alter the mixin to allow the units to positively influence the metric.</STRONG></LI>
+		<LI>All sites in the above equation start out equal.  <STRONG>Try seeding the rankings.</STRONG>  Maybe you want trust from Matz to be inherently more valuable, to add some kind of hierarchy to the mix.</LI>
+		<LI>This trust metric computes a wholistic figure for ranking.  In other words: <EM>How does this site rank in terms of the entire web?</EM>  Try altering the fundamental question to: <STRONG>How does this site rank in terms of just Project.ioni.st’s view?</STRONG>  This way, we can determine how sites not directly trusted by Project.ioni.st relate to it.</LI>
+	</OL>
+
+
+	<P>For extra points, if you are employed at Google, debunk my algorithm and leak us something sweet! (Complete code is in <A href="http://whytheluckystiff.net/ruby/metric-pagerank.rb">metric-pagerank.rb</A>.)</P></DIV> 
+</DIV>
+<DIV class="entryFooter"> 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>16:06</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+   | 
+    12 comments
+</DIV>
+</DIV>
+<DIV id="comments">
+
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Manfred</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>16:38</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Right now you iterate a fixed number of times over the pagerank method of a site until you come to a arbitrary stability of the network. If you use the same constant for large networks, it’s not very likely that the values have stabilized.</P>
+
+
+	<P>You could add another method to site to run until a certain level of rigidness in the network is reached.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>16:44</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Yes, totally.  Let’s consider that the fourth challenge, Manfred.</P>
+
+
+	<P>Also, I’m sure many of you will wonder, “So, what’s the maximum PageRank in this system?  Is this ranked between 0 and 2?”  Well, yes, I suppose.  But the fundamental idea here is that if you add all the ranks together and average them out, you’ll get <CODE>1</CODE>.  So you grade them along the rankings which emerge.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Manfred</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>17:33</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><A href="http://mount.dwerg.net/software/ruby/metric-pagerank-elastic.rb">Elasticity implemented</A></P>
+
+
+	<P>Please don’t mind the lack of elegance, I have to sleep now (.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>googler</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>17:59</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>While I can’t tell you anything, I can say that I read this blog and enjoy it!</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mfp</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>18:29</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I think the maximum PageRank given a network of N nodes is
+ (1-d) + d(1-d)N 
+which is attained when there is a single node pointed to by all the others (which have no incoming links). For example, for a network of 1000 nodes where 999 point to the parent one, the maximum PR would be 127.5225. Note that in this case the average PR is not 1, but 0.2773725, because the PR of the parent node is going to waste (since it has no outgoing links).</P>
+
+
+	<P>Also, the minimum PR is going to be (1-d), never 0.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>mfp</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>19:16</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I forgot to say that hiki ships with a PageRank plugin. Applied to eigenclass.org, it looks like this:</P>
+
+
+	<P><A href="http://eigenclass.org/hiki.rb?c=pagerank_page">http://eigenclass.org/hiki.rb?c=pagerank_page</A></P>
+
+
+	<P>See how the nodes with no incoming (internal) links have pagerank == 0.15 == 1 – d.</P>
+
+
+	<P>You can find the implementation of the PR algorithm in the Hiki sources under misc/plugin/ or <A href="http://tinyurl.com/c2caf">here</A></P>
+
+
+	<P>(It’s a bit late here, so take the following with a grain of salt) that implementation seems to compute the principal eigenvector directly by solving a linear system instead of iteratively as in your code. Pros: no need to worry about how many iterations to do. Cons: uses O(n**2) memory to represent the link matrix, numerical stability? (it uses Gaussian elimination so errors keep growing)</P>
+
+
+	<P>Just realized that I shouldn’t have called the ‘uebernode’ from the previous comment “parent node”, it’s in fact sort of the child of all other nodes.</P>
+
+
+	<P>As for challenge (2), shouldn’t the algorithm converge towards the same result (determined by the link matrix), regardless of the initial pagerank assignments? (It’s 2am and I’m tired so somebody plz check that up :)</P>
+
+
+	<P>Regarding (3), wouldn’t that be rather like <A href="http://www.advogato.org/trust-metric.html">Advogato’s trust metric</A> ?</P>
+
+
+	<P>OK zzzzZZZ</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>googler2</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>19:56</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Right handed whuffie to you ;-)
+http://en.wikipedia.org/wiki/Whuffie</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>sporkmonger</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>11 Jan 2006</NOBR> at <NOBR>20:52</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I’m mildly interested in why you entitled this post “Trust Metrics Mixin #1: PageRank”.  One might wonder if perhaps another set of trust metrics are swirling around somewhere?</P>
+
+
+	<P>Mostly I wonder because trust metrics and feeds pretty much are all I bother to think about these days…</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>Jacob</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>12 Jan 2006</NOBR> at <NOBR>00:46</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>Uh, _why, you have a slight mistake in your PageRank formula. See <A href="http://www.google.com/technology/pigeonrank.html">this</A>.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>why</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>12 Jan 2006</NOBR> at <NOBR>01:22</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>Manfred</STRONG>: Congratulations.  Good one with the <CODE>settle</CODE> method.</P>
+
+
+	<P><STRONG>sundry googlers</STRONG>: Prove yourselves.  Answer this question correctly: how many times did you hear “Double true!” around the office this week?</P>
+
+
+	<P><STRONG>mfp</STRONG>: Very astute.  I can’t wait to hear the solution of <CODE>challenge.rb</CODE>.  Literally the most amazing Ruby code I’ve ever seen.</P>
+
+
+	<P><STRONG>spork</STRONG>: Yes, there are many.</P>
+
+
+	<P><STRONG>Jacob</STRONG>: Oh, poo.  That’s the one page I forgot to check.</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>hgs</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>12 Jan 2006</NOBR> at <NOBR>04:49</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P>I hope to find time to look at this more deeply later, but isn’t this problem similar to MenTaLguY’s <A href="http://moonbase.rydia.net/mental/writings/programming/monads-in-ruby/02array">monadic maze explorer</A> , in some way(s)?</P></DIV></DIV>
+</DIV>
+
+<DIV class="entry">
+    <DIV class="entryAttrib">
+        <DIV class="entryAuthor"><H3>MenTaLguY</H3></DIV>
+        <DIV class="entryTime">said on 
+    <NOBR>12 Jan 2006</NOBR> at <NOBR>10:21</NOBR>
+    <NOSCRIPT></NOSCRIPT>
+  </DIV>
+    </DIV>
+    <DIV class="entryContentOuter"><DIV class="entryContent"><P><STRONG>hgs</STRONG>: Oh, hey, that’s an interesting thought.  I’m not sure.  Graph traversal with accumulation and bailout-upon-already-visited in both places.  The short answer’s probably <EM>sort of but not totally</EM>.</P>
+
+
+	<P>One difference is that the “visited” state is stored extrinsically here—in the maze thing, it’s intrinsic to the nodes.  Which I don’t actually like… I shall have to think about changing my explorer to store that extrinsically somehow.</P></DIV></DIV>
+</DIV>
+
+
+  <DIV class="entry">
+    <P><SMALL>Comments are closed for this entry.</SMALL></P>
+  
+
+
+
+        </DIV> 
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+
+
+</DIV></BODY></HTML>

@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; Making SCUMM Games</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/objc.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+  <div id="blog">
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+    
+<div class="entry">
+  <h1><a href="../../../2008/04/22/makingScummGames.html">Making SCUMM Games</a></h1>
+  <div class="time"><strong>April
+22nd
+</strong>
+    10:44</div>
+  <div class="author">by why</div>
+  <div class="content"><p><img src="../../../images/openquest.png" class="rb" alt="" /></p>
+<p>After three years since their last release, <a href="http://alban.dotsec.net/Projects/ScummC">ScummC</a> has hit 0.2.0.  And it&#8217;s looking really good.  They have a short but rather complete example (a port of Michael Sheail&#8217;s OpenQuest,) the <a href="https://dotsec.net/repos/scummc/trunk/examples/openquest/">source code</a> for which is included in the ScummC distro.  We&#8217;re talking: roughly 3000 lines of a JavaScript-ish language.  So, hey, this seems to be a great avenue for creating adventure games, folks.</p>
+<p>The language consists mostly of setting up objects in various rooms and laying out what sorts of ways you can manipulate those objects.  So, an object could be a gun.  Or it could be an <span class="caps">NPC</span>, such as Carol:</p>
+
+<pre><code class="scummc">object carolObj {
+  name = "Indigenous lifeform";
+  verb(int vrb,int objA,int objB) {
+    case TalkTo:
+      zobTalkToCarol();
+      return;
+    case LookAt:
+      if( ! knowsCarol ) {
+          egoSay("A large carbon based mammal, it seems.");
+          waitForMessage();
+      }   
+      else {
+          egoSay("It is Carol, one of the local lifeforms.");
+          waitForMessage();
+      }   
+      return;
+    case Smell:
+      egoSay("This creature has an overwhelming pungent smell.");
+      return;
+    case Move:
+      egoSay("The lifeform is surprisingly sturdy, I don't believe I can use force.");
+      return;
+  }
+}
+</code></pre>
+<p>The bulk of the code is spent setting up the various rooms and objects and bits of dialog.  But you are also free to set up all of the action buttons and the inventory drawer.  In fact, a fairly large chunk of code in the sample game is used to setup a subscreen for picking your dialog from a script (just as in <em>The Secret of Monkey Island</em> or <em>Day of the Tentacle</em>.)</p>
+<hr />
+
+<p>And yet, this project has been virtually ignored by everyone, including the ScummVM community, with no mention of it on <a href="http://wiki.scummvm.org/index.php/Main_Page">their wiki</a> and only <a href="http://www.google.com/search?q=scummc%20site%3Ascummvm.org">smatterings</a> of discussion on the forums last year.</p>
+<p>Now, of course, <span class="caps">SCUMM</span> games are lo-res and old-fashioned.  Why would anyone target the ScummVM?  Well, perhaps for nostalgia.  Maybe because it&#8217;s pretty easy.  And there is a wealth of fans that&#8217;s already obsessed with the VM.</p>
+<p>But, come on.  ScummVM is hugely <a href="http://scummvm.org/downloads.php">cross-platform</a>.  We&#8217;re not just talking Linux, OS X and Windows.  It&#8217;s perfectly stable on the iPhone, Palm OS 5, Windows Mobile and the Nintendo DS.  Seriously: Dreamcast?  <span class="caps">SCUMM</span> always hits a platform first.</p>
+<p>For now, it&#8217;s something of a sweet spot between VMs and emulators.  Reaching platforms that Java and Flash neglect.  While not being as primitive as <span class="caps">NES</span> or Genesis emulators are to develop for.</p>
+</div>  
+  
+<div id="comments">
+<h4>Now begin the comments &hellip;</h4>
+<div class="total">14 comments</a></div>
+
+<div class="entry">
+    <h3>Andy Baio</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    14:28</div>
+    <div class="content"><p>I&#8217;m a bit surprised there haven&#8217;t been any web-based tools for creating and playing Scumm games.  I found a couple early attempts at porting ScummVM to Flash and Java ports, but no active projects.</p></div>
+</div>
+
+<div class="entry">
+    <h3>olleolleolle</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    14:42</div>
+    <div class="content"><p>&#8220;This would be a perfect fit for the next Nordic Game Jam&#8221;, said the beautiful lady next to me when I explained the concepts. She laid off gaming after King&#8217;s Quest, and started again this year with Oblivion on the XBox 360&#8230;</p>
+<p>Nordic Game Jam: 72 hours to make a complete game.</p>
+<p>ScummC could be a perfect tool in that setting.</p></div>
+</div>
+
+<div class="entry">
+    <h3>lemon</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    14:43</div>
+    <div class="content"><p>&lt;3</p></div>
+</div>
+
+<div class="entry">
+    <h3>_why</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    15:59</div>
+    <div class="content"><p><strong>Andy Baio:</strong> Yeah, I think it would be easier now, with the prevalence of good Flash compilers like haXe and swfmill.  Interesting, though, <a href="http://projects.cuppadev.co.uk/gitweb/?p=experiments%2Fhiscumm.git;a=summary">here&#8217;s</a> source for a newer haXe-based  SCUMM  interpreter.</p>
+<p><strong>olleolleolle:</strong> Well, this year the game jam required multiplayer.  But perhaps if they had an emulator theme in a coming year.</p></div>
+</div>
+
+<div class="entry">
+    <h3>Mike Cantelon</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    18:31</div>
+    <div class="content"><p>On the weekend I was looking, for the first time, for info on making  SCUMMVM -based games. Thanks for pointing out something that looks like clean timez!</p></div>
+</div>
+
+<div class="entry">
+    <h3>Michael Gorsuch</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    18:59</div>
+    <div class="content"><p>Weird.  I was doing research on Sierra&#8217;s  AGI  last night.  Thanks for bringing this to my attention!</p></div>
+</div>
+
+<div class="entry">
+    <h3>tao</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    19:48</div>
+    <div class="content"><p>The thing is: these games require a lot of art and writing. The programming part seems straightforward.</p></div>
+</div>
+
+<div class="entry">
+    <h3>she</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    20:47</div>
+    <div class="content"><p>Actually, I am more intimated about the programming part. I think the language could be even easier.</p>
+<p>The art and writing would be easy &#8211; for example, the writing comes from my brain almost instantly (our  RPG  group has amassed such enormous amounts of data, which is already ordered collected, and consists of about 21 years of material &amp; experience).<br>
+Ok, the art might be a little more problem since I on my own could never draw something like the old lucasA*t games and similar. But I think for a game prototype it would not be that difficult.</p>
+<p>I however really think the language could be shaped up a bit. <br>
+      egoSay(&#8220;This creature has an overwhelming pungent smell.&#8221;);</p>
+<p>Besides, I think that this should rather go into a data-file that doesnt have any programming stuff in it (so people could modify it more readily.</p></div>
+</div>
+
+<div class="entry">
+    <h3>talk to Me What HappeNd WoRld</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    21:12</div>
+    <div class="content"><p>the game and the program walking in a bite&#8217;s phone same aroound the world&#8217;</p></div>
+</div>
+
+<div class="entry">
+    <h3>Leon</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    21:22</div>
+    <div class="content"><p>Goddamn, are you serial? I am all over this.</p></div>
+</div>
+
+<div class="entry">
+    <h3>I have a </h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    22:24</div>
+    <div class="content"><p>Dreamcast got all the emulators.  No surprise it got  SCUMM .</p></div>
+</div>
+
+<div class="entry">
+    <h3>_,,-=;;({[]});;=-,,_</h3>
+    <div class="time">said on <strong>April
+      22nd</strong>
+    22:56</div>
+    <div class="content"><p>Like  TADS  but with graphics.</p></div>
+</div>
+
+<div class="entry">
+    <h3>secretGeek.net</h3>
+    <div class="time">said on <strong>April
+      23rd</strong>
+    03:51</div>
+    <div class="content"><p>hi _why, love your stuff, stiff.</p>
+<p>i&#8217;m workin on a wiki based text adventure game platform that uses javascript (json mostly) for scripting.</p>
+<p>there&#8217;s nothing much to see yet, just talk so far.</p>
+<p>http://secretgeek.net/more_wikitext.asp</p>
+<p>this &#8216;object carolObj&#8217; declaration above is scarily similar to how things get implemented in my system.</p>
+<p>lb</p></div>
+</div>
+
+<div class="entry">
+    <h3>Piesangaap</h3>
+    <div class="time">said on <strong>April
+      23rd</strong>
+    13:02</div>
+    <div class="content"><p>Hey, would like to know your opinion of  AGS ?<br>
+(http://en.wikipedia.org/wiki/Adventure_Game_Studio)</p>
+<p>Similar to this, but a reasonably nice interface.</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="http://feeds.feedburner.com/HacketyOrg" />
+  <title>hackety org &raquo; A Restfully Organic Firefox</title>
+  <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script type="text/javascript" language="JavaScript" src="../../../js/liveUpdater.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../../js/strftime.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function quickRedReference() {
+        window.open(
+            "http://hobix.com//textile/quick.html",
+            "redRef",
+            "height=600,width=550,channelmode=0,dependent=0," +
+            "directories=0,fullscreen=0,location=0,menubar=0," +
+            "resizable=0,scrollbars=1,status=1,toolbar=0"
+        );
+    }
+</script>
+
+  <script type="text/javascript" src="../../../js/code_highlighter/code_highlighter.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/javascript.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/css.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/html.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/ruby.js"></script>
+  <script type="text/javascript" src="../../../js/code_highlighter/python.js"></script>
+  <style type="text/css">
+  @import "../../../css/site.css";
+  </style>
+  </head>
+<body>
+
+
+
+<div id="layout">
+  <div id="blog">
+
+    <div class="premiere">
+      <a href="../../../"><img src="../../../images/hackety-org-header.png" /></a>
+    </div>
+    
+<div class="entry">
+  <h1><a href="../../../2007/06/08/theFutureOfTheFox.html">A Restfully Organic Firefox</a></h1>
+  <div class="time"><strong>June
+8th
+</strong>
+    00:34</div>
+  <div class="author">by why</div>
+  <div class="content"><p>I love having Leslie Wu around.  She&#8217;s an Hpricot/Sandbox dev who&#8217;s always thinking about, well, <em>everything</em>.  And oh boy is she an ace name-dropper.  She can&#8217;t talk about a given tech thing without immediately grafting in a discussion about a chain of other tech things, all mulched together, acronyms stuck into adverbs, URLs tucked all over.</p><p>From her blog entry <a href="http://lwu.vox.com/library/post/on-the-future-of-the-fox.html">On the Future of the Fox</a>:</p><blockquote><p>I ask myself, for example, if I wanted to build my own HacketyHack, how many hoops would I have to jump through to get it working on a MozPad moon versus an Adobe Apollo or a MSFT Expression Blend?</p></blockquote><p>I really don&#8217;t know if H-ety H could be done in Apollo or .NET.  Because I&#8217;ve got to be cross-platform and yet insert Ruby in there and how ya gonna do it?  I know I know, there are other Ruby implementations in the works.  But we&#8217;re talking today.  You can&#8217;t listen to promises when today is today.  I had thought about using JRuby along with XULRunner&#8217;s Java hooks, but it didn&#8217;t work for me.  I&#8217;m probably just more comfortable with Matz&#8217; Ruby.</p><p>One misconception about Hackety Hack is that it has a web server built-in.  That it uses Mongrel.  No way, man.  Yes, Camping is used, but only to deserialize sessions coming out of Moz.</p><p>Alls it is: a <code>hack://</code> protocol is set up in Moz.  Any request to that protocol is sent to Camping like so:</p>
+<pre><code class="c">
+  nsCAutoString rpath, path, qs, code, spec, host;
+  aURI->GetSpec(spec);
+  aURI->GetHost(host);
+  aURI->GetPath(rpath);
+
+  path = rpath;
+  PRInt32 f = path.FindCharInSet(NS_LITERAL_CSTRING("#?"));
+  if (f != kNotFound) {
+    qs = path;
+    qs.Cut(0, f+1);
+    path.Truncate(f);
+  }
+
+  VALUE str = Qnil;      
+  code = "begin; Camping.run(StringIO.new, {:SCRIPT_NAME, '/', " +
+    ":PATH_INFO, %q<" + path.get() + ">," +
+    ":QUERY_STRING, %q<" + qs.get() + ">," + 
+    ":REQUEST_URI, %q<" + spec.get() + ">," +
+    ":REQUEST_APP, %q<" + host.get() + ">," +
+    ":REQUEST_PATH, %q<" + rpath.get() + ">}).body.to_s;" +
+    "rescue Object => e; e.to_s; end";
+  rubyTimer->Eval(code.get(), &str);
+</code></pre>
+<p>So sorry Mongrel.  That was too easy.  I really like the foundation of Hackety Hack, though it would be nice to have JavaScript cut out of the equation.  Which I suppose could be done with XPCOM.  (Frown.)</p><p>And here&#8217;s the lovely part from lwu:</p><blockquote><p>We need not fully address the question of End-user Programming of the client-side web, but even if we deCOMtaminate Mozilla-land, how much better off does that leave us? I would call for, instead, a <em>RESTfully organic Firefox</em>.</p></blockquote><p>Yes.  Oh, yes.  Madly now, say it with me: yes!</p>
+</div>  
+  
+<div id="comments">
+<div class="total">3 comments</a></div>
+
+<div class="entry">
+    <h3>lwu</h3>
+    <div class="time">said on <strong>June
+      7th</strong>
+    21:28</div>
+    <div class="content"><p>(As an aside, it seems that FF hack://ery is how those GOOG&#8217;ers such as Chief Monkey Aaron Boodman implemented the &#8220;LocalServer&#8221; in Google Gears.)</p><p>Yes! :)</p></div>
+</div>
+
+<div class="entry">
+    <h3>HankZ</h3>
+    <div class="time">said on <strong>June
+      8th</strong>
+    01:07</div>
+    <div class="content"><p><a href="http://wiki.mozilla.org/FUEL">FUEL</a> ?</p></div>
+</div>
+
+<div class="entry">
+    <h3>QuicRedFox</h3>
+    <div class="time">said on <strong>June
+      8th</strong>
+    21:16</div>
+    <div class="content"><p>RESTfully organic firefox? Where&#8230;where?</p></div>
+</div>
+
+
+  <div class="entry">
+    <p><small>Comments are closed for this entry.</small></p>
+  
+
+</div>
+
+  </div>
+  <div id="sidebar">
+  <p><a href="../../../about/">About?</a></p>
+  <p class="feed"><a href="http://feeds.feedburner.com/HacketyOrg">Subscribe</a></p>
+  <div class="description">
+    <p>
+      <strong>Hackety.org</strong> is for artful computer hacking.  Mind expanding code. Hobbyists &amp; amateurs welcome.
+      Business trends and language wars?  None for us, thankyou! <a href="../../../about/">More.</a>
+    </p>
+    <p><img src="../../../images/hackety-quack.png" /></p>
+    <p>Archives: <a href="../../../2009/">2009</a>. <a href="../../../2008/">2008</a>. <a href="../../../2007/">2007</a>. </p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
