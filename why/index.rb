@@ -19,14 +19,14 @@ LIST = [
     ['http://github.com/whymirror/markaby', 'markaby'],
     ['http://github.com/whymirror/metaid', 'metaid'],
     ['http://github.com/rkh/mixico', 'mixico'],
-    ['http://github.com/evaryont/mousehole', 'mousehole'],
+    ['http://github.com/nogweii/mousehole', 'mousehole'],
     ['http://github.com/mattjamieson/parkplace', 'parkplace'],
-    ['http://github.com/fogus/potion', 'potion'],
+    ['http://github.com/perl11/potion', 'potion'],
     ['http://github.com/jgarber/redcloth', 'redcloth'],
     ['http://github.com/wmorgan/sheila', 'sheila'],
     ['http://github.com/Sophrinix/sandbox', 'sandbox'],
     ['http://github.com/Sophrinix/TryRuby', 'Try Ruby'],
-    ['http://github.com/shoes/shoes', 'shoes'],
+    ['http://github.com/shoes/shoes-deprecated', 'shoes'],
     ['http://github.com/indeyets/syck', 'syck'],
     ['http://github.com/devyn/unholy', 'unholy'],
     ['http://github.com/whymirror/chirrup', 'chirrup'],
@@ -35,14 +35,14 @@ LIST = [
     ['http://github.com/whymirror/processor', 'processor'],
     ['http://github.com/whymirror/rb_parse_args', 'rb_parse_args'],
     ['http://github.com/whymirror/yown', 'yown'],
-    ['http://rubyforge.org/projects/dns-zone', 'dns-zone'],
-    ['http://dotfiles.org/~_why', '_why\'s dotfile setup']
+    ['https://web.archive.org/web/20130826121700/http://rubyforge.org/projects/dns-zone/', 'dns-zone'],
+    ['https://web.archive.org/web/20150421235117/http://www.dotfiles.org/~_why', '_why\'s dotfiles']
   ]],
   ['Writings', [
     ['Books', [
       ['http://poignant.guide', 'Why\'s (Poignant) Guide to Ruby [HTML]'],
       ['http://www.rubyinside.com/media/poignant-guide.pdf', 'Why\'s (Poignant) Guide to Ruby [PDF]'],
-      ['http://cloud.github.com/downloads/shoes/shoes/nks.pdf', 'Nobody Knows Shoes [PDF]'],
+      ['https://github.com/whymirror/why-archive/raw/master/shoes/nobody-knows-shoes.pdf', 'Nobody Knows Shoes [PDF]'],
       ['http://github.com/steveklabnik/CLOSURE', 'CLOSURE'],
       ['https://www.dropbox.com/s/c0n2dljz8anih62/CLOSURE.pdf?dl=0', 'CLOSURE [PDF]'],
     ]],
@@ -113,7 +113,7 @@ LIST = [
       ['estate://hacking/wearingRubySlippersToWork.html', 'Wearing Ruby Slippers To Work']
     ]],
     ['Twitter', [
-      ['http://favstar.fm/users/_why', '@_why\'s most favourited tweets'],
+      ['https://web.archive.org/web/20100528121001/http://favstar.fm/users/_why', '@_why\'s most favourited tweets'],
       ['estate://twitter/lastTweets.html', '@_why\'s last ~300 tweets'],
       ['estate://twitter/youWouldDoWellToEnjoyThisDay.html', 'You Would Do Well To Enjoy This Day']
     ]],
@@ -188,26 +188,26 @@ LIST = [
 
         ['estate://lost_children/lostChildrenLostChildrenLostChildrenSeeSuchFeverishCastles.html', 'one']
       ]],
-      ['http://the-least-surprised.judofyr.net/', 'The Least Surprised']
+      ['https://web.archive.org/web/20210618171416/http://the-least-surprised.judofyr.net/', 'The Least Surprised']
     ]],
     ['RubyKaigi Wallpapers', [
-      ['http://jp.rubyist.net/RubyKaigi2007/Goodies.html', '2007'],
-      ['http://jp.rubyist.net/RubyKaigi2008/?Goodies', '2008']
+      ['https://web.archive.org/web/20170816110619/http://jp.rubyist.net/RubyKaigi2007/Goodies.html', '2007'],
+      ['https://web.archive.org/web/20170816115902/http://jp.rubyist.net/RubyKaigi2008/?Goodies', '2008']
     ]],
     ['http://oreilly.com/catalog/9780596516178', 'The Ruby Programming Language illustrations'],
     ['http://www.rubyinside.com/why-the-lucky-stiffs-delightful-foreword-for-beginning-ruby-4550.html', 'The foreword to Beginning Ruby']
   ]],
   ['Music', [
     ['The Thirsty Cups', [
-      ['http://mislav.uniqpath.com/poignant-guide/soundtrack/', 'The Poignant Guide Soundtrack'],
+      ['http://poignant.guide/soundtrack/', 'The Poignant Guide Soundtrack'],
       ['http://www.archive.org/details/whytheluckystiff2006-06-23.railsconf_chicago', 'RailsConf Chicago 23 June 2006'],
-      ['http://podcast.rubyonrails.org/programs/1/episodes/sxswi_why_the_lucky_stiff', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival'],
+      ['https://web.archive.org/web/20130509075711/http://podcast.rubyonrails.org/system/audio/2006/why-the-lucky-stiff.mp3', 'A bootleg of the Why the Lucky Stiff concert at the South by Southwest Interactive Festival [MP3]'],
       ['https://soundcloud.com/kcomandich/sets/why-the-lucky-stiff-and-the', 'Why the Lucky Stiff and the Thirsty Cups, live at FOSCON 2005'],
       ['estate://lyrics/theThirstyCups.html', 'Lyrics']
     ]],
     ['The Child Who Was a Keyhole', [
       ['http://www.myspace.com/thechildwhowasakeyhole', 'Band MySpace'],
-      ['http://www.cdbaby.com/cd/tcwwak', 'In The Faxed Atmosphere'],
+      ['https://open.spotify.com/album/1Ytt0LzmgQJ4DWXGBPwUaR?si=HSebYJyRT_2190uPDA8YBA', 'In The Faxed Atmosphere [Spotify]'],
       ['http://lubutu.com/mirror/in-the-faxed-atmosphere', 'In The Faxed Atmosphere (Ogg Vorbis provided under Creative Commons Sampling Plus 1.0)'],
       ['estate://lyrics/theChildWhoWasAKeyhole.html', 'Lyrics']
     ]],
@@ -229,13 +229,12 @@ LIST = [
       ['http://www.youtube.com/watch?v=mKSacTAjS0Q', 'Sinking Symphony']
     ]],
     ['Noboto', [
-      ['http://noboto.com/15/noboto-12', 'Episode 12: Why'],
-      ['http://noboto.com/16/noboto-13', 'Episode 13: Poignant']
+      ['https://www.youtube.com/watch?v=_EPzGpwnekg', 'Why the Lucky Stiff, on Twins and Drawing'],
     ]],
     ['Art && Code Symposium', [
       ['http://www.vimeo.com/5047563', 'Hackety Hack'],
       ['http://www.youtube.com/watch?v=I4U1vO-lMS0', 'Just the Kaxxt portion of the above video'],
-      ['http://mattt.me/2010/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture'],
+      ['https://web.archive.org/web/20150112180026/http://mattt.me/2010/lost-recordings-of-_whys-last-lecture/', 'Lost Recordings of _why\'s Last Lecture'],
       ['https://gist.github.com/paigeruten/e49b377ce2d89489ca6d', '_why\'s original dueling swordsmen script, from 2000'],
       ['https://vimeo.com/3753964', 'Hello World, the Song (in Max/MSP)']
     ]],
@@ -257,18 +256,17 @@ LIST = [
       ['http://web.archive.org/web/*/http://redhanded.hobix.com', 'redhanded.hobix.com'],
       ['http://web.archive.org/web/*/http://hobix.com', 'hobix.com'],
       ['http://web.archive.org/web/*/http://shoooes.net', 'shoooes.net'],
-      ['http://web.archive.org/web/*/http://preeventualist.org', 'preeventualist.org']
+      ['http://web.archive.org/web/*/http://preeventualist.org', 'preeventualist.org'],
+      ['https://web.archive.org/web/20160204062447/http://www.advogato.org/person/whytheluckystiff/', 'Advogato Blog'],
     ]],
     ['Dwellings left standing', [
-      ['http://www.advogato.org/person/whytheluckystiff/', 'Advogato Blog'],
       ['http://www.flickr.com/photos/_why', 'Flickr Account'],
-      ['http://delicious.com/why', 'why\'s Bookmarks on Delicious']
     ]],
     ['Emails', [
       ['http://www.reddit.com/r/programming/comments/9c5on/where_is_why/c0c83zg', 'An email'],
       ['http://aberant.tumblr.com/post/167375099/a-letter-from-why', 'a letter from _why']
     ]],
-    ['http://rubyforge.org/pipermail/poignant-stiffs/', 'The poignant-stiffs Archives'],
+    ['https://web.archive.org/web/20160601014219/http://rubyforge.org/pipermail/poignant-stiffs/', 'The poignant-stiffs Archives'],
     ['http://why.usesthis.com/', '_why interview by The Setup'],
     ['estate://code/WELCOME.txt', '_why\'s welcome']
   ]]
